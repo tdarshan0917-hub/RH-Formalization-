@@ -1,0 +1,18 @@
+import RHFormalization.PuncturedIdentityLocalCore
+import RHFormalization.DefaultDenominatorSimpleZeroOrder
+import RHFormalization.PoleObstructionFromNormalForm
+import RHFormalization.PoleNormalForm
+import RHFormalization.MainTheorem
+
+#print RHFormalization.GenuinePoleNormalFormAPI
+#print RHFormalization.LocalPoleObstructionAPI
+#print RHFormalization.RigidityNoPoleAPI
+#print RHFormalization.ZeroWitness
+#print RHFormalization.OperatorResolventBridge
+#print RHFormalization.ZeroPolePackageAPI
+#print RHFormalization.HMeromorphicWithNormalFormPoles
+
+#check RHFormalization.buildLocalPoleObstructionFromHNormalFormPackage
+#check RHFormalization.mainTheorem_from_theorem_backed_Omega
+#check RHFormalization.mainTheorem_from_local_normal_form_obstruction
+#check RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_localPoleClosed

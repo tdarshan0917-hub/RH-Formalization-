@@ -1,0 +1,14 @@
+import Mathlib
+
+#check summable_nat_add_one_iff
+#check summable_nat_add_one_iff'
+#check summable_one_div_nat_rpow
+#check summable_one_div_nat_pow
+#check summable_nat_pow
+#check Nat.summable_one_div_pow
+#check Real.summable_one_div_nat_rpow
+#check Real.summable_one_div_nat_pow
+#check ENNReal.tsum_inv_nat_pow
+#check summable_geometric_of_norm_lt_one
+#check summable_norm_mul_geometric_of_norm_lt_one
+#check summable_pow_mul_geometric_of_norm_lt_one

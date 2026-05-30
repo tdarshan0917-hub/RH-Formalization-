@@ -1,0 +1,5 @@
+import RHFormalization.AppendixESharedPackageCompatibility
+import RHFormalization.AppendixESharedPackageFunctionalCompatibility
+
+#print RHFormalization.AppendixESharedPackageFunctionalCompatibility
+#print RHFormalization.finalRHSpine_from_Cshared_eq

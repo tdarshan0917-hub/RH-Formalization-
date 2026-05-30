@@ -1,0 +1,8 @@
+import RHFormalization.AppendixDPrimePowerToDBcan
+
+#check RHFormalization.DPrimePowerLimitAtOverlapData
+#check RHFormalization.DPrimePowerLimitAtOverlapData.h_Bcan_eq_shared
+#check RHFormalization.buildDBcanLimitDataFromPrimePowerLimit
+
+#print axioms RHFormalization.DPrimePowerLimitAtOverlapData.h_Bcan_eq_shared
+#print axioms RHFormalization.buildDBcanLimitDataFromPrimePowerLimit

@@ -1,0 +1,27 @@
+structure RHFormalization.AppendixESharedPackageFunctionalCompatibility
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+  (X : RHFormalization.HMeromorphicWithNormalFormPoles) : Type
+number of parameters: 2
+fields:
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.sigma : ℝ
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.hsigma_ge_D : Y.toOperatorResolventBridge.sigma0 ≤
+      self.sigma
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.hsigma_ge_H : X.toLegacyZeroPolePackageAPI.sigma0 ≤
+      self.sigma
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.h_shared_B : ∀
+      s ∈ RHFormalization.RightHalfPlane self.sigma, Y.B.Cshared.Bshared s = X.layer.overlap.Cshared.Bshared s
+constructor:
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.mk
+    {Y : RHFormalization.DDetailedConstructionWithOperatorLegality}
+    {X : RHFormalization.HMeromorphicWithNormalFormPoles} (sigma : ℝ)
+    (hsigma_ge_D : Y.toOperatorResolventBridge.sigma0 ≤ sigma)
+    (hsigma_ge_H : X.toLegacyZeroPolePackageAPI.sigma0 ≤ sigma)
+    (h_shared_B :
+      ∀ s ∈ RHFormalization.RightHalfPlane sigma, Y.B.Cshared.Bshared s = X.layer.overlap.Cshared.Bshared s) :
+    RHFormalization.AppendixESharedPackageFunctionalCompatibility Y X
+theorem RHFormalization.finalRHSpine_from_Cshared_eq : RHFormalization.ZetaZeroFacts →
+  ∀ (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+    (X : RHFormalization.HMeromorphicWithNormalFormPoles),
+    Y.B.Cshared = X.layer.overlap.Cshared → RHFormalization.RiemannHypothesis :=
+fun ZF Y X hC =>
+  RHFormalization.finalRHSpine_from_sharedBIdentity ZF Y X (RHFormalization.sharedBIdentity_of_Cshared_eq Y X hC)

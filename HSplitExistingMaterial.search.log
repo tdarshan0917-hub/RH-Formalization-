@@ -1,0 +1,67 @@
+RHFormalization/HSideOverlapChosenCshared.lean:13:  C.Bshared s = Harch s - Zpole s
+RHFormalization/HSideOverlapChosenCshared.lean:31:The only real H/E analytic input is `h_split`.
+RHFormalization/HSideOverlapChosenCshared.lean:38:    (h_split :
+RHFormalization/HSideOverlapChosenCshared.lean:41:          C.Bshared s = Harch s - Zpole s) :
+RHFormalization/HSideOverlapChosenCshared.lean:50:  h_split := h_split }
+RHFormalization/HSideOverlapChosenCshared.lean:60:    (h_split :
+RHFormalization/HSideOverlapChosenCshared.lean:63:          C.Bshared s = Harch s - Zpole s) :
+RHFormalization/HSideOverlapChosenCshared.lean:65:      Zpole Harch C sigma0 h_Cshared_sigma_le h_split).Cshared = C := by
+RHFormalization/AnnexSpine.lean:41:  h_split :
+RHFormalization/AnnexSpine.lean:59:  h_split :
+RHFormalization/AnnexSpine.lean:61:      Bzero s = Harch s - Zpole s
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:91:        (defaultOverlapGeometryAPI D H Eb E.h_sigma_nonneg).h_overlap_open
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:92:        (defaultOverlapGeometryAPI D H Eb E.h_sigma_nonneg).h_overlap_nonempty
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:93:        (defaultOverlapGeometryAPI D H Eb E.h_sigma_nonneg).h_overlap_subset_Omega
+RHFormalization/DOperatorExport.lean:518:  h_overlap :
+RHFormalization/DOperatorExport.lean:555:    h_split := D.overlap.h_overlap }
+RHFormalization/FinalBlueprint.lean:143:  role := "Construct Harch ∈ O(Ω) and prove Bzero = Harch - Zpole on the overlap."
+RHFormalization/HMeromorphicPackage.lean:16:  Bzero = Harch - Zpole
+RHFormalization/HMeromorphicPackage.lean:189:`Bzero = Harch - Zpole`.
+RHFormalization/HMeromorphicPackage.lean:218:  h_split :
+RHFormalization/HMeromorphicPackage.lean:220:      Bzero s = Harch s - Zpole s
+RHFormalization/HMeromorphicPackage.lean:257:    h_split := L.overlap.h_split }
+RHFormalization/GlobalMeromorphicIdentity.lean:90:  h_overlap_subset_Omega :
+RHFormalization/GlobalMeromorphicIdentity.lean:92:  h_overlap_open :
+RHFormalization/GlobalMeromorphicIdentity.lean:94:  h_overlap_nonempty :
+RHFormalization/GlobalMeromorphicIdentity.lean:108:  { h_overlap_subset_Omega := by
+RHFormalization/GlobalMeromorphicIdentity.lean:112:    h_overlap_open := by
+RHFormalization/GlobalMeromorphicIdentity.lean:115:    h_overlap_nonempty := by
+RHFormalization/GlobalMeromorphicIdentity.lean:214:        O.h_overlap_open
+RHFormalization/GlobalMeromorphicIdentity.lean:215:        O.h_overlap_nonempty
+RHFormalization/GlobalMeromorphicIdentity.lean:216:        O.h_overlap_subset_Omega
+RHFormalization/AppendixELocalBridgeCore.lean:49:* H-side split: `H.Bzero = H.Harch - H.Zpole`;
+RHFormalization/AppendixELocalBridgeCore.lean:70:        D.h_split s
+RHFormalization/AppendixELocalBridgeCore.lean:74:          H.Bzero s = H.Harch s - H.Zpole s :=
+RHFormalization/AppendixELocalBridgeCore.lean:75:        H.h_split s
+RHFormalization/AppendixELocalBridgeCore.lean:80:            (H.Harch s - H.Zpole s) + D.RH s := by
+RHFormalization/AppendixELocalBridgeCore.lean:84:          _ = (H.Harch s - H.Zpole s) + D.RH s := by
+RHFormalization/AppendixELocalBridgeCore.lean:88:          D.B s = H.Harch s - H.Zpole s :=
+RHFormalization/InterfaceAlgebra.lean:17:  `Bzero = Harch - Zpole`.
+RHFormalization/InterfaceAlgebra.lean:58:    D.h_split s (lt_of_le_of_lt E.hsigma_ge_D hs)
+RHFormalization/InterfaceAlgebra.lean:63:  have hH : H.Bzero s = H.Harch s - H.Zpole s :=
+RHFormalization/InterfaceAlgebra.lean:64:    H.h_split s (lt_of_le_of_lt E.hsigma_ge_H hs)
+RHFormalization/InterfaceAlgebra.lean:69:    _ = (H.Harch s - H.Zpole s) + D.RH s := by rw [hH]
+RHFormalization/HMeromorphicLayerChosenCshared.lean:14:  C.Bshared s = Harch s - Zpole s
+RHFormalization/HMeromorphicLayerChosenCshared.lean:42:    (h_split :
+RHFormalization/HMeromorphicLayerChosenCshared.lean:45:          C.Bshared s = HarchPackage.Harch s - Zpole s)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:62:      h_split
+RHFormalization/HMeromorphicLayerChosenCshared.lean:78:    (h_split :
+RHFormalization/HMeromorphicLayerChosenCshared.lean:81:          C.Bshared s = HarchPackage.Harch s - Zpole s)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:86:      C sigma0 h_Cshared_sigma_le h_split h_genuine_poles).overlap.Cshared
+RHFormalization/DFiniteStageOperator.lean:233:  h_split :
+RHFormalization/DFiniteStageOperator.lean:274:  X.splitFromDuhamel.h_split
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:93:        (defaultOverlapGeometryAPI D H Eb E.h_sigma_nonneg).h_overlap_open
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:94:        (defaultOverlapGeometryAPI D H Eb E.h_sigma_nonneg).h_overlap_nonempty
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:95:        (defaultOverlapGeometryAPI D H Eb E.h_sigma_nonneg).h_overlap_subset_Omega
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:38:    (h_split :
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:41:          C.Bshared s = HarchPackage.Harch s - Zpole s)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:49:            C sigma0 h_Cshared_sigma_le h_split h_genuine_poles))) :
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:54:      C sigma0 h_Cshared_sigma_le h_split h_genuine_poles
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:71:    (h_split :
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:74:          C.Bshared s = HarchPackage.Harch s - Zpole s)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:82:            C sigma0 h_Cshared_sigma_le h_split h_genuine_poles))) :
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:85:      C sigma0 h_Cshared_sigma_le h_split h_genuine_poles
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:107:    (h_split :
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:110:          Y.B.Cshared.Bshared s = HarchPackage.Harch s - Zpole s)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:118:            Y.B.Cshared sigma0 h_Cshared_sigma_le h_split h_genuine_poles))) :
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:123:      Y.B.Cshared sigma0 h_Cshared_sigma_le h_split h_genuine_poles

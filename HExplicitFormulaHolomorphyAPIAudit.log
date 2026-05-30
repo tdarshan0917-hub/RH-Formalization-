@@ -1,0 +1,56 @@
+RHFormalization.finalRHSpine_from_explicitFormulaHarch (ZF : RHFormalization.ZetaZeroFacts)
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (M : RHFormalization.ZeroMultiplicityData)
+  (E : RHFormalization.ZeroExhaustion) (Zpole : ℂ → ℂ)
+  (convergence : RHFormalization.ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+  (poleSeriesMeromorphic : RHFormalization.ZpoleMeromorphicFromSeriesAPI M E Zpole) (sigma0 : ℝ)
+  (h_Cshared_sigma_le : Y.B.Cshared.sigma0 ≤ sigma0)
+  (h_Harch_holo : RHFormalization.HolomorphicOnC (fun s => Y.B.Cshared.Bshared s + Zpole s) Ω)
+  (h_genuine_poles : ∀ (W : RHFormalization.ZeroWitness), RHFormalization.HasGenuinePole Zpole W.s0)
+  (normalFormGroupedLayer :
+    RHFormalization.HSideGroupedPoleNormalFormData
+      (RHFormalization.buildZeroPolePackageFromHMeromorphicLayer
+        (RHFormalization.buildHMeromorphicPackageLayerWithChosenCshared M E Zpole convergence poleSeriesMeromorphic
+          (RHFormalization.HarchPackageFromBsharedAddZpole Y Zpole h_Harch_holo) Y.B.Cshared sigma0 h_Cshared_sigma_le ⋯
+          h_genuine_poles))) :
+  RHFormalization.RiemannHypothesis
+RHFormalization.HolomorphicOnC (f : ℂ → ℂ) (U : Set ℂ) : Prop
+RHFormalization.MeromorphicOnC (f : ℂ → ℂ) (U : Set ℂ) : Prop
+RHFormalization.HasPrincipalPartAtC (f : ℂ → ℂ) (z coeff : ℂ) : Prop
+RHFormalization.HasGenuinePole (f : ℂ → ℂ) (z : ℂ) : Prop
+RHFormalization.PrincipalPartNormalForm (f : ℂ → ℂ) (s0 coeff : ℂ) : Prop
+RHFormalization.LocalEqAtC (f g : ℂ → ℂ) (z : ℂ) : Prop
+structure RHFormalization.HArchPackage : Type
+number of parameters: 0
+fields:
+  RHFormalization.HArchPackage.Harch : ℂ → ℂ
+  RHFormalization.HArchPackage.h_Harch_holo : RHFormalization.HolomorphicOnC self.Harch Ω
+constructor:
+  RHFormalization.HArchPackage.mk (Harch : ℂ → ℂ) (h_Harch_holo : RHFormalization.HolomorphicOnC Harch Ω) :
+    RHFormalization.HArchPackage
+structure RHFormalization.ZpoleMeromorphicFromSeriesAPI (M : RHFormalization.ZeroMultiplicityData)
+  (E : RHFormalization.ZeroExhaustion) (Zpole : ℂ → ℂ) : Prop
+number of parameters: 3
+fields:
+  RHFormalization.ZpoleMeromorphicFromSeriesAPI.h_meromorphic : RHFormalization.ZeroPoleLocalUniformConvergenceAPI M E
+        Zpole →
+      (∀ (W : RHFormalization.ZeroWitness), RHFormalization.HasGenuinePole Zpole W.s0) →
+        RHFormalization.MeromorphicOnC Zpole Ω
+constructor:
+  RHFormalization.ZpoleMeromorphicFromSeriesAPI.mk {M : RHFormalization.ZeroMultiplicityData}
+    {E : RHFormalization.ZeroExhaustion} {Zpole : ℂ → ℂ}
+    (h_meromorphic :
+      RHFormalization.ZeroPoleLocalUniformConvergenceAPI M E Zpole →
+        (∀ (W : RHFormalization.ZeroWitness), RHFormalization.HasGenuinePole Zpole W.s0) →
+          RHFormalization.MeromorphicOnC Zpole Ω) :
+    RHFormalization.ZpoleMeromorphicFromSeriesAPI M E Zpole
+structure RHFormalization.PrincipalPartNormalForm (f : ℂ → ℂ) (s0 coeff : ℂ) : Prop
+number of parameters: 3
+fields:
+  RHFormalization.PrincipalPartNormalForm.h_coeff_ne_zero : coeff ≠ 0
+  RHFormalization.PrincipalPartNormalForm.h_principalPart : RHFormalization.HasPrincipalPartAtC f s0 coeff
+  RHFormalization.PrincipalPartNormalForm.h_localModel : RHFormalization.LocalLaurentPrincipalModelC f s0 coeff
+constructor:
+  RHFormalization.PrincipalPartNormalForm.mk {f : ℂ → ℂ} {s0 coeff : ℂ} (h_coeff_ne_zero : coeff ≠ 0)
+    (h_principalPart : RHFormalization.HasPrincipalPartAtC f s0 coeff)
+    (h_localModel : RHFormalization.LocalLaurentPrincipalModelC f s0 coeff) :
+    RHFormalization.PrincipalPartNormalForm f s0 coeff

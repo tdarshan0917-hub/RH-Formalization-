@@ -1,0 +1,12 @@
+import RHFormalization.CanonicalPrimePowerPackage
+
+#check RHFormalization.PrimePowerPair
+#check RHFormalization.IsPrimePowerPair
+#check RHFormalization.PrimePowerPair.center
+#check RHFormalization.PrimePowerPair.weightReal
+#check RHFormalization.PrimePowerPair.weightC
+#check RHFormalization.finiteCanonicalPrimePowerPackage
+#check RHFormalization.CanonicalPrimePowerPackage
+#check RHFormalization.FiniteCanonicalPrimePowerFormula
+
+#print axioms RHFormalization.finiteCanonicalPrimePowerPackage

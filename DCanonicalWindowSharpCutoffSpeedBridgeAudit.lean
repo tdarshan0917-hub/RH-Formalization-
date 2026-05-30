@@ -1,0 +1,5 @@
+import RHFormalization.DCanonicalWindowSharpCutoffSpeedBridge
+
+#check RHFormalization.sharpCutoff_dist_le_invSpeed_of_formula
+
+#print axioms RHFormalization.sharpCutoff_dist_le_invSpeed_of_formula

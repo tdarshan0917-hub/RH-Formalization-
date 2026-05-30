@@ -1,0 +1,11 @@
+import RHFormalization.DOperatorExport
+import RHFormalization.HMeromorphicPackage
+import RHFormalization.AppendixESharedPackageObligations
+
+#print RHFormalization.DBcanLimitData
+#print RHFormalization.HSideOverlapPackage
+
+#check RHFormalization.DBcanLimitData.Cshared
+#check RHFormalization.DBcanLimitData.h_Bcan_matches_shared
+#check RHFormalization.HSideOverlapPackage.Cshared
+#check RHFormalization.HSideOverlapPackage.h_Bzero_matches_shared

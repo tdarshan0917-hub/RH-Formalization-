@@ -1,0 +1,11 @@
+import RHFormalization.PrimePowerWeightNormalizationLock
+
+#check RHFormalization.spikeWeight_eq_Lambda_div_sqrt
+#check RHFormalization.PrimePowerPair.weightC_eq_coe_weightReal
+#check RHFormalization.finiteCanonicalPrimePowerPackage_eq_weighted_sum
+#check RHFormalization.finiteCanonicalPrimePowerPackage_eq_weightReal_sum
+
+#print axioms RHFormalization.spikeWeight_eq_Lambda_div_sqrt
+#print axioms RHFormalization.PrimePowerPair.weightC_eq_coe_weightReal
+#print axioms RHFormalization.finiteCanonicalPrimePowerPackage_eq_weighted_sum
+#print axioms RHFormalization.finiteCanonicalPrimePowerPackage_eq_weightReal_sum

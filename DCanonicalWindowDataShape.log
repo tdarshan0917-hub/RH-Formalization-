@@ -1,0 +1,11 @@
+structure RHFormalization.DCanonicalWindowData : Type 1
+number of parameters: 0
+fields:
+  RHFormalization.DCanonicalWindowData.gbar_stage : RHFormalization.DFiniteStage → ℝ → ℂ
+  RHFormalization.DCanonicalWindowData.G_limit : ℝ → ℂ
+  RHFormalization.DCanonicalWindowData.c_w : ℂ
+constructor:
+  RHFormalization.DCanonicalWindowData.mk (gbar_stage : RHFormalization.DFiniteStage → ℝ → ℂ) (G_limit : ℝ → ℂ)
+    (c_w : ℂ) : RHFormalization.DCanonicalWindowData
+RHFormalization.DCanonicalWindowData.mk (gbar_stage : RHFormalization.DFiniteStage → ℝ → ℂ) (G_limit : ℝ → ℂ)
+  (c_w : ℂ) : RHFormalization.DCanonicalWindowData

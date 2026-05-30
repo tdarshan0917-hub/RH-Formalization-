@@ -1,0 +1,44 @@
+RHFormalization.exactMass_div_speed_tendsto_zero_of_upper_lower (exactMass massUpper speed speedLower : ℕ → ℝ)
+  (h_exactMass_nonneg : ∀ (n : ℕ), 0 ≤ exactMass n) (h_massUpper_nonneg : ∀ (n : ℕ), 0 ≤ massUpper n)
+  (h_speed_pos : ∀ (n : ℕ), 0 < speed n) (h_speedLower_pos : ∀ (n : ℕ), 0 < speedLower n)
+  (h_exactMass_le_massUpper : ∀ (n : ℕ), exactMass n ≤ massUpper n)
+  (h_speedLower_le_speed : ∀ (n : ℕ), speedLower n ≤ speed n)
+  (h_massUpper_div_speedLower_tendsto_zero :
+    Filter.Tendsto (fun n => massUpper n / speedLower n) Filter.atTop (nhds 0)) :
+  Filter.Tendsto (fun n => exactMass n / speed n) Filter.atTop (nhds 0)
+RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedEstimateData
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) : Type 1
+RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedEstimateData.toExactMassExactSpeedData
+  {X : RHFormalization.DFiniteStagePackageFromOperatorLayer}
+  (S : RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedEstimateData X) :
+  RHFormalization.CanonicalPrimePowerDWindowExactMassExactSpeedData X
+RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedEstimateData.toExhaustionData
+  {X : RHFormalization.DFiniteStagePackageFromOperatorLayer}
+  (S : RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedEstimateData X) :
+  RHFormalization.CanonicalPrimePowerExhaustionData X
+    (RHFormalization.canonicalPrimePowerPackageFromKernelTsum X.toStagePackage.sigma0 S.Kshared)
+RHFormalization.buildDBcanLimitDataFromCanonicalPrimePowerDWindowExactMassSpeedEstimate
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (S : RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedEstimateData X) :
+  RHFormalization.DBcanLimitData X.toStagePackage
+RHFormalization.canonicalPrimePowerDWindowExactMassSpeedEstimate_h_Bcan_matches_tsum
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (S : RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedEstimateData X) (s : ℂ)
+  (hs : s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0) :
+  (RHFormalization.buildDBcanLimitDataFromCanonicalPrimePowerDWindowExactMassSpeedEstimate X S).Bcan s =
+    ∑' (q : RHFormalization.PrimePowerPair), q.weightC * S.Kshared q.center s
+'RHFormalization.exactMass_div_speed_tendsto_zero_of_upper_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedEstimateData.toExactMassExactSpeedData' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedEstimateData.toExhaustionData' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.buildDBcanLimitDataFromCanonicalPrimePowerDWindowExactMassSpeedEstimate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.canonicalPrimePowerDWindowExactMassSpeedEstimate_h_Bcan_matches_tsum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

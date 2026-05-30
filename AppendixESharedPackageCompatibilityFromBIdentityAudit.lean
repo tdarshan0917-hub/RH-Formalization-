@@ -1,0 +1,9 @@
+import RHFormalization.AppendixESharedPackageCompatibilityFromBIdentity
+
+#check RHFormalization.sharedCompatibilitySigma
+#check RHFormalization.buildAppendixESharedPackageCompatibilityFromBIdentity
+#check RHFormalization.finalRHSpine_from_sharedBIdentity
+
+#print axioms RHFormalization.sharedCompatibilitySigma
+#print axioms RHFormalization.buildAppendixESharedPackageCompatibilityFromBIdentity
+#print axioms RHFormalization.finalRHSpine_from_sharedBIdentity

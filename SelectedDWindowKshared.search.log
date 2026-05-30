@@ -1,0 +1,14 @@
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:41:structure CanonicalPrimePowerDWindowExactMassExactSpeedData
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:50:  Kshared : CanonicalKernelC
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:122:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:160:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:36:abbrev DWindowExactMassExactSpeedSharedPackage
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:40:  canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:52:      (DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S) :=
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:73:      let Cshared := DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:90:    (DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:119:      let Cshared := DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:160:        (DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S).Bshared s := by
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:174:  simpa [DWindowExactMassExactSpeedSharedPackage,
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:175:         canonicalPrimePowerPackageFromKernelTsum]
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:200:      let Cshared := DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S

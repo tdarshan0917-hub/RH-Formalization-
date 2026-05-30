@@ -1,0 +1,7 @@
+import RHFormalization.FinalRHFromRCutoffEstimate
+
+#check RHFormalization.detailedConstructionFromRCutoffEstimate
+#check RHFormalization.finalRHSpine_from_RCutoffEstimateData
+
+#print axioms RHFormalization.detailedConstructionFromRCutoffEstimate
+#print axioms RHFormalization.finalRHSpine_from_RCutoffEstimateData

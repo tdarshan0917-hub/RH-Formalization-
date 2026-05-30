@@ -1,0 +1,4 @@
+import RHFormalization.LocalOrderObstruction
+
+#check RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_orderObstruction
+#print axioms RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_orderObstruction

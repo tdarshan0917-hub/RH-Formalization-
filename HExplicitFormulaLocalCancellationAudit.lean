@@ -1,0 +1,7 @@
+import RHFormalization.HExplicitFormulaLocalCancellation
+
+#check RHFormalization.localEqAtC_of_punctured_eventuallyEq_and_point_eq
+#check RHFormalization.local_holomorphic_extension_add_of_cancelled_principal_parts
+
+#print axioms RHFormalization.localEqAtC_of_punctured_eventuallyEq_and_point_eq
+#print axioms RHFormalization.local_holomorphic_extension_add_of_cancelled_principal_parts

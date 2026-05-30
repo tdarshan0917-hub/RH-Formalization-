@@ -1,0 +1,8 @@
+import RHFormalization.DResidualSectorBoundsConcrete
+
+#check RHFormalization.DResidualSectorBoundsAPI
+#check RHFormalization.buildDResidualSectorBoundsAPIFromCompactUniform
+#check RHFormalization.DResidualSectorBoundsAPI.exists_compact_uniform_bound
+
+#print axioms RHFormalization.buildDResidualSectorBoundsAPIFromCompactUniform
+#print axioms RHFormalization.DResidualSectorBoundsAPI.exists_compact_uniform_bound

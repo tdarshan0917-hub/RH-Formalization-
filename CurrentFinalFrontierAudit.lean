@@ -1,0 +1,8 @@
+import RHFormalization.AppendixESharedPackageFunctionalCompatibility
+
+#check RHFormalization.finalRHSpine_after_sharedPackageFunctionalCompatibility
+#print axioms RHFormalization.finalRHSpine_after_sharedPackageFunctionalCompatibility
+
+#print RHFormalization.AppendixESharedPackageFunctionalCompatibility
+#print RHFormalization.DDetailedConstructionWithOperatorLegality
+#print RHFormalization.HMeromorphicWithNormalFormPoles

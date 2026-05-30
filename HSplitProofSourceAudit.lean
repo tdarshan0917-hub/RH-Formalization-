@@ -1,0 +1,14 @@
+import RHFormalization.HMeromorphicWithNormalFormChosenCshared
+import RHFormalization.HMeromorphicPackage
+import RHFormalization.AnnexSpine
+import RHFormalization.InterfaceAlgebra
+
+#check RHFormalization.finalRHSpine_from_HChosenDSharedC
+
+#print RHFormalization.HArchPackage
+#print RHFormalization.HSideOverlapPackage
+#print RHFormalization.HMeromorphicPackageLayerV2
+#print RHFormalization.HMeromorphicWithNormalFormPoles
+
+-- This prints the exact target that now remains.
+#print RHFormalization.finalRHSpine_from_HChosenDSharedC

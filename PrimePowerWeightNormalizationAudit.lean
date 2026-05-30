@@ -1,0 +1,17 @@
+import RHFormalization.CanonicalPrimePowerPackage
+import RHFormalization.DOperatorExport
+
+#check RHFormalization.PrimePowerPair
+#check RHFormalization.PrimePowerPair.center
+#check RHFormalization.PrimePowerPair.weightReal
+#check RHFormalization.PrimePowerPair.weightC
+#check RHFormalization.spikeWeight
+#check RHFormalization.finiteCanonicalPrimePowerPackage
+#check RHFormalization.DPrimePowerNormalization
+
+#print RHFormalization.PrimePowerPair
+#print RHFormalization.spikeWeight
+#print RHFormalization.finiteCanonicalPrimePowerPackage
+#print RHFormalization.DPrimePowerNormalization
+
+#print axioms RHFormalization.finiteCanonicalPrimePowerPackage

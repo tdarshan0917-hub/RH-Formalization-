@@ -1,0 +1,6 @@
+import RHFormalization.DFiniteStageOperator
+
+#check RHFormalization.DFiniteStagePackageFromOperatorLayer.spikeSumData
+#check RHFormalization.DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+
+#print axioms RHFormalization.DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula

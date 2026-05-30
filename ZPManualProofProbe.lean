@@ -1,0 +1,28 @@
+import RHFormalization.OmegaMeromorphicZeroPropagationEndpoint
+import Mathlib.Analysis.Meromorphic.Order
+import Mathlib.Analysis.Analytic.IsolatedZeros
+import Mathlib.Topology.DiscreteSubset
+
+open Complex Topology Filter
+
+variable (H : ℂ → ℂ)
+variable (z₀ x : ℂ)
+
+#check RHFormalization.OmegaMeromorphicZeroPropagationAPI
+
+#check MeromorphicAt.eventually_eq_zero_or_eventually_ne_zero
+#check MeromorphicAt.frequently_zero_iff_eventuallyEq_zero
+#check MeromorphicOn.eventually_analyticAt_or_mem_compl
+#check MeromorphicOn.analyticAt_mem_codiscreteWithin
+
+#check AnalyticOnNhd.eqOn_zero_or_eventually_ne
+#check AnalyticOnNhd.eqOn_zero_of_preconnected_of_frequently_eq_zero
+#check AnalyticOnNhd.eqOn_zero_of_preconnected_of_eventuallyEq_zero
+
+#check mem_codiscreteWithin
+#check mem_codiscreteWithin_iff_forall_mem_nhdsNE
+#check Filter.self_mem_codiscreteWithin
+
+#check RHFormalization.isPreconnected_Omega_native
+#check RHFormalization.preperfect_Omega_native
+#check RHFormalization.isOpen_Omega_native

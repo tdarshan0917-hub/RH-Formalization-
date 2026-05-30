@@ -1,0 +1,10 @@
+import RHFormalization.AppendixDPrimePowerLimitComparison
+
+#check RHFormalization.complex_limit_eq_of_eventuallyEq_tendsto
+#check RHFormalization.DFiniteStageCanonicalPrimePowerFormula.limit_eq_shared
+#check RHFormalization.DPrimePowerLimitComparisonData
+#check RHFormalization.DPrimePowerLimitComparisonData.h_Bcan_eq_shared
+
+#print axioms RHFormalization.complex_limit_eq_of_eventuallyEq_tendsto
+#print axioms RHFormalization.DFiniteStageCanonicalPrimePowerFormula.limit_eq_shared
+#print axioms RHFormalization.DPrimePowerLimitComparisonData.h_Bcan_eq_shared

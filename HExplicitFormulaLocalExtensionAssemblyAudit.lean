@@ -1,0 +1,7 @@
+import RHFormalization.HExplicitFormulaLocalExtensionAssembly
+
+#check RHFormalization.Harch_local_extensions_from_witness_and_regular
+#check RHFormalization.Harch_holomorphic_from_witness_and_regular
+
+#print axioms RHFormalization.Harch_local_extensions_from_witness_and_regular
+#print axioms RHFormalization.Harch_holomorphic_from_witness_and_regular

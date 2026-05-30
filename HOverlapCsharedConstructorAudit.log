@@ -1,0 +1,67 @@
+structure RHFormalization.HMeromorphicPackageLayerV2 : Type
+number of parameters: 0
+fields:
+  RHFormalization.HMeromorphicPackageLayerV2.M : RHFormalization.ZeroMultiplicityData
+  RHFormalization.HMeromorphicPackageLayerV2.E : RHFormalization.ZeroExhaustion
+  RHFormalization.HMeromorphicPackageLayerV2.Zpole : ℂ → ℂ
+  RHFormalization.HMeromorphicPackageLayerV2.convergence : RHFormalization.ZeroPoleLocalUniformConvergenceAPI self.M
+      self.E self.Zpole
+  RHFormalization.HMeromorphicPackageLayerV2.poleSeriesMeromorphic : RHFormalization.ZpoleMeromorphicFromSeriesAPI
+      self.M self.E self.Zpole
+  RHFormalization.HMeromorphicPackageLayerV2.HarchPackage : RHFormalization.HArchPackage
+  RHFormalization.HMeromorphicPackageLayerV2.overlap : RHFormalization.HSideOverlapPackage self.Zpole
+      self.HarchPackage.Harch
+  RHFormalization.HMeromorphicPackageLayerV2.h_genuine_poles : ∀ (W : RHFormalization.ZeroWitness),
+      RHFormalization.HasGenuinePole self.Zpole W.s0
+constructor:
+  RHFormalization.HMeromorphicPackageLayerV2.mk (M : RHFormalization.ZeroMultiplicityData)
+    (E : RHFormalization.ZeroExhaustion) (Zpole : ℂ → ℂ)
+    (convergence : RHFormalization.ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+    (poleSeriesMeromorphic : RHFormalization.ZpoleMeromorphicFromSeriesAPI M E Zpole)
+    (HarchPackage : RHFormalization.HArchPackage)
+    (overlap : RHFormalization.HSideOverlapPackage Zpole HarchPackage.Harch)
+    (h_genuine_poles : ∀ (W : RHFormalization.ZeroWitness), RHFormalization.HasGenuinePole Zpole W.s0) :
+    RHFormalization.HMeromorphicPackageLayerV2
+structure RHFormalization.HMeromorphicWithNormalFormPoles : Type
+number of parameters: 0
+fields:
+  RHFormalization.HMeromorphicWithNormalFormPoles.layer : RHFormalization.HMeromorphicPackageLayerV2
+  RHFormalization.HMeromorphicWithNormalFormPoles.normalFormGroupedLayer : RHFormalization.HSideGroupedPoleNormalFormData
+      (RHFormalization.buildZeroPolePackageFromHMeromorphicLayer self.layer)
+constructor:
+  RHFormalization.HMeromorphicWithNormalFormPoles.mk (layer : RHFormalization.HMeromorphicPackageLayerV2)
+    (normalFormGroupedLayer :
+      RHFormalization.HSideGroupedPoleNormalFormData
+        (RHFormalization.buildZeroPolePackageFromHMeromorphicLayer layer)) :
+    RHFormalization.HMeromorphicWithNormalFormPoles
+RHFormalization.HMeromorphicPackageLayerV2.overlap (self : RHFormalization.HMeromorphicPackageLayerV2) :
+  RHFormalization.HSideOverlapPackage self.Zpole self.HarchPackage.Harch
+RHFormalization.HMeromorphicWithNormalFormPoles.layer (self : RHFormalization.HMeromorphicWithNormalFormPoles) :
+  RHFormalization.HMeromorphicPackageLayerV2
+structure RHFormalization.AppendixESharedPackageFunctionalCompatibility
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+  (X : RHFormalization.HMeromorphicWithNormalFormPoles) : Type
+number of parameters: 2
+fields:
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.sigma : ℝ
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.hsigma_ge_D : Y.toOperatorResolventBridge.sigma0 ≤
+      self.sigma
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.hsigma_ge_H : X.toLegacyZeroPolePackageAPI.sigma0 ≤
+      self.sigma
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.h_shared_B : ∀
+      s ∈ RHFormalization.RightHalfPlane self.sigma, Y.B.Cshared.Bshared s = X.layer.overlap.Cshared.Bshared s
+constructor:
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.mk
+    {Y : RHFormalization.DDetailedConstructionWithOperatorLegality}
+    {X : RHFormalization.HMeromorphicWithNormalFormPoles} (sigma : ℝ)
+    (hsigma_ge_D : Y.toOperatorResolventBridge.sigma0 ≤ sigma)
+    (hsigma_ge_H : X.toLegacyZeroPolePackageAPI.sigma0 ≤ sigma)
+    (h_shared_B :
+      ∀ s ∈ RHFormalization.RightHalfPlane sigma, Y.B.Cshared.Bshared s = X.layer.overlap.Cshared.Bshared s) :
+    RHFormalization.AppendixESharedPackageFunctionalCompatibility Y X
+theorem RHFormalization.finalRHSpine_from_Cshared_eq : RHFormalization.ZetaZeroFacts →
+  ∀ (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+    (X : RHFormalization.HMeromorphicWithNormalFormPoles),
+    Y.B.Cshared = X.layer.overlap.Cshared → RHFormalization.RiemannHypothesis :=
+fun ZF Y X hC =>
+  RHFormalization.finalRHSpine_from_sharedBIdentity ZF Y X (RHFormalization.sharedBIdentity_of_Cshared_eq Y X hC)

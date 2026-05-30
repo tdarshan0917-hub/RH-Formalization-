@@ -1,0 +1,52 @@
+RHFormalization.finalRHSpine_from_Cshared_eq (ZF : RHFormalization.ZetaZeroFacts)
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (X : RHFormalization.HMeromorphicWithNormalFormPoles)
+  (hC : Y.B.Cshared = X.layer.overlap.Cshared) : RHFormalization.RiemannHypothesis
+RHFormalization.finalRHSpine_after_sharedPackageCompatibility (ZF : RHFormalization.ZetaZeroFacts)
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (X : RHFormalization.HMeromorphicWithNormalFormPoles)
+  (S : RHFormalization.AppendixESharedPackageCompatibility Y X) : RHFormalization.RiemannHypothesis
+structure RHFormalization.AppendixESharedPackageCompatibility
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+  (X : RHFormalization.HMeromorphicWithNormalFormPoles) : Prop
+number of parameters: 2
+fields:
+  RHFormalization.AppendixESharedPackageCompatibility.h_Cshared_eq : X.layer.overlap.Cshared = Y.B.Cshared
+constructor:
+  RHFormalization.AppendixESharedPackageCompatibility.mk {Y : RHFormalization.DDetailedConstructionWithOperatorLegality}
+    {X : RHFormalization.HMeromorphicWithNormalFormPoles} (h_Cshared_eq : X.layer.overlap.Cshared = Y.B.Cshared) :
+    RHFormalization.AppendixESharedPackageCompatibility Y X
+theorem RHFormalization.finalRHSpine_after_sharedPackageCompatibility : RHFormalization.ZetaZeroFacts →
+  ∀ (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+    (X : RHFormalization.HMeromorphicWithNormalFormPoles),
+    RHFormalization.AppendixESharedPackageCompatibility Y X → RHFormalization.RiemannHypothesis :=
+fun ZF Y X S =>
+  RHFormalization.finalRHSpine_after_zeroPropagation ZF Y X
+    (RHFormalization.buildInterfaceBridgeFromSharedPackageCompatibility Y X S)
+theorem RHFormalization.finalRHSpine_from_Cshared_eq : RHFormalization.ZetaZeroFacts →
+  ∀ (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+    (X : RHFormalization.HMeromorphicWithNormalFormPoles),
+    Y.B.Cshared = X.layer.overlap.Cshared → RHFormalization.RiemannHypothesis :=
+fun ZF Y X hC =>
+  RHFormalization.finalRHSpine_from_sharedBIdentity ZF Y X (RHFormalization.sharedBIdentity_of_Cshared_eq Y X hC)
+def RHFormalization.buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit : (finiteOperatorLayer :
+    RHFormalization.DFiniteStagePackageFromOperatorLayer) →
+  (Cshared : RHFormalization.CanonicalPrimePowerPackage) →
+    (finiteCanonicalLimit : RHFormalization.DOperatorFiniteCanonicalLimitAtOverlapData finiteOperatorLayer Cshared) →
+      (W : RHFormalization.DCanonicalWindowData) →
+        RHFormalization.DCanonicalWindowAPI W →
+          (F : RHFormalization.DFHLimitData finiteOperatorLayer.toStagePackage) →
+            (sectors : RHFormalization.DResidualSectorData finiteOperatorLayer.toStagePackage) →
+              (sectorSplit : RHFormalization.DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors) →
+                (sectorBounds : RHFormalization.DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors) →
+                  (master : RHFormalization.DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors) →
+                    (have Bdata :=
+                        RHFormalization.buildDBcanLimitDataFromOperatorFiniteCanonicalLimit finiteOperatorLayer Cshared
+                          finiteCanonicalLimit;
+                      have Rdata := master.h_master sectorSplit sectorBounds;
+                      RHFormalization.DOverlapIdentityAPI finiteOperatorLayer.toStagePackage Bdata F Rdata) →
+                      RHFormalization.DDetailedConstructionWithOperatorLegality :=
+fun finiteOperatorLayer Cshared finiteCanonicalLimit W Wapi F sectors sectorSplit sectorBounds master overlapBuilder =>
+  let Bdata :=
+    RHFormalization.buildDBcanLimitDataFromOperatorFiniteCanonicalLimit finiteOperatorLayer Cshared
+      finiteCanonicalLimit;
+  { finiteOperatorLayer := finiteOperatorLayer, W := W, Wapi := Wapi, B := Bdata, F := F, sectors := sectors,
+    sectorSplit := sectorSplit, sectorBounds := sectorBounds, master := master, overlapBuilder := overlapBuilder }

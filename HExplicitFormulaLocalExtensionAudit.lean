@@ -1,0 +1,19 @@
+import RHFormalization.HExplicitFormulaHolomorphyLocal
+import RHFormalization.PoleNormalForm
+import RHFormalization.PoleObstruction
+import RHFormalization.PoleObstructionFromNormalForm
+import RHFormalization.HSideResidueArithmetic
+import RHFormalization.HSidePoleWitness
+
+#check RHFormalization.Harch_holomorphic_from_local_extensions
+
+#check RHFormalization.HolomorphicAtC
+#check RHFormalization.LocalEqAtC
+#check RHFormalization.HasPrincipalPartAtC
+#check RHFormalization.HasGenuinePole
+#check RHFormalization.PrincipalPartNormalForm
+
+#print RHFormalization.PoleNormalFormLayer
+#print RHFormalization.HSideGroupedPoleNormalFormData
+#print RHFormalization.HSideGroupedPoleArithmeticData
+#print RHFormalization.HSidePoleWitnessLayer

@@ -1,0 +1,312 @@
+===== DATE =====
+Wed May 27 01:43:01 EDT 2026
+
+===== FULL BUILD =====
+⚠ [8462/8550] Replayed RHFormalization.PoleGeometry
+warning: RHFormalization/PoleGeometry.lean:15:8: This simp argument is unused:
+  Complex.mul_im
+
+Hint: Omit it from the simp argument list.
+  simp [Complex.mul_re, Complex.sub_re, Complex.one_re, C̵o̵m̵p̵l̵e̵x̵.̵m̵u̵l̵_̵i̵m̵,̵ ̵Complex.sub_im, Complex.one_im]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RHFormalization/PoleGeometry.lean:20:8: This simp argument is unused:
+  Complex.mul_re
+
+Hint: Omit it from the simp argument list.
+  simp [̵C̵o̵m̵p̵l̵e̵x̵.̵m̵u̵l̵_̵r̵e̵,̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵s̵u̵b̵_̵r̵e̵,̵[̲C̲o̲m̲p̲l̲e̲x̲.̲s̲u̲b̲_̲r̲e̲,̲ Complex.one_re, Complex.mul_im, Complex.sub_im, Complex.one_im]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8463/8550] Replayed RHFormalization.OmegaTopology
+warning: RHFormalization/OmegaTopology.lean:65:4: Try this: intro h hcut
+⚠ [8468/8550] Replayed RHFormalization.RigidityBridge
+warning: RHFormalization/RigidityBridge.lean:54:6: unused variable `W`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8472/8550] Replayed RHFormalization.HMeromorphicPackage
+warning: RHFormalization/HMeromorphicPackage.lean:133:6: unused variable `K`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8475/8550] Replayed RHFormalization.DResolventTraceSummability
+warning: RHFormalization/DResolventTraceSummability.lean:39:5: unused variable `hC`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8477/8550] Replayed RHFormalization.DOperatorExport
+warning: RHFormalization/DOperatorExport.lean:329:6: unused variable `sector`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8484/8550] Replayed RHFormalization.FSideWrapperBuilders
+warning: RHFormalization/FSideWrapperBuilders.lean:80:19: unused variable `f`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/FSideWrapperBuilders.lean:80:21: unused variable `z`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8502/8550] Replayed RHFormalization.DefaultDenominatorSimpleZeroOrder
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:20: 'norm_num' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:20: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [8518/8550] Replayed RHFormalization.OmegaMeromorphicZeroPropagationLocal
+warning: RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:81:17: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:139:17: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8519/8550] Replayed RHFormalization.OmegaMeromorphicZeroPropagationClopen
+warning: RHFormalization/OmegaMeromorphicZeroPropagationClopen.lean:79:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8520/8550] Replayed RHFormalization.AppendixELocalBridgeCore
+warning: RHFormalization/AppendixELocalBridgeCore.lean:85:61: This simp argument is unused:
+  add_left_comm
+
+Hint: Omit it from the simp argument list.
+  simp [Htot, sub_eq_add_neg, add_assoc, add_comm,̵ ̵a̵d̵d̵_̵l̵e̵f̵t̵_̵c̵o̵m̵m̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8529/8550] Replayed RHFormalization.AppendixDPrimePowerLimitReduction
+warning: RHFormalization/AppendixDPrimePowerLimitReduction.lean:121:5: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8533/8550] Replayed RHFormalization.CanonicalPrimePowerKernelSeries
+warning: RHFormalization/CanonicalPrimePowerKernelSeries.lean:98:6: 'change
+  finiteCanonicalPrimePowerPackage (X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n))
+      (X.toFiniteCanonicalPrimePowerFormula.kernel (S.alpha n)) s =
+    (X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n)).sum
+      (fun q : PrimePowerPair => q.weightC * S.Kshared q.center s)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8534/8550] Replayed RHFormalization.CanonicalPrimePowerIndexExhaustion
+warning: RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:49:8: Try `simp at hq` instead of `simpa using hq`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8540/8550] Replayed RHFormalization.CanonicalPrimePowerFiniteKernelErrorSum
+warning: RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:67:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8543/8550] Replayed RHFormalization.CanonicalPrimePowerWindowMassError
+warning: RHFormalization/CanonicalPrimePowerWindowMassError.lean:87:5: unused variable `h_weightMass_nonneg`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (8550 jobs).
+ALL_EXIT_CODE=0
+
+===== RHProgressAudit =====
+RHFormalization.finalRHSpine_after_zeroPropagation (ZF : RHFormalization.ZetaZeroFacts)
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (X : RHFormalization.HMeromorphicWithNormalFormPoles)
+  (E : RHFormalization.InterfaceBridgeAPI Y.toOperatorResolventBridge X.toLegacyZeroPolePackageAPI) :
+  RHFormalization.RiemannHypothesis
+RHFormalization.finalRHSpine_after_sharedPackageFunctionalCompatibility (ZF : RHFormalization.ZetaZeroFacts)
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (X : RHFormalization.HMeromorphicWithNormalFormPoles)
+  (S : RHFormalization.AppendixESharedPackageFunctionalCompatibility Y X) : RHFormalization.RiemannHypothesis
+'RHFormalization.finalRHSpine_after_zeroPropagation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHFormalization.finalRHSpine_after_sharedPackageFunctionalCompatibility' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+RHFormalization.DFiniteStagePackageFromOperatorLayer.spikeSumData
+  (self : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  RHFormalization.DFiniteStageSpikeSumData self.traceData.toStagePackage
+RHFormalization.DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  RHFormalization.DFiniteStageCanonicalPrimePowerFormula X.toStagePackage
+RHFormalization.buildDFiniteStageCanonicalPrimePowerFormulaFromSpikeSums (P : RHFormalization.DFiniteStagePackage)
+  (S : RHFormalization.DFiniteStageSpikeSumData P) : RHFormalization.DFiniteStageCanonicalPrimePowerFormula P
+'RHFormalization.DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.buildDFiniteStageCanonicalPrimePowerFormulaFromSpikeSums' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+RHFormalization.buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit
+  (finiteOperatorLayer : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (Cshared : RHFormalization.CanonicalPrimePowerPackage)
+  (finiteCanonicalLimit : RHFormalization.DOperatorFiniteCanonicalLimitAtOverlapData finiteOperatorLayer Cshared)
+  (W : RHFormalization.DCanonicalWindowData) (Wapi : RHFormalization.DCanonicalWindowAPI W)
+  (F : RHFormalization.DFHLimitData finiteOperatorLayer.toStagePackage)
+  (sectors : RHFormalization.DResidualSectorData finiteOperatorLayer.toStagePackage)
+  (sectorSplit : RHFormalization.DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+  (sectorBounds : RHFormalization.DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+  (master : RHFormalization.DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+  (overlapBuilder :
+    have Bdata :=
+      RHFormalization.buildDBcanLimitDataFromOperatorFiniteCanonicalLimit finiteOperatorLayer Cshared
+        finiteCanonicalLimit;
+    have Rdata := master.h_master sectorSplit sectorBounds;
+    RHFormalization.DOverlapIdentityAPI finiteOperatorLayer.toStagePackage Bdata F Rdata) :
+  RHFormalization.DDetailedConstructionWithOperatorLegality
+RHFormalization.detailedConstructionFromFiniteCanonicalLimit_h_Bcan_matches_shared
+  (finiteOperatorLayer : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (Cshared : RHFormalization.CanonicalPrimePowerPackage)
+  (finiteCanonicalLimit : RHFormalization.DOperatorFiniteCanonicalLimitAtOverlapData finiteOperatorLayer Cshared)
+  (W : RHFormalization.DCanonicalWindowData) (Wapi : RHFormalization.DCanonicalWindowAPI W)
+  (F : RHFormalization.DFHLimitData finiteOperatorLayer.toStagePackage)
+  (sectors : RHFormalization.DResidualSectorData finiteOperatorLayer.toStagePackage)
+  (sectorSplit : RHFormalization.DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+  (sectorBounds : RHFormalization.DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+  (master : RHFormalization.DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+  (overlapBuilder :
+    have Bdata :=
+      RHFormalization.buildDBcanLimitDataFromOperatorFiniteCanonicalLimit finiteOperatorLayer Cshared
+        finiteCanonicalLimit;
+    have Rdata := master.h_master sectorSplit sectorBounds;
+    RHFormalization.DOverlapIdentityAPI finiteOperatorLayer.toStagePackage Bdata F Rdata)
+  (s : ℂ) (hs : s ∈ RHFormalization.RightHalfPlane finiteOperatorLayer.toStagePackage.sigma0) :
+  (RHFormalization.buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit finiteOperatorLayer Cshared
+            finiteCanonicalLimit W Wapi F sectors sectorSplit sectorBounds master overlapBuilder).B.Bcan
+      s =
+    Cshared.Bshared s
+'RHFormalization.buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.detailedConstructionFromFiniteCanonicalLimit_h_Bcan_matches_shared' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+RHFormalization.CanonicalPrimePowerExhaustionData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (C : RHFormalization.CanonicalPrimePowerPackage) : Type 1
+RHFormalization.CanonicalPrimePowerSeriesData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (C : RHFormalization.CanonicalPrimePowerPackage) : Type 1
+RHFormalization.CanonicalPrimePowerKernelSeriesData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (C : RHFormalization.CanonicalPrimePowerPackage) : Type 1
+RHFormalization.CanonicalPrimePowerIndexKernelSeriesData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (C : RHFormalization.CanonicalPrimePowerPackage) : Type 1
+RHFormalization.CanonicalPrimePowerTsumKernelSeriesData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (C : RHFormalization.CanonicalPrimePowerPackage) : Type 1
+RHFormalization.CanonicalPrimePowerConcreteTsumKernelSeriesData
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) : Type 1
+RHFormalization.CanonicalPrimePowerMajorantKernelSeriesData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  Type 1
+RHFormalization.CanonicalPrimePowerAsymptoticKernelMajorantData
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) : Type 1
+RHFormalization.CanonicalPrimePowerKernelErrorBoundData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  Type 1
+RHFormalization.CanonicalPrimePowerFiniteKernelErrorData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  Type 1
+RHFormalization.CanonicalPrimePowerSummedKernelErrorData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  Type 1
+RHFormalization.CanonicalPrimePowerActualKernelErrorData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  Type 1
+RHFormalization.CanonicalPrimePowerWindowMassErrorData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  Type 1
+RHFormalization.CanonicalPrimePowerUniformWindowErrorData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  Type 1
+RHFormalization.CanonicalPrimePowerSharedKernelMajorantData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  Type 1
+RHFormalization.CanonicalPrimePowerProductWindowErrorData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  Type 1
+RHFormalization.CanonicalPrimePowerMassGrowthWindowData (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) :
+  Type 1
+RHFormalization.weightC_window_product_tendsto_zero_of_massGrowth
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) (alpha : ℕ → RHFormalization.DFiniteStage)
+  (windowError massGrowth : ℕ → ℝ) (h_massGrowth_nonneg : ∀ (n : ℕ), 0 ≤ massGrowth n)
+  (h_weightC_mass_le_growth :
+    ∀ (n : ℕ), ∑ q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n), ‖q.weightC‖ ≤ massGrowth n)
+  (h_windowError_nonneg : ∀ (n : ℕ), 0 ≤ windowError n)
+  (h_massGrowth_window_tendsto_zero : Filter.Tendsto (fun n => massGrowth n * windowError n) Filter.atTop (nhds 0)) :
+  Filter.Tendsto (fun n => (∑ q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n), ‖q.weightC‖) * windowError n)
+    Filter.atTop (nhds 0)
+RHFormalization.buildDBcanLimitDataFromCanonicalPrimePowerMassGrowthWindow
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (S : RHFormalization.CanonicalPrimePowerMassGrowthWindowData X) : RHFormalization.DBcanLimitData X.toStagePackage
+RHFormalization.canonicalPrimePowerMassGrowthWindow_h_Bcan_matches_tsum
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (S : RHFormalization.CanonicalPrimePowerMassGrowthWindowData X) (s : ℂ)
+  (hs : s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0) :
+  (RHFormalization.buildDBcanLimitDataFromCanonicalPrimePowerMassGrowthWindow X S).Bcan s =
+    ∑' (q : RHFormalization.PrimePowerPair), q.weightC * S.Kshared q.center s
+'RHFormalization.weightC_window_product_tendsto_zero_of_massGrowth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.buildDBcanLimitDataFromCanonicalPrimePowerMassGrowthWindow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.canonicalPrimePowerMassGrowthWindow_h_Bcan_matches_tsum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+RHFormalization.actual_kernel_error_sum_tendsto_zero_of_weightC_window_product
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) (alpha : ℕ → RHFormalization.DFiniteStage)
+  (Kshared : RHFormalization.CanonicalKernelC) (s : ℂ) (windowError : ℕ → ℝ)
+  (h_windowError_nonneg : ∀ (n : ℕ), 0 ≤ windowError n)
+  (h_weightC_window_product_tendsto_zero :
+    Filter.Tendsto
+      (fun n => (∑ q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n), ‖q.weightC‖) * windowError n)
+      Filter.atTop (nhds 0))
+  (h_kernel_window_error_le :
+    ∀ (n : ℕ),
+      ∀ q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n),
+        ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s - Kshared q.center s‖ ≤ windowError n) :
+  Filter.Tendsto
+    (fun n =>
+      ∑ q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n),
+        RHFormalization.canonicalPrimePowerActualTermError X alpha Kshared s n q)
+    Filter.atTop (nhds 0)
+RHFormalization.buildDBcanLimitDataFromCanonicalPrimePowerProductWindowError
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (S : RHFormalization.CanonicalPrimePowerProductWindowErrorData X) : RHFormalization.DBcanLimitData X.toStagePackage
+RHFormalization.canonicalPrimePowerProductWindowError_h_Bcan_matches_tsum
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (S : RHFormalization.CanonicalPrimePowerProductWindowErrorData X) (s : ℂ)
+  (hs : s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0) :
+  (RHFormalization.buildDBcanLimitDataFromCanonicalPrimePowerProductWindowError X S).Bcan s =
+    ∑' (q : RHFormalization.PrimePowerPair), q.weightC * S.Kshared q.center s
+'RHFormalization.actual_kernel_error_sum_tendsto_zero_of_weightC_window_product' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.buildDBcanLimitDataFromCanonicalPrimePowerProductWindowError' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.canonicalPrimePowerProductWindowError_h_Bcan_matches_tsum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+RHFormalization.finiteCanonicalPrimePowerPackage_kernel_error_norm_le_of_termError_sum
+  (I : Finset RHFormalization.PrimePowerPair) (Kstage Kshared : RHFormalization.CanonicalKernelC) (s : ℂ)
+  (termError : RHFormalization.PrimePowerPair → ℝ) (errorBound : ℝ)
+  (hterm : ∀ q ∈ I, ‖q.weightC * Kstage q.center s - q.weightC * Kshared q.center s‖ ≤ termError q)
+  (hsum : ∑ q ∈ I, termError q ≤ errorBound) :
+  ‖RHFormalization.finiteCanonicalPrimePowerPackage I Kstage s - ∑ q ∈ I, q.weightC * Kshared q.center s‖ ≤ errorBound
+RHFormalization.complex_tendsto_zero_of_norm_bound {u : ℕ → ℂ} {errorBound : ℕ → ℝ}
+  (h_nonneg : ∀ (n : ℕ), 0 ≤ errorBound n) (h_bound : ∀ (n : ℕ), ‖u n‖ ≤ errorBound n)
+  (h_errorBound_zero : Filter.Tendsto errorBound Filter.atTop (nhds 0)) : Filter.Tendsto u Filter.atTop (nhds 0)
+RHFormalization.real_tendsto_zero_of_nonneg_bound {u b : ℕ → ℝ} (hu_nonneg : ∀ (n : ℕ), 0 ≤ u n)
+  (h_bound : ∀ (n : ℕ), u n ≤ b n) (hb_nonneg : ∀ (n : ℕ), 0 ≤ b n) (hb_zero : Filter.Tendsto b Filter.atTop (nhds 0)) :
+  Filter.Tendsto u Filter.atTop (nhds 0)
+RHFormalization.weighted_kernel_error_norm_le_weight_norm_mul (q : RHFormalization.PrimePowerPair)
+  (Kstage Kshared : RHFormalization.CanonicalKernelC) (s : ℂ) (ε : ℝ)
+  (hkernel : ‖Kstage q.center s - Kshared q.center s‖ ≤ ε) :
+  ‖q.weightC * Kstage q.center s - q.weightC * Kshared q.center s‖ ≤ ‖q.weightC‖ * ε
+RHFormalization.weighted_shared_kernel_norm_le_weight_norm_mul_majorant (q : RHFormalization.PrimePowerPair)
+  (Kshared : RHFormalization.CanonicalKernelC) (s : ℂ) (kernelMajorant : RHFormalization.PrimePowerPair → ℝ)
+  (hkernel : ‖Kshared q.center s‖ ≤ kernelMajorant q) :
+  ‖q.weightC * Kshared q.center s‖ ≤ ‖q.weightC‖ * kernelMajorant q
+'RHFormalization.finiteCanonicalPrimePowerPackage_kernel_error_norm_le_of_termError_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.complex_tendsto_zero_of_norm_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHFormalization.real_tendsto_zero_of_nonneg_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'RHFormalization.weighted_kernel_error_norm_le_weight_norm_mul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'RHFormalization.weighted_shared_kernel_norm_le_weight_norm_mul_majorant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+===== EXPLICIT AXIOM/SORRY/ADMIT SCAN =====
+
+===== REMAINING TRUE PLACEHOLDERS =====
+RHFormalization/DOperatorExport.lean:229:      True
+RHFormalization/DOperatorExport.lean:242:    ∀ Λq q : ℝ, weight q = spikeWeight Λq q → True
+RHFormalization/DOperatorExport.lean:284:    ∀ s : ℂ, s ∈ RightHalfPlane P.sigma0 → True
+RHFormalization/DOperatorExport.lean:296:    ∀ K : Set ℂ, IsCompact K → K ⊆ Ω → True
+RHFormalization/DOperatorExport.lean:333:      True
+RHFormalization/DOperatorExport.lean:366:    ∀ K : Set ℂ, IsCompact K → K ⊆ Ω → True
+RHFormalization/DOperatorExport.lean:399:    ∀ K : Set ℂ, IsCompact K → K ⊆ Ω → True

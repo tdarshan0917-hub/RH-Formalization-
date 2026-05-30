@@ -1,0 +1,9 @@
+import RHFormalization.CanonicalPrimePowerExactMassEnvelope
+
+#check RHFormalization.exactPrimePowerMassEnvelopeData
+#check RHFormalization.exactPrimePowerMassEnvelope_exactMass_le
+#check RHFormalization.exactPrimePowerMassEnvelope_nonneg
+
+#print axioms RHFormalization.exactPrimePowerMassEnvelopeData
+#print axioms RHFormalization.exactPrimePowerMassEnvelope_exactMass_le
+#print axioms RHFormalization.exactPrimePowerMassEnvelope_nonneg

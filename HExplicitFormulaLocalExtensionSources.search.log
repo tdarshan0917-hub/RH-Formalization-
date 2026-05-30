@@ -1,0 +1,143 @@
+RHFormalization/PoleNormalForm.lean:22:* a builder from `HasPrincipalPartAtC`;
+RHFormalization/PoleNormalForm.lean:26:`HasPrincipalPartAtC` and `HasGenuinePole` by Mathlib/project-local Laurent series
+RHFormalization/PoleNormalForm.lean:52:  HasPrincipalPartAtC f s0 coeff
+RHFormalization/PoleNormalForm.lean:57:structure PrincipalPartNormalForm
+RHFormalization/PoleNormalForm.lean:63:    HasPrincipalPartAtC f s0 coeff
+RHFormalization/PoleNormalForm.lean:70:This remains a hard local meromorphic-analysis API until `HasPrincipalPartAtC` is
+RHFormalization/PoleNormalForm.lean:77:      HasPrincipalPartAtC f s0 coeff →
+RHFormalization/PoleNormalForm.lean:78:      PrincipalPartNormalForm f s0 coeff
+RHFormalization/PoleNormalForm.lean:90:      PrincipalPartNormalForm f s0 coeff →
+RHFormalization/PoleNormalForm.lean:128:      HasPrincipalPartAtC H.Zpole W.s0
+RHFormalization/PoleNormalForm.lean:134:Convert normal-form grouped-pole data into the arithmetic grouped-pole data of
+RHFormalization/PoleNormalForm.lean:148:Convert normal-form grouped-pole data directly to the H-side pole witness layer.
+RHFormalization/PoleNormalForm.lean:157:## 3. H meromorphic package with normal-form grouped poles
+RHFormalization/PoleObstruction.lean:12:  `FH = Htot - Zpole`
+RHFormalization/PoleObstruction.lean:15:`Zpole` cannot have a genuine uncancelled pole at `s0`.
+RHFormalization/PoleObstruction.lean:22:* local removable-singularity / pole-obstruction lemma.
+RHFormalization/PoleObstruction.lean:52:      LocalEqAtC D.FH (fun s => Htot D H s - H.Zpole s) W.s0
+RHFormalization/PoleObstruction.lean:69:      HolomorphicAtC f z
+RHFormalization/PoleObstruction.lean:81:    ∀ W : ZeroWitness, HolomorphicAtC D.FH W.s0
+RHFormalization/PoleObstruction.lean:83:    ∀ W : ZeroWitness, HolomorphicAtC (Htot D H) W.s0
+RHFormalization/PoleObstruction.lean:105:"uncancelled pole" or "grouped residue non-cancellation" condition.
+RHFormalization/PoleObstruction.lean:112:  h_principalPart : HasPrincipalPartAtC f s0 principalCoeff
+RHFormalization/PoleObstruction.lean:124:      HasGenuinePole H.Zpole W.s0 →
+RHFormalization/PoleObstruction.lean:125:      GenuinePoleNormalForm H.Zpole W.s0
+RHFormalization/PoleObstruction.lean:136:If `FH = Htot - Zpole` locally at `W.s0`, and both `FH` and `Htot`
+RHFormalization/PoleObstruction.lean:137:are holomorphic at `W.s0`, then `Zpole` cannot have a genuine pole at `W.s0`.
+RHFormalization/PoleObstruction.lean:139:This is the removable-singularity / no-cancellation lemma that will later be
+RHFormalization/PoleObstruction.lean:146:  h_no_pole_from_local_identity :
+RHFormalization/PoleObstruction.lean:148:      LocalEqAtC D.FH (fun s => Htot D H s - H.Zpole s) W.s0 →
+RHFormalization/PoleObstruction.lean:149:      HolomorphicAtC D.FH W.s0 →
+RHFormalization/PoleObstruction.lean:150:      HolomorphicAtC (Htot D H) W.s0 →
+RHFormalization/PoleObstruction.lean:151:      ¬ HasGenuinePole H.Zpole W.s0
+RHFormalization/PoleObstruction.lean:167:  { h_no_genuine_pole := fun G S W =>
+RHFormalization/PoleObstruction.lean:168:      O.h_no_pole_from_local_identity W
+RHFormalization/PoleObstruction.lean:174:Convenience assembly of the full no-pole rigidity layer from:
+RHFormalization/PoleObstructionFromNormalForm.lean:10:* `FH = Htot - Zpole` locally near a witness point `s0`;
+RHFormalization/PoleObstructionFromNormalForm.lean:13:* `Zpole` has a nonzero principal-part normal form at `s0`.
+RHFormalization/PoleObstructionFromNormalForm.lean:47:`FH = Htot - Zpole`,
+RHFormalization/PoleObstructionFromNormalForm.lean:49:normal form for `Zpole`, contradiction follows.
+RHFormalization/PoleObstructionFromNormalForm.lean:61:      LocalEqAtC D.FH (fun s => Htot D H s - H.Zpole s) W.s0 →
+RHFormalization/PoleObstructionFromNormalForm.lean:62:      HolomorphicAtC D.FH W.s0 →
+RHFormalization/PoleObstructionFromNormalForm.lean:63:      HolomorphicAtC (Htot D H) W.s0 →
+RHFormalization/PoleObstructionFromNormalForm.lean:64:      PrincipalPartNormalForm H.Zpole W.s0 coeff →
+RHFormalization/PoleObstructionFromNormalForm.lean:72:Convert a `GenuinePoleNormalForm` into the stronger `PrincipalPartNormalForm`,
+RHFormalization/PoleObstructionFromNormalForm.lean:82:    PrincipalPartNormalForm f s0 G.principalCoeff :=
+RHFormalization/PoleObstructionFromNormalForm.lean:104:  { h_no_pole_from_local_identity := fun W h_local h_FH_at h_Htot_at h_pole =>
+RHFormalization/PoleObstructionFromNormalForm.lean:105:      let G : GenuinePoleNormalForm H.Zpole W.s0 :=
+RHFormalization/PoleObstructionFromNormalForm.lean:106:        N.h_normal_form W h_pole
+RHFormalization/PoleObstructionFromNormalForm.lean:107:      let PN : PrincipalPartNormalForm H.Zpole W.s0 G.principalCoeff :=
+RHFormalization/PoleObstructionFromNormalForm.lean:140:  X.normalFormGroupedLayer.poleNormalForm
+RHFormalization/HSideOverlapChosenCshared.lean:13:  C.Bshared s = Harch s - Zpole s
+RHFormalization/HSideOverlapChosenCshared.lean:29:`Bzero := C.Bshared`.
+RHFormalization/HSideOverlapChosenCshared.lean:34:    (Zpole Harch : ℂ → ℂ)
+RHFormalization/HSideOverlapChosenCshared.lean:41:          C.Bshared s = Harch s - Zpole s) :
+RHFormalization/HSideOverlapChosenCshared.lean:42:    HSideOverlapPackage Zpole Harch :=
+RHFormalization/HSideOverlapChosenCshared.lean:43:{ Bzero := C.Bshared
+RHFormalization/HSideOverlapChosenCshared.lean:56:    (Zpole Harch : ℂ → ℂ)
+RHFormalization/HSideOverlapChosenCshared.lean:63:          C.Bshared s = Harch s - Zpole s) :
+RHFormalization/HSideOverlapChosenCshared.lean:65:      Zpole Harch C sigma0 h_Cshared_sigma_le h_split).Cshared = C := by
+RHFormalization/HSidePoleWitness.lean:15:* each nontrivial zero `ρ` contributes a pole at `s = -ρ(1-ρ)`;
+RHFormalization/HSidePoleWitness.lean:18:* hence the principal coefficient is nonzero and cannot cancel.
+RHFormalization/HSidePoleWitness.lean:22:It does not yet construct the full `Zpole` series or prove meromorphic convergence.
+RHFormalization/HSidePoleWitness.lean:85:This is the precise formal version of "positive multiplicities cannot cancel."
+RHFormalization/HSidePoleWitness.lean:125:H-side grouped pole data for `Zpole`.
+RHFormalization/HSidePoleWitness.lean:142:      HasPrincipalPartAtC H.Zpole W.s0
+RHFormalization/HSidePoleWitness.lean:146:Converting a nonzero principal part into a genuine pole.
+RHFormalization/HSidePoleWitness.lean:155:      HasPrincipalPartAtC f s0 c →
+RHFormalization/HSidePoleWitness.lean:162:`∀ W, HasGenuinePole H.Zpole W.s0`.
+RHFormalization/HSidePoleWitness.lean:170:      Q.h_genuine H.Zpole W.s0
+RHFormalization/HSidePoleWitness.lean:176:Build the normal-form API used by the pole-obstruction layer.
+RHFormalization/HSidePoleWitness.lean:198:* the normal-form package consumed by future local pole-obstruction discharge.
+RHFormalization/HSideResidueArithmetic.lean:12:cancel to zero.
+RHFormalization/HSideResidueArithmetic.lean:122:      HasPrincipalPartAtC H.Zpole W.s0
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:25:on Ω that agree on a punctured neighbourhood of one point of Ω agree
+RHFormalization/OmegaMeromorphicZeroPropagationEndpoint.lean:10:If a meromorphic function on Ω is zero on a punctured neighbourhood of one point
+RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:19:If `H` is zero on a punctured neighbourhood of `z₀`, then every nearby punctured
+RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:20:point `z` also has a punctured neighbourhood on which `H` is zero.
+RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:62:The set of points with a punctured zero-germ is open.
+RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:84:If `H` is eventually nonzero on a punctured neighbourhood of `z₀`, then every
+RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:85:nearby punctured point `z` also has a punctured neighbourhood on which `H` is
+RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:120:The set of points with a punctured nonzero-germ is open.
+RHFormalization/OmegaMeromorphicZeroPropagationProof.lean:15:If `H` is meromorphic on `Ω` and is zero on one punctured neighbourhood, then
+RHFormalization/OmegaMeromorphicZeroPropagationProof.lean:32:A meromorphic function is either eventually zero on the punctured neighbourhood,
+RHFormalization/OmegaMeromorphicZeroPropagationProof.lean:45:If a function is eventually zero on the punctured neighbourhood of every point
+RHFormalization/OmegaNormalFormLocalPropagationEndpoint.lean:14:  ⇒ punctured-neighbourhood equality at any point `z₀ ∈ V`.
+RHFormalization/OmegaNormalFormLocalPropagationEndpoint.lean:18:punctured equality of normal forms at one point of Ω
+RHFormalization/OmegaNormalFormLocalPropagationEndpoint.lean:47:codiscrete equality on the open overlap gives punctured equality at a chosen
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:6:Ω-specific punctured meromorphic identity endpoint.
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:8:The previous endpoint used a generic punctured identity principle over arbitrary
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:27:Ω-specific punctured meromorphic identity principle.
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:30:agree on the nonempty overlap give punctured-neighbourhood equality at any point
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:34:  h_punctured_identity :
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:46:Endpoint using the Ω-specific punctured identity principle.
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:49:`mainTheorem_from_default_connectedOmega_meromorphicAlgebra_puncturedIdentity`,
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:83:        (fun s => Htot D H s - H.Zpole s)
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:86:      OIP.h_punctured_identity
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:88:        (fun s => Htot D H s - H.Zpole s)
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:100:      HolomorphicAtC D.FH W.s0 :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:107:      HolomorphicAtC (Htot D H) W.s0 :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:114:      HasGenuinePole H.Zpole W.s0 := by
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:116:      HasGenuinePole X.toLegacyZeroPolePackageAPI.Zpole W.s0
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:121:      GenuinePoleNormalForm H.Zpole W.s0 :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:125:      PrincipalPartNormalForm H.Zpole W.s0 G.principalCoeff :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:131:      meromorphicOrderAt H.Zpole W.s0 < 0 :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:133:      H.Zpole
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:139:    local_order_obstruction_from_punctured_holomorphic_balance
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:142:      H.Zpole
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:10:Mathlib's meromorphic identity infrastructure is naturally codiscrete/punctured,
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:11:not pointwise-on-all-poles.  This file replaces the Ω-specific punctured identity
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:17:Mathlib then supplies the conversion from codiscrete equality to punctured-neighborhood
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:29:codiscrete-to-punctured meromorphic equality theorem.
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:38:This is weaker and more Mathlib-native than directly asking for punctured equality.
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:54:Build the Ω-specific punctured identity package from a codiscrete identity package
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:61:  { h_punctured_identity := fun f g V z hVopen hVnonempty hVsubset hz hf hg hEq =>
+RHFormalization/PrincipalPartCoboundedModel.lean:9:Instead of assuming coboundedness for every bundled `PrincipalPartNormalForm`, we reduce it
+RHFormalization/PrincipalPartCoboundedModel.lean:26:a nonzero simple-pole term plus a holomorphic function tends to infinity/cobounded
+RHFormalization/PrincipalPartCoboundedModel.lean:27:on the punctured neighbourhood.
+RHFormalization/PrincipalPartCoboundedModel.lean:33:      HolomorphicAtC h s0 →
+RHFormalization/PrincipalPartCoboundedSplit.lean:15:1. the pure nonzero simple pole is cobounded on the punctured neighbourhood;
+RHFormalization/PrincipalPartCoboundedSplit.lean:26:A nonzero simple pole tends to infinity/cobounded on the punctured neighbourhood.
+RHFormalization/PrincipalPartMeromorphic.lean:33:    (hh : HolomorphicAtC h z) :
+RHFormalization/PrincipalPartMeromorphic.lean:77:    (hpp : HasPrincipalPartAtC f z coeff) :
+RHFormalization/PrincipalPartMeromorphic.lean:95:A principal-part normal form gives meromorphicity at the pole point.
+RHFormalization/PrincipalPartMeromorphic.lean:100:    (hpp : PrincipalPartNormalForm f z coeff) :
+RHFormalization/PrincipalPartOrderFromCobounded.lean:13:2. the function tends to infinity/cobounded on the punctured neighbourhood.
+RHFormalization/PrincipalPartOrderFromCobounded.lean:27:A principal-part normal form gives meromorphicity at the pole point.
+RHFormalization/PrincipalPartOrderFromCobounded.lean:35:      PrincipalPartNormalForm f s0 coeff →
+RHFormalization/PrincipalPartOrderFromCobounded.lean:40:punctured neighbourhood of the pole point.
+RHFormalization/PrincipalPartOrderFromCobounded.lean:47:      PrincipalPartNormalForm f s0 coeff →
+RHFormalization/AnalyticWrappers.lean:20:* `HolomorphicAtC := AnalyticAt ℂ`
+RHFormalization/AnalyticWrappers.lean:21:* `LocalEqAtC := EventuallyEq at the neighbourhood filter`
+RHFormalization/AnalyticWrappers.lean:27:* `HasPrincipalPartAtC`
+RHFormalization/AnalyticWrappers.lean:47:abbrev HolomorphicAtC (f : ℂ → ℂ) (z : ℂ) : Prop :=
+RHFormalization/AnalyticWrappers.lean:51:abbrev LocalEqAtC (f g : ℂ → ℂ) (z : ℂ) : Prop :=
+RHFormalization/AnalyticWrappers.lean:72:    HolomorphicAtC f z := by
+RHFormalization/AnalyticWrappers.lean:86:    LocalEqAtC f g z := by
+RHFormalization/AnalyticWrappers.lean:98:    (hf : HolomorphicAtC f z)
+RHFormalization/AnalyticWrappers.lean:99:    (hfg : LocalEqAtC f g z) :
+RHFormalization/AnalyticWrappers.lean:100:    HolomorphicAtC g z := by
+RHFormalization/AnalyticWrappers.lean:131:abbrev HasPrincipalPartAtC
+RHFormalization/AnalyticWrappers.lean:135:    HolomorphicAtC h z ∧
+RHFormalization/AnalyticWrappers.lean:139:Project wrapper for a genuine uncancelled pole.
+RHFormalization/AnalyticWrappers.lean:147:  ∃ coeff : ℂ, coeff ≠ 0 ∧ HasPrincipalPartAtC f z coeff

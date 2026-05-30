@@ -1,0 +1,7 @@
+import RHFormalization.OmegaMeromorphicZeroPropagationProof
+
+#check RHFormalization.meromorphic_zero_or_nonzero_germ_at
+#check RHFormalization.eventuallyEq_zero_codiscreteWithin_of_forall_nhdsNE
+
+#print axioms RHFormalization.meromorphic_zero_or_nonzero_germ_at
+#print axioms RHFormalization.eventuallyEq_zero_codiscreteWithin_of_forall_nhdsNE

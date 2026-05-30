@@ -1,0 +1,4 @@
+import RHFormalization.PrincipalPartCoboundedSplit
+
+#check RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_splitCobounded
+#print axioms RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_splitCobounded

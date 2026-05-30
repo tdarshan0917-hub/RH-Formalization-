@@ -1,0 +1,8 @@
+import RHFormalization.CanonicalPrimePowerDWindowRateEstimate
+
+#check RHFormalization.primePower_kernel_window_error_le_of_DWindow_rate
+#check RHFormalization.PrimePowerKernelWindowRateBridgeData
+#check RHFormalization.PrimePowerKernelWindowRateBridgeData.kernel_window_error_le
+
+#print axioms RHFormalization.primePower_kernel_window_error_le_of_DWindow_rate
+#print axioms RHFormalization.PrimePowerKernelWindowRateBridgeData.kernel_window_error_le

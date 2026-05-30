@@ -1,0 +1,15 @@
+import RHFormalization.DMasterResidualConcrete
+
+#check RHFormalization.DMasterResidualData
+#check RHFormalization.DMasterResidualData.alpha
+#check RHFormalization.DMasterResidualData.h_R_stage_to_RH
+#check RHFormalization.DCanRemAPI.h_can_rem_convergence
+#check RHFormalization.buildDMasterResidualDataFromCompactUniform
+#check RHFormalization.buildDCanRemAPIFromMasterResidual
+#check RHFormalization.DMasterResidualData.compact_uniform_residual_convergence
+#check RHFormalization.DCanRemAPI.compact_uniform_can_rem_convergence
+
+#print axioms RHFormalization.buildDMasterResidualDataFromCompactUniform
+#print axioms RHFormalization.buildDCanRemAPIFromMasterResidual
+#print axioms RHFormalization.DMasterResidualData.compact_uniform_residual_convergence
+#print axioms RHFormalization.DCanRemAPI.compact_uniform_can_rem_convergence

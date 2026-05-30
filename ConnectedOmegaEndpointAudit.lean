@@ -1,0 +1,4 @@
+import RHFormalization.ConnectedOmegaEndpoint
+
+#check RHFormalization.mainTheorem_from_default_connectedOmega
+#print axioms RHFormalization.mainTheorem_from_default_connectedOmega

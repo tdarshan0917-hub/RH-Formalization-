@@ -1,0 +1,11 @@
+import RHFormalization.DCanonicalWindowSharpCutoffConcrete
+
+#check RHFormalization.sharpCutoffLinearOverlapFactor
+#check RHFormalization.sharpCutoffDCanonicalWindowData
+#check RHFormalization.sharpCutoffDCanonicalWindowData_formula
+#check RHFormalization.sharpCutoffDCanonicalWindowData_formula_expanded
+
+#print axioms RHFormalization.sharpCutoffLinearOverlapFactor
+#print axioms RHFormalization.sharpCutoffDCanonicalWindowData
+#print axioms RHFormalization.sharpCutoffDCanonicalWindowData_formula
+#print axioms RHFormalization.sharpCutoffDCanonicalWindowData_formula_expanded

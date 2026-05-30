@@ -1,0 +1,24 @@
+import Mathlib.Analysis.Meromorphic.FactorizedRational
+import Mathlib.Analysis.Meromorphic.Divisor
+import Mathlib.Analysis.Meromorphic.NormalForm
+import Mathlib.Analysis.Meromorphic.Basic
+import RHFormalization.DefaultDenominatorSimpleZeroOrder
+
+open Complex Topology Filter
+
+#check toMeromorphicNFOn_eqOn_codiscrete
+#check MeromorphicOn.toMeromorphicNFOn_eq_self_on_nhdsNE
+#check MeromorphicOn.congr_codiscreteWithin_of_eqOn_compl
+
+-- Names suggested by Mathlib source grep:
+#check MeromorphicOn.eventuallyEq_nhdsNE_of_eventuallyEq_codiscreteWithin
+#check eventuallyEq_nhdsNE_of_eventuallyEq_codiscreteWithin
+#check MeromorphicAt.eventuallyEq_nhdsNE_of_eventuallyEq_codiscreteWithin_preperfect
+#check eventuallyEq_nhdsNE_of_eventuallyEq_codiscreteWithin_preperfect
+
+#check Filter.codiscreteWithin
+#check Filter.self_mem_codiscreteWithin
+#check mem_codiscreteWithin
+#check nhdsWithin
+#check eventually_nhdsWithin_iff
+#check Filter.EventuallyEq

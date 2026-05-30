@@ -1,0 +1,4 @@
+import RHFormalization.DefaultDenominatorSimpleZeroOrder
+
+#check RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_localPoleClosed
+#print axioms RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_localPoleClosed

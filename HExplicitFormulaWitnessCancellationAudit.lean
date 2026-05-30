@@ -1,0 +1,5 @@
+import RHFormalization.HExplicitFormulaWitnessCancellation
+
+#check RHFormalization.Harch_local_extension_at_witness_from_cancelled_principal_parts
+
+#print axioms RHFormalization.Harch_local_extension_at_witness_from_cancelled_principal_parts

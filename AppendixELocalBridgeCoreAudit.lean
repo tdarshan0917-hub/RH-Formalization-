@@ -1,0 +1,4 @@
+import RHFormalization.AppendixELocalBridgeCore
+
+#check RHFormalization.buildInterfaceBridgeFromLocalComparison
+#print axioms RHFormalization.buildInterfaceBridgeFromLocalComparison

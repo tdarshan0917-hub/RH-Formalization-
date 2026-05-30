@@ -1,0 +1,43 @@
+RHFormalization.canonicalPrimePowerPackageFromKernelTsum_principalPart_at_witness (sigma0 : ℝ)
+  (Kshared : RHFormalization.CanonicalKernelC) (W : RHFormalization.ZeroWitness) (c : ℂ)
+  (hpp :
+    RHFormalization.HasPrincipalPartAtC
+      (fun s => ∑' (q : RHFormalization.PrimePowerPair), q.weightC * Kshared q.center s) W.s0 c) :
+  RHFormalization.HasPrincipalPartAtC (RHFormalization.canonicalPrimePowerPackageFromKernelTsum sigma0 Kshared).Bshared
+    W.s0 c
+RHFormalization.canonicalPrimePowerPackageFromKernelTsum_oppositePrincipalPart_at_witness (sigma0 : ℝ)
+  (Kshared : RHFormalization.CanonicalKernelC) (M : RHFormalization.ZeroMultiplicityData)
+  (groupedClass : (W : RHFormalization.ZeroWitness) → RHFormalization.GroupedPoleClass M W)
+  (h_tsum_principalPart :
+    ∀ (W : RHFormalization.ZeroWitness),
+      RHFormalization.HasPrincipalPartAtC
+        (fun s => ∑' (q : RHFormalization.PrimePowerPair), q.weightC * Kshared q.center s) W.s0
+        (-RHFormalization.groupedResidueCoeff M (groupedClass W)))
+  (W : RHFormalization.ZeroWitness) :
+  RHFormalization.HasPrincipalPartAtC (RHFormalization.canonicalPrimePowerPackageFromKernelTsum sigma0 Kshared).Bshared
+    W.s0 (-RHFormalization.groupedResidueCoeff M (groupedClass W))
+RHFormalization.BsharedOppositePrincipalPartData_of_tsum_principalParts
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (sigma0 : ℝ)
+  (Kshared : RHFormalization.CanonicalKernelC) (M : RHFormalization.ZeroMultiplicityData)
+  (groupedClass : (W : RHFormalization.ZeroWitness) → RHFormalization.GroupedPoleClass M W)
+  (hC : Y.B.Cshared = RHFormalization.canonicalPrimePowerPackageFromKernelTsum sigma0 Kshared)
+  (h_tsum_principalPart :
+    ∀ (W : RHFormalization.ZeroWitness),
+      RHFormalization.HasPrincipalPartAtC
+        (fun s => ∑' (q : RHFormalization.PrimePowerPair), q.weightC * Kshared q.center s) W.s0
+        (-RHFormalization.groupedResidueCoeff M (groupedClass W))) :
+  RHFormalization.BsharedOppositePrincipalPartData Y M
+RHFormalization.HasPrincipalPartAtC (f : ℂ → ℂ) (z coeff : ℂ) : Prop
+RHFormalization.groupedResidueCoeff (M : RHFormalization.ZeroMultiplicityData) {W : RHFormalization.ZeroWitness}
+  (C : RHFormalization.GroupedPoleClass M W) : ℂ
+RHFormalization.CanonicalKernelC : Type
+RHFormalization.PrimePowerPair.weightC (q : RHFormalization.PrimePowerPair) : ℂ
+RHFormalization.PrimePowerPair.center (q : RHFormalization.PrimePowerPair) : ℝ
+@[reducible] def RHFormalization.CanonicalKernelC : Type :=
+ℝ → ℂ → ℂ
+def RHFormalization.canonicalPrimePowerPackageFromKernelTsum : ℝ →
+  RHFormalization.CanonicalKernelC → RHFormalization.CanonicalPrimePowerPackage :=
+fun sigma0 Kshared =>
+  { Bshared := fun s => ∑' (q : RHFormalization.PrimePowerPair), q.weightC * Kshared q.center s, sigma0 := sigma0 }
+@[reducible] def RHFormalization.HasPrincipalPartAtC : (ℂ → ℂ) → ℂ → ℂ → Prop :=
+fun f z coeff => ∃ h, RHFormalization.HolomorphicAtC h z ∧ ∀ᶠ (w : ℂ) in nhds z, w ≠ z → f w = coeff / (w - z) + h w

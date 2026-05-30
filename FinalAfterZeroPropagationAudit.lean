@@ -1,0 +1,4 @@
+import RHFormalization.OmegaMeromorphicZeroPropagationClopen
+
+#check RHFormalization.finalRHSpine_after_zeroPropagation
+#print axioms RHFormalization.finalRHSpine_after_zeroPropagation

@@ -1,0 +1,82 @@
+RHFormalization.finalRHSpine_after_sharedPackageFunctionalCompatibility (ZF : RHFormalization.ZetaZeroFacts)
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (X : RHFormalization.HMeromorphicWithNormalFormPoles)
+  (S : RHFormalization.AppendixESharedPackageFunctionalCompatibility Y X) : RHFormalization.RiemannHypothesis
+theorem RHFormalization.finalRHSpine_after_sharedPackageFunctionalCompatibility : RHFormalization.ZetaZeroFacts →
+  ∀ (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+    (X : RHFormalization.HMeromorphicWithNormalFormPoles)
+    (S : RHFormalization.AppendixESharedPackageFunctionalCompatibility Y X), RHFormalization.RiemannHypothesis :=
+fun ZF Y X S =>
+  RHFormalization.finalRHSpine_after_zeroPropagation ZF Y X
+    (RHFormalization.buildInterfaceBridgeFromSharedPackageFunctionalCompatibility Y X S)
+RHFormalization.AppendixESharedPackageFunctionalCompatibility
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+  (X : RHFormalization.HMeromorphicWithNormalFormPoles) : Type
+structure RHFormalization.AppendixESharedPackageFunctionalCompatibility
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+  (X : RHFormalization.HMeromorphicWithNormalFormPoles) : Type
+number of parameters: 2
+fields:
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.sigma : ℝ
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.hsigma_ge_D : Y.toOperatorResolventBridge.sigma0 ≤
+      self.sigma
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.hsigma_ge_H : X.toLegacyZeroPolePackageAPI.sigma0 ≤
+      self.sigma
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.h_shared_B : ∀
+      s ∈ RHFormalization.RightHalfPlane self.sigma, Y.B.Cshared.Bshared s = X.layer.overlap.Cshared.Bshared s
+constructor:
+  RHFormalization.AppendixESharedPackageFunctionalCompatibility.mk
+    {Y : RHFormalization.DDetailedConstructionWithOperatorLegality}
+    {X : RHFormalization.HMeromorphicWithNormalFormPoles} (sigma : ℝ)
+    (hsigma_ge_D : Y.toOperatorResolventBridge.sigma0 ≤ sigma)
+    (hsigma_ge_H : X.toLegacyZeroPolePackageAPI.sigma0 ≤ sigma)
+    (h_shared_B :
+      ∀ s ∈ RHFormalization.RightHalfPlane sigma, Y.B.Cshared.Bshared s = X.layer.overlap.Cshared.Bshared s) :
+    RHFormalization.AppendixESharedPackageFunctionalCompatibility Y X
+RHFormalization.DDetailedConstructionWithOperatorLegality : Type 1
+structure RHFormalization.DDetailedConstructionWithOperatorLegality : Type 1
+number of parameters: 0
+fields:
+  RHFormalization.DDetailedConstructionWithOperatorLegality.finiteOperatorLayer : RHFormalization.DFiniteStagePackageFromOperatorLayer
+  RHFormalization.DDetailedConstructionWithOperatorLegality.W : RHFormalization.DCanonicalWindowData
+  RHFormalization.DDetailedConstructionWithOperatorLegality.Wapi : RHFormalization.DCanonicalWindowAPI self.W
+  RHFormalization.DDetailedConstructionWithOperatorLegality.B : RHFormalization.DBcanLimitData
+      self.finiteOperatorLayer.toStagePackage
+  RHFormalization.DDetailedConstructionWithOperatorLegality.F : RHFormalization.DFHLimitData
+      self.finiteOperatorLayer.toStagePackage
+  RHFormalization.DDetailedConstructionWithOperatorLegality.sectors : RHFormalization.DResidualSectorData
+      self.finiteOperatorLayer.toStagePackage
+  RHFormalization.DDetailedConstructionWithOperatorLegality.sectorSplit : RHFormalization.DResidualSectorSplitAPI
+      self.finiteOperatorLayer.toStagePackage self.sectors
+  RHFormalization.DDetailedConstructionWithOperatorLegality.sectorBounds : RHFormalization.DResidualSectorBoundsAPI
+      self.finiteOperatorLayer.toStagePackage self.sectors
+  RHFormalization.DDetailedConstructionWithOperatorLegality.master : RHFormalization.DMasterResidualAPI
+      self.finiteOperatorLayer.toStagePackage self.sectors
+  RHFormalization.DDetailedConstructionWithOperatorLegality.overlapBuilder : let Rdata := self.master.h_master ⋯ ⋯;
+    RHFormalization.DOverlapIdentityAPI self.finiteOperatorLayer.toStagePackage self.B self.F Rdata
+constructor:
+  RHFormalization.DDetailedConstructionWithOperatorLegality.mk
+    (finiteOperatorLayer : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+    (W : RHFormalization.DCanonicalWindowData) (Wapi : RHFormalization.DCanonicalWindowAPI W)
+    (B : RHFormalization.DBcanLimitData finiteOperatorLayer.toStagePackage)
+    (F : RHFormalization.DFHLimitData finiteOperatorLayer.toStagePackage)
+    (sectors : RHFormalization.DResidualSectorData finiteOperatorLayer.toStagePackage)
+    (sectorSplit : RHFormalization.DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+    (sectorBounds : RHFormalization.DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+    (master : RHFormalization.DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+    (overlapBuilder :
+      let Rdata := master.h_master sectorSplit sectorBounds;
+      RHFormalization.DOverlapIdentityAPI finiteOperatorLayer.toStagePackage B F Rdata) :
+    RHFormalization.DDetailedConstructionWithOperatorLegality
+RHFormalization.HMeromorphicWithNormalFormPoles : Type
+structure RHFormalization.HMeromorphicWithNormalFormPoles : Type
+number of parameters: 0
+fields:
+  RHFormalization.HMeromorphicWithNormalFormPoles.layer : RHFormalization.HMeromorphicPackageLayerV2
+  RHFormalization.HMeromorphicWithNormalFormPoles.normalFormGroupedLayer : RHFormalization.HSideGroupedPoleNormalFormData
+      (RHFormalization.buildZeroPolePackageFromHMeromorphicLayer self.layer)
+constructor:
+  RHFormalization.HMeromorphicWithNormalFormPoles.mk (layer : RHFormalization.HMeromorphicPackageLayerV2)
+    (normalFormGroupedLayer :
+      RHFormalization.HSideGroupedPoleNormalFormData
+        (RHFormalization.buildZeroPolePackageFromHMeromorphicLayer layer)) :
+    RHFormalization.HMeromorphicWithNormalFormPoles

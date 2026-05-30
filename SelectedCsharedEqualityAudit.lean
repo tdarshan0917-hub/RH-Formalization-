@@ -1,0 +1,14 @@
+import RHFormalization.AppendixESharedPackageCompatibility
+import RHFormalization.AppendixESharedPackageFunctionalCompatibility
+import RHFormalization.FinalRHFromRCutoffEstimate
+import RHFormalization.FinalRHFromDWindowExactMassExactSpeed
+
+#check RHFormalization.finalRHSpine_from_Cshared_eq
+
+#print RHFormalization.AppendixESharedPackageCompatibility
+#print RHFormalization.finalRHSpine_after_sharedPackageCompatibility
+#print RHFormalization.finalRHSpine_from_Cshared_eq
+
+#check RHFormalization.DDetailedConstructionWithOperatorLegality.B
+#check RHFormalization.HMeromorphicWithNormalFormPoles.layer
+#check RHFormalization.HMeromorphicPackageLayerV2.overlap

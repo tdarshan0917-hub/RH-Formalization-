@@ -1,0 +1,91 @@
+RHFormalization.finalRHSpine_from_HChosenDSharedC (ZF : RHFormalization.ZetaZeroFacts)
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (M : RHFormalization.ZeroMultiplicityData)
+  (E : RHFormalization.ZeroExhaustion) (Zpole : ℂ → ℂ)
+  (convergence : RHFormalization.ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+  (poleSeriesMeromorphic : RHFormalization.ZpoleMeromorphicFromSeriesAPI M E Zpole)
+  (HarchPackage : RHFormalization.HArchPackage) (sigma0 : ℝ) (h_Cshared_sigma_le : Y.B.Cshared.sigma0 ≤ sigma0)
+  (h_split : ∀ s ∈ RHFormalization.RightHalfPlane sigma0, Y.B.Cshared.Bshared s = HarchPackage.Harch s - Zpole s)
+  (h_genuine_poles : ∀ (W : RHFormalization.ZeroWitness), RHFormalization.HasGenuinePole Zpole W.s0)
+  (normalFormGroupedLayer :
+    RHFormalization.HSideGroupedPoleNormalFormData
+      (RHFormalization.buildZeroPolePackageFromHMeromorphicLayer
+        (RHFormalization.buildHMeromorphicPackageLayerWithChosenCshared M E Zpole convergence poleSeriesMeromorphic
+          HarchPackage Y.B.Cshared sigma0 h_Cshared_sigma_le h_split h_genuine_poles))) :
+  RHFormalization.RiemannHypothesis
+RHFormalization.HSideOverlapPackage (Zpole Harch : ℂ → ℂ) : Type
+RHFormalization.DDetailedConstructionWithOperatorLegality : Type 1
+RHFormalization.DDetailedConstructionWithOperatorLegality.overlapBuilder
+  (self : RHFormalization.DDetailedConstructionWithOperatorLegality) :
+  let Rdata := self.master.h_master ⋯ ⋯;
+  RHFormalization.DOverlapIdentityAPI self.finiteOperatorLayer.toStagePackage self.B self.F Rdata
+structure RHFormalization.HSideOverlapPackage (Zpole Harch : ℂ → ℂ) : Type
+number of parameters: 2
+fields:
+  RHFormalization.HSideOverlapPackage.Bzero : ℂ → ℂ
+  RHFormalization.HSideOverlapPackage.sigma0 : ℝ
+  RHFormalization.HSideOverlapPackage.Cshared : RHFormalization.CanonicalPrimePowerPackage
+  RHFormalization.HSideOverlapPackage.h_Cshared_sigma_le : self.Cshared.sigma0 ≤ self.sigma0
+  RHFormalization.HSideOverlapPackage.h_Bzero_matches_shared : ∀ s ∈ RHFormalization.RightHalfPlane self.sigma0,
+      self.Bzero s = self.Cshared.Bshared s
+  RHFormalization.HSideOverlapPackage.h_split : ∀ s ∈ RHFormalization.RightHalfPlane self.sigma0,
+      self.Bzero s = Harch s - Zpole s
+constructor:
+  RHFormalization.HSideOverlapPackage.mk {Zpole Harch : ℂ → ℂ} (Bzero : ℂ → ℂ) (sigma0 : ℝ)
+    (Cshared : RHFormalization.CanonicalPrimePowerPackage) (h_Cshared_sigma_le : Cshared.sigma0 ≤ sigma0)
+    (h_Bzero_matches_shared : ∀ s ∈ RHFormalization.RightHalfPlane sigma0, Bzero s = Cshared.Bshared s)
+    (h_split : ∀ s ∈ RHFormalization.RightHalfPlane sigma0, Bzero s = Harch s - Zpole s) :
+    RHFormalization.HSideOverlapPackage Zpole Harch
+structure RHFormalization.DDetailedConstructionWithOperatorLegality : Type 1
+number of parameters: 0
+fields:
+  RHFormalization.DDetailedConstructionWithOperatorLegality.finiteOperatorLayer : RHFormalization.DFiniteStagePackageFromOperatorLayer
+  RHFormalization.DDetailedConstructionWithOperatorLegality.W : RHFormalization.DCanonicalWindowData
+  RHFormalization.DDetailedConstructionWithOperatorLegality.Wapi : RHFormalization.DCanonicalWindowAPI self.W
+  RHFormalization.DDetailedConstructionWithOperatorLegality.B : RHFormalization.DBcanLimitData
+      self.finiteOperatorLayer.toStagePackage
+  RHFormalization.DDetailedConstructionWithOperatorLegality.F : RHFormalization.DFHLimitData
+      self.finiteOperatorLayer.toStagePackage
+  RHFormalization.DDetailedConstructionWithOperatorLegality.sectors : RHFormalization.DResidualSectorData
+      self.finiteOperatorLayer.toStagePackage
+  RHFormalization.DDetailedConstructionWithOperatorLegality.sectorSplit : RHFormalization.DResidualSectorSplitAPI
+      self.finiteOperatorLayer.toStagePackage self.sectors
+  RHFormalization.DDetailedConstructionWithOperatorLegality.sectorBounds : RHFormalization.DResidualSectorBoundsAPI
+      self.finiteOperatorLayer.toStagePackage self.sectors
+  RHFormalization.DDetailedConstructionWithOperatorLegality.master : RHFormalization.DMasterResidualAPI
+      self.finiteOperatorLayer.toStagePackage self.sectors
+  RHFormalization.DDetailedConstructionWithOperatorLegality.overlapBuilder : let Rdata := self.master.h_master ⋯ ⋯;
+    RHFormalization.DOverlapIdentityAPI self.finiteOperatorLayer.toStagePackage self.B self.F Rdata
+constructor:
+  RHFormalization.DDetailedConstructionWithOperatorLegality.mk
+    (finiteOperatorLayer : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+    (W : RHFormalization.DCanonicalWindowData) (Wapi : RHFormalization.DCanonicalWindowAPI W)
+    (B : RHFormalization.DBcanLimitData finiteOperatorLayer.toStagePackage)
+    (F : RHFormalization.DFHLimitData finiteOperatorLayer.toStagePackage)
+    (sectors : RHFormalization.DResidualSectorData finiteOperatorLayer.toStagePackage)
+    (sectorSplit : RHFormalization.DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+    (sectorBounds : RHFormalization.DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+    (master : RHFormalization.DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+    (overlapBuilder :
+      let Rdata := master.h_master sectorSplit sectorBounds;
+      RHFormalization.DOverlapIdentityAPI finiteOperatorLayer.toStagePackage B F Rdata) :
+    RHFormalization.DDetailedConstructionWithOperatorLegality
+theorem RHFormalization.finalRHSpine_from_HChosenDSharedC : RHFormalization.ZetaZeroFacts →
+  ∀ (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (M : RHFormalization.ZeroMultiplicityData)
+    (E : RHFormalization.ZeroExhaustion) (Zpole : ℂ → ℂ)
+    (convergence : RHFormalization.ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+    (poleSeriesMeromorphic : RHFormalization.ZpoleMeromorphicFromSeriesAPI M E Zpole)
+    (HarchPackage : RHFormalization.HArchPackage) (sigma0 : ℝ) (h_Cshared_sigma_le : Y.B.Cshared.sigma0 ≤ sigma0)
+    (h_split : ∀ s ∈ RHFormalization.RightHalfPlane sigma0, Y.B.Cshared.Bshared s = HarchPackage.Harch s - Zpole s)
+    (h_genuine_poles : ∀ (W : RHFormalization.ZeroWitness), RHFormalization.HasGenuinePole Zpole W.s0)
+    (normalFormGroupedLayer :
+      RHFormalization.HSideGroupedPoleNormalFormData
+        (RHFormalization.buildZeroPolePackageFromHMeromorphicLayer
+          (RHFormalization.buildHMeromorphicPackageLayerWithChosenCshared M E Zpole convergence poleSeriesMeromorphic
+            HarchPackage Y.B.Cshared sigma0 h_Cshared_sigma_le h_split h_genuine_poles))),
+    RHFormalization.RiemannHypothesis :=
+fun ZF Y M E Zpole convergence poleSeriesMeromorphic HarchPackage sigma0 h_Cshared_sigma_le h_split h_genuine_poles
+    normalFormGroupedLayer =>
+  let X :=
+    RHFormalization.buildHMeromorphicWithNormalFormPolesWithChosenCshared M E Zpole convergence poleSeriesMeromorphic
+      HarchPackage Y.B.Cshared sigma0 h_Cshared_sigma_le h_split h_genuine_poles normalFormGroupedLayer;
+  RHFormalization.finalRHSpine_from_Cshared_eq ZF Y X (Eq.refl Y.B.Cshared)

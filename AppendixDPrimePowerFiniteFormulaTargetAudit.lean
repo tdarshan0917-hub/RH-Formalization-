@@ -1,0 +1,7 @@
+import RHFormalization.AppendixDPrimePowerFiniteFormulaTarget
+
+#check RHFormalization.DFiniteStageCanonicalPrimePowerFormula
+#check RHFormalization.AppendixDFinitePackageFormulaTarget
+#check RHFormalization.DFiniteStageCanonicalPrimePowerFormula.eq_on_stage
+
+#print axioms RHFormalization.DFiniteStageCanonicalPrimePowerFormula.eq_on_stage

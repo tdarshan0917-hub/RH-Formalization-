@@ -1,0 +1,12 @@
+import RHFormalization.HMeromorphicWithNormalFormChosenCshared
+import RHFormalization.DOperatorExport
+import RHFormalization.HMeromorphicPackage
+
+#check RHFormalization.finalRHSpine_from_HChosenDSharedC
+#check RHFormalization.HSideOverlapPackage
+#check RHFormalization.DDetailedConstructionWithOperatorLegality
+#check RHFormalization.DDetailedConstructionWithOperatorLegality.overlapBuilder
+
+#print RHFormalization.HSideOverlapPackage
+#print RHFormalization.DDetailedConstructionWithOperatorLegality
+#print RHFormalization.finalRHSpine_from_HChosenDSharedC

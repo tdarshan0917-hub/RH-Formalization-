@@ -1,0 +1,70 @@
+⚠ [8462/8524] Replayed RHFormalization.PoleGeometry
+warning: RHFormalization/PoleGeometry.lean:15:8: This simp argument is unused:
+  Complex.mul_im
+
+Hint: Omit it from the simp argument list.
+  simp [Complex.mul_re, Complex.sub_re, Complex.one_re, C̵o̵m̵p̵l̵e̵x̵.̵m̵u̵l̵_̵i̵m̵,̵ ̵Complex.sub_im, Complex.one_im]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RHFormalization/PoleGeometry.lean:20:8: This simp argument is unused:
+  Complex.mul_re
+
+Hint: Omit it from the simp argument list.
+  simp [̵C̵o̵m̵p̵l̵e̵x̵.̵m̵u̵l̵_̵r̵e̵,̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵s̵u̵b̵_̵r̵e̵,̵[̲C̲o̲m̲p̲l̲e̲x̲.̲s̲u̲b̲_̲r̲e̲,̲ Complex.one_re, Complex.mul_im, Complex.sub_im, Complex.one_im]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8463/8524] Replayed RHFormalization.OmegaTopology
+warning: RHFormalization/OmegaTopology.lean:65:4: Try this: intro h hcut
+⚠ [8468/8524] Replayed RHFormalization.RigidityBridge
+warning: RHFormalization/RigidityBridge.lean:54:6: unused variable `W`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8472/8524] Replayed RHFormalization.HMeromorphicPackage
+warning: RHFormalization/HMeromorphicPackage.lean:133:6: unused variable `K`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8475/8524] Replayed RHFormalization.DResolventTraceSummability
+warning: RHFormalization/DResolventTraceSummability.lean:39:5: unused variable `hC`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8484/8524] Replayed RHFormalization.FSideWrapperBuilders
+warning: RHFormalization/FSideWrapperBuilders.lean:80:19: unused variable `f`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/FSideWrapperBuilders.lean:80:21: unused variable `z`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8501/8524] Replayed RHFormalization.DefaultDenominatorSimpleZeroOrder
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:20: 'norm_num' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:20: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [8517/8524] Replayed RHFormalization.OmegaMeromorphicZeroPropagationLocal
+warning: RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:81:17: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:139:17: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8518/8524] Replayed RHFormalization.OmegaMeromorphicZeroPropagationClopen
+warning: RHFormalization/OmegaMeromorphicZeroPropagationClopen.lean:79:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8519/8524] Replayed RHFormalization.AppendixELocalBridgeCore
+warning: RHFormalization/AppendixELocalBridgeCore.lean:85:61: This simp argument is unused:
+  add_left_comm
+
+Hint: Omit it from the simp argument list.
+  simp [Htot, sub_eq_add_neg, add_assoc, add_comm,̵ ̵a̵d̵d̵_̵l̵e̵f̵t̵_̵c̵o̵m̵m̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Build completed successfully (8524 jobs).

@@ -1,0 +1,8 @@
+import RHFormalization.DCanonicalWindowSharpCutoffCompactSpeed
+
+#check RHFormalization.sharpCutoff_dist_le_invSpeed_of_smul_formula
+#check RHFormalization.DCanonicalWindowSharpCutoffCompactSpeedData
+#check RHFormalization.DCanonicalWindowSharpCutoffCompactSpeedData.toCompactSpeedAPI
+
+#print axioms RHFormalization.sharpCutoff_dist_le_invSpeed_of_smul_formula
+#print axioms RHFormalization.DCanonicalWindowSharpCutoffCompactSpeedData.toCompactSpeedAPI

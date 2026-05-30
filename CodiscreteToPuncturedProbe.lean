@@ -1,0 +1,20 @@
+import Mathlib.Analysis.Meromorphic.NormalForm
+import Mathlib.Analysis.Meromorphic.Basic
+import Mathlib.Analysis.Meromorphic.Order
+import RHFormalization.DefaultDenominatorSimpleZeroOrder
+
+open Complex Topology Filter
+
+#check MeromorphicOn.toMeromorphicNFOn_eq_self_on_nhdsNE
+#check MeromorphicOn.toMeromorphicNFOn_eqOn_codiscrete
+#check toMeromorphicNFOn_eqOn_codiscrete
+#check MeromorphicOn.eventuallyEq_nhdsNE_of_eventuallyEq_codiscreteWithin
+#check eventuallyEq_nhdsNE_of_eventuallyEq_codiscreteWithin
+#check MeromorphicOn.congr_codiscreteWithin_of_eqOn_compl
+#check Filter.codiscreteWithin
+#check self_mem_codiscreteWithin
+#check mem_codiscreteWithin
+#check Filter.EventuallyEq
+#check nhdsWithin
+#check inter_mem
+#check eventually_nhdsWithin_iff

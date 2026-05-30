@@ -1,0 +1,13 @@
+RHFormalization/DOperatorExport.lean:593:    overlap := X.overlapBuilder }
+RHFormalization/HMeromorphicPackage.lean:191:structure HSideOverlapPackage
+RHFormalization/AppendixDPrimePowerToDBcan.lean:100:    Cshared := C
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:79:      let Cshared := RCutoffEstimateSharedPackage finiteOperatorLayer S
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:125:      let Cshared := RCutoffEstimateSharedPackage finiteOperatorLayer S
+RHFormalization/FinalRHFromRCutoffEstimate.lean:46:      let Cshared := RCutoffEstimateSharedPackage finiteOperatorLayer S
+RHFormalization/FinalRHFromRCutoffEstimate.lean:97:      let Cshared := RCutoffEstimateSharedPackage finiteOperatorLayer S
+RHFormalization/AppendixESharedPackageCompatibility.lean:44:      Y.B.Cshared :=
+RHFormalization/AppendixESharedPackageCompatibility.lean:63:      Y.B.Cshared :=
+RHFormalization/InterfaceNonnegative.lean:135:      E.overlap := by
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:73:      let Cshared := DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:119:      let Cshared := DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:200:      let Cshared := DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S

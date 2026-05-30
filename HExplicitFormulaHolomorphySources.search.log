@@ -1,0 +1,506 @@
+RHFormalization/AppendixESharedPackageObligations.lean:39:      D.B s = C.Bshared s
+RHFormalization/AppendixESharedPackageObligations.lean:53:      H.Bzero s = C.Bshared s
+RHFormalization/AppendixESharedPackageObligations.lean:67:  { Bshared := C.Bshared
+RHFormalization/PrincipalPartCoboundedModel.lean:2:import RHFormalization.PrincipalPartMeromorphic
+RHFormalization/PrincipalPartCoboundedModel.lean:5:# RHFormalization.PrincipalPartCoboundedModel
+RHFormalization/PrincipalPartCoboundedModel.lean:7:Narrows `PrincipalPartCoboundedAPI`.
+RHFormalization/PrincipalPartCoboundedModel.lean:9:Instead of assuming coboundedness for every bundled `PrincipalPartNormalForm`, we reduce it
+RHFormalization/PrincipalPartCoboundedModel.lean:40:Build `PrincipalPartCoboundedAPI` from the narrower simple-pole-plus-holomorphic
+RHFormalization/PrincipalPartCoboundedModel.lean:43:def buildPrincipalPartCoboundedAPIFromModel
+RHFormalization/PrincipalPartCoboundedModel.lean:45:    PrincipalPartCoboundedAPI :=
+RHFormalization/PrincipalPartCoboundedModel.lean:67:Endpoint after replacing `PrincipalPartCoboundedAPI` by the narrower
+RHFormalization/PrincipalPartCoboundedModel.lean:74:`C : PrincipalPartCoboundedAPI`.
+RHFormalization/PrincipalPartCoboundedModel.lean:94:    (buildPrincipalPartCoboundedAPIFromModel S)
+RHFormalization/HSideOverlapChosenCshared.lean:13:  C.Bshared s = Harch s - Zpole s
+RHFormalization/HSideOverlapChosenCshared.lean:29:`Bzero := C.Bshared`.
+RHFormalization/HSideOverlapChosenCshared.lean:34:    (Zpole Harch : ℂ → ℂ)
+RHFormalization/HSideOverlapChosenCshared.lean:41:          C.Bshared s = Harch s - Zpole s) :
+RHFormalization/HSideOverlapChosenCshared.lean:42:    HSideOverlapPackage Zpole Harch :=
+RHFormalization/HSideOverlapChosenCshared.lean:43:{ Bzero := C.Bshared
+RHFormalization/HSideOverlapChosenCshared.lean:56:    (Zpole Harch : ℂ → ℂ)
+RHFormalization/HSideOverlapChosenCshared.lean:63:          C.Bshared s = Harch s - Zpole s) :
+RHFormalization/HSideOverlapChosenCshared.lean:65:      Zpole Harch C sigma0 h_Cshared_sigma_le h_split).Cshared = C := by
+RHFormalization/AnnexSpine.lean:38:  hFH_holo : HolomorphicOnC FH Ω
+RHFormalization/AnnexSpine.lean:39:  hRH_holo : HolomorphicOnC RH Ω
+RHFormalization/AnnexSpine.lean:51:  Zpole : ℂ → ℂ
+RHFormalization/AnnexSpine.lean:52:  Harch : ℂ → ℂ
+RHFormalization/AnnexSpine.lean:56:  hZ_meromorphic : MeromorphicOnC Zpole Ω
+RHFormalization/AnnexSpine.lean:57:  hHarch_holo : HolomorphicOnC Harch Ω
+RHFormalization/AnnexSpine.lean:61:      Bzero s = Harch s - Zpole s
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:40:      MeromorphicOnC f Ω →
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:41:      MeromorphicOnC g Ω →
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:83:        (fun s => Htot D H s - H.Zpole s)
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:88:        (fun s => Htot D H s - H.Zpole s)
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:101:    HolomorphicOnC.holomorphicAt
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:108:    HolomorphicOnC.holomorphicAt
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:114:      HasGenuinePole H.Zpole W.s0 := by
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:116:      HasGenuinePole X.toLegacyZeroPolePackageAPI.Zpole W.s0
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:121:      GenuinePoleNormalForm H.Zpole W.s0 :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:122:    (X.toLegacyGenuinePoleNormalFormAPI).h_normal_form W h_genuine
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:125:      PrincipalPartNormalForm H.Zpole W.s0 G.principalCoeff :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:131:      meromorphicOrderAt H.Zpole W.s0 < 0 :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:132:    defaultPrincipalPartNegativeOrderAPI.h_negative_order
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:133:      H.Zpole
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:135:      G.principalCoeff
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:142:      H.Zpole
+RHFormalization/OmegaNormalFormPropagationEndpoint.lean:38:      MeromorphicOnC f Ω →
+RHFormalization/OmegaNormalFormPropagationEndpoint.lean:39:      MeromorphicOnC g Ω →
+RHFormalization/OmegaNormalFormPropagationEndpoint.lean:53:    (hf : MeromorphicOnC f Ω)
+RHFormalization/OmegaNormalFormPropagationEndpoint.lean:54:    (hg : MeromorphicOnC g Ω)
+RHFormalization/PoleNormalForm.lean:16:  `PrincipalPartImpliesGenuinePoleAPI`.
+RHFormalization/PoleNormalForm.lean:22:* a builder from `HasPrincipalPartAtC`;
+RHFormalization/PoleNormalForm.lean:23:* a bridge back to `PrincipalPartImpliesGenuinePoleAPI`.
+RHFormalization/PoleNormalForm.lean:26:`HasPrincipalPartAtC` and `HasGenuinePole` by Mathlib/project-local Laurent series
+RHFormalization/PoleNormalForm.lean:52:  HasPrincipalPartAtC f s0 coeff
+RHFormalization/PoleNormalForm.lean:57:structure PrincipalPartNormalForm
+RHFormalization/PoleNormalForm.lean:63:    HasPrincipalPartAtC f s0 coeff
+RHFormalization/PoleNormalForm.lean:70:This remains a hard local meromorphic-analysis API until `HasPrincipalPartAtC` is
+RHFormalization/PoleNormalForm.lean:73:structure PrincipalPartToNormalFormAPI where
+RHFormalization/PoleNormalForm.lean:77:      HasPrincipalPartAtC f s0 coeff →
+RHFormalization/PoleNormalForm.lean:78:      PrincipalPartNormalForm f s0 coeff
+RHFormalization/PoleNormalForm.lean:81:Definition-level bridge from a nonzero local normal form to `HasGenuinePole`.
+RHFormalization/PoleNormalForm.lean:83:This remains a hard API only because `HasGenuinePole` is still a project wrapper.
+RHFormalization/PoleNormalForm.lean:84:Once `HasGenuinePole` is defined as existence of such a normal form, this bridge
+RHFormalization/PoleNormalForm.lean:87:structure NormalFormImpliesGenuinePoleAPI where
+RHFormalization/PoleNormalForm.lean:90:      PrincipalPartNormalForm f s0 coeff →
+RHFormalization/PoleNormalForm.lean:91:      HasGenuinePole f s0
+RHFormalization/PoleNormalForm.lean:98:    PrincipalPartToNormalFormAPI
+RHFormalization/PoleNormalForm.lean:99:  normalFormToGenuinePole :
+RHFormalization/PoleNormalForm.lean:100:    NormalFormImpliesGenuinePoleAPI
+RHFormalization/PoleNormalForm.lean:103:Recover the old `PrincipalPartImpliesGenuinePoleAPI` from the refined
+RHFormalization/PoleNormalForm.lean:106:def PoleNormalFormLayer.toPrincipalPartImpliesGenuinePoleAPI
+RHFormalization/PoleNormalForm.lean:108:    PrincipalPartImpliesGenuinePoleAPI :=
+RHFormalization/PoleNormalForm.lean:110:      L.normalFormToGenuinePole.h_genuine f s0 c
+RHFormalization/PoleNormalForm.lean:118:H-side grouped-pole data where the old `PrincipalPartImpliesGenuinePoleAPI`
+RHFormalization/PoleNormalForm.lean:128:      HasPrincipalPartAtC H.Zpole W.s0
+RHFormalization/PoleNormalForm.lean:145:      A.poleNormalForm.toPrincipalPartImpliesGenuinePoleAPI }
+RHFormalization/DOperatorExport.lean:319:      Bcan s = Cshared.Bshared s
+RHFormalization/DOperatorExport.lean:337:  h_FH_holo : HolomorphicOnC FH Ω
+RHFormalization/DOperatorExport.lean:442:  h_RH_holo : HolomorphicOnC RH Ω
+RHFormalization/DOperatorExport.lean:490:    HolomorphicOnC R.RH Ω
+RHFormalization/FinalBlueprint.lean:92:{ name := "MeromorphicOnC / MeromorphicAlgebraAPI"
+RHFormalization/FinalBlueprint.lean:108:{ name := "HasPrincipalPartAtC / HasGenuinePole / LocalLaurentPrincipalModelC"
+RHFormalization/FinalBlueprint.lean:119:  role := "Holomorphic FH/Htot plus local equality cannot coexist with a nonzero principal part of Zpole."
+RHFormalization/FinalBlueprint.lean:135:  role := "Construct Zpole as a meromorphic function on Ω from the zero-pole series."
+RHFormalization/FinalBlueprint.lean:140:{ name := "Harch and H-side overlap identity"
+RHFormalization/FinalBlueprint.lean:143:  role := "Construct Harch ∈ O(Ω) and prove Bzero = Harch - Zpole on the overlap."
+RHFormalization/HSideResidueArithmetic.lean:12:cancel to zero.
+RHFormalization/HSideResidueArithmetic.lean:122:      HasPrincipalPartAtC H.Zpole W.s0
+RHFormalization/HSideResidueArithmetic.lean:125:    PrincipalPartImpliesGenuinePoleAPI
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:101:    Bcan s = Cshared.Bshared s :=
+RHFormalization/HMeromorphicPackage.lean:11:  Zpole(s) = Σρ m(ρ)/(s + ρ(1-ρ))
+RHFormalization/HMeromorphicPackage.lean:14:`Harch`, and an overlap identity
+RHFormalization/HMeromorphicPackage.lean:16:  Bzero = Harch - Zpole
+RHFormalization/HMeromorphicPackage.lean:140:candidate `Zpole` on every compact set away from the pole set.
+RHFormalization/HMeromorphicPackage.lean:145:    (Zpole : ℂ → ℂ) where
+RHFormalization/HMeromorphicPackage.lean:150:        Zpole
+RHFormalization/HMeromorphicPackage.lean:159:the pole set, obtain meromorphicity of `Zpole` on `Ω`.
+RHFormalization/HMeromorphicPackage.lean:163:structure ZpoleMeromorphicFromSeriesAPI
+RHFormalization/HMeromorphicPackage.lean:166:    (Zpole : ℂ → ℂ) where
+RHFormalization/HMeromorphicPackage.lean:168:    ZeroPoleLocalUniformConvergenceAPI M E Zpole →
+RHFormalization/HMeromorphicPackage.lean:169:    (∀ W : ZeroWitness, HasGenuinePole Zpole W.s0) →
+RHFormalization/HMeromorphicPackage.lean:170:    MeromorphicOnC Zpole Ω
+RHFormalization/HMeromorphicPackage.lean:179:`Harch` is holomorphic on `Ω`.
+RHFormalization/HMeromorphicPackage.lean:182:  Harch : ℂ → ℂ
+RHFormalization/HMeromorphicPackage.lean:183:  h_Harch_holo : HolomorphicOnC Harch Ω
+RHFormalization/HMeromorphicPackage.lean:189:`Bzero = Harch - Zpole`.
+RHFormalization/HMeromorphicPackage.lean:192:    (Zpole : ℂ → ℂ)
+RHFormalization/HMeromorphicPackage.lean:193:    (Harch : ℂ → ℂ) where
+RHFormalization/HMeromorphicPackage.lean:216:      Bzero s = Cshared.Bshared s
+RHFormalization/HMeromorphicPackage.lean:220:      Bzero s = Harch s - Zpole s
+RHFormalization/HMeromorphicPackage.lean:233:  Zpole : ℂ → ℂ
+RHFormalization/HMeromorphicPackage.lean:234:  convergence : ZeroPoleLocalUniformConvergenceAPI M E Zpole
+RHFormalization/HMeromorphicPackage.lean:235:  poleSeriesMeromorphic : ZpoleMeromorphicFromSeriesAPI M E Zpole
+RHFormalization/HMeromorphicPackage.lean:236:  HarchPackage : HArchPackage
+RHFormalization/HMeromorphicPackage.lean:237:  overlap : HSideOverlapPackage Zpole HarchPackage.Harch
+RHFormalization/HMeromorphicPackage.lean:239:    ∀ W : ZeroWitness, HasGenuinePole Zpole W.s0
+RHFormalization/HMeromorphicPackage.lean:248:  { Zpole := L.Zpole
+RHFormalization/HMeromorphicPackage.lean:249:    Harch := L.HarchPackage.Harch
+RHFormalization/HMeromorphicPackage.lean:256:    hHarch_holo := L.HarchPackage.h_Harch_holo
+RHFormalization/CanonicalPrimePowerPackage.lean:105:  Bshared : ℂ → ℂ
+RHFormalization/CanonicalPrimePowerPackage.lean:112:finite packages to the actual `Bshared` is the next Appendix-E/D-H task.
+RHFormalization/DefaultMeromorphicAlgebra.lean:9:The key point is that `HolomorphicOnC f U` is analytic *within* `U`.
+RHFormalization/DefaultMeromorphicAlgebra.lean:26:    (hf : HolomorphicOnC f U) :
+RHFormalization/DefaultMeromorphicAlgebra.lean:27:    MeromorphicOnC f U := by
+RHFormalization/DefaultMeromorphicAlgebra.lean:38:    (hf : HolomorphicOnC f U)
+RHFormalization/DefaultMeromorphicAlgebra.lean:39:    (hg : MeromorphicOnC g U) :
+RHFormalization/DefaultMeromorphicAlgebra.lean:40:    MeromorphicOnC (fun s => f s - g s) U := by
+RHFormalization/HExplicitFormulaSplit.lean:8:  Harch s := Y.B.Cshared.Bshared s + Zpole s.
+RHFormalization/HExplicitFormulaSplit.lean:12:  Y.B.Cshared.Bshared s = Harch s - Zpole s
+RHFormalization/HExplicitFormulaSplit.lean:16:The remaining real analytic input becomes the holomorphy/cancellation theorem:
+RHFormalization/HExplicitFormulaSplit.lean:18:  HolomorphicOnC (fun s => Y.B.Cshared.Bshared s + Zpole s) Ω.
+RHFormalization/HExplicitFormulaSplit.lean:31:  Harch = Bshared + Zpole.
+RHFormalization/HExplicitFormulaSplit.lean:33:def HarchPackageFromBsharedAddZpole
+RHFormalization/HExplicitFormulaSplit.lean:35:    (Zpole : ℂ → ℂ)
+RHFormalization/HExplicitFormulaSplit.lean:36:    (h_Harch_holo :
+RHFormalization/HExplicitFormulaSplit.lean:37:      HolomorphicOnC
+RHFormalization/HExplicitFormulaSplit.lean:38:        (fun s : ℂ => Y.B.Cshared.Bshared s + Zpole s)
+RHFormalization/HExplicitFormulaSplit.lean:41:{ Harch := fun s : ℂ => Y.B.Cshared.Bshared s + Zpole s
+RHFormalization/HExplicitFormulaSplit.lean:42:  h_Harch_holo := h_Harch_holo }
+RHFormalization/HExplicitFormulaSplit.lean:45:If `Harch` is defined as `Bshared + Zpole`, then the H-side split identity
+RHFormalization/HExplicitFormulaSplit.lean:48:theorem HarchPackageFromBsharedAddZpole_split
+RHFormalization/HExplicitFormulaSplit.lean:50:    (Zpole : ℂ → ℂ)
+RHFormalization/HExplicitFormulaSplit.lean:51:    (h_Harch_holo :
+RHFormalization/HExplicitFormulaSplit.lean:52:      HolomorphicOnC
+RHFormalization/HExplicitFormulaSplit.lean:53:        (fun s : ℂ => Y.B.Cshared.Bshared s + Zpole s)
+RHFormalization/HExplicitFormulaSplit.lean:58:        Y.B.Cshared.Bshared s =
+RHFormalization/HExplicitFormulaSplit.lean:59:          (HarchPackageFromBsharedAddZpole Y Zpole h_Harch_holo).Harch s
+RHFormalization/HExplicitFormulaSplit.lean:60:            - Zpole s := by
+RHFormalization/HExplicitFormulaSplit.lean:62:  simp [HarchPackageFromBsharedAddZpole]
+RHFormalization/HExplicitFormulaSplit.lean:65:Final RH spine with `Harch` constructed as `Bshared + Zpole`.
+RHFormalization/HExplicitFormulaSplit.lean:68:input for the cancellation expression.
+RHFormalization/HExplicitFormulaSplit.lean:70:theorem finalRHSpine_from_explicitFormulaHarch
+RHFormalization/HExplicitFormulaSplit.lean:75:    (Zpole : ℂ → ℂ)
+RHFormalization/HExplicitFormulaSplit.lean:76:    (convergence : ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+RHFormalization/HExplicitFormulaSplit.lean:77:    (poleSeriesMeromorphic : ZpoleMeromorphicFromSeriesAPI M E Zpole)
+RHFormalization/HExplicitFormulaSplit.lean:80:    (h_Harch_holo :
+RHFormalization/HExplicitFormulaSplit.lean:81:      HolomorphicOnC
+RHFormalization/HExplicitFormulaSplit.lean:82:        (fun s : ℂ => Y.B.Cshared.Bshared s + Zpole s)
+RHFormalization/HExplicitFormulaSplit.lean:85:      ∀ W : ZeroWitness, HasGenuinePole Zpole W.s0)
+RHFormalization/HExplicitFormulaSplit.lean:90:            M E Zpole convergence poleSeriesMeromorphic
+RHFormalization/HExplicitFormulaSplit.lean:91:            (HarchPackageFromBsharedAddZpole Y Zpole h_Harch_holo)
+RHFormalization/HExplicitFormulaSplit.lean:95:            (HarchPackageFromBsharedAddZpole_split
+RHFormalization/HExplicitFormulaSplit.lean:96:              Y Zpole h_Harch_holo sigma0)
+RHFormalization/HExplicitFormulaSplit.lean:104:    Zpole
+RHFormalization/HExplicitFormulaSplit.lean:107:    (HarchPackageFromBsharedAddZpole Y Zpole h_Harch_holo)
+RHFormalization/HExplicitFormulaSplit.lean:110:    (HarchPackageFromBsharedAddZpole_split
+RHFormalization/HExplicitFormulaSplit.lean:111:      Y Zpole h_Harch_holo sigma0)
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:15:* the corresponding finite canonical prime-power packages tend to `Bshared`, and
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:18:then `Bcan = Bshared` on the overlap.
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:55:    (Bshared : ℂ → ℂ)
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:63:    (h_finiteCanonical_tendsto_Bshared :
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:72:          (𝓝 (Bshared s))) :
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:74:      Bcan s = Bshared s := by
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:79:      (h_finiteCanonical_tendsto_Bshared s hs)
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:88:evidence `Bcan = Cshared.Bshared` on an overlap half-plane.
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:105:  h_finiteCanonical_tendsto_Bshared :
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:114:        (𝓝 (C.Bshared s))
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:126:      Bcan s = C.Bshared s :=
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:130:    C.Bshared
+RHFormalization/AppendixDPrimePowerLimitComparison.lean:133:    L.h_finiteCanonical_tendsto_Bshared
+RHFormalization/AppendixDPrimePowerToDBcan.lean:14:  ⇒ `Bcan = Cshared.Bshared` on the D overlap half-plane.
+RHFormalization/AppendixDPrimePowerToDBcan.lean:56:  h_finiteCanonical_tendsto_Bshared :
+RHFormalization/AppendixDPrimePowerToDBcan.lean:65:        (𝓝 (C.Bshared s))
+RHFormalization/AppendixDPrimePowerToDBcan.lean:78:      Bcan s = C.Bshared s := by
+RHFormalization/AppendixDPrimePowerToDBcan.lean:83:      C.Bshared
+RHFormalization/AppendixDPrimePowerToDBcan.lean:86:      L.h_finiteCanonical_tendsto_Bshared
+RHFormalization/OmegaMeromorphicZeroPropagationEndpoint.lean:32:      MeromorphicOnC H Ω →
+RHFormalization/OmegaMeromorphicZeroPropagationEndpoint.lean:46:            MeromorphicOnC (fun s : ℂ => F s - G s) Ω := by
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:129:        Cshared.Bshared s := by
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:179:        Cshared.Bshared s := by
+RHFormalization/DMasterResidualConcrete.lean:28:    (h_RH_holo : HolomorphicOnC RH Ω)
+RHFormalization/FSideWrapperBuilders.lean:10:* `HolomorphicOnC := AnalyticOn ℂ`
+RHFormalization/FSideWrapperBuilders.lean:12:* `LocalEqAtC := EventuallyEq at 𝓝 z`
+RHFormalization/FSideWrapperBuilders.lean:42:Since `HolomorphicOnC` is now an abbreviation for `AnalyticOn ℂ`, this is the
+RHFormalization/FSideWrapperBuilders.lean:48:    (hf : HolomorphicOnC f U)
+RHFormalization/FSideWrapperBuilders.lean:49:    (hg : HolomorphicOnC g U) :
+RHFormalization/FSideWrapperBuilders.lean:50:    HolomorphicOnC (fun s => f s + g s) U := by
+RHFormalization/FSideWrapperBuilders.lean:58:`Htot = RH + Harch`, and holomorphic functions are closed under addition.
+RHFormalization/FSideWrapperBuilders.lean:66:        (holomorphicOnC_add D.hRH_holo H.hHarch_holo) }
+RHFormalization/FSideWrapperBuilders.lean:81:      HolomorphicOnC.holomorphicAt O hf hz }
+RHFormalization/GlobalMeromorphicIdentity.lean:131:      HolomorphicOnC f U →
+RHFormalization/GlobalMeromorphicIdentity.lean:132:      MeromorphicOnC f U
+RHFormalization/GlobalMeromorphicIdentity.lean:136:      HolomorphicOnC f U →
+RHFormalization/GlobalMeromorphicIdentity.lean:137:      MeromorphicOnC g U →
+RHFormalization/GlobalMeromorphicIdentity.lean:138:      MeromorphicOnC (fun s => f s - g s) U
+RHFormalization/GlobalMeromorphicIdentity.lean:147:    MeromorphicOnC D.FH Ω
+RHFormalization/GlobalMeromorphicIdentity.lean:149:    MeromorphicOnC (fun s => Htot D H s - H.Zpole s) Ω
+RHFormalization/GlobalMeromorphicIdentity.lean:164:        H.Zpole
+RHFormalization/GlobalMeromorphicIdentity.lean:189:      MeromorphicOnC f U →
+RHFormalization/GlobalMeromorphicIdentity.lean:190:      MeromorphicOnC g U →
+RHFormalization/GlobalMeromorphicIdentity.lean:210:        (fun s => Htot D H s - H.Zpole s)
+RHFormalization/AppendixELocalBridgeCore.lean:21:`D.FH = Htot D H - H.Zpole`
+RHFormalization/AppendixELocalBridgeCore.lean:43:`D.FH = Htot D H - H.Zpole`
+RHFormalization/AppendixELocalBridgeCore.lean:49:* H-side split: `H.Bzero = H.Harch - H.Zpole`;
+RHFormalization/AppendixELocalBridgeCore.lean:50:* definition `Htot D H = D.RH + H.Harch`.
+RHFormalization/AppendixELocalBridgeCore.lean:60:        D.FH s = Htot D H s - H.Zpole s) :
+RHFormalization/AppendixELocalBridgeCore.lean:74:          H.Bzero s = H.Harch s - H.Zpole s :=
+RHFormalization/AppendixELocalBridgeCore.lean:80:            (H.Harch s - H.Zpole s) + D.RH s := by
+RHFormalization/AppendixELocalBridgeCore.lean:83:          _ = Htot D H s - H.Zpole s := h_local s hs
+RHFormalization/AppendixELocalBridgeCore.lean:84:          _ = (H.Harch s - H.Zpole s) + D.RH s := by
+RHFormalization/AppendixELocalBridgeCore.lean:88:          D.B s = H.Harch s - H.Zpole s :=
+RHFormalization/AppendixELocalBridgeCore.lean:89:        add_right_cancel hmain
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:166:        (RCutoffEstimateSharedPackage finiteOperatorLayer S).Bshared s := by
+RHFormalization/DefaultCoboundedAddFiniteLimit.lean:2:import RHFormalization.PrincipalPartCoboundedSplit
+RHFormalization/PrincipalPartMeromorphic.lean:2:import RHFormalization.PrincipalPartOrderFromCobounded
+RHFormalization/PrincipalPartMeromorphic.lean:5:# RHFormalization.PrincipalPartMeromorphic
+RHFormalization/PrincipalPartMeromorphic.lean:7:Discharges `PrincipalPartMeromorphicAtAPI`.
+RHFormalization/PrincipalPartMeromorphic.lean:16:This does not yet discharge `PrincipalPartCoboundedAPI`; that remains the local
+RHFormalization/PrincipalPartMeromorphic.lean:74:theorem hasPrincipalPartAtC_meromorphicAt
+RHFormalization/PrincipalPartMeromorphic.lean:77:    (hpp : HasPrincipalPartAtC f z coeff) :
+RHFormalization/PrincipalPartMeromorphic.lean:100:    (hpp : PrincipalPartNormalForm f z coeff) :
+RHFormalization/PrincipalPartMeromorphic.lean:102:  hasPrincipalPartAtC_meromorphicAt f z coeff hpp.h_principalPart
+RHFormalization/PrincipalPartMeromorphic.lean:105:Default theorem-backed implementation of `PrincipalPartMeromorphicAtAPI`.
+RHFormalization/PrincipalPartMeromorphic.lean:107:def defaultPrincipalPartMeromorphicAtAPI :
+RHFormalization/PrincipalPartMeromorphic.lean:108:    PrincipalPartMeromorphicAtAPI :=
+RHFormalization/PrincipalPartMeromorphic.lean:113:Endpoint after discharging `PrincipalPartMeromorphicAtAPI`.
+RHFormalization/PrincipalPartMeromorphic.lean:119:`M : PrincipalPartMeromorphicAtAPI`.
+RHFormalization/PrincipalPartMeromorphic.lean:123:`C : PrincipalPartCoboundedAPI`.
+RHFormalization/PrincipalPartMeromorphic.lean:133:    (C : PrincipalPartCoboundedAPI) :
+RHFormalization/PrincipalPartMeromorphic.lean:141:    defaultPrincipalPartMeromorphicAtAPI
+RHFormalization/RigidityBridge.lean:45:    ∀ W : ZeroWitness, HasGenuinePole H.Zpole W.s0
+RHFormalization/RigidityBridge.lean:63:    Set.EqOn D.FH (fun s => Htot D H s - H.Zpole s) (InterfaceOverlap E) := by
+RHFormalization/HSidePoleWitness.lean:18:* hence the principal coefficient is nonzero and cannot cancel.
+RHFormalization/HSidePoleWitness.lean:22:It does not yet construct the full `Zpole` series or prove meromorphic convergence.
+RHFormalization/HSidePoleWitness.lean:85:This is the precise formal version of "positive multiplicities cannot cancel."
+RHFormalization/HSidePoleWitness.lean:125:H-side grouped pole data for `Zpole`.
+RHFormalization/HSidePoleWitness.lean:142:      HasPrincipalPartAtC H.Zpole W.s0
+RHFormalization/HSidePoleWitness.lean:149:definition of `HasGenuinePole`.
+RHFormalization/HSidePoleWitness.lean:151:structure PrincipalPartImpliesGenuinePoleAPI where
+RHFormalization/HSidePoleWitness.lean:155:      HasPrincipalPartAtC f s0 c →
+RHFormalization/HSidePoleWitness.lean:156:      HasGenuinePole f s0
+RHFormalization/HSidePoleWitness.lean:162:`∀ W, HasGenuinePole H.Zpole W.s0`.
+RHFormalization/HSidePoleWitness.lean:167:    (Q : PrincipalPartImpliesGenuinePoleAPI) :
+RHFormalization/HSidePoleWitness.lean:170:      Q.h_genuine H.Zpole W.s0
+RHFormalization/HSidePoleWitness.lean:181:def buildGenuinePoleNormalFormFromHSideGrouped
+RHFormalization/HSidePoleWitness.lean:184:    GenuinePoleNormalFormAPI H :=
+RHFormalization/HSidePoleWitness.lean:186:      { principalCoeff := groupedResidueCoeff G.M (G.groupedClass W)
+RHFormalization/HSidePoleWitness.lean:187:        h_principalCoeff_ne_zero :=
+RHFormalization/HSidePoleWitness.lean:203:  principalPartToPole : PrincipalPartImpliesGenuinePoleAPI
+RHFormalization/HSidePoleWitness.lean:216:    GenuinePoleNormalFormAPI H :=
+RHFormalization/HSidePoleWitness.lean:217:  buildGenuinePoleNormalFormFromHSideGrouped H L.groupedData
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:48:      MeromorphicOnC f Ω →
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:49:      MeromorphicOnC g Ω →
+RHFormalization/DFHLimitConcrete.lean:32:    (h_FH_holo : HolomorphicOnC FH Ω)
+RHFormalization/InterfaceNonnegative.lean:134:      (fun s => Htot D H s - H.Zpole s)
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:27:on a common right half-plane, the two `Bshared` functions agree.
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:39:      Y.B.Cshared.Bshared s =
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:40:        X.layer.overlap.Cshared.Bshared s
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:61:            Y.B.Cshared.Bshared s := by
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:68:            X.layer.overlap.Cshared.Bshared s := by
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:106:  Y.B.Cshared.Bshared s = X.layer.overlap.Cshared.Bshared s
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:129:          Y.B.Cshared.Bshared s =
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:130:            X.layer.overlap.Cshared.Bshared s) :
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:151:          Y.B.Cshared.Bshared s =
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:152:            X.layer.overlap.Cshared.Bshared s) :
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:180:        Y.B.Cshared.Bshared s =
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:181:          X.layer.overlap.Cshared.Bshared s := by
+RHFormalization/LocalOrderObstruction.lean:30:    (hlocal : LocalEqAtC F (fun s => G s - Z s) z)
+RHFormalization/LocalOrderObstruction.lean:70:structure PrincipalPartNegativeOrderAPI where
+RHFormalization/LocalOrderObstruction.lean:73:      PrincipalPartNormalForm f s0 coeff →
+RHFormalization/LocalOrderObstruction.lean:84:    (P : PrincipalPartNegativeOrderAPI) :
+RHFormalization/LocalOrderObstruction.lean:90:        H.Zpole
+RHFormalization/LocalOrderObstruction.lean:95:        (P.h_negative_order H.Zpole W.s0 coeff hpp) }
+RHFormalization/LocalOrderObstruction.lean:99:narrower `PrincipalPartNegativeOrderAPI`.
+RHFormalization/LocalOrderObstruction.lean:109:    (P : PrincipalPartNegativeOrderAPI) :
+RHFormalization/InterfaceAlgebra.lean:17:  `Bzero = Harch - Zpole`.
+RHFormalization/InterfaceAlgebra.lean:20:  `FH = Htot - Zpole`,
+RHFormalization/InterfaceAlgebra.lean:22:  `Htot = RH + Harch`.
+RHFormalization/InterfaceAlgebra.lean:37:`Htot = RH + Harch`. -/
+RHFormalization/InterfaceAlgebra.lean:41:  fun s => D.RH s + H.Harch s
+RHFormalization/InterfaceAlgebra.lean:47:`D.FH = Htot - H.Zpole` on `InterfaceOverlap E`.
+RHFormalization/InterfaceAlgebra.lean:54:      D.FH s = Htot D H s - H.Zpole s := by
+RHFormalization/InterfaceAlgebra.lean:63:  have hH : H.Bzero s = H.Harch s - H.Zpole s :=
+RHFormalization/InterfaceAlgebra.lean:69:    _ = (H.Harch s - H.Zpole s) + D.RH s := by rw [hH]
+RHFormalization/InterfaceAlgebra.lean:70:    _ = Htot D H s - H.Zpole s := by
+RHFormalization/InterfaceAlgebra.lean:76:`FH = -Zpole + Htot` on the overlap half-plane.
+RHFormalization/InterfaceAlgebra.lean:83:      D.FH s = - H.Zpole s + Htot D H s := by
+RHFormalization/InterfaceAlgebra.lean:87:    D.FH s = Htot D H s - H.Zpole s := h
+RHFormalization/InterfaceAlgebra.lean:88:    _ = - H.Zpole s + Htot D H s := by ring
+RHFormalization/InterfaceAlgebra.lean:98:    Set.EqOn D.FH (fun s => Htot D H s - H.Zpole s) (InterfaceOverlap E) := by
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:72:  The infinite shared prime-power series has sum `C.Bshared` on the D overlap
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:79:        (C.Bshared s)
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:147:      C.Bshared s := by
+RHFormalization/AppendixDOperatorPrimePowerToDBcan.lean:77:      Bcan s = C.Bshared s := by
+RHFormalization/OmegaMeromorphicZeroPropagationClopen.lean:44:    (hH : MeromorphicOnC H Ω)
+RHFormalization/OmegaMeromorphicZeroPropagationProof.lean:38:    (hH : MeromorphicOnC H Ω)
+RHFormalization/OmegaMeromorphicZeroPropagationProof.lean:76:    (hH : MeromorphicOnC H Ω)
+RHFormalization/GlobalRigidity.lean:11:      `FH = Htot - Zpole`.
+RHFormalization/GlobalRigidity.lean:14:   have an uncancelled pole inside `Ω`.
+RHFormalization/GlobalRigidity.lean:35:`FH = Htot - Zpole`.
+RHFormalization/GlobalRigidity.lean:45:    Set.EqOn D.FH (fun s => Htot D H s - H.Zpole s) Ω
+RHFormalization/GlobalRigidity.lean:61:    Set.EqOn D.FH (fun s => Htot D H s - H.Zpole s) (InterfaceOverlap E) →
+RHFormalization/GlobalRigidity.lean:62:    Set.EqOn D.FH (fun s => Htot D H s - H.Zpole s) Ω
+RHFormalization/GlobalRigidity.lean:85:`Htot = RH + Harch` is holomorphic on `Ω` from Appendix D and Appendix H
+RHFormalization/GlobalRigidity.lean:92:    HolomorphicOnC D.FH Ω
+RHFormalization/GlobalRigidity.lean:94:    HolomorphicOnC (Htot D H) Ω
+RHFormalization/GlobalRigidity.lean:105:    (h_Htot : HolomorphicOnC (Htot D H) Ω) :
+RHFormalization/GlobalRigidity.lean:112:if `RH` and `Harch` are holomorphic, then `Htot = RH + Harch` is holomorphic.
+RHFormalization/GlobalRigidity.lean:118:    HolomorphicOnC (Htot D H) Ω
+RHFormalization/GlobalRigidity.lean:129:## 3. No-cancellation / removable-singularity obstruction
+RHFormalization/GlobalRigidity.lean:135:Mathematically: if `FH = Htot - Zpole` globally on `Ω`, and both `FH` and
+RHFormalization/GlobalRigidity.lean:136:`Htot` are holomorphic at a point of `Ω`, then `Zpole` cannot have a genuine
+RHFormalization/GlobalRigidity.lean:137:uncancelled pole there.
+RHFormalization/GlobalRigidity.lean:139:This is the local pole-removal / non-cancellation lemma that will later be
+RHFormalization/GlobalRigidity.lean:149:    ∀ W : ZeroWitness, ¬ HasGenuinePole H.Zpole W.s0
+RHFormalization/GlobalRigidity.lean:166:    ∀ W : ZeroWitness, ¬ HasGenuinePole H.Zpole W.s0
+RHFormalization/AppendixESharedCanonicalPackage.lean:28:  Bshared : ℂ → ℂ
+RHFormalization/AppendixESharedCanonicalPackage.lean:34:      D.B s = Bshared s
+RHFormalization/AppendixESharedCanonicalPackage.lean:37:      H.Bzero s = Bshared s
+RHFormalization/CanonicalPrimePowerSeries.lean:52:* the infinite series of `term` has sum `C.Bshared`.
+RHFormalization/CanonicalPrimePowerSeries.lean:96:  The infinite prime-power series has sum `C.Bshared` on the D overlap
+RHFormalization/CanonicalPrimePowerSeries.lean:103:        (C.Bshared s)
+RHFormalization/CanonicalPrimePowerSeries.lean:125:            (𝓝 (C.Bshared s)) :=
+RHFormalization/CanonicalPrimePowerSeries.lean:171:      C.Bshared s := by
+RHFormalization/AnalyticWrappers.lean:19:* `HolomorphicOnC := AnalyticOn ℂ`
+RHFormalization/AnalyticWrappers.lean:21:* `LocalEqAtC := EventuallyEq at the neighbourhood filter`
+RHFormalization/AnalyticWrappers.lean:25:* `MeromorphicOnC`
+RHFormalization/AnalyticWrappers.lean:26:* `HasGenuinePole`
+RHFormalization/AnalyticWrappers.lean:27:* `HasPrincipalPartAtC`
+RHFormalization/AnalyticWrappers.lean:43:abbrev HolomorphicOnC (f : ℂ → ℂ) (U : Set ℂ) : Prop :=
+RHFormalization/AnalyticWrappers.lean:51:abbrev LocalEqAtC (f g : ℂ → ℂ) (z : ℂ) : Prop :=
+RHFormalization/AnalyticWrappers.lean:58:    HolomorphicOnC f U ↔ AnalyticOn ℂ f U := by
+RHFormalization/AnalyticWrappers.lean:66:theorem HolomorphicOnC.holomorphicAt
+RHFormalization/AnalyticWrappers.lean:70:    (hf : HolomorphicOnC f Ω)
+RHFormalization/AnalyticWrappers.lean:86:    LocalEqAtC f g z := by
+RHFormalization/AnalyticWrappers.lean:99:    (hfg : LocalEqAtC f g z) :
+RHFormalization/AnalyticWrappers.lean:112:abbrev MeromorphicOnC (f : ℂ → ℂ) (U : Set ℂ) : Prop :=
+RHFormalization/AnalyticWrappers.lean:131:abbrev HasPrincipalPartAtC
+RHFormalization/AnalyticWrappers.lean:139:Project wrapper for a genuine uncancelled pole.
+RHFormalization/AnalyticWrappers.lean:144:abbrev HasGenuinePole
+RHFormalization/AnalyticWrappers.lean:147:  ∃ coeff : ℂ, coeff ≠ 0 ∧ HasPrincipalPartAtC f z coeff
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:32:      MeromorphicOnC F Ω →
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:33:      MeromorphicOnC G Ω →
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:43:    (hf : MeromorphicOnC f Ω) :
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:44:    MeromorphicOnC (toMeromorphicNFOn f Ω) Ω := by
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:18:  `Bcan := C.Bshared`.
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:48:  h_finiteCanonical_tendsto_Bshared :
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:57:        (𝓝 (C.Bshared s))
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:70:    DOperatorPrimePowerLimitAtOverlapData X C.Bshared C :=
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:77:        L.h_finiteCanonical_tendsto_Bshared s hs
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:95:    h_finiteCanonical_tendsto_Bshared :=
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:96:      L.h_finiteCanonical_tendsto_Bshared }
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:108:    C.Bshared
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:122:    C.Bshared s =
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:123:      (buildDBcanLimitDataFromOperatorFiniteCanonicalLimit X C L).Cshared.Bshared s := by
+RHFormalization/PrincipalPartOrderFromCobounded.lean:5:# RHFormalization.PrincipalPartOrderFromCobounded
+RHFormalization/PrincipalPartOrderFromCobounded.lean:7:This file narrows `PrincipalPartNegativeOrderAPI`.
+RHFormalization/PrincipalPartOrderFromCobounded.lean:32:structure PrincipalPartMeromorphicAtAPI where
+RHFormalization/PrincipalPartOrderFromCobounded.lean:35:      PrincipalPartNormalForm f s0 coeff →
+RHFormalization/PrincipalPartOrderFromCobounded.lean:44:structure PrincipalPartCoboundedAPI where
+RHFormalization/PrincipalPartOrderFromCobounded.lean:47:      PrincipalPartNormalForm f s0 coeff →
+RHFormalization/PrincipalPartOrderFromCobounded.lean:51:Build the previous `PrincipalPartNegativeOrderAPI` from meromorphicity plus
+RHFormalization/PrincipalPartOrderFromCobounded.lean:54:def buildPrincipalPartNegativeOrderAPIFromCobounded
+RHFormalization/PrincipalPartOrderFromCobounded.lean:55:    (M : PrincipalPartMeromorphicAtAPI)
+RHFormalization/PrincipalPartOrderFromCobounded.lean:56:    (C : PrincipalPartCoboundedAPI) :
+RHFormalization/PrincipalPartOrderFromCobounded.lean:57:    PrincipalPartNegativeOrderAPI :=
+RHFormalization/PrincipalPartOrderFromCobounded.lean:64:Endpoint after replacing `PrincipalPartNegativeOrderAPI` by the two narrower
+RHFormalization/PrincipalPartOrderFromCobounded.lean:75:    (M : PrincipalPartMeromorphicAtAPI)
+RHFormalization/PrincipalPartOrderFromCobounded.lean:76:    (C : PrincipalPartCoboundedAPI) :
+RHFormalization/PrincipalPartOrderFromCobounded.lean:84:    (buildPrincipalPartNegativeOrderAPIFromCobounded M C)
+RHFormalization/CanonicalPrimePowerExhaustion.lean:29:converge pointwise on the D overlap half-plane to the shared package `C.Bshared`.
+RHFormalization/CanonicalPrimePowerExhaustion.lean:54:        (𝓝 (C.Bshared s))
+RHFormalization/CanonicalPrimePowerExhaustion.lean:67:    h_finiteCanonical_tendsto_Bshared := E.h_tendsto }
+RHFormalization/CanonicalPrimePowerExhaustion.lean:93:      C.Bshared s := by
+RHFormalization/PuncturedIdentityLocalCore.lean:45:      MeromorphicOnC f U →
+RHFormalization/PuncturedIdentityLocalCore.lean:46:      MeromorphicOnC g U →
+RHFormalization/HMeromorphicLayerChosenCshared.lean:14:  C.Bshared s = Harch s - Zpole s
+RHFormalization/HMeromorphicLayerChosenCshared.lean:35:    (Zpole : ℂ → ℂ)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:36:    (convergence : ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:37:    (poleSeriesMeromorphic : ZpoleMeromorphicFromSeriesAPI M E Zpole)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:38:    (HarchPackage : HArchPackage)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:45:          C.Bshared s = HarchPackage.Harch s - Zpole s)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:47:      ∀ W : ZeroWitness, HasGenuinePole Zpole W.s0) :
+RHFormalization/HMeromorphicLayerChosenCshared.lean:51:  Zpole := Zpole
+RHFormalization/HMeromorphicLayerChosenCshared.lean:54:  HarchPackage := HarchPackage
+RHFormalization/HMeromorphicLayerChosenCshared.lean:57:      Zpole
+RHFormalization/HMeromorphicLayerChosenCshared.lean:58:      HarchPackage.Harch
+RHFormalization/HMeromorphicLayerChosenCshared.lean:71:    (Zpole : ℂ → ℂ)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:72:    (convergence : ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:73:    (poleSeriesMeromorphic : ZpoleMeromorphicFromSeriesAPI M E Zpole)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:74:    (HarchPackage : HArchPackage)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:81:          C.Bshared s = HarchPackage.Harch s - Zpole s)
+RHFormalization/HMeromorphicLayerChosenCshared.lean:83:      ∀ W : ZeroWitness, HasGenuinePole Zpole W.s0) :
+RHFormalization/HMeromorphicLayerChosenCshared.lean:85:      M E Zpole convergence poleSeriesMeromorphic HarchPackage
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:104:  The infinite shared prime-power series has sum `C.Bshared` on the D overlap
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:111:        (C.Bshared s)
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:171:      C.Bshared s := by
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:20:* identification of `C.Bshared` with the corresponding `tsum`.
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:41:  `h_summable` and `h_Bshared_eq_tsum`.
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:93:  h_Bshared_eq_tsum :
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:95:      C.Bshared s =
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:102:The `HasSum` field is now derived from summability plus the `Bshared = tsum`
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:124:      simpa [S.h_Bshared_eq_tsum s hs] using hsum }
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:161:      C.Bshared s := by
+RHFormalization/PoleObstructionFromNormalForm.lean:10:* `FH = Htot - Zpole` locally near a witness point `s0`;
+RHFormalization/PoleObstructionFromNormalForm.lean:13:* `Zpole` has a nonzero principal-part normal form at `s0`.
+RHFormalization/PoleObstructionFromNormalForm.lean:23:* `GenuinePoleNormalFormAPI`, which turns a genuine pole witness into a principal-part record;
+RHFormalization/PoleObstructionFromNormalForm.lean:47:`FH = Htot - Zpole`,
+RHFormalization/PoleObstructionFromNormalForm.lean:49:normal form for `Zpole`, contradiction follows.
+RHFormalization/PoleObstructionFromNormalForm.lean:61:      LocalEqAtC D.FH (fun s => Htot D H s - H.Zpole s) W.s0 →
+RHFormalization/PoleObstructionFromNormalForm.lean:64:      PrincipalPartNormalForm H.Zpole W.s0 coeff →
+RHFormalization/PoleObstructionFromNormalForm.lean:72:Convert a `GenuinePoleNormalForm` into the stronger `PrincipalPartNormalForm`,
+RHFormalization/PoleObstructionFromNormalForm.lean:81:    (G : GenuinePoleNormalForm f s0) :
+RHFormalization/PoleObstructionFromNormalForm.lean:82:    PrincipalPartNormalForm f s0 G.principalCoeff :=
+RHFormalization/PoleObstructionFromNormalForm.lean:86:    G.principalCoeff
+RHFormalization/PoleObstructionFromNormalForm.lean:87:    G.h_principalCoeff_ne_zero
+RHFormalization/PoleObstructionFromNormalForm.lean:100:    (N : GenuinePoleNormalFormAPI H)
+RHFormalization/PoleObstructionFromNormalForm.lean:105:      let G : GenuinePoleNormalForm H.Zpole W.s0 :=
+RHFormalization/PoleObstructionFromNormalForm.lean:107:      let PN : PrincipalPartNormalForm H.Zpole W.s0 G.principalCoeff :=
+RHFormalization/PoleObstructionFromNormalForm.lean:109:      O.h_no_normal_form W G.principalCoeff h_local h_FH_at h_Htot_at PN }
+RHFormalization/PoleObstructionFromNormalForm.lean:127:def HMeromorphicWithNormalFormPoles.toLegacyGenuinePoleNormalFormAPI
+RHFormalization/PoleObstructionFromNormalForm.lean:129:    GenuinePoleNormalFormAPI X.toLegacyZeroPolePackageAPI :=
+RHFormalization/PoleObstructionFromNormalForm.lean:156:    X.toLegacyGenuinePoleNormalFormAPI
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:160:        (DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S).Bshared s := by
+RHFormalization/OmegaCodiscreteIdentityFromNormalForms.lean:44:      MeromorphicOnC f Ω →
+RHFormalization/OmegaCodiscreteIdentityFromNormalForms.lean:45:      MeromorphicOnC g Ω →
+RHFormalization/PrincipalPartCoboundedSplit.lean:2:import RHFormalization.PrincipalPartCoboundedModel
+RHFormalization/PrincipalPartCoboundedSplit.lean:5:# RHFormalization.PrincipalPartCoboundedSplit
+RHFormalization/OmegaNormalFormLocalPropagationEndpoint.lean:38:      MeromorphicOnC f Ω →
+RHFormalization/OmegaNormalFormLocalPropagationEndpoint.lean:39:      MeromorphicOnC g Ω →
+RHFormalization/MainTheorem.lean:268:pole-normal-form layer, rather than by a raw `PrincipalPartImpliesGenuinePoleAPI`.
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:32:def defaultPrincipalPartNegativeOrderAPI :
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:33:    PrincipalPartNegativeOrderAPI :=
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:34:  buildPrincipalPartNegativeOrderAPIFromCobounded
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:35:    defaultPrincipalPartMeromorphicAtAPI
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:36:    (buildPrincipalPartCoboundedAPIFromModel
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:83:        (fun s => Htot D H s - H.Zpole s)
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:88:        (fun s => Htot D H s - H.Zpole s)
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:103:    HolomorphicOnC.holomorphicAt
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:110:    HolomorphicOnC.holomorphicAt
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:116:      HasGenuinePole H.Zpole W.s0 := by
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:118:      HasGenuinePole X.toLegacyZeroPolePackageAPI.Zpole W.s0
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:123:      GenuinePoleNormalForm H.Zpole W.s0 :=
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:124:    (X.toLegacyGenuinePoleNormalFormAPI).h_normal_form W h_genuine
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:127:      PrincipalPartNormalForm H.Zpole W.s0 G.principalCoeff :=
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:133:      meromorphicOrderAt H.Zpole W.s0 < 0 :=
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:134:    defaultPrincipalPartNegativeOrderAPI.h_negative_order
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:135:      H.Zpole
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:137:      G.principalCoeff
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:144:      H.Zpole
+RHFormalization/PoleObstruction.lean:12:  `FH = Htot - Zpole`
+RHFormalization/PoleObstruction.lean:15:`Zpole` cannot have a genuine uncancelled pole at `s0`.
+RHFormalization/PoleObstruction.lean:52:      LocalEqAtC D.FH (fun s => Htot D H s - H.Zpole s) W.s0
+RHFormalization/PoleObstruction.lean:68:      HolomorphicOnC f Ω →
+RHFormalization/PoleObstruction.lean:105:"uncancelled pole" or "grouped residue non-cancellation" condition.
+RHFormalization/PoleObstruction.lean:107:structure GenuinePoleNormalForm
+RHFormalization/PoleObstruction.lean:110:  principalCoeff : ℂ
+RHFormalization/PoleObstruction.lean:111:  h_principalCoeff_ne_zero : principalCoeff ≠ 0
+RHFormalization/PoleObstruction.lean:112:  h_principalPart : HasPrincipalPartAtC f s0 principalCoeff
+RHFormalization/PoleObstruction.lean:120:structure GenuinePoleNormalFormAPI
+RHFormalization/PoleObstruction.lean:124:      HasGenuinePole H.Zpole W.s0 →
+RHFormalization/PoleObstruction.lean:125:      GenuinePoleNormalForm H.Zpole W.s0
+RHFormalization/PoleObstruction.lean:136:If `FH = Htot - Zpole` locally at `W.s0`, and both `FH` and `Htot`
+RHFormalization/PoleObstruction.lean:137:are holomorphic at `W.s0`, then `Zpole` cannot have a genuine pole at `W.s0`.
+RHFormalization/PoleObstruction.lean:139:This is the removable-singularity / no-cancellation lemma that will later be
+RHFormalization/PoleObstruction.lean:148:      LocalEqAtC D.FH (fun s => Htot D H s - H.Zpole s) W.s0 →
+RHFormalization/PoleObstruction.lean:151:      ¬ HasGenuinePole H.Zpole W.s0
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:31:    (Zpole : ℂ → ℂ)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:32:    (convergence : ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:33:    (poleSeriesMeromorphic : ZpoleMeromorphicFromSeriesAPI M E Zpole)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:34:    (HarchPackage : HArchPackage)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:41:          C.Bshared s = HarchPackage.Harch s - Zpole s)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:43:      ∀ W : ZeroWitness, HasGenuinePole Zpole W.s0)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:48:            M E Zpole convergence poleSeriesMeromorphic HarchPackage
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:53:      M E Zpole convergence poleSeriesMeromorphic HarchPackage
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:64:    (Zpole : ℂ → ℂ)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:65:    (convergence : ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:66:    (poleSeriesMeromorphic : ZpoleMeromorphicFromSeriesAPI M E Zpole)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:67:    (HarchPackage : HArchPackage)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:74:          C.Bshared s = HarchPackage.Harch s - Zpole s)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:76:      ∀ W : ZeroWitness, HasGenuinePole Zpole W.s0)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:81:            M E Zpole convergence poleSeriesMeromorphic HarchPackage
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:84:      M E Zpole convergence poleSeriesMeromorphic HarchPackage
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:101:    (Zpole : ℂ → ℂ)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:102:    (convergence : ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:103:    (poleSeriesMeromorphic : ZpoleMeromorphicFromSeriesAPI M E Zpole)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:104:    (HarchPackage : HArchPackage)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:110:          Y.B.Cshared.Bshared s = HarchPackage.Harch s - Zpole s)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:112:      ∀ W : ZeroWitness, HasGenuinePole Zpole W.s0)
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:117:            M E Zpole convergence poleSeriesMeromorphic HarchPackage
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:122:      M E Zpole convergence poleSeriesMeromorphic HarchPackage
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:16:* identification of `C.Bshared` with the corresponding `tsum`.
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:39:  { Bshared := fun s : ℂ =>
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:49:  `h_Bshared_eq_tsum`.
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:96:The `h_Bshared_eq_tsum` field is discharged by `rfl`, because the canonical
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:113:    h_Bshared_eq_tsum := by

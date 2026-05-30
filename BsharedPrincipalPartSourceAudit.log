@@ -1,0 +1,87 @@
+RHFormalization.Harch_holomorphic_from_witness_and_regular
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (Zpole : ℂ → ℂ)
+  (h_witness :
+    ∀ (W : RHFormalization.ZeroWitness),
+      ∃ h,
+        RHFormalization.HolomorphicAtC h W.s0 ∧
+          RHFormalization.LocalEqAtC h (fun s => Y.B.Cshared.Bshared s + Zpole s) W.s0)
+  (h_regular :
+    ∀ z ∈ Ω,
+      (∀ (W : RHFormalization.ZeroWitness), z ≠ W.s0) →
+        ∃ h,
+          RHFormalization.HolomorphicAtC h z ∧
+            RHFormalization.LocalEqAtC h (fun s => Y.B.Cshared.Bshared s + Zpole s) z) :
+  RHFormalization.HolomorphicOnC (fun s => Y.B.Cshared.Bshared s + Zpole s) Ω
+RHFormalization.Harch_local_extension_at_witness_from_cancelled_principal_parts
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (Zpole : ℂ → ℂ) (W : RHFormalization.ZeroWitness)
+  (c : ℂ) (hB : RHFormalization.HasPrincipalPartAtC Y.B.Cshared.Bshared W.s0 c)
+  (hZ : RHFormalization.HasPrincipalPartAtC Zpole W.s0 (-c))
+  (hpoint :
+    have hBreg := Classical.choose hB;
+    have hZreg := Classical.choose hZ;
+    hBreg W.s0 + hZreg W.s0 = Y.B.Cshared.Bshared W.s0 + Zpole W.s0) :
+  ∃ h,
+    RHFormalization.HolomorphicAtC h W.s0 ∧ RHFormalization.LocalEqAtC h (fun s => Y.B.Cshared.Bshared s + Zpole s) W.s0
+RHFormalization.HasPrincipalPartAtC (f : ℂ → ℂ) (z coeff : ℂ) : Prop
+RHFormalization.groupedResidueCoeff (M : RHFormalization.ZeroMultiplicityData) {W : RHFormalization.ZeroWitness}
+  (C : RHFormalization.GroupedPoleClass M W) : ℂ
+RHFormalization.CanonicalPrimePowerPackage : Type
+RHFormalization.DBcanLimitData (P : RHFormalization.DFiniteStagePackage) : Type
+structure RHFormalization.CanonicalPrimePowerPackage : Type
+number of parameters: 0
+fields:
+  RHFormalization.CanonicalPrimePowerPackage.Bshared : ℂ → ℂ
+  RHFormalization.CanonicalPrimePowerPackage.sigma0 : ℝ
+constructor:
+  RHFormalization.CanonicalPrimePowerPackage.mk (Bshared : ℂ → ℂ) (sigma0 : ℝ) :
+    RHFormalization.CanonicalPrimePowerPackage
+structure RHFormalization.DBcanLimitData (P : RHFormalization.DFiniteStagePackage) : Type
+number of parameters: 1
+fields:
+  RHFormalization.DBcanLimitData.Bcan : ℂ → ℂ
+  RHFormalization.DBcanLimitData.Cshared : RHFormalization.CanonicalPrimePowerPackage
+  RHFormalization.DBcanLimitData.h_Cshared_sigma_le : self.Cshared.sigma0 ≤ P.sigma0
+  RHFormalization.DBcanLimitData.h_Bcan_matches_shared : ∀ s ∈ RHFormalization.RightHalfPlane P.sigma0,
+      self.Bcan s = self.Cshared.Bshared s
+constructor:
+  RHFormalization.DBcanLimitData.mk {P : RHFormalization.DFiniteStagePackage} (Bcan : ℂ → ℂ)
+    (Cshared : RHFormalization.CanonicalPrimePowerPackage) (h_Cshared_sigma_le : Cshared.sigma0 ≤ P.sigma0)
+    (h_Bcan_matches_shared : ∀ s ∈ RHFormalization.RightHalfPlane P.sigma0, Bcan s = Cshared.Bshared s) :
+    RHFormalization.DBcanLimitData P
+structure RHFormalization.HSideGroupedPoleNormalFormData (H : RHFormalization.ZeroPolePackageAPI) : Type
+number of parameters: 1
+fields:
+  RHFormalization.HSideGroupedPoleNormalFormData.M : RHFormalization.ZeroMultiplicityData
+  RHFormalization.HSideGroupedPoleNormalFormData.groupedClass : (W : RHFormalization.ZeroWitness) →
+      RHFormalization.GroupedPoleClass self.M W
+  RHFormalization.HSideGroupedPoleNormalFormData.h_principalPart : ∀ (W : RHFormalization.ZeroWitness),
+      RHFormalization.HasPrincipalPartAtC H.Zpole W.s0
+        (RHFormalization.groupedResidueCoeff self.M (self.groupedClass W))
+  RHFormalization.HSideGroupedPoleNormalFormData.poleNormalForm : RHFormalization.PoleNormalFormLayer
+constructor:
+  RHFormalization.HSideGroupedPoleNormalFormData.mk {H : RHFormalization.ZeroPolePackageAPI}
+    (M : RHFormalization.ZeroMultiplicityData)
+    (groupedClass : (W : RHFormalization.ZeroWitness) → RHFormalization.GroupedPoleClass M W)
+    (h_principalPart :
+      ∀ (W : RHFormalization.ZeroWitness),
+        RHFormalization.HasPrincipalPartAtC H.Zpole W.s0 (RHFormalization.groupedResidueCoeff M (groupedClass W)))
+    (poleNormalForm : RHFormalization.PoleNormalFormLayer) : RHFormalization.HSideGroupedPoleNormalFormData H
+structure RHFormalization.HSideGroupedPoleArithmeticData (H : RHFormalization.ZeroPolePackageAPI) : Type
+number of parameters: 1
+fields:
+  RHFormalization.HSideGroupedPoleArithmeticData.M : RHFormalization.ZeroMultiplicityData
+  RHFormalization.HSideGroupedPoleArithmeticData.groupedClass : (W : RHFormalization.ZeroWitness) →
+      RHFormalization.GroupedPoleClass self.M W
+  RHFormalization.HSideGroupedPoleArithmeticData.h_principalPart : ∀ (W : RHFormalization.ZeroWitness),
+      RHFormalization.HasPrincipalPartAtC H.Zpole W.s0
+        (RHFormalization.groupedResidueCoeff self.M (self.groupedClass W))
+  RHFormalization.HSideGroupedPoleArithmeticData.principalPartToPole : RHFormalization.PrincipalPartImpliesGenuinePoleAPI
+constructor:
+  RHFormalization.HSideGroupedPoleArithmeticData.mk {H : RHFormalization.ZeroPolePackageAPI}
+    (M : RHFormalization.ZeroMultiplicityData)
+    (groupedClass : (W : RHFormalization.ZeroWitness) → RHFormalization.GroupedPoleClass M W)
+    (h_principalPart :
+      ∀ (W : RHFormalization.ZeroWitness),
+        RHFormalization.HasPrincipalPartAtC H.Zpole W.s0 (RHFormalization.groupedResidueCoeff M (groupedClass W)))
+    (principalPartToPole : RHFormalization.PrincipalPartImpliesGenuinePoleAPI) :
+    RHFormalization.HSideGroupedPoleArithmeticData H

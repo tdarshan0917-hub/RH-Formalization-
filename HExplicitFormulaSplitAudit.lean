@@ -1,0 +1,9 @@
+import RHFormalization.HExplicitFormulaSplit
+
+#check RHFormalization.HarchPackageFromBsharedAddZpole
+#check RHFormalization.HarchPackageFromBsharedAddZpole_split
+#check RHFormalization.finalRHSpine_from_explicitFormulaHarch
+
+#print axioms RHFormalization.HarchPackageFromBsharedAddZpole
+#print axioms RHFormalization.HarchPackageFromBsharedAddZpole_split
+#print axioms RHFormalization.finalRHSpine_from_explicitFormulaHarch

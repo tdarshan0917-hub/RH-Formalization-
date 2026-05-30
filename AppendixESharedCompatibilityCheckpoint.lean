@@ -1,0 +1,7 @@
+import RHFormalization.AppendixESharedPackageCompatibility
+
+#check RHFormalization.finalRHSpine_after_sharedPackageCompatibility
+#print axioms RHFormalization.finalRHSpine_after_sharedPackageCompatibility
+
+#print RHFormalization.AppendixESharedPackageCompatibility
+#print RHFormalization.CanonicalPrimePowerPackage

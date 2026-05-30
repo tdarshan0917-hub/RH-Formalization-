@@ -1,0 +1,12 @@
+import RHFormalization.AppendixESharedPackageFunctionalCompatibility
+
+#check RHFormalization.finalRHSpine_from_Cshared_eq
+
+#print RHFormalization.DDetailedConstructionWithOperatorLegality
+#print RHFormalization.HMeromorphicWithNormalFormPoles
+
+#check RHFormalization.DDetailedConstructionWithOperatorLegality.B
+#check RHFormalization.HMeromorphicWithNormalFormPoles.layer
+
+#print RHFormalization.sharedBIdentity_of_Cshared_eq
+#print RHFormalization.finalRHSpine_from_Cshared_eq

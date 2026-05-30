@@ -1,0 +1,189 @@
+RHFormalization/PrincipalPartCoboundedModel.lean:5:# RHFormalization.PrincipalPartCoboundedModel
+RHFormalization/PrincipalPartCoboundedModel.lean:7:Narrows `PrincipalPartCoboundedAPI`.
+RHFormalization/PrincipalPartCoboundedModel.lean:9:Instead of assuming coboundedness for every bundled `PrincipalPartNormalForm`, we reduce it
+RHFormalization/PrincipalPartCoboundedModel.lean:26:a nonzero simple-pole term plus a holomorphic function tends to infinity/cobounded
+RHFormalization/PrincipalPartCoboundedModel.lean:29:structure SimplePolePlusHolomorphicCoboundedAPI where
+RHFormalization/PrincipalPartCoboundedModel.lean:30:  h_model_cobounded :
+RHFormalization/PrincipalPartCoboundedModel.lean:37:          (Bornology.cobounded ℂ)
+RHFormalization/PrincipalPartCoboundedModel.lean:40:Build `PrincipalPartCoboundedAPI` from the narrower simple-pole-plus-holomorphic
+RHFormalization/PrincipalPartCoboundedModel.lean:41:coboundedness input.
+RHFormalization/PrincipalPartCoboundedModel.lean:43:def buildPrincipalPartCoboundedAPIFromModel
+RHFormalization/PrincipalPartCoboundedModel.lean:44:    (S : SimplePolePlusHolomorphicCoboundedAPI) :
+RHFormalization/PrincipalPartCoboundedModel.lean:45:    PrincipalPartCoboundedAPI :=
+RHFormalization/PrincipalPartCoboundedModel.lean:46:  { h_cobounded := fun f s0 coeff hpp =>
+RHFormalization/PrincipalPartCoboundedModel.lean:54:              (Bornology.cobounded ℂ) :=
+RHFormalization/PrincipalPartCoboundedModel.lean:55:          S.h_model_cobounded h s0 coeff hpp.h_coeff_ne_zero hh
+RHFormalization/PrincipalPartCoboundedModel.lean:67:Endpoint after replacing `PrincipalPartCoboundedAPI` by the narrower
+RHFormalization/PrincipalPartCoboundedModel.lean:68:`SimplePolePlusHolomorphicCoboundedAPI`.
+RHFormalization/PrincipalPartCoboundedModel.lean:71:`mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_principalPartCobounded_only`,
+RHFormalization/PrincipalPartCoboundedModel.lean:74:`C : PrincipalPartCoboundedAPI`.
+RHFormalization/PrincipalPartCoboundedModel.lean:76:It asks only for the local model coboundedness theorem.
+RHFormalization/PrincipalPartCoboundedModel.lean:78:theorem mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_simplePoleCobounded
+RHFormalization/PrincipalPartCoboundedModel.lean:86:    (S : SimplePolePlusHolomorphicCoboundedAPI) :
+RHFormalization/PrincipalPartCoboundedModel.lean:88:  mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_principalPartCobounded_only
+RHFormalization/PrincipalPartCoboundedModel.lean:94:    (buildPrincipalPartCoboundedAPIFromModel S)
+RHFormalization/PrincipalPartCoboundedSplit.lean:2:import RHFormalization.PrincipalPartCoboundedModel
+RHFormalization/PrincipalPartCoboundedSplit.lean:5:# RHFormalization.PrincipalPartCoboundedSplit
+RHFormalization/PrincipalPartCoboundedSplit.lean:7:Further narrows `SimplePolePlusHolomorphicCoboundedAPI`.
+RHFormalization/PrincipalPartCoboundedSplit.lean:9:Instead of assuming coboundedness of
+RHFormalization/PrincipalPartCoboundedSplit.lean:15:1. the pure nonzero simple pole is cobounded on the punctured neighbourhood;
+RHFormalization/PrincipalPartCoboundedSplit.lean:16:2. adding a finite-limit perturbation preserves coboundedness.
+RHFormalization/PrincipalPartCoboundedSplit.lean:26:A nonzero simple pole tends to infinity/cobounded on the punctured neighbourhood.
+RHFormalization/PrincipalPartCoboundedSplit.lean:28:structure SimplePoleCoboundedAPI where
+RHFormalization/PrincipalPartCoboundedSplit.lean:29:  h_simple_pole_cobounded :
+RHFormalization/PrincipalPartCoboundedSplit.lean:35:          (Bornology.cobounded ℂ)
+RHFormalization/PrincipalPartCoboundedSplit.lean:38:Adding a finite-limit perturbation to a cobounded function preserves coboundedness.
+RHFormalization/PrincipalPartCoboundedSplit.lean:40:structure CoboundedAddFiniteLimitAPI where
+RHFormalization/PrincipalPartCoboundedSplit.lean:43:      Tendsto f l (Bornology.cobounded ℂ) →
+RHFormalization/PrincipalPartCoboundedSplit.lean:48:          (Bornology.cobounded ℂ)
+RHFormalization/PrincipalPartCoboundedSplit.lean:51:Build the previous `SimplePolePlusHolomorphicCoboundedAPI` from the two narrower
+RHFormalization/PrincipalPartCoboundedSplit.lean:52:local coboundedness facts.
+RHFormalization/PrincipalPartCoboundedSplit.lean:54:def buildSimplePolePlusHolomorphicCoboundedAPIFromSplit
+RHFormalization/PrincipalPartCoboundedSplit.lean:55:    (SP : SimplePoleCoboundedAPI)
+RHFormalization/PrincipalPartCoboundedSplit.lean:56:    (BA : CoboundedAddFiniteLimitAPI) :
+RHFormalization/PrincipalPartCoboundedSplit.lean:57:    SimplePolePlusHolomorphicCoboundedAPI :=
+RHFormalization/PrincipalPartCoboundedSplit.lean:58:  { h_model_cobounded := fun h s0 coeff hcoeff hh =>
+RHFormalization/PrincipalPartCoboundedSplit.lean:64:              (Bornology.cobounded ℂ) :=
+RHFormalization/PrincipalPartCoboundedSplit.lean:65:          SP.h_simple_pole_cobounded s0 coeff hcoeff
+RHFormalization/PrincipalPartCoboundedSplit.lean:85:Endpoint after replacing `SimplePolePlusHolomorphicCoboundedAPI` by the two
+RHFormalization/PrincipalPartCoboundedSplit.lean:86:narrower coboundedness facts.
+RHFormalization/PrincipalPartCoboundedSplit.lean:88:theorem mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_splitCobounded
+RHFormalization/PrincipalPartCoboundedSplit.lean:96:    (SP : SimplePoleCoboundedAPI)
+RHFormalization/PrincipalPartCoboundedSplit.lean:97:    (BA : CoboundedAddFiniteLimitAPI) :
+RHFormalization/PrincipalPartCoboundedSplit.lean:99:  mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_simplePoleCobounded
+RHFormalization/PrincipalPartCoboundedSplit.lean:105:    (buildSimplePolePlusHolomorphicCoboundedAPIFromSplit SP BA)
+RHFormalization/PrincipalPartMeromorphic.lean:2:import RHFormalization.PrincipalPartOrderFromCobounded
+RHFormalization/PrincipalPartMeromorphic.lean:16:This does not yet discharge `PrincipalPartCoboundedAPI`; that remains the local
+RHFormalization/PrincipalPartMeromorphic.lean:17:non-removability/coboundedness input.
+RHFormalization/PrincipalPartMeromorphic.lean:74:theorem hasPrincipalPartAtC_meromorphicAt
+RHFormalization/PrincipalPartMeromorphic.lean:77:    (hpp : HasPrincipalPartAtC f z coeff) :
+RHFormalization/PrincipalPartMeromorphic.lean:100:    (hpp : PrincipalPartNormalForm f z coeff) :
+RHFormalization/PrincipalPartMeromorphic.lean:107:def defaultPrincipalPartMeromorphicAtAPI :
+RHFormalization/PrincipalPartMeromorphic.lean:116:`mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_principalPartCobounded`,
+RHFormalization/PrincipalPartMeromorphic.lean:123:`C : PrincipalPartCoboundedAPI`.
+RHFormalization/PrincipalPartMeromorphic.lean:125:theorem mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_principalPartCobounded_only
+RHFormalization/PrincipalPartMeromorphic.lean:133:    (C : PrincipalPartCoboundedAPI) :
+RHFormalization/PrincipalPartMeromorphic.lean:135:  mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_principalPartCobounded
+RHFormalization/PrincipalPartOrderFromCobounded.lean:5:# RHFormalization.PrincipalPartOrderFromCobounded
+RHFormalization/PrincipalPartOrderFromCobounded.lean:13:2. the function tends to infinity/cobounded on the punctured neighbourhood.
+RHFormalization/PrincipalPartOrderFromCobounded.lean:17:`tendsto_cobounded_iff_meromorphicOrderAt_neg`.
+RHFormalization/PrincipalPartOrderFromCobounded.lean:32:structure PrincipalPartMeromorphicAtAPI where
+RHFormalization/PrincipalPartOrderFromCobounded.lean:35:      PrincipalPartNormalForm f s0 coeff →
+RHFormalization/PrincipalPartOrderFromCobounded.lean:42:This is the analytic non-removability/coboundedness input.
+RHFormalization/PrincipalPartOrderFromCobounded.lean:44:structure PrincipalPartCoboundedAPI where
+RHFormalization/PrincipalPartOrderFromCobounded.lean:45:  h_cobounded :
+RHFormalization/PrincipalPartOrderFromCobounded.lean:47:      PrincipalPartNormalForm f s0 coeff →
+RHFormalization/PrincipalPartOrderFromCobounded.lean:48:        Tendsto f (𝓝[≠] s0) (Bornology.cobounded ℂ)
+RHFormalization/PrincipalPartOrderFromCobounded.lean:52:coboundedness, using Mathlib's meromorphic-order theorem.
+RHFormalization/PrincipalPartOrderFromCobounded.lean:54:def buildPrincipalPartNegativeOrderAPIFromCobounded
+RHFormalization/PrincipalPartOrderFromCobounded.lean:56:    (C : PrincipalPartCoboundedAPI) :
+RHFormalization/PrincipalPartOrderFromCobounded.lean:59:      (tendsto_cobounded_iff_meromorphicOrderAt_neg
+RHFormalization/PrincipalPartOrderFromCobounded.lean:61:        (C.h_cobounded f s0 coeff hpp) }
+RHFormalization/PrincipalPartOrderFromCobounded.lean:67:theorem mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_principalPartCobounded
+RHFormalization/PrincipalPartOrderFromCobounded.lean:76:    (C : PrincipalPartCoboundedAPI) :
+RHFormalization/PrincipalPartOrderFromCobounded.lean:84:    (buildPrincipalPartNegativeOrderAPIFromCobounded M C)
+RHFormalization/HSideOverlapChosenCshared.lean:13:  C.Bshared s = Harch s - Zpole s
+RHFormalization/HSideOverlapChosenCshared.lean:34:    (Zpole Harch : ℂ → ℂ)
+RHFormalization/HSideOverlapChosenCshared.lean:41:          C.Bshared s = Harch s - Zpole s) :
+RHFormalization/HSideOverlapChosenCshared.lean:42:    HSideOverlapPackage Zpole Harch :=
+RHFormalization/HSideOverlapChosenCshared.lean:56:    (Zpole Harch : ℂ → ℂ)
+RHFormalization/HSideOverlapChosenCshared.lean:63:          C.Bshared s = Harch s - Zpole s) :
+RHFormalization/HSideOverlapChosenCshared.lean:65:      Zpole Harch C sigma0 h_Cshared_sigma_le h_split).Cshared = C := by
+RHFormalization/HSidePoleWitness.lean:18:* hence the principal coefficient is nonzero and cannot cancel.
+RHFormalization/HSidePoleWitness.lean:22:It does not yet construct the full `Zpole` series or prove meromorphic convergence.
+RHFormalization/HSidePoleWitness.lean:85:This is the precise formal version of "positive multiplicities cannot cancel."
+RHFormalization/HSidePoleWitness.lean:125:H-side grouped pole data for `Zpole`.
+RHFormalization/HSidePoleWitness.lean:142:      HasPrincipalPartAtC H.Zpole W.s0
+RHFormalization/HSidePoleWitness.lean:149:definition of `HasGenuinePole`.
+RHFormalization/HSidePoleWitness.lean:151:structure PrincipalPartImpliesGenuinePoleAPI where
+RHFormalization/HSidePoleWitness.lean:155:      HasPrincipalPartAtC f s0 c →
+RHFormalization/HSidePoleWitness.lean:156:      HasGenuinePole f s0
+RHFormalization/HSidePoleWitness.lean:162:`∀ W, HasGenuinePole H.Zpole W.s0`.
+RHFormalization/HSidePoleWitness.lean:170:      Q.h_genuine H.Zpole W.s0
+RHFormalization/HSidePoleWitness.lean:186:      { principalCoeff := groupedResidueCoeff G.M (G.groupedClass W)
+RHFormalization/HSidePoleWitness.lean:187:        h_principalCoeff_ne_zero :=
+RHFormalization/HSideResidueArithmetic.lean:12:cancel to zero.
+RHFormalization/HSideResidueArithmetic.lean:122:      HasPrincipalPartAtC H.Zpole W.s0
+RHFormalization/PoleNormalForm.lean:22:* a builder from `HasPrincipalPartAtC`;
+RHFormalization/PoleNormalForm.lean:26:`HasPrincipalPartAtC` and `HasGenuinePole` by Mathlib/project-local Laurent series
+RHFormalization/PoleNormalForm.lean:52:  HasPrincipalPartAtC f s0 coeff
+RHFormalization/PoleNormalForm.lean:57:structure PrincipalPartNormalForm
+RHFormalization/PoleNormalForm.lean:63:    HasPrincipalPartAtC f s0 coeff
+RHFormalization/PoleNormalForm.lean:70:This remains a hard local meromorphic-analysis API until `HasPrincipalPartAtC` is
+RHFormalization/PoleNormalForm.lean:73:structure PrincipalPartToNormalFormAPI where
+RHFormalization/PoleNormalForm.lean:77:      HasPrincipalPartAtC f s0 coeff →
+RHFormalization/PoleNormalForm.lean:78:      PrincipalPartNormalForm f s0 coeff
+RHFormalization/PoleNormalForm.lean:81:Definition-level bridge from a nonzero local normal form to `HasGenuinePole`.
+RHFormalization/PoleNormalForm.lean:83:This remains a hard API only because `HasGenuinePole` is still a project wrapper.
+RHFormalization/PoleNormalForm.lean:84:Once `HasGenuinePole` is defined as existence of such a normal form, this bridge
+RHFormalization/PoleNormalForm.lean:90:      PrincipalPartNormalForm f s0 coeff →
+RHFormalization/PoleNormalForm.lean:91:      HasGenuinePole f s0
+RHFormalization/PoleNormalForm.lean:106:def PoleNormalFormLayer.toPrincipalPartImpliesGenuinePoleAPI
+RHFormalization/PoleNormalForm.lean:128:      HasPrincipalPartAtC H.Zpole W.s0
+RHFormalization/PoleObstruction.lean:12:  `FH = Htot - Zpole`
+RHFormalization/PoleObstruction.lean:15:`Zpole` cannot have a genuine uncancelled pole at `s0`.
+RHFormalization/PoleObstruction.lean:52:      LocalEqAtC D.FH (fun s => Htot D H s - H.Zpole s) W.s0
+RHFormalization/PoleObstruction.lean:68:      HolomorphicOnC f Ω →
+RHFormalization/PoleObstruction.lean:105:"uncancelled pole" or "grouped residue non-cancellation" condition.
+RHFormalization/PoleObstruction.lean:110:  principalCoeff : ℂ
+RHFormalization/PoleObstruction.lean:111:  h_principalCoeff_ne_zero : principalCoeff ≠ 0
+RHFormalization/PoleObstruction.lean:112:  h_principalPart : HasPrincipalPartAtC f s0 principalCoeff
+RHFormalization/PoleObstruction.lean:124:      HasGenuinePole H.Zpole W.s0 →
+RHFormalization/PoleObstruction.lean:125:      GenuinePoleNormalForm H.Zpole W.s0
+RHFormalization/PoleObstruction.lean:136:If `FH = Htot - Zpole` locally at `W.s0`, and both `FH` and `Htot`
+RHFormalization/PoleObstruction.lean:137:are holomorphic at `W.s0`, then `Zpole` cannot have a genuine pole at `W.s0`.
+RHFormalization/PoleObstruction.lean:139:This is the removable-singularity / no-cancellation lemma that will later be
+RHFormalization/PoleObstruction.lean:148:      LocalEqAtC D.FH (fun s => Htot D H s - H.Zpole s) W.s0 →
+RHFormalization/PoleObstruction.lean:151:      ¬ HasGenuinePole H.Zpole W.s0
+RHFormalization/PoleObstructionFromNormalForm.lean:10:* `FH = Htot - Zpole` locally near a witness point `s0`;
+RHFormalization/PoleObstructionFromNormalForm.lean:13:* `Zpole` has a nonzero principal-part normal form at `s0`.
+RHFormalization/PoleObstructionFromNormalForm.lean:47:`FH = Htot - Zpole`,
+RHFormalization/PoleObstructionFromNormalForm.lean:49:normal form for `Zpole`, contradiction follows.
+RHFormalization/PoleObstructionFromNormalForm.lean:61:      LocalEqAtC D.FH (fun s => Htot D H s - H.Zpole s) W.s0 →
+RHFormalization/PoleObstructionFromNormalForm.lean:64:      PrincipalPartNormalForm H.Zpole W.s0 coeff →
+RHFormalization/PoleObstructionFromNormalForm.lean:72:Convert a `GenuinePoleNormalForm` into the stronger `PrincipalPartNormalForm`,
+RHFormalization/PoleObstructionFromNormalForm.lean:82:    PrincipalPartNormalForm f s0 G.principalCoeff :=
+RHFormalization/PoleObstructionFromNormalForm.lean:86:    G.principalCoeff
+RHFormalization/PoleObstructionFromNormalForm.lean:87:    G.h_principalCoeff_ne_zero
+RHFormalization/PoleObstructionFromNormalForm.lean:105:      let G : GenuinePoleNormalForm H.Zpole W.s0 :=
+RHFormalization/PoleObstructionFromNormalForm.lean:107:      let PN : PrincipalPartNormalForm H.Zpole W.s0 G.principalCoeff :=
+RHFormalization/PoleObstructionFromNormalForm.lean:109:      O.h_no_normal_form W G.principalCoeff h_local h_FH_at h_Htot_at PN }
+RHFormalization/DefaultMeromorphicAlgebra.lean:9:The key point is that `HolomorphicOnC f U` is analytic *within* `U`.
+RHFormalization/DefaultMeromorphicAlgebra.lean:26:    (hf : HolomorphicOnC f U) :
+RHFormalization/DefaultMeromorphicAlgebra.lean:27:    MeromorphicOnC f U := by
+RHFormalization/DefaultMeromorphicAlgebra.lean:38:    (hf : HolomorphicOnC f U)
+RHFormalization/DefaultMeromorphicAlgebra.lean:39:    (hg : MeromorphicOnC g U) :
+RHFormalization/DefaultMeromorphicAlgebra.lean:40:    MeromorphicOnC (fun s => f s - g s) U := by
+RHFormalization/OmegaCodiscreteIdentityFromNormalForms.lean:44:      MeromorphicOnC f Ω →
+RHFormalization/OmegaCodiscreteIdentityFromNormalForms.lean:45:      MeromorphicOnC g Ω →
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:32:      MeromorphicOnC F Ω →
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:33:      MeromorphicOnC G Ω →
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:43:    (hf : MeromorphicOnC f Ω) :
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:44:    MeromorphicOnC (toMeromorphicNFOn f Ω) Ω := by
+RHFormalization/OmegaMeromorphicZeroPropagationClopen.lean:44:    (hH : MeromorphicOnC H Ω)
+RHFormalization/OmegaMeromorphicZeroPropagationEndpoint.lean:32:      MeromorphicOnC H Ω →
+RHFormalization/OmegaMeromorphicZeroPropagationEndpoint.lean:46:            MeromorphicOnC (fun s : ℂ => F s - G s) Ω := by
+RHFormalization/OmegaMeromorphicZeroPropagationProof.lean:38:    (hH : MeromorphicOnC H Ω)
+RHFormalization/OmegaMeromorphicZeroPropagationProof.lean:76:    (hH : MeromorphicOnC H Ω)
+RHFormalization/OmegaNormalFormLocalPropagationEndpoint.lean:38:      MeromorphicOnC f Ω →
+RHFormalization/OmegaNormalFormLocalPropagationEndpoint.lean:39:      MeromorphicOnC g Ω →
+RHFormalization/OmegaNormalFormPropagationEndpoint.lean:38:      MeromorphicOnC f Ω →
+RHFormalization/OmegaNormalFormPropagationEndpoint.lean:39:      MeromorphicOnC g Ω →
+RHFormalization/OmegaNormalFormPropagationEndpoint.lean:53:    (hf : MeromorphicOnC f Ω)
+RHFormalization/OmegaNormalFormPropagationEndpoint.lean:54:    (hg : MeromorphicOnC g Ω)
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:40:      MeromorphicOnC f Ω →
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:41:      MeromorphicOnC g Ω →
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:83:        (fun s => Htot D H s - H.Zpole s)
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:88:        (fun s => Htot D H s - H.Zpole s)
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:101:    HolomorphicOnC.holomorphicAt
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:108:    HolomorphicOnC.holomorphicAt
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:114:      HasGenuinePole H.Zpole W.s0 := by
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:116:      HasGenuinePole X.toLegacyZeroPolePackageAPI.Zpole W.s0
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:121:      GenuinePoleNormalForm H.Zpole W.s0 :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:125:      PrincipalPartNormalForm H.Zpole W.s0 G.principalCoeff :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:131:      meromorphicOrderAt H.Zpole W.s0 < 0 :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:133:      H.Zpole
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:135:      G.principalCoeff
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:142:      H.Zpole
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:48:      MeromorphicOnC f Ω →
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:49:      MeromorphicOnC g Ω →

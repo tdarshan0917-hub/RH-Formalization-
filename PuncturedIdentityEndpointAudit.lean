@@ -1,0 +1,4 @@
+import RHFormalization.PuncturedMeromorphicIdentityEndpoint
+
+#check RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_puncturedIdentity
+#print axioms RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_puncturedIdentity

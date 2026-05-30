@@ -1,0 +1,13 @@
+import RHFormalization.CanonicalPrimePowerPackage
+import RHFormalization.AppendixDPrimePowerLimitReduction
+
+#check RHFormalization.PrimePowerPair
+#check RHFormalization.CanonicalKernelC
+#check RHFormalization.finiteCanonicalPrimePowerPackage
+#check RHFormalization.CanonicalPrimePowerPackage
+#check RHFormalization.FiniteCanonicalPrimePowerFormula
+#check RHFormalization.DOperatorFiniteCanonicalLimitAtOverlapData
+
+#print RHFormalization.CanonicalPrimePowerPackage
+#print RHFormalization.FiniteCanonicalPrimePowerFormula
+#print axioms RHFormalization.finiteCanonicalPrimePowerPackage

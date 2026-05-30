@@ -1,0 +1,4 @@
+import RHFormalization.SimplePoleOrderFromDenominator
+
+#check RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_denominatorOrder
+#print axioms RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_denominatorOrder

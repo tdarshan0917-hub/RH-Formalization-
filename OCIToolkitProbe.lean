@@ -1,0 +1,29 @@
+import Mathlib.Analysis.Meromorphic.NormalForm
+import Mathlib.Analysis.Meromorphic.Order
+import Mathlib.Analysis.Analytic.IsolatedZeros
+import RHFormalization.DefaultOmegaPreperfect
+
+open Complex Topology Filter
+
+#check toMeromorphicNFOn
+#check toMeromorphicNFOn_eqOn_codiscrete
+#check MeromorphicOn.toMeromorphicNFOn_eq_self_on_nhdsNE
+#check MeromorphicOn.meromorphicNFAt_mem_codiscreteWithin
+#check MeromorphicOn.analyticAt_mem_codiscreteWithin
+#check MeromorphicNFOn
+#check toMeromorphicNFOn_eq_toMeromorphicNFAt
+#check toMeromorphicNFAt_eq_self
+#check MeromorphicAt.eqOn_compl_singleton_toMeromorphicNFAt
+
+#check AnalyticOnNhd
+#check AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq
+#check AnalyticOnNhd.eqOn_of_preconnected_of_eventuallyEq
+#check AnalyticOnNhd.eqOn_zero_of_preconnected_of_eventuallyEq_zero
+#check AnalyticAt.frequently_eq_iff_eventually_eq
+#check accPt_iff_frequently
+
+#check Filter.codiscreteWithin
+#check mem_codiscreteWithin
+#check Filter.self_mem_codiscreteWithin
+#check Filter.EventuallyEq.trans
+#check Filter.EventuallyEq.symm

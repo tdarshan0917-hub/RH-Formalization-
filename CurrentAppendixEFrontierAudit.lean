@@ -1,0 +1,5 @@
+import RHFormalization.AppendixESharedPackageFunctionalCompatibility
+
+#check RHFormalization.finalRHSpine_after_sharedPackageFunctionalCompatibility
+#print axioms RHFormalization.finalRHSpine_after_sharedPackageFunctionalCompatibility
+#print RHFormalization.AppendixESharedPackageFunctionalCompatibility

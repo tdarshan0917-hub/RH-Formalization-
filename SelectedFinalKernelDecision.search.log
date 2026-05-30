@@ -1,0 +1,133 @@
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:36:abbrev DWindowExactMassExactSpeedSharedPackage
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:40:  canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:52:      (DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S) :=
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:73:      let Cshared := DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:90:    (DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:119:      let Cshared := DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:160:        (DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S).Bshared s := by
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:174:  simpa [DWindowExactMassExactSpeedSharedPackage,
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:175:         canonicalPrimePowerPackageFromKernelTsum]
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:200:      let Cshared := DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S
+RHFormalization/FinalRHFromRCutoffEstimate.lean:46:      let Cshared := RCutoffEstimateSharedPackage finiteOperatorLayer S
+RHFormalization/FinalRHFromRCutoffEstimate.lean:97:      let Cshared := RCutoffEstimateSharedPackage finiteOperatorLayer S
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:118:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:148:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:165:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:201:      simpa [canonicalPrimePowerPackageFromKernelTsum] using
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:207:          (Kshared := S.Kshared)
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:222:    (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:239:  simpa [canonicalPrimePowerPackageFromKernelTsum] using
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:35:def canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:53:  `canonicalPrimePowerPackageFromKernelTsum X.toStagePackage.sigma0 Kshared`.
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:104:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:109:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:125:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:139:    (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:155:  simpa [canonicalPrimePowerPackageFromKernelTsum] using
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:280:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:326:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:185:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:226:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:193:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:223:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:228:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:263:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:198:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:240:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:122:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:160:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:199:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:259:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:226:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:268:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:235:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:297:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:163:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:214:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:181:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:215:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:186:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:227:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:182:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:230:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:203:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:260:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:95:    PrimePowerDWindowCompactSpeedRateData X W alpha Kshared :=
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:275:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:320:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:239:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:289:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:201:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:241:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:212:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:230:          (Kshared := S.Kshared)
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:246:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:124:      (displacementCanonicalKernel (heatKernelG t))
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:199:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:201:        (displacementCanonicalKernel (heatKernelG S.t))) :=
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:225:        q.weightC * (displacementCanonicalKernel (heatKernelG S.t)) q.center s := by
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:126:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:176:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:201:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:318:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:377:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:249:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:305:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:205:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:239:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:208:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:257:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:241:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:289:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:187:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:219:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:165:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:199:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:153:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:194:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:169:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:214:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:288:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:320:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:38:def displacementCanonicalKernel
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:72:      ‖(displacementCanonicalKernel G) q.center s‖
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:75:  dsimp [displacementCanonicalKernel, displacementKernelMajorant]
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:125:      (displacementCanonicalKernel G)
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:178:    Kshared := displacementCanonicalKernel S.G
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:218:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:220:        (displacementCanonicalKernel S.G)) :=
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:244:        q.weightC * (displacementCanonicalKernel S.G) q.center s := by
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:100:      (displacementCanonicalKernel G)
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:180:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:182:        (displacementCanonicalKernel S.G)) :=
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:206:        q.weightC * (displacementCanonicalKernel S.G) q.center s := by
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:170:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:211:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:182:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:222:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:202:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:265:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:325:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:371:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:103:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:130:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:131:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:170:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:35:`Bshared` field of `canonicalPrimePowerPackageFromKernelTsum` has the same
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:38:theorem canonicalPrimePowerPackageFromKernelTsum_principalPart_at_witness
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:51:      (canonicalPrimePowerPackageFromKernelTsum sigma0 Kshared).Bshared
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:54:  simpa [canonicalPrimePowerPackageFromKernelTsum] using hpp
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:60:theorem canonicalPrimePowerPackageFromKernelTsum_oppositePrincipalPart_at_witness
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:76:      (canonicalPrimePowerPackageFromKernelTsum sigma0 Kshared).Bshared
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:79:  canonicalPrimePowerPackageFromKernelTsum_principalPart_at_witness
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:99:        canonicalPrimePowerPackageFromKernelTsum sigma0 Kshared)
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:113:      canonicalPrimePowerPackageFromKernelTsum_oppositePrincipalPart_at_witness
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:112:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:205:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:246:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:297:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:342:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:205:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:247:      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:347:    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:379:      (canonicalPrimePowerPackageFromKernelTsum

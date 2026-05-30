@@ -1,0 +1,20 @@
+import RHFormalization.CanonicalPrimePowerTsumPrincipalPart
+import RHFormalization.CanonicalPrimePowerConcreteTsumPackage
+import RHFormalization.CanonicalPrimePowerTsumSeries
+import RHFormalization.CanonicalPrimePowerKernelSeries
+import RHFormalization.HSideResidueArithmetic
+import RHFormalization.HSidePoleWitness
+
+#check RHFormalization.canonicalPrimePowerPackageFromKernelTsum_principalPart_at_witness
+#check RHFormalization.canonicalPrimePowerPackageFromKernelTsum_oppositePrincipalPart_at_witness
+#check RHFormalization.BsharedOppositePrincipalPartData_of_tsum_principalParts
+
+#check RHFormalization.HasPrincipalPartAtC
+#check RHFormalization.groupedResidueCoeff
+#check RHFormalization.CanonicalKernelC
+#check RHFormalization.PrimePowerPair.weightC
+#check RHFormalization.PrimePowerPair.center
+
+#print RHFormalization.CanonicalKernelC
+#print RHFormalization.canonicalPrimePowerPackageFromKernelTsum
+#print RHFormalization.HasPrincipalPartAtC

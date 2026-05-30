@@ -1,0 +1,14 @@
+import RHFormalization.OmegaMeromorphicZeroPropagationClopen
+
+#check RHFormalization.finalRHSpine_after_zeroPropagation
+#print axioms RHFormalization.finalRHSpine_after_zeroPropagation
+
+#print RHFormalization.InterfaceBridgeAPI
+#print RHFormalization.OperatorResolventBridge
+#print RHFormalization.ZeroPolePackageAPI
+#print RHFormalization.DOverlapIdentityAPI
+#print RHFormalization.DDetailedConstructionWithOperatorLegality
+#print RHFormalization.HMeromorphicWithNormalFormPoles
+
+#check RHFormalization.DDetailedConstructionWithOperatorLegality.toOperatorResolventBridge
+#check RHFormalization.HMeromorphicWithNormalFormPoles.toLegacyZeroPolePackageAPI

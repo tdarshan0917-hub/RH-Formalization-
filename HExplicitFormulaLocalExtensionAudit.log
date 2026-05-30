@@ -1,0 +1,67 @@
+RHFormalization.Harch_holomorphic_from_local_extensions (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+  (Zpole : ℂ → ℂ)
+  (hlocal :
+    ∀ z ∈ Ω,
+      ∃ h,
+        RHFormalization.HolomorphicAtC h z ∧
+          RHFormalization.LocalEqAtC h (fun s => Y.B.Cshared.Bshared s + Zpole s) z) :
+  RHFormalization.HolomorphicOnC (fun s => Y.B.Cshared.Bshared s + Zpole s) Ω
+RHFormalization.HolomorphicAtC (f : ℂ → ℂ) (z : ℂ) : Prop
+RHFormalization.LocalEqAtC (f g : ℂ → ℂ) (z : ℂ) : Prop
+RHFormalization.HasPrincipalPartAtC (f : ℂ → ℂ) (z coeff : ℂ) : Prop
+RHFormalization.HasGenuinePole (f : ℂ → ℂ) (z : ℂ) : Prop
+RHFormalization.PrincipalPartNormalForm (f : ℂ → ℂ) (s0 coeff : ℂ) : Prop
+structure RHFormalization.PoleNormalFormLayer : Prop
+number of parameters: 0
+fields:
+  RHFormalization.PoleNormalFormLayer.principalPartToNormalForm : RHFormalization.PrincipalPartToNormalFormAPI
+  RHFormalization.PoleNormalFormLayer.normalFormToGenuinePole : RHFormalization.NormalFormImpliesGenuinePoleAPI
+constructor:
+  RHFormalization.PoleNormalFormLayer.mk (principalPartToNormalForm : RHFormalization.PrincipalPartToNormalFormAPI)
+    (normalFormToGenuinePole : RHFormalization.NormalFormImpliesGenuinePoleAPI) : RHFormalization.PoleNormalFormLayer
+structure RHFormalization.HSideGroupedPoleNormalFormData (H : RHFormalization.ZeroPolePackageAPI) : Type
+number of parameters: 1
+fields:
+  RHFormalization.HSideGroupedPoleNormalFormData.M : RHFormalization.ZeroMultiplicityData
+  RHFormalization.HSideGroupedPoleNormalFormData.groupedClass : (W : RHFormalization.ZeroWitness) →
+      RHFormalization.GroupedPoleClass self.M W
+  RHFormalization.HSideGroupedPoleNormalFormData.h_principalPart : ∀ (W : RHFormalization.ZeroWitness),
+      RHFormalization.HasPrincipalPartAtC H.Zpole W.s0
+        (RHFormalization.groupedResidueCoeff self.M (self.groupedClass W))
+  RHFormalization.HSideGroupedPoleNormalFormData.poleNormalForm : RHFormalization.PoleNormalFormLayer
+constructor:
+  RHFormalization.HSideGroupedPoleNormalFormData.mk {H : RHFormalization.ZeroPolePackageAPI}
+    (M : RHFormalization.ZeroMultiplicityData)
+    (groupedClass : (W : RHFormalization.ZeroWitness) → RHFormalization.GroupedPoleClass M W)
+    (h_principalPart :
+      ∀ (W : RHFormalization.ZeroWitness),
+        RHFormalization.HasPrincipalPartAtC H.Zpole W.s0 (RHFormalization.groupedResidueCoeff M (groupedClass W)))
+    (poleNormalForm : RHFormalization.PoleNormalFormLayer) : RHFormalization.HSideGroupedPoleNormalFormData H
+structure RHFormalization.HSideGroupedPoleArithmeticData (H : RHFormalization.ZeroPolePackageAPI) : Type
+number of parameters: 1
+fields:
+  RHFormalization.HSideGroupedPoleArithmeticData.M : RHFormalization.ZeroMultiplicityData
+  RHFormalization.HSideGroupedPoleArithmeticData.groupedClass : (W : RHFormalization.ZeroWitness) →
+      RHFormalization.GroupedPoleClass self.M W
+  RHFormalization.HSideGroupedPoleArithmeticData.h_principalPart : ∀ (W : RHFormalization.ZeroWitness),
+      RHFormalization.HasPrincipalPartAtC H.Zpole W.s0
+        (RHFormalization.groupedResidueCoeff self.M (self.groupedClass W))
+  RHFormalization.HSideGroupedPoleArithmeticData.principalPartToPole : RHFormalization.PrincipalPartImpliesGenuinePoleAPI
+constructor:
+  RHFormalization.HSideGroupedPoleArithmeticData.mk {H : RHFormalization.ZeroPolePackageAPI}
+    (M : RHFormalization.ZeroMultiplicityData)
+    (groupedClass : (W : RHFormalization.ZeroWitness) → RHFormalization.GroupedPoleClass M W)
+    (h_principalPart :
+      ∀ (W : RHFormalization.ZeroWitness),
+        RHFormalization.HasPrincipalPartAtC H.Zpole W.s0 (RHFormalization.groupedResidueCoeff M (groupedClass W)))
+    (principalPartToPole : RHFormalization.PrincipalPartImpliesGenuinePoleAPI) :
+    RHFormalization.HSideGroupedPoleArithmeticData H
+structure RHFormalization.HSidePoleWitnessLayer (H : RHFormalization.ZeroPolePackageAPI) : Type
+number of parameters: 1
+fields:
+  RHFormalization.HSidePoleWitnessLayer.groupedData : RHFormalization.HSideGroupedPoleData H
+  RHFormalization.HSidePoleWitnessLayer.principalPartToPole : RHFormalization.PrincipalPartImpliesGenuinePoleAPI
+constructor:
+  RHFormalization.HSidePoleWitnessLayer.mk {H : RHFormalization.ZeroPolePackageAPI}
+    (groupedData : RHFormalization.HSideGroupedPoleData H)
+    (principalPartToPole : RHFormalization.PrincipalPartImpliesGenuinePoleAPI) : RHFormalization.HSidePoleWitnessLayer H

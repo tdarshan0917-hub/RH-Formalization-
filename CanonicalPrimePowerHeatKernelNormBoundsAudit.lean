@@ -1,0 +1,15 @@
+import RHFormalization.CanonicalPrimePowerHeatKernelNormBounds
+
+#check RHFormalization.heatKernelRealScalar
+#check RHFormalization.heatKernelG_eq_realScalar
+#check RHFormalization.heatKernelRealScalar_nonneg
+#check RHFormalization.norm_heatKernelG_eq_realScalar
+#check RHFormalization.norm_heatKernelG_eq
+#check RHFormalization.heatKernelWeightedEnvelope_apply_expanded
+
+#print axioms RHFormalization.heatKernelRealScalar
+#print axioms RHFormalization.heatKernelG_eq_realScalar
+#print axioms RHFormalization.heatKernelRealScalar_nonneg
+#print axioms RHFormalization.norm_heatKernelG_eq_realScalar
+#print axioms RHFormalization.norm_heatKernelG_eq
+#print axioms RHFormalization.heatKernelWeightedEnvelope_apply_expanded

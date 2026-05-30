@@ -1,0 +1,11 @@
+import RHFormalization.HMeromorphicWithNormalFormChosenCshared
+
+#check RHFormalization.finalRHSpine_from_HChosenDSharedC
+#print RHFormalization.finalRHSpine_from_HChosenDSharedC
+
+#check RHFormalization.HArchPackage
+#print RHFormalization.HArchPackage
+
+#check RHFormalization.ZpoleMeromorphicFromSeriesAPI
+#check RHFormalization.ZeroPoleLocalUniformConvergenceAPI
+#check RHFormalization.HSideGroupedPoleNormalFormData

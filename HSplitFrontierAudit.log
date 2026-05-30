@@ -1,0 +1,48 @@
+RHFormalization.finalRHSpine_from_HChosenDSharedC (ZF : RHFormalization.ZetaZeroFacts)
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (M : RHFormalization.ZeroMultiplicityData)
+  (E : RHFormalization.ZeroExhaustion) (Zpole : ℂ → ℂ)
+  (convergence : RHFormalization.ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+  (poleSeriesMeromorphic : RHFormalization.ZpoleMeromorphicFromSeriesAPI M E Zpole)
+  (HarchPackage : RHFormalization.HArchPackage) (sigma0 : ℝ) (h_Cshared_sigma_le : Y.B.Cshared.sigma0 ≤ sigma0)
+  (h_split : ∀ s ∈ RHFormalization.RightHalfPlane sigma0, Y.B.Cshared.Bshared s = HarchPackage.Harch s - Zpole s)
+  (h_genuine_poles : ∀ (W : RHFormalization.ZeroWitness), RHFormalization.HasGenuinePole Zpole W.s0)
+  (normalFormGroupedLayer :
+    RHFormalization.HSideGroupedPoleNormalFormData
+      (RHFormalization.buildZeroPolePackageFromHMeromorphicLayer
+        (RHFormalization.buildHMeromorphicPackageLayerWithChosenCshared M E Zpole convergence poleSeriesMeromorphic
+          HarchPackage Y.B.Cshared sigma0 h_Cshared_sigma_le h_split h_genuine_poles))) :
+  RHFormalization.RiemannHypothesis
+theorem RHFormalization.finalRHSpine_from_HChosenDSharedC : RHFormalization.ZetaZeroFacts →
+  ∀ (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (M : RHFormalization.ZeroMultiplicityData)
+    (E : RHFormalization.ZeroExhaustion) (Zpole : ℂ → ℂ)
+    (convergence : RHFormalization.ZeroPoleLocalUniformConvergenceAPI M E Zpole)
+    (poleSeriesMeromorphic : RHFormalization.ZpoleMeromorphicFromSeriesAPI M E Zpole)
+    (HarchPackage : RHFormalization.HArchPackage) (sigma0 : ℝ) (h_Cshared_sigma_le : Y.B.Cshared.sigma0 ≤ sigma0)
+    (h_split : ∀ s ∈ RHFormalization.RightHalfPlane sigma0, Y.B.Cshared.Bshared s = HarchPackage.Harch s - Zpole s)
+    (h_genuine_poles : ∀ (W : RHFormalization.ZeroWitness), RHFormalization.HasGenuinePole Zpole W.s0)
+    (normalFormGroupedLayer :
+      RHFormalization.HSideGroupedPoleNormalFormData
+        (RHFormalization.buildZeroPolePackageFromHMeromorphicLayer
+          (RHFormalization.buildHMeromorphicPackageLayerWithChosenCshared M E Zpole convergence poleSeriesMeromorphic
+            HarchPackage Y.B.Cshared sigma0 h_Cshared_sigma_le h_split h_genuine_poles))),
+    RHFormalization.RiemannHypothesis :=
+fun ZF Y M E Zpole convergence poleSeriesMeromorphic HarchPackage sigma0 h_Cshared_sigma_le h_split h_genuine_poles
+    normalFormGroupedLayer =>
+  let X :=
+    RHFormalization.buildHMeromorphicWithNormalFormPolesWithChosenCshared M E Zpole convergence poleSeriesMeromorphic
+      HarchPackage Y.B.Cshared sigma0 h_Cshared_sigma_le h_split h_genuine_poles normalFormGroupedLayer;
+  RHFormalization.finalRHSpine_from_Cshared_eq ZF Y X (Eq.refl Y.B.Cshared)
+RHFormalization.HArchPackage : Type
+structure RHFormalization.HArchPackage : Type
+number of parameters: 0
+fields:
+  RHFormalization.HArchPackage.Harch : ℂ → ℂ
+  RHFormalization.HArchPackage.h_Harch_holo : RHFormalization.HolomorphicOnC self.Harch Ω
+constructor:
+  RHFormalization.HArchPackage.mk (Harch : ℂ → ℂ) (h_Harch_holo : RHFormalization.HolomorphicOnC Harch Ω) :
+    RHFormalization.HArchPackage
+RHFormalization.ZpoleMeromorphicFromSeriesAPI (M : RHFormalization.ZeroMultiplicityData)
+  (E : RHFormalization.ZeroExhaustion) (Zpole : ℂ → ℂ) : Prop
+RHFormalization.ZeroPoleLocalUniformConvergenceAPI (M : RHFormalization.ZeroMultiplicityData)
+  (E : RHFormalization.ZeroExhaustion) (Zpole : ℂ → ℂ) : Prop
+RHFormalization.HSideGroupedPoleNormalFormData (H : RHFormalization.ZeroPolePackageAPI) : Type

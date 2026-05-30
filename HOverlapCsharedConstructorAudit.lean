@@ -1,0 +1,10 @@
+import RHFormalization.AppendixESharedPackageFunctionalCompatibility
+
+#print RHFormalization.HMeromorphicPackageLayerV2
+#print RHFormalization.HMeromorphicWithNormalFormPoles
+
+#check RHFormalization.HMeromorphicPackageLayerV2.overlap
+#check RHFormalization.HMeromorphicWithNormalFormPoles.layer
+
+#print RHFormalization.AppendixESharedPackageFunctionalCompatibility
+#print RHFormalization.finalRHSpine_from_Cshared_eq

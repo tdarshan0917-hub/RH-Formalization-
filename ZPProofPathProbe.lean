@@ -1,0 +1,44 @@
+import RHFormalization.OmegaMeromorphicZeroPropagationEndpoint
+import Mathlib.Analysis.Meromorphic.NormalForm
+import Mathlib.Analysis.Meromorphic.FactorizedRational
+import Mathlib.Analysis.Meromorphic.Order
+import Mathlib.Analysis.Analytic.IsolatedZeros
+
+open Complex Topology Filter
+
+#print RHFormalization.OmegaMeromorphicZeroPropagationAPI
+
+-- Direct meromorphic zero-propagation candidates.
+#check MeromorphicOn.eqOn_zero_of_preconnected_of_frequently_eq_zero
+#check MeromorphicOn.eqOn_zero_of_preconnected_of_eventuallyEq_zero
+#check MeromorphicOn.eqOn_zero_or_eventually_ne_zero
+#check MeromorphicOn.eqOn_zero_or_eventually_ne
+#check MeromorphicOn.eqOn_of_preconnected_of_frequently_eq
+#check MeromorphicOn.eqOn_of_preconnected_of_eventuallyEq
+
+-- Local meromorphic zero tools.
+#check MeromorphicAt.frequently_zero_iff_eventuallyEq_zero
+#check MeromorphicAt.eventually_eq_zero_or_eventually_ne_zero
+#check MeromorphicAt.eventuallyEq_zero_or_frequently_ne_zero
+
+-- Codiscrete meromorphic tools.
+#check MeromorphicOn.analyticAt_mem_codiscreteWithin
+#check MeromorphicOn.meromorphicNFAt_mem_codiscreteWithin
+#check MeromorphicOn.codiscrete_setOf_meromorphicOrderAt_eq_zero_or_top
+#check MeromorphicOn.extract_zeros_poles
+
+-- Analytic identity tools.
+#check AnalyticOnNhd.eqOn_zero_of_preconnected_of_frequently_eq_zero
+#check AnalyticOnNhd.eqOn_zero_of_preconnected_of_eventuallyEq_zero
+#check AnalyticOnNhd.eqOn_zero_or_eventually_ne
+#check AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq
+
+-- Filter/codiscrete tools.
+#check mem_codiscreteWithin_iff_forall_mem_nhdsNE
+#check Filter.self_mem_codiscreteWithin
+#check Filter.EventuallyEq.filter_mono
+
+-- Ω facts.
+#check RHFormalization.isPreconnected_Omega_native
+#check RHFormalization.preperfect_Omega_native
+#check RHFormalization.isOpen_Omega_native

@@ -1,0 +1,25 @@
+import Mathlib.Analysis.Meromorphic.IsolatedZeros
+import Mathlib.Analysis.Meromorphic.Basic
+import Mathlib.Analysis.Meromorphic.NormalForm
+import Mathlib.Analysis.Analytic.IsolatedZeros
+import RHFormalization.ConnectedOmegaMeromorphicAlgebraEndpoint
+
+open Complex Topology Filter
+
+#check MeromorphicAt.frequently_zero_iff_eventuallyEq_zero
+#check MeromorphicAt.eventuallyEq_zero_or_frequently_ne_zero
+#check MeromorphicAt.eqOn_compl_singleton_toMeromorphicNFAt
+
+#check AnalyticAt.frequently_zero_iff_eventuallyEq_zero
+#check AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq
+#check AnalyticOn.eqOn_of_preconnected_of_frequently_eq
+#check AnalyticOn.eqOn_of_preconnected_of_eventuallyEq
+#check analyticOnNhd_iff_analyticAt
+
+#check MeromorphicOn.congr_codiscreteWithin_of_eqOn_compl
+#check MeromorphicOn.toMeromorphicNFOn_eq_self_on_nhdsNE
+
+#check CodiscreteWithin
+#check Set.EqOn
+#check Frequently
+#check EventuallyEq

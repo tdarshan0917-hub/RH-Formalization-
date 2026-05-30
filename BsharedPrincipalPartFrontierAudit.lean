@@ -1,0 +1,18 @@
+import RHFormalization.HExplicitFormulaLocalExtensionAssembly
+import RHFormalization.HExplicitFormulaWitnessCancellation
+import RHFormalization.CanonicalPrimePowerTsumSeries
+import RHFormalization.HSideResidueArithmetic
+import RHFormalization.HSidePoleWitness
+
+#check RHFormalization.Harch_holomorphic_from_witness_and_regular
+#check RHFormalization.Harch_local_extension_at_witness_from_cancelled_principal_parts
+
+#check RHFormalization.HasPrincipalPartAtC
+#check RHFormalization.groupedResidueCoeff
+#check RHFormalization.HSideGroupedPoleArithmeticData
+#check RHFormalization.HSideGroupedPoleNormalFormData
+
+#print RHFormalization.CanonicalPrimePowerPackage
+#print RHFormalization.DBcanLimitData
+#print RHFormalization.HSideGroupedPoleArithmeticData
+#print RHFormalization.HSideGroupedPoleNormalFormData

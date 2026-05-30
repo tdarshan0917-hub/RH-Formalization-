@@ -1,0 +1,33 @@
+structure RHFormalization.HSideOverlapPackage (Zpole Harch : ℂ → ℂ) : Type
+number of parameters: 2
+fields:
+  RHFormalization.HSideOverlapPackage.Bzero : ℂ → ℂ
+  RHFormalization.HSideOverlapPackage.sigma0 : ℝ
+  RHFormalization.HSideOverlapPackage.Cshared : RHFormalization.CanonicalPrimePowerPackage
+  RHFormalization.HSideOverlapPackage.h_Cshared_sigma_le : self.Cshared.sigma0 ≤ self.sigma0
+  RHFormalization.HSideOverlapPackage.h_Bzero_matches_shared : ∀ s ∈ RHFormalization.RightHalfPlane self.sigma0,
+      self.Bzero s = self.Cshared.Bshared s
+  RHFormalization.HSideOverlapPackage.h_split : ∀ s ∈ RHFormalization.RightHalfPlane self.sigma0,
+      self.Bzero s = Harch s - Zpole s
+constructor:
+  RHFormalization.HSideOverlapPackage.mk {Zpole Harch : ℂ → ℂ} (Bzero : ℂ → ℂ) (sigma0 : ℝ)
+    (Cshared : RHFormalization.CanonicalPrimePowerPackage) (h_Cshared_sigma_le : Cshared.sigma0 ≤ sigma0)
+    (h_Bzero_matches_shared : ∀ s ∈ RHFormalization.RightHalfPlane sigma0, Bzero s = Cshared.Bshared s)
+    (h_split : ∀ s ∈ RHFormalization.RightHalfPlane sigma0, Bzero s = Harch s - Zpole s) :
+    RHFormalization.HSideOverlapPackage Zpole Harch
+structure RHFormalization.AppendixESharedPackageCompatibility
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+  (X : RHFormalization.HMeromorphicWithNormalFormPoles) : Prop
+number of parameters: 2
+fields:
+  RHFormalization.AppendixESharedPackageCompatibility.h_Cshared_eq : X.layer.overlap.Cshared = Y.B.Cshared
+constructor:
+  RHFormalization.AppendixESharedPackageCompatibility.mk {Y : RHFormalization.DDetailedConstructionWithOperatorLegality}
+    {X : RHFormalization.HMeromorphicWithNormalFormPoles} (h_Cshared_eq : X.layer.overlap.Cshared = Y.B.Cshared) :
+    RHFormalization.AppendixESharedPackageCompatibility Y X
+theorem RHFormalization.finalRHSpine_from_Cshared_eq : RHFormalization.ZetaZeroFacts →
+  ∀ (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+    (X : RHFormalization.HMeromorphicWithNormalFormPoles),
+    Y.B.Cshared = X.layer.overlap.Cshared → RHFormalization.RiemannHypothesis :=
+fun ZF Y X hC =>
+  RHFormalization.finalRHSpine_from_sharedBIdentity ZF Y X (RHFormalization.sharedBIdentity_of_Cshared_eq Y X hC)

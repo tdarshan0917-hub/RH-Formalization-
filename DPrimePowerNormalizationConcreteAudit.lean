@@ -1,0 +1,10 @@
+import RHFormalization.DPrimePowerNormalizationConcrete
+
+#check RHFormalization.DPrimePowerNormalization
+#check RHFormalization.buildDPrimePowerNormalizationFromLambda
+#check RHFormalization.DPrimePowerNormalization.weight_eq_lambda_div_sqrt
+#check RHFormalization.buildDPrimePowerNormalizationFromLambda_weight_eq
+
+#print axioms RHFormalization.buildDPrimePowerNormalizationFromLambda
+#print axioms RHFormalization.DPrimePowerNormalization.weight_eq_lambda_div_sqrt
+#print axioms RHFormalization.buildDPrimePowerNormalizationFromLambda_weight_eq

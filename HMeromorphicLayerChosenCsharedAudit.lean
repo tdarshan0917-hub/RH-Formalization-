@@ -1,0 +1,7 @@
+import RHFormalization.HMeromorphicLayerChosenCshared
+
+#check RHFormalization.buildHMeromorphicPackageLayerWithChosenCshared
+#check RHFormalization.buildHMeromorphicPackageLayerWithChosenCshared_Cshared_eq
+
+#print axioms RHFormalization.buildHMeromorphicPackageLayerWithChosenCshared
+#print axioms RHFormalization.buildHMeromorphicPackageLayerWithChosenCshared_Cshared_eq

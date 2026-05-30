@@ -1,0 +1,9 @@
+import RHFormalization.OmegaMeromorphicLocalPropagationEndpoint
+
+#check RHFormalization.toMeromorphicNFOn_meromorphicOnC_Omega
+#print axioms RHFormalization.toMeromorphicNFOn_meromorphicOnC_Omega
+
+#check RHFormalization.finalConditionalRHSpine_meromorphicLocalPropagation
+#print axioms RHFormalization.finalConditionalRHSpine_meromorphicLocalPropagation
+
+#print RHFormalization.OmegaMeromorphicLocalPropagationAPI

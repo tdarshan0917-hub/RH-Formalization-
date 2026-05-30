@@ -1,0 +1,7 @@
+import RHFormalization.DCanonicalWindowSharpCutoffScalar
+
+#check RHFormalization.sharpCutoff_overlap_factor_error_le
+#check RHFormalization.sharpCutoff_normalized_kernel_error_le
+
+#print axioms RHFormalization.sharpCutoff_overlap_factor_error_le
+#print axioms RHFormalization.sharpCutoff_normalized_kernel_error_le

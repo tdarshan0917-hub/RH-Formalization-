@@ -1,0 +1,7 @@
+import RHFormalization.AppendixESharedPackageCompatibility
+
+#check RHFormalization.buildAppendixESharedPackageCompatibilityFromCsharedEq
+#check RHFormalization.finalRHSpine_after_directCsharedEq
+
+#print axioms RHFormalization.buildAppendixESharedPackageCompatibilityFromCsharedEq
+#print axioms RHFormalization.finalRHSpine_after_directCsharedEq

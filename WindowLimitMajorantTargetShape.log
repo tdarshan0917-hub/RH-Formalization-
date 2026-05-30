@@ -1,0 +1,37 @@
+structure RHFormalization.PrimePowerDWindowKernelIdentificationData
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) (W : RHFormalization.DCanonicalWindowData)
+  (alpha : ℕ → RHFormalization.DFiniteStage) (Kshared : RHFormalization.CanonicalKernelC) : Type
+number of parameters: 4
+fields:
+  RHFormalization.PrimePowerDWindowKernelIdentificationData.coord : ℂ → RHFormalization.PrimePowerPair → ℝ
+  RHFormalization.PrimePowerDWindowKernelIdentificationData.h_stage_kernel_eq_window : ∀
+      s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+      ∀ (n : ℕ),
+        ∀ q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n),
+          X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s = W.gbar_stage (alpha n) (self.coord s q)
+  RHFormalization.PrimePowerDWindowKernelIdentificationData.h_shared_kernel_eq_limit : ∀
+      s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+      ∀ (q : RHFormalization.PrimePowerPair), Kshared q.center s = W.G_limit (self.coord s q)
+constructor:
+  RHFormalization.PrimePowerDWindowKernelIdentificationData.mk
+    {X : RHFormalization.DFiniteStagePackageFromOperatorLayer} {W : RHFormalization.DCanonicalWindowData}
+    {alpha : ℕ → RHFormalization.DFiniteStage} {Kshared : RHFormalization.CanonicalKernelC}
+    (coord : ℂ → RHFormalization.PrimePowerPair → ℝ)
+    (h_stage_kernel_eq_window :
+      ∀ s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+        ∀ (n : ℕ),
+          ∀ q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n),
+            X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s = W.gbar_stage (alpha n) (coord s q))
+    (h_shared_kernel_eq_limit :
+      ∀ s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+        ∀ (q : RHFormalization.PrimePowerPair), Kshared q.center s = W.G_limit (coord s q)) :
+    RHFormalization.PrimePowerDWindowKernelIdentificationData X W alpha Kshared
+RHFormalization.sharpCutoffDCanonicalWindowData (G : ℝ → ℂ) (Lstage : RHFormalization.DFiniteStage → ℝ) :
+  RHFormalization.DCanonicalWindowData
+def RHFormalization.sharpCutoffDCanonicalWindowData : (ℝ → ℂ) →
+  (RHFormalization.DFiniteStage → ℝ) → RHFormalization.DCanonicalWindowData :=
+fun G Lstage =>
+  { gbar_stage := fun stage a => RHFormalization.sharpCutoffLinearOverlapFactor (Lstage stage) a • G a, G_limit := G,
+    c_w := 1 }
+RHFormalization.PrimePowerPair.center (q : RHFormalization.PrimePowerPair) : ℝ
+RHFormalization.PrimePowerPair.weightC (q : RHFormalization.PrimePowerPair) : ℂ

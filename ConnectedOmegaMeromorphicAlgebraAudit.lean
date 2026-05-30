@@ -1,0 +1,4 @@
+import RHFormalization.ConnectedOmegaMeromorphicAlgebraEndpoint
+
+#check RHFormalization.mainTheorem_from_default_connectedOmega_and_meromorphicAlgebra
+#print axioms RHFormalization.mainTheorem_from_default_connectedOmega_and_meromorphicAlgebra

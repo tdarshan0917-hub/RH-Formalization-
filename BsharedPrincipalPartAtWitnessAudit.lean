@@ -1,0 +1,6 @@
+import RHFormalization.BsharedPrincipalPartAtWitness
+
+#check RHFormalization.BsharedOppositePrincipalPartData
+#check RHFormalization.Harch_witness_extensions_from_BsharedPrincipalPartData
+
+#print axioms RHFormalization.Harch_witness_extensions_from_BsharedPrincipalPartData

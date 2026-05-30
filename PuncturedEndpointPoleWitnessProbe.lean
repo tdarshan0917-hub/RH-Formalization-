@@ -1,0 +1,24 @@
+import RHFormalization.PuncturedIdentityLocalCore
+import RHFormalization.DefaultDenominatorSimpleZeroOrder
+import RHFormalization.PoleNormalForm
+import RHFormalization.HSidePoleWitness
+import RHFormalization.HMeromorphicPackage
+import RHFormalization.MainTheorem
+
+#print RHFormalization.HSidePoleWitnessLayer
+#print RHFormalization.HSideGroupedPoleNormalFormData
+#print RHFormalization.HSideArithmeticGroupedPoleData
+#print RHFormalization.HMeromorphicWithNormalFormPoles
+
+#check RHFormalization.HSidePoleWitnessLayer.toPoleWitnessAPI
+#check RHFormalization.HMeromorphicWithNormalFormPoles.toLegacyZeroPolePackageAPI
+#check RHFormalization.HMeromorphicWithNormalFormPoles.toLegacyGenuinePoleNormalFormAPI
+#check RHFormalization.HMeromorphicWithNormalFormPoles.toArithmeticGroupedPoles
+#check RHFormalization.PoleWitnessAPI
+#check RHFormalization.PoleWitnessAPI.h_genuine_pole
+
+#check RHFormalization.buildHtotHolomorphicAPIFromSummands
+#check RHFormalization.defaultOverlapGeometryAPI
+#check RHFormalization.local_split_eqOn
+#check RHFormalization.defaultMeromorphicAlgebraAPI
+#check RHFormalization.buildComparisonMeromorphicAPI

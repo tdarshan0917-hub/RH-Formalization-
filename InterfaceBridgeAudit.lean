@@ -1,0 +1,9 @@
+import RHFormalization.OmegaNormalFormPropagationEndpoint
+
+#print RHFormalization.InterfaceBridgeAPI
+#print RHFormalization.InterfaceBridgeNonnegativeAPI
+#print RHFormalization.local_split_eqOn
+#print RHFormalization.defaultOverlapGeometryAPI
+
+#check RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_normalFormPropagation
+#print axioms RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_normalFormPropagation

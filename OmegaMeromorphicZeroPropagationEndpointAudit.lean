@@ -1,0 +1,6 @@
+import RHFormalization.OmegaMeromorphicZeroPropagationEndpoint
+
+#check RHFormalization.finalConditionalRHSpine_meromorphicZeroPropagation
+#print axioms RHFormalization.finalConditionalRHSpine_meromorphicZeroPropagation
+
+#print RHFormalization.OmegaMeromorphicZeroPropagationAPI

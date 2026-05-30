@@ -1,0 +1,14 @@
+import RHFormalization.CanonicalPrimePowerExhaustion
+
+#print RHFormalization.PrimePowerPair
+#print RHFormalization.IsPrimePowerPair
+#print RHFormalization.CanonicalKernelC
+#print RHFormalization.finiteCanonicalPrimePowerPackage
+#print RHFormalization.CanonicalPrimePowerPackage
+#print RHFormalization.FiniteCanonicalPrimePowerFormula
+#print RHFormalization.CanonicalPrimePowerExhaustionData
+
+#check RHFormalization.PrimePowerPair.center
+#check RHFormalization.PrimePowerPair.weightReal
+#check RHFormalization.PrimePowerPair.weightC
+#check RHFormalization.finiteCanonicalPrimePowerPackage

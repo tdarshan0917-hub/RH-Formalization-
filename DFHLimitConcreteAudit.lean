@@ -1,0 +1,10 @@
+import RHFormalization.DFHLimitConcrete
+
+#check RHFormalization.DFHLimitData
+#check RHFormalization.DFHLimitData.alpha
+#check RHFormalization.DFHLimitData.h_F_stage_to_FH
+#check RHFormalization.buildDFHLimitDataFromCompactUniform
+#check RHFormalization.DFHLimitData.compact_uniform_F_stage_convergence
+
+#print axioms RHFormalization.buildDFHLimitDataFromCompactUniform
+#print axioms RHFormalization.DFHLimitData.compact_uniform_F_stage_convergence

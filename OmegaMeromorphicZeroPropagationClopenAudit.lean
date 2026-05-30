@@ -1,0 +1,11 @@
+import RHFormalization.OmegaMeromorphicZeroPropagationClopen
+
+#check RHFormalization.zero_germ_not_nonzero_germ_at
+#check RHFormalization.meromorphic_zero_germ_propagates_to_all_Omega
+#check RHFormalization.defaultOmegaMeromorphicZeroPropagationAPI
+#check RHFormalization.finalRHSpine_after_zeroPropagation
+
+#print axioms RHFormalization.zero_germ_not_nonzero_germ_at
+#print axioms RHFormalization.meromorphic_zero_germ_propagates_to_all_Omega
+#print axioms RHFormalization.defaultOmegaMeromorphicZeroPropagationAPI
+#print axioms RHFormalization.finalRHSpine_after_zeroPropagation

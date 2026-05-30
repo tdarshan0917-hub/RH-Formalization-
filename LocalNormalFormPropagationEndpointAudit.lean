@@ -1,0 +1,5 @@
+import RHFormalization.OmegaNormalFormLocalPropagationEndpoint
+
+#check RHFormalization.finalConditionalRHSpine_localNormalFormPropagation
+#print axioms RHFormalization.finalConditionalRHSpine_localNormalFormPropagation
+#print RHFormalization.OmegaNormalFormLocalPropagationAPI

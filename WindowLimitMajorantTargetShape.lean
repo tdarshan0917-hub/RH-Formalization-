@@ -1,0 +1,9 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope
+import RHFormalization.CanonicalPrimePowerExactMassEnvelope
+
+#print RHFormalization.PrimePowerDWindowKernelIdentificationData
+#check RHFormalization.sharpCutoffDCanonicalWindowData
+#print RHFormalization.sharpCutoffDCanonicalWindowData
+
+#check RHFormalization.PrimePowerPair.center
+#check RHFormalization.PrimePowerPair.weightC

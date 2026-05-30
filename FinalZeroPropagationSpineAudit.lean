@@ -1,0 +1,4 @@
+import RHFormalization.FinalZeroPropagationSpine
+
+#check RHFormalization.finalZeroPropagationRHSpine
+#print axioms RHFormalization.finalZeroPropagationRHSpine

@@ -1,0 +1,11 @@
+import RHFormalization.OmegaMeromorphicZeroPropagationLocal
+
+#check RHFormalization.zero_germ_stable_eventually_nhdsNE
+#check RHFormalization.isOpen_zeroGermSet
+#check RHFormalization.nonzero_germ_stable_eventually_nhdsNE
+#check RHFormalization.isOpen_nonzeroGermSet
+
+#print axioms RHFormalization.zero_germ_stable_eventually_nhdsNE
+#print axioms RHFormalization.isOpen_zeroGermSet
+#print axioms RHFormalization.nonzero_germ_stable_eventually_nhdsNE
+#print axioms RHFormalization.isOpen_nonzeroGermSet

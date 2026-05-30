@@ -1,0 +1,9 @@
+import RHFormalization.AppendixDSpikeSumExtraction
+
+#check RHFormalization.finiteNatSpikePackage
+#check RHFormalization.finiteNatSpikePackage_eq_of_coeff_eq_on_indices
+#check RHFormalization.DFiniteStageSpikeSumData
+#check RHFormalization.buildDFiniteStageCanonicalPrimePowerFormulaFromSpikeSums
+
+#print axioms RHFormalization.finiteNatSpikePackage_eq_of_coeff_eq_on_indices
+#print axioms RHFormalization.buildDFiniteStageCanonicalPrimePowerFormulaFromSpikeSums

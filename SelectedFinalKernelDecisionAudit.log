@@ -1,0 +1,91 @@
+RHFormalization.finalRHSpine_from_DWindowExactMassExactSpeedData (ZF : RHFormalization.ZetaZeroFacts)
+  (finiteOperatorLayer : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (S : RHFormalization.CanonicalPrimePowerDWindowExactMassExactSpeedData finiteOperatorLayer)
+  (W : RHFormalization.DCanonicalWindowData) (Wapi : RHFormalization.DCanonicalWindowAPI W)
+  (F : RHFormalization.DFHLimitData finiteOperatorLayer.toStagePackage)
+  (sectors : RHFormalization.DResidualSectorData finiteOperatorLayer.toStagePackage)
+  (sectorSplit : RHFormalization.DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+  (sectorBounds : RHFormalization.DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+  (master : RHFormalization.DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+  (overlapBuilder :
+    let Cshared := RHFormalization.DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S;
+    have finiteCanonicalLimit := RHFormalization.DWindowExactMassExactSpeedFiniteCanonicalLimit finiteOperatorLayer S;
+    have Bdata :=
+      RHFormalization.buildDBcanLimitDataFromOperatorFiniteCanonicalLimit finiteOperatorLayer Cshared
+        finiteCanonicalLimit;
+    have Rdata := master.h_master sectorSplit sectorBounds;
+    RHFormalization.DOverlapIdentityAPI finiteOperatorLayer.toStagePackage Bdata F Rdata)
+  (X : RHFormalization.HMeromorphicWithNormalFormPoles)
+  (Compat :
+    RHFormalization.AppendixESharedPackageFunctionalCompatibility
+      (RHFormalization.buildDDetailedConstructionWithOperatorLegalityFromDWindowExactMassExactSpeed finiteOperatorLayer
+        S W Wapi F sectors sectorSplit sectorBounds master overlapBuilder)
+      X) :
+  RHFormalization.RiemannHypothesis
+RHFormalization.finalRHSpine_from_RCutoffEstimateData (ZF : RHFormalization.ZetaZeroFacts)
+  (finiteOperatorLayer : RHFormalization.DFiniteStagePackageFromOperatorLayer)
+  (S : RHFormalization.CanonicalPrimePowerRCutoffMassGrowthWindowData finiteOperatorLayer)
+  (W : RHFormalization.DCanonicalWindowData) (Wapi : RHFormalization.DCanonicalWindowAPI W)
+  (F : RHFormalization.DFHLimitData finiteOperatorLayer.toStagePackage)
+  (sectors : RHFormalization.DResidualSectorData finiteOperatorLayer.toStagePackage)
+  (sectorSplit : RHFormalization.DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+  (sectorBounds : RHFormalization.DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+  (master : RHFormalization.DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+  (overlapBuilder :
+    let Cshared := RHFormalization.RCutoffEstimateSharedPackage finiteOperatorLayer S;
+    have finiteCanonicalLimit := RHFormalization.RCutoffEstimateFiniteCanonicalLimit finiteOperatorLayer S;
+    have Bdata :=
+      RHFormalization.buildDBcanLimitDataFromOperatorFiniteCanonicalLimit finiteOperatorLayer Cshared
+        finiteCanonicalLimit;
+    have Rdata := master.h_master sectorSplit sectorBounds;
+    RHFormalization.DOverlapIdentityAPI finiteOperatorLayer.toStagePackage Bdata F Rdata)
+  (X : RHFormalization.HMeromorphicWithNormalFormPoles)
+  (Compat :
+    RHFormalization.AppendixESharedPackageFunctionalCompatibility
+      (RHFormalization.detailedConstructionFromRCutoffEstimate finiteOperatorLayer S W Wapi F sectors sectorSplit
+        sectorBounds master overlapBuilder)
+      X) :
+  RHFormalization.RiemannHypothesis
+RHFormalization.BsharedOppositePrincipalPartData_of_tsum_principalParts
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (sigma0 : ℝ)
+  (Kshared : RHFormalization.CanonicalKernelC) (M : RHFormalization.ZeroMultiplicityData)
+  (groupedClass : (W : RHFormalization.ZeroWitness) → RHFormalization.GroupedPoleClass M W)
+  (hC : Y.B.Cshared = RHFormalization.canonicalPrimePowerPackageFromKernelTsum sigma0 Kshared)
+  (h_tsum_principalPart :
+    ∀ (W : RHFormalization.ZeroWitness),
+      RHFormalization.HasPrincipalPartAtC
+        (fun s => ∑' (q : RHFormalization.PrimePowerPair), q.weightC * Kshared q.center s) W.s0
+        (-RHFormalization.groupedResidueCoeff M (groupedClass W))) :
+  RHFormalization.BsharedOppositePrincipalPartData Y M
+@[reducible] def RHFormalization.DWindowExactMassExactSpeedSharedPackage : (finiteOperatorLayer :
+    RHFormalization.DFiniteStagePackageFromOperatorLayer) →
+  RHFormalization.CanonicalPrimePowerDWindowExactMassExactSpeedData finiteOperatorLayer →
+    RHFormalization.CanonicalPrimePowerPackage :=
+fun finiteOperatorLayer S =>
+  RHFormalization.canonicalPrimePowerPackageFromKernelTsum finiteOperatorLayer.toStagePackage.sigma0 S.Kshared
+def RHFormalization.buildDDetailedConstructionWithOperatorLegalityFromDWindowExactMassExactSpeed : (finiteOperatorLayer :
+    RHFormalization.DFiniteStagePackageFromOperatorLayer) →
+  (S : RHFormalization.CanonicalPrimePowerDWindowExactMassExactSpeedData finiteOperatorLayer) →
+    (W : RHFormalization.DCanonicalWindowData) →
+      RHFormalization.DCanonicalWindowAPI W →
+        (F : RHFormalization.DFHLimitData finiteOperatorLayer.toStagePackage) →
+          (sectors : RHFormalization.DResidualSectorData finiteOperatorLayer.toStagePackage) →
+            (sectorSplit : RHFormalization.DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors) →
+              (sectorBounds : RHFormalization.DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors) →
+                (master : RHFormalization.DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors) →
+                  (let Cshared := RHFormalization.DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S;
+                    have finiteCanonicalLimit :=
+                      RHFormalization.DWindowExactMassExactSpeedFiniteCanonicalLimit finiteOperatorLayer S;
+                    have Bdata :=
+                      RHFormalization.buildDBcanLimitDataFromOperatorFiniteCanonicalLimit finiteOperatorLayer Cshared
+                        finiteCanonicalLimit;
+                    have Rdata := master.h_master sectorSplit sectorBounds;
+                    RHFormalization.DOverlapIdentityAPI finiteOperatorLayer.toStagePackage Bdata F Rdata) →
+                    RHFormalization.DDetailedConstructionWithOperatorLegality :=
+fun finiteOperatorLayer S W Wapi F sectors sectorSplit sectorBounds master overlapBuilder =>
+  RHFormalization.buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit finiteOperatorLayer
+    (RHFormalization.DWindowExactMassExactSpeedSharedPackage finiteOperatorLayer S)
+    (RHFormalization.DWindowExactMassExactSpeedFiniteCanonicalLimit finiteOperatorLayer S) W Wapi F sectors sectorSplit
+    sectorBounds master overlapBuilder
+def RHFormalization.displacementCanonicalKernel : (ℝ → ℂ) → RHFormalization.CanonicalKernelC :=
+fun G a _s => G a

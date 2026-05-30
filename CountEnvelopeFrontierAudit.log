@@ -1,0 +1,135 @@
+RHFormalization.PrimePowerCenterCountingSetData (E : RHFormalization.PrimePowerSoundCutoffEnumerationData) : Type
+RHFormalization.PrimePowerSoundMassCountingSetWeightEnvelopeData : Type
+RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) : Type 1
+structure RHFormalization.PrimePowerCenterCountingSetData (E : RHFormalization.PrimePowerSoundCutoffEnumerationData) :
+  Type
+number of parameters: 1
+fields:
+  RHFormalization.PrimePowerCenterCountingSetData.countSet : ℝ → Finset RHFormalization.PrimePowerPair
+  RHFormalization.PrimePowerCenterCountingSetData.countEnvelope : ℝ → ℝ
+  RHFormalization.PrimePowerCenterCountingSetData.h_countEnvelope_nonneg : ∀ (R : ℝ), 0 ≤ self.countEnvelope R
+  RHFormalization.PrimePowerCenterCountingSetData.h_center_le_mem_countSet : ∀ (R : ℝ)
+      (q : RHFormalization.PrimePowerPair), q.center ≤ R → q ∈ self.countSet R
+  RHFormalization.PrimePowerCenterCountingSetData.h_countSet_card_le_countEnvelope : ∀ (R : ℝ),
+      ↑(self.countSet R).card ≤ self.countEnvelope R
+constructor:
+  RHFormalization.PrimePowerCenterCountingSetData.mk {E : RHFormalization.PrimePowerSoundCutoffEnumerationData}
+    (countSet : ℝ → Finset RHFormalization.PrimePowerPair) (countEnvelope : ℝ → ℝ)
+    (h_countEnvelope_nonneg : ∀ (R : ℝ), 0 ≤ countEnvelope R)
+    (h_center_le_mem_countSet : ∀ (R : ℝ) (q : RHFormalization.PrimePowerPair), q.center ≤ R → q ∈ countSet R)
+    (h_countSet_card_le_countEnvelope : ∀ (R : ℝ), ↑(countSet R).card ≤ countEnvelope R) :
+    RHFormalization.PrimePowerCenterCountingSetData E
+structure RHFormalization.PrimePowerSoundMassCountingSetWeightEnvelopeData : Type
+number of parameters: 0
+fields:
+  RHFormalization.PrimePowerSoundMassCountingSetWeightEnvelopeData.soundEnum : RHFormalization.PrimePowerSoundCutoffEnumerationData
+  RHFormalization.PrimePowerSoundMassCountingSetWeightEnvelopeData.centerCountingSet : RHFormalization.PrimePowerCenterCountingSetData
+      self.soundEnum
+  RHFormalization.PrimePowerSoundMassCountingSetWeightEnvelopeData.weightData : RHFormalization.PrimePowerWeightEnvelopeData
+      self.soundEnum.massEnum
+constructor:
+  RHFormalization.PrimePowerSoundMassCountingSetWeightEnvelopeData.mk
+    (soundEnum : RHFormalization.PrimePowerSoundCutoffEnumerationData)
+    (centerCountingSet : RHFormalization.PrimePowerCenterCountingSetData soundEnum)
+    (weightData : RHFormalization.PrimePowerWeightEnvelopeData soundEnum.massEnum) :
+    RHFormalization.PrimePowerSoundMassCountingSetWeightEnvelopeData
+structure RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData
+  (X : RHFormalization.DFiniteStagePackageFromOperatorLayer) : Type 1
+number of parameters: 1
+fields:
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.W : RHFormalization.DCanonicalWindowData
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.alpha : ℕ → RHFormalization.DFiniteStage
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.Kshared : RHFormalization.CanonicalKernelC
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_R_ge_nat : ∀ (n : ℕ), ↑n ≤ (self.alpha n).R
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_indices_contains_of_center_le_R : ∀ (n : ℕ)
+      (q : RHFormalization.PrimePowerPair),
+      q.center ≤ (self.alpha n).R → q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (self.alpha n)
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_indices_subset_center_le_R : ∀ (n : ℕ),
+      ∀ q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (self.alpha n), q.center ≤ (self.alpha n).R
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.kernelMajorant : RHFormalization.PrimePowerPair →
+      ℝ
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_kernelMajorant_nonneg : ∀
+      (q : RHFormalization.PrimePowerPair), 0 ≤ self.kernelMajorant q
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.kernelID : RHFormalization.PrimePowerDWindowKernelIdentificationData
+      X self.W self.alpha self.Kshared
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.coordSet : ℂ → Set ℝ
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_coordSet_compact : ∀
+      s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0, IsCompact (self.coordSet s)
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_coord_mem : ∀
+      s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+      ∀ (n : ℕ),
+        ∀ q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (self.alpha n), self.kernelID.coord s q ∈ self.coordSet s
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.windowSpeed : RHFormalization.DCanonicalWindowCompactSpeedAPI
+      self.W self.alpha
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_windowLimit_norm_le_majorant : ∀
+      s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+      ∀ (q : RHFormalization.PrimePowerPair), ‖self.W.G_limit (self.kernelID.coord s q)‖ ≤ self.kernelMajorant q
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.summabilityEnvelope : RHFormalization.PrimePowerPair →
+      ℝ
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_weightedKernelMajorant_le_envelope : ∀
+      (q : RHFormalization.PrimePowerPair), ‖q.weightC‖ * self.kernelMajorant q ≤ self.summabilityEnvelope q
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_summabilityEnvelope_summable : Summable
+      self.summabilityEnvelope
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.soundMassCounting : RHFormalization.PrimePowerSoundMassCountingSetWeightEnvelopeData
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.denominatorBound : ℂ → ℕ → ℝ
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_denominatorBound_pos : ∀
+      s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0, ∀ (n : ℕ), 0 < self.denominatorBound s n
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_denominatorBound_le_windowSpeed : ∀
+      s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+      ∀ (n : ℕ), self.denominatorBound s n ≤ self.windowSpeed.speed (self.coordSet s) n
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.countBound : ℕ → ℝ
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_countBound_nonneg : ∀ (n : ℕ),
+      0 ≤ self.countBound n
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_countEnvelope_le_countBound : ∀ (n : ℕ),
+      self.soundMassCounting.centerCountingSet.countEnvelope (self.alpha n).R ≤ self.countBound n
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.weightBound : ℕ → ℝ
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_weightBound_nonneg : ∀ (n : ℕ),
+      0 ≤ self.weightBound n
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_weightEnvelope_le_weightBound : ∀ (n : ℕ),
+      self.soundMassCounting.weightData.weightEnvelope (self.alpha n).R ≤ self.weightBound n
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.h_countBound_mul_weightBound_div_denominator_tendsto_zero : ∀
+      s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+      Filter.Tendsto (fun n => self.countBound n * self.weightBound n / self.denominatorBound s n) Filter.atTop (nhds 0)
+constructor:
+  RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.mk
+    {X : RHFormalization.DFiniteStagePackageFromOperatorLayer} (W : RHFormalization.DCanonicalWindowData)
+    (alpha : ℕ → RHFormalization.DFiniteStage) (Kshared : RHFormalization.CanonicalKernelC)
+    (h_R_ge_nat : ∀ (n : ℕ), ↑n ≤ (alpha n).R)
+    (h_indices_contains_of_center_le_R :
+      ∀ (n : ℕ) (q : RHFormalization.PrimePowerPair),
+        q.center ≤ (alpha n).R → q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n))
+    (h_indices_subset_center_le_R :
+      ∀ (n : ℕ), ∀ q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n), q.center ≤ (alpha n).R)
+    (kernelMajorant : RHFormalization.PrimePowerPair → ℝ)
+    (h_kernelMajorant_nonneg : ∀ (q : RHFormalization.PrimePowerPair), 0 ≤ kernelMajorant q)
+    (kernelID : RHFormalization.PrimePowerDWindowKernelIdentificationData X W alpha Kshared) (coordSet : ℂ → Set ℝ)
+    (h_coordSet_compact : ∀ s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0, IsCompact (coordSet s))
+    (h_coord_mem :
+      ∀ s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+        ∀ (n : ℕ), ∀ q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n), kernelID.coord s q ∈ coordSet s)
+    (windowSpeed : RHFormalization.DCanonicalWindowCompactSpeedAPI W alpha)
+    (h_windowLimit_norm_le_majorant :
+      ∀ s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+        ∀ (q : RHFormalization.PrimePowerPair), ‖W.G_limit (kernelID.coord s q)‖ ≤ kernelMajorant q)
+    (summabilityEnvelope : RHFormalization.PrimePowerPair → ℝ)
+    (h_weightedKernelMajorant_le_envelope :
+      ∀ (q : RHFormalization.PrimePowerPair), ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q)
+    (h_summabilityEnvelope_summable : Summable summabilityEnvelope)
+    (soundMassCounting : RHFormalization.PrimePowerSoundMassCountingSetWeightEnvelopeData)
+    (denominatorBound : ℂ → ℕ → ℝ)
+    (h_denominatorBound_pos :
+      ∀ s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0, ∀ (n : ℕ), 0 < denominatorBound s n)
+    (h_denominatorBound_le_windowSpeed :
+      ∀ s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+        ∀ (n : ℕ), denominatorBound s n ≤ windowSpeed.speed (coordSet s) n)
+    (countBound : ℕ → ℝ) (h_countBound_nonneg : ∀ (n : ℕ), 0 ≤ countBound n)
+    (h_countEnvelope_le_countBound :
+      ∀ (n : ℕ), soundMassCounting.centerCountingSet.countEnvelope (alpha n).R ≤ countBound n)
+    (weightBound : ℕ → ℝ) (h_weightBound_nonneg : ∀ (n : ℕ), 0 ≤ weightBound n)
+    (h_weightEnvelope_le_weightBound :
+      ∀ (n : ℕ), soundMassCounting.weightData.weightEnvelope (alpha n).R ≤ weightBound n)
+    (h_countBound_mul_weightBound_div_denominator_tendsto_zero :
+      ∀ s ∈ RHFormalization.RightHalfPlane X.toStagePackage.sigma0,
+        Filter.Tendsto (fun n => countBound n * weightBound n / denominatorBound s n) Filter.atTop (nhds 0)) :
+    RHFormalization.CanonicalPrimePowerDWindowSoundCountingFactorBoundsData X

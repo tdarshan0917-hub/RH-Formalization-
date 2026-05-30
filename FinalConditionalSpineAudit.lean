@@ -1,0 +1,4 @@
+import RHFormalization.FinalConditionalSpine
+
+#check RHFormalization.finalConditionalRHSpine
+#print axioms RHFormalization.finalConditionalRHSpine

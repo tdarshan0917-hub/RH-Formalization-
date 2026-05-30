@@ -1,0 +1,4 @@
+import RHFormalization.DefaultCoboundedAddFiniteLimit
+
+#check RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_simplePoleOnly
+#print axioms RHFormalization.mainTheorem_from_default_connectedOmega_meromorphicAlgebra_and_simplePoleOnly

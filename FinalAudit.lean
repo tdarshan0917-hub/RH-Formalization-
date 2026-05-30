@@ -1,0 +1,4 @@
+import RHFormalization.MainTheorem
+
+#check RHFormalization.mainTheorem_from_nonnegative_interface_layer
+#print axioms RHFormalization.mainTheorem_from_nonnegative_interface_layer

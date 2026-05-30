@@ -1,0 +1,5 @@
+import RHFormalization.PuncturedIdentityLocalCore
+
+#check RHFormalization.PuncturedMeromorphicIdentityAPI
+#check RHFormalization.local_order_obstruction_from_punctured_holomorphic_balance
+#print axioms RHFormalization.local_order_obstruction_from_punctured_holomorphic_balance

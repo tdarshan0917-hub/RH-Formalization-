@@ -1,0 +1,13 @@
+import RHFormalization
+
+#check RHFormalization.finalRHSpine_after_sharedPackageFunctionalCompatibility
+#print RHFormalization.finalRHSpine_after_sharedPackageFunctionalCompatibility
+
+#check RHFormalization.AppendixESharedPackageFunctionalCompatibility
+#print RHFormalization.AppendixESharedPackageFunctionalCompatibility
+
+#check RHFormalization.DDetailedConstructionWithOperatorLegality
+#print RHFormalization.DDetailedConstructionWithOperatorLegality
+
+#check RHFormalization.HMeromorphicWithNormalFormPoles
+#print RHFormalization.HMeromorphicWithNormalFormPoles

@@ -1,0 +1,10 @@
+import RHFormalization.HSideOverlapChosenCshared
+import RHFormalization.AppendixESharedPackageFunctionalCompatibility
+
+#check RHFormalization.buildHSideOverlapPackageWithChosenCshared
+#check RHFormalization.buildHSideOverlapPackageWithChosenCshared_Cshared_eq
+#check RHFormalization.finalRHSpine_from_Cshared_eq
+
+#print axioms RHFormalization.buildHSideOverlapPackageWithChosenCshared
+#print axioms RHFormalization.buildHSideOverlapPackageWithChosenCshared_Cshared_eq
+#print axioms RHFormalization.finalRHSpine_from_Cshared_eq

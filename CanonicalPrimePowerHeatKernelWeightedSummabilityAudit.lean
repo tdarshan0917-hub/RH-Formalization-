@@ -1,0 +1,9 @@
+import RHFormalization.CanonicalPrimePowerHeatKernelWeightedSummability
+
+#check RHFormalization.heatKernelExplicitWeightedEnvelope
+#check RHFormalization.heatKernelWeightedEnvelope_eq_explicit
+#check RHFormalization.heatKernelWeightedEnvelope_summable_of_explicit
+
+#print axioms RHFormalization.heatKernelExplicitWeightedEnvelope
+#print axioms RHFormalization.heatKernelWeightedEnvelope_eq_explicit
+#print axioms RHFormalization.heatKernelWeightedEnvelope_summable_of_explicit

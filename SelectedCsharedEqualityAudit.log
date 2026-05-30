@@ -1,0 +1,33 @@
+RHFormalization.finalRHSpine_from_Cshared_eq (ZF : RHFormalization.ZetaZeroFacts)
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (X : RHFormalization.HMeromorphicWithNormalFormPoles)
+  (hC : Y.B.Cshared = X.layer.overlap.Cshared) : RHFormalization.RiemannHypothesis
+structure RHFormalization.AppendixESharedPackageCompatibility
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+  (X : RHFormalization.HMeromorphicWithNormalFormPoles) : Prop
+number of parameters: 2
+fields:
+  RHFormalization.AppendixESharedPackageCompatibility.h_Cshared_eq : X.layer.overlap.Cshared = Y.B.Cshared
+constructor:
+  RHFormalization.AppendixESharedPackageCompatibility.mk {Y : RHFormalization.DDetailedConstructionWithOperatorLegality}
+    {X : RHFormalization.HMeromorphicWithNormalFormPoles} (h_Cshared_eq : X.layer.overlap.Cshared = Y.B.Cshared) :
+    RHFormalization.AppendixESharedPackageCompatibility Y X
+theorem RHFormalization.finalRHSpine_after_sharedPackageCompatibility : RHFormalization.ZetaZeroFacts →
+  ∀ (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+    (X : RHFormalization.HMeromorphicWithNormalFormPoles),
+    RHFormalization.AppendixESharedPackageCompatibility Y X → RHFormalization.RiemannHypothesis :=
+fun ZF Y X S =>
+  RHFormalization.finalRHSpine_after_zeroPropagation ZF Y X
+    (RHFormalization.buildInterfaceBridgeFromSharedPackageCompatibility Y X S)
+theorem RHFormalization.finalRHSpine_from_Cshared_eq : RHFormalization.ZetaZeroFacts →
+  ∀ (Y : RHFormalization.DDetailedConstructionWithOperatorLegality)
+    (X : RHFormalization.HMeromorphicWithNormalFormPoles),
+    Y.B.Cshared = X.layer.overlap.Cshared → RHFormalization.RiemannHypothesis :=
+fun ZF Y X hC =>
+  RHFormalization.finalRHSpine_from_sharedBIdentity ZF Y X (RHFormalization.sharedBIdentity_of_Cshared_eq Y X hC)
+RHFormalization.DDetailedConstructionWithOperatorLegality.B
+  (self : RHFormalization.DDetailedConstructionWithOperatorLegality) :
+  RHFormalization.DBcanLimitData self.finiteOperatorLayer.toStagePackage
+RHFormalization.HMeromorphicWithNormalFormPoles.layer (self : RHFormalization.HMeromorphicWithNormalFormPoles) :
+  RHFormalization.HMeromorphicPackageLayerV2
+RHFormalization.HMeromorphicPackageLayerV2.overlap (self : RHFormalization.HMeromorphicPackageLayerV2) :
+  RHFormalization.HSideOverlapPackage self.Zpole self.HarchPackage.Harch

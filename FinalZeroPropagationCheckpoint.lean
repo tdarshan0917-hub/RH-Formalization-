@@ -1,0 +1,10 @@
+import RHFormalization.OmegaMeromorphicZeroPropagationEndpoint
+
+#check RHFormalization.finalConditionalRHSpine_meromorphicZeroPropagation
+#print axioms RHFormalization.finalConditionalRHSpine_meromorphicZeroPropagation
+
+#print RHFormalization.ZetaZeroFacts
+#print RHFormalization.DDetailedConstructionWithOperatorLegality
+#print RHFormalization.HMeromorphicWithNormalFormPoles
+#print RHFormalization.InterfaceBridgeAPI
+#print RHFormalization.OmegaMeromorphicZeroPropagationAPI

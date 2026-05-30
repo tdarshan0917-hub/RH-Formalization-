@@ -1,0 +1,25 @@
+import Mathlib.Analysis.Meromorphic.NormalForm
+import Mathlib.Analysis.Analytic.IsolatedZeros
+import RHFormalization.InterfaceBridgeNonnegativeFromPlain
+
+open Complex Topology Filter
+
+#print RHFormalization.OmegaNormalFormCodiscretePropagationAPI
+
+#check AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq
+#check AnalyticOnNhd.eqOn_of_preconnected_of_eventuallyEq
+#check AnalyticOnNhd.eqOn_of_preconnected_of_mem_closure
+#check AnalyticOnNhd.eqOn_zero_of_preconnected_of_eventuallyEq_zero
+#check AnalyticOnNhd.eqOn_zero_of_preconnected_of_frequently_eq_zero
+
+#check MeromorphicOn.analyticAt_mem_codiscreteWithin
+#check MeromorphicOn.meromorphicNFAt_mem_codiscreteWithin
+#check toMeromorphicNFOn_eqOn_codiscrete
+#check MeromorphicOn.toMeromorphicNFOn_eq_self_on_nhdsNE
+
+#check Filter.codiscreteWithin_mono
+#check Filter.self_mem_codiscreteWithin
+#check mem_codiscreteWithin
+#check accPt_iff_frequently
+#check RHFormalization.isPreconnected_Omega_native
+#check RHFormalization.isOpen_Omega_native

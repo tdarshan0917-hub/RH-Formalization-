@@ -1,0 +1,7 @@
+RHFormalization/HExplicitFormulaLocalCancellation.lean:15:opposite simple principal parts cancel, provided the total function has the
+RHFormalization/HExplicitFormulaLocalCancellation.lean:46:Local holomorphic extension from cancellation of opposite simple principal parts.
+RHFormalization/HExplicitFormulaWitnessBranchFromPrincipalParts.lean:25:Local extensions at every zero witness from opposite principal parts.
+RHFormalization/HExplicitFormulaWitnessBranchFromPrincipalParts.lean:30:theorem Harch_witness_extensions_from_Bshared_opposite_principalParts
+RHFormalization/HExplicitFormulaWitnessBranchFromPrincipalParts.lean:75:* witness-side opposite principal parts;
+RHFormalization/HExplicitFormulaWitnessBranchFromPrincipalParts.lean:118:    (Harch_witness_extensions_from_Bshared_opposite_principalParts
+RHFormalization/HExplicitFormulaWitnessCancellation.lean:15:using opposite principal parts.

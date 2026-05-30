@@ -1,0 +1,9 @@
+import RHFormalization.HExplicitFormulaHolomorphyLocal
+
+#check RHFormalization.holomorphicOnC_of_forall_holomorphicAtC
+#check RHFormalization.holomorphicOnC_of_local_holomorphic_extensions
+#check RHFormalization.Harch_holomorphic_from_local_extensions
+
+#print axioms RHFormalization.holomorphicOnC_of_forall_holomorphicAtC
+#print axioms RHFormalization.holomorphicOnC_of_local_holomorphic_extensions
+#print axioms RHFormalization.Harch_holomorphic_from_local_extensions

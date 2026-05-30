@@ -1,0 +1,9 @@
+import RHFormalization.AppendixESharedPackageObligations
+
+#check RHFormalization.DMatchesSharedCanonicalPackage
+#check RHFormalization.HMatchesSharedCanonicalPackage
+#check RHFormalization.buildSharedCanonicalPackageEvidenceFromMatches
+#check RHFormalization.buildInterfaceBridgeFromSharedCanonicalMatches
+
+#print axioms RHFormalization.buildSharedCanonicalPackageEvidenceFromMatches
+#print axioms RHFormalization.buildInterfaceBridgeFromSharedCanonicalMatches
