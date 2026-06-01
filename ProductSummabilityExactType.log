@@ -1,0 +1,35 @@
+summable_prod_of_nonneg.{u_3, u_4} {α : Type u_3} {β : Type u_4} {f : α × β → ℝ} (hf : 0 ≤ f) :
+  Summable f ↔ (∀ (x : α), Summable fun y => f (x, y)) ∧ Summable fun x => ∑' (y : β), f (x, y)
+theorem summable_prod_of_nonneg.{u_3, u_4} : ∀ {α : Type u_3} {β : Type u_4} {f : α × β → ℝ},
+  0 ≤ f → (Summable f ↔ (∀ (x : α), Summable fun y => f (x, y)) ∧ Summable fun x => ∑' (y : β), f (x, y)) :=
+fun {α} {β} {f} hf =>
+  Iff.trans (Iff.symm (Equiv.summable_iff (Equiv.sigmaEquivProd α β)))
+    (summable_sigma_of_nonneg fun x => hf ((Equiv.sigmaEquivProd α β) x))
+summable_sigma_of_nonneg.{u_3, u_4} {α : Type u_4} {β : α → Type u_3} {f : (x : α) × β x → ℝ}
+  (hf : ∀ (x : (x : α) × β x), 0 ≤ f x) :
+  Summable f ↔ (∀ (x : α), Summable fun y => f ⟨x, y⟩) ∧ Summable fun x => ∑' (y : β x), f ⟨x, y⟩
+theorem summable_sigma_of_nonneg.{u_3, u_4} : ∀ {α : Type u_4} {β : α → Type u_3} {f : (x : α) × β x → ℝ},
+  (∀ (x : (x : α) × β x), 0 ≤ f x) →
+    (Summable f ↔ (∀ (x : α), Summable fun y => f ⟨x, y⟩) ∧ Summable fun x => ∑' (y : β x), f ⟨x, y⟩) :=
+fun {α} {β} {f} hf =>
+  Exists.casesOn (CanLift.prf f hf) fun f_1 h =>
+    Eq.ndrec (motive := fun {f} =>
+      (∀ (x : (x : α) × β x), 0 ≤ f x) →
+        (Summable f ↔ (∀ (x : α), Summable fun y => f ⟨x, y⟩) ∧ Summable fun x => ∑' (y : β x), f ⟨x, y⟩))
+      (fun hf =>
+        id
+          (cast
+            (Eq.symm
+              (congr (congrArg Iff NNReal.summable_coe._simp_1)
+                (congr (congrArg And (forall_congr fun x => NNReal.summable_coe._simp_1))
+                  (Eq.trans
+                    (congrFun'
+                      (congrArg
+                        (@Summable ℝ α Real.instAddCommMonoid PseudoMetricSpace.toUniformSpace.toTopologicalSpace)
+                        (funext fun x => NNReal.coe_tsum._simp_1))
+                      (SummationFilter.unconditional α))
+                    NNReal.summable_coe._simp_1))))
+            NNReal.summable_sigma))
+      h hf
+Real.summable_nat_pow_inv {p : ℕ} : (Summable fun n => (↑n ^ p)⁻¹) ↔ 1 < p
+Real.summable_one_div_nat_add_rpow (a s : ℝ) : (Summable fun n => 1 / |↑n + a| ^ s) ↔ 1 < s

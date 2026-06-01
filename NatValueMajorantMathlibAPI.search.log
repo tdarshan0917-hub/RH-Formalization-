@@ -1,0 +1,158 @@
+.lake/packages/mathlib/Mathlib/Topology/UrysohnsLemma.lean:457:  have S x : Summable (fun n ↦ u n * f n x) := Summable.of_nonneg_of_le
+.lake/packages/mathlib/Mathlib/Topology/MetricSpace/PiNat.lean:926:    simpa [one_div] using summable_geometric_two_encode
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/NatInt.lean:16:This file contains lemmas about `HasSum`, `Summable`, `tsum`, `HasProd`, `Multipliable`, and `tprod`
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/ENNReal.lean:418:theorem summable_sigma {β : α → Type*} {f : (Σ x, β x) → ℝ≥0} :
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/ENNReal.lean:531:theorem Summable.of_nonneg_of_le {f g : β → ℝ} (hg : ∀ b, 0 ≤ g b) (hgf : ∀ b, g b ≤ f b)
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Ring.lean:310:theorem multipliable_one_add_of_summable_prod (h : Summable (∏ i ∈ ·, f i)) :
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Ring.lean:315:theorem tprod_one_add [T2Space α] (h : Summable (∏ i ∈ ·, f i)) :
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Constructions.lean:58:@[to_additive Summable.prod_symm]
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Constructions.lean:162:@[to_additive Summable.tsum_prod']
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Constructions.lean:168:@[to_additive Summable.tsum_prod_uncurry]
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Constructions.lean:230:@[to_additive Summable.prod_factor]
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Constructions.lean:235:@[to_additive Summable.prod]
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Constructions.lean:255:@[to_additive Summable.tsum_prod]
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Defs.lean:57:`HasSum.tsum_eq`, `HasProd.tprod_eq`, `Summable.hasSum_iff`, and `Multipliable.hasProd_iff`.
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Real.lean:70:theorem summable_sigma_of_nonneg {α} {β : α → Type*} {f : (Σ x, β x) → ℝ} (hf : ∀ x, 0 ≤ f x) :
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Real.lean:73:  simpa using mod_cast NNReal.summable_sigma
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Real.lean:78:  simpa only [← (Set.sigmaEquiv s hs).summable_iff] using summable_sigma_of_nonneg (fun _ ↦ hf _)
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Real.lean:82:  (Equiv.sigmaEquivProd _ _).summable_iff.symm.trans <| summable_sigma_of_nonneg fun _ ↦ hf _
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/l2Space.lean:201:      convert (hV.summable_of_lp f).hasSum.norm.rpow_const (Or.inr H.le) using 1
+.lake/packages/mathlib/Mathlib/Analysis/Fourier/PoissonSummation.lean:201:  Real.tsum_eq_tsum_fourier (fun K => summable_of_isBigO (Real.summable_abs_int_rpow hb)
+.lake/packages/mathlib/Mathlib/Analysis/Fourier/PoissonSummation.lean:217:    (Real.summable_abs_int_rpow hb) (hFf.comp_tendsto Int.tendsto_coe_cofinite)) x
+.lake/packages/mathlib/Mathlib/Analysis/Real/OfDigits.lean:57:  refine Summable.of_nonneg_of_le (fun _ ↦ ofDigitsTerm_nonneg) (fun _ ↦ ofDigitsTerm_le) ?_
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:20:`summable_one_div_rpow`. After this transformation, a `p`-series turns into a geometric series.
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:274:theorem summable_nat_rpow_inv {p : ℝ} :
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:305:theorem summable_nat_rpow {p : ℝ} : Summable (fun n => (n : ℝ) ^ p : ℕ → ℝ) ↔ p < -1 := by
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:311:theorem summable_one_div_nat_rpow {p : ℝ} :
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:318:theorem summable_nat_pow_inv {p : ℕ} :
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:320:  simp only [← rpow_natCast, summable_nat_rpow_inv, Nat.one_lt_cast]
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:324:theorem summable_one_div_nat_pow {p : ℕ} :
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:326:  simp only [one_div, Real.summable_nat_pow_inv]
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:329:theorem summable_one_div_int_pow {p : ℕ} :
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:331:  refine ⟨fun h ↦ summable_one_div_nat_pow.mp (h.comp_injective Nat.cast_injective),
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:332:    fun h ↦ .of_nat_of_neg (summable_one_div_nat_pow.mpr h)
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:333:      (((summable_one_div_nat_pow.mpr h).mul_left <| 1 / (-1 : ℝ) ^ p).congr fun n ↦ ?_)⟩
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:336:theorem summable_abs_int_rpow {b : ℝ} (hb : 1 < b) :
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:342:    rwa [summable_nat_rpow, neg_lt_neg_iff]
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:347:    mt (summable_nat_pow_inv (p := 1)).1 (lt_irrefl 1)
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:351:theorem not_summable_one_div_natCast : ¬Summable (fun n => 1 / n : ℕ → ℝ) := by
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:352:  simpa only [inv_eq_one_div] using not_summable_natCast_inv
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:358:  · exact_mod_cast mt (_root_.summable_nat_add_iff 1).1 not_summable_one_div_natCast
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:366:theorem summable_rpow_inv {p : ℝ} :
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:371:theorem summable_rpow {p : ℝ} : Summable (fun n => (n : ℝ≥0) ^ p : ℕ → ℝ≥0) ↔ p < -1 := by
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:374:theorem summable_one_div_rpow {p : ℝ} :
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:429:lemma Real.not_summable_indicator_one_div_natCast {m : ℕ} (hm : m ≠ 0) (k : ZMod m) :
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:438:  exact mt (summable_nat_add_iff (f := fun n : ℕ ↦ 1 / (n : ℝ)) 1).mp not_summable_one_div_natCast
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:449:lemma Real.summable_one_div_nat_add_rpow (a : ℝ) (s : ℝ) :
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:453:    simp_rw [← summable_one_div_nat_rpow, Iff.intro (this a 0) (this 0 a), add_zero, Nat.abs_cast]
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:474:lemma Real.summable_one_div_int_add_rpow (a : ℝ) (s : ℝ) :
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:477:    Int.cast_neg, neg_neg, Int.cast_natCast, summable_one_div_nat_add_rpow, and_self]
+.lake/packages/mathlib/Mathlib/Analysis/PSeries.lean:484:    Real.summable_nat_pow_inv, iff_true]
+.lake/packages/mathlib/Mathlib/Analysis/MeanInequalities.lean:543:theorem summable_and_Lr_rpow_le_Lp_mul_Lq_tsum {f g : ι → ℝ≥0} {p q r : ℝ}
+.lake/packages/mathlib/Mathlib/Analysis/MeanInequalities.lean:571:  simpa using summable_and_Lr_rpow_le_Lp_mul_Lq_tsum hpq hf hg
+.lake/packages/mathlib/Mathlib/Analysis/MeanInequalities.lean:573:theorem summable_mul_rpow_of_Lp_Lq {f g : ι → ℝ≥0} {p q r : ℝ} (hpqr : p.HolderTriple q r)
+.lake/packages/mathlib/Mathlib/Analysis/MeanInequalities.lean:576:  (summable_and_Lr_rpow_le_Lp_mul_Lq_tsum hpqr hf hg).1
+.lake/packages/mathlib/Mathlib/Analysis/MeanInequalities.lean:586:  (summable_and_Lr_rpow_le_Lp_mul_Lq_tsum hpqr hf hg).2
+.lake/packages/mathlib/Mathlib/Analysis/MeanInequalities.lean:819:theorem summable_and_Lr_rpow_le_Lp_mul_Lq_tsum_of_nonneg (hpqr : p.HolderTriple q r)
+.lake/packages/mathlib/Mathlib/Analysis/MeanInequalities.lean:829:  exact NNReal.summable_and_Lr_rpow_le_Lp_mul_Lq_tsum hpqr hf_sum hg_sum
+.lake/packages/mathlib/Mathlib/Analysis/MeanInequalities.lean:840:  simpa using summable_and_Lr_rpow_le_Lp_mul_Lq_tsum_of_nonneg hpq hf hg hf_sum hg_sum
+.lake/packages/mathlib/Mathlib/Analysis/MeanInequalities.lean:845:  (summable_and_Lr_rpow_le_Lp_mul_Lq_tsum_of_nonneg hpqr hf hg hf_sum hg_sum).1
+.lake/packages/mathlib/Mathlib/Analysis/MeanInequalities.lean:855:  (summable_and_Lr_rpow_le_Lp_mul_Lq_tsum_of_nonneg hpqr hf hg hf_sum hg_sum).2
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Elliptic/Weierstrass.lean:225:    (fun _ _ ↦ (ZLattice.summable_norm_rpow _ _ (by simp; norm_num)).mul_left _) fun r hr ↦
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Elliptic/Weierstrass.lean:340:    (fun _ _ ↦ (ZLattice.summable_norm_rpow _ _ (by simp; norm_num)).mul_left _) fun r hr ↦
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Trigonometric/Cotangent.lean:299:  exact summable_nat_pow_inv.mpr <| by lia
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean:39:lemma cexp_tsum_eq_tprod (hfn : ∀ i, f i ≠ 0) (hf : Summable fun i ↦ log (f i)) :
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean:81:lemma rexp_tsum_eq_tprod (hfn : ∀ i, 0 < f i) (hf : Summable fun i ↦ log (f i)) :
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean:157:lemma prod_vanishing_of_summable_norm (hf : Summable fun i ↦ ‖f i‖) {ε : ℝ} (hε : 0 < ε) :
+.lake/packages/mathlib/Mathlib/Analysis/SpecificLimits/Basic.lean:578:theorem summable_one_div_pow_of_le {m : ℝ} {f : ℕ → ℕ} (hm : 1 < m) (fi : ∀ i, i ≤ f i) :
+.lake/packages/mathlib/Mathlib/Analysis/SpecificLimits/Basic.lean:581:      (summable_geometric_of_lt_one (one_div_nonneg.mpr (zero_le_one.trans hm.le))
+.lake/packages/mathlib/Mathlib/Analysis/PSeriesComplex.lean:25:lemma Complex.summable_one_div_nat_cpow {p : ℂ} :
+.lake/packages/mathlib/Mathlib/Analysis/PSeriesComplex.lean:27:  rw [← Real.summable_one_div_nat_rpow, ← summable_nat_add_iff 1 (G := ℝ),
+.lake/packages/mathlib/Mathlib/Analysis/Normed/Group/Completeness.lean:47:  refine Summable.of_nonneg_of_le (fun n => by positivity) ?_ summable_geometric_two
+.lake/packages/mathlib/Mathlib/Analysis/Normed/Group/FunctionSeries.lean:70:    apply Summable.of_nonneg_of_le (fun _ ↦ norm_nonneg _) _ (hu.subtype _)
+.lake/packages/mathlib/Mathlib/Analysis/SumOverResidueClass.lean:106:  rw [← (residueClassesEquiv N).symm.tsum_eq f, Summable.tsum_prod, tsum_fintype,
+.lake/packages/mathlib/Mathlib/Analysis/Analytic/Composition.lean:490:  refine NNReal.summable_sigma.2 ⟨fun n => (this n).summable, (NNReal.summable_nat_add_iff 1).1 ?_⟩
+.lake/packages/mathlib/Mathlib/Analysis/Analytic/ChangeOrigin.lean:179:  refine NNReal.summable_sigma.2 ⟨fun n => (this n).summable, ?_⟩
+.lake/packages/mathlib/Mathlib/Analysis/Analytic/ChangeOrigin.lean:188:    ((NNReal.summable_sigma.1 (p.changeOriginSeries_summable_aux₁ hr')).1 k).mul_right (r' ^ k)⁻¹
+.lake/packages/mathlib/Mathlib/Analysis/Analytic/ChangeOrigin.lean:193:    (fun n => ?_) (NNReal.summable_sigma.1 <| p.changeOriginSeries_summable_aux₂ hr k).2
+.lake/packages/mathlib/Mathlib/Analysis/Analytic/ChangeOrigin.lean:208:  exact ((NNReal.summable_sigma.1 this).1 l).hasSum
+.lake/packages/mathlib/Mathlib/Analysis/Analytic/ChangeOrigin.lean:225:    (NNReal.summable_sigma.1 (p.changeOriginSeries_summable_aux₁ hr)).2
+.lake/packages/mathlib/Mathlib/NumberTheory/Harmonic/ZetaAsymp.lean:215:    · exact_mod_cast (summable_nat_add_iff 1).mpr (summable_one_div_nat_rpow.mpr hs)
+.lake/packages/mathlib/Mathlib/NumberTheory/TsumDivisorsAntidiagonal.lean:81:  rw [summable_sigma_of_nonneg (fun a ↦ by positivity)]
+.lake/packages/mathlib/Mathlib/NumberTheory/TsumDivisorsAntidiagonal.lean:85:    apply Summable.of_nonneg_of_le (f := fun c : ℕ+ ↦ ‖(c : 𝕜) ^ (k + 1) * r ^ (c : ℕ)‖)
+.lake/packages/mathlib/Mathlib/NumberTheory/TsumDivisorsAntidiagonal.lean:126:  rw [Summable.tsum_comm (by apply (summable_prod_mul_pow k hr).prod_symm)] at h00
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/Summable.lean:208:lemma summable_one_div_norm_rpow {k : ℝ} (hk : 2 < k) :
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/Summable.lean:218:    apply ((Real.summable_nat_rpow.mpr (by linarith : 1 - k < -1)).mul_left
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/Summable.lean:227:lemma summable_inv_of_isBigO_rpow_inv {α : Type*} [NormedField α] [CompleteSpace α]
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/Summable.lean:232:    ((Real.summable_abs_int_rpow hab).congr fun b ↦ Real.rpow_neg (abs_nonneg ↑b) a) hf
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/Summable.lean:237:  apply summable_inv_of_isBigO_rpow_inv (a := k) (by norm_cast)
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/Summable.lean:245:  apply summable_inv_of_isBigO_rpow_inv (a := k) (by norm_cast)
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/Summable.lean:252:  apply summable_inv_of_isBigO_rpow_inv (a := 2) (by norm_cast)
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/Summable.lean:258:  apply summable_inv_of_isBigO_rpow_inv (a := 2) (by norm_cast)
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/Summable.lean:264:  apply summable_inv_of_isBigO_rpow_inv (a := 2) (by norm_cast)
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/Summable.lean:296:lemma summable_of_isBigO_rpow_norm {E : Type*} [NormedAddCommGroup E] [CompleteSpace E]
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/Summable.lean:300:    ((summable_one_div_norm_rpow hab).congr fun b ↦ Real.rpow_neg (norm_nonneg b) a) hf
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Summable.lean:134:lemma summable_left_one_div_linear_sub_one_div_linear (a b : ℤ) :
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Summable.lean:141:lemma summable_right_one_div_linear_sub_one_div_linear_succ (m : ℤ) :
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Summable.lean:201:        (summable_left_one_div_linear_sub_one_div_linear z (-d) d)).1)).congr
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Summable.lean:204:        (summable_left_one_div_linear_sub_one_div_linear z (-d) d)).2)).congr
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Summable.lean:206:  · simpa using summable_left_one_div_linear_sub_one_div_linear z (-d) d
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Summable.lean:255:    apply (summable_left_one_div_linear_sub_one_div_linear z i (i + 1)).congr
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Transform.lean:98:    apply summable_of_isBigO_rpow_norm (a := 3) (by linarith)
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Transform.lean:104:lemma G2Term_prod_summable (z : ℍ) : Summable (fun p : ℤ × ℤ ↦ G2Term z ![p.1, p.2]) := by
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Transform.lean:133:        (summable_right_one_div_linear_sub_one_div_linear_succ z a), ← Summable.tsum_add
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Transform.lean:135:        (summable_right_one_div_linear_sub_one_div_linear_succ z a)]
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Transform.lean:155:    · simpa [add_assoc] using summable_left_one_div_linear_sub_one_div_linear z N (N + 1)
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/E2/Transform.lean:171:  exact Summable.tsum_prod' (G2Term_prod_summable z) ((G2Term_prod_summable z).prod_factor)
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/UniformConvergence.lean:24:We then show in `summable_one_div_rpow_max` that the sum of `max (|c|, |d|) ^ (-k)` over
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/UniformConvergence.lean:48:    mod_cast (summable_one_div_norm_rpow hk').subtype (gammaSet N 1 a)
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/IsBoundedAtImInfty.lean:42:  apply ((summable_one_div_norm_rpow hk').mul_left <| r z ^ (-k : ℝ)).of_nonneg_of_le
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/IsBoundedAtImInfty.lean:68:  · exact_mod_cast (summable_one_div_norm_rpow hk').mul_left <| r ⟨⟨N, 2⟩, Nat.ofNat_pos⟩ ^ (-k)
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/QExpansion.lean:225:    Summable.tsum_prod (summable_prod_eisSummand hk z),
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/QExpansion.lean:261:  rw [Summable.tsum_prod' ?h₁ fun b ↦ ?h₂]
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/QExpansion.lean:312:private lemma summable_sigma_mul_cexp_pow {k : ℕ} (hk : 1 ≤ k) (z : ℍ) :
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/QExpansion.lean:333:    (summable_nat_add_iff 1).mpr (summable_sigma_mul_cexp_pow (by omega) τ)
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/Dirichlet.lean:63:  refine fun h ↦ not_summable_one_div_on_primes <| summable_ofReal.mp <| .of_neg ?_
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/Dirichlet.lean:176:  refine fun h ↦ (Real.not_summable_indicator_one_div_natCast hN 1) ?_
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/RiemannZeta.lean:202:  · rwa [Complex.summable_one_div_nat_cpow]
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/PrimesInAP.lean:213:    refine (summable_rpow.mpr (by norm_num : -(3 / 2 : ℝ) < -1)).mul_left 2
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/PrimesInAP.lean:232:  refine Summable.of_nonneg_of_le h₀ hleF₀ ?_
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaEven.lean:503:  · apply (((summable_one_div_int_add_rpow 0 s.re).mpr hs).div_const 2).of_norm_bounded
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaEven.lean:546:    rwa [summable_one_div_int_add_rpow]
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaOdd.lean:443:    rwa [summable_one_div_int_add_rpow]
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/Nonvanishing.lean:272:  refine (Nat.Primes.summable_rpow.mpr ?_).of_nonneg_of_le (fun _ ↦ norm_nonneg _) this
+.lake/packages/mathlib/Mathlib/NumberTheory/ZetaValues.lean:299:  rwa [summable_abs_iff, Real.summable_one_div_int_pow]
+.lake/packages/mathlib/Mathlib/NumberTheory/SumPrimeReciprocals.lean:17:There are two versions of the main result: `not_summable_one_div_on_primes`, which
+.lake/packages/mathlib/Mathlib/NumberTheory/SumPrimeReciprocals.lean:18:expresses the sum as a sub-sum of the harmonic series, and `Nat.Primes.not_summable_one_div`,
+.lake/packages/mathlib/Mathlib/NumberTheory/SumPrimeReciprocals.lean:20:converges if and only if `r < -1`; see `Nat.Primes.summable_rpow`.
+.lake/packages/mathlib/Mathlib/NumberTheory/SumPrimeReciprocals.lean:68:theorem not_summable_one_div_on_primes :
+.lake/packages/mathlib/Mathlib/NumberTheory/SumPrimeReciprocals.lean:87:theorem Nat.Primes.not_summable_one_div : ¬ Summable (fun p : Nat.Primes ↦ (1 / p : ℝ)) := by
+.lake/packages/mathlib/Mathlib/NumberTheory/SumPrimeReciprocals.lean:88:  convert summable_subtype_iff_indicator.mp.mt not_summable_one_div_on_primes
+.lake/packages/mathlib/Mathlib/NumberTheory/SumPrimeReciprocals.lean:91:theorem Nat.Primes.summable_rpow {r : ℝ} :
+.lake/packages/mathlib/Mathlib/NumberTheory/SumPrimeReciprocals.lean:96:    exact (Real.summable_nat_rpow.mpr h).subtype _
+.lake/packages/mathlib/Mathlib/NumberTheory/SumPrimeReciprocals.lean:99:    refine fun H ↦ Nat.Primes.not_summable_one_div <| H.of_nonneg_of_le (fun _ ↦ by positivity) ?_
+.lake/packages/mathlib/Mathlib/NumberTheory/Transcendental/Liouville/LiouvilleNumber.lean:80:  summable_one_div_pow_of_le hm Nat.self_le_factorial
+.lake/packages/mathlib/Mathlib/NumberTheory/Transcendental/Liouville/LiouvilleNumber.lean:121:        (summable_one_div_pow_of_le m1 fun _ => le_self_add)
+.lake/packages/mathlib/Mathlib/NumberTheory/Transcendental/Liouville/Measure.lean:107:  refine (Summable.add ?_ ?_).mul_left _ <;> simp only [NNReal.summable_rpow] <;> linarith
+.lake/packages/mathlib/Mathlib/NumberTheory/EulerProduct/DirichletLSeries.lean:60:  convert Real.summable_nat_rpow_inv.mpr hs with n
+.lake/packages/mathlib/Mathlib/NumberTheory/EulerProduct/Basic.lean:100:        refine Summable.of_nonneg_of_le (fun _ ↦ norm_nonneg _) (fun _ ↦ norm_mul_le ..) ?_
+.lake/packages/mathlib/Mathlib/NumberTheory/EulerProduct/Basic.lean:116:lemma prod_filter_prime_tsum_eq_tsum_factoredNumbers (hsum : Summable (‖f ·‖)) (s : Finset ℕ) :
+.lake/packages/mathlib/Mathlib/NumberTheory/EulerProduct/Basic.lean:151:lemma prod_primesBelow_tsum_eq_tsum_smoothNumbers (hsum : Summable (‖f ·‖)) (N : ℕ) :
+.lake/packages/mathlib/Mathlib/NumberTheory/EulerProduct/Basic.lean:224:theorem eulerProduct_tprod (hsum : Summable (‖f ·‖)) (hf₀ : f 0 = 0) :
+.lake/packages/mathlib/Mathlib/NumberTheory/EulerProduct/Basic.lean:310:    refine Summable.of_nonneg_of_le (fun _ ↦ norm_nonneg _) (fun _ ↦ norm_pow_le ..) ?_
+.lake/packages/mathlib/Mathlib/NumberTheory/EulerProduct/Basic.lean:316:lemma prod_filter_prime_geometric_eq_tsum_factoredNumbers {f : ℕ →* F} (hsum : Summable f)
+.lake/packages/mathlib/Mathlib/NumberTheory/EulerProduct/Basic.lean:335:lemma prod_primesBelow_geometric_eq_tsum_smoothNumbers {f : ℕ →* F} (hsum : Summable f) (N : ℕ) :
+.lake/packages/mathlib/Mathlib/NumberTheory/EulerProduct/Basic.lean:356:theorem eulerProduct_completely_multiplicative_tprod {f : ℕ →*₀ F} (hsum : Summable (‖f ·‖)) :
+.lake/packages/mathlib/Mathlib/RingTheory/HahnSeries/Summable.lean:37:* `HahnSeries.SummableFamily.hsum_mul`: `mul` is compatible with `hsum`.  That is, the product of
+.lake/packages/mathlib/Mathlib/RingTheory/HahnSeries/Summable.lean:371:theorem smul_support_subset_prod (s : SummableFamily Γ R α)
+.lake/packages/mathlib/Mathlib/RingTheory/HahnSeries/Summable.lean:411:theorem finite_co_support_prod_smul (s : SummableFamily Γ R α)
+.lake/packages/mathlib/Mathlib/RingTheory/HahnSeries/Summable.lean:539:theorem finite_co_support_prod_mul (s : SummableFamily Γ R α)
+.lake/packages/mathlib/Mathlib/Algebra/Module/ZLattice/Summable.lean:19:- `ZLattice.summable_norm_rpow`: `∑ z ∈ L, ‖z‖ʳ` converges when `r < -d`.
+.lake/packages/mathlib/Mathlib/Algebra/Module/ZLattice/Summable.lean:20:- `ZLattice.summable_norm_sub_rpow`: `∑ z ∈ L, ‖z - x‖ʳ` converges when `r < -d`.
+.lake/packages/mathlib/Mathlib/Algebra/Module/ZLattice/Summable.lean:155:        refine Summable.sum_le_tsum _ (fun _ _ ↦ by positivity) (Real.summable_nat_rpow.mpr ?_)
+.lake/packages/mathlib/Mathlib/Algebra/Module/ZLattice/Summable.lean:229:lemma summable_norm_rpow (r : ℝ) (hr : r < -Module.finrank ℤ L) :
+.lake/packages/mathlib/Mathlib/Algebra/Module/ZLattice/Summable.lean:237:  Summable.tsum_le_of_sum_le (summable_norm_rpow L r hr) (tsumNormRPowBound_spec L r hr)
+.lake/packages/mathlib/Mathlib/Algebra/Module/ZLattice/Summable.lean:240:lemma summable_norm_sub_rpow (r : ℝ) (hr : r < -Module.finrank ℤ L) (x : E) :
+.lake/packages/mathlib/Mathlib/Algebra/Module/ZLattice/Summable.lean:245:    (.mul_left ((1 / 2) ^ r) (summable_norm_rpow L r hr)) ?_
+.lake/packages/mathlib/Mathlib/Algebra/Module/ZLattice/Summable.lean:266:  mod_cast summable_norm_sub_rpow L n (mod_cast hn) x
+.lake/packages/mathlib/Mathlib/Algebra/Module/ZLattice/Summable.lean:276:lemma summable_norm_pow_inv (n : ℕ) (hn : Module.finrank ℤ L < n) :

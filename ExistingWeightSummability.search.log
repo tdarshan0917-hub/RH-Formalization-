@@ -1,0 +1,112 @@
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:226:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:302:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:303:      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:127:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:193:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:137:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:202:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:173:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:237:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:123:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:207:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:84:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:131:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:109:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:208:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:157:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:235:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:184:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:244:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:118:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:180:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:112:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:190:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:122:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:201:    h_weightedKernelMajorant_summable :=
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:202:      S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:85:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:191:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:117:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:212:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:216:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:296:    h_weightedKernelMajorant_summable :=
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:297:      S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:138:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:248:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:140:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:210:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerHeatKernelGaussianCore.lean:14:  Summable (fun q => ‖q.weightC‖ * exp (-(q.center^2)/(4t))).
+RHFormalization/CanonicalPrimePowerHeatKernelGaussianCore.lean:60:The heat-kernel weighted envelope is summable once the Gaussian core is summable.
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:19:noncomputable def heatKernelNatValueMajorant :
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:27:theorem heatKernelNatValueMajorant_summable_of_model
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:32:        heatKernelNatValueMajorant q ≤ model q) :
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:33:    Summable heatKernelNatValueMajorant := by
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:40:  unfold heatKernelNatValueMajorant
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:50:theorem heatKernelNatValueMajorant_eq_zero_of_not_isPrimePowerPair
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:53:    heatKernelNatValueMajorant q = 0 := by
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:54:  unfold heatKernelNatValueMajorant
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:60:theorem heatKernelNatValueMajorant_eq_valid_primePower_formula
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:63:    heatKernelNatValueMajorant q =
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:66:  unfold heatKernelNatValueMajorant
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:71:The current live theorem: the natValue majorant is summable.
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:75:theorem heatKernelNatValueMajorant_summable :
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:76:    Summable heatKernelNatValueMajorant := by
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:77:  unfold heatKernelNatValueMajorant
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummability.lean:43:If the explicit Gaussian-weighted prime-power envelope is summable, then the
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummability.lean:44:heat-kernel weighted envelope is summable.
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:14:  Summable (fun q => ‖q.weightC‖ * ‖G q.center‖).
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:264:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:340:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:341:      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:181:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:270:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:271:      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:141:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:211:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:174:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:229:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:230:      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:189:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:266:      S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:120:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:199:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:100:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:178:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:88:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:162:    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:104:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:195:      S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:121:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:305:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:306:      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:149:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:203:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:204:      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:28:  Summable (fun q => ‖q.weightC‖ * ‖G q.center‖).
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:68:  Summable (fun q => ‖q.weightC‖ * ‖G q.center‖).
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:165:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:135:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:194:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:195:      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:157:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:207:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:208:      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:119:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:223:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:224:      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:274:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:347:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:348:      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:244:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:319:    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:320:      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:12:  h_weightedKernelMajorant_summable :
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:13:    Summable (fun q => ‖q.weightC‖ * kernelMajorant q).
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:35:theorem weightedKernelMajorant_summable_of_envelope
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:42:    (h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:54:      h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:62:  `h_weightedKernelMajorant_summable`
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:166:  h_summabilityEnvelope_summable :
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:223:    h_weightedKernelMajorant_summable :=
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:224:      weightedKernelMajorant_summable_of_envelope
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:229:        S.h_summabilityEnvelope_summable

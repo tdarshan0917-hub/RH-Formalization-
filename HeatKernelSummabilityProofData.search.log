@@ -1,0 +1,691 @@
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:101:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:104:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:108:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:112:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:176:      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:252:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:253:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:332:        q.weightC * S.Kshared q.center s := by
+RHFormalization/HExplicitFormulaLocalCancellation.lean:27:Convert punctured-neighborhood equality plus equality at the center into
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:17:  massGrowth n := ∑ q in belowCutoff R_n, ‖q.weightC‖.
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:38:    (fun q : PrimePowerPair => ‖q.weightC‖)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:50:      (fun q hq => norm_nonneg q.weightC)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:82:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:85:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:89:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:93:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:106:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:112:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:202:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:203:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:227:              (fun q : PrimePowerPair => ‖q.weightC‖)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:230:              (fun q : PrimePowerPair => ‖q.weightC‖))
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:286:        q.weightC * S.Kshared q.center s := by
+RHFormalization/DOperatorExport.lean:220:For the manuscript's centered sharp window, `c_w = 1`.
+RHFormalization/DOperatorExport.lean:263:  center : ℝ → ℝ
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:19:  weightMass q := ‖q.weightC‖
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:24:  ‖Kstage_n q.center s - Kshared q.center s‖ ≤ windowError s n.
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:38:prime-power discrepancy is bounded by `‖q.weightC‖ * ε`.
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:46:      ‖Kstage q.center s - Kshared q.center s‖ ≤ ε) :
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:47:    ‖q.weightC * Kstage q.center s -
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:48:        q.weightC * Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:49:      ‖q.weightC‖ * ε := by
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:51:      q.weightC * Kstage q.center s -
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:52:          q.weightC * Kshared q.center s =
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:53:        q.weightC * (Kstage q.center s - Kshared q.center s) := by
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:57:    ‖q.weightC * Kstage q.center s -
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:58:        q.weightC * Kshared q.center s‖
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:60:      ‖q.weightC * (Kstage q.center s - Kshared q.center s)‖ := by
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:63:      ‖q.weightC‖ * ‖Kstage q.center s - Kshared q.center s‖ := by
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:66:      ‖q.weightC‖ * ε := by
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:70:            (norm_nonneg q.weightC)
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:84:      ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:85:          Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:88:      ‖q.weightC‖ * windowError := by
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:104:  `‖q.weightC‖`.
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:140:        ‖q.weightC * Kshared q.center s‖ ≤ majorant q
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:146:  /-- Uniform bound for finite-stage weighted masses `∑ ‖q.weightC‖`. -/
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:156:  h_weightC_mass_sum_le_bound :
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:159:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:190:          ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:191:              Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:197:The abstract mass is chosen as `‖q.weightC‖`, and the weighted pointwise estimate
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:212:    weightMass := fun q : PrimePowerPair => ‖q.weightC‖
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:215:      exact norm_nonneg q.weightC
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:219:    h_weightMass_sum_le_bound := S.h_weightC_mass_sum_le_bound
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:273:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:52:  The finite stage index set contains every prime-power pair whose center lies
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:55:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:58:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:64:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:68:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:83:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:91:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:112:    `(∑ q in belowCutoff R_n, ‖q.weightC‖) * windowError_n → 0`.
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:119:            (fun q : PrimePowerPair => ‖q.weightC‖)
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:156:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:157:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:175:          ‖X.toFiniteCanonicalPrimePowerFormula.kernel (S.alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:176:              S.Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:221:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:57:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:60:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:64:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:68:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:81:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:87:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:125:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:126:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:187:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:90:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:93:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:97:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:101:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:114:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:120:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:145:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:206:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:207:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:287:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:12:  ∑' q : PrimePowerPair, q.weightC * Kshared q.center s
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:19:  ‖q.weightC * Kshared q.center s‖ ≤ majorant q,
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:70:          X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:71:            Kshared q.center s
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:87:        ‖q.weightC * Kshared q.center s‖ ≤ majorant q
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:112:              ‖q.weightC * S.Kshared q.center s‖) :=
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:115:            norm_nonneg (q.weightC * S.Kshared q.center s))
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:157:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:73:        ‖q.weightC * Kshared q.center s‖ ≤ majorant q
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:101:          ‖q.weightC *
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:102:              X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:103:            q.weightC * Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:197:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:84:      q.weightC * Kshared q.center s)
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:129:        ‖q.weightC * Kshared q.center s‖ ≤ majorant q
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:228:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerPackage.lean:14:* center: `log (p^m)`;
+RHFormalization/CanonicalPrimePowerPackage.lean:39:def PrimePowerPair.p (q : PrimePowerPair) : ℕ :=
+RHFormalization/CanonicalPrimePowerPackage.lean:43:def PrimePowerPair.m (q : PrimePowerPair) : ℕ :=
+RHFormalization/CanonicalPrimePowerPackage.lean:47:def IsPrimePowerPair (q : PrimePowerPair) : Prop :=
+RHFormalization/CanonicalPrimePowerPackage.lean:51:def PrimePowerPair.natValue (q : PrimePowerPair) : ℕ :=
+RHFormalization/CanonicalPrimePowerPackage.lean:54:/-- The center `log(q) = log(p^m)` of the prime-power spike. -/
+RHFormalization/CanonicalPrimePowerPackage.lean:55:noncomputable def PrimePowerPair.center (q : PrimePowerPair) : ℝ :=
+RHFormalization/CanonicalPrimePowerPackage.lean:56:  Real.log ((q.natValue : ℕ) : ℝ)
+RHFormalization/CanonicalPrimePowerPackage.lean:63:noncomputable def PrimePowerPair.weightReal (q : PrimePowerPair) : ℝ := by
+RHFormalization/CanonicalPrimePowerPackage.lean:67:      Real.log ((q.p : ℕ) : ℝ) / Real.sqrt ((q.natValue : ℕ) : ℝ)
+RHFormalization/CanonicalPrimePowerPackage.lean:72:noncomputable def PrimePowerPair.weightC (q : PrimePowerPair) : ℂ :=
+RHFormalization/CanonicalPrimePowerPackage.lean:73:  (q.weightReal : ℂ)
+RHFormalization/CanonicalPrimePowerPackage.lean:78:The first argument is the prime-power center `log(q)`.
+RHFormalization/CanonicalPrimePowerPackage.lean:96:      q.weightC * K q.center s)
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:18:which contains every prime-power pair with `q.center ≤ R`.
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:22:  `∑ q in belowCutoff R, ‖q.weightC‖`.
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:49:      q.center ≤ R →
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:62:        (fun q : PrimePowerPair => ‖q.weightC‖)
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:68:          (fun q hq => norm_nonneg q.weightC)
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:70:    h_weightC_mass_le_of_center_le := by
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:71:      intro I R hcenter
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:76:            E.h_mem_belowCutoff R q (hcenter q hq))
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:78:            norm_nonneg q.weightC) }
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:101:  The finite stage index set contains every prime-power pair whose center lies
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:104:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:107:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:113:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:117:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:132:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:140:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:161:    `(∑ q in belowCutoff R_n, ‖q.weightC‖) * windowError_n → 0`.
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:168:            (fun q : PrimePowerPair => ‖q.weightC‖)
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:181:          ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:182:              Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:196:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:197:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:250:        q.weightC * S.Kshared q.center s := by
+RHFormalization/PrimePowerWeightNormalizationLock.lean:39:theorem PrimePowerPair.weightC_eq_coe_weightReal
+RHFormalization/PrimePowerWeightNormalizationLock.lean:41:    q.weightC = (q.weightReal : ℂ) := by
+RHFormalization/PrimePowerWeightNormalizationLock.lean:46:using `q.weightC`.
+RHFormalization/PrimePowerWeightNormalizationLock.lean:53:      I.sum (fun q : PrimePowerPair => q.weightC * K q.center s) := by
+RHFormalization/PrimePowerWeightNormalizationLock.lean:58:complexification of `q.weightReal`.
+RHFormalization/PrimePowerWeightNormalizationLock.lean:60:theorem finiteCanonicalPrimePowerPackage_eq_weightReal_sum
+RHFormalization/PrimePowerWeightNormalizationLock.lean:65:      I.sum (fun q : PrimePowerPair => (q.weightReal : ℂ) * K q.center s) := by
+RHFormalization/PrimePowerWeightNormalizationLock.lean:66:  simp [finiteCanonicalPrimePowerPackage, PrimePowerPair.weightC_eq_coe_weightReal]
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:14:    ‖q.weightC * Kstage_n q.center s
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:15:      - q.weightC * Kshared q.center s‖ → 0.
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:266:        ‖q.weightC * Kshared q.center s‖ ≤ majorant q
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:274:  Typically this is comparable to `‖q.weightC‖`, possibly with an additional
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:406:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:12:  ‖Kstage_n q.center s - Kshared q.center s‖ ≤ windowError s n.
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:16:  ‖q.weightC * Kshared q.center s‖ ≤ majorant q.
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:20:  majorant q := ‖q.weightC‖ * kernelMajorant q,
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:34:weighted shared term is bounded by `‖q.weightC‖ * kernelMajorant q`.
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:42:      ‖Kshared q.center s‖ ≤ kernelMajorant q) :
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:43:    ‖q.weightC * Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:44:      ‖q.weightC‖ * kernelMajorant q := by
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:46:    ‖q.weightC * Kshared q.center s‖
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:48:      ‖q.weightC‖ * ‖Kshared q.center s‖ := by
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:51:      ‖q.weightC‖ * kernelMajorant q := by
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:55:            (norm_nonneg q.weightC)
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:64:* summability of the weighted majorant `‖q.weightC‖ * kernelMajorant q`.
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:99:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:107:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:109:  /-- Uniform bound for finite-stage weighted masses `∑ ‖q.weightC‖`. -/
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:119:  h_weightC_mass_sum_le_bound :
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:122:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:153:          ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:154:              Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:162:  `fun q => ‖q.weightC‖ * kernelMajorant q`.
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:175:        ‖q.weightC‖ * S.kernelMajorant q
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:181:          (norm_nonneg q.weightC)
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:199:    h_weightC_mass_sum_le_bound := S.h_weightC_mass_sum_le_bound
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:241:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:13:  ∑ q in indices(alpha n), ‖q.weightC‖ ≤ weightMassBound.
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:18:  (∑ q in indices(alpha n), ‖q.weightC‖) * windowError s n → 0.
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:38:theorem actual_kernel_error_sum_tendsto_zero_of_weightC_window_product
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:46:    (h_weightC_window_product_tendsto_zero :
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:50:            (fun q : PrimePowerPair => ‖q.weightC‖)) *
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:58:          ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:59:              Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:88:          (fun q : PrimePowerPair => ‖q.weightC‖)) *
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:115:                ‖q.weightC‖ * windowError n) := by
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:129:            (I.sum (fun q : PrimePowerPair => ‖q.weightC‖)) *
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:134:                  (f := fun q : PrimePowerPair => ‖q.weightC‖)
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:141:              (fun q hq => norm_nonneg q.weightC))
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:143:      h_weightC_window_product_tendsto_zero
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:184:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:192:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:209:  h_weightC_window_product_tendsto_zero :
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:214:            (fun q : PrimePowerPair => ‖q.weightC‖)) *
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:227:          ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:228:              Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:246:        ‖q.weightC‖ * S.kernelMajorant q
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:252:          (norm_nonneg q.weightC)
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:271:        actual_kernel_error_sum_tendsto_zero_of_weightC_window_product
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:278:          (S.h_weightC_window_product_tendsto_zero s hs)
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:316:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:13:    Summable (fun q => ‖q.weightC‖ * kernelMajorant q).
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:17:  ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q,
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:41:        ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q)
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:46:        ‖q.weightC‖ * kernelMajorant q) := by
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:51:          (norm_nonneg q.weightC)
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:86:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:89:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:93:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:97:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:161:      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:208:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:209:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:274:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:73:  The finite stage index set contains every prime-power pair whose center lies
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:76:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:79:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:95:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:103:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:128:  h_weightC_mass_le_growth :
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:131:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:152:          ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:153:              Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:172:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:173:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:185:    h_weightC_mass_le_growth := S.h_weightC_mass_le_growth
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:226:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:57:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:60:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:64:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:68:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:116:      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:155:      soundMassCounting.centerCountingSet.countEnvelope ((alpha n).R) ≤
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:205:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:206:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:238:          S.soundMassCounting.centerCountingSet.countEnvelope
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:244:          S.soundMassCounting.centerCountingSet.h_countEnvelope_nonneg
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:292:        q.weightC * S.Kshared q.center s := by
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:153:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:14:  ‖q.weightC * Kstage q.center s - q.weightC * Kshared q.center s‖.
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:38:  ‖q.weightC *
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:39:      X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:40:    q.weightC * Kshared q.center s‖
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:86:        ‖q.weightC * Kshared q.center s‖ ≤ majorant q
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:175:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:20:  fun s => ∑' q, q.weightC * Kshared q.center s.
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:47:            q.weightC * Kshared q.center s)
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:71:              q.weightC * Kshared q.center s)
+RHFormalization/CanonicalPrimePowerTsumPrincipalPart.lean:105:              q.weightC * Kshared q.center s)
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:52:        X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:62:      Kshared q.center s =
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:85:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:88:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:92:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:96:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:109:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:115:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:140:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:184:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:185:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:243:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:13:     Kshared q.center s = W.G_limit (coord s q)`.
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:21:  ‖Kshared q.center s‖ ≤ kernelMajorant q.
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:38:  Kshared q.center s = W.G_limit (coord s q).
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:57:        ‖Kshared q.center s‖ ≤ kernelMajorant q) :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:65:      Kshared q.center s =
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:100:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:103:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:106:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:110:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:149:      ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:155:      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:185:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:186:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:187:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:188:      S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:249:        q.weightC * S.Kshared q.center s := by
+RHFormalization/DPrimePowerNormalizationConcrete.lean:22:Build a D-side prime-power normalization from a center map and a numerator map.
+RHFormalization/DPrimePowerNormalizationConcrete.lean:26:    (center lambdaWeight : ℝ → ℝ) :
+RHFormalization/DPrimePowerNormalizationConcrete.lean:28:  { center := center
+RHFormalization/DPrimePowerNormalizationConcrete.lean:49:    (center lambdaWeight : ℝ → ℝ)
+RHFormalization/DPrimePowerNormalizationConcrete.lean:51:    (buildDPrimePowerNormalizationFromLambda center lambdaWeight).weight q =
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:146:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:149:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:153:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:157:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:221:      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:283:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:284:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:353:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:68:          X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:69:            Kshared q.center s
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:78:        (fun q : PrimePowerPair => q.weightC * Kshared q.center s)
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:94:    term := fun q s => q.weightC * S.Kshared q.center s
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:104:            (fun q : PrimePowerPair => q.weightC * S.Kshared q.center s)
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:157:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:160:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:164:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:168:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:181:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:187:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:238:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:239:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:324:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:17:  ‖Kstage_n q.center s - Kshared q.center s‖ ≤ windowError n
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:50:          X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:54:        Kshared q.center s =
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:67:        ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:68:            Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:114:        X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:122:      Kshared q.center s =
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:151:        ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:152:            Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummability.lean:22:noncomputable def heatKernelExplicitWeightedEnvelope
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummability.lean:26:    ‖q.weightC‖ *
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummability.lean:28:        Real.exp (-(q.center ^ 2) / (4 * t)))
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummability.lean:38:      heatKernelExplicitWeightedEnvelope t := by
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummability.lean:46:theorem heatKernelWeightedEnvelope_summable_of_explicit
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummability.lean:50:      Summable (heatKernelExplicitWeightedEnvelope t)) :
+RHFormalization/DHeatTraceSummability.lean:26:theorem summable_heat_exp_of_linear_lower
+RHFormalization/DHeatTraceSummability.lean:38:    Real.summable_exp_nat_mul_of_ge (c := -(t * a)) hc hlam
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:69:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:72:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:75:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:79:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:119:      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:290:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:291:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:292:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:293:      S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:347:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:43:          ‖q.weightC‖ ≤ weightBound) :
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:48:          (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:72:          ‖q.weightC‖ ≤ weightEnvelope) :
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:123:        ‖q.weightC‖ ≤ weightEnvelope R
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:184:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:187:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:191:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:195:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:259:      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:321:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:322:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:404:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:15:    ‖Kstage_n q.center s - Kshared q.center s‖ ≤ windowError s n.
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:59:          X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:63:        Kshared q.center s =
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:70:              ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:71:                  Kshared q.center s‖ < ε := by
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:145:        X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:153:      Kshared q.center s =
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:173:              ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:174:                  Kshared q.center s‖ < ε := by
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:111:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:114:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:118:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:122:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:135:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:141:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:166:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:242:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:243:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:316:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:58:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:61:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:65:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:69:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:82:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:88:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:113:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:143:        X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:153:      Kshared q.center s =
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:185:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:186:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:257:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:12:  (∑ q in indices(alpha n), ‖q.weightC‖) * windowError s n → 0.
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:17:    ∑ q in indices(alpha n), ‖q.weightC‖ ≤ massGrowth n;
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:37:theorem weightC_window_product_tendsto_zero_of_massGrowth
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:44:    (h_weightC_mass_le_growth :
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:47:          (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:59:          (fun q : PrimePowerPair => ‖q.weightC‖)) *
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:67:          (fun q : PrimePowerPair => ‖q.weightC‖)) *
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:75:              (fun q hq => norm_nonneg q.weightC))
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:81:            (h_weightC_mass_le_growth n)
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:97:  `h_weightC_window_product_tendsto_zero`
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:136:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:144:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:169:  h_weightC_mass_le_growth :
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:172:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:193:          ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:194:              Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:216:    h_weightC_window_product_tendsto_zero := by
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:219:        weightC_window_product_tendsto_zero_of_massGrowth
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:225:          S.h_weightC_mass_le_growth
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:266:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:146:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:149:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:153:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:157:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:170:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:176:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:201:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:231:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:232:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:291:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:18:  kernelMajorant q := ‖G q.center‖.
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:50:  ‖G q.center‖
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:60:  exact norm_nonneg (G q.center)
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:64:majorant is immediate from the chosen majorant `‖G q.center‖`.
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:72:      ‖(displacementCanonicalKernel G) q.center s‖
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:92:  Kshared q.center s := G q.center
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:93:  kernelMajorant q := ‖G q.center‖.
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:108:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:111:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:114:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:118:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:146:      ‖q.weightC‖ * displacementKernelMajorant G q
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:181:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:182:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:183:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:184:      S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:244:        q.weightC * (displacementCanonicalKernel S.G) q.center s := by
+RHFormalization/CanonicalPrimePowerConcreteCountBound.lean:37:    soundMassCounting.centerCountingSet.countEnvelope ((alpha n).R)
+RHFormalization/CanonicalPrimePowerConcreteCountBound.lean:49:    soundMassCounting.centerCountingSet.h_countEnvelope_nonneg
+RHFormalization/CanonicalPrimePowerConcreteCountBound.lean:60:      soundMassCounting.centerCountingSet.countEnvelope ((alpha n).R) ≤
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:100:          X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:101:            Kshared q.center s
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:110:        (fun q : PrimePowerPair => q.weightC * Kshared q.center s)
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:94:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:97:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:101:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:105:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:169:      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:211:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:212:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:284:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:77:          X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:78:            Kshared q.center s
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:87:        (fun q : PrimePowerPair => q.weightC * Kshared q.center s)
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:97:          q.weightC * Kshared q.center s
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:119:            (fun q : PrimePowerPair => q.weightC * S.Kshared q.center s)
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:121:              q.weightC * S.Kshared q.center s) :=
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:12:  `h_weightC_mass_le_growth`
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:16:  if every active prime-power index satisfies `q.center ≤ R`,
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:19:    ∑ q in active, ‖q.weightC‖ ≤ massBound R.
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:50:  If every index in `I` has center at most `R`, then the total weighted mass over
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:53:  h_weightC_mass_le_of_center_le :
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:56:      (∀ q : PrimePowerPair, q ∈ I → q.center ≤ R) →
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:57:        I.sum (fun q : PrimePowerPair => ‖q.weightC‖) ≤ massBound R
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:67:  `h_weightC_mass_le_growth`
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:89:  The finite stage index set contains every prime-power pair whose center lies
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:92:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:95:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:103:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:107:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:122:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:130:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:169:          ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:170:              Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:188:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:204:    h_weightC_mass_le_growth := by
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:207:        S.massData.h_weightC_mass_le_of_center_le
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:210:          (fun q hq => S.h_indices_subset_center_le_R n q hq)
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:253:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:13:    ∀ R q, q ∈ belowCutoff R → ‖q.weightC‖ ≤ weightEnvelope R.
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:19:`q.weightC = (q.weightReal : ℂ)` normalization.
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:33:theorem PrimePowerPair.norm_weightC_eq_abs_weightReal
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:35:    ‖q.weightC‖ = |q.weightReal| := by
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:36:  simp [PrimePowerPair.weightC]
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:39:A real absolute-value bound for `q.weightReal` implies the corresponding complex
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:40:weight bound for `q.weightC`.
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:42:theorem PrimePowerPair.norm_weightC_le_of_abs_weightReal_le
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:45:    (hB : |q.weightReal| ≤ B) :
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:46:    ‖q.weightC‖ ≤ B := by
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:47:  simpa [PrimePowerPair.norm_weightC_eq_abs_weightReal q] using hB
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:53:`|q.weightReal| ≤ weightEnvelope R` on the enumerated cutoff set.
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:68:  h_abs_weightReal_le :
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:72:        |q.weightReal| ≤ weightEnvelope R
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:77:theorem PrimePowerWeightEnvelopeData.norm_weightC_le
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:83:        ‖q.weightC‖ ≤ W.weightEnvelope R := by
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:86:    PrimePowerPair.norm_weightC_le_of_abs_weightReal_le
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:88:      (W.h_abs_weightReal_le R q hq)
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:92:`weightReal` normalization.
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:97:    ‖q.weightC‖ ≤ weightEnvelope R
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:101:  |q.weightReal| ≤ weightEnvelope R.
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:139:      exact M.weightData.norm_weightC_le R q hq }
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:143:`weightReal`.
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:164:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:167:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:171:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:175:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:239:      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:300:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:301:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:369:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:45:          ‖q.weightC * Kstage q.center s -
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:46:            q.weightC * Kshared q.center s‖ ≤ termError q)
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:52:            q.weightC * Kshared q.center s)‖ ≤
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:60:              q.weightC * Kshared q.center s)
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:64:          q.weightC * Kstage q.center s -
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:65:            q.weightC * Kshared q.center s) := by
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:71:          q.weightC * Kstage q.center s)
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:73:          q.weightC * Kshared q.center s)).symm
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:79:            q.weightC * Kshared q.center s)‖
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:83:          q.weightC * Kstage q.center s -
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:84:            q.weightC * Kshared q.center s)‖ := by
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:89:          ‖q.weightC * Kstage q.center s -
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:90:            q.weightC * Kshared q.center s‖) := by
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:95:              q.weightC * Kstage q.center s -
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:96:                q.weightC * Kshared q.center s)
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:146:        ‖q.weightC * Kshared q.center s‖ ≤ majorant q
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:186:          ‖q.weightC *
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:187:              X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:188:            q.weightC * Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:273:        q.weightC * S.Kshared q.center s := by
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:147:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:16:  q.center ≤ R → q ∈ belowCutoff R.
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:20:  q ∈ belowCutoff R → q.center ≤ R.
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:25:  q.center ≤ R → q ∈ countSet R.
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:52:  h_belowCutoff_center_le :
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:56:        q.center ≤ R
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:59:If a counting set contains every prime-power pair with `q.center ≤ R`, then it
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:62:theorem belowCutoff_subset_countSet_of_sound_center_cutoff
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:65:    (h_center_le_mem_countSet :
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:68:        q.center ≤ R →
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:74:    h_center_le_mem_countSet
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:77:      (E.h_belowCutoff_center_le R q hq)
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:80:Counting-set data built from a sound cutoff enumeration and a center-based
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:103:  Every prime-power pair with center below cutoff lies in the counting set.
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:105:  h_center_le_mem_countSet :
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:108:      q.center ≤ R →
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:119:Convert center-based counting set data into the previous cutoff counting-set
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:133:      belowCutoff_subset_countSet_of_sound_center_cutoff
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:136:        C.h_center_le_mem_countSet
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:142:Mass-counting data using a sound cutoff enumeration and center-based counting
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:151:  centerCountingSet :
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:159:Convert sound center-counting data into the previous counting-set/real-weight
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:166:      M.centerCountingSet.toCutoffCountingSetData
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:172:D-window package using a sound cutoff enumeration and center-based counting set.
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:176:enumeration and center-based count-set condition.
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:194:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:197:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:201:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:205:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:269:      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:309:          (soundMassCounting.centerCountingSet.countEnvelope ((alpha n).R) *
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:328:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:329:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:398:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:13:    ‖Kshared q.center s‖ ≤ kernelMajorant q.
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:17:  Kshared q.center s = W.G_limit (coord s q).
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:52:      ‖Kshared q.center s‖ ≤ kernelMajorant q := by
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:55:      Kshared q.center s =
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:85:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:88:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:92:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:96:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:125:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:189:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:190:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:254:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:69:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:72:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:76:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:80:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:132:      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:173:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:174:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:175:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:176:      S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:238:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerHeatKernelNormBounds.lean:88:      ‖q.weightC‖ *
+RHFormalization/CanonicalPrimePowerHeatKernelNormBounds.lean:90:          Real.exp (-(q.center ^ 2) / (4 * t))) := by
+RHFormalization/CanonicalPrimePowerHeatKernelNormBounds.lean:92:  rw [norm_heatKernelG_eq t q.center ht]
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:150:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:153:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:157:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:161:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:219:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:278:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:279:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:347:        q.weightC * S.Kshared q.center s := by
+RHFormalization/DFiniteStageOperator.lean:78:    summable_heat_exp_of_linear_lower
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:14:  kernelMajorant q := ‖G q.center‖.
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:18:  summabilityEnvelope q := ‖q.weightC‖ * ‖G q.center‖.
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:28:  Summable (fun q => ‖q.weightC‖ * ‖G q.center‖).
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:44:  ‖q.weightC‖ * displacementKernelMajorant G q
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:52:      ‖q.weightC‖ * displacementKernelMajorant G q
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:68:  Summable (fun q => ‖q.weightC‖ * ‖G q.center‖).
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:83:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:86:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:89:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:93:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:149:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:150:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:151:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:152:      S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:206:        q.weightC * (displacementCanonicalKernel S.G) q.center s := by
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:96:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:99:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:103:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:107:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:120:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:126:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:151:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:201:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:202:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:267:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:130:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:133:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:137:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:141:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:154:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:160:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:229:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:230:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:295:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:12:  `kernel (alpha n) q.center s = Kshared q.center s`
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:47:        (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:57:            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:69:          q.weightC * Kshared q.center s)) := by
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:74:            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:78:            q.weightC * Kshared q.center s)) :=
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:128:        ‖q.weightC * Kshared q.center s‖ ≤ majorant q
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:150:              q.weightC * Kshared q.center s))
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:187:              q.weightC * S.Kshared q.center s) := by
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:191:                ‖q.weightC * S.Kshared q.center s‖) :=
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:194:              norm_nonneg (q.weightC * S.Kshared q.center s))
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:238:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:13:    (∑ q in belowCutoff R_n, ‖q.weightC‖) * windowError_n → 0.
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:45:          (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:57:          (fun q : PrimePowerPair => ‖q.weightC‖)
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:65:          (fun q : PrimePowerPair => ‖q.weightC‖)
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:73:              (fun q hq => norm_nonneg q.weightC))
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:113:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:116:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:120:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:124:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:137:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:143:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:168:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:204:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:205:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:268:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:14:  Summable (fun q => ‖q.weightC‖ * ‖G q.center‖).
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:73:      ‖q.weightC‖ * ‖heatKernelG t q.center‖ := by
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:107:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:110:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:113:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:117:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:172:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:173:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:174:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:175:      S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:225:        q.weightC * (displacementCanonicalKernel (heatKernelG S.t)) q.center s := by
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:21:* every prime-power pair with `q.center ≤ α n .R` belongs to the finite index set.
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:33:contains every prime-power pair with center at most `α n .R`, then every fixed
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:44:    (h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:47:        q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:56:  have h_eventually_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:57:      ∀ᶠ n in Filter.atTop, q.center ≤ (alpha n).R := by
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:58:    exact (tendsto_atTop.1 h_R_tendsto_atTop) q.center
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:60:  rcases eventually_atTop.1 h_eventually_center_le_R with ⟨N, hN⟩
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:65:      exact h_indices_contains_of_center_le_R n q (hN n hn)⟩
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:74:* `h_indices_contains_of_center_le_R`.
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:93:  The finite stage index set contains every prime-power pair whose center lies
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:96:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:99:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:115:        ‖Kshared q.center s‖ ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:123:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:148:  h_weightC_mass_le_growth :
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:151:        (fun q : PrimePowerPair => ‖q.weightC‖) ≤
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:172:          ‖X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s -
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:173:              Kshared q.center s‖ ≤
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:194:        S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:206:    h_weightC_mass_le_growth := S.h_weightC_mass_le_growth
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:246:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:41:        q.weightC * Kshared q.center s
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:81:          X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:82:            Kshared q.center s
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:91:        (fun q : PrimePowerPair => q.weightC * Kshared q.center s)
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:154:        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:52:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:55:      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:59:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:63:        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:121:        ‖q.weightC‖ * kernelMajorant q)
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:166:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:167:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:241:        q.weightC * S.Kshared q.center s := by

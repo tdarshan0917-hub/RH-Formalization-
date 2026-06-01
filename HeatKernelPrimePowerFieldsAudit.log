@@ -1,0 +1,9 @@
+@[reducible] def RHFormalization.PrimePowerPair : Type :=
+ℕ × ℕ
+def RHFormalization.PrimePowerPair.center : RHFormalization.PrimePowerPair → ℝ :=
+fun q => Real.log ↑q.natValue
+def RHFormalization.PrimePowerPair.weightC : RHFormalization.PrimePowerPair → ℂ :=
+fun q => ↑q.weightReal
+def RHFormalization.PrimePowerPair.weightReal : RHFormalization.PrimePowerPair → ℝ :=
+fun q => if RHFormalization.IsPrimePowerPair q then Real.log ↑q.p / √↑q.natValue else 0
+RHFormalization.heatKernelGaussianCoreEnvelope (t : ℝ) : RHFormalization.PrimePowerPair → ℝ

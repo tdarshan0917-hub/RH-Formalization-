@@ -1,0 +1,9 @@
+import RHFormalization.CanonicalPrimePowerHeatKernelGaussianCore
+
+#check RHFormalization.heatKernelGaussianCoreEnvelope
+#check RHFormalization.heatKernelExplicitWeightedEnvelope_summable_of_core
+#check RHFormalization.heatKernelWeightedEnvelope_summable_of_core
+
+#print axioms RHFormalization.heatKernelGaussianCoreEnvelope
+#print axioms RHFormalization.heatKernelExplicitWeightedEnvelope_summable_of_core
+#print axioms RHFormalization.heatKernelWeightedEnvelope_summable_of_core

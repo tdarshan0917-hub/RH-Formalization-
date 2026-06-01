@@ -1,0 +1,40 @@
+.lake/packages/mathlib/Mathlib/Topology/Order/LiminfLimsup.lean:80:  exact ⟨(a, b), ha.prod_mk hb⟩
+.lake/packages/mathlib/Mathlib/Topology/UniformSpace/UniformConvergence.lean:452:  have := tendsto_swap4_prod.eventually ((hF t ht).prod_mk (hF t ht))
+.lake/packages/mathlib/Mathlib/Topology/UniformSpace/UniformConvergence.lean:544:  apply (tendsto_swap4_prod.eventually ((h v hv).prod_mk (h' w hw))).mono
+.lake/packages/mathlib/Mathlib/Topology/UniformSpace/LocallyUniformConvergence.lean:179:  filter_upwards [hFs.prod_mk eventually_mem_nhdsWithin] with y hy using ⟨hfs hy.2, hy.1 hy.2⟩
+.lake/packages/mathlib/Mathlib/Topology/Algebra/Module/LinearPMap.lean:215:      simp only [Set.mem_image, Prod.exists, Prod.swap_prod_mk, Prod.mk.injEq]
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/NatInt.lean:16:This file contains lemmas about `HasSum`, `Summable`, `tsum`, `HasProd`, `Multipliable`, and `tprod`
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Ring.lean:302:theorem hasProd_one_add_of_hasSum_prod {a : α} (h : HasSum (∏ i ∈ ·, f i) a) :
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Constructions.lean:15:Lemmas on the interaction of `tprod`, `tsum`, `HasProd`, `HasSum` etc. with products, Sigma and Pi
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Constructions.lean:72:  simp [HasProd, ← prod_mk_prod, Filter.Tendsto.prodMk_nhds hf hg]
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Defs.lean:56:six key lemmas relating them together, namely `Summable.hasSum`, `Multipliable.hasProd`,
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Defs.lean:57:`HasSum.tsum_eq`, `HasProd.tprod_eq`, `Summable.hasSum_iff`, and `Multipliable.hasProd_iff`.
+.lake/packages/mathlib/Mathlib/Analysis/Asymptotics/TVS.lean:475:  simp [egauge_prod_mk, *]
+.lake/packages/mathlib/Mathlib/Analysis/Asymptotics/TVS.lean:498:  simp [egauge_prod_mk, *]
+.lake/packages/mathlib/Mathlib/Analysis/Convex/EGauge.lean:218:theorem egauge_prod_mk {F : Type*} [AddCommGroup F] [Module 𝕜 F] {U : Set E} {V : Set F}
+.lake/packages/mathlib/Mathlib/Analysis/Convex/EGauge.lean:230:  rw [← egauge_prod_mk hU hV a b, ← add_image_prod]
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Exp.lean:445:lemma HasSum.rexp {ι} {f : ι → ℝ} {a : ℝ} (h : HasSum f a) : HasProd (rexp ∘ f) (rexp a) :=
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Exp.lean:489:lemma HasSum.cexp {ι : Type*} {f : ι → ℂ} {a : ℂ} (h : HasSum f a) : HasProd (cexp ∘ f) (cexp a) :=
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean:28:lemma hasProd_of_hasSum_log (hfn : ∀ i, f i ≠ 0) (hf : HasSum (fun i ↦ log (f i)) a) :
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean:58:lemma hasProd_of_hasSum_log (hfn : ∀ i, 0 < f i) (hf : HasSum (fun i ↦ log (f i)) a) :
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean:102:lemma summable_finsetProd_of_summable_nonneg {f : ι → ℝ} (hf : ∀ i, 0 ≤ f i)
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean:117:alias summable_finset_prod_of_summable_nonneg := summable_finsetProd_of_summable_nonneg
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean:174:    (multipliable_norm_one_add_of_summable_norm hf).eventually_bounded_finsetProd
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean:198:lemma summable_finsetProd_of_summable_norm [CompleteSpace R] (hf : Summable (fun i ↦ ‖f i‖)) :
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean:200:  (summable_finsetProd_of_summable_nonneg (fun _ ↦ norm_nonneg _) hf).of_norm_bounded
+.lake/packages/mathlib/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean:204:alias summable_finset_prod_of_summable_norm := summable_finsetProd_of_summable_norm
+.lake/packages/mathlib/Mathlib/Analysis/Calculus/UniformLimitsDeriv.lean:133:    have := (tendsto_swap4_prod.eventually (hf.prod_mk hf)).diag_of_prod_right
+.lake/packages/mathlib/Mathlib/Analysis/Calculus/UniformLimitsDeriv.lean:281:  have := (tendsto_swap4_prod.eventually (hf.prod_mk hf)).diag_of_prod_right
+.lake/packages/mathlib/Mathlib/Analysis/Normed/Module/MultipliableUniformlyOn.lean:59:lemma hasProdUniformlyOn_of_clog (hf : SummableUniformlyOn (fun i x ↦ log (f i x)) s)
+.lake/packages/mathlib/Mathlib/Analysis/Normed/Module/MultipliableUniformlyOn.lean:87:lemma hasProdUniformlyOn_one_add (hK : IsCompact K) (hu : Summable u)
+.lake/packages/mathlib/Mathlib/Analysis/Normed/Module/MultipliableUniformlyOn.lean:130:lemma hasProdLocallyUniformlyOn_one_add (hK : IsOpen K) (hu : Summable u)
+.lake/packages/mathlib/Mathlib/Analysis/Normed/Field/Instances.lean:30:      h₀.prod_mk h₀ |>.mono fun ⟨x, y⟩ ⟨hx, hy⟩ ↦ by simp [mul_sub, sub_mul, hx, hy]
+.lake/packages/mathlib/Mathlib/Analysis/Normed/Ring/InfiniteSum.lean:57:  apply hasSum_of_subseq_of_summable (hf.mul_norm hg) tendsto_finsetProd_atTop
+.lake/packages/mathlib/Mathlib/Analysis/Normed/Ring/InfiniteProd.lean:43:    tprod_one_add (summable_finsetProd_of_summable_norm hsum_g)]
+.lake/packages/mathlib/Mathlib/Analysis/Normed/Ring/InfiniteProd.lean:45:    tendsto_tsum_of_dominated_convergence (summable_finsetProd_of_summable_nonneg
+.lake/packages/mathlib/Mathlib/Analysis/Normed/Ring/InfiniteProd.lean:52:  exact summable_finsetProd_of_summable_norm <| h_sum.of_nonneg_of_le (by grind) hn
+.lake/packages/mathlib/Mathlib/Analysis/Analytic/Inverse.lean:600:    apply HasSum.of_sigma (fun b ↦ hasSum_fintype _) ?_ cau
+.lake/packages/mathlib/Mathlib/Analysis/Analytic/ChangeOrigin.lean:207:  refine HasSum.sigma this.hasSum fun l => ?_
+.lake/packages/mathlib/Mathlib/Analysis/Analytic/ChangeOrigin.lean:275:    refine HasSum.sigma_of_hasSum ((p.changeOrigin x).summable y_mem_ball).hasSum (fun k => ?_) hsf
+.lake/packages/mathlib/Mathlib/Analysis/Analytic/ChangeOrigin.lean:280:      refine HasSum.sigma_of_hasSum this (fun l => ?_) ?_
+.lake/packages/mathlib/Mathlib/Analysis/Analytic/ChangeOrigin.lean:289:  refine HasSum.sigma_of_hasSum

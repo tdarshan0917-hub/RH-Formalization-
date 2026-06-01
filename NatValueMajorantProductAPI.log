@@ -1,0 +1,13 @@
+Summable.prod.{u_1, u_2, u_3} {α : Type u_1} {β : Type u_2} {γ : Type u_3} [AddCommGroup α] [UniformSpace α]
+  [IsUniformAddGroup α] [CompleteSpace α] {f : β × γ → α} (h : Summable f) : Summable fun b => ∑' (c : γ), f (b, c)
+NatValueMajorantProductAPI.lean:5:7: error(lean.unknownIdentifier): Unknown constant `Summable.prod_iff`
+NatValueMajorantProductAPI.lean:6:7: error(lean.unknownIdentifier): Unknown identifier `summable_prod_iff`
+NatValueMajorantProductAPI.lean:7:7: error(lean.unknownIdentifier): Unknown constant `Summable.prod_mk`
+Summable.sigma.{u_1, u_2, u_4} {α : Type u_1} {β : Type u_2} [AddCommGroup α] [UniformSpace α] [IsUniformAddGroup α]
+  [CompleteSpace α] {γ : β → Type u_4} {f : (b : β) × γ b → α} (ha : Summable f) :
+  Summable fun b => ∑' (c : γ b), f ⟨b, c⟩
+NatValueMajorantProductAPI.lean:9:7: error(lean.unknownIdentifier): Unknown identifier `summable_sigma`
+Summable.of_nonneg_of_le.{u_2} {β : Type u_2} {f g : β → ℝ} (hg : ∀ (b : β), 0 ≤ g b) (hgf : ∀ (b : β), g b ≤ f b)
+  (hf : Summable f) : Summable g
+Real.summable_nat_pow_inv {p : ℕ} : (Summable fun n => (↑n ^ p)⁻¹) ↔ 1 < p
+Real.summable_one_div_nat_add_rpow (a s : ℝ) : (Summable fun n => 1 / |↑n + a| ^ s) ↔ 1 < s

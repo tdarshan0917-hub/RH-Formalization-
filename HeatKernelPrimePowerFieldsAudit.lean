@@ -1,0 +1,8 @@
+import RHFormalization.CanonicalPrimePowerHeatKernelGaussianCore
+
+#print RHFormalization.PrimePowerPair
+#print RHFormalization.PrimePowerPair.center
+#print RHFormalization.PrimePowerPair.weightC
+#print RHFormalization.PrimePowerPair.weightReal
+
+#check RHFormalization.heatKernelGaussianCoreEnvelope

@@ -1,0 +1,22 @@
+def RHFormalization.PrimePowerPair.p : RHFormalization.PrimePowerPair → ℕ :=
+fun q => q.1
+def RHFormalization.PrimePowerPair.m : RHFormalization.PrimePowerPair → ℕ :=
+fun q => q.2
+def RHFormalization.PrimePowerPair.natValue : RHFormalization.PrimePowerPair → ℕ :=
+fun q => q.p ^ q.m
+def RHFormalization.IsPrimePowerPair : RHFormalization.PrimePowerPair → Prop :=
+fun q => Nat.Prime q.p ∧ 0 < q.m
+RHFormalization.heatKernelGaussianCoreEnvelope (t : ℝ) : RHFormalization.PrimePowerPair → ℝ
+RHFormalization.PrimePowerPair.center (q : RHFormalization.PrimePowerPair) : ℝ
+RHFormalization.PrimePowerPair.weightReal (q : RHFormalization.PrimePowerPair) : ℝ
+RHFormalization.PrimePowerPair.weightC (q : RHFormalization.PrimePowerPair) : ℂ
+Real.summable_exp_neg_nat : Summable fun n => Real.exp (-↑n)
+Real.summable_pow_mul_exp_neg_nat_mul (k : ℕ) {r : ℝ} (hr : 0 < r) : Summable fun n => ↑n ^ k * Real.exp (-r * ↑n)
+Real.summable_exp_nat_mul_of_ge {c : ℝ} (hc : c < 0) {f : ℕ → ℝ} (hf : ∀ (i : ℕ), ↑i ≤ f i) :
+  Summable fun i => Real.exp (c * f i)
+Summable.mul_left.{u_1, u_3} {ι : Type u_1} {α : Type u_3} {L : SummationFilter ι} [NonUnitalNonAssocSemiring α]
+  [TopologicalSpace α] [IsTopologicalSemiring α] {f : ι → α} (a : α) (hf : Summable f L) : Summable (fun i => a * f i) L
+Summable.of_nonneg_of_le.{u_2} {β : Type u_2} {f g : β → ℝ} (hg : ∀ (b : β), 0 ≤ g b) (hgf : ∀ (b : β), g b ≤ f b)
+  (hf : Summable f) : Summable g
+summable_nat_add_iff.{u_2} {G : Type u_2} [AddCommGroup G] [TopologicalSpace G] [IsTopologicalAddGroup G] {f : ℕ → G}
+  (k : ℕ) : (Summable fun n => f (n + k)) ↔ Summable f

@@ -1,0 +1,26 @@
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/NatInt.lean:16:This file contains lemmas about `HasSum`, `Summable`, `tsum`, `HasProd`, `Multipliable`, and `tprod`
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/ENNReal.lean:83:  ENNReal.summable.tsum_sigma' fun _ => ENNReal.summable
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/ENNReal.lean:87:  ENNReal.summable.tsum_sigma' fun _ => ENNReal.summable
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/ENNReal.lean:99:  ENNReal.summable.tsum_prod' fun _ => ENNReal.summable
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/ENNReal.lean:102:  ENNReal.summable.tsum_prod' fun _ => ENNReal.summable
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/ENNReal.lean:326:  apply (equiv.hasSum_iff.mpr ENNReal.summable.hasSum).sigma
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/ENNReal.lean:418:theorem summable_sigma {β : α → Type*} {f : (Σ x, β x) → ℝ≥0} :
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/ENNReal.lean:424:    simpa only [← ENNReal.tsum_coe_ne_top_iff_summable, ENNReal.tsum_sigma',
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Module.lean:96:  have key₂ : HasSum (fun i ↦ f i • t) u := HasSum.prod_fiberwise hfg this
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Ring.lean:175:  have key₂ : HasSum (fun i ↦ f i * t) u := HasSum.prod_fiberwise hfg this
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Ring.lean:214:theorem summable_mul_prod_iff_summable_mul_sigma_antidiagonal :
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Ring.lean:217:  Finset.sigmaAntidiagonalEquivProd.summable_iff.symm
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Ring.lean:224:  rw [summable_mul_prod_iff_summable_mul_sigma_antidiagonal] at h
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Ring.lean:226:  exact h.sigma' fun n ↦ (hasSum_fintype _).summable
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Ring.lean:238:  exact (summable_mul_prod_iff_summable_mul_sigma_antidiagonal.mp hfg).tsum_sigma'
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Ring.lean:302:theorem hasProd_one_add_of_hasSum_prod {a : α} (h : HasSum (∏ i ∈ ·, f i) a) :
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Ring.lean:310:theorem multipliable_one_add_of_summable_prod (h : Summable (∏ i ∈ ·, f i)) :
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Constructions.lean:15:Lemmas on the interaction of `tprod`, `tsum`, `HasProd`, `HasSum` etc. with products, Sigma and Pi
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Constructions.lean:69:@[to_additive HasSum.prodMk]
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Constructions.lean:134:@[to_additive HasSum.prod_fiberwise /-- If a series `f` on `β × γ` has sum `a` and for each `b` the
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Defs.lean:57:`HasSum.tsum_eq`, `HasProd.tprod_eq`, `Summable.hasSum_iff`, and `Multipliable.hasProd_iff`.
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Real.lean:70:theorem summable_sigma_of_nonneg {α} {β : α → Type*} {f : (Σ x, β x) → ℝ} (hf : ∀ x, 0 ≤ f x) :
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Real.lean:73:  simpa using mod_cast NNReal.summable_sigma
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Real.lean:78:  simpa only [← (Set.sigmaEquiv s hs).summable_iff] using summable_sigma_of_nonneg (fun _ ↦ hf _)
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Real.lean:80:theorem summable_prod_of_nonneg {α β} {f : (α × β) → ℝ} (hf : 0 ≤ f) :
+.lake/packages/mathlib/Mathlib/Topology/Algebra/InfiniteSum/Real.lean:82:  (Equiv.sigmaEquivProd _ _).summable_iff.symm.trans <| summable_sigma_of_nonneg fun _ ↦ hf _

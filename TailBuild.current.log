@@ -1,0 +1,280 @@
+⚠ [8462/8594] Replayed RHFormalization.PoleGeometry
+warning: RHFormalization/PoleGeometry.lean:15:8: This simp argument is unused:
+  Complex.mul_im
+
+Hint: Omit it from the simp argument list.
+  simp [Complex.mul_re, Complex.sub_re, Complex.one_re, C̵o̵m̵p̵l̵e̵x̵.̵m̵u̵l̵_̵i̵m̵,̵ ̵Complex.sub_im, Complex.one_im]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RHFormalization/PoleGeometry.lean:20:8: This simp argument is unused:
+  Complex.mul_re
+
+Hint: Omit it from the simp argument list.
+  simp [̵C̵o̵m̵p̵l̵e̵x̵.̵m̵u̵l̵_̵r̵e̵,̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵s̵u̵b̵_̵r̵e̵,̵[̲C̲o̲m̲p̲l̲e̲x̲.̲s̲u̲b̲_̲r̲e̲,̲ Complex.one_re, Complex.mul_im, Complex.sub_im, Complex.one_im]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8463/8594] Replayed RHFormalization.OmegaTopology
+warning: RHFormalization/OmegaTopology.lean:65:4: Try this: intro h hcut
+⚠ [8468/8594] Replayed RHFormalization.RigidityBridge
+warning: RHFormalization/RigidityBridge.lean:54:6: unused variable `W`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8472/8594] Replayed RHFormalization.HMeromorphicPackage
+warning: RHFormalization/HMeromorphicPackage.lean:133:6: unused variable `K`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8475/8594] Replayed RHFormalization.DResolventTraceSummability
+warning: RHFormalization/DResolventTraceSummability.lean:39:5: unused variable `hC`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8484/8594] Replayed RHFormalization.AppendixDPrimePowerLimitReduction
+warning: RHFormalization/AppendixDPrimePowerLimitReduction.lean:121:5: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8487/8594] Replayed RHFormalization.CanonicalPrimePowerKernelSeries
+warning: RHFormalization/CanonicalPrimePowerKernelSeries.lean:98:6: 'change
+  finiteCanonicalPrimePowerPackage (X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n))
+      (X.toFiniteCanonicalPrimePowerFormula.kernel (S.alpha n)) s =
+    (X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n)).sum
+      (fun q : PrimePowerPair => q.weightC * S.Kshared q.center s)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8488/8594] Replayed RHFormalization.CanonicalPrimePowerIndexExhaustion
+warning: RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:49:8: Try `simp at hq` instead of `simpa using hq`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8494/8594] Replayed RHFormalization.CanonicalPrimePowerFiniteKernelErrorSum
+warning: RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:67:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8497/8594] Replayed RHFormalization.CanonicalPrimePowerWindowMassError
+warning: RHFormalization/CanonicalPrimePowerWindowMassError.lean:87:5: unused variable `h_weightMass_nonneg`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8505/8594] Replayed RHFormalization.FSideWrapperBuilders
+warning: RHFormalization/FSideWrapperBuilders.lean:80:19: unused variable `f`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/FSideWrapperBuilders.lean:80:21: unused variable `z`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8522/8594] Replayed RHFormalization.DefaultDenominatorSimpleZeroOrder
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:20: 'norm_num' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:20: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [8543/8594] Replayed RHFormalization.OmegaMeromorphicZeroPropagationLocal
+warning: RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:81:17: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:139:17: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8544/8594] Replayed RHFormalization.OmegaMeromorphicZeroPropagationClopen
+warning: RHFormalization/OmegaMeromorphicZeroPropagationClopen.lean:79:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8545/8594] Replayed RHFormalization.AppendixELocalBridgeCore
+warning: RHFormalization/AppendixELocalBridgeCore.lean:85:61: This simp argument is unused:
+  add_left_comm
+
+Hint: Omit it from the simp argument list.
+  simp [Htot, sub_eq_add_neg, add_assoc, add_comm,̵ ̵a̵d̵d̵_̵l̵e̵f̵t̵_̵c̵o̵m̵m̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8549/8594] Replayed RHFormalization.AppendixESharedPackageFunctionalCompatibility
+warning: RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:183:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8554/8594] Replayed RHFormalization.CanonicalPrimePowerDWindowKernelEstimate
+warning: RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:44:5: unused variable `h_alpha`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8558/8594] Replayed RHFormalization.CanonicalPrimePowerDWindowRateMassGrowth
+warning: RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:139:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:151:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:161:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8559/8594] Replayed RHFormalization.CanonicalPrimePowerDWindowKernelIdentification
+warning: RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:48:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:60:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:162:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8560/8594] Replayed RHFormalization.CanonicalPrimePowerDWindowCompactRate
+warning: RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:63:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:72:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:83:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:103:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8564/8594] Replayed RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedBudget
+warning: RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:224:6: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8565/8594] Replayed RHFormalization.CanonicalPrimePowerDWindowExactSpeed
+warning: RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:61:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:70:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:84:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:93:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8569/8594] Replayed RHFormalization.CanonicalPrimePowerDWindowLimitMajorant
+warning: RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:46:8: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:50:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:117:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8570/8594] Replayed RHFormalization.CanonicalPrimePowerDWindowSpeedAPI
+warning: RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:84:8: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:88:8: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:186:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:194:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:211:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8571/8594] Replayed RHFormalization.CanonicalPrimePowerDWindowExactWindowSpeed
+warning: RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:88:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:96:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:113:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8572/8594] Replayed RHFormalization.CanonicalPrimePowerWeightedSummabilityEnvelope
+warning: RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:122:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:130:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:147:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8573/8594] Replayed RHFormalization.CanonicalPrimePowerMassUpperEnvelope
+warning: RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:130:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:138:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:155:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8580/8594] Replayed RHFormalization.CanonicalPrimePowerSharpCutoffMassEnvelope
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:106:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:112:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:121:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8584/8594] Replayed RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:97:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:102:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:110:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8585/8594] Replayed RHFormalization.CanonicalPrimePowerSharpCutoffSharedLimitMajorant
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:55:8: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:59:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:128:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:133:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:147:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8586/8594] Replayed RHFormalization.CanonicalPrimePowerSharpCutoffDisplacementKernel
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:70:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:131:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:136:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8587/8594] Replayed RHFormalization.CanonicalPrimePowerSharpCutoffExactWeightedEnvelope
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:106:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:111:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8588/8594] Replayed RHFormalization.CanonicalPrimePowerHeatKernelWeightedSummabilityTarget
+warning: RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:130:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:135:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8589/8594] Replayed RHFormalization.CanonicalPrimePowerHeatKernelNormBounds
+warning: RHFormalization/CanonicalPrimePowerHeatKernelNormBounds.lean:66:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8592/8594] Replayed RHFormalization.CanonicalPrimePowerHeatKernelGaussianCoreBounds
+warning: RHFormalization/CanonicalPrimePowerHeatKernelGaussianCoreBounds.lean:26:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8594/8594] Replayed RHFormalization.CanonicalPrimePowerHeatKernelLogGaussianTail
+warning: RHFormalization/CanonicalPrimePowerHeatKernelLogGaussianTail.lean:82:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Build completed successfully (8594 jobs).

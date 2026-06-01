@@ -1,0 +1,9 @@
+import RHFormalization.CanonicalPrimePowerHeatKernelGaussianCoreBounds
+
+#check RHFormalization.norm_weightC_eq_abs_weightReal
+#check RHFormalization.heatKernelGaussianCoreEnvelope_eq_abs_weightReal
+#check RHFormalization.heatKernelGaussianCoreEnvelope_nonneg
+
+#print axioms RHFormalization.norm_weightC_eq_abs_weightReal
+#print axioms RHFormalization.heatKernelGaussianCoreEnvelope_eq_abs_weightReal
+#print axioms RHFormalization.heatKernelGaussianCoreEnvelope_nonneg

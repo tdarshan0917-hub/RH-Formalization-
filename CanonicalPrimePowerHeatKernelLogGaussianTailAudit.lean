@@ -1,0 +1,4 @@
+import RHFormalization.CanonicalPrimePowerHeatKernelLogGaussianTail
+
+#check RHFormalization.eventually_exp_neg_log_sq_le_inv_cube
+#print axioms RHFormalization.eventually_exp_neg_log_sq_le_inv_cube
