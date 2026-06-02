@@ -1,5 +1,15 @@
-.lake/
-*.olean
-*.o
+
+# Scratch/probe/log artifacts
 *.c
+*.log
+*.o
+*.olean
+*Audit.lean
+*Probe.lean
 .DS_Store
+.lake/
+LEAN_NEXT_TARGET_HANDOFF.txt
+NEXT_LEAN_TARGET_DEFS.txt
+_proof_targets/_backups/
+_scratch_natvalue_probes/
+lean_progress_audit_*.txt
