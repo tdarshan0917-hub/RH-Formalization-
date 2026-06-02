@@ -1,5 +1,6 @@
 
 # Gaussian-core scratch/probe artifacts
+# Heat-kernel weighted closure scratch
 # Scratch/probe/log artifacts
 *.c
 *.log
@@ -11,9 +12,12 @@
 .lake/
 GaussianCore*.lean
 GaussianCore*.log
+HeatKernelWeighted*.lean
+HeatKernelWeighted*.log
 LEAN_NEXT_TARGET_HANDOFF.txt
 NEXT_LEAN_TARGET_DEFS.txt
 _proof_targets/_backups/
 _scratch_gaussiancore_probes/
+_scratch_heatkernel_weighted/
 _scratch_natvalue_probes/
 lean_progress_audit_*.txt
