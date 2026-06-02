@@ -1,4 +1,5 @@
 
+# Gaussian-core scratch/probe artifacts
 # Scratch/probe/log artifacts
 *.c
 *.log
@@ -8,8 +9,11 @@
 *Probe.lean
 .DS_Store
 .lake/
+GaussianCore*.lean
+GaussianCore*.log
 LEAN_NEXT_TARGET_HANDOFF.txt
 NEXT_LEAN_TARGET_DEFS.txt
 _proof_targets/_backups/
+_scratch_gaussiancore_probes/
 _scratch_natvalue_probes/
 lean_progress_audit_*.txt
