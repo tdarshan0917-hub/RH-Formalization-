@@ -258,8 +258,8 @@ structure DFiniteStagePackageFromOperatorLayer where
     ⇒ finite spike sum
     ⇒ finite canonical prime-power formula.
   -/
-  spikeSumData :
-    DFiniteStageSpikeSumData traceData.toStagePackage
+  finiteCanonicalPrimePowerFormula :
+    DFiniteStageCanonicalPrimePowerFormula traceData.toStagePackage
 
 /-- Extract the finite-stage package from operator legality. -/
 def DFiniteStagePackageFromOperatorLayer.toStagePackage
@@ -276,9 +276,7 @@ def DFiniteStagePackageFromOperatorLayer.toStageSplit
 def DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
     (X : DFiniteStagePackageFromOperatorLayer) :
     DFiniteStageCanonicalPrimePowerFormula X.toStagePackage :=
-  buildDFiniteStageCanonicalPrimePowerFormulaFromSpikeSums
-    X.toStagePackage
-    X.spikeSumData
+  X.finiteCanonicalPrimePowerFormula
 
 
 /-!

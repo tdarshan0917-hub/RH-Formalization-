@@ -1,26 +1,29 @@
-import RHFormalization.SelectedFiniteTraceSpikePayload
+import RHFormalization.SelectedFiniteCanonicalPayload
 
 /-!
 # Selected finite operator layer
 
-This file is conditional wiring only.
+Corrected conditional wiring.
 
-The actual selected finite trace/spike payload is still the open D-side target:
+The previous `SelectedFiniteTraceSpikePayload` route was too weak and allowed
+empty/zero fake payloads.  The selected finite operator layer should instead be
+built from the direct canonical finite prime-power payload:
 
-`selectedFiniteTraceSpikePayload : SelectedFiniteTraceSpikePayload`.
+`SelectedFiniteCanonicalPayload`.
 
-Once that instance exists, this file turns it into a
-`DFiniteStagePackageFromOperatorLayer`.
+The real remaining D-side proof target is now:
+
+`selectedFiniteCanonicalPayload : SelectedFiniteCanonicalPayload`.
 -/
 
 namespace RHFormalization
 
 noncomputable section
 
-def selectedFiniteOperatorLayer_from_traceSpikePayload
-  (Pld : SelectedFiniteTraceSpikePayload) :
-  DFiniteStagePackageFromOperatorLayer :=
-buildSelectedFiniteOperatorLayerFromTraceSpikePayload Pld
+def selectedFiniteOperatorLayer_from_canonicalPayload
+    (Pld : SelectedFiniteCanonicalPayload) :
+    DFiniteStagePackageFromOperatorLayer :=
+  buildSelectedFiniteOperatorLayerFromCanonicalPayload Pld
 
 end
 
