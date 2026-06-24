@@ -6,6 +6,7 @@ import RHFormalization.EigenvalueGrowthSummable
 import RHFormalization.DFHLimitConcrete
 import RHFormalization.ConcreteDirichletPWQOData
 import RHFormalization.CorrectedFBoundProbe
+import RHFormalization.DFiniteStageOperator
 import Mathlib
 
 namespace RHFormalization
@@ -66,3 +67,21 @@ theorem resolvent_F_stage_to_FH :
   rw [dist_comm] at h
   unfold spectralResolventPartial
   exact h
+
+/-- **The F-input — bridge input 2/4.** The concrete `DFHLimitData` for the resolvent
+operator layer: `FH = resolventFH` (the trace tsum), its holomorphy `resolventFH_holo`,
+and the proven compact-uniform convergence `resolvent_F_stage_to_FH` of the staged
+spectral resolvent along the prime-power net.  This is exactly the `F` consumed by
+`ResolventOperatorBridgeDirect`. -/
+noncomputable def resolventDFHLimit :
+    DFHLimitData resolventOperatorLayer.toStagePackage :=
+  buildDFHLimitDataFromCompactUniform
+    resolventOperatorLayer.toStagePackage
+    primePowerStage
+    resolventFH
+    resolventFH_holo
+    (by
+      intro K hK hKsub ε hε
+      filter_upwards [resolvent_F_stage_to_FH K hK hKsub ε hε] with n hn
+      intro s hs
+      exact hn s hs)
