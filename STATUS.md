@@ -83,3 +83,22 @@ ToFunImageCompact: toFun '' (range G) compact in product topology. Arzela-Ascoli
   EquicontinuousOn.isClosed_range_pi_of_uniformOnFun' (Ascoli.lean:374) -> closedness;
   Tychonoff Set.pi univ (closedBall 0 (M.)) compact (C ProperSpace) -> of_isClosed_subset.
   Equicontinuity banked: uniformEquicontinuousOn_ball_of_bounded_holo.
+
+
+## ASCOLI GAP CLOSED (the real last classical lemma — banked)
+ascoliRelCompactObligation_direct : AscoliRelCompactObligation  [AscoliObligationDirect.lean, GREEN, axiom-clean]
+  Proof: ArzelaAscoli.isCompact_closure_of_isClosedEmbedding with
+    F_clemb = isClosedEmbedding_toUOFC_Omega (uniform embedding + closed range)
+    closed range: range_toUniformOnFunIsCompact = {Continuous}, closed via
+      UniformOnFun.isClosed_setOf_continuous CompactlyCoherentSpace.isCoherentWith
+      (needs haveI LocallyCompactSpace Omega := isOpen_Omega.locallyCompactSpace)
+    s_eqcont = hequi.equicontinuousOn ; s_pointwiseCompact: Q = closedBall 0 (M x).
+LESSON: ToFunImageCompact (raw-image compact) was FALSE (1/(n+1) counterexample).
+  TRUE target is closure-compact. When a Prop asserts compactness/closedness of a RAW
+  (non-closure) set from ptwise-bdd+equicont, it is almost certainly too strong -> use closure.
+LESSON: do NOT write fancy unicode (->u arrow) in type annotations; use plain UniformOnFun X Y S.
+LESSON: IsClosedEmbedding from embedding+closed-range = anonymous constructor <hemb, hclosed>.
+
+## NEXT (chain now lit): wire ascoliRelCompactObligation_direct -> AscoliExtraction ->
+  dcanrem_from_ascoli to BUILD R : DMasterResidualData on the resolvent layer. Then O, bridge, RH.
+  Need also: h_stage_holo (live wiring) + h_loc_bdd (banked F+B bounds) + h_RH_holo (shield).
