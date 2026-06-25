@@ -27,6 +27,8 @@ Plan: prove on abs-conv region (resolvent_h_conv_absConv), then VITALI-extend to
 - correctedResolvent_F_bound             : F compact-uniformly bounded ∀ stages on Ω-compacts
 - resolvent_F_stage_to_FH                : F compact-uniform → resolventFH on ALL Ω-compacts
 - finiteCanonical_tendsto_tsum_of_kernel_error_tendsto_zero_valid (I,K,Kshared,s,hmem,hsummable,herror) : finiteCanonical→tsum POINTWISE, support-aware (handles invalid pairs via weightC=0)
+- resolvent_h_conv_absConv : h_conv (R_stage->resolventRH compact-uniform) UNCONDITIONAL on abs-conv region ✓ NEW
+- resolvent_B_stage_unif_on_absConv : B compact-uniform -> model Bshared on abs-conv-region compacts ✓ NEW
 - shiftedLaplace_tlu_on_absConvRegion_from_local_mtest (σ₀, D) : B locally-uniform on abs-conv region
 - shiftedLaplaceLocalMTest                : constructed ShiftedLaplaceAbsConvLocalMTestData
 - shiftedLaplace_Bshared_eqOn_model (σ₀)  : package.Bshared =ᵉ logDerivModel on abs-conv region
@@ -56,8 +58,11 @@ Final*Probe/HChosen* capstones, RH_from_designed_*.
 - DONE = compiles + #print axioms clean [propext,Classical.choice,Quot.sound] no sorryAx + committed.
 
 ## LAST STATE
-- Green committed: ResolventDOverlapInput, ResolventHConvCore, ResolventStageFinsetAtTop (commit a8d27ae).
-- IN PROGRESS: ResolventHConvAbsConv.lean — resolvent_h_conv_absConv. Needs resolvent_B_stage_unif_on_absConv
-  finished: wire B-TLU through resolventIndices_eventually_superset + eqOn_model rewrite.
-- AFTER h_conv: build R via buildDMasterResidualDataAlong, then O, then feed bridge → MainTheorem.
-- REMAINING UNCONDITIONAL: (a) compact-uniform upgrade of B on abs-conv region (b) Vitali abs-conv→Ω.
+- Green committed: ResolventDOverlapInput, ResolventHConvCore, ResolventStageFinsetAtTop, ResolventHConvAbsConv.
+- DONE: h_conv UNCONDITIONAL on abs-conv region (resolvent_h_conv_absConv, axiom-clean, no sorry).
+- NEXT: VITALI extension — lift h_conv from abs-conv region to ALL Ω-compacts.
+  Family R_stage(primePowerStage n) is: holomorphic on Ω (stage_holo), locally bounded on Ω
+  (F-bound banked; B-bound = the open piece OR via Vitali only needs bdd+converges-on-subregion),
+  converges on abs-conv region (just banked). Vitali/Porter ⟹ converges loc-unif on all Ω.
+- THEN: feed full-Ω h_conv + h_stage_holo to buildDMasterResidualDataAlong → R, then O, bridge → RH.
+- REMAINING UNCONDITIONAL: (1) Vitali abs-conv→Ω  (2) h_stage_holo wiring to live primePowerStage.
