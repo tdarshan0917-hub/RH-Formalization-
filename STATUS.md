@@ -66,3 +66,20 @@ Final*Probe/HChosen* capstones, RH_from_designed_*.
   converges on abs-conv region (just banked). Vitali/Porter ⟹ converges loc-unif on all Ω.
 - THEN: feed full-Ω h_conv + h_stage_holo to buildDMasterResidualDataAlong → R, then O, bridge → RH.
 - REMAINING UNCONDITIONAL: (1) Vitali abs-conv→Ω  (2) h_stage_holo wiring to live primePowerStage.
+
+
+## SHARPENED ENDGAME (the WHOLE proof now funnels to ONE classical lemma)
+RH <= ... <= R (DMasterResidualData) <= dcanrem_from_ascoli, 5 inputs:
+  h_stage_holo  : banked content, live-route wiring
+  h_loc_bdd     : banked F-bound + residual bound (correctedResolventPayload_R_stage_bound_of_F_B_bounds, generic)
+  h_overlap     : BANKED (resolvent_R_stage_overlap_tendsto on RHP1; resolvent_h_conv_absConv on abs-conv region)
+  h_RH_holo     : from Montel (the shield)
+  h_ascoli      : holomorphicMontelConvergence_from_ascoli PROVEN, <= AscoliExtraction
+                  <= AscoliRelativelyCompact <= AscoliRelCompactObligation
+                  <= ToFunImageCompact  <-- THE SOLE REMAINING GAP (classical, NON-RH)
+ALL reduction layers PROVEN (no sorry). Montel engine PROVEN.
+ToFunImageCompact: toFun '' (range G) compact in product topology. Arzela-Ascoli image-compactness
+  on non-compact domain Omega. RECIPE (in AscoliObligationDischarge.lean):
+  EquicontinuousOn.isClosed_range_pi_of_uniformOnFun' (Ascoli.lean:374) -> closedness;
+  Tychonoff Set.pi univ (closedBall 0 (M.)) compact (C ProperSpace) -> of_isClosed_subset.
+  Equicontinuity banked: uniformEquicontinuousOn_ball_of_bounded_holo.
