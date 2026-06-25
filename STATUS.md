@@ -102,3 +102,17 @@ LESSON: IsClosedEmbedding from embedding+closed-range = anonymous constructor <h
 ## NEXT (chain now lit): wire ascoliRelCompactObligation_direct -> AscoliExtraction ->
   dcanrem_from_ascoli to BUILD R : DMasterResidualData on the resolvent layer. Then O, bridge, RH.
   Need also: h_stage_holo (live wiring) + h_loc_bdd (banked F+B bounds) + h_RH_holo (shield).
+
+
+## dcanrem_from_ascoli INPUT TRACKER (building R : DMasterResidualData, live resolvent layer)
+  [1] h_stage_holo  : resolvent_stage_holo_primePowerStage  [ResolventStageHolo.lean] BANKED ✓
+        = F(spectralResolventPartial finite-sum holo) - B(finiteCanonical_shiftedLaplace_holo_of_mem_Omega), .sub
+  [2] h_loc_bdd     : F-bound (correctedResolvent_F_bound) + B-bound (correctedResolvent_B_bound_target)
+        + combiner (correctedResolventPayload_R_stage_bound_of_F_B_bounds) — all BANKED, needs assembly to live family
+  [3] h_overlap     : resolvent_R_stage_overlap_tendsto  BANKED ✓ (need to wrap as ∃U open nonempty ⊆Ω shape)
+  [4] h_RH_holo     : from Montel limit (the g in ascoliExtraction_of_relativelyCompact is proven holo) — derive
+  [5] h_ascoli      : AscoliExtraction — ascoliRelCompactObligation_direct BANKED ✓; needs M + Equicontinuous glue
+        via ascoliExtraction_of_relativelyCompact + ascoliRelativelyCompact_of_obligation
+KEY: HolomorphicAtC = AnalyticAt C, HolomorphicOnC = AnalyticOn C (AnalyticWithinAt). Use AnalyticAt for .sub,
+     lift to OnC via holomorphicOnC_of_forall_holomorphicAtC.
+NEXT: input [2] h_loc_bdd assembly to live family (wire 3 banked bounds), then [3] overlap wrap, then [5] ascoli glue.
