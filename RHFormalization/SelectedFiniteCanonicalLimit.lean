@@ -33,12 +33,14 @@ noncomputable def buildSelectedFiniteCanonicalLimit
                 (primePowerStage n))
     (hsummable :
       ∀ s : ℂ,
+        s ∈ RightHalfPlane selectedFiniteOperatorLayer.toStagePackage.sigma0 →
         Summable
           (fun q : PrimePowerPair =>
             q.weightC *
               (selectedFiniteKernel (primePowerStage 0)) q.center s))
     (herror :
       ∀ s : ℂ,
+        s ∈ RightHalfPlane selectedFiniteOperatorLayer.toStagePackage.sigma0 →
         Tendsto
           (fun n : ℕ =>
             finiteCanonicalPrimePowerPackage
@@ -85,8 +87,8 @@ noncomputable def buildSelectedFiniteCanonicalLimit
           (selectedFiniteKernel (primePowerStage 0))
           s
           hmem
-          (hsummable s)
-          (herror s))
+          (hsummable s hs)
+          (herror s hs))
 
 #print axioms buildSelectedFiniteCanonicalLimit
 
