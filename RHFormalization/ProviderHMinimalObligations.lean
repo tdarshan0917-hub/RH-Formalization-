@@ -1,0 +1,11 @@
+import RHFormalization.HMeromorphicWithNormalFormChosenCshared
+import RHFormalization.MainTheorem
+
+namespace RHFormalization
+
+#check buildHMeromorphicWithNormalFormPolesWithChosenCshared
+#check HMeromorphicWithNormalFormPoles.toZeroPolePackageAPI
+#check HMeromorphicWithNormalFormPoles.toHSidePoleWitnessLayer
+#check HSidePoleWitnessLayer.toPoleWitnessAPI
+
+end RHFormalization

@@ -1,29 +1,19 @@
-import RHFormalization.SelectedFiniteCanonicalPayload
+import RHFormalization.AppendixDFiniteSpikeExtractionWitnessInstance
 
 /-!
 # Selected finite operator layer
 
-Corrected conditional wiring.
-
-The previous `SelectedFiniteTraceSpikePayload` route was too weak and allowed
-empty/zero fake payloads.  The selected finite operator layer should instead be
-built from the direct canonical finite prime-power payload:
-
-`SelectedFiniteCanonicalPayload`.
-
-The real remaining D-side proof target is now:
-
-`selectedFiniteCanonicalPayload : SelectedFiniteCanonicalPayload`.
+The selected finite operator layer is built from the selected Appendix-D finite
+spike extraction witness.
 -/
 
 namespace RHFormalization
 
 noncomputable section
 
-def selectedFiniteOperatorLayer_from_canonicalPayload
-    (Pld : SelectedFiniteCanonicalPayload) :
+def selectedFiniteOperatorLayer :
     DFiniteStagePackageFromOperatorLayer :=
-  buildSelectedFiniteOperatorLayerFromCanonicalPayload Pld
+  selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteOperatorLayer
 
 end
 

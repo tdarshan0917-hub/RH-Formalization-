@@ -86,12 +86,12 @@ theorem mainTheorem_from_default_connectedOmega_meromorphicAlgebra_normalFormCod
       X.toLegacyZeroPolePackageAPI)
     (ONFI : OmegaNormalFormCodiscreteIdentityAPI) :
     RiemannHypothesis :=
-  mainTheorem_from_default_connectedOmega_meromorphicAlgebra_codiscreteIdentity_preperfect
+  mainTheorem_from_default_connectedOmega_meromorphicAlgebra_omegaPuncturedIdentity
     ZF
     Y
     X
     E
-    (buildOmegaCodiscreteIdentityFromNormalForms ONFI)
+    (buildOmegaPuncturedIdentityFromCodiscrete (buildOmegaCodiscreteIdentityFromNormalForms ONFI) defaultOmegaPreperfectAPI)
 
 end
 

@@ -1,0 +1,2 @@
+import RHFormalization.DefaultLocalPoleObstruction
+#print axioms RHFormalization.defaultLocalPoleObstructionAPI

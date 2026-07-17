@@ -46,8 +46,17 @@ structure PrimePowerWeightCutoffEnumerationData where
   h_mem_belowCutoff :
     ∀ R : ℝ,
     ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
       q.center ≤ R →
         q ∈ belowCutoff R
+
+
+/-- Invalid pairs carry zero weight: the guard repair is conservative. -/
+theorem PrimePowerPair.weightReal_eq_zero_of_invalid
+    (q : PrimePowerPair) (h : ¬ IsPrimePowerPair q) :
+    q.weightReal = 0 := by
+  classical
+  simp [PrimePowerPair.weightReal, h]
 
 /--
 Build the abstract cutoff mass-bound data from a concrete finite enumeration.
@@ -68,12 +77,25 @@ def PrimePowerWeightCutoffEnumerationData.toMassBoundData
           (fun q hq => norm_nonneg q.weightC)
 
     h_weightC_mass_le_of_center_le := by
+      classical
       intro I R hcenter
-
+      have hfil :
+          (I.filter IsPrimePowerPair).sum
+              (fun q : PrimePowerPair => ‖q.weightC‖) =
+            I.sum (fun q : PrimePowerPair => ‖q.weightC‖) := by
+        apply Finset.sum_filter_of_ne
+        intro q _hq hne
+        by_contra hnot
+        exact hne (by
+          simp [PrimePowerPair.weightC,
+            PrimePowerPair.weightReal_eq_zero_of_invalid q hnot])
+      rw [← hfil]
       exact
         Finset.sum_le_sum_of_subset_of_nonneg
           (fun q hq =>
-            E.h_mem_belowCutoff R q (hcenter q hq))
+            E.h_mem_belowCutoff R q
+              (Finset.mem_filter.mp hq).2
+              (hcenter q (Finset.mem_filter.mp hq).1))
           (fun q hq hqnot =>
             norm_nonneg q.weightC) }
 
@@ -104,6 +126,7 @@ structure CanonicalPrimePowerRCutoffEnumeratedMassWindowData
   h_indices_contains_of_center_le_R :
     ∀ n : ℕ,
     ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
       q.center ≤ (alpha n).R →
         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
 

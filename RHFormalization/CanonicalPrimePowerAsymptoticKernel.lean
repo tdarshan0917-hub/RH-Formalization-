@@ -106,6 +106,7 @@ structure CanonicalPrimePowerAsymptoticKernelMajorantData
   -/
   h_indices_eventually_contains :
     ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
       ∃ N : ℕ,
         ∀ n : ℕ,
           N ≤ n →
@@ -130,6 +131,23 @@ structure CanonicalPrimePowerAsymptoticKernelMajorantData
   /-- Summability of the real majorant. -/
   h_majorant_summable :
     Summable majorant
+
+  /--
+  The finite weighted shared-kernel partial sums converge to the shared package.
+
+  This is the support-aware replacement for full raw `PrimePowerPair`
+  exhaustion.
+  -/
+  h_weighted_partial_tendsto :
+    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+      Tendsto
+        (fun n : ℕ =>
+          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
+            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
+        Filter.atTop
+        (𝓝 ((canonicalPrimePowerPackageFromKernelTsum
+              X.toStagePackage.sigma0
+              Kshared).Bshared s))
 
   /--
   D.CANONICAL-WINDOW-shaped finite weighted kernel error.
@@ -170,45 +188,17 @@ def CanonicalPrimePowerAsymptoticKernelMajorantData.toExhaustionData
     h_tendsto := by
       intro s hs
 
-      have hI :
-          Tendsto
-            (fun n : ℕ =>
-              X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n))
-            Filter.atTop
-            (Filter.atTop : Filter (Finset PrimePowerPair)) := by
-        apply finset_tendsto_atTop_of_eventually_mem
-        intro q
-        rcases S.h_indices_eventually_contains q with ⟨N, hN⟩
-        exact eventually_atTop.2 ⟨N, hN⟩
+      have hpartial :=
+        S.h_weighted_partial_tendsto s hs
 
-      have hsummable :
-          Summable
-            (fun q : PrimePowerPair =>
-              q.weightC * S.Kshared q.center s) := by
-        have hnorm :
-            Summable
-              (fun q : PrimePowerPair =>
-                ‖q.weightC * S.Kshared q.center s‖) :=
-          Summable.of_nonneg_of_le
-            (fun q : PrimePowerPair =>
-              norm_nonneg (q.weightC * S.Kshared q.center s))
-            (fun q : PrimePowerPair =>
-              S.h_term_norm_le_majorant s hs q)
-            S.h_majorant_summable
+      have herror :=
+        S.h_stage_kernel_error_tendsto_zero s hs
 
-        exact hnorm.of_norm
+      have hsum := hpartial.add herror
 
-      simpa [canonicalPrimePowerPackageFromKernelTsum] using
-        finiteCanonical_tendsto_tsum_of_kernel_error_tendsto_zero
-          (I := fun n : ℕ =>
-            X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n))
-          (Kstage := fun n : ℕ =>
-            X.toFiniteCanonicalPrimePowerFormula.kernel (S.alpha n))
-          (Kshared := S.Kshared)
-          (s := s)
-          hI
-          hsummable
-          (S.h_stage_kernel_error_tendsto_zero s hs) }
+      simpa [canonicalPrimePowerPackageFromKernelTsum,
+        finiteCanonicalPrimePowerPackage, sub_eq_add_neg,
+        add_assoc, add_left_comm, add_comm] using hsum }
 
 /--
 Build `DBcanLimitData` directly from asymptotic-kernel majorant data.

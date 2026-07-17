@@ -1,4 +1,5 @@
 import RHFormalization.CanonicalPrimePowerKernelErrorBound
+import RHFormalization.CanonicalPrimePowerSupportAwareExhaustion
 
 /-!
 # RHFormalization.CanonicalPrimePowerFiniteKernelErrorSum
@@ -124,6 +125,7 @@ structure CanonicalPrimePowerFiniteKernelErrorData
   -/
   h_indices_eventually_contains :
     ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
       ∃ N : ℕ,
         ∀ n : ℕ,
           N ≤ n →
@@ -218,6 +220,37 @@ def CanonicalPrimePowerFiniteKernelErrorData.toKernelErrorBoundData
     errorBound := S.errorBound
     h_errorBound_nonneg := S.h_errorBound_nonneg
     h_errorBound_tendsto_zero := S.h_errorBound_tendsto_zero
+    h_weighted_partial_tendsto := by
+      intro s hs
+      have hsummable :
+          Summable
+            (fun q : PrimePowerPair =>
+              q.weightC * S.Kshared q.center s) := by
+        have hnorm :
+            Summable
+              (fun q : PrimePowerPair =>
+                ‖q.weightC * S.Kshared q.center s‖) :=
+          Summable.of_nonneg_of_le
+            (fun q => norm_nonneg _)
+            (fun q => S.h_term_norm_le_majorant s hs q)
+            S.h_majorant_summable
+        exact hnorm.of_norm
+      have hf_zero :
+          ∀ q : PrimePowerPair, ¬ IsPrimePowerPair q →
+            q.weightC * S.Kshared q.center s = 0 := by
+        intro q hq
+        have hw : q.weightC = 0 := by
+          simp [PrimePowerPair.weightC, PrimePowerPair.weightReal, hq]
+        simp [hw]
+      have hpartial :=
+        finite_sum_tendsto_of_hasSum_valid_exhaustion
+          (fun n : ℕ =>
+            X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n))
+          (fun q : PrimePowerPair => q.weightC * S.Kshared q.center s)
+          hf_zero
+          (fun q hq => S.h_indices_eventually_contains q hq)
+          hsummable.hasSum
+      simpa [canonicalPrimePowerPackageFromKernelTsum] using hpartial
     h_stage_kernel_error_norm_le := by
       intro s hs n
 

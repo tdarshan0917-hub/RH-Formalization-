@@ -36,6 +36,7 @@ def buildCanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability
       ∀ (n : ℕ), (n : ℝ) ≤ (alpha n).R)
     (h_indices_contains_of_center_le_R :
       ∀ (n : ℕ) (q : PrimePowerPair),
+        IsPrimePowerPair q →
         q.center ≤ (alpha n).R →
           q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n))
     (h_indices_subset_center_le_R :

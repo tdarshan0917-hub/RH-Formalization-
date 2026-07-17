@@ -64,6 +64,7 @@ structure CanonicalPrimePowerActualKernelErrorData
   -/
   h_indices_eventually_contains :
     ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
       ∃ N : ℕ,
         ∀ n : ℕ,
           N ≤ n →

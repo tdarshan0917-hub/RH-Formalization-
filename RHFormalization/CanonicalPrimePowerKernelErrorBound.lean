@@ -107,6 +107,7 @@ structure CanonicalPrimePowerKernelErrorBoundData
   -/
   h_indices_eventually_contains :
     ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
       ∃ N : ℕ,
         ∀ n : ℕ,
           N ≤ n →
@@ -131,6 +132,25 @@ structure CanonicalPrimePowerKernelErrorBoundData
   /-- Summability of the real majorant. -/
   h_majorant_summable :
     Summable majorant
+
+  /--
+  The finite weighted shared-kernel partial sums converge to the shared package.
+
+  This is the support-aware replacement for full raw `PrimePowerPair`
+  exhaustion. The scalar error bound below only controls the difference between
+  the stage kernel sum and this shared-kernel partial sum; it does not by itself
+  prove convergence of the shared-kernel partial sums.
+  -/
+  h_weighted_partial_tendsto :
+    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+      Tendsto
+        (fun n : ℕ =>
+          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
+            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
+        Filter.atTop
+        (𝓝 ((canonicalPrimePowerPackageFromKernelTsum
+              X.toStagePackage.sigma0
+              Kshared).Bshared s))
 
   /--
   Scalar error bound for the finite weighted kernel error.
@@ -179,6 +199,7 @@ def CanonicalPrimePowerKernelErrorBoundData.toAsymptoticKernelMajorantData
     h_majorant_nonneg := S.h_majorant_nonneg
     h_term_norm_le_majorant := S.h_term_norm_le_majorant
     h_majorant_summable := S.h_majorant_summable
+    h_weighted_partial_tendsto := S.h_weighted_partial_tendsto
     h_stage_kernel_error_tendsto_zero := by
       intro s hs
 

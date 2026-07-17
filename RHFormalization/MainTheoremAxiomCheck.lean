@@ -1,0 +1,7 @@
+import RHFormalization.MainTheorem
+
+#check RHFormalization.RH_follows_from_packaged_spine
+#print axioms RHFormalization.RH_follows_from_packaged_spine
+
+#check RHFormalization.mainTheorem_of_packaged_DHEF
+#print axioms RHFormalization.mainTheorem_of_packaged_DHEF

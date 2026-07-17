@@ -100,6 +100,7 @@ structure CanonicalPrimePowerSharpCutoffChosenLengthSharedMajorantData
   h_indices_contains_of_center_le_R :
     ∀ n : ℕ,
     ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
       q.center ≤ (alpha n).R →
         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
 

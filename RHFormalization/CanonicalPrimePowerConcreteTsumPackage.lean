@@ -65,6 +65,7 @@ structure CanonicalPrimePowerConcreteTsumKernelSeriesData
   -/
   h_indices_eventually_contains :
     ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
       ∃ N : ℕ,
         ∀ n : ℕ,
           N ≤ n →
@@ -90,6 +91,23 @@ structure CanonicalPrimePowerConcreteTsumKernelSeriesData
       Summable
         (fun q : PrimePowerPair => q.weightC * Kshared q.center s)
 
+  /--
+  The finite weighted canonical partial sums converge to the shared package.
+
+  This is the support-aware replacement for full raw `PrimePowerPair`
+  exhaustion.
+  -/
+  h_weighted_partial_tendsto :
+    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+      Tendsto
+        (fun n : ℕ =>
+          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
+            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
+        Filter.atTop
+        (𝓝 ((canonicalPrimePowerPackageFromKernelTsum
+              X.toStagePackage.sigma0
+              Kshared).Bshared s))
+
 /--
 Convert concrete tsum-kernel data into the previous tsum-level data.
 
@@ -110,6 +128,7 @@ def CanonicalPrimePowerConcreteTsumKernelSeriesData.toTsumKernelSeriesData
     h_indices_eventually_contains := S.h_indices_eventually_contains
     h_kernel_agrees_on_indices := S.h_kernel_agrees_on_indices
     h_summable := S.h_summable
+    h_weighted_partial_tendsto := S.h_weighted_partial_tendsto
     h_Bshared_eq_tsum := by
       intro s hs
       rfl }

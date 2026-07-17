@@ -127,7 +127,10 @@ def buildSelectedFiniteOperatorLayerFromTraceSpikePayload
   traceData := Pld.toTraceData
   h_traceData_from_legality := Pld.h_traceData_from_legality
   splitFromDuhamel := Pld.toSplitFromDuhamel
-  spikeSumData := Pld.toSpikeSumData
+  finiteCanonicalPrimePowerFormula :=
+    buildDFiniteStageCanonicalPrimePowerFormulaFromSpikeSums
+      Pld.toTraceData.toStagePackage
+      Pld.toSpikeSumData
 }
 
 end

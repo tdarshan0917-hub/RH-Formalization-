@@ -1,0 +1,88 @@
+import RHFormalization.SelectedFiniteOperatorLayer
+import RHFormalization.AppendixDFiniteSpikeExtractionWitnessInstance
+
+namespace RHFormalization
+
+noncomputable section
+
+private theorem selected_ppIndices_eq_image
+    (α : DFiniteStage) :
+    selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload.toSpikeSumData.ppIndices α =
+      (selectedAppendixDFiniteSpikeExtractionWitness.activeIndices α).image
+        (selectedAppendixDFiniteSpikeExtractionWitness.toPP α) := by
+  rfl
+
+private theorem selected_ppIndices_mem_iff
+    (α : DFiniteStage)
+    (q : PrimePowerPair) :
+    q ∈ selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload.toSpikeSumData.ppIndices α ↔
+      ∃ n ∈ selectedAppendixDFiniteSpikeExtractionWitness.activeIndices α,
+        selectedAppendixDFiniteSpikeExtractionWitness.toPP α n = q := by
+  rw [selected_ppIndices_eq_image α]
+  constructor
+  · intro hq
+    exact Finset.mem_image.mp hq
+  · intro hq
+    exact Finset.mem_image.mpr hq
+
+private theorem selected_indices_eq_ppIndices
+    (α : DFiniteStage) :
+    selectedFiniteOperatorLayer.toFiniteCanonicalPrimePowerFormula.indices α =
+      selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload.toSpikeSumData.ppIndices α := by
+  simp
+    [ selectedFiniteOperatorLayer
+    , AppendixDFiniteSpikeExtractionWitness.toSelectedFiniteOperatorLayer
+    , buildSelectedFiniteOperatorLayerFromTraceSpikePayload
+    , DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+    , buildDFiniteStageCanonicalPrimePowerFormulaFromSpikeSums
+    ]
+
+/--
+Soundness: every selected canonical prime-power index lies below the stage cutoff.
+-/
+theorem appendixD_selected_indices_subset_center_le_R
+    (α : DFiniteStage)
+    (q : PrimePowerPair)
+    (hq :
+      q ∈ selectedFiniteOperatorLayer.toFiniteCanonicalPrimePowerFormula.indices α) :
+    q.center ≤ α.R := by
+  classical
+
+  have hq_pp :
+      q ∈ selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload.toSpikeSumData.ppIndices α := by
+    have hidx := selected_indices_eq_ppIndices α
+    simpa [hidx] using hq
+
+  rcases (selected_ppIndices_mem_iff α q).mp hq_pp with ⟨n, hn, hmap⟩
+
+  rw [← hmap]
+  simpa [selectedAppendixDFiniteSpikeExtractionWitness]
+    using α.h_diagonalSpikeToPP_center_le_R n hn
+
+/--
+Completeness: every prime-power below the stage cutoff is selected.
+-/
+theorem appendixD_selected_indices_contains_of_center_le_R
+    (α : DFiniteStage)
+    (q : PrimePowerPair)
+    (hvalid : IsPrimePowerPair q)
+    (hq : q.center ≤ α.R) :
+    q ∈ selectedFiniteOperatorLayer.toFiniteCanonicalPrimePowerFormula.indices α := by
+  classical
+
+  rcases α.h_diagonalSpikeToPP_complete_center_le_R q hvalid hq with ⟨n, hn, hmap_stage⟩
+
+  have hmap :
+      selectedAppendixDFiniteSpikeExtractionWitness.toPP α n = q := by
+    simpa [selectedAppendixDFiniteSpikeExtractionWitness] using hmap_stage
+
+  have hq_pp :
+      q ∈ selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload.toSpikeSumData.ppIndices α :=
+    (selected_ppIndices_mem_iff α q).mpr ⟨n, hn, hmap⟩
+
+  have hidx := selected_indices_eq_ppIndices α
+  simpa [hidx] using hq_pp
+
+end
+
+end RHFormalization

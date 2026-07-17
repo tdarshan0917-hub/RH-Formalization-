@@ -46,15 +46,19 @@ structure CanonicalPrimePowerKernelSeriesData
   Kshared : CanonicalKernelC
 
   /--
-  The finite prime-power index sets from the operator formula exhaust the full
-  prime-power index type.
+  The finite weighted canonical partial sums converge to the shared package.
+
+  This is the support-aware replacement for full raw `PrimePowerPair`
+  exhaustion.
   -/
-  h_indices_tendsto_top :
-    Tendsto
-      (fun n : ℕ =>
-        X.toFiniteCanonicalPrimePowerFormula.indices (alpha n))
-      Filter.atTop
-      (Filter.atTop : Filter (Finset PrimePowerPair))
+  h_weighted_partial_tendsto :
+    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+      Tendsto
+        (fun n : ℕ =>
+          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
+            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
+        Filter.atTop
+        (𝓝 (C.Bshared s))
 
   /--
   On each finite stage index set, the stage kernel agrees with the shared kernel.
@@ -92,7 +96,7 @@ def CanonicalPrimePowerKernelSeriesData.toSeriesData
   { alpha := S.alpha
     h_Cshared_sigma_le := S.h_Cshared_sigma_le
     term := fun q s => q.weightC * S.Kshared q.center s
-    h_indices_tendsto_top := S.h_indices_tendsto_top
+    h_partial_tendsto := S.h_weighted_partial_tendsto
     h_finite_eq_partial := by
       intro n s
       change

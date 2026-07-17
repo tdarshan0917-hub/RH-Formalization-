@@ -1,0 +1,4 @@
+import RHFormalization.ShiftedLaplaceLogDerivIdentity
+namespace RHFormalization
+#print axioms shiftedLaplace_Bshared_eq_logDeriv
+end RHFormalization

@@ -1,0 +1,4 @@
+import RHFormalization.ShiftedLaplaceBsharedMeromorphic
+#print axioms RHFormalization.logDeriv_zeta_comp_phi_meromorphicOn_Omega
+#print axioms RHFormalization.phi_analyticAt_of_mem_Omega
+#print axioms RHFormalization.phi_ne_one_of_mem_Omega

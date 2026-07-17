@@ -44,14 +44,16 @@ theorem primePower_indices_eventually_contains_of_R_cutoff
     (h_indices_contains_of_center_le_R :
       ∀ n : ℕ,
       ∀ q : PrimePowerPair,
+        IsPrimePowerPair q →
         q.center ≤ (alpha n).R →
           q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)) :
     ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
       ∃ N : ℕ,
         ∀ n : ℕ,
           N ≤ n →
             q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n) := by
-  intro q
+  intro q hq
 
   have h_eventually_center_le_R :
       ∀ᶠ n in Filter.atTop, q.center ≤ (alpha n).R := by
@@ -62,7 +64,7 @@ theorem primePower_indices_eventually_contains_of_R_cutoff
   exact
     ⟨N, by
       intro n hn
-      exact h_indices_contains_of_center_le_R n q (hN n hn)⟩
+      exact h_indices_contains_of_center_le_R n q hq (hN n hn)⟩
 
 /--
 R-cutoff version of the mass-growth/window data.
@@ -96,6 +98,7 @@ structure CanonicalPrimePowerRCutoffMassGrowthWindowData
   h_indices_contains_of_center_le_R :
     ∀ n : ℕ,
     ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
       q.center ≤ (alpha n).R →
         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
 

@@ -68,15 +68,19 @@ structure CanonicalPrimePowerSeriesData
   term : PrimePowerPair → ℂ → ℂ
 
   /--
-  The finite prime-power index sets from the operator formula exhaust the full
-  prime-power index type.
+  The finite canonical partial sums converge to the shared package.
+
+  This is support-aware: it does not require the raw finite index sets to
+  exhaust all `PrimePowerPair`.
   -/
-  h_indices_tendsto_top :
-    Tendsto
-      (fun n : ℕ =>
-        X.toFiniteCanonicalPrimePowerFormula.indices (alpha n))
-      Filter.atTop
-      (Filter.atTop : Filter (Finset PrimePowerPair))
+  h_partial_tendsto :
+    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+      Tendsto
+        (fun n : ℕ =>
+          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
+            (fun q : PrimePowerPair => term q s))
+        Filter.atTop
+        (𝓝 (C.Bshared s))
 
   /--
   The finite canonical package is the corresponding finite partial sum of
@@ -123,11 +127,7 @@ def CanonicalPrimePowerSeriesData.toExhaustionData
                 (fun q : PrimePowerPair => S.term q s))
             Filter.atTop
             (𝓝 (C.Bshared s)) :=
-        finite_sum_tendsto_of_hasSum_finset_exhaustion
-          (fun n : ℕ =>
-            X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n))
-          S.h_indices_tendsto_top
-          (S.h_hasSum s hs)
+        S.h_partial_tendsto s hs
 
       have hseq :
           (fun n : ℕ =>

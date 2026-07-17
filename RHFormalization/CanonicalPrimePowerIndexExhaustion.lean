@@ -84,6 +84,7 @@ structure CanonicalPrimePowerIndexKernelSeriesData
   -/
   h_indices_eventually_contains :
     ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
       ∃ N : ℕ,
         ∀ n : ℕ,
           N ≤ n →
@@ -99,6 +100,21 @@ structure CanonicalPrimePowerIndexKernelSeriesData
         ∀ s : ℂ,
           X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
             Kshared q.center s
+
+  /--
+  The finite weighted canonical partial sums converge to the shared package.
+
+  This is the support-aware replacement for full raw `PrimePowerPair`
+  exhaustion.
+  -/
+  h_weighted_partial_tendsto :
+    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+      Tendsto
+        (fun n : ℕ =>
+          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
+            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
+        Filter.atTop
+        (𝓝 (C.Bshared s))
 
   /--
   The infinite shared prime-power series has sum `C.Bshared` on the D overlap
@@ -124,11 +140,7 @@ def CanonicalPrimePowerIndexKernelSeriesData.toKernelSeriesData
   { alpha := S.alpha
     h_Cshared_sigma_le := S.h_Cshared_sigma_le
     Kshared := S.Kshared
-    h_indices_tendsto_top := by
-      apply finset_tendsto_atTop_of_eventually_mem
-      intro q
-      rcases S.h_indices_eventually_contains q with ⟨N, hN⟩
-      exact eventually_atTop.2 ⟨N, hN⟩
+    h_weighted_partial_tendsto := S.h_weighted_partial_tendsto
     h_kernel_agrees_on_indices := S.h_kernel_agrees_on_indices
     h_hasSum := S.h_hasSum }
 

@@ -1,0 +1,59 @@
+import RHFormalization.RealPrimeModelCorrectedClose
+import RHFormalization.RealOperatorStageData
+import RHFormalization.RealLayerDMasterProbe
+import RHFormalization.DefaultZetaZeroFacts
+import RHFormalization.DefaultZeroExhaustion
+import RHFormalization.EnvelopeFromZeroDensity
+import RHFormalization.ZpoleFromSeries
+import RHFormalization.ModelRepCorrectedCapstone
+import RHFormalization.ReflectionPairPoleClass
+import RHFormalization.DefaultPoleNormalFormLayer
+import RHFormalization.ArithmeticShiftedLaplaceCleanYTarget
+import RHFormalization.ResolventDBcanLimit
+import RHFormalization.ShiftedLaplaceDBcanLimitSigma1
+import Mathlib
+
+set_option autoImplicit false
+
+namespace RHFormalization
+noncomputable section
+open Complex Topology Filter
+
+/-
+SAFE provider plugboard.
+
+Do NOT import:
+  HChosenDSharedCProbe
+  HChosenDSharedCFromHoloProbe
+
+Those are stale probe files and currently fail.
+-/
+
+#check realPrime_RH_model_corrected
+
+-- Real-prime / operator-side banked candidates.
+#check realPrimeY
+#check realLayerDMaster
+#check RealOperatorStageData
+#check RealOperatorStageData.h_F_stage_to_FHcan
+#check buildHonestYZeroResidualFromRealOperatorStageData
+
+-- H-side / model-corrected banked candidates.
+#check RH_from_model_corrected
+#check modelRepCorrectedHarchPackage
+#check modelRepCorrectedHarchPackage_split
+#check defaultZeroExhaustion
+#check defaultZetaZeroFacts_of_realZeroFree h_real_zero_free
+#check buildEnvelopeFromZeroDensity defaultZeroMultiplicityData hsum_unconditional
+#check buildZeroPoleLUCAPIFromEnvelope defaultZeroMultiplicityData
+  (buildEnvelopeFromZeroDensity defaultZeroMultiplicityData hsum_unconditional)
+#check buildHSideGroupedPoleNormalFormDataFromPrincipalPartsPair
+
+-- hYC / Cshared candidates.
+#check shiftedLaplaceDBcanLimitSigma1
+#check resolventDBcanLimit
+#check cleanY_Cshared_eq_model_of_Cshared_eq_cleanDBcan
+#check ArithmeticShiftedLaplaceCleanYPlugTarget.Cshared_eq_model
+
+end
+end RHFormalization

@@ -170,6 +170,88 @@ structure DFiniteStage where
       diagonalSpikeActive q →
         diagonalSpikeContribution q = canonicalSpikeContribution q
 
+  /--
+  Finite-stage transform exported by the fixed-cutoff Appendix-D extraction.
+
+  This is the selected finite operator-side transform at this stage.
+  -/
+  appendixDFiniteFStage :
+    ℂ → ℂ
+
+  /--
+  The finite active Nat-index set for the diagonal spike extraction.
+  -/
+  diagonalSpikeActiveIndices :
+    Finset ℕ
+
+  /--
+  Soundness of the finite active-index set.
+  -/
+  h_diagonalSpikeActiveIndices_active :
+    ∀ q : ℕ,
+      q ∈ diagonalSpikeActiveIndices →
+        diagonalSpikeActive q
+
+  /--
+  Completeness of the finite active-index set.
+
+  This is the field that prevents the empty-index fake payload.
+  -/
+  h_diagonalSpikeActiveIndices_complete :
+    ∀ q : ℕ,
+      diagonalSpikeActive q →
+        q ∈ diagonalSpikeActiveIndices
+
+  /--
+  Nat-to-prime-power identification for active diagonal spikes.
+  -/
+  diagonalSpikeToPP :
+    ℕ → PrimePowerPair
+
+  /--
+  Injectivity of the Nat-to-prime-power identification on active indices.
+  -/
+  h_diagonalSpikeToPP_inj :
+    ∀ m : ℕ,
+      m ∈ diagonalSpikeActiveIndices →
+      ∀ n : ℕ,
+        n ∈ diagonalSpikeActiveIndices →
+          diagonalSpikeToPP m = diagonalSpikeToPP n →
+            m = n
+
+  /--
+  Canonical coefficient compatibility on active indices.
+  -/
+  h_canonicalSpikeContribution_eq_weightC :
+    ∀ n : ℕ,
+      n ∈ diagonalSpikeActiveIndices →
+        canonicalSpikeContribution n =
+          PrimePowerPair.weightC (diagonalSpikeToPP n)
+
+  /--
+  Every selected diagonal-spike prime-power lies below the stage `R` cutoff.
+  This is the stage-level cutoff soundness certificate needed by the
+  selected D-window alpha/index package.
+  -/
+  h_diagonalSpikeToPP_center_le_R :
+    ∀ n : ℕ,
+      n ∈ diagonalSpikeActiveIndices →
+        (diagonalSpikeToPP n).center ≤ R
+
+  /--
+  Every prime-power pair below the stage `R` cutoff is represented by one
+  selected diagonal-spike index.
+  This is the stage-level cutoff completeness certificate needed by the
+  selected D-window alpha/index package.
+  -/
+  h_diagonalSpikeToPP_complete_center_le_R :
+    ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
+      q.center ≤ R →
+        ∃ n : ℕ,
+          n ∈ diagonalSpikeActiveIndices ∧
+            diagonalSpikeToPP n = q
+
 /--
 Finite-stage functions produced by Appendix D.
 

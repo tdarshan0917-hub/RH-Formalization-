@@ -1,0 +1,16 @@
+import RHFormalization.MinMaxBrick1
+import RHFormalization.MinMaxBrick2
+import RHFormalization.MinMaxBrick3
+import RHFormalization.MinMaxBrick4
+import RHFormalization.MinMaxBrick5
+import RHFormalization.MinMaxBrick6
+import RHFormalization.MinMaxBrick7
+import RHFormalization.MinMaxBrick8
+import RHFormalization.MinMaxCapstone
+
+-- Final axiom check on the centerpiece and its key supports:
+#print axioms RHFormalization.eigenvalues_mono
+#print axioms RHFormalization.rayleigh_ge_on_top_eigenspace
+#print axioms RHFormalization.rayleigh_le_on_bot_eigenspace
+#print axioms RHFormalization.inf_ne_bot_of_finrank_add_gt
+#print axioms RHFormalization.shiftOp_apply_eigenvectorBasis
