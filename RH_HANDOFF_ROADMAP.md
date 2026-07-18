@@ -243,3 +243,29 @@ integral bounds. NO direct estimate of CompensatedB (circularity trap).
 INVENTORY RULE (new, frozen): every banked theorem is tagged
 UNCONDITIONAL or CONDITIONAL-ON-{named hypotheses}. "Proved" alone is
 banned from handoffs.
+
+## SESSION 2026-07-18 STATE + CAMPAIGN ORDER (GPT constraints accepted)
+BANKED TONIGHT (all axiom-clean): 2b-i collapse, 2b-ii O2 uniform bound,
+decoded_hShort (hShort CLOSED), DMRSectorTimeSplit (kernel+package
+short/tail split), DMROverlapBStageBound (B_stage bounded on Re s >= sigma
+via banked sqrt_shift_re_ge + starDirichletPartial_bounded_off_parabola).
+CONSTRAINTS (frozen): (1) hComb is SUFFICIENT for RH, equivalence not
+established — but galerkin_B_stage_eq_vonMangoldt_partial_sum (banked)
+shows B−M is a psi-type Dirichlet remainder; never attack it directly.
+(2) No new endpoints/wrappers/providers/Montel adapters. Concrete decoded
+objects only. (3) Bulk sector may NOT be defined as combined-minus-rest
+unless its independent finite-profile expansion (D.BULK-FINITE-FORM,
+ms p166+) is proved immediately after.
+NEXT FILE: DecodedCanonicalSectorDecomposition.lean — concrete sector
+defs for decodedAdaptiveCombinedFreeR over decodedAdaptiveGalerkinStageSeq
++ exact recombination from the decoded Duhamel tower. Then wire:
+short := decoded_hShort object (banked) | window := BcorrWin/defect gate
+(banked eps0 + BcorrWin_uniform_bound) | tail := h_fk_perturbed_galerkin
++ dTail_uniform_bound (banked cores, wiring needed) | bulk := THE open
+frontier, decoded D.BULK-FINITE-FORM expansion = real pass/fail point.
+TAIL ASSETS (verified on disk): DTailDensityFreeBound, DTailFreeHeatTrace-
+Bound, DTailPerturbedTraceDomination (h_fk_perturbed_galerkin), DTail-
+SpectralBound, DTailSumBound, DTailUniformBound, sum_heatWeight_le_sqrt,
+galF_tail_uniform_bound, galFTailClosed_holo, galHead_normal_family.
+GREP RULE REINFORCED: sqrt_shift_re_ge pre-existed (ShiftedLaplaceSqrtRe-
+LowerBound, strict <, implicit args) — collision cost one build tonight.
