@@ -1,4 +1,4 @@
--- SENTINEL: decoded-residual-uniform-v5
+-- SENTINEL: decoded-residual-uniform-v6
 import RHFormalization.DecodedColumnNormBound
 import RHFormalization.DecodedAdaptivePrimeSplit
 import RHFormalization.AdmissibleResidualUniform
@@ -233,8 +233,105 @@ theorem decoded_residual_schedule_collapse (c : ℝ) (n : ℕ)
         apply mul_le_mul_of_nonneg_left hfrac (by positivity)
     _ = C₀ ^ 3 * 146 := by ring
 
+/-- **BRICK 2b-ii (hShort O2 half, DONE at this theorem).** Uniform
+boundedness of the decoded second-resolvent residual on Ω-compacts:
+`‖O2res‖ ≤ C₀³·146` with `C₀` from `inv_norm_le_on_compact`, via the
+δ := 1/C₀ reciprocal trick — no new gap provider. -/
+theorem decodedSecondResolventResidual_uniform_bound (c : ℝ)
+    (K : Set ℂ) (hK : IsCompact K) (hKO : K ⊆ Ω) :
+    ∃ C : ℝ, 0 < C ∧ ∀ (n : ℕ), ∀ s ∈ K,
+      ‖decodedAdaptiveSecondResolventResidual c n s‖ ≤ C := by
+  obtain ⟨δ₀, hδ₀pos, hδ₀⟩ := exists_uniform_lower_bound_on_compact K hK hKO
+  obtain ⟨C₀, hC₀pos, hC₀⟩ := inv_norm_le_on_compact K hK hKO
+  refine ⟨C₀ ^ 3 * 146,
+    mul_pos (pow_pos hC₀pos 3) (by norm_num), fun n s hs => ?_⟩
+  -- eigenvalues are nonnegative (decoded floor, banked)
+  have heig : ∀ i, 0 ≤ decodedAdaptivePerturbedLam c n i := by
+    intro i
+    unfold decodedAdaptivePerturbedLam
+    first
+      | exact decodedEigenvalue_nonneg (adaptiveL c n) (adaptiveL_pos c n) _ _
+          (fun k => galerkinFreeMu_nonneg _ _ k) i
+      | exact decodedEigenvalue_nonneg (adaptiveL c n) (adaptiveL_pos c n)
+          (fun k => galerkinFreeMu_nonneg _ _ k) i
+      | (refine decodedEigenvalue_nonneg (adaptiveL c n) (adaptiveL_pos c n) _ _
+            (fun k => ?_) i
+         first
+           | exact galerkinFreeMu_nonneg _ _ k
+           | (unfold galerkinFreeMu; positivity)
+           | exact sq_nonneg _)
+      | exact decodedEigenvalue_nonneg (adaptiveL c n) (adaptiveL_pos c n) i
+      | exact decodedEigenvalue_nonneg (adaptiveL c n) (adaptiveL_pos c n) _ i
+  -- shifted-point resolvent bound for all lam ≥ 0 (textual clone of raw hbound')
+  have hbound' : ∀ lam : ℝ, 0 ≤ lam →
+      ‖(s + (SupVConst : ℂ) + (lam : ℂ))⁻¹‖ ≤ C₀ * (1 + lam)⁻¹ := by
+    intro lam hlam
+    have h1 := hC₀ s hs (SupVConst + lam)
+      (add_nonneg SupVConst_nonneg_adm hlam)
+    have hcast : s + ((SupVConst + lam : ℝ) : ℂ)
+        = s + (SupVConst : ℂ) + (lam : ℂ) := by
+      push_cast
+      ring
+    rw [hcast] at h1
+    refine le_trans h1 (mul_le_mul_of_nonneg_left ?_ hC₀pos.le)
+    have hpos : (0 : ℝ) < 1 + lam := by linarith
+    have hle : (1 : ℝ) + lam ≤ 1 + (SupVConst + lam) := by
+      have hsv := SupVConst_nonneg_adm
+      linarith
+    first
+      | gcongr
+      | exact inv_le_inv_of_le hpos hle
+  -- eigenvalue floor at δ := 1/C₀, the reciprocal trick
+  have hlow : ∀ i, 1 / C₀ ≤ ‖s + (SupVConst : ℂ)
+      + ((decodedAdaptivePerturbedLam c n i : ℝ) : ℂ)‖ := by
+    intro i
+    set z : ℂ := s + (SupVConst : ℂ)
+        + ((decodedAdaptivePerturbedLam c n i : ℝ) : ℂ) with hz
+    -- positive norm floor from the compact provider
+    have hzfloor : δ₀ ≤ ‖z‖ := by
+      have hnn : (0:ℝ) ≤ SupVConst + decodedAdaptivePerturbedLam c n i :=
+        add_nonneg SupVConst_nonneg_adm (heig i)
+      have h := hδ₀ s hs (SupVConst + decodedAdaptivePerturbedLam c n i) hnn
+      have hcast : s + ((SupVConst + decodedAdaptivePerturbedLam c n i : ℝ) : ℂ)
+          = z := by
+        rw [hz]; push_cast; ring
+      rw [hcast] at h
+      exact h
+    have hzpos : (0:ℝ) < ‖z‖ := lt_of_lt_of_le hδ₀pos hzfloor
+    -- ‖z‖⁻¹ ≤ C₀ from the resolvent bound
+    have hinvle : ‖z‖⁻¹ ≤ C₀ := by
+      have h1 := hbound' (decodedAdaptivePerturbedLam c n i) (heig i)
+      rw [← hz] at h1
+      rw [norm_inv] at h1
+      have hle1 : (1 + decodedAdaptivePerturbedLam c n i)⁻¹ ≤ 1 := by
+        have h11 : (1:ℝ) ≤ 1 + decodedAdaptivePerturbedLam c n i := by
+          have := heig i; linarith
+        first
+          | exact inv_le_one_of_one_le₀ h11
+          | exact inv_le_one h11
+          | (have h2 := one_div_le_one_div_of_le one_pos h11
+             simpa [one_div] using h2)
+      calc ‖z‖⁻¹ ≤ C₀ * (1 + decodedAdaptivePerturbedLam c n i)⁻¹ := h1
+        _ ≤ C₀ * 1 := mul_le_mul_of_nonneg_left hle1 hC₀pos.le
+        _ = C₀ := mul_one C₀
+    -- conclude 1/C₀ ≤ ‖z‖
+    have hone : (1:ℝ) ≤ ‖z‖ * C₀ := by
+      have h2 := mul_le_mul_of_nonneg_left hinvle (norm_nonneg z)
+      rw [mul_inv_cancel₀ (ne_of_gt hzpos)] at h2
+      exact h2
+    rw [div_le_iff₀ hC₀pos]
+    exact hone
+  -- apply the banked master bound at δ := 1/C₀ and collapse
+  have hδpos : (0:ℝ) < 1 / C₀ := by positivity
+  have hmain := decodedSecondResolventResidual_norm_le c n s hδpos hC₀pos.le
+      hlow hbound'
+  have hinv : (1 / C₀)⁻¹ = C₀ := by rw [one_div, inv_inv]
+  rw [hinv] at hmain
+  exact le_trans hmain (decoded_residual_schedule_collapse c n hC₀pos)
+
 #print axioms decodedSecondResolventResidual_norm_le
 #print axioms decoded_residual_schedule_collapse
+#print axioms decodedSecondResolventResidual_uniform_bound
 
 end
 
