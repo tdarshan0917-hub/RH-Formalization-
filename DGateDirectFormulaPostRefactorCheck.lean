@@ -1,0 +1,10 @@
+import RHFormalization.DFiniteStageOperator
+
+namespace RHFormalization
+
+#check DFiniteStagePackageFromOperatorLayer.finiteCanonicalPrimePowerFormula
+#check DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+#print DFiniteStagePackageFromOperatorLayer
+#print DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+
+end RHFormalization

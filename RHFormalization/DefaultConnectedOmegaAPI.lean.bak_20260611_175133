@@ -1,0 +1,55 @@
+import RHFormalization.GlobalMeromorphicIdentity
+import RHFormalization.OmegaTopology
+import Mathlib.Analysis.Complex.Convex
+import Mathlib.Topology.Connected.PathConnected
+import Mathlib.Topology.Connected.Basic
+
+/-!
+# RHFormalization.DefaultConnectedOmegaAPI
+
+Theorem-backed default implementation of `ConnectedOmegaAPI`.
+
+The manuscript slit plane `Ω` is identified with Mathlib's `Complex.slitPlane`.
+Mathlib proves that the slit plane is star-convex from `1`; star-convexity gives
+path-connectedness, hence preconnectedness.
+-/
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex Set
+
+/-- The manuscript slit plane `Ω` equals Mathlib's `Complex.slitPlane`. -/
+theorem Omega_eq_complex_slitPlane :
+    Ω = Complex.slitPlane := by
+  ext z
+  rw [mem_Omega_iff_re_pos_or_im_ne_zero, Complex.mem_slitPlane_iff]
+
+/-- The manuscript slit plane is path-connected. -/
+theorem isPathConnected_Omega :
+    IsPathConnected Ω := by
+  rw [Omega_eq_complex_slitPlane]
+  exact
+    Complex.starConvex_one_slitPlane.isPathConnected
+      (by
+        rw [Complex.mem_slitPlane_iff]
+        exact Or.inl (by norm_num))
+
+/-- The manuscript slit plane is preconnected. -/
+theorem isPreconnected_Omega :
+    IsPreconnected Ω := by
+  exact isPathConnected_Omega.isConnected.2
+
+/-- Default theorem-backed connectedness API for the slit plane `Ω`. -/
+def defaultConnectedOmegaAPI : ConnectedOmegaAPI where
+  h_preconnected_Omega := isPreconnected_Omega
+
+#print axioms Omega_eq_complex_slitPlane
+#print axioms isPathConnected_Omega
+#print axioms isPreconnected_Omega
+#print axioms defaultConnectedOmegaAPI
+
+end
+
+end RHFormalization

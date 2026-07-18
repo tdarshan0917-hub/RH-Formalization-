@@ -1,0 +1,13 @@
+import RHFormalization.DOperatorExport
+
+namespace RHFormalization
+
+#check DFiniteStage.appendixDFiniteFStage
+#check DFiniteStage.diagonalSpikeActiveIndices
+#check DFiniteStage.h_diagonalSpikeActiveIndices_active
+#check DFiniteStage.h_diagonalSpikeActiveIndices_complete
+#check DFiniteStage.diagonalSpikeToPP
+#check DFiniteStage.h_diagonalSpikeToPP_inj
+#check DFiniteStage.h_canonicalSpikeContribution_eq_weightC
+
+end RHFormalization

@@ -1,0 +1,60 @@
+import RHFormalization.Duhamel2Integrand
+
+/-!
+# Brick 2, Stone 6B: bound on the order-2 Duhamel integrand
+`|duhamel2Integrand t u| ≤ B²·(∑_n e^{-(t-u)λ_n})·(∑_m e^{-uλ_m})`, B = ∑_q |w(q)|·bumpMass.
+Immediate from stone 6; for 0<u<t both heat sums are finite (stone 7/8a). The
+factorized bound the time integral convolves into the Beta/heat structure.
+-/
+
+set_option autoImplicit false
+
+namespace RHFormalization
+noncomputable section
+open Matrix Real
+open scoped BigOperators
+
+variable {N : ℕ}
+
+/-- **Stone 6B (raw)**: `|duhamel2Integrand t u| ≤ B²·(∑|hW(t-u)|)·(∑|hW u|)`. -/
+theorem abs_duhamel2Integrand_le
+    (δ : ℝ) (hδ : 0 < δ) (qs : Finset ℕ) (w : ℕ → ℝ) (L : ℝ) (hL : 0 < L) (t u : ℝ) :
+    |duhamel2Integrand (N := N) δ qs w L t u|
+      ≤ (∑ q ∈ qs, |w q| * bumpMass δ q L) ^ 2
+          * ((∑ n : Fin N, |heatWeight L (t - u) n|)
+             * (∑ m : Fin N, |heatWeight L u m|)) := by
+  unfold duhamel2Integrand
+  exact abs_trace_galerkinV_diag_le δ hδ qs w L (le_of_lt hL) _ _
+
+/-- **Stone 6B (heat form)**: for `0<u`, `0<t-u`, bounded by `B²·H(t-u)·H(u)`. -/
+theorem abs_duhamel2Integrand_le_heat
+    (δ : ℝ) (hδ : 0 < δ) (qs : Finset ℕ) (w : ℕ → ℝ) (L : ℝ) (hL : 0 < L)
+    (t u : ℝ) (hu : 0 < u) (htu : 0 < t - u) :
+    |duhamel2Integrand (N := N) δ qs w L t u|
+      ≤ (∑ q ∈ qs, |w q| * bumpMass δ q L) ^ 2
+          * ((1 - Real.exp (-((t - u) * (Real.pi / L) ^ 2)))⁻¹
+             * (1 - Real.exp (-(u * (Real.pi / L) ^ 2)))⁻¹) := by
+  refine le_trans (abs_duhamel2Integrand_le δ hδ qs w L hL t u) ?_
+  apply mul_le_mul_of_nonneg_left _ (sq_nonneg _)
+  have h1 : (∑ n : Fin N, |heatWeight L (t - u) n|)
+      ≤ (1 - Real.exp (-((t - u) * (Real.pi / L) ^ 2)))⁻¹ := by
+    have habs : ∀ n : Fin N, |heatWeight L (t - u) n| = heatWeight L (t - u) n := by
+      intro n; unfold heatWeight; exact abs_of_pos (Real.exp_pos _)
+    simp only [habs]; exact sum_heatWeight_le L hL (t - u) htu
+  have h2 : (∑ m : Fin N, |heatWeight L u m|)
+      ≤ (1 - Real.exp (-(u * (Real.pi / L) ^ 2)))⁻¹ := by
+    have habs : ∀ m : Fin N, |heatWeight L u m| = heatWeight L u m := by
+      intro m; unfold heatWeight; exact abs_of_pos (Real.exp_pos _)
+    simp only [habs]; exact sum_heatWeight_le L hL u hu
+  have hb1_nonneg : 0 ≤ (1 - Real.exp (-((t - u) * (Real.pi / L) ^ 2)))⁻¹ := by
+    apply inv_nonneg.mpr
+    have : Real.exp (-((t - u) * (Real.pi / L) ^ 2)) < 1 := by
+      rw [Real.exp_lt_one_iff]; have : 0 < (t - u) * (Real.pi / L)^2 := by positivity
+      linarith
+    linarith
+  exact mul_le_mul h1 h2 (Finset.sum_nonneg (fun _ _ => abs_nonneg _)) hb1_nonneg
+
+#print axioms abs_duhamel2Integrand_le
+#print axioms abs_duhamel2Integrand_le_heat
+end
+end RHFormalization

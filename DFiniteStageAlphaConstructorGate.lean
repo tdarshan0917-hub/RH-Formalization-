@@ -1,0 +1,21 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffClosedDWindowSourceFromFactorBounds
+import RHFormalization.SelectedFiniteOperatorLayer
+
+namespace RHFormalization
+
+noncomputable section
+
+#check selectedFiniteOperatorLayer
+
+#check DFiniteStage
+#print DFiniteStage
+#check DFiniteStage.mk
+#check DFiniteStage.L
+#check DFiniteStage.R
+
+#check selectedFiniteOperatorLayer.toFiniteCanonicalPrimePowerFormula.indices
+#check selectedFiniteOperatorLayer.toFiniteCanonicalPrimePowerFormula.kernel
+
+end
+
+end RHFormalization

@@ -1,0 +1,33 @@
+import RHFormalization.ExplicitFormulaBRegular
+import RHFormalization.ExplicitFormulaLocalReduction
+import RHFormalization.ExplicitFormulaHolomorphyFromTsum
+import RHFormalization.CurrentFrontierEndpoint
+
+set_option autoImplicit false
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex Set Topology Filter Metric
+open scoped BigOperators
+
+#check designedY_BPP_pair_from_tsum
+#check zside_pair_principalPart_from_convergence
+#check Harch_holomorphic_from_tsumPrincipalParts_and_Bregular
+
+#check defaultZpoleConvFromZeroDensity
+#check designed_h_holo_from_localEF
+#check RH_from_designed_D_zero_density_localEF
+
+#check designedY_Bshared_holomorphicAt
+#check designedY_Bshared_regular
+#check RH_from_designed_D_zero_density_localEF_noBregular
+
+#print RH_from_designed_D_zero_density_localEF_noBregular
+#print designed_h_holo_from_localEF
+#print designedY_Bshared_regular
+
+end
+
+end RHFormalization

@@ -1,0 +1,123 @@
+===== 1. ConnectedOmegaAPI + Omega definition =====
+RHFormalization/GlobalMeromorphicIdentity.lean-45-This is a standard topological fact for the complex slit plane.  We keep it as a
+RHFormalization/GlobalMeromorphicIdentity.lean-46-named component because the global identity theorem depends on it explicitly.
+RHFormalization/GlobalMeromorphicIdentity.lean-47--/
+RHFormalization/GlobalMeromorphicIdentity.lean:48:structure ConnectedOmegaAPI where
+RHFormalization/GlobalMeromorphicIdentity.lean-49-  h_preconnected_Omega :
+RHFormalization/GlobalMeromorphicIdentity.lean-50-    IsPreconnected Ω
+RHFormalization/GlobalMeromorphicIdentity.lean-51-
+RHFormalization/GlobalMeromorphicIdentity.lean-52-/-!
+RHFormalization/GlobalMeromorphicIdentity.lean-53-## 2. Geometry of the overlap half-plane
+RHFormalization/GlobalMeromorphicIdentity.lean-54--/
+RHFormalization/GlobalMeromorphicIdentity.lean-55-
+RHFormalization/GlobalMeromorphicIdentity.lean-56-/--
+RHFormalization/GlobalMeromorphicIdentity.lean-57-Geometry of right half-planes relative to `Ω`.
+RHFormalization/GlobalMeromorphicIdentity.lean-58-
+RHFormalization/GlobalMeromorphicIdentity.lean-59-The overlap used by Appendix E is a right half-plane `Re s > σ`.
+RHFormalization/GlobalMeromorphicIdentity.lean-60-When `σ ≥ 0`, this half-plane is contained in `Ω`.
+RHFormalization/Basic.lean-31-
+RHFormalization/Basic.lean-32-/-- The manuscript slit plane `Ω = ℂ \ (-∞, 0]`. -/
+RHFormalization/Basic.lean:33:def Omega : Set ℂ :=
+RHFormalization/Basic.lean-34-  {s : ℂ | s ∉ NonpositiveRealAxis}
+RHFormalization/Basic.lean-35-
+RHFormalization/Basic.lean:36:notation "Ω" => Omega
+RHFormalization/Basic.lean-37-
+RHFormalization/Basic.lean-38-/-- Membership form for the manuscript slit plane. -/
+RHFormalization/Basic.lean-39-theorem mem_Omega_iff (s : ℂ) :
+RHFormalization/Basic.lean-40-    s ∈ Ω ↔ ¬ (s.im = 0 ∧ s.re ≤ 0) := by
+RHFormalization/Basic.lean-41-  rfl
+RHFormalization/Basic.lean-42-
+===== 2. MeromorphicAlgebraAPI =====
+RHFormalization/GlobalMeromorphicIdentity.lean-124-Algebra rules converting holomorphic/meromorphic statements into the comparison
+RHFormalization/GlobalMeromorphicIdentity.lean-125-meromorphicity required by the identity theorem.
+RHFormalization/GlobalMeromorphicIdentity.lean-126--/
+RHFormalization/GlobalMeromorphicIdentity.lean:127:structure MeromorphicAlgebraAPI where
+RHFormalization/GlobalMeromorphicIdentity.lean-128-  h_holomorphic_to_meromorphic :
+RHFormalization/GlobalMeromorphicIdentity.lean-129-    ∀ (f : ℂ → ℂ) (U : Set ℂ),
+RHFormalization/GlobalMeromorphicIdentity.lean-130-      IsOpen U →
+RHFormalization/GlobalMeromorphicIdentity.lean-131-      HolomorphicOnC f U →
+RHFormalization/GlobalMeromorphicIdentity.lean-132-      MeromorphicOnC f U
+RHFormalization/GlobalMeromorphicIdentity.lean-133-  h_holomorphic_sub_meromorphic :
+RHFormalization/GlobalMeromorphicIdentity.lean-134-    ∀ (f g : ℂ → ℂ) (U : Set ℂ),
+RHFormalization/GlobalMeromorphicIdentity.lean-135-      IsOpen U →
+RHFormalization/GlobalMeromorphicIdentity.lean-136-      HolomorphicOnC f U →
+RHFormalization/GlobalMeromorphicIdentity.lean-137-      MeromorphicOnC g U →
+RHFormalization/GlobalMeromorphicIdentity.lean-138-      MeromorphicOnC (fun s => f s - g s) U
+RHFormalization/GlobalMeromorphicIdentity.lean-139-
+RHFormalization/GlobalMeromorphicIdentity.lean-140-/--
+RHFormalization/GlobalMeromorphicIdentity.lean-141-The two sides of the Appendix-F comparison are meromorphic on `Ω`.
+RHFormalization/GlobalMeromorphicIdentity.lean-142--/
+RHFormalization/GlobalMeromorphicIdentity.lean-143-structure ComparisonMeromorphicAPI
+RHFormalization/GlobalMeromorphicIdentity.lean-144-    (D : OperatorResolventBridge)
+RHFormalization/GlobalMeromorphicIdentity.lean-145-    (H : ZeroPolePackageAPI) where
+RHFormalization/GlobalMeromorphicIdentity.lean-146-  h_left_meromorphic :
+RHFormalization/GlobalMeromorphicIdentity.lean-147-    MeromorphicOnC D.FH Ω
+===== 3. MeromorphicIdentityPrincipleAPI =====
+RHFormalization/GlobalMeromorphicIdentity.lean-179-
+RHFormalization/GlobalMeromorphicIdentity.lean-180-This is the precise analytic theorem used by Appendix F.
+RHFormalization/GlobalMeromorphicIdentity.lean-181--/
+RHFormalization/GlobalMeromorphicIdentity.lean:182:structure MeromorphicIdentityPrincipleAPI where
+RHFormalization/GlobalMeromorphicIdentity.lean-183-  h_identity :
+RHFormalization/GlobalMeromorphicIdentity.lean-184-    ∀ (f g : ℂ → ℂ) (U V : Set ℂ),
+RHFormalization/GlobalMeromorphicIdentity.lean-185-      IsPreconnected U →
+RHFormalization/GlobalMeromorphicIdentity.lean-186-      IsOpen V →
+RHFormalization/GlobalMeromorphicIdentity.lean-187-      V.Nonempty →
+RHFormalization/GlobalMeromorphicIdentity.lean-188-      V ⊆ U →
+RHFormalization/GlobalMeromorphicIdentity.lean-189-      MeromorphicOnC f U →
+RHFormalization/GlobalMeromorphicIdentity.lean-190-      MeromorphicOnC g U →
+RHFormalization/GlobalMeromorphicIdentity.lean-191-      Set.EqOn f g V →
+RHFormalization/GlobalMeromorphicIdentity.lean-192-      Set.EqOn f g U
+RHFormalization/GlobalMeromorphicIdentity.lean-193-
+RHFormalization/GlobalMeromorphicIdentity.lean-194-/--
+RHFormalization/GlobalMeromorphicIdentity.lean-195-Build the old `MeromorphicIdentityTheoremAPI` from the decomposed global identity
+RHFormalization/GlobalMeromorphicIdentity.lean-196-components.
+RHFormalization/GlobalMeromorphicIdentity.lean-197--/
+RHFormalization/GlobalMeromorphicIdentity.lean-198-def buildMeromorphicIdentityTheoremAPIFromComponents
+RHFormalization/GlobalMeromorphicIdentity.lean-199-    (D : OperatorResolventBridge)
+RHFormalization/GlobalMeromorphicIdentity.lean-200-    (H : ZeroPolePackageAPI)
+RHFormalization/GlobalMeromorphicIdentity.lean-201-    (E : InterfaceBridgeAPI D H)
+RHFormalization/GlobalMeromorphicIdentity.lean-202-    (C : ConnectedOmegaAPI)
+===== 4. repo defs of MeromorphicOnC / HolomorphicOnC =====
+--
+RHFormalization/FinalBlueprint.lean-90-
+RHFormalization/FinalBlueprint.lean-91-def debt_meromorphic_api : ProofDebt :=
+RHFormalization/FinalBlueprint.lean:92:{ name := "MeromorphicOnC / MeromorphicAlgebraAPI"
+RHFormalization/FinalBlueprint.lean-93-  area := .meromorphicIdentity
+RHFormalization/FinalBlueprint.lean-94-  severity := .hard
+RHFormalization/FinalBlueprint.lean-95-  role := "Meromorphicity of both comparison sides on Ω and algebra of holomorphic-minus-meromorphic functions."
+RHFormalization/FinalBlueprint.lean-96-  currentStatus := "Project wrapper/API."
+RHFormalization/FinalBlueprint.lean-97-  nextFormalStep := "Choose Mathlib-native or project-local meromorphic-on definitions and implement holomorphic-to-meromorphic and subtraction lemmas." }
+--
+RHFormalization/GlobalMeromorphicIdentity.lean-152-Build meromorphicity of both sides from the D/H packages and meromorphic algebra.
+RHFormalization/GlobalMeromorphicIdentity.lean-153--/
+RHFormalization/GlobalMeromorphicIdentity.lean-154-def buildComparisonMeromorphicAPI
+RHFormalization/GlobalMeromorphicIdentity.lean-155-    (D : OperatorResolventBridge)
+--
+RHFormalization/GlobalMeromorphicIdentity.lean-187-      V.Nonempty →
+RHFormalization/GlobalMeromorphicIdentity.lean-188-      V ⊆ U →
+RHFormalization/GlobalMeromorphicIdentity.lean:189:      MeromorphicOnC f U →
+RHFormalization/GlobalMeromorphicIdentity.lean:190:      MeromorphicOnC g U →
+--
+RHFormalization/GlobalRigidity.lean-119-
+RHFormalization/GlobalRigidity.lean-120-/-- Build the holomorphic shield from the explicit `Htot` holomorphy API. -/
+RHFormalization/GlobalRigidity.lean-121-def buildHolomorphicShieldFromAPI
+RHFormalization/GlobalRigidity.lean-122-    (D : OperatorResolventBridge)
+RHFormalization/GlobalRigidity.lean-123-    (H : ZeroPolePackageAPI)
+RHFormalization/GlobalRigidity.lean-124-    (A : HtotHolomorphicAPI D H) :
+--
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean-30-        finiteOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean-31-    (FH RH : ℂ → ℂ)
+--
+===== 5. Mathlib battery =====
+@MeromorphicOn.add : ∀ {𝕜 : Type u_1} [inst : NontriviallyNormedField 𝕜] {E : Type u_2} [inst_1 : NormedAddCommGroup E]
+  [inst_2 : NormedSpace 𝕜 E] {f g : 𝕜 → E} {U : Set 𝕜}, MeromorphicOn f U → MeromorphicOn g U → MeromorphicOn (f + g) U
+@MeromorphicOn.sub : ∀ {𝕜 : Type u_1} [inst : NontriviallyNormedField 𝕜] {E : Type u_2} [inst_1 : NormedAddCommGroup E]
+  [inst_2 : NormedSpace 𝕜 E] {f g : 𝕜 → E} {U : Set 𝕜}, MeromorphicOn f U → MeromorphicOn g U → MeromorphicOn (f - g) U
+CAIBattery.lean:5:8: error(lean.unknownIdentifier): Unknown constant `MeromorphicOn.eqOn_of_preconnected_of_eqOn`
+@AnalyticOnNhd.eqOn_of_preconnected_of_eventuallyEq : ∀ {𝕜 : Type u_1} [inst : NontriviallyNormedField 𝕜] {E : Type u_2}
+  [inst_1 : NormedAddCommGroup E] [inst_2 : NormedSpace 𝕜 E] {F : Type u_3} [inst_3 : NormedAddCommGroup F]
+  [inst_4 : NormedSpace 𝕜 F] {f g : E → F} {U : Set E},
+  AnalyticOnNhd 𝕜 f U → AnalyticOnNhd 𝕜 g U → IsPreconnected U → ∀ {z₀ : E}, z₀ ∈ U → f =ᶠ[nhds z₀] g → Set.EqOn f g U
+@Convex.isPreconnected : ∀ {E : Type u_1} [inst : AddCommGroup E] [inst_1 : Module ℝ E] [inst_2 : TopologicalSpace E]
+  [ContinuousAdd E] [ContinuousSMul ℝ E] {s : Set E}, Convex ℝ s → IsPreconnected s
+CAIBattery.lean:8:8: error(lean.unknownIdentifier): Unknown constant `IsPreconnected.isConnected`

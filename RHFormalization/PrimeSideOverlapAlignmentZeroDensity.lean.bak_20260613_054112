@@ -1,0 +1,121 @@
+import RHFormalization.PrimeSideOverlapAlignment
+
+/-!
+# RHFormalization.PrimeSideOverlapAlignmentZeroDensity
+
+This file compresses the corrected overlap-alignment route back down to the
+zero-density summability input.
+
+It also records the trivial but important alignment choice:
+
+  Btr := designedY.toOperatorResolventBridge.B
+
+So the remaining explicit-formula wall becomes exactly holomorphy of
+
+  D.B + ZpoleSeries
+
+on Ω, not principal parts for the old displacement kernel.
+-/
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex Set Topology Filter
+open scoped BigOperators
+
+/--
+The most direct overlap alignment: choose the corrected prime-side transform
+to be the exported Appendix-D B-function itself.
+-/
+def primeSideOverlapAlignment_of_D_B
+    (D : OperatorResolventBridge) :
+    PrimeSideOverlapAlignment D :=
+  { Btr := D.B
+    h_Btr_matches_D_on_overlap := by
+      intro s hs
+      rfl }
+
+/--
+Zero-density version of the corrected overlap-alignment theorem.
+
+This should be the clean replacement for the older V9 theorem whose
+`h_holo` was stated for `designedY.B.Cshared.Bshared + ZpoleSeries`.
+
+Here the prime-side object is the actual exported D-side B-function.
+-/
+theorem RH_from_primeSideOverlapAlignment_zero_density
+    (h_real_zero_free :
+      ∀ s : ℂ,
+        s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+    (hsum :
+      Summable
+        (fun ρ : {ρ : ℂ // IsNontrivialZetaZero ρ} =>
+          (defaultZeroMultiplicityData.mult ρ.1 : ℝ) /
+            (1 + ρ.1.im ^ 2)))
+    (A :
+      PrimeSideOverlapAlignment
+        designedY.toOperatorResolventBridge)
+    (h_holo :
+      HolomorphicOnC
+        (fun s : ℂ =>
+          A.Btr s + ZpoleSeries defaultZeroMultiplicityData s)
+        Ω)
+    (hσ :
+      0 ≤ designedY.toOperatorResolventBridge.sigma0) :
+    RiemannHypothesis :=
+  RH_from_designed_D_summable
+    h_real_zero_free
+    hsum
+    (overlapAlignedHarchPackage
+      defaultZeroMultiplicityData
+      designedY.toOperatorResolventBridge
+      A
+      h_holo)
+    designedY.toOperatorResolventBridge.sigma0
+    hσ
+    (overlapAlignedHarch_split_for_designedY A h_holo)
+
+/--
+The sharp D.B-form frontier.
+
+Remaining nontrivial explicit-formula content:
+
+  HolomorphicOnC
+    (fun s => designedY.toOperatorResolventBridge.B s
+              + ZpoleSeries defaultZeroMultiplicityData s) Ω
+-/
+theorem RH_from_D_B_zero_density_holo
+    (h_real_zero_free :
+      ∀ s : ℂ,
+        s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+    (hsum :
+      Summable
+        (fun ρ : {ρ : ℂ // IsNontrivialZetaZero ρ} =>
+          (defaultZeroMultiplicityData.mult ρ.1 : ℝ) /
+            (1 + ρ.1.im ^ 2)))
+    (h_holo :
+      HolomorphicOnC
+        (fun s : ℂ =>
+          designedY.toOperatorResolventBridge.B s
+            + ZpoleSeries defaultZeroMultiplicityData s)
+        Ω)
+    (hσ :
+      0 ≤ designedY.toOperatorResolventBridge.sigma0) :
+    RiemannHypothesis := by
+  exact
+    RH_from_primeSideOverlapAlignment_zero_density
+      h_real_zero_free
+      hsum
+      (primeSideOverlapAlignment_of_D_B designedY.toOperatorResolventBridge)
+      h_holo
+      hσ
+
+#check primeSideOverlapAlignment_of_D_B
+#check RH_from_primeSideOverlapAlignment_zero_density
+#check RH_from_D_B_zero_density_holo
+#print axioms RH_from_D_B_zero_density_holo
+
+end
+
+end RHFormalization

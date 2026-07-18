@@ -1,0 +1,22 @@
+import RHFormalization.SelectedFiniteTraceSpikePayload
+import RHFormalization.SelectedFiniteTraceSpikePayloadFromImageBridge
+import RHFormalization.AppendixDSpikeSumExtraction
+import RHFormalization.DFiniteStageOperator
+import RHFormalization.SelectedFiniteCanonicalPayload
+
+namespace RHFormalization
+
+#check SelectedFiniteTraceSpikePayload
+#print SelectedFiniteTraceSpikePayload
+
+#check buildSelectedFiniteOperatorLayerFromTraceSpikePayload
+#check buildSelectedFiniteTraceSpikePayloadFromImageBridge
+
+#check buildDFiniteStageCanonicalPrimePowerFormulaFromSpikeSums
+#check finiteNatSpikePackage_eq_of_coeff_eq_on_indices
+#check finiteNatSpikePackage_eq_finiteCanonicalPrimePowerPackage_image
+
+#check SelectedFiniteCanonicalPayload
+#check buildSelectedFiniteOperatorLayerFromCanonicalPayload
+
+end RHFormalization

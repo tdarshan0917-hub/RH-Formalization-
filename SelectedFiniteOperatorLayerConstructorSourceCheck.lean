@@ -1,0 +1,27 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload
+
+namespace RHFormalization
+
+#check DFiniteStagePackageFromOperatorLayer
+#print DFiniteStagePackageFromOperatorLayer
+#check DFiniteStagePackageFromOperatorLayer.mk
+
+#check DFiniteStageOperatorLegality
+#print DFiniteStageOperatorLegality
+
+#check DFiniteTraceConstructionAPI
+#print DFiniteTraceConstructionAPI
+
+#check DFiniteTraceFunctionData
+#print DFiniteTraceFunctionData
+
+#check DFiniteStageSplitFromDuhamelAPI
+#print DFiniteStageSplitFromDuhamelAPI
+
+#check DFiniteStageSpikeSumData
+#print DFiniteStageSpikeSumData
+
+-- Expected currently missing:
+#check selectedFiniteOperatorLayer
+
+end RHFormalization

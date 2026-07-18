@@ -1,0 +1,93 @@
+import RHFormalization.GalerkinSpikeErrorBound
+import Mathlib
+
+/-!
+# Order-1 Duhamel spike error bound
+
+This file lifts the finite spike-sum error bound back to the genuine
+order-1 Galerkin Duhamel integrand.
+
+Key direction:
+  duhamel1Integrand
+  = finite Galerkin spike sum
+  = B-side Gaussian spike sum + bounded error.
+
+No false finite equality with the whole-line Gaussian is asserted.
+-/
+
+set_option autoImplicit false
+
+namespace RHFormalization
+noncomputable section
+
+open Matrix MeasureTheory
+open scoped BigOperators
+
+variable {N : ℕ}
+
+/--
+The genuine order-1 Duhamel integrand differs from the B-side Gaussian spike
+sum by at most the weighted finite spike error.
+-/
+theorem abs_duhamel1Integrand_sub_heatKernel_sum_le
+    (δ : ℝ) (qs : Finset ℕ) (w : ℕ → ℝ) (L : ℝ)
+    (t u : ℝ) :
+    |duhamel1Integrand (N := N) δ qs w L t u
+      -
+      (∑ q ∈ qs, w q * heatKernelRealScalar t (Real.log q))|
+      ≤
+      ∑ q ∈ qs,
+        |w q| * finiteSpikeKernelErrorBound (N := N) δ q L t := by
+  rw [duhamel1Integrand_eq_finite_spike_sum]
+  exact abs_weighted_finiteSpike_sum_sub_heatKernel_sum_le
+    (N := N) δ qs w L t
+
+/--
+Shifted scalar version: multiplying by the Laplace/shift decay factor preserves
+the error bound.
+
+This is the real-valued scalar precursor to the complex shifted-Laplace
+residual estimate.
+-/
+theorem abs_shifted_duhamel1Integrand_sub_heatKernel_sum_le
+    (σ : ℝ) (δ : ℝ) (qs : Finset ℕ) (w : ℕ → ℝ) (L : ℝ)
+    (t u : ℝ) :
+    |(Real.exp (-σ * t) * Real.exp (-t / 4))
+      *
+      (duhamel1Integrand (N := N) δ qs w L t u
+        -
+        (∑ q ∈ qs, w q * heatKernelRealScalar t (Real.log q)))|
+      ≤
+      (Real.exp (-σ * t) * Real.exp (-t / 4))
+        *
+        (∑ q ∈ qs,
+          |w q| * finiteSpikeKernelErrorBound (N := N) δ q L t) := by
+  have hbase :=
+    abs_duhamel1Integrand_sub_heatKernel_sum_le
+      (N := N) δ qs w L t u
+  let A : ℝ := Real.exp (-σ * t) * Real.exp (-t / 4)
+  have hA_nonneg : 0 ≤ A := by
+    dsimp [A]
+    exact le_of_lt (mul_pos (Real.exp_pos _) (Real.exp_pos _))
+  calc
+    |A *
+      (duhamel1Integrand (N := N) δ qs w L t u
+        -
+        (∑ q ∈ qs, w q * heatKernelRealScalar t (Real.log q)))|
+        =
+      A *
+      |duhamel1Integrand (N := N) δ qs w L t u
+        -
+        (∑ q ∈ qs, w q * heatKernelRealScalar t (Real.log q))| := by
+        rw [abs_mul, abs_of_nonneg hA_nonneg]
+    _ ≤
+      A *
+        (∑ q ∈ qs,
+          |w q| * finiteSpikeKernelErrorBound (N := N) δ q L t) := by
+        exact mul_le_mul_of_nonneg_left hbase hA_nonneg
+
+#print axioms abs_duhamel1Integrand_sub_heatKernel_sum_le
+#print axioms abs_shifted_duhamel1Integrand_sub_heatKernel_sum_le
+
+end
+end RHFormalization

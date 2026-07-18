@@ -1,0 +1,29 @@
+import RHFormalization.CanonicalPrimePowerFiniteKernelErrorSum
+import RHFormalization.CanonicalPrimePowerHeatKernelPrimePowerSupport
+import RHFormalization.CanonicalPrimePowerHeatKernelNatValueMajorantSummability
+import RHFormalization.PrimePowerWeightNormalizationLock
+
+namespace RHFormalization
+
+noncomputable section
+
+#check IsPrimePowerPair
+#print IsPrimePowerPair
+
+#check PrimePowerPair.weightReal
+#print PrimePowerPair.weightReal
+
+#check PrimePowerPair.weightC
+#print PrimePowerPair.weightC
+
+#check CanonicalPrimePowerFiniteKernelErrorSumData
+#print CanonicalPrimePowerFiniteKernelErrorSumData
+
+#check CanonicalPrimePowerKernelErrorBoundData
+#print CanonicalPrimePowerKernelErrorBoundData
+
+-- Search target names manually from the printed grep/context if these fail.
+#check PrimePowerPair.weightC_eq_coe_weightReal
+
+end
+end RHFormalization

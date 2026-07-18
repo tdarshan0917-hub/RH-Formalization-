@@ -1,0 +1,25 @@
+import RHFormalization.SelectedDWindowAlphaIndexData
+import RHFormalization.AppendixDSpikeCutoffCompatibility
+
+namespace RHFormalization
+
+noncomputable section
+
+def selectedDWindowAlphaIndexData :
+    SelectedDWindowAlphaIndexData :=
+by
+  refine
+  {
+    alpha := ?alpha
+    h_R_ge_nat := ?h_R_ge_nat
+    h_indices_contains_of_center_le_R := by
+      intro n q hq
+      exact appendixD_selected_indices_contains_of_center_le_R (?alpha n) q hq
+    h_indices_subset_center_le_R := by
+      intro n q hq
+      exact appendixD_selected_indices_subset_center_le_R (?alpha n) q hq
+  }
+
+end
+
+end RHFormalization

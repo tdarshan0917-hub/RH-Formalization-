@@ -1,0 +1,23 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload
+import RHFormalization.CanonicalPrimePowerCutoffMassEnumeration
+import RHFormalization.CanonicalPrimePowerMassUpperEnvelope
+
+namespace RHFormalization
+
+#check CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload
+#print CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload
+
+#check buildCanonicalPrimePowerSharpCutoffHeatKernelWeightedDataFromClosedPayload
+
+#check PrimePowerWeightCutoffEnumerationData
+#print PrimePowerWeightCutoffEnumerationData
+
+#check PrimePowerMassEnvelopeData
+#print PrimePowerMassEnvelopeData
+
+-- Expected unknowns if the selected objects are not built yet:
+#check selectedClosedPayload
+#check selectedFiniteOperatorLayer
+#check selectedH0
+
+end RHFormalization

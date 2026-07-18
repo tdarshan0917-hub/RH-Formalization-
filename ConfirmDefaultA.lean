@@ -1,0 +1,11 @@
+import RHFormalization.MainTheoremFromRealZeroFreeDefaultA
+
+namespace RHFormalization
+
+#check defaultMeromorphicAlgebraAPI
+#print axioms defaultMeromorphicAlgebraAPI
+
+#check mainTheorem_from_realZeroFree_nonnegative_interface_defaultA
+#print axioms mainTheorem_from_realZeroFree_nonnegative_interface_defaultA
+
+end RHFormalization

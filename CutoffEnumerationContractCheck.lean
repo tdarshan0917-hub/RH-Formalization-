@@ -1,0 +1,8 @@
+import RHFormalization.CanonicalPrimePowerCutoffMassEnumeration
+
+namespace RHFormalization
+
+#print PrimePowerWeightCutoffEnumerationData
+#check PrimePowerWeightCutoffEnumerationData.h_mem_belowCutoff
+
+end RHFormalization

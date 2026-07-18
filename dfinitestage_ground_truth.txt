@@ -1,0 +1,315 @@
+===== FULL DFiniteStage STRUCTURE =====
+import RHFormalization.HMeromorphicPackage
+import RHFormalization.DNativeUnboundedOperator
+import RHFormalization.DHeatTraceSummability
+import RHFormalization.DResolventTraceSummability
+import RHFormalization.DSuperSmoothing
+import RHFormalization.CanonicalPrimePowerPackage
+
+
+/-!
+# RHFormalization.DOperatorExport
+
+Iteration 8: Appendix-D operator-side export skeleton.
+
+The manuscript's Appendix D must export the operator-side package consumed in
+Appendices E and F:
+
+  FH ∈ O(Ω), RH ∈ O(Ω),
+  FH(s) = Bcan(s) + RH(s) on a nonempty overlap half-plane.
+
+It does **not** export global holomorphy of `Bcan`.
+
+This file makes the Appendix-D chain explicit:
+
+1. finite cutoff/window stages;
+2. canonical window normalization;
+3. finite-stage split;
+4. residual sector bounds;
+5. master residual/Montel package;
+6. CAN-REM;
+7. D.EXPORT, which builds `OperatorResolventBridge`.
+
+Hard analytic estimates remain API-level, but the formal dependencies are now
+visible and faithful to the manuscript.
+-/
+
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex
+
+/-!
+## 1. Finite cutoff/window stages
+-/
+
+/--
+A finite Appendix-D cutoff stage.
+
+`L` is the window scale and `R` is the prime-power cutoff.
+The actual Hilbert-space/operator data are not represented here yet; this is the
+interface index used by the D export layer.
+-/
+structure DFiniteStage where
+  L : ℝ
+  R : ℝ
+  hL_pos :
+    0 < L
+  hR_pos :
+    0 < R
+
+  /-- Native Hilbert-space carrier for the fixed finite-stage operator. -/
+  E : Type
+
+  /-- Normed additive group structure on the native Hilbert space. -/
+  [instNormed : NormedAddCommGroup E]
+
+  /-- Complex inner-product-space structure on the native Hilbert space. -/
+  [instInner : InnerProductSpace ℂ E]
+
+  /-- Completeness of the native Hilbert space. -/
+  [instComplete : CompleteSpace E]
+
+  /-- Mathlib-native unbounded self-adjoint operator core. -/
+  native :
+    NativeUnboundedDStage E
+
+  /-- Spectral eigenvalue proxy for the finite-stage heat trace. -/
+  heatEigenvalue :
+    ℕ → ℝ
+
+  /-- Positive scale for the finite-stage eigenvalue lower-growth bound. -/
+  heatScale :
+    ℝ
+
+  /-- Positivity of the heat-trace scale. -/
+  h_heatScale_pos :
+    0 < heatScale
+
+  /-- Linear lower-growth bound sufficient for heat-series summability. -/
+  h_heatEigenvalue_linear_lower :
+    ∀ n : ℕ, (n : ℝ) ≤ heatEigenvalue n / heatScale
+
+  /-- Spectral summand proxy for the finite-stage resolvent trace. -/
+  resolventTraceTerm :
+    ℂ → ℕ → ℂ
+
+  /-- Constant controlling the resolvent trace summand by a p-series bound. -/
+  resolventBoundConstant :
+    ℂ → ℝ
+
+  /-- Nonnegativity of the resolvent comparison constant on Ω. -/
+  h_resolventBoundConstant_nonneg :
+    ∀ s : ℂ, s ∈ Ω → 0 ≤ resolventBoundConstant s
+
+  /-- p-series comparison bound for the finite-stage resolvent trace summand. -/
+  h_resolventTraceBound :
+    ∀ s : ℂ, s ∈ Ω →
+      ∀ n : ℕ,
+        ‖resolventTraceTerm s n‖ ≤
+          resolventBoundConstant s * ((1 : ℝ) / (n : ℝ) ^ 2)
+
+  /-- Nonnegative trace-norm size of the fixed-stage Duhamel/Dyson terms. -/
+  duhamelTraceNormTerm :
+    ℕ → ℝ
+
+  /-- Nonnegativity of the trace-norm term sequence. -/
+  h_duhamelTraceNormTerm_nonneg :
+    ∀ k : ℕ, 0 ≤ duhamelTraceNormTerm k
+
+  /-- Summable majorant for the Duhamel/Dyson trace-norm terms. -/
+  duhamelMajorant :
+    ℕ → ℝ
+
+  /-- Nonnegativity of the Duhamel majorant. -/
+  h_duhamelMajorant_nonneg :
+    ∀ k : ℕ, 0 ≤ duhamelMajorant k
+
+  /-- Duhamel trace-norm term controlled by the summable majorant. -/
+  h_duhamelTraceNormTerm_bound :
+    ∀ k : ℕ, duhamelTraceNormTerm k ≤ duhamelMajorant k
+
+  /-- Summability of the Duhamel/Dyson majorant. -/
+  h_duhamelMajorant_summable :
+    Summable duhamelMajorant
+
+  /-- Nonnegative size sequence for mixed-word/super-smoothing remainders. -/
+  mixedWordRemainder :
+    ℕ → ℝ
+
+  /-- Nonnegativity of the mixed-word remainder size sequence. -/
+  h_mixedWordRemainder_nonneg :
+    ∀ k : ℕ, 0 ≤ mixedWordRemainder k
+
+  /-- Super-polynomial decay certificate for the mixed-word remainder. -/
+  h_mixedWordSuperPolynomialDecay :
+    SuperPolynomialDecay mixedWordRemainder
+
+  /-- Predicate selecting the active finite-stage prime-power spike indices. -/
+  diagonalSpikeActive :
+    ℕ → Prop
+
+  /-- The actual diagonal/first-order contribution extracted from the finite-stage operator. -/
+  diagonalSpikeContribution :
+    ℕ → ℂ
+
+  /-- The canonical prime-power spike contribution with the manuscript's frozen normalization. -/
+  canonicalSpikeContribution :
+    ℕ → ℂ
+
+  /--
+  Fixed-stage diagonal spike extraction certificate.
+
+  This is the formal placeholder for the Appendix-D calculation proving that the
+  diagonal/first-order contribution equals the canonical prime-power spike package
+  on the active finite-stage prime-power indices.
+  -/
+  h_diagonalSpikeExtraction :
+    ∀ q : ℕ,
+      diagonalSpikeActive q →
+        diagonalSpikeContribution q = canonicalSpikeContribution q
+
+  /--
+  Finite-stage transform exported by the fixed-cutoff Appendix-D extraction.
+
+  This is the selected finite operator-side transform at this stage.
+  -/
+  appendixDFiniteFStage :
+    ℂ → ℂ
+
+  /--
+  The finite active Nat-index set for the diagonal spike extraction.
+  -/
+  diagonalSpikeActiveIndices :
+    Finset ℕ
+
+  /--
+  Soundness of the finite active-index set.
+  -/
+  h_diagonalSpikeActiveIndices_active :
+    ∀ q : ℕ,
+      q ∈ diagonalSpikeActiveIndices →
+        diagonalSpikeActive q
+
+  /--
+  Completeness of the finite active-index set.
+
+  This is the field that prevents the empty-index fake payload.
+  -/
+  h_diagonalSpikeActiveIndices_complete :
+    ∀ q : ℕ,
+      diagonalSpikeActive q →
+        q ∈ diagonalSpikeActiveIndices
+
+  /--
+  Nat-to-prime-power identification for active diagonal spikes.
+  -/
+  diagonalSpikeToPP :
+    ℕ → PrimePowerPair
+
+  /--
+  Injectivity of the Nat-to-prime-power identification on active indices.
+  -/
+  h_diagonalSpikeToPP_inj :
+    ∀ m : ℕ,
+      m ∈ diagonalSpikeActiveIndices →
+      ∀ n : ℕ,
+        n ∈ diagonalSpikeActiveIndices →
+          diagonalSpikeToPP m = diagonalSpikeToPP n →
+            m = n
+
+  /--
+  Canonical coefficient compatibility on active indices.
+  -/
+  h_canonicalSpikeContribution_eq_weightC :
+    ∀ n : ℕ,
+      n ∈ diagonalSpikeActiveIndices →
+        canonicalSpikeContribution n =
+          PrimePowerPair.weightC (diagonalSpikeToPP n)
+
+  /--
+  Every selected diagonal-spike prime-power lies below the stage `R` cutoff.
+  This is the stage-level cutoff soundness certificate needed by the
+  selected D-window alpha/index package.
+  -/
+  h_diagonalSpikeToPP_center_le_R :
+    ∀ n : ℕ,
+      n ∈ diagonalSpikeActiveIndices →
+        (diagonalSpikeToPP n).center ≤ R
+
+  /--
+  Every prime-power pair below the stage `R` cutoff is represented by one
+  selected diagonal-spike index.
+  This is the stage-level cutoff completeness certificate needed by the
+  selected D-window alpha/index package.
+  -/
+  h_diagonalSpikeToPP_complete_center_le_R :
+    ∀ q : PrimePowerPair,
+      IsPrimePowerPair q →
+      q.center ≤ R →
+        ∃ n : ℕ,
+          n ∈ diagonalSpikeActiveIndices ∧
+            diagonalSpikeToPP n = q
+
+/--
+Finite-stage functions produced by Appendix D.
+
+`F_stage` is the finite regularized/canonical transform.
+`B_stage` is the finite shifted canonical prime-power package on the overlap.
+`R_stage` is the finite remainder.
+===== PrimePowerPair core defs =====
+45-
+46-/-- Predicate selecting valid prime-power indices. -/
+47:def IsPrimePowerPair (q : PrimePowerPair) : Prop :=
+48-  Nat.Prime q.p ∧ 0 < q.m
+49-
+50-/-- The natural number represented by a prime-power pair. -/
+51-def PrimePowerPair.natValue (q : PrimePowerPair) : ℕ :=
+52-  q.p ^ q.m
+53-
+54-/-- The center `log(q) = log(p^m)` of the prime-power spike. -/
+55-noncomputable def PrimePowerPair.center (q : PrimePowerPair) : ℝ :=
+56-  Real.log ((q.natValue : ℕ) : ℝ)
+57-
+===== finite active-set helper =====
+36-          ring
+37-
+38:lemma valid_primePower_natValue_lt_finite (N : ℕ) :
+39-    {q : PrimePowerPair | IsPrimePowerPair q ∧ q.natValue < N}.Finite := by
+40-  refine
+41-    Set.Finite.subset
+42-      (Finset.finite_toSet ((Finset.range N).product (Finset.range N)))
+43-      ?_
+44-  rintro ⟨p, m⟩ hq
+45-  simp [PrimePowerPair.p, PrimePowerPair.m,
+46-        PrimePowerPair.natValue, IsPrimePowerPair] at hq ⊢
+47-  rcases hq with ⟨⟨hp, hm⟩, hpm_lt⟩
+48-
+49-  have hp2 : 2 ≤ p := hp.two_le
+50-  have hp_pos : 0 < p := lt_of_lt_of_le (by norm_num) hp2
+--
+70-      ¬ IsPrimePowerPair q ∨ N ≤ q.natValue := by
+71-  rw [Filter.eventually_cofinite]
+72:  refine (valid_primePower_natValue_lt_finite N).subset ?_
+73-  intro q hq
+74-  simp only [Set.mem_setOf_eq] at hq ⊢
+75-  simpa [not_or, not_le] using hq
+76-
+77-theorem heatKernelGaussianCoreEnvelope_summable
+78-    (t : ℝ)
+79-    (ht : 0 < t) :
+80-    Summable (heatKernelGaussianCoreEnvelope t) := by
+81-  rcases heatKernelGaussianCoreEnvelope_le_weight_mul_natValue_inv_cube_of_ge t ht
+82-    with ⟨N, hN⟩
+83-
+84-  refine
+===== Mathlib minFac and factorization lemma names =====
+.lake/packages/mathlib/Mathlib/Data/Nat/Factorization/Basic.lean:68:theorem Prime.factorization_self {p : ℕ} (hp : Prime p) : p.factorization p = 1 := by simp [hp]
+.lake/packages/mathlib/Mathlib/Data/Nat/Factorization/Defs.lean:85:theorem Prime.factorization_pos_of_dvd {n p : ℕ} (hp : p.Prime) (hn : n ≠ 0) (h : p ∣ n) :
+.lake/packages/mathlib/Mathlib/Data/Nat/Factorization/Defs.lean:198:protected theorem Prime.factorization {p : ℕ} (hp : Prime p) : p.factorization = single p 1 := by
+.lake/packages/mathlib/Mathlib/Data/Nat/Factorization/Defs.lean:204:theorem Prime.factorization_pow {p k : ℕ} (hp : Prime p) : (p ^ k).factorization = single p k := by
+.lake/packages/mathlib/Mathlib/Data/Nat/Prime/Defs.lean:281:theorem minFac_dvd (n : ℕ) : minFac n ∣ n :=
+.lake/packages/mathlib/Mathlib/Data/Nat/Prime/Defs.lean:284:theorem minFac_prime {n : ℕ} (n1 : n ≠ 1) : Prime (minFac n) :=
+.lake/packages/mathlib/Mathlib/Data/Nat/Prime/Defs.lean:289:theorem minFac_prime_iff {n : ℕ} : Prime (minFac n) ↔ n ≠ 1 := by

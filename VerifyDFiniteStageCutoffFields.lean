@@ -1,0 +1,11 @@
+import RHFormalization.DOperatorExport
+import RHFormalization.SelectedFiniteOperatorLayer
+
+namespace RHFormalization
+
+#check DFiniteStage.h_diagonalSpikeToPP_center_le_R
+#check DFiniteStage.h_diagonalSpikeToPP_complete_center_le_R
+#check selectedFiniteOperatorLayer.toFiniteCanonicalPrimePowerFormula.indices
+#print buildDFiniteStageCanonicalPrimePowerFormulaFromSpikeSums
+
+end RHFormalization

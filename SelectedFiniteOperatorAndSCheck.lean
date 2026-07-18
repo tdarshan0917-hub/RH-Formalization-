@@ -1,0 +1,17 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload
+
+namespace RHFormalization
+
+#check ChosenLengthDLimitPayload
+
+#check DFiniteStagePackageFromOperatorLayer
+#print DFiniteStagePackageFromOperatorLayer
+
+#check CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData
+#print CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData
+
+#check selectedFiniteOperatorLayer
+#check selectedS
+#check selectedChosenLengthDLimitPayload
+
+end RHFormalization

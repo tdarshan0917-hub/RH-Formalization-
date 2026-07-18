@@ -1,0 +1,37 @@
+import RHFormalization.CanonicalPrimePowerSoundCutoffCounting
+import RHFormalization.CanonicalPrimePowerSharpCutoffClosedDWindowSource
+import RHFormalization.SelectedFiniteOperatorLayer
+
+namespace RHFormalization
+
+noncomputable section
+
+#check selectedFiniteOperatorLayer
+
+#check CanonicalPrimePowerDWindowMassCountingSetWeightEnvelopeData
+#check SelectedSharpCutoffClosedDWindowSource
+
+-- The search showed a constructor/converter around line 322 in this module.
+-- These #checks intentionally try likely names. Unknowns are useful signal.
+#check CanonicalPrimePowerSoundCutoffCountingData
+#print CanonicalPrimePowerSoundCutoffCountingData
+
+#check SoundCutoffCountingData
+#check PrimePowerSoundCutoffCountingData
+
+#check CanonicalPrimePowerSoundCutoffCountingData.toDWindowMassCountingSetWeightEnvelopeData
+#check CanonicalPrimePowerSoundCutoffCountingData.toCanonicalPrimePowerDWindowMassCountingSetWeightEnvelopeData
+#check buildCanonicalPrimePowerDWindowMassCountingSetWeightEnvelopeDataFromSoundCutoffCounting
+#check buildDWindowMassCountingSetWeightEnvelopeDataFromSoundCutoffCounting
+#check soundCutoffCountingToDWindowMassCountingSetWeightEnvelopeData
+
+-- Check whether any selected source already exists.
+#check selectedSoundCutoffCountingData
+#check selectedCanonicalPrimePowerSoundCutoffCountingData
+#check selectedSoundCutoffCounting
+#check selectedSoundMassCounting
+#check selectedDWindowMassCountingSetWeightEnvelopeData
+
+end
+
+end RHFormalization

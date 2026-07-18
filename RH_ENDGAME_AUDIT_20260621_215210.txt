@@ -1,0 +1,551 @@
+===== 1. NEW PRIME / ARITHMETIC OPERATOR FILES =====
+-rw-r--r--  1 travisdarshan  staff  2734 Jun 21 21:48 RHFormalization/ArithmeticPrimeGenericDExportBounds.lean
+-rw-r--r--  1 travisdarshan  staff  3279 Jun 21 21:41 RHFormalization/ArithmeticPrimeActualKernelBound.lean
+-rw-r--r--  1 travisdarshan  staff  3694 Jun 21 21:38 RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean
+-rw-r--r--  1 travisdarshan  staff  2694 Jun 21 21:34 RHFormalization/ArithmeticPrimeDExportFixedStage.lean
+-rw-r--r--  1 travisdarshan  staff  3251 Jun 21 21:30 RHFormalization/ArithmeticPrimeBStageBound.lean
+-rw-r--r--  1 travisdarshan  staff  2419 Jun 21 21:26 RHFormalization/ArithmeticPrimeFStageBound.lean
+-rw-r--r--  1 travisdarshan  staff  3370 Jun 21 21:14 RHFormalization/ArithmeticPrimeRStageBoundSplit.lean
+-rw-r--r--  1 travisdarshan  staff  1882 Jun 21 21:13 RHFormalization/ArithmeticPrimeDExportFromStageBound.lean
+-rw-r--r--  1 travisdarshan  staff  3150 Jun 21 21:01 RHFormalization/ArithmeticPrimeResidualWitnessBridge.lean
+-rw-r--r--  1 travisdarshan  staff  2087 Jun 21 20:54 RHFormalization/ArithmeticPrimeOperatorResidual.lean
+-rw-r--r--  1 travisdarshan  staff  3405 Jun 21 20:50 RHFormalization/PrimeOperatorArithmeticWeights.lean
+-rw-r--r--  1 travisdarshan  staff  2501 Jun 21 20:44 RHFormalization/PrimeOperatorDFiniteStage.lean
+-rw-r--r--  1 travisdarshan  staff  2177 Jun 21 20:38 RHFormalization/PrimeNativeStageNonneg.lean
+-rw-r--r--  1 travisdarshan  staff  5445 Jun 21 16:51 RHFormalization/PrimeNativeStageAssembly.lean
+-rw-r--r--  1 travisdarshan  staff  2106 Jun 21 16:21 RHFormalization/PrimeNativeStage.lean
+-rw-r--r--  1 travisdarshan  staff  1623 Jun 21 16:01 RHFormalization/PrimePerturbedFStage.lean
+-rw-r--r--  1 travisdarshan  staff  1186 Jun 21 15:58 RHFormalization/PrimeWeightedPotential.lean
+-rw-r--r--  1 travisdarshan  staff  7647 Jun 21 00:07 RHFormalization/PrimeWellEnvelopeLemmaD4.lean
+-rw-r--r--  1 travisdarshan  staff  3291 Jun 20 23:19 RHFormalization/PrimeWellEnvelopeLemmaD3.lean
+-rw-r--r--  1 travisdarshan  staff  3523 Jun 20 22:57 RHFormalization/PrimeWellEnvelopeLemmaD2.lean
+-rw-r--r--  1 travisdarshan  staff  4017 Jun 20 22:47 RHFormalization/PrimeWellEnvelopeLemmaD.lean
+-rw-r--r--  1 travisdarshan  staff  2776 Jun 20 22:14 RHFormalization/PrimeWellEnvelopeLemmaC.lean
+-rw-r--r--  1 travisdarshan  staff  1985 Jun 20 22:07 RHFormalization/PrimeWellEnvelopeLemmaB.lean
+-rw-r--r--  1 travisdarshan  staff  1544 Jun 15 22:11 RHFormalization/PrimePowerSumConvergence.lean
+-rw-r--r--  1 travisdarshan  staff  2568 Jun 14 13:31 RHFormalization/PrimeSideTransformKernelPrototype.lean
+-rw-r--r--  1 travisdarshan  staff  2322 Jun 13 20:49 RHFormalization/PrimeSideStieltjesLaplaceKernel.lean
+-rw-r--r--  1 travisdarshan  staff  2704 Jun 13 17:50 RHFormalization/PrimeSideOperatorBridgeBLocalEF.lean
+-rw-r--r--  1 travisdarshan  staff  3113 Jun 13 06:31 RHFormalization/PrimeSideAlignmentContractLocalEF.lean
+-rw-r--r--  1 travisdarshan  staff  4212 Jun 13 06:25 RHFormalization/PrimeSideOverlapAlignmentLocalEF.lean
+-rw-r--r--  1 travisdarshan  staff  5787 Jun 13 05:29 RHFormalization/PrimeSideOverlapAlignment.lean
+-rw-r--r--  1 travisdarshan  staff  4443 Jun 13 05:21 RHFormalization/PrimeSideAlignmentDesignedBridge.lean
+-rw-r--r--  1 travisdarshan  staff  3082 Jun 13 05:11 RHFormalization/PrimeSideAlignmentToHarch.lean
+-rw-r--r--  1 travisdarshan  staff  3409 Jun 13 04:53 RHFormalization/PrimeSideAlignmentContract.lean
+-rw-r--r--  1 travisdarshan  staff  4083 Jun 12 03:04 RHFormalization/PrimePowerDFiniteStage.lean
+-rw-r--r--@ 1 travisdarshan  staff  1843 May 27 01:59 RHFormalization/PrimePowerWeightNormalizationLock.lean
+
+===== 2. DEAD KERNEL REFERENCES: displacement / heatKernelG 1 =====
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:76:noncomputable def AppendixDFiniteSpikeExtractionWitness.Kcan
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:79:  fun _ => displacementCanonicalKernel (heatKernelG (1 : ℝ))
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:10:  displacementCanonicalKernel (heatKernelG 1)
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:35:    ‖stageFieldSpikeExtractionWitness.spikeKernel α q s‖ ≤
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:37:        (heatKernelG (1 : ℝ))
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:38:        (stageFieldSpikeExtractionWitness.toPP α q) := by
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:40:  unfold AppendixDFiniteSpikeExtractionWitness.Kcan
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:41:  unfold displacementCanonicalKernel
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:50:    ∀ q ∈ stageFieldSpikeExtractionWitness.activeIndices α,
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:53:          (heatKernelG (1 : ℝ))
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:54:          (stageFieldSpikeExtractionWitness.toPP α q) := by
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:56:  exact displacementKernelMajorant_nonneg (heatKernelG (1 : ℝ))
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:57:    (stageFieldSpikeExtractionWitness.toPP α q)
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:82:      (stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:91:          (heatKernelG (1 : ℝ))
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:92:          (stageFieldSpikeExtractionWitness.toPP α q))
+RHFormalization/ArithmeticPrimeBStageBound.lean:52:    ‖stageFieldSpikeExtractionWitness.B_stage α s‖ ≤
+RHFormalization/ArithmeticPrimeBStageBound.lean:53:      (stageFieldSpikeExtractionWitness.activeIndices α).sum
+RHFormalization/ArithmeticPrimeBStageBound.lean:56:          ‖stageFieldSpikeExtractionWitness.spikeKernel α q s‖) := by
+RHFormalization/ArithmeticPrimeBStageBound.lean:59:      (stageFieldSpikeExtractionWitness.activeIndices α)
+RHFormalization/ArithmeticPrimeBStageBound.lean:61:      (stageFieldSpikeExtractionWitness.spikeKernel α)
+RHFormalization/ArithmeticPrimeBStageBound.lean:74:        ∀ q ∈ stageFieldSpikeExtractionWitness.activeIndices α,
+RHFormalization/ArithmeticPrimeBStageBound.lean:76:          ‖stageFieldSpikeExtractionWitness.spikeKernel α q s‖
+RHFormalization/ArithmeticPrimeBStageBound.lean:79:      ‖stageFieldSpikeExtractionWitness.B_stage α s‖ ≤
+RHFormalization/ArithmeticPrimeBStageBound.lean:80:        (stageFieldSpikeExtractionWitness.activeIndices α).sum termBound := by
+RHFormalization/ArithmeticPrimeBStageBound.lean:83:    ‖stageFieldSpikeExtractionWitness.B_stage α s‖
+RHFormalization/ArithmeticPrimeBStageBound.lean:84:        ≤ (stageFieldSpikeExtractionWitness.activeIndices α).sum
+RHFormalization/ArithmeticPrimeBStageBound.lean:87:              ‖stageFieldSpikeExtractionWitness.spikeKernel α q s‖) :=
+RHFormalization/ArithmeticPrimeBStageBound.lean:89:    _ ≤ (stageFieldSpikeExtractionWitness.activeIndices α).sum termBound := by
+RHFormalization/ArithmeticPrimeDExportFixedStage.lean:42:      ∀ q ∈ stageFieldSpikeExtractionWitness.activeIndices
+RHFormalization/ArithmeticPrimeDExportFixedStage.lean:47:        ∀ q ∈ stageFieldSpikeExtractionWitness.activeIndices
+RHFormalization/ArithmeticPrimeDExportFixedStage.lean:50:          ‖stageFieldSpikeExtractionWitness.spikeKernel
+RHFormalization/ArithmeticPrimeDExportFixedStage.lean:54:      (stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/ArithmeticPrimeDExportFixedStage.lean:59:  let CB : ℝ := (stageFieldSpikeExtractionWitness.activeIndices α).sum termBound
+RHFormalization/ArithmeticPrimeDExportFixedStage.lean:79:        ‖stageFieldSpikeExtractionWitness.B_stage α s‖ ≤ CB := by
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:34:      ∀ q ∈ stageFieldSpikeExtractionWitness.activeIndices α,
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:38:        ∀ q ∈ stageFieldSpikeExtractionWitness.activeIndices α,
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:39:          ‖stageFieldSpikeExtractionWitness.spikeKernel α q s‖
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:42:      ‖stageFieldSpikeExtractionWitness.B_stage α s‖ ≤
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:43:        (stageFieldSpikeExtractionWitness.activeIndices α).sum
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:79:      ∀ q ∈ stageFieldSpikeExtractionWitness.activeIndices
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:84:        ∀ q ∈ stageFieldSpikeExtractionWitness.activeIndices
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:86:          ‖stageFieldSpikeExtractionWitness.spikeKernel
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:90:      (stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/ArithmeticPrimeDExportFromStageBound.lean:44:        ‖stageFieldSpikeExtractionWitness.R_stage
+RHFormalization/ArithmeticPrimeDExportFromStageBound.lean:48:      (stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/ArithmeticPrimeDExportFromStageBound.lean:58:      (stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/ArithmeticPrimeGenericDExportBounds.lean:6:This file removes the bad dependency on `stageFieldSpikeExtractionWitness.B_stage`.
+RHFormalization/ArithmeticPrimeResidualWitnessBridge.lean:31:noncomputable def stageFieldSpikeExtractionWitness :
+RHFormalization/ArithmeticPrimeResidualWitnessBridge.lean:62:    stageFieldSpikeExtractionWitness.F_stage
+RHFormalization/ArithmeticPrimeResidualWitnessBridge.lean:85:      (stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/ArithmeticPrimeResidualWitnessBridge.lean:89:    stageFieldSpikeExtractionWitness.R_stage
+RHFormalization/ArithmeticPrimeResidualWitnessBridge.lean:96:#print axioms stageFieldSpikeExtractionWitness
+RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:46:        ‖stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:50:      ‖stageFieldSpikeExtractionWitness.R_stage
+RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:59:      stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:64:          ‖stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:71:                  stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:97:        ‖stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:101:      (stageFieldSpikeExtractionWitness.B_stage
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:125:      (displacementCanonicalKernel (heatKernelG t))
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:202:        (displacementCanonicalKernel (heatKernelG S.t))) :=
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:226:        q.weightC * (displacementCanonicalKernel (heatKernelG S.t)) q.center s := by
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSource.lean:34:        (heatKernelG (1 : ℝ))
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSource.lean:39:      displacementCanonicalKernel (heatKernelG (1 : ℝ))
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSource.lean:43:      (heatKernelG (1 : ℝ))
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSource.lean:67:        (heatKernelG (1 : ℝ))
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSource.lean:70:      (displacementCanonicalKernel (heatKernelG (1 : ℝ))) :=
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSourceFromFactorBounds.lean:32:          (heatKernelG (1 : ℝ))
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSourceFromFactorBounds.lean:36:        displacementCanonicalKernel (heatKernelG (1 : ℝ)))
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSourceFromFactorBounds.lean:39:        (heatKernelG (1 : ℝ))
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSourceFromSoundCounting.lean:33:          (heatKernelG (1 : ℝ))
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSourceFromSoundCounting.lean:37:        displacementCanonicalKernel (heatKernelG (1 : ℝ)))
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSourceFromSoundCounting.lean:40:        (heatKernelG (1 : ℝ))
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:38:def displacementCanonicalKernel
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:72:      ‖(displacementCanonicalKernel G) q.center s‖
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:75:  dsimp [displacementCanonicalKernel, displacementKernelMajorant]
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:126:      (displacementCanonicalKernel G)
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:179:    Kshared := displacementCanonicalKernel S.G
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:221:        (displacementCanonicalKernel S.G)) :=
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:245:        q.weightC * (displacementCanonicalKernel S.G) q.center s := by
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:101:      (displacementCanonicalKernel G)
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:183:        (displacementCanonicalKernel S.G)) :=
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:207:        q.weightC * (displacementCanonicalKernel S.G) q.center s := by
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload.lean:58:      (displacementCanonicalKernel (heatKernelG t))
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability.lean:51:        (displacementCanonicalKernel (heatKernelG t)))
+RHFormalization/CurrentFrontierEndpoint.lean:206:        q.weightC * (displacementCanonicalKernel (heatKernelG 1)) q.center s := by
+RHFormalization/CurrentFrontierEndpoint.lean:553:        q.weightC * (displacementCanonicalKernel (heatKernelG 1)) q.center s :=
+RHFormalization/DesignedDetailedConstruction.lean:147:        q.weightC * (displacementCanonicalKernel (heatKernelG 1)) q.center s := by
+RHFormalization/DesignedRCutoffS.lean:42:      displacementCanonicalKernel (heatKernelG 1) := by
+RHFormalization/DesignedRCutoffS.lean:49:    Kshared := displacementCanonicalKernel (heatKernelG 1)
+RHFormalization/DesignedRCutoffS.lean:60:      simp [displacementCanonicalKernel]
+RHFormalization/ExplicitFormulaBRegular.lean:12:  displacementCanonicalKernel G = fun a _s => G a,
+RHFormalization/ExplicitFormulaBRegular.lean:29:`displacementCanonicalKernel`, it is a constant function of `s`.
+RHFormalization/ExplicitFormulaBRegular.lean:43:  simp [displacementCanonicalKernel]
+RHFormalization/ExplicitFormulaBRegular.lean:79:                (displacementCanonicalKernel (heatKernelG 1)) q.center s)
+RHFormalization/ExplicitFormulaHolomorphyFromTsum.lean:44:                (displacementCanonicalKernel (heatKernelG 1)) q.center s)
+RHFormalization/ExplicitFormulaHolomorphyFromTsum.lean:89:                (displacementCanonicalKernel (heatKernelG 1)) q.center s)
+RHFormalization/ExplicitFormulaLocalReduction.lean:61:                (displacementCanonicalKernel (heatKernelG 1)) q.center s)
+RHFormalization/ExplicitFormulaLocalReduction.lean:125:                (displacementCanonicalKernel (heatKernelG 1)) q.center s)
+RHFormalization/ExplicitPrimePackageIdentity.lean:29:        (displacementCanonicalKernel (heatKernelG 1)) := by
+RHFormalization/ExplicitPrimePackageIdentity.lean:40:          (displacementCanonicalKernel (heatKernelG 1)) q.center s := by
+RHFormalization/ExplicitPrimePackageIdentity.lean:58:                (displacementCanonicalKernel (heatKernelG 1)) q.center s)
+RHFormalization/ExplicitPrimePackageIdentity.lean:65:    (displacementCanonicalKernel (heatKernelG 1))
+RHFormalization/PrimeSideAlignmentContract.lean:16:  displacementCanonicalKernel (heatKernelG 1)
+RHFormalization/PrimeSideStieltjesLaplaceKernel.lean:10:  displacementCanonicalKernel G := fun a _s => G a
+RHFormalization/PrimeSideTransformKernelPrototype.lean:16:  displacementCanonicalKernel (heatKernelG 1)
+RHFormalization/RHFromTsumPrincipalPart.lean:42:                (displacementCanonicalKernel (heatKernelG 1)) q.center s)
+RHFormalization/SelectedDWindowSoundCountingFactorBoundsInstance.lean:15:        (heatKernelG (1 : ℝ))
+RHFormalization/SelectedDWindowSoundCountingFactorBoundsInstance.lean:18:    Kshared := displacementCanonicalKernel (heatKernelG (1 : ℝ))
+RHFormalization/SelectedFiniteCanonicalPayloadInstance.lean:61:  fun _ => displacementCanonicalKernel (heatKernelG (1 : ℝ))
+RHFormalization/SelectedFiniteTraceSpikePayloadInstance.lean:54:  fun _ => displacementCanonicalKernel (heatKernelG (1 : ℝ))
+RHFormalization/SelectedRCutoffDetailedConstructionInstance.lean:13:      (heatKernelG (1 : ℝ))
+RHFormalization/SelectedTracePayloadFromStageFields.lean:47:  fun _ => displacementCanonicalKernel (heatKernelG (1 : ℝ))
+
+===== 3. LIVE SHIFTED-LAPLACE / STIELTJES REFERENCES =====
+RHFormalization/CorrectedFBTargets.lean:36:                  shiftedLaplaceHeatKernelC
+RHFormalization/CorrectedResidualBoundReduction.lean:34:                      shiftedLaplaceHeatKernelC
+RHFormalization/CorrectedResidualBoundReduction.lean:55:        - finiteCanonicalPrimePowerPackage (resolventIndices α) shiftedLaplaceHeatKernelC s‖
+RHFormalization/CorrectedResidualBoundReduction.lean:57:          + ‖finiteCanonicalPrimePowerPackage (resolventIndices α) shiftedLaplaceHeatKernelC s‖ := by
+RHFormalization/CorrectedResidualBoundReduction.lean:62:                (finiteCanonicalPrimePowerPackage (resolventIndices α) shiftedLaplaceHeatKernelC s)
+RHFormalization/CorrectedResolventDirectCancellationTarget.lean:32:                  shiftedLaplaceHeatKernelC
+RHFormalization/CorrectedResolventPayload.lean:27:    finiteCanonicalPrimePowerPackage (resolventIndices α) shiftedLaplaceHeatKernelC s
+RHFormalization/CorrectedResolventPayload.lean:30:      finiteCanonicalPrimePowerPackage (resolventIndices α) shiftedLaplaceHeatKernelC s
+RHFormalization/CorrectedResolventPayload.lean:34:  kernel := fun _ => shiftedLaplaceHeatKernelC
+RHFormalization/PrimeSideStieltjesLaplaceKernel.lean:4:# RHFormalization.PrimeSideStieltjesLaplaceKernel
+RHFormalization/PrimeSideStieltjesLaplaceKernel.lean:57:noncomputable def stieltjesLaplaceKernelCore
+RHFormalization/PrimeSideStieltjesLaplaceKernel.lean:69:  fun a s => stieltjesLaplaceKernelCore a s
+RHFormalization/PrimeSideStieltjesLaplaceKernel.lean:84:#check stieltjesLaplaceKernelCore
+RHFormalization/PrimeSideTransformKernelPrototype.lean:39:def shiftedLaplaceHeatKernelC : CanonicalKernelC :=
+RHFormalization/PrimeSideTransformKernelPrototype.lean:47:  canonicalPrimePowerPackageFromKernelTsum 0 shiftedLaplaceHeatKernelC
+RHFormalization/PrimeSideTransformKernelPrototype.lean:53:        q.weightC * shiftedLaplaceHeatKernelC q.center s := by
+RHFormalization/PrimeSideTransformKernelPrototype.lean:57:theorem shiftedLaplaceHeatKernelC_apply (a : ℝ) (s : ℂ) :
+RHFormalization/PrimeSideTransformKernelPrototype.lean:58:    shiftedLaplaceHeatKernelC a s =
+RHFormalization/PrimeSideTransformKernelPrototype.lean:64:#print axioms shiftedLaplaceHeatKernelC
+RHFormalization/PrimeSideTransformKernelPrototype.lean:67:#print axioms shiftedLaplaceHeatKernelC_apply
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:50:        ‖q.weightC * shiftedLaplaceHeatKernelC q.center s‖ ≤ u q
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:61:        finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:64:          q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:80:        finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:83:          q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:111:        finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:119:            finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:122:              q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:133:          finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:136:            q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:144:          finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceAbsConvMTest.lean:147:            q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:34:#check shiftedLaplaceHeatKernelC
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:42:theorem shiftedLaplaceHeatKernelC_holomorphicAt_of_shiftedSqrt
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:50:      (fun s : ℂ => shiftedLaplaceHeatKernelC a s)
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:164:      (fun s : ℂ => shiftedLaplaceHeatKernelC a s)
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:170:    simp [shiftedLaplaceHeatKernelC, shiftedLaplaceSqrt, Pi.mul_apply, neg_mul]
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:188:        q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:196:        (fun s : ℂ => shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:198:    shiftedLaplaceHeatKernelC_holomorphicAt_of_shiftedSqrt
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:205:          (fun s : ℂ => shiftedLaplaceHeatKernelC q.center s)))
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:212:          (fun s : ℂ => shiftedLaplaceHeatKernelC q.center s)))
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:214:      (fun s : ℂ => q.weightC * shiftedLaplaceHeatKernelC q.center s) := by
+RHFormalization/ShiftedLaplaceBRegularAtomic.lean:222:#print axioms shiftedLaplaceHeatKernelC_holomorphicAt_of_shiftedSqrt
+RHFormalization/ShiftedLaplaceBRegularFinite.lean:43:            q.weightC * shiftedLaplaceHeatKernelC q.center s))
+RHFormalization/ShiftedLaplaceBRegularFinite.lean:54:            q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceBRegularFinite.lean:72:      (finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceBRegularFromTLU.lean:43:          finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceBRegularFromTLU.lean:55:          (finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceBRegularFromTLU.lean:61:            (finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceBRegularFromTLU.lean:90:          finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceBRegularFromTLU.lean:122:          finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceBsharedMeromorphicFromTLU.lean:15:          finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceCapstoneTLU.lean:36:          finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceDFHExport.lean:1:import RHFormalization.ShiftedLaplaceFiniteOperatorLayer
+RHFormalization/ShiftedLaplaceDSharedBridge.lean:14:  Kshared = shiftedLaplaceHeatKernelC,
+RHFormalization/ShiftedLaplaceDSharedBridge.lean:32:  canonicalPrimePowerPackageFromKernelTsum sigma0 shiftedLaplaceHeatKernelC
+RHFormalization/ShiftedLaplaceDSharedBridge.lean:39:        q.weightC * shiftedLaplaceHeatKernelC q.center s := by
+RHFormalization/ShiftedLaplaceDSharedBridge.lean:49:    (hK : S.Kshared = shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceDSharedBridge.lean:65:    (hK : S.Kshared = shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:12:kernel to `shiftedLaplaceHeatKernelC`.
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:22:noncomputable def shiftedLaplaceKcan : DFiniteStage → CanonicalKernelC :=
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:23:  fun _ => shiftedLaplaceHeatKernelC
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:28:    shiftedLaplaceKcan α (PrimePowerPair.center (designedSpikeWitness.toPP α n)) s
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:31:noncomputable def shiftedLaplaceB_stage : DFiniteStage → ℂ → ℂ :=
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:40:noncomputable def shiftedLaplaceR_stage : DFiniteStage → ℂ → ℂ :=
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:42:    designedSpikeWitness.F_stage α s - shiftedLaplaceB_stage α s
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:46:      designedSpikeWitness.F_stage α s = shiftedLaplaceB_stage α s + shiftedLaplaceR_stage α s := by
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:48:  simp [shiftedLaplaceR_stage]
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:52:      shiftedLaplaceB_stage α s =
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:63:        shiftedLaplaceKcan α (designedSpikeWitness.toPP α n).center s := by
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:70:    shiftedLaplaceB_stage
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:71:    shiftedLaplaceR_stage
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:79:    shiftedLaplaceKcan
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:1:import RHFormalization.ShiftedLaplaceFiniteOperatorLayer
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:26:        = shiftedLaplaceB_stage α s + shiftedLaplaceR_stage α s := by
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:28:  simp [shiftedLaplaceR_stage]
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:34:    shiftedLaplaceB_stage
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:35:    shiftedLaplaceR_stage
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:43:    shiftedLaplaceKcan
+RHFormalization/ShiftedLaplaceKernelPatchBound.lean:13:    ‖shiftedLaplaceHeatKernelC a s‖ ≤ (1/(2*sigma)) * Real.exp (-(a) * sigma) := by
+RHFormalization/ShiftedLaplaceKernelPatchBound.lean:14:  unfold shiftedLaplaceHeatKernelC
+RHFormalization/ShiftedLaplaceLocalMTest.lean:53:    calc ‖q.weightC‖ * ‖shiftedLaplaceHeatKernelC q.center s‖
+RHFormalization/ShiftedLaplaceLogDerivIdentity.lean:34:    q.weightC * shiftedLaplaceHeatKernelC q.center s
+RHFormalization/ShiftedLaplaceLogDerivIdentity.lean:43:  rw [shiftedLaplaceHeatKernelC_apply, ← hw]
+RHFormalization/ShiftedLaplaceLogDerivIdentity.lean:143:      q.weightC * shiftedLaplaceHeatKernelC q.center s
+RHFormalization/ShiftedLaplaceLogDerivIdentity.lean:171:      = ∑' q : PrimePowerPair, q.weightC * shiftedLaplaceHeatKernelC q.center s :=
+RHFormalization/ShiftedLaplaceMajorant.lean:13:    ‖shiftedLaplaceHeatKernelC a s‖ ≤ Real.exp (-(a) / 2) := by
+RHFormalization/ShiftedLaplaceMajorant.lean:14:  unfold shiftedLaplaceHeatKernelC
+RHFormalization/ShiftedLaplaceMajorant.lean:45:    ‖q.weightC * shiftedLaplaceHeatKernelC q.center s‖ ≤ shiftedLaplaceMajorant q := by
+RHFormalization/ShiftedLaplaceModelExhaustionSigma1.lean:1:import RHFormalization.ShiftedLaplaceFiniteOperatorLayerSigma1
+RHFormalization/ShiftedLaplaceModelExhaustionSigma1.lean:21:    Summable (fun q : PrimePowerPair => q.weightC * shiftedLaplaceHeatKernelC q.center s) := by
+RHFormalization/ShiftedLaplaceModelExhaustionSigma1.lean:35:  have hb : ‖q.weightC * shiftedLaplaceHeatKernelC q.center s‖ ≤ (patchMTestData σ hσ_gt).u q :=
+RHFormalization/ShiftedLaplaceModelExhaustionSigma1.lean:73:        (q.weightC * shiftedLaplaceHeatKernelC q.center s) ≠ 0 →
+RHFormalization/ShiftedLaplaceModelExhaustionSigma1.lean:95:        (∑' q : PrimePowerPair, q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceModelFiniteCanonicalLimit.lean:1:import RHFormalization.ShiftedLaplaceFiniteOperatorLayer
+RHFormalization/ShiftedLaplaceOmegaGeometry.lean:66:      (finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplacePatchMTest.lean:37:      ‖q.weightC * shiftedLaplaceHeatKernelC q.center s0‖ = patchMajorant sigma0 q := by
+RHFormalization/ShiftedLaplacePatchMTest.lean:39:    rw [norm_mul, norm_shiftedLaplaceHeatKernelC, hnorm, hre]
+RHFormalization/ShiftedLaplacePatchMTest.lean:41:  have hfun : (fun q => ‖q.weightC * shiftedLaplaceHeatKernelC q.center s0‖)
+RHFormalization/ShiftedLaplacePatchMTest.lean:53:    calc ‖q.weightC‖ * ‖shiftedLaplaceHeatKernelC q.center s‖
+RHFormalization/ShiftedLaplacePrimeSummable.lean:14:`∑' q, weightC q * shiftedLaplaceHeatKernelC q.center s` converges absolutely.
+RHFormalization/ShiftedLaplacePrimeSummable.lean:30:theorem norm_shiftedLaplaceHeatKernelC
+RHFormalization/ShiftedLaplacePrimeSummable.lean:32:    ‖shiftedLaplaceHeatKernelC a s‖
+RHFormalization/ShiftedLaplacePrimeSummable.lean:35:  unfold shiftedLaplaceHeatKernelC
+RHFormalization/ShiftedLaplacePrimeSummable.lean:122:      ‖q.1.weightC * shiftedLaplaceHeatKernelC q.1.center s‖) := by
+RHFormalization/ShiftedLaplacePrimeSummable.lean:144:      norm_shiftedLaplaceHeatKernelC]
+RHFormalization/ShiftedLaplacePrimeSummable.lean:187:      ‖q.weightC * shiftedLaplaceHeatKernelC q.center s‖) := by
+RHFormalization/ShiftedLaplacePrimeSummable.lean:189:      (fun q : PrimePowerPair => ‖q.weightC * shiftedLaplaceHeatKernelC q.center s‖)
+RHFormalization/ShiftedLaplacePrimeSummable.lean:213:      q.weightC * shiftedLaplaceHeatKernelC q.center s) :=
+RHFormalization/ShiftedLaplaceSqrtBranch.lean:101:      (finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceSqrtNonzero.lean:56:      (finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceTLUFromLocalMTest.lean:50:        ‖q.weightC * shiftedLaplaceHeatKernelC q.center s‖ ≤ u z0 q
+RHFormalization/ShiftedLaplaceTLUFromLocalMTest.lean:61:        finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceTLUFromLocalMTest.lean:69:            finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceTLUFromLocalMTest.lean:72:              q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceTLUFromLocalMTest.lean:79:            finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceTLUFromLocalMTest.lean:82:              q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceTLUFromLocalMTest.lean:94:          finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceTLUFromLocalMTest.lean:97:            q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceTLUFromLocalMTest.lean:105:          finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/ShiftedLaplaceTLUFromLocalMTest.lean:108:            q.weightC * shiftedLaplaceHeatKernelC q.center s)
+RHFormalization/ShiftedLaplaceUnconditional.lean:54:          finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
+RHFormalization/StieltjesKernelHolo.lean:1:import RHFormalization.PrimeSideStieltjesLaplaceKernel
+RHFormalization/StieltjesKernelHolo.lean:22:theorem stieltjesLaplaceKernelCore_analyticAt
+RHFormalization/StieltjesKernelHolo.lean:24:    AnalyticAt ℂ (fun z => stieltjesLaplaceKernelCore a z) s := by
+RHFormalization/StieltjesKernelHolo.lean:53:  unfold stieltjesLaplaceKernelCore
+RHFormalization/StieltjesKernelHolo.lean:56:#print axioms stieltjesLaplaceKernelCore_analyticAt
+RHFormalization/YpBrick1AxiomCheck.lean:1:import RHFormalization.ShiftedLaplaceFiniteOperatorLayer
+
+===== 4. ZERO / DESIGNED PLACEHOLDER REFERENCES IN FINAL CANDIDATES =====
+RHFormalization/PrimeOperatorDFiniteStage.lean:14:* `native := zeroNativeStage`
+RHFormalization/PrimeOperatorDFiniteStage.lean:15:* `appendixDFiniteFStage := fun _ => 0`
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:1:import RHFormalization.DesignedOperatorLayer
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:28:    shiftedLaplaceKcan α (PrimePowerPair.center (designedSpikeWitness.toPP α n)) s
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:34:      (designedSpikeWitness.activeIndices α)
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:42:    designedSpikeWitness.F_stage α s - shiftedLaplaceB_stage α s
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:45:    ∀ (α : DFiniteStage), ∀ s ∈ RightHalfPlane designedSpikeWitness.sigma0,
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:46:      designedSpikeWitness.F_stage α s = shiftedLaplaceB_stage α s + shiftedLaplaceR_stage α s := by
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:54:          (designedSpikeWitness.activeIndices α)
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:61:    ∀ (α : DFiniteStage), ∀ n ∈ designedSpikeWitness.activeIndices α, ∀ s : ℂ,
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:63:        shiftedLaplaceKcan α (designedSpikeWitness.toPP α n).center s := by
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:69:    designedSpikeWitness.F_stage
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:72:    designedSpikeWitness.sigma0
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:74:    designedSpikeWitness.activeIndices
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:76:    designedSpikeWitness.h_activeIndices_active
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:78:    designedSpikeWitness.toPP
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:80:    designedSpikeWitness.hinj
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:81:    designedSpikeWitness.hcoeff
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:25:      designedSpikeWitness.F_stage α s
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:33:    designedSpikeWitness.F_stage
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:38:    designedSpikeWitness.activeIndices
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:40:    designedSpikeWitness.h_activeIndices_active
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:42:    designedSpikeWitness.toPP
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:44:    designedSpikeWitness.hinj
+RHFormalization/ShiftedLaplaceFiniteOperatorLayerSigma1.lean:45:    designedSpikeWitness.hcoeff
+RHFormalization/ShiftedLaplaceModelExhaustionSigma1.lean:41:    (designedSpikeWitness.activeIndices (primePowerStage n)).image
+RHFormalization/ShiftedLaplaceModelExhaustionSigma1.lean:42:        (designedSpikeWitness.toPP (primePowerStage n))
+RHFormalization/ShiftedLaplaceModelExhaustionSigma1.lean:74:        ∀ᶠ n in atTop, q ∈ (designedSpikeWitness.activeIndices (primePowerStage n)).image
+RHFormalization/ShiftedLaplaceModelExhaustionSigma1.lean:75:          (designedSpikeWitness.toPP (primePowerStage n)) := by
+RHFormalization/ShiftedLaplaceRepresentativeZpole.lean:15:  refine ⟨fun _ => 0, analyticAt_const, ?_⟩
+
+===== 5. GENERIC DEXPORT REDUCTIONS THAT SHOULD SURVIVE =====
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:68:theorem ArithmeticPrimeDExport_fixedStage_of_im_lower_actual_kernel
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:87:    ArithmeticPrimeDExport_fixedStage_of_im_lower_and_kernel_bounds
+RHFormalization/ArithmeticPrimeActualKernelBound.lean:102:#print axioms ArithmeticPrimeDExport_fixedStage_of_im_lower_actual_kernel
+RHFormalization/ArithmeticPrimeBStageBound.lean:9:  ArithmeticPrimeDExport_of_F_B_bounds.
+RHFormalization/ArithmeticPrimeDExportFixedStage.lean:27:theorem ArithmeticPrimeDExport_fixedStage_of_im_lower_and_B_terms
+RHFormalization/ArithmeticPrimeDExportFixedStage.lean:83:  exact ArithmeticPrimeDExport_of_F_B_bounds
+RHFormalization/ArithmeticPrimeDExportFixedStage.lean:86:#print axioms ArithmeticPrimeDExport_fixedStage_of_im_lower_and_B_terms
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:64:theorem ArithmeticPrimeDExport_fixedStage_of_im_lower_and_kernel_bounds
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:94:    ArithmeticPrimeDExport_fixedStage_of_im_lower_and_B_terms
+RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:109:#print axioms ArithmeticPrimeDExport_fixedStage_of_im_lower_and_kernel_bounds
+RHFormalization/ArithmeticPrimeFStageBound.lean:9:  ArithmeticPrimeDExport_of_F_B_bounds.
+RHFormalization/ArithmeticPrimeFStageBound.lean:52:lower bound. This is useful for applying `ArithmeticPrimeDExport_of_F_B_bounds`.
+RHFormalization/ArithmeticPrimeGenericDExportBounds.lean:31:theorem ArithmeticPrimeDExport_of_generic_F_B_bounds
+RHFormalization/ArithmeticPrimeGenericDExportBounds.lean:60:theorem ArithmeticPrimeDExport_of_im_lower_and_generic_B_bound
+RHFormalization/ArithmeticPrimeGenericDExportBounds.lean:80:  exact ArithmeticPrimeDExport_of_generic_F_B_bounds
+RHFormalization/ArithmeticPrimeGenericDExportBounds.lean:83:#print axioms ArithmeticPrimeDExport_of_generic_F_B_bounds
+RHFormalization/ArithmeticPrimeGenericDExportBounds.lean:84:#print axioms ArithmeticPrimeDExport_of_im_lower_and_generic_B_bound
+RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:79:theorem ArithmeticPrimeDExport_of_F_B_bounds
+RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:110:#print axioms ArithmeticPrimeDExport_of_F_B_bounds
+
+===== 6. READ LIVE SHIFTED-LAPLACE LAYER =====
+import RHFormalization.DesignedOperatorLayer
+import RHFormalization.SelectedFiniteTraceSpikePayloadFromImageBridge
+import RHFormalization.PrimeSideTransformKernelPrototype
+
+/-!
+# Shifted-Laplace finite operator layer
+
+A `DFiniteStagePackageFromOperatorLayer` whose finite-stage `B_stage` computes the
+SHIFTED-LAPLACE kernel (not the displacement kernel). Reuses every kernel-agnostic
+field of the designed spike witness (active indices, Nat→prime-power map, soundness,
+completeness, injectivity, coefficient compatibility) and only changes the canonical
+kernel to `shiftedLaplaceHeatKernelC`.
+-/
+
+namespace RHFormalization
+
+noncomputable section
+
+open RHFormalization
+
+/-- The shifted-Laplace canonical kernel choice (stage-independent). -/
+noncomputable def shiftedLaplaceKcan : DFiniteStage → CanonicalKernelC :=
+  fun _ => shiftedLaplaceHeatKernelC
+
+/-- Shifted-Laplace spike kernel induced via the designed witness's Nat→prime-power map. -/
+noncomputable def shiftedLaplaceSpikeKernel : DFiniteStage → ℕ → ℂ → ℂ :=
+  fun α n s =>
+    shiftedLaplaceKcan α (PrimePowerPair.center (designedSpikeWitness.toPP α n)) s
+
+/-- Shifted-Laplace finite diagonal-spike B_stage. -/
+noncomputable def shiftedLaplaceB_stage : DFiniteStage → ℂ → ℂ :=
+  fun α s =>
+    finiteNatSpikePackage
+      (designedSpikeWitness.activeIndices α)
+      α.diagonalSpikeContribution
+      (shiftedLaplaceSpikeKernel α)
+      s
+
+/-- Shifted-Laplace remainder. -/
+noncomputable def shiftedLaplaceR_stage : DFiniteStage → ℂ → ℂ :=
+  fun α s =>
+    designedSpikeWitness.F_stage α s - shiftedLaplaceB_stage α s
+
+theorem shiftedLaplace_stage_split :
+    ∀ (α : DFiniteStage), ∀ s ∈ RightHalfPlane designedSpikeWitness.sigma0,
+      designedSpikeWitness.F_stage α s = shiftedLaplaceB_stage α s + shiftedLaplaceR_stage α s := by
+  intro α s hs
+  simp [shiftedLaplaceR_stage]
+
+theorem shiftedLaplace_B_stage_eq_diagonal_sum :
+    ∀ (α : DFiniteStage) (s : ℂ),
+      shiftedLaplaceB_stage α s =
+        finiteNatSpikePackage
+          (designedSpikeWitness.activeIndices α)
+          α.diagonalSpikeContribution
+          (shiftedLaplaceSpikeKernel α)
+          s := by
+  intro α s; rfl
+
+theorem shiftedLaplace_hkernel :
+    ∀ (α : DFiniteStage), ∀ n ∈ designedSpikeWitness.activeIndices α, ∀ s : ℂ,
+      shiftedLaplaceSpikeKernel α n s =
+        shiftedLaplaceKcan α (designedSpikeWitness.toPP α n).center s := by
+  intro α n hn s; rfl
+
+/-- The shifted-Laplace selected finite trace/spike payload. -/
+noncomputable def shiftedLaplaceTraceSpikePayload : SelectedFiniteTraceSpikePayload :=
+  buildSelectedFiniteTraceSpikePayloadFromImageBridge
+    designedSpikeWitness.F_stage
+    shiftedLaplaceB_stage
+    shiftedLaplaceR_stage
+    designedSpikeWitness.sigma0
+    shiftedLaplace_stage_split
+    designedSpikeWitness.activeIndices
+    shiftedLaplaceSpikeKernel
+    designedSpikeWitness.h_activeIndices_active
+    shiftedLaplace_B_stage_eq_diagonal_sum
+    designedSpikeWitness.toPP
+    shiftedLaplaceKcan
+    designedSpikeWitness.hinj
+    designedSpikeWitness.hcoeff
+    shiftedLaplace_hkernel
+
+/-- **The shifted-Laplace finite operator layer.** Its `B_stage` computes the
+shifted-Laplace kernel finite sum. -/
+noncomputable def shiftedLaplaceFiniteOperatorLayer : DFiniteStagePackageFromOperatorLayer :=
+  buildSelectedFiniteOperatorLayerFromTraceSpikePayload shiftedLaplaceTraceSpikePayload
+
+end
+
+end RHFormalization
+
+===== 7. READ LIVE SHIFTED-LAPLACE KERNEL BOUND =====
+import RHFormalization.ShiftedLaplaceAbsConvMTest
+import RHFormalization.ShiftedLaplaceRegionFacts
+import RHFormalization.ShiftedLaplaceBRegularAtomic
+import Mathlib
+
+namespace RHFormalization
+noncomputable section
+open Complex Set Topology Filter
+
+theorem shiftedLaplace_kernel_norm_le_of_re_ge
+    (a : ℝ) (ha : 0 ≤ a) (sigma : ℝ) (hsig : 0 < sigma) (s : ℂ)
+    (hs : sigma ≤ (Complex.sqrt (s + (1/4:ℂ))).re) :
+    ‖shiftedLaplaceHeatKernelC a s‖ ≤ (1/(2*sigma)) * Real.exp (-(a) * sigma) := by
+  unfold shiftedLaplaceHeatKernelC
+  rw [norm_mul, Complex.norm_exp]
+  set w := Complex.sqrt (s + (1/4:ℂ)) with hw
+  have hwre_pos : (0:ℝ) < w.re := lt_of_lt_of_le hsig hs
+  have hnorm_w : sigma ≤ ‖w‖ := le_trans hs (Complex.re_le_norm w)
+  have hnorm_pos : (0:ℝ) < ‖w‖ := lt_of_lt_of_le hsig hnorm_w
+  have hbound1 : ‖(1:ℂ) / (2 * w)‖ ≤ 1/(2*sigma) := by
+    rw [norm_div, norm_mul, norm_one, Complex.norm_two]
+    apply one_div_le_one_div_of_le (by positivity)
+    linarith
+  have hexp : (-(a:ℂ) * w).re ≤ -(a) * sigma := by
+    rw [Complex.mul_re]
+    simp only [Complex.neg_re, Complex.neg_im, Complex.ofReal_re, Complex.ofReal_im,
+      neg_zero, zero_mul, sub_zero]
+    nlinarith [hs, ha, hsig]
+  calc ‖(1:ℂ)/(2*w)‖ * Real.exp ((-(a:ℂ)*w).re)
+      ≤ (1/(2*sigma)) * Real.exp (-(a)*sigma) := by
+        apply mul_le_mul hbound1 (Real.exp_le_exp.mpr hexp) (Real.exp_nonneg _)
+        positivity
+    _ = (1/(2*sigma)) * Real.exp (-(a)*sigma) := by ring
+
+#print axioms shiftedLaplace_kernel_norm_le_of_re_ge
+
+end
+end RHFormalization
+
+===== 8. CHECK BUILD STATUS OF CORE BANKED FILES =====
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:112:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8645/8667] Replayed RHFormalization.CanonicalPrimePowerHeatKernelWeightedSummabilityTarget
+warning: RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:131:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:136:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8647/8667] Replayed RHFormalization.CanonicalPrimePowerHeatKernelNormBounds
+warning: RHFormalization/CanonicalPrimePowerHeatKernelNormBounds.lean:66:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8650/8667] Replayed RHFormalization.CanonicalPrimePowerHeatKernelGaussianCoreBounds
+warning: RHFormalization/CanonicalPrimePowerHeatKernelGaussianCoreBounds.lean:26:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8652/8667] Replayed RHFormalization.CanonicalPrimePowerHeatKernelLogGaussianTail
+warning: RHFormalization/CanonicalPrimePowerHeatKernelLogGaussianTail.lean:82:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8655/8667] Replayed RHFormalization.CanonicalPrimePowerHeatKernelGaussianCoreSummability
+warning: RHFormalization/CanonicalPrimePowerHeatKernelGaussianCoreSummability.lean:97:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+ℹ [8660/8667] Replayed RHFormalization.ArithmeticPrimeResidualWitnessBridge
+info: RHFormalization/ArithmeticPrimeResidualWitnessBridge.lean:96:0: 'RHFormalization.stageFieldSpikeExtractionWitness' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RHFormalization/ArithmeticPrimeResidualWitnessBridge.lean:97:0: 'RHFormalization.stageFieldWitness_arithmetic_F_stage' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RHFormalization/ArithmeticPrimeResidualWitnessBridge.lean:98:0: 'RHFormalization.arithmeticPrimeResidual_eq_stageField_R_stage' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8661/8667] Replayed RHFormalization.ArithmeticPrimeDExportFromStageBound
+info: RHFormalization/ArithmeticPrimeDExportFromStageBound.lean:65:0: 'RHFormalization.ArithmeticPrimeDExport_of_stageField_R_stage_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [8662/8667] Replayed RHFormalization.ArithmeticPrimeRStageBoundSplit
+warning: RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:39:5: unused variable `hCF`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:40:5: unused variable `hCB`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:109:0: 'RHFormalization.stageField_R_stage_bound_of_F_B_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RHFormalization/ArithmeticPrimeRStageBoundSplit.lean:110:0: 'RHFormalization.ArithmeticPrimeDExport_of_F_B_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8663/8667] Replayed RHFormalization.FstageResolventBound
+info: RHFormalization/FstageResolventBound.lean:37:0: 'RHFormalization.FstageFinite_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8664/8667] Replayed RHFormalization.ArithmeticPrimeFStageBound
+info: RHFormalization/ArithmeticPrimeFStageBound.lean:81:0: 'RHFormalization.arithmeticPrimeFStage_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RHFormalization/ArithmeticPrimeFStageBound.lean:82:0: 'RHFormalization.arithmeticPrimeFStage_bound_on_K_of_im_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [8665/8667] Replayed RHFormalization.ArithmeticPrimeBStageBound
+warning: RHFormalization/ArithmeticPrimeBStageBound.lean:44:16: This simp argument is unused:
+  norm_mul
+
+Hint: Omit it from the simp argument list.
+  simp ̵[̵n̵o̵r̵m̵_̵m̵u̵l̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: RHFormalization/ArithmeticPrimeBStageBound.lean:94:0: 'RHFormalization.finiteNatSpikePackage_norm_le_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RHFormalization/ArithmeticPrimeBStageBound.lean:95:0: 'RHFormalization.stageField_B_stage_norm_le_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: RHFormalization/ArithmeticPrimeBStageBound.lean:96:0: 'RHFormalization.stageField_B_stage_bound_on_K_of_term_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8666/8667] Replayed RHFormalization.ArithmeticPrimeDExportFixedStage
+info: RHFormalization/ArithmeticPrimeDExportFixedStage.lean:86:0: 'RHFormalization.ArithmeticPrimeDExport_fixedStage_of_im_lower_and_B_terms' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [8667/8667] Replayed RHFormalization.ArithmeticPrimeDExportFromKernelBounds
+warning: RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:33:5: unused variable `hkernel_nonneg`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:108:0: 'RHFormalization.stageField_B_stage_bound_on_K_of_kernel_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: RHFormalization/ArithmeticPrimeDExportFromKernelBounds.lean:109:0: 'RHFormalization.ArithmeticPrimeDExport_fixedStage_of_im_lower_and_kernel_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (8667 jobs).

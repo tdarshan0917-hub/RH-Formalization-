@@ -1,0 +1,10 @@
+import RHFormalization
+
+namespace RHFormalization
+
+#print axioms appendixD_exists_DFiniteStage_with_R_ge
+#print axioms appendixD_exists_DFiniteStage_with_R_ge_structural
+#check RH_follows_from_packaged_spine
+#print axioms RH_follows_from_packaged_spine
+
+end RHFormalization

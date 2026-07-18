@@ -39,7 +39,6 @@ import RHFormalization.PuncturedMeromorphicIdentityEndpoint
 import RHFormalization.OmegaPuncturedIdentityEndpoint
 import RHFormalization.OmegaPuncturedIdentityFromCodiscrete
 import RHFormalization.DefaultOmegaPreperfect
-import RHFormalization.OmegaCodiscreteIdentityFromNormalForms
 import RHFormalization.OmegaNormalFormPropagationEndpoint
 import RHFormalization.InterfaceBridgeNonnegativeFromPlain
 import RHFormalization.ONFPLocalFrequent
@@ -161,3 +160,96 @@ import RHFormalization.SelectedFiniteTraceSpikePayload
 import RHFormalization.SelectedFiniteOperatorLayer
 import RHFormalization.FiniteNatPrimePowerBridge
 import RHFormalization.SelectedFiniteCanonicalPayload
+import RHFormalization.ZeroNativeStageWitness
+
+import RHFormalization.AppendixDPrimePowerPairCode
+
+import RHFormalization.AppendixDSpikePairCodeFromCutoff
+
+import RHFormalization.AppendixDGuardedCenterCutoffFinite
+
+import RHFormalization.AppendixDActiveSpikeCodesFromCenterCutoff
+
+import RHFormalization.AppendixDStageExistenceAssumption
+import RHFormalization.FinalSpineFromRealZeroFree
+
+import RHFormalization.DefaultMeromorphicAlgebraAPI
+
+import RHFormalization.MainTheoremFromRealZeroFreeDefaultA
+
+import RHFormalization.DefaultConnectedOmegaAPI
+
+import RHFormalization.MainTheoremFromRealZeroFreeDefaultAC
+
+import RHFormalization.MainTheoremFromRealZeroFreeOmegaPunctured
+
+import RHFormalization.MainTheoremFromRealZeroFreeOmegaCodiscrete
+
+import RHFormalization.CurrentFrontierEndpoint
+
+import RHFormalization.OmegaCodiscreteIdentityFromNormalForms
+
+import RHFormalization.DefaultOmegaCodiscreteIdentity
+
+import RHFormalization.InterfaceFromCommonCshared
+
+import RHFormalization.DefaultPrincipalPartGenuinePole
+
+import RHFormalization.DefaultPoleNormalFormLayer
+
+import RHFormalization.EmptyDFiniteStage
+
+import RHFormalization.ConcretePrimePowerEnumeration
+
+import RHFormalization.PrimePowerDFiniteStage
+
+import RHFormalization.DesignedOperatorLayer
+
+import RHFormalization.DesignedRCutoffS
+
+import RHFormalization.DesignedDetailedConstruction
+
+import RHFormalization.DefaultZeroExhaustion
+
+import RHFormalization.DefaultZeroMultiplicity
+
+import RHFormalization.ReflectionPairPoleClass
+
+import RHFormalization.PairPoleIsolation
+
+import RHFormalization.HPPStabilization
+
+import RHFormalization.SphereUniformConvergence
+
+import RHFormalization.HPPCauchyUpgrade
+
+import RHFormalization.HPPEndgame
+
+import RHFormalization.MeromorphyOffCritical
+
+import RHFormalization.MeromorphyAwayFromPoles
+
+import RHFormalization.MeromorphyAssembly
+
+import RHFormalization.ConvergenceInfrastructure
+import RHFormalization.ZpoleFromSeries
+
+import RHFormalization.ExplicitPrimePackageIdentity
+
+import RHFormalization.ExplicitFormulaRegularBranch
+
+import RHFormalization.ExplicitFormulaHolomorphyFromRegular
+
+import RHFormalization.ExplicitFormulaHolomorphyFromTsum
+
+import RHFormalization.ExplicitFormulaLocalReduction
+
+import RHFormalization.ExplicitFormulaBRegular
+
+import RHFormalization.DFiniteStageProviderFields
+
+import RHFormalization.SelectedTracePayloadFromStageFields
+
+import RHFormalization.SelectedTracePayloadFromStageFieldsClosed
+
+import RHFormalization.SelectedOperatorLayerFromStageFields

@@ -1,0 +1,24 @@
+import RHFormalization.MainTheoremFromRealZeroFreeDefaultAC
+import Mathlib.Analysis.Meromorphic.Basic
+import Mathlib.Analysis.Meromorphic.IsolatedZeros
+import Mathlib.Analysis.Analytic.IsolatedZeros
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex Set Filter
+
+#check MeromorphicIdentityPrincipleAPI
+#print MeromorphicIdentityPrincipleAPI
+
+#check MeromorphicAt.frequently_eq_iff_eventuallyEq
+#check MeromorphicAt.eventuallyEq_nhdsNE_of_eventuallyEq_codiscreteWithin
+#check MeromorphicAt.eventuallyEq_nhdsNE_of_eventuallyEq_codiscreteWithin_preperfect
+#check AnalyticOnNhd.eqOn_of_preconnected_of_eventuallyEq
+#check AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq
+#check AnalyticOnNhd.eqOn_of_preconnected_of_mem_closure
+
+end
+
+end RHFormalization

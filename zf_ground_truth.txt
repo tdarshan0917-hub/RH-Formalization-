@@ -1,0 +1,79 @@
+===== A. ZetaZeroFacts full definition =====
+RHFormalization/Basic.lean-61-  riemannZeta ρ = 0 ∧ 0 < ρ.re ∧ ρ.re < 1
+RHFormalization/Basic.lean-62-
+RHFormalization/Basic.lean-63-/-- Classical zero facts needed by the geometry layer. -/
+RHFormalization/Basic.lean:64:structure ZetaZeroFacts where
+RHFormalization/Basic.lean-65-  nontrivial_zero_im_ne_zero :
+RHFormalization/Basic.lean-66-    ∀ ρ : ℂ, IsNontrivialZetaZero ρ → ρ.im ≠ 0
+RHFormalization/Basic.lean-67-
+RHFormalization/Basic.lean-68-/-- The Riemann Hypothesis in the correct mathematical form. -/
+RHFormalization/Basic.lean-69-def RiemannHypothesis : Prop :=
+RHFormalization/Basic.lean-70-  ∀ ρ : ℂ, IsNontrivialZetaZero ρ → ρ.re = (1 / 2 : ℝ)
+RHFormalization/Basic.lean-71-
+RHFormalization/Basic.lean-72-/-- Off-critical-line predicate. -/
+RHFormalization/Basic.lean-73-def IsOffCritical (ρ : ℂ) : Prop :=
+RHFormalization/Basic.lean-74-  ρ.re ≠ (1 / 2 : ℝ)
+RHFormalization/Basic.lean-75-
+RHFormalization/Basic.lean-76-/-- A hypothetical off-critical nontrivial zero and its induced pole point. -/
+RHFormalization/Basic.lean-77-structure ZeroWitness where
+RHFormalization/Basic.lean-78-  ρ : ℂ
+RHFormalization/Basic.lean-79-  h_zero : IsNontrivialZetaZero ρ
+RHFormalization/Basic.lean-80-  h_offline : IsOffCritical ρ
+RHFormalization/Basic.lean-81-  s0 : ℂ
+RHFormalization/Basic.lean-82-  hs0_def : s0 = polePoint ρ
+RHFormalization/Basic.lean-83-  hs0_in_Omega : s0 ∈ Ω
+RHFormalization/Basic.lean-84-
+RHFormalization/Basic.lean-85-/-- Frozen prime-power spike weight convention at scalar level:
+RHFormalization/Basic.lean-86-`w(q)=Λ(q)/√q`.
+RHFormalization/Basic.lean-87-
+RHFormalization/Basic.lean-88-The full prime-power indexing layer is not part of this base file; this
+RHFormalization/Basic.lean-89-records the normalization interface.
+RHFormalization/Basic.lean-90--/
+RHFormalization/Basic.lean-91-def spikeWeight (Λq q : ℝ) : ℝ :=
+RHFormalization/Basic.lean-92-  Λq / Real.sqrt q
+RHFormalization/Basic.lean-93-
+RHFormalization/Basic.lean-94-end
+RHFormalization/Basic.lean-95-
+RHFormalization/Basic.lean-96-end RHFormalization
+===== B. the default builder, full body =====
+RHFormalization/DefaultZetaZeroFacts.lean
+RHFormalization/DefaultZetaZeroFacts.lean-22-Parameterized constructor for `ZetaZeroFacts`.
+RHFormalization/DefaultZetaZeroFacts.lean-23-
+RHFormalization/DefaultZetaZeroFacts.lean-24-If we have the classical fact that `riemannZeta s ≠ 0` for real
+RHFormalization/DefaultZetaZeroFacts.lean-25-`s` in the open interval `(0,1)`, then `ZetaZeroFacts` follows.
+RHFormalization/DefaultZetaZeroFacts.lean-26--/
+RHFormalization/DefaultZetaZeroFacts.lean:27:def defaultZetaZeroFacts_of_realZeroFree
+RHFormalization/DefaultZetaZeroFacts.lean-28-    (h_real_zero_free :
+RHFormalization/DefaultZetaZeroFacts.lean-29-      ∀ s : ℂ, s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0) :
+RHFormalization/DefaultZetaZeroFacts.lean-30-    ZetaZeroFacts where
+RHFormalization/DefaultZetaZeroFacts.lean-31-  nontrivial_zero_im_ne_zero := by
+RHFormalization/DefaultZetaZeroFacts.lean-32-    intro ρ hρ h_im
+RHFormalization/DefaultZetaZeroFacts.lean-33-    obtain ⟨h_zero, h_pos, h_lt⟩ := hρ
+RHFormalization/DefaultZetaZeroFacts.lean-34-    exact h_real_zero_free ρ h_im h_pos h_lt h_zero
+RHFormalization/DefaultZetaZeroFacts.lean-35-
+RHFormalization/DefaultZetaZeroFacts.lean-36-end
+RHFormalization/DefaultZetaZeroFacts.lean-37-
+RHFormalization/DefaultZetaZeroFacts.lean-38-end RHFormalization
+===== C. Mathlib: zeta sign/nonvanishing on real (0,1) =====
+.lake/packages/mathlib/Mathlib/NumberTheory/ModularForms/EisensteinSeries/QExpansion.lean:283:  have z2 : riemannZeta k ≠ 0 := riemannZeta_ne_zero_of_one_lt_re <| by norm_cast; grind
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaValues.lean:27:- `riemannZeta_neg_nat_eq_bernoulli` : for any `k ∈ ℕ` we have the formula
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaValues.lean:204:`riemannZeta_neg_nat_eq_bernoulli` for values at negative integers (equivalent to the above via
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaValues.lean:228:theorem riemannZeta_neg_nat_eq_bernoulli' (k : ℕ) :
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaValues.lean:239:theorem riemannZeta_neg_nat_eq_bernoulli (k : ℕ) :
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaValues.lean:241:  rw [riemannZeta_neg_nat_eq_bernoulli', bernoulli, Rat.cast_mul, Rat.cast_pow, Rat.cast_neg,
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/Dirichlet.lean:326:lemma riemannZeta_ne_zero_of_one_lt_re {s : ℂ} (hs : 1 < s.re) : riemannZeta s ≠ 0 :=
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/RiemannZeta.lean:157:theorem riemannZeta_neg_two_mul_nat_add_one (n : ℕ) : riemannZeta (-2 * (n + 1)) = 0 :=
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/ZetaZeros.lean:42:  · exact riemannZeta_ne_zero_of_one_le_re Nat.one_le_ofNat
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/Nonvanishing.lean:22:`riemannZeta_ne_zero_of_one_le_re` (which does not require `s ≠ 1`, since the junk value at `s = 1`
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/Nonvanishing.lean:190:  have := riemannZeta_neg_two_mul_nat_add_one 0
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/Nonvanishing.lean:410:lemma _root_.riemannZeta_ne_zero_of_one_le_re ⦃s : ℂ⦄ (hs : 1 ≤ s.re) :
+===== D. Mathlib: eta / alternating zeta ingredients =====
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaValues.lean:124:theorem hurwitzZetaEven_one_sub_two_mul_nat (hk : k ≠ 0) (hx : x ∈ Icc (0 : ℝ) 1) :
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaValues.lean:167:private lemma hurwitzZeta_one_sub_two_mul_nat (hk : k ≠ 0) (hx : x ∈ Icc (0 : ℝ) 1) :
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaValues.lean:171:    rw [hurwitzZeta, this, add_zero, hurwitzZetaEven_one_sub_two_mul_nat hk hx]
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/HurwitzZetaValues.lean:194:  · exact_mod_cast hurwitzZeta_one_sub_two_mul_nat (by lia : n + 1 ≠ 0) hx
+===== E. Mathlib: functional equation + Gamma real values =====
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/RiemannZeta.lean:34:* `completedRiemannZeta₀_one_sub`, `completedRiemannZeta_one_sub`, and `riemannZeta_one_sub` :
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/RiemannZeta.lean:153:    riemannZeta s = completedRiemannZeta s / Gammaℝ s := by
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/RiemannZeta.lean:162:theorem riemannZeta_one_sub {s : ℂ} (hs : ∀ n : ℕ, s ≠ -n) (hs' : s ≠ 1) :
+.lake/packages/mathlib/Mathlib/NumberTheory/LSeries/RiemannZeta.lean:180:  simp only [this, Gammaℝ_def, mul_zero, zero_mul, Real.cos_zero, ofReal_one, mul_one, mul_one_div,

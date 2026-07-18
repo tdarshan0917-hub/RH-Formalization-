@@ -1,0 +1,16 @@
+import RHFormalization.DFHLimitConcrete
+import RHFormalization.DMasterResidualConcrete
+import RHFormalization.DResidualSectorBoundsConcrete
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction
+
+namespace RHFormalization
+
+#check buildDFHLimitDataFromCompactUniform
+#check buildDMasterResidualDataFromCompactUniform
+#check buildDResidualSectorBoundsAPIFromCompactUniform
+
+#print buildDFHLimitDataFromCompactUniform
+#print buildDMasterResidualDataFromCompactUniform
+#print buildDResidualSectorBoundsAPIFromCompactUniform
+
+end RHFormalization

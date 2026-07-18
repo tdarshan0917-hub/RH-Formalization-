@@ -1,0 +1,57 @@
+import RHFormalization.GlobalMeromorphicIdentity
+import Mathlib.Analysis.Meromorphic.Basic
+import Mathlib.Analysis.Analytic.IsolatedZeros
+
+/-!
+# RHFormalization.DefaultMeromorphicAlgebraAPI
+
+Theorem-backed default implementation of `MeromorphicAlgebraAPI`.
+
+This closes the algebraic meromorphicity wrapper:
+* analytic-on functions on an open set are meromorphic-on;
+* holomorphic minus meromorphic is meromorphic.
+
+No manuscript-specific analytic content is introduced here.
+-/
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex
+
+/-- Analytic-on functions on an open set are meromorphic-on. -/
+theorem analyticOn_isOpen_meromorphicOnC
+    (f : ℂ → ℂ) (U : Set ℂ)
+    (hU : IsOpen U)
+    (hf : HolomorphicOnC f U) :
+    MeromorphicOnC f U := by
+  intro z hz
+  have hAt : AnalyticAt ℂ f z :=
+    AnalyticOn.analyticAt (hU.mem_nhds hz) hf
+  exact hAt.meromorphicAt
+
+/-- Holomorphic minus meromorphic is meromorphic. -/
+theorem holomorphic_sub_meromorphicOnC
+    (f g : ℂ → ℂ) (U : Set ℂ)
+    (hU : IsOpen U)
+    (hf : HolomorphicOnC f U)
+    (hg : MeromorphicOnC g U) :
+    MeromorphicOnC (fun s => f s - g s) U := by
+  have hfm : MeromorphicOnC f U :=
+    analyticOn_isOpen_meromorphicOnC f U hU hf
+  simpa [MeromorphicOnC, Pi.sub_apply] using
+    (MeromorphicOn.sub hfm hg)
+
+/-- Default theorem-backed meromorphic algebra API. -/
+def defaultMeromorphicAlgebraAPI : MeromorphicAlgebraAPI where
+  h_holomorphic_to_meromorphic := analyticOn_isOpen_meromorphicOnC
+  h_holomorphic_sub_meromorphic := holomorphic_sub_meromorphicOnC
+
+#print axioms analyticOn_isOpen_meromorphicOnC
+#print axioms holomorphic_sub_meromorphicOnC
+#print axioms defaultMeromorphicAlgebraAPI
+
+end
+
+end RHFormalization

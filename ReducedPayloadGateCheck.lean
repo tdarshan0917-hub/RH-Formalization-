@@ -1,0 +1,20 @@
+import RHFormalization.SelectedFiniteTraceSpikePayloadFromImageBridge
+
+namespace RHFormalization
+
+#check buildSelectedFiniteTraceSpikePayloadFromImageBridge
+
+#check DFiniteTraceFunctionData.mk
+#check DFiniteStageSplitAPI.mk
+#check DFiniteStageSplitFromDuhamelAPI.mk
+#check DFiniteStageSpikeSumData.mk
+
+#check finiteNatSpikePackage
+#check finiteCanonicalPrimePowerPackage
+#check finiteNatSpikePackage_eq_finiteCanonicalPrimePowerPackage_image
+
+#check PrimePowerPair
+#check PrimePowerPair.center
+#check PrimePowerPair.weightC
+
+end RHFormalization

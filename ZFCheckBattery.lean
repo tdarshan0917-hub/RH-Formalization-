@@ -1,0 +1,9 @@
+import Mathlib.NumberTheory.LSeries.RiemannZeta
+import Mathlib.NumberTheory.LSeries.Nonvanishing
+#check @riemannZeta_ne_zero_of_one_le_re
+#check @riemannZeta_ofReal
+#check @dirichletEta
+#check @DirichletEta.eq_zeta
+#check @riemannZeta_ne_zero_of_pos_re
+#check @riemannZeta_real_lt_zero
+#check @riemannZeta_neg_of_mem_Ioo

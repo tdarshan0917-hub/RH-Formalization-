@@ -1,0 +1,7 @@
+import RHFormalization.OmegaCodiscreteIdentityFromNormalForms
+open Filter Set
+#check @MeromorphicOn.eqOn_compl_of_preconnected_of_eventuallyEq
+#check @MeromorphicOn.exists_meromorphicOrderAt_ne_top_iff_forall
+#check @MeromorphicOn.meromorphicOrderAt_ne_top_of_isPreconnected
+#check @MeromorphicNFOn.eqOn_of_preconnected_of_eventuallyEq
+#check @MeromorphicOn.codiscreteWithin_setOf_meromorphicNFAt

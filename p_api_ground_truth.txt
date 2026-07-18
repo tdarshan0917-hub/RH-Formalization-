@@ -1,0 +1,54 @@
+===== 1. HasGenuinePole definition =====
+===== 2. Htot definition =====
+RHFormalization/InterfaceAlgebra.lean-35-
+RHFormalization/InterfaceAlgebra.lean-36-/-- The holomorphic total term used in Appendix F:
+RHFormalization/InterfaceAlgebra.lean-37-`Htot = RH + Harch`. -/
+RHFormalization/InterfaceAlgebra.lean:38:def Htot
+RHFormalization/InterfaceAlgebra.lean-39-    (D : OperatorResolventBridge)
+RHFormalization/InterfaceAlgebra.lean-40-    (H : ZeroPolePackageAPI) : ℂ → ℂ :=
+RHFormalization/InterfaceAlgebra.lean-41-  fun s => D.RH s + H.Harch s
+RHFormalization/InterfaceAlgebra.lean-42-
+RHFormalization/InterfaceAlgebra.lean-43-/--
+RHFormalization/InterfaceAlgebra.lean-44-Local interface split on the common overlap half-plane.
+RHFormalization/InterfaceAlgebra.lean-45-
+RHFormalization/InterfaceAlgebra.lean-46-This is the formal version of the Appendix-E substitution step:
+RHFormalization/InterfaceAlgebra.lean-47-`D.FH = Htot - H.Zpole` on `InterfaceOverlap E`.
+RHFormalization/InterfaceAlgebra.lean-48--/
+RHFormalization/InterfaceAlgebra.lean-49-theorem local_split_identity
+RHFormalization/InterfaceAlgebra.lean-50-    (D : OperatorResolventBridge)
+RHFormalization/InterfaceAlgebra.lean-51-    (H : ZeroPolePackageAPI)
+RHFormalization/InterfaceAlgebra.lean-52-    (E : InterfaceBridgeAPI D H) :
+RHFormalization/InterfaceAlgebra.lean-53-    ∀ s : ℂ, s ∈ InterfaceOverlap E →
+===== 3. polePoint definition =====
+RHFormalization/Basic.lean-45-  {s : ℂ | σ < s.re}
+RHFormalization/Basic.lean-46-
+RHFormalization/Basic.lean-47-/-- The pole location associated to a zero `ρ`: `sρ = -ρ(1-ρ)`. -/
+RHFormalization/Basic.lean:48:def polePoint (ρ : ℂ) : ℂ :=
+RHFormalization/Basic.lean-49-  - (ρ * (1 - ρ))
+RHFormalization/Basic.lean-50-
+RHFormalization/Basic.lean-51-/-- Alias used by some companion files. -/
+RHFormalization/Basic.lean-52-def zeroPolePoint (ρ : ℂ) : ℂ :=
+RHFormalization/Basic.lean-53-  polePoint ρ
+RHFormalization/Basic.lean-54-
+RHFormalization/Basic.lean-55-/-- Abstract predicate for nontrivial zeros of zeta.
+RHFormalization/Basic.lean-56-
+RHFormalization/Basic.lean-57-In a later Mathlib-connected development, this should be replaced by the
+RHFormalization/Basic.lean-58-definition built from the completed zeta function.
+===== 4. existing H-side concrete candidates (zeta-derived Zpole?) =====
+===== 5. MeromorphicOnC / HolomorphicOnC defs =====
+===== 6. PoleWitness builders, if any =====
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:118:      ((X.toArithmeticGroupedPoles.toHMeromorphicWithGroupedPoles.toHSidePoleWitnessLayer).toPoleWitnessAPI).h_genuine_pole W
+RHFormalization/FinalSpineFromRealZeroFree.lean:28:    (P : PoleWitnessAPI H)
+RHFormalization/RigidityBridge.lean:43:structure PoleWitnessAPI (H : ZeroPolePackageAPI) where
+RHFormalization/RigidityBridge.lean:52:    (P : PoleWitnessAPI H)
+RHFormalization/HSidePoleWitness.lean:159:Build the existing `PoleWitnessAPI` from H-side grouped pole data.
+RHFormalization/HSidePoleWitness.lean:168:    PoleWitnessAPI H :=
+RHFormalization/HSidePoleWitness.lean:206:def HSidePoleWitnessLayer.toPoleWitnessAPI
+RHFormalization/HSidePoleWitness.lean:209:    PoleWitnessAPI H :=
+RHFormalization/MainTheorem.lean:33:    (P : PoleWitnessAPI H)
+RHFormalization/MainTheorem.lean:49:    (P : PoleWitnessAPI H)
+RHFormalization/MainTheorem.lean:62:    (P : PoleWitnessAPI H)
+RHFormalization/MainTheorem.lean:75:    (P : PoleWitnessAPI H)
+RHFormalization/MainTheorem.lean:92:    (P : PoleWitnessAPI H)
+RHFormalization/MainTheorem.lean:120:      (G.toPoleWitnessAPI) M A L T O
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:120:      ((X.toArithmeticGroupedPoles.toHMeromorphicWithGroupedPoles.toHSidePoleWitnessLayer).toPoleWitnessAPI).h_genuine_pole W

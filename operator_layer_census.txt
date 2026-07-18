@@ -1,0 +1,777 @@
+===== OPERATOR-LAYER CENSUS: READ ONLY =====
+pwd=/Users/travisdarshan/Downloads/RHFormalization_LeanCompanion_V2_Iteration20 3
+.lake
+RHFormalization
+
+===== 1. CURRENT FRONTIER / RAW INPUT MANIFEST =====
+RHFormalization/CurrentFrontierEndpoint.lean-8-
+RHFormalization/CurrentFrontierEndpoint.lean-9-namespace RHFormalization
+RHFormalization/CurrentFrontierEndpoint.lean-10-noncomputable section
+RHFormalization/CurrentFrontierEndpoint.lean-11-open Complex
+RHFormalization/CurrentFrontierEndpoint.lean-12-
+RHFormalization/CurrentFrontierEndpoint.lean:13:theorem RH_current_frontier
+RHFormalization/CurrentFrontierEndpoint.lean-14-    (h_real_zero_free :
+RHFormalization/CurrentFrontierEndpoint.lean-15-      ∀ s : ℂ, s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+RHFormalization/CurrentFrontierEndpoint.lean-16-    (Y : DDetailedConstructionWithOperatorLegality)
+RHFormalization/CurrentFrontierEndpoint.lean-17-    (X : HMeromorphicWithNormalFormPoles)
+RHFormalization/CurrentFrontierEndpoint.lean-18-    (h_common : Y.B.Cshared = X.layer.overlap.Cshared) :
+RHFormalization/CurrentFrontierEndpoint.lean-19-    RiemannHypothesis :=
+RHFormalization/CurrentFrontierEndpoint.lean-20-  mainTheorem_from_realZeroFree_omegaCodiscreteIdentity
+RHFormalization/CurrentFrontierEndpoint.lean-21-    h_real_zero_free Y X
+RHFormalization/CurrentFrontierEndpoint.lean-22-    (buildInterfaceBridgeNonnegativeFromCommonCshared Y X h_common)
+RHFormalization/CurrentFrontierEndpoint.lean-23-    defaultOmegaCodiscreteIdentityAPI defaultOmegaPreperfectAPI
+RHFormalization/CurrentFrontierEndpoint.lean-24-
+RHFormalization/CurrentFrontierEndpoint.lean-25-#print axioms RH_current_frontier
+RHFormalization/CurrentFrontierEndpoint.lean-26-
+RHFormalization/CurrentFrontierEndpoint.lean-27-end
+RHFormalization/CurrentFrontierEndpoint.lean-28-end RHFormalization
+RHFormalization/CurrentFrontierEndpoint.lean-29-
+RHFormalization/CurrentFrontierEndpoint.lean-30-namespace RHFormalization
+RHFormalization/CurrentFrontierEndpoint.lean-31-noncomputable section
+RHFormalization/CurrentFrontierEndpoint.lean-32-open Complex
+RHFormalization/CurrentFrontierEndpoint.lean-33-
+RHFormalization/CurrentFrontierEndpoint.lean-34-/--
+RHFormalization/CurrentFrontierEndpoint.lean-35-Raw-inputs manifest: RH from bottom-layer data only.
+RHFormalization/CurrentFrontierEndpoint.lean-36-
+RHFormalization/CurrentFrontierEndpoint.lean-37-Both sides are built against the single shared canonical package
+RHFormalization/CurrentFrontierEndpoint.lean-38-`C := SharpCutoffChosenLengthSharedPackage finiteOperatorLayer S`,
+RHFormalization/CurrentFrontierEndpoint.lean-39-so the interface equation holds by construction. X's genuine-pole
+RHFormalization/CurrentFrontierEndpoint.lean-40-obligations are derived from the principal-part input via the proven
+RHFormalization/CurrentFrontierEndpoint.lean-41-residue-nonvanishing lemma.
+RHFormalization/CurrentFrontierEndpoint.lean-42--/
+RHFormalization/CurrentFrontierEndpoint.lean:43:theorem RH_from_raw_inputs
+RHFormalization/CurrentFrontierEndpoint.lean-44-    (h_real_zero_free :
+RHFormalization/CurrentFrontierEndpoint.lean-45-      ∀ s : ℂ, s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+RHFormalization/CurrentFrontierEndpoint.lean-46-    -- Appendix D raw inputs
+RHFormalization/CurrentFrontierEndpoint.lean-47-    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CurrentFrontierEndpoint.lean-48-    (S : CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData finiteOperatorLayer)
+RHFormalization/CurrentFrontierEndpoint.lean-49-    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/CurrentFrontierEndpoint.lean-50-    (R : DMasterResidualData finiteOperatorLayer.toStagePackage)
+RHFormalization/CurrentFrontierEndpoint.lean-51-    (h_R_stage_bound :
+RHFormalization/CurrentFrontierEndpoint.lean-52-      ∀ (K : Set ℂ), IsCompact K → K ⊆ Ω →
+RHFormalization/CurrentFrontierEndpoint.lean-53-        ∃ C, 0 ≤ C ∧ ∀ (α : DFiniteStage), ∀ s ∈ K,
+RHFormalization/CurrentFrontierEndpoint.lean-54-          ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CurrentFrontierEndpoint.lean-55-    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CurrentFrontierEndpoint.lean-56-    (hF_alpha : F.alpha = S.alpha)
+RHFormalization/CurrentFrontierEndpoint.lean-57-    (hR_alpha : R.alpha = S.alpha)
+RHFormalization/CurrentFrontierEndpoint.lean-58-    -- Appendix H raw inputs
+RHFormalization/CurrentFrontierEndpoint.lean-59-    (M : ZeroMultiplicityData)
+RHFormalization/CurrentFrontierEndpoint.lean-60-    (Zex : ZeroExhaustion)
+RHFormalization/CurrentFrontierEndpoint.lean-61-    (Zpole : ℂ → ℂ)
+RHFormalization/CurrentFrontierEndpoint.lean-62-    (convergence : ZeroPoleLocalUniformConvergenceAPI M Zex Zpole)
+RHFormalization/CurrentFrontierEndpoint.lean-63-    (poleSeriesMeromorphic : ZpoleMeromorphicFromSeriesAPI M Zex Zpole)
+RHFormalization/CurrentFrontierEndpoint.lean-64-    (HarchPackage : HArchPackage)
+RHFormalization/CurrentFrontierEndpoint.lean-65-    (sigmaH : ℝ)
+RHFormalization/CurrentFrontierEndpoint.lean-66-    (h_C_sigma_le :
+RHFormalization/CurrentFrontierEndpoint.lean-67-      (SharpCutoffChosenLengthSharedPackage finiteOperatorLayer S).sigma0 ≤ sigmaH)
+RHFormalization/CurrentFrontierEndpoint.lean-68-    (h_split :
+RHFormalization/CurrentFrontierEndpoint.lean-69-      ∀ s : ℂ, s ∈ RightHalfPlane sigmaH →
+RHFormalization/CurrentFrontierEndpoint.lean-70-        (SharpCutoffChosenLengthSharedPackage finiteOperatorLayer S).Bshared s =
+RHFormalization/CurrentFrontierEndpoint.lean-71-          HarchPackage.Harch s - Zpole s)
+RHFormalization/CurrentFrontierEndpoint.lean-72-    (h_pp :
+RHFormalization/CurrentFrontierEndpoint.lean-73-      ∀ W : ZeroWitness,
+RHFormalization/CurrentFrontierEndpoint.lean-74-        HasPrincipalPartAtC Zpole W.s0
+RHFormalization/CurrentFrontierEndpoint.lean-75-          (groupedResidueCoeff M (defaultGroupedPoleClass M W))) :
+RHFormalization/CurrentFrontierEndpoint.lean-76-    RiemannHypothesis := by
+RHFormalization/CurrentFrontierEndpoint.lean-77-  have h_gp : ∀ W : ZeroWitness, HasGenuinePole Zpole W.s0 := fun W =>
+RHFormalization/CurrentFrontierEndpoint.lean-78-    ⟨groupedResidueCoeff M (defaultGroupedPoleClass M W),
+RHFormalization/CurrentFrontierEndpoint.lean-79-      groupedResidueCoeff_ne_zero M W (defaultGroupedPoleClass M W),
+RHFormalization/CurrentFrontierEndpoint.lean-80-      h_pp W⟩
+RHFormalization/CurrentFrontierEndpoint.lean-81-  exact RH_current_frontier h_real_zero_free
+RHFormalization/CurrentFrontierEndpoint.lean-82-    (buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+RHFormalization/CurrentFrontierEndpoint.lean-83-      finiteOperatorLayer S F R h_R_stage_bound hσ hF_alpha hR_alpha)
+RHFormalization/CurrentFrontierEndpoint.lean-84-    (buildHMeromorphicWithNormalFormPolesWithChosenCshared
+RHFormalization/CurrentFrontierEndpoint.lean-85-      M Zex Zpole convergence poleSeriesMeromorphic HarchPackage
+RHFormalization/CurrentFrontierEndpoint.lean-86-      (SharpCutoffChosenLengthSharedPackage finiteOperatorLayer S)
+RHFormalization/CurrentFrontierEndpoint.lean-87-      sigmaH h_C_sigma_le h_split h_gp
+RHFormalization/CurrentFrontierEndpoint.lean-88-      (buildHSideGroupedPoleNormalFormDataFromPrincipalParts _ M h_pp))
+RHFormalization/CurrentFrontierEndpoint.lean-89-    (by rfl)
+RHFormalization/CurrentFrontierEndpoint.lean-90-
+RHFormalization/CurrentFrontierEndpoint.lean-91-#print axioms RH_from_raw_inputs
+RHFormalization/CurrentFrontierEndpoint.lean-92-
+RHFormalization/CurrentFrontierEndpoint.lean-93-end
+RHFormalization/CurrentFrontierEndpoint.lean-94-end RHFormalization
+RHFormalization/CurrentFrontierEndpoint.lean-95-
+RHFormalization/CurrentFrontierEndpoint.lean-96-namespace RHFormalization
+RHFormalization/CurrentFrontierEndpoint.lean-97-noncomputable section
+RHFormalization/CurrentFrontierEndpoint.lean-98-open Complex
+RHFormalization/CurrentFrontierEndpoint.lean-99-
+RHFormalization/CurrentFrontierEndpoint.lean-100-/--
+RHFormalization/CurrentFrontierEndpoint.lean-101-Manifest specialized to the concrete selected operator layer: raw input #1
+RHFormalization/CurrentFrontierEndpoint.lean-102-(the finite-stage operator construction) is supplied by
+RHFormalization/CurrentFrontierEndpoint.lean-103-`selectedFiniteOperatorLayer`, a built witness.
+RHFormalization/CurrentFrontierEndpoint.lean-104--/
+RHFormalization/CurrentFrontierEndpoint.lean-105-theorem RH_from_selected_operator_layer
+RHFormalization/CurrentFrontierEndpoint.lean-106-    (h_real_zero_free :
+RHFormalization/CurrentFrontierEndpoint.lean-107-      ∀ s : ℂ, s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+RHFormalization/CurrentFrontierEndpoint.lean-108-    (S : CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData selectedFiniteOperatorLayer)
+RHFormalization/CurrentFrontierEndpoint.lean-109-    (F : DFHLimitData selectedFiniteOperatorLayer.toStagePackage)
+RHFormalization/CurrentFrontierEndpoint.lean-110-    (R : DMasterResidualData selectedFiniteOperatorLayer.toStagePackage)
+RHFormalization/CurrentFrontierEndpoint.lean-111-    (h_R_stage_bound :
+RHFormalization/CurrentFrontierEndpoint.lean-112-      ∀ (K : Set ℂ), IsCompact K → K ⊆ Ω →
+RHFormalization/CurrentFrontierEndpoint.lean-113-        ∃ C, 0 ≤ C ∧ ∀ (α : DFiniteStage), ∀ s ∈ K,
+RHFormalization/CurrentFrontierEndpoint.lean-114-          ‖selectedFiniteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CurrentFrontierEndpoint.lean-115-    (hσ : 0 ≤ selectedFiniteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CurrentFrontierEndpoint.lean-116-    (hF_alpha : F.alpha = S.alpha)
+RHFormalization/CurrentFrontierEndpoint.lean-117-    (hR_alpha : R.alpha = S.alpha)
+RHFormalization/CurrentFrontierEndpoint.lean-118-    (M : ZeroMultiplicityData)
+RHFormalization/CurrentFrontierEndpoint.lean-119-    (Zex : ZeroExhaustion)
+RHFormalization/CurrentFrontierEndpoint.lean-120-    (Zpole : ℂ → ℂ)
+RHFormalization/CurrentFrontierEndpoint.lean-121-    (convergence : ZeroPoleLocalUniformConvergenceAPI M Zex Zpole)
+RHFormalization/CurrentFrontierEndpoint.lean-122-    (poleSeriesMeromorphic : ZpoleMeromorphicFromSeriesAPI M Zex Zpole)
+RHFormalization/CurrentFrontierEndpoint.lean-123-    (HarchPackage : HArchPackage)
+RHFormalization/CurrentFrontierEndpoint.lean-124-    (sigmaH : ℝ)
+RHFormalization/CurrentFrontierEndpoint.lean-125-    (h_C_sigma_le :
+RHFormalization/CurrentFrontierEndpoint.lean-126-      (SharpCutoffChosenLengthSharedPackage selectedFiniteOperatorLayer S).sigma0 ≤ sigmaH)
+RHFormalization/CurrentFrontierEndpoint.lean-127-    (h_split :
+RHFormalization/CurrentFrontierEndpoint.lean-128-      ∀ s : ℂ, s ∈ RightHalfPlane sigmaH →
+RHFormalization/CurrentFrontierEndpoint.lean-129-        (SharpCutoffChosenLengthSharedPackage selectedFiniteOperatorLayer S).Bshared s =
+RHFormalization/CurrentFrontierEndpoint.lean-130-          HarchPackage.Harch s - Zpole s)
+RHFormalization/CurrentFrontierEndpoint.lean-131-    (h_pp :
+RHFormalization/CurrentFrontierEndpoint.lean-132-      ∀ W : ZeroWitness,
+RHFormalization/CurrentFrontierEndpoint.lean-133-        HasPrincipalPartAtC Zpole W.s0
+
+===== 2. SELECTED FINITE OPERATOR LAYER DEFINITIONS =====
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-82-* a denominator lower bound for the compact-window speed;
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-83-* convergence of numerator/denominator to zero.
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-84--/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-85-structure CanonicalPrimePowerDWindowMassEnvelopeSpeedComparisonData
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:86:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-87-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-88-  /-- D-window data used to represent finite and shared kernels. -/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-89-  W : DCanonicalWindowData
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-90-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-91-  alpha : ℕ → DFiniteStage
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-92-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-93-  /-- The common limiting kernel for the shared canonical prime-power series. -/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-94-  Kshared : CanonicalKernelC
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-95-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-96-  /-- Concrete cutoff growth: the prime-power cutoff dominates the stage index. -/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-97-  h_R_ge_nat :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-98-    ∀ n : ℕ, (n : ℝ) ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-99-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-100-  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-101-  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-102-    ∀ n : ℕ,
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-103-    ∀ q : PrimePowerPair,
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-104-      IsPrimePowerPair q →
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-105-      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-106-        q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-107-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-108-  /-- The finite stage index set contains only indices below cutoff. -/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-109-  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-110-    ∀ n : ℕ,
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-111-    ∀ q : PrimePowerPair,
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-112-      q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n) →
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-113-        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-114-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-115-  /-- Unweighted majorant for the D-window limit kernel. -/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-116-  kernelMajorant : PrimePowerPair → ℝ
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-117-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-118-  /-- Nonnegativity of the unweighted kernel majorant. -/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-119-  h_kernelMajorant_nonneg :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-120-    ∀ q : PrimePowerPair, 0 ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-121-
+--
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-241-/--
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-242-Convert comparison data into the previous mass-envelope package.
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-243--/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-244-def CanonicalPrimePowerDWindowMassEnvelopeSpeedComparisonData.toMassEnvelopeData
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:245:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-246-    (S : CanonicalPrimePowerDWindowMassEnvelopeSpeedComparisonData X) :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-247-    CanonicalPrimePowerDWindowMassEnvelopeData X :=
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-248-  { W := S.W
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-249-    alpha := S.alpha
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-250-    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-251-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-252-    h_R_ge_nat := S.h_R_ge_nat
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-253-    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-254-    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-255-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-256-    kernelMajorant := S.kernelMajorant
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-257-    h_kernelMajorant_nonneg := S.h_kernelMajorant_nonneg
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-258-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-259-    kernelID := S.kernelID
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-260-    coordSet := S.coordSet
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-261-    h_coordSet_compact := S.h_coordSet_compact
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-262-    h_coord_mem := S.h_coord_mem
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-263-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-264-    windowSpeed := S.windowSpeed
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-265-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-266-    h_windowLimit_norm_le_majorant := S.h_windowLimit_norm_le_majorant
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-267-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-268-    summabilityEnvelope := S.summabilityEnvelope
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-269-    h_weightedKernelMajorant_le_envelope :=
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-270-      S.h_weightedKernelMajorant_le_envelope
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-271-    h_summabilityEnvelope_summable :=
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-272-      S.h_summabilityEnvelope_summable
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-273-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-274-    massEnum := S.massEnum
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-275-    massEnvelopeData := S.massEnvelopeData
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-276-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-277-    h_massEnvelope_div_windowSpeed_tendsto_zero := by
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-278-      intro s hs
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-279-      exact
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-280-        massEnvelope_div_windowSpeed_tendsto_zero_of_comparison
+--
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-298-/--
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-299-Build `CanonicalPrimePowerExhaustionData` from comparison data.
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-300--/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-301-def CanonicalPrimePowerDWindowMassEnvelopeSpeedComparisonData.toExhaustionData
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:302:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-303-    (S : CanonicalPrimePowerDWindowMassEnvelopeSpeedComparisonData X) :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-304-    CanonicalPrimePowerExhaustionData
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-305-      X
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-306-      (canonicalPrimePowerPackageFromKernelTsum
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-307-        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-308-        S.Kshared) :=
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-309-  S.toMassEnvelopeData.toExhaustionData
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-310-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-311-/--
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-312-Build `DBcanLimitData` directly from comparison data.
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-313--/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-314-def buildDBcanLimitDataFromCanonicalPrimePowerDWindowMassEnvelopeSpeedComparison
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:315:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-316-    (S : CanonicalPrimePowerDWindowMassEnvelopeSpeedComparisonData X) :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-317-    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-318-  buildDBcanLimitDataFromCanonicalPrimePowerDWindowMassEnvelope
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-319-    X
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-320-    S.toMassEnvelopeData
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-321-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-322-/--
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-323-The D-side canonical package matches the concrete tsum-defined shared package
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-324-once mass-envelope/speed-comparison data is supplied.
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-325--/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-326-theorem canonicalPrimePowerDWindowMassEnvelopeSpeedComparison_h_Bcan_matches_tsum
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:327:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-328-    (S : CanonicalPrimePowerDWindowMassEnvelopeSpeedComparisonData X)
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-329-    (s : ℂ)
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-330-    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-331-    (buildDBcanLimitDataFromCanonicalPrimePowerDWindowMassEnvelopeSpeedComparison X S).Bcan s =
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-332-      ∑' q : PrimePowerPair,
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-333-        q.weightC * S.Kshared q.center s := by
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-334-  exact
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-335-    canonicalPrimePowerDWindowMassEnvelope_h_Bcan_matches_tsum
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-336-      X
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-337-      S.toMassEnvelopeData
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-338-      s
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-339-      hs
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-340-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-341-end
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-342-
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean-343-end RHFormalization
+--
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-25-This is the clean D-side wrapper immediately before producing a concrete
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-26-`selectedY`.
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-27--/
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-28-def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthAligned
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:29:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-30-    (S : CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData finiteOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-31-    (W : DCanonicalWindowData)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-32-    (Wapi : DCanonicalWindowAPI W)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-33-    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-34-    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-35-    (sectorSplit :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-36-      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-37-    (sectorBounds :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-38-      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-39-    (master :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-40-      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-41-    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-42-    (hF_alpha : F.alpha = S.alpha)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-43-    (hR_alpha :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-44-      (master.h_master sectorSplit sectorBounds).alpha = S.alpha) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-45-    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-46-  buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthMassEnvelope
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-47-    finiteOperatorLayer
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-48-    S
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-49-    W
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-50-    Wapi
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-51-    F
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-52-    sectors
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-53-    sectorSplit
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-54-    sectorBounds
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-55-    master
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-56-    (chosenLengthOverlapBuilder_of_alpha_aligned
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-57-      finiteOperatorLayer
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-58-      S
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-59-      F
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-60-      sectors
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-61-      sectorSplit
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-62-      sectorBounds
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-63-      master
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-64-      hσ
+--
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-63-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-64-  exact enumerated mass ≤ massBudget.
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-65--/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-66-structure CanonicalPrimePowerDWindowExactMassSpeedBudgetData
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:67:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-68-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-69-  /-- D-window data used to represent finite and shared kernels. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-70-  W : DCanonicalWindowData
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-71-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-72-  alpha : ℕ → DFiniteStage
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-73-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-74-  /-- The common limiting kernel for the shared canonical prime-power series. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-75-  Kshared : CanonicalKernelC
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-76-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-77-  /-- Concrete cutoff growth: the prime-power cutoff dominates the stage index. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-78-  h_R_ge_nat :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-79-    ∀ n : ℕ, (n : ℝ) ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-80-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-81-  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-82-  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-83-    ∀ n : ℕ,
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-84-    ∀ q : PrimePowerPair,
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-85-      IsPrimePowerPair q →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-86-      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-87-        q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-88-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-89-  /-- The finite stage index set contains only indices below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-90-  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-91-    ∀ n : ℕ,
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-92-    ∀ q : PrimePowerPair,
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-93-      q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n) →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-94-        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-95-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-96-  /-- Unweighted majorant for the shared kernel. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-97-  kernelMajorant : PrimePowerPair → ℝ
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-98-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-99-  /-- Nonnegativity of the unweighted kernel majorant. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-100-  h_kernelMajorant_nonneg :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-101-    ∀ q : PrimePowerPair, 0 ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-102-
+--
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-191-Convert exact enumerated-mass speed-budget data into the previous speed-budget
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-192-package.
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-193--/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-194-def CanonicalPrimePowerDWindowExactMassSpeedBudgetData.toSpeedBudgetData
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:195:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-196-    (S : CanonicalPrimePowerDWindowExactMassSpeedBudgetData X) :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-197-    CanonicalPrimePowerDWindowSpeedBudgetData X :=
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-198-  { W := S.W
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-199-    alpha := S.alpha
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-200-    Kshared := S.Kshared
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-201-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-202-    h_R_ge_nat := S.h_R_ge_nat
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-203-    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-204-    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-205-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-206-    kernelMajorant := S.kernelMajorant
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-207-    h_kernelMajorant_nonneg := S.h_kernelMajorant_nonneg
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-208-    h_sharedKernel_norm_le_majorant := S.h_sharedKernel_norm_le_majorant
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-209-    h_weightedKernelMajorant_summable := S.h_weightedKernelMajorant_summable
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-210-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-211-    windowError := S.windowError
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-212-    h_windowError_nonneg := S.h_windowError_nonneg
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-213-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-214-    massEnum := S.massEnum
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-215-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-216-    massGrowth := fun n : ℕ =>
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-217-      enumeratedPrimePowerMass S.massEnum ((S.alpha n).R)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-218-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-219-    h_massGrowth_nonneg := by
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-220-      intro n
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-221-      exact enumeratedPrimePowerMass_nonneg S.massEnum ((S.alpha n).R)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-222-
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-223-    h_enumeratedMass_le_growth := by
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-224-      intro n
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-225-      simpa [enumeratedPrimePowerMass] using
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-226-        (le_rfl :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-227-          (S.massEnum.belowCutoff ((S.alpha n).R)).sum
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-228-              (fun q : PrimePowerPair => ‖q.weightC‖)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-229-            ≤
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-230-          (S.massEnum.belowCutoff ((S.alpha n).R)).sum
+--
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-252-/--
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-253-Build `CanonicalPrimePowerExhaustionData` from exact-mass speed-budget data.
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-254--/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-255-def CanonicalPrimePowerDWindowExactMassSpeedBudgetData.toExhaustionData
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:256:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-257-    (S : CanonicalPrimePowerDWindowExactMassSpeedBudgetData X) :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-258-    CanonicalPrimePowerExhaustionData
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean-259-      X
+
+===== 3. RAW D-SIDE BUILDER / REQUIRED INPUT STRUCTURES =====
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-38-      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-39-    (master :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-40-      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-41-    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:42:    (hF_alpha : F.alpha = S.alpha)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:43:    (hR_alpha :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-44-      (master.h_master sectorSplit sectorBounds).alpha = S.alpha) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-45-    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-46-  buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthMassEnvelope
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-47-    finiteOperatorLayer
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-48-    S
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-49-    W
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-50-    Wapi
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-51-    F
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-52-    sectors
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-53-    sectorSplit
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-54-    sectorBounds
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-55-    master
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-56-    (chosenLengthOverlapBuilder_of_alpha_aligned
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-57-      finiteOperatorLayer
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-58-      S
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-59-      F
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-60-      sectors
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-61-      sectorSplit
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-62-      sectorBounds
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-63-      master
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-64-      hσ
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:65:      hF_alpha
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:66:      hR_alpha)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-67-
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-68-end
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-69-
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean-70-end RHFormalization
+--
+RHFormalization/DOperatorExport.lean-404-Canonical transform limit.
+RHFormalization/DOperatorExport.lean-405-
+RHFormalization/DOperatorExport.lean-406-This is the eventual `FH` exported by Appendix D.
+RHFormalization/DOperatorExport.lean-407--/
+RHFormalization/DOperatorExport.lean:408:structure DFHLimitData
+RHFormalization/DOperatorExport.lean-409-    (P : DFiniteStagePackage) where
+RHFormalization/DOperatorExport.lean-410-
+RHFormalization/DOperatorExport.lean-411-  /--
+RHFormalization/DOperatorExport.lean-412-  Ordered finite-stage exhaustion along which the finite canonical transforms
+RHFormalization/DOperatorExport.lean-413-  converge.
+RHFormalization/DOperatorExport.lean-414-  -/
+RHFormalization/DOperatorExport.lean-415-  alpha :
+RHFormalization/DOperatorExport.lean-416-    ℕ → DFiniteStage
+RHFormalization/DOperatorExport.lean-417-
+RHFormalization/DOperatorExport.lean-418-  FH : ℂ → ℂ
+RHFormalization/DOperatorExport.lean-419-  h_FH_holo : HolomorphicOnC FH Ω
+RHFormalization/DOperatorExport.lean-420-
+RHFormalization/DOperatorExport.lean-421-  /--
+RHFormalization/DOperatorExport.lean-422-  D.FH-LIMIT compact-local convergence.
+RHFormalization/DOperatorExport.lean-423-
+RHFormalization/DOperatorExport.lean-424-  On every compact `K ⊆ Ω`, the finite-stage transforms `F_stage (alpha n)`
+RHFormalization/DOperatorExport.lean-425-  converge uniformly to `FH`.
+RHFormalization/DOperatorExport.lean-426-  -/
+RHFormalization/DOperatorExport.lean-427-  h_F_stage_to_FH :
+RHFormalization/DOperatorExport.lean-428-    ∀ K : Set ℂ,
+RHFormalization/DOperatorExport.lean-429-      IsCompact K →
+RHFormalization/DOperatorExport.lean-430-      K ⊆ Ω →
+RHFormalization/DOperatorExport.lean-431-        ∀ ε : ℝ,
+RHFormalization/DOperatorExport.lean-432-          0 < ε →
+RHFormalization/DOperatorExport.lean-433-            ∀ᶠ n in Filter.atTop,
+RHFormalization/DOperatorExport.lean-434-              ∀ s : ℂ,
+RHFormalization/DOperatorExport.lean-435-                s ∈ K →
+RHFormalization/DOperatorExport.lean-436-                  dist (P.F_stage (alpha n) s) (FH s) < ε
+RHFormalization/DOperatorExport.lean-437-
+RHFormalization/DOperatorExport.lean-438-/-!
+RHFormalization/DOperatorExport.lean-439-## 4. Residual sector decomposition
+RHFormalization/DOperatorExport.lean-440--/
+RHFormalization/DOperatorExport.lean-441-
+RHFormalization/DOperatorExport.lean-442-/-- The four residual sectors used by D.MASTER-RESIDUAL. -/
+RHFormalization/DOperatorExport.lean-443-inductive DResidualSector where
+RHFormalization/DOperatorExport.lean-444-  | short
+RHFormalization/DOperatorExport.lean-445-  | window
+RHFormalization/DOperatorExport.lean-446-  | tail
+RHFormalization/DOperatorExport.lean-447-  | bulk
+RHFormalization/DOperatorExport.lean-448-  deriving Repr, DecidableEq
+RHFormalization/DOperatorExport.lean-449-
+RHFormalization/DOperatorExport.lean-450-/--
+RHFormalization/DOperatorExport.lean-451-Residual sector functions.
+RHFormalization/DOperatorExport.lean-452-
+RHFormalization/DOperatorExport.lean-453-Each sector is a finite-stage holomorphic/remainder contribution whose compact
+--
+RHFormalization/DOperatorExport.lean-510-Master residual data.
+RHFormalization/DOperatorExport.lean-511-
+RHFormalization/DOperatorExport.lean-512-`RH` is the canonical holomorphic remainder obtained after ordered cutoff removal.
+RHFormalization/DOperatorExport.lean-513--/
+RHFormalization/DOperatorExport.lean:514:structure DMasterResidualData
+RHFormalization/DOperatorExport.lean-515-    (P : DFiniteStagePackage) where
+RHFormalization/DOperatorExport.lean-516-
+RHFormalization/DOperatorExport.lean-517-  /--
+RHFormalization/DOperatorExport.lean-518-  Ordered finite-stage exhaustion along which the residuals converge.
+RHFormalization/DOperatorExport.lean-519-  -/
+RHFormalization/DOperatorExport.lean-520-  alpha :
+RHFormalization/DOperatorExport.lean-521-    ℕ → DFiniteStage
+RHFormalization/DOperatorExport.lean-522-
+RHFormalization/DOperatorExport.lean-523-  RH : ℂ → ℂ
+RHFormalization/DOperatorExport.lean-524-  h_RH_holo : HolomorphicOnC RH Ω
+RHFormalization/DOperatorExport.lean-525-
+RHFormalization/DOperatorExport.lean-526-  /--
+RHFormalization/DOperatorExport.lean-527-  D.MASTER-RESIDUAL compact-local convergence.
+RHFormalization/DOperatorExport.lean-528-
+RHFormalization/DOperatorExport.lean-529-  On every compact `K ⊆ Ω`, the finite-stage residuals `R_stage (alpha n)`
+RHFormalization/DOperatorExport.lean-530-  converge uniformly to the canonical holomorphic remainder `RH`.
+RHFormalization/DOperatorExport.lean-531-  -/
+RHFormalization/DOperatorExport.lean-532-  h_R_stage_to_RH :
+RHFormalization/DOperatorExport.lean-533-    ∀ K : Set ℂ,
+RHFormalization/DOperatorExport.lean-534-      IsCompact K →
+RHFormalization/DOperatorExport.lean-535-      K ⊆ Ω →
+RHFormalization/DOperatorExport.lean-536-        ∀ ε : ℝ,
+RHFormalization/DOperatorExport.lean-537-          0 < ε →
+RHFormalization/DOperatorExport.lean-538-            ∀ᶠ n in Filter.atTop,
+RHFormalization/DOperatorExport.lean-539-              ∀ s : ℂ,
+RHFormalization/DOperatorExport.lean-540-                s ∈ K →
+RHFormalization/DOperatorExport.lean-541-                  dist (P.R_stage (alpha n) s) (RH s) < ε
+RHFormalization/DOperatorExport.lean-542-
+RHFormalization/DOperatorExport.lean-543-/--
+RHFormalization/DOperatorExport.lean-544-D.MASTER-RESIDUAL.
+RHFormalization/DOperatorExport.lean-545-
+RHFormalization/DOperatorExport.lean-546-From the sector split and compact sector bounds, obtain the canonical holomorphic
+RHFormalization/DOperatorExport.lean-547-remainder on `Ω`.
+RHFormalization/DOperatorExport.lean-548-
+RHFormalization/DOperatorExport.lean-549-This packages the Montel/normal-family/uniqueness step.
+RHFormalization/DOperatorExport.lean-550--/
+RHFormalization/DOperatorExport.lean-551-structure DMasterResidualAPI
+RHFormalization/DOperatorExport.lean-552-    (P : DFiniteStagePackage)
+RHFormalization/DOperatorExport.lean-553-    (S : DResidualSectorData P) where
+RHFormalization/DOperatorExport.lean-554-  h_master :
+RHFormalization/DOperatorExport.lean-555-    DResidualSectorSplitAPI P S →
+RHFormalization/DOperatorExport.lean-556-    DResidualSectorBoundsAPI P S →
+RHFormalization/DOperatorExport.lean-557-    DMasterResidualData P
+RHFormalization/DOperatorExport.lean-558-
+RHFormalization/DOperatorExport.lean-559-/--
+--
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-21-Build the chosen-length sharp-cutoff detailed D construction using the selected
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-22-window package, with inverse-speed already supplied by
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-23-`chosenLength_inv_speed_tendsto_zero`.
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-24--/
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:25:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-26-    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-27-    (S : CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData finiteOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-28-    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-29-    (R : DMasterResidualData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:30:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-31-      ∀ (K : Set ℂ),
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-32-        IsCompact K →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-33-        K ⊆ Ω →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-34-          ∃ C, 0 ≤ C ∧ ∀ (α : DFiniteStage), ∀ s ∈ K,
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-35-            ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-36-    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:37:    (hF_alpha : F.alpha = S.alpha)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:38:    (hR_alpha : R.alpha = S.alpha) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-39-    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-40-  buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFR
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-41-    finiteOperatorLayer
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-42-    S
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-43-    F
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-44-    R
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:45:    h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-46-    hσ
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:47:    hF_alpha
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:48:    hR_alpha
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-49-    (chosenLength_inv_speed_tendsto_zero finiteOperatorLayer S)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-50-
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-51-end
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-52-
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean-53-end RHFormalization
+--
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-50-                  dist
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-51-                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-52-                      (H0.toExactWeightedEnvelopeData.toDisplacementKernelData.toSharedMajorantData.toChosenLengthMassEnvelopeData.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-53-                    (RH s) < ε)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:54:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-55-      ∀ (K : Set ℂ),
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-56-        IsCompact K →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-57-        K ⊆ Ω →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-58-          ∃ C, 0 ≤ C ∧
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-59-            ∀ (α : DFiniteStage), ∀ s ∈ K,
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-60-              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-61-    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-62-    ChosenLengthDLimitPayload :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-63-  buildChosenLengthDLimitPayloadFromExactWeightedEnvelope
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-64-    finiteOperatorLayer
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-65-    H0.toExactWeightedEnvelopeData
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-66-    FH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-67-    RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-68-    h_FH_holo
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-69-    h_RH_holo
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-70-    h_F_stage_to_FH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-71-    h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:72:    h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-73-    hσ
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-74-
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-75-/--
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-76-Directly build the D-side final input from heat-kernel weighted sharp-cutoff data
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-77-plus the remaining FH/RH analytic limit payload.
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-78--/
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-79-def buildDDetailedConstructionWithOperatorLegalityFromHeatKernelWeightedPayload
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-80-    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-81-    (H0 :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-82-      CanonicalPrimePowerSharpCutoffHeatKernelWeightedData
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-83-        finiteOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-84-    (FH RH : ℂ → ℂ)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-85-    (h_FH_holo : HolomorphicOnC FH Ω)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-86-    (h_RH_holo : HolomorphicOnC RH Ω)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-87-    (h_F_stage_to_FH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-88-      ∀ (K : Set ℂ),
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-89-        IsCompact K →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-90-        K ⊆ Ω →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-91-          ∀ (ε : ℝ),
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-92-            0 < ε →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-93-              ∀ᶠ (n : ℕ) in Filter.atTop,
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-94-                ∀ s ∈ K,
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-95-                  dist
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-96-                    (finiteOperatorLayer.toStagePackage.F_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-97-                      (H0.toExactWeightedEnvelopeData.toDisplacementKernelData.toSharedMajorantData.toChosenLengthMassEnvelopeData.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-98-                    (FH s) < ε)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-99-    (h_R_stage_to_RH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-100-      ∀ (K : Set ℂ),
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-101-        IsCompact K →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-102-        K ⊆ Ω →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-103-          ∀ (ε : ℝ),
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-104-            0 < ε →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-105-              ∀ᶠ (n : ℕ) in Filter.atTop,
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-106-                ∀ s ∈ K,
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-107-                  dist
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-108-                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-109-                      (H0.toExactWeightedEnvelopeData.toDisplacementKernelData.toSharedMajorantData.toChosenLengthMassEnvelopeData.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-110-                    (RH s) < ε)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:111:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-112-      ∀ (K : Set ℂ),
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-113-        IsCompact K →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-114-        K ⊆ Ω →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-115-          ∃ C, 0 ≤ C ∧
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-116-            ∀ (α : DFiniteStage), ∀ s ∈ K,
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-117-              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-118-    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-119-    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-120-  buildDDetailedConstructionWithOperatorLegalityFromChosenLengthDLimitPayload
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-121-    (buildChosenLengthDLimitPayloadFromHeatKernelWeighted
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-122-      finiteOperatorLayer
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-123-      H0
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-124-      FH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-125-      RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-126-      h_FH_holo
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-127-      h_RH_holo
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-128-      h_F_stage_to_FH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-129-      h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:130:      h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-131-      hσ)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-132-
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-133-end
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-134-
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean-135-end RHFormalization
+--
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-81-and replaces it with:
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-82-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-83-  h_sharedKernel_norm_le_majorant.
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-84--/
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:85:structure CanonicalPrimePowerSharpCutoffChosenLengthSharedMajorantData
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-86-    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-87-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-88-  G : ℝ → ℂ
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-89-  Lstage : DFiniteStage → ℝ
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-90-  alpha : ℕ → DFiniteStage
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-91-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-92-  sharpSpeed :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-93-    DCanonicalWindowSharpCutoffConcreteChosenSpeedData G Lstage alpha
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-94-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-95-  Kshared : CanonicalKernelC
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-96-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-97-  h_R_ge_nat :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-98-    ∀ n : ℕ, (n : ℝ) ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-99-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-100-  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-101-    ∀ n : ℕ,
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-102-    ∀ q : PrimePowerPair,
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-103-      IsPrimePowerPair q →
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-104-      q.center ≤ (alpha n).R →
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-105-        q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-106-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-107-  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-108-    ∀ n : ℕ,
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-109-    ∀ q : PrimePowerPair,
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-110-      q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n) →
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-111-        q.center ≤ (alpha n).R
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-112-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-113-  kernelMajorant : PrimePowerPair → ℝ
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-114-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-115-  h_kernelMajorant_nonneg :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-116-    ∀ q : PrimePowerPair, 0 ≤ kernelMajorant q
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-117-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-118-  kernelID :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-119-    PrimePowerDWindowKernelIdentificationData
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-120-      X
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-121-      (sharpCutoffDCanonicalWindowData G Lstage)
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-122-      alpha
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-123-      Kshared
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-124-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-125-  coordSet : ℂ → Set ℝ
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-126-
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-127-  h_coordSet_compact :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-128-    ∀ s : ℂ,
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-129-    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean-130-      IsCompact (coordSet s)
+--
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean-72-                dist
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean-73-                  (finiteOperatorLayer.toStagePackage.R_stage (S.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean-74-                  (RH s) < ε
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean-75-
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:76:  h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean-77-    ∀ (K : Set ℂ),
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean-78-      IsCompact K →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean-79-      K ⊆ Ω →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean-80-        ∃ C, 0 ≤ C ∧
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean-81-          ∀ (α : DFiniteStage), ∀ s ∈ K,
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean-82-            ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean-83-
+
+===== 4. SELECTED D-SIDE CANDIDATE MODULES =====
+RHFormalization/AppendixDSelectedAlphaIndexData.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedPayloadTarget.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedPayloadTarget.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffSelectedClosedPayload.lean
+RHFormalization/CanonicalPrimePowerSharpCutoffSelectedClosedPayload.lean
+RHFormalization/SelectedDWindowAlphaIndexData.lean
+RHFormalization/SelectedDWindowAlphaIndexDataFromSoundCounting.lean
+RHFormalization/SelectedDWindowAlphaIndexDataInstance.lean
+RHFormalization/SelectedDWindowSoundCountingFactorBoundsInstance.lean
+RHFormalization/SelectedDWindowStageSequence.lean
+RHFormalization/SelectedDWindowStageSequence.target.hold.lean
+RHFormalization/SelectedFiniteCanonicalPayload.lean
+RHFormalization/SelectedFiniteCanonicalPayloadInstance.lean
+RHFormalization/SelectedFiniteOperatorLayer.lean
+RHFormalization/SelectedFiniteStageOperatorLegality.lean
+RHFormalization/SelectedFiniteTraceSpikePayload.lean
+RHFormalization/SelectedFiniteTraceSpikePayloadCertified.lean
+RHFormalization/SelectedFiniteTraceSpikePayloadFromImageBridge.lean
+RHFormalization/SelectedFiniteTraceSpikePayloadInstance.lean
+RHFormalization/SelectedRCutoffDetailedConstructionInstance.lean
+RHFormalization/SelectedRCutoffDetailedConstructionSource.lean
+
+===== 5. LEAN #CHECK CENSUS =====
+
+===== 6. RELEVANT LEAN OUTPUT =====
+1:RHFormalization.RH_current_frontier (h_real_zero_free : ∀ (s : ℂ), s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+4:RHFormalization.RH_from_raw_inputs (h_real_zero_free : ∀ (s : ℂ), s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+5:  (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+6:  (S : CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData finiteOperatorLayer)
+7:  (F : DFHLimitData finiteOperatorLayer.toStagePackage) (R : DMasterResidualData finiteOperatorLayer.toStagePackage)
+22:RHFormalization.selectedFiniteOperatorLayer : DFiniteStagePackageFromOperatorLayer
+23:RHFormalization.DFiniteStagePackageFromOperatorLayer : Type 1
+24:structure RHFormalization.DFiniteStagePackageFromOperatorLayer : Type 1
+27:  RHFormalization.DFiniteStagePackageFromOperatorLayer.legality : ∀ (α : DFiniteStage), DFiniteStageOperatorLegality α
+28:  RHFormalization.DFiniteStagePackageFromOperatorLayer.traceConstruction : DFiniteTraceConstructionAPI
+29:  RHFormalization.DFiniteStagePackageFromOperatorLayer.traceData : DFiniteTraceFunctionData
+30:  RHFormalization.DFiniteStagePackageFromOperatorLayer.h_traceData_from_legality : self.traceData =
+32:  RHFormalization.DFiniteStagePackageFromOperatorLayer.splitFromDuhamel : DFiniteStageSplitFromDuhamelAPI self.traceData
+33:  RHFormalization.DFiniteStagePackageFromOperatorLayer.finiteCanonicalPrimePowerFormula : DFiniteStageCanonicalPrimePowerFormula
+36:  RHFormalization.DFiniteStagePackageFromOperatorLayer.mk
+42:    DFiniteStagePackageFromOperatorLayer
+43:selectedFiniteOperatorLayer.toStagePackage : DFiniteStagePackage
+44:selectedFiniteOperatorLayer.toFiniteCanonicalPrimePowerFormula : DFiniteStageCanonicalPrimePowerFormula
+45:  selectedFiniteOperatorLayer.toStagePackage
+46:RHFormalization.buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+47:  (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+48:  (S : CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData finiteOperatorLayer)
+49:  (F : DFHLimitData finiteOperatorLayer.toStagePackage) (R : DMasterResidualData finiteOperatorLayer.toStagePackage)
+56:RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData (X : DFiniteStagePackageFromOperatorLayer) :
+58:RHFormalization.DFHLimitData (P : DFiniteStagePackage) : Type 1
+59:RHFormalization.DMasterResidualData (P : DFiniteStagePackage) : Type 1

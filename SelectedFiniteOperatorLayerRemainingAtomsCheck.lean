@@ -1,0 +1,27 @@
+import RHFormalization.SelectedFiniteStageOperatorLegality
+import RHFormalization.DFiniteStageOperator
+import RHFormalization.AppendixDSpikeSumExtraction
+
+namespace RHFormalization
+
+#check selectedFiniteStageOperatorLegality
+
+#check DFiniteTraceConstructionAPI.mk
+#check DFiniteTraceFunctionData.mk
+#check DFiniteStageSplitFromDuhamelAPI.mk
+#check DFiniteStageSplitAPI.mk
+#check DFiniteStageSpikeSumData.mk
+
+#check DFiniteTraceFunctionData.toStagePackage
+#print DFiniteTraceFunctionData.toStagePackage
+
+#check DFiniteStagePackageFromOperatorLayer.toStagePackage
+#print DFiniteStagePackageFromOperatorLayer.toStagePackage
+
+#check DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+#print DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+
+#print finiteNatSpikePackage
+#print finiteCanonicalPrimePowerPackage
+
+end RHFormalization

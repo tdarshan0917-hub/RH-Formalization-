@@ -1,0 +1,29 @@
+import RHFormalization.SelectedDWindowAlphaIndexData
+import RHFormalization.SelectedFiniteOperatorLayer
+import RHFormalization.AppendixDSpikeSumExtraction
+
+namespace RHFormalization
+
+noncomputable section
+
+#check DFiniteStage
+#print DFiniteStage
+#check DFiniteStage.mk
+#check DFiniteStage.R
+#check DFiniteStage.L
+
+#check selectedAppendixDFiniteSpikeExtractionWitness
+#check selectedAppendixDFiniteSpikeExtractionWitness.activeIndices
+#check selectedAppendixDFiniteSpikeExtractionWitness.toPP
+
+#check selectedFiniteOperatorLayer
+#check selectedFiniteOperatorLayer.toFiniteCanonicalPrimePowerFormula.indices
+
+#print AppendixDFiniteSpikeExtractionWitness.toSelectedFiniteOperatorLayer
+#print AppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload
+#print buildSelectedFiniteOperatorLayerFromTraceSpikePayload
+#print DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+
+end
+
+end RHFormalization

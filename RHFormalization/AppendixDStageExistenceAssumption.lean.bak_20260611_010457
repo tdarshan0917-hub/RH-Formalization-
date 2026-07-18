@@ -1,0 +1,49 @@
+import RHFormalization.DOperatorExport
+
+/-!
+# Appendix-D stage existence assumption
+
+This file is NOT the final no-axiom proof.
+
+It records the exact remaining Appendix-D finite-stage existence theorem needed
+to build the selected D-window alpha sequence:
+
+  ∀ R : ℝ, ∃ α : DFiniteStage, R ≤ α.R
+
+The no-axiom proof must eventually replace this axiom with a construction from
+the fixed finite `(L,R)` Appendix-D stage theorem.
+-/
+
+namespace RHFormalization
+
+noncomputable section
+
+/--
+The missing finite-stage existence theorem.
+
+Mathematical source intended:
+Appendix D fixed finite cutoff/window construction.
+
+This is currently an explicit assumption for downstream testing only.
+-/
+axiom appendixD_exists_DFiniteStage_with_R_ge :
+    ∀ R : ℝ, ∃ α : DFiniteStage, R ≤ α.R
+
+theorem appendixD_exists_DFiniteStage_with_R_ge_nat
+    (n : ℕ) :
+    ∃ α : DFiniteStage, (n : ℝ) ≤ α.R := by
+  exact appendixD_exists_DFiniteStage_with_R_ge (n : ℝ)
+
+noncomputable def selectedDWindowStageAlpha :
+    ℕ → DFiniteStage :=
+  fun n =>
+    Classical.choose (appendixD_exists_DFiniteStage_with_R_ge_nat n)
+
+theorem selectedDWindowStageAlpha_h_R_ge_nat :
+    ∀ n : ℕ, (n : ℝ) ≤ (selectedDWindowStageAlpha n).R := by
+  intro n
+  exact Classical.choose_spec (appendixD_exists_DFiniteStage_with_R_ge_nat n)
+
+end
+
+end RHFormalization

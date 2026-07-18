@@ -1,0 +1,70 @@
+===== 1. OmegaPreperfectAPI + OCI structures =====
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-28-Ω is preperfect.  This is the topological condition needed by Mathlib's
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-29-codiscrete-to-punctured meromorphic equality theorem.
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-30--/
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:31:structure OmegaPreperfectAPI where
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-32-  h_preperfect_Omega :
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-33-    Preperfect Ω
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-34-
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-35-/--
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-36-Ω-specific codiscrete meromorphic identity principle.
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-37-
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-38-This is weaker and more Mathlib-native than directly asking for punctured equality.
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-39-It says that meromorphic functions on Ω agreeing on the overlap agree on a
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-40-codiscrete subset of Ω.
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-41--/
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:42:structure OmegaCodiscreteMeromorphicIdentityAPI where
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-43-  h_codiscrete_identity :
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-44-    ∀ (f g : ℂ → ℂ) (V : Set ℂ),
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-45-      IsOpen V →
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-46-      V.Nonempty →
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-47-      V ⊆ Ω →
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-48-      MeromorphicOnC f Ω →
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-49-      MeromorphicOnC g Ω →
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-50-      Set.EqOn f g V →
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-51-      f =ᶠ[Filter.codiscreteWithin Ω] g
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-52-
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-53-/--
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean-54-Build the Ω-specific punctured identity package from a codiscrete identity package
+===== 2. Omega definition + openness lemma =====
+RHFormalization/Basic.lean-31-
+RHFormalization/Basic.lean-32-/-- The manuscript slit plane `Ω = ℂ \ (-∞, 0]`. -/
+RHFormalization/Basic.lean:33:def Omega : Set ℂ :=
+RHFormalization/Basic.lean-34-  {s : ℂ | s ∉ NonpositiveRealAxis}
+RHFormalization/Basic.lean-35-
+RHFormalization/Basic.lean-36-notation "Ω" => Omega
+RHFormalization/Basic.lean-37-
+RHFormalization/Basic.lean-38-/-- Membership form for the manuscript slit plane. -/
+RHFormalization/Basic.lean-39-theorem mem_Omega_iff (s : ℂ) :
+--
+RHFormalization/OmegaTopology.lean-105-Native theorem-backed openness of the manuscript slit plane `Ω`.
+RHFormalization/OmegaTopology.lean-106--/
+RHFormalization/OmegaTopology.lean:107:theorem isOpen_Omega_native : IsOpen Ω := by
+RHFormalization/OmegaTopology.lean-108-  rw [Omega_eq_re_pos_union_im_ne_zero]
+RHFormalization/OmegaTopology.lean-109-  exact isOpen_re_pos.union isOpen_im_ne_zero
+RHFormalization/OmegaTopology.lean-110-
+RHFormalization/OmegaTopology.lean-111-/--
+RHFormalization/OmegaTopology.lean-112-Project API for the openness of the manuscript slit plane.
+RHFormalization/OmegaTopology.lean-113-
+RHFormalization/OmegaTopology.lean:114:This is no longer an assumption: it is built from `isOpen_Omega_native`.
+RHFormalization/OmegaTopology.lean-115--/
+RHFormalization/OmegaTopology.lean-116-structure OpenOmegaAPI where
+RHFormalization/OmegaTopology.lean:117:  h_isOpen_Omega :
+RHFormalization/OmegaTopology.lean-118-    IsOpen Ω
+RHFormalization/OmegaTopology.lean-119-
+RHFormalization/OmegaTopology.lean-120-/-- Default theorem-backed openness package for `Ω`. -/
+RHFormalization/OmegaTopology.lean-121-def defaultOpenOmegaAPI : OpenOmegaAPI :=
+RHFormalization/OmegaTopology.lean:122:  { h_isOpen_Omega := isOpen_Omega_native }
+RHFormalization/OmegaTopology.lean-123-
+RHFormalization/OmegaTopology.lean-124-/-!
+===== 3. Mathlib Preperfect battery =====
+@Preperfect : {α : Type u_1} → [TopologicalSpace α] → Set α → Prop
+@preperfect_iff_nhds : ∀ {α : Type u_1} [inst : TopologicalSpace α] {C : Set α},
+  Preperfect C ↔ ∀ x ∈ C, ∀ U ∈ nhds x, ∃ y ∈ U ∩ C, y ≠ x
+@AccPt : {X : Type u_1} → [TopologicalSpace X] → X → Filter X → Prop
+@IsOpen.preperfect : ∀ {α : Type u_1} [inst : TopologicalSpace α] [PerfectSpace α] {U : Set α}, IsOpen U → Preperfect U
+OPPBattery.lean:8:8: error(lean.unknownIdentifier): Unknown constant `Perfect.preperfect`
+===== 4. exact? probe: let Lean find the OPP proof =====
+OPPProbe.lean:4:29: error: `exact?` could not close the goal. Try `apply?` to see partial suggestions.
+===== 5. fallback probe: unfold then search =====
+OPPProbe2.lean:6:2: error: `exact?` could not close the goal. Try `apply?` to see partial suggestions.

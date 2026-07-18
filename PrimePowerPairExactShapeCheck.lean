@@ -1,0 +1,19 @@
+import RHFormalization.CanonicalPrimePowerConcreteTsumPackage
+import RHFormalization.CanonicalPrimePowerCutoffMassEnumeration
+
+namespace RHFormalization
+
+#print PrimePowerPair
+#check PrimePowerPair
+#check PrimePowerPair.mk
+#check PrimePowerPair.center
+#check PrimePowerPair.weightC
+#check PrimePowerPair.weightReal
+
+#check finiteCanonicalPrimePowerPackage
+#check PrimePowerWeightCutoffEnumerationData
+#check PrimePowerWeightCutoffEnumerationData.mk
+#check PrimePowerWeightCutoffEnumerationData.belowCutoff
+#check PrimePowerWeightCutoffEnumerationData.h_mem_belowCutoff
+
+end RHFormalization

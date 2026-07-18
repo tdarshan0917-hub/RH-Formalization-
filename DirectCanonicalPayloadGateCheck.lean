@@ -1,0 +1,17 @@
+import RHFormalization.SelectedFiniteCanonicalPayload
+
+namespace RHFormalization
+
+#check SelectedFiniteCanonicalPayload
+#print SelectedFiniteCanonicalPayload
+
+#check buildSelectedFiniteOperatorLayerFromCanonicalPayload
+#print axioms buildSelectedFiniteOperatorLayerFromCanonicalPayload
+
+#check DFiniteTraceFunctionData.mk
+#check DFiniteStageSplitAPI.mk
+#check DFiniteStageSplitFromDuhamelAPI.mk
+#check DFiniteStageCanonicalPrimePowerFormula.mk
+#check finiteCanonicalPrimePowerPackage
+
+end RHFormalization

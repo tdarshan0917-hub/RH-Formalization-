@@ -1,0 +1,22 @@
+import RHFormalization.SelectedFiniteOperatorLayer
+import RHFormalization.SelectedDWindowAlphaIndexData
+
+namespace RHFormalization
+
+noncomputable section
+
+#check selectedAppendixDFiniteSpikeExtractionWitness
+#print selectedAppendixDFiniteSpikeExtractionWitness
+
+#check AppendixDFiniteSpikeExtractionWitness
+#print AppendixDFiniteSpikeExtractionWitness
+
+#check AppendixDFiniteSpikeExtractionWitness.toSelectedFiniteOperatorLayer
+#print AppendixDFiniteSpikeExtractionWitness.toSelectedFiniteOperatorLayer
+
+#check selectedFiniteOperatorLayer
+#print selectedFiniteOperatorLayer
+
+end
+
+end RHFormalization

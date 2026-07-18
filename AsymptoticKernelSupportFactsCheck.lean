@@ -1,0 +1,26 @@
+import RHFormalization.CanonicalPrimePowerSummabilityMajorant
+
+namespace RHFormalization
+
+noncomputable section
+
+#check CanonicalPrimePowerMajorantKernelSeriesData
+#print CanonicalPrimePowerMajorantKernelSeriesData
+
+#check CanonicalPrimePowerConcreteTsumKernelSeriesData
+#print CanonicalPrimePowerConcreteTsumKernelSeriesData
+
+#check CanonicalPrimePowerTsumKernelSeriesData
+#print CanonicalPrimePowerTsumKernelSeriesData
+
+#check IsPrimePowerPair
+#print IsPrimePowerPair
+
+#check PrimePowerPair.weightC
+#print PrimePowerPair.weightC
+
+#check PrimePowerPair.weightReal
+#print PrimePowerPair.weightReal
+
+end
+end RHFormalization

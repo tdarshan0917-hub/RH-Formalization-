@@ -1,0 +1,463 @@
+===== 1. EVERY RiemannHypothesis THEOREM + ITS HYPOTHESES =====
+RHFormalization/AppendixESharedPackageCompatibility.lean:100:    RiemannHypothesis :=
+RHFormalization/AppendixESharedPackageCompatibility.lean-101-  finalRHSpine_after_zeroPropagation
+RHFormalization/AppendixESharedPackageCompatibility.lean-102-    ZF
+RHFormalization/AppendixESharedPackageCompatibility.lean-103-    Y
+--
+RHFormalization/AppendixESharedPackageCompatibility.lean:140:    RiemannHypothesis :=
+RHFormalization/AppendixESharedPackageCompatibility.lean-141-  finalRHSpine_after_sharedPackageCompatibility
+RHFormalization/AppendixESharedPackageCompatibility.lean-142-    ZF
+RHFormalization/AppendixESharedPackageCompatibility.lean-143-    Y
+--
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:90:    RiemannHypothesis :=
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean-91-  finalRHSpine_after_zeroPropagation
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean-92-    ZF
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean-93-    Y
+--
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:153:    RiemannHypothesis :=
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean-154-  finalRHSpine_after_sharedPackageFunctionalCompatibility
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean-155-    ZF
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean-156-    Y
+--
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:197:    RiemannHypothesis :=
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean-198-  finalRHSpine_from_sharedBIdentity
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean-199-    ZF
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean-200-    Y
+--
+RHFormalization/AppendixHHoloClosure.lean:96:    RiemannHypothesis :=
+RHFormalization/AppendixHHoloClosure.lean-97-  RH_from_appendixH_interface_zeroDensity
+RHFormalization/AppendixHHoloClosure.lean-98-    h_real_zero_free
+RHFormalization/AppendixHHoloClosure.lean-99-    hsum
+--
+RHFormalization/AppendixHInterfaceEndpoint.lean:59:    RiemannHypothesis :=
+RHFormalization/AppendixHInterfaceEndpoint.lean-60-  RH_from_designed_D_summable
+RHFormalization/AppendixHInterfaceEndpoint.lean-61-    h_real_zero_free
+RHFormalization/AppendixHInterfaceEndpoint.lean-62-    D
+--
+RHFormalization/AppendixHOverlapFromLocalExtensions.lean:173:    RiemannHypothesis :=
+RHFormalization/AppendixHOverlapFromLocalExtensions.lean-174-  RH_from_appendixH_interface_zeroDensity
+RHFormalization/AppendixHOverlapFromLocalExtensions.lean-175-    h_real_zero_free
+RHFormalization/AppendixHOverlapFromLocalExtensions.lean-176-    hsum
+--
+RHFormalization/AppendixHZeroDensityInterfaceEndpoint.lean:58:    RiemannHypothesis :=
+RHFormalization/AppendixHZeroDensityInterfaceEndpoint.lean-59-  RH_from_appendixH_interface_envelope
+RHFormalization/AppendixHZeroDensityInterfaceEndpoint.lean-60-    h_real_zero_free
+RHFormalization/AppendixHZeroDensityInterfaceEndpoint.lean-61-    (buildEnvelopeFromZeroDensity
+--
+RHFormalization/ConnectedOmegaEndpoint.lean:42:    RiemannHypothesis :=
+RHFormalization/ConnectedOmegaEndpoint.lean-43-  mainTheorem_from_nonnegative_interface_layer
+RHFormalization/ConnectedOmegaEndpoint.lean-44-    ZF Y X E defaultConnectedOmegaAPI A I N
+RHFormalization/ConnectedOmegaEndpoint.lean-45-
+--
+RHFormalization/ConnectedOmegaMeromorphicAlgebraEndpoint.lean:33:    RiemannHypothesis :=
+RHFormalization/ConnectedOmegaMeromorphicAlgebraEndpoint.lean-34-  mainTheorem_from_default_connectedOmega
+RHFormalization/ConnectedOmegaMeromorphicAlgebraEndpoint.lean-35-    ZF Y X E defaultMeromorphicAlgebraAPI I N
+RHFormalization/ConnectedOmegaMeromorphicAlgebraEndpoint.lean-36-
+--
+RHFormalization/CurrentFrontierEndpoint.lean:27:    RiemannHypothesis :=
+RHFormalization/CurrentFrontierEndpoint.lean-28-  mainTheorem_from_realZeroFree_omegaCodiscreteIdentity
+RHFormalization/CurrentFrontierEndpoint.lean-29-    h_real_zero_free Y X
+RHFormalization/CurrentFrontierEndpoint.lean-30-    (buildInterfaceBridgeNonnegativeFromCommonCshared Y X h_common)
+--
+RHFormalization/CurrentFrontierEndpoint.lean:84:    RiemannHypothesis := by
+RHFormalization/CurrentFrontierEndpoint.lean-85-  have h_gp : ∀ W : ZeroWitness, HasGenuinePole Zpole W.s0 := fun W =>
+RHFormalization/CurrentFrontierEndpoint.lean-86-    ⟨groupedResidueCoeff M (defaultGroupedPoleClass M W),
+RHFormalization/CurrentFrontierEndpoint.lean-87-      groupedResidueCoeff_ne_zero M W (defaultGroupedPoleClass M W),
+--
+RHFormalization/CurrentFrontierEndpoint.lean:143:    RiemannHypothesis :=
+RHFormalization/CurrentFrontierEndpoint.lean-144-  RH_from_raw_inputs h_real_zero_free
+RHFormalization/CurrentFrontierEndpoint.lean-145-    selectedFiniteOperatorLayer S F R h_R_stage_bound hσ hF_alpha hR_alpha
+RHFormalization/CurrentFrontierEndpoint.lean-146-    M Zex Zpole convergence poleSeriesMeromorphic HarchPackage
+--
+RHFormalization/CurrentFrontierEndpoint.lean:185:    RiemannHypothesis := by
+RHFormalization/CurrentFrontierEndpoint.lean-186-  have h_gp : ∀ W : ZeroWitness, HasGenuinePole Zpole W.s0 := fun W =>
+RHFormalization/CurrentFrontierEndpoint.lean-187-    ⟨groupedResidueCoeff M (defaultGroupedPoleClass M W),
+RHFormalization/CurrentFrontierEndpoint.lean-188-      groupedResidueCoeff_ne_zero M W (defaultGroupedPoleClass M W),
+--
+RHFormalization/CurrentFrontierEndpoint.lean:258:    RiemannHypothesis :=
+RHFormalization/CurrentFrontierEndpoint.lean-259-  RH_from_designed_D_and_H_raw_inputs h_real_zero_free
+RHFormalization/CurrentFrontierEndpoint.lean-260-    M defaultZeroExhaustion Zpole convergence poleSeriesMeromorphic HarchPackage
+RHFormalization/CurrentFrontierEndpoint.lean-261-    sigmaH (by rw [designedY_Cshared_sigma0]; exact hσH) h_split h_pp
+--
+RHFormalization/CurrentFrontierEndpoint.lean:303:    RiemannHypothesis :=
+RHFormalization/CurrentFrontierEndpoint.lean-304-  RH_from_designed_D_default_Zex h_real_zero_free
+RHFormalization/CurrentFrontierEndpoint.lean-305-    defaultZeroMultiplicityData Zpole convergence poleSeriesMeromorphic
+RHFormalization/CurrentFrontierEndpoint.lean-306-    HarchPackage sigmaH hσH h_split h_pp
+--
+RHFormalization/CurrentFrontierEndpoint.lean:346:    RiemannHypothesis := by
+RHFormalization/CurrentFrontierEndpoint.lean-347-  have h_gp : ∀ W : ZeroWitness, HasGenuinePole Zpole W.s0 := fun W =>
+RHFormalization/CurrentFrontierEndpoint.lean-348-    ⟨groupedResidueCoeff defaultZeroMultiplicityData
+RHFormalization/CurrentFrontierEndpoint.lean-349-        (pairGroupedPoleClass defaultZeroMultiplicityData W),
+--
+RHFormalization/CurrentFrontierEndpoint.lean:401:    RiemannHypothesis :=
+RHFormalization/CurrentFrontierEndpoint.lean-402-  RH_from_designed_D_default_Zex_M_pair h_real_zero_free
+RHFormalization/CurrentFrontierEndpoint.lean-403-    Zpole convergence poleSeriesMeromorphic HarchPackage sigmaH hσH h_split
+RHFormalization/CurrentFrontierEndpoint.lean-404-    (fun W => h_pp_from_convergence defaultZeroMultiplicityData Zpole
+--
+RHFormalization/CurrentFrontierEndpoint.lean:440:    RiemannHypothesis :=
+RHFormalization/CurrentFrontierEndpoint.lean-441-  RH_from_designed_D_convergence h_real_zero_free
+RHFormalization/CurrentFrontierEndpoint.lean-442-    Zpole convergence
+RHFormalization/CurrentFrontierEndpoint.lean-443-    { h_meromorphic := fun _ _ =>
+--
+RHFormalization/CurrentFrontierEndpoint.lean:473:    RiemannHypothesis :=
+RHFormalization/CurrentFrontierEndpoint.lean-474-  RH_from_designed_D_convergence_only h_real_zero_free
+RHFormalization/CurrentFrontierEndpoint.lean-475-    (ZpoleSeries defaultZeroMultiplicityData)
+RHFormalization/CurrentFrontierEndpoint.lean-476-    (buildZeroPoleLUCAPIFromEnvelope defaultZeroMultiplicityData D)
+--
+RHFormalization/CurrentFrontierEndpoint.lean:501:    RiemannHypothesis :=
+RHFormalization/CurrentFrontierEndpoint.lean-502-  RH_from_designed_D_summable h_real_zero_free D
+RHFormalization/CurrentFrontierEndpoint.lean-503-    { Harch := fun s => designedY.B.Cshared.Bshared s +
+RHFormalization/CurrentFrontierEndpoint.lean-504-        ZpoleSeries defaultZeroMultiplicityData s
+--
+RHFormalization/CurrentFrontierEndpoint.lean:532:    RiemannHypothesis :=
+RHFormalization/CurrentFrontierEndpoint.lean-533-  RH_from_designed_D_designed_Harch h_real_zero_free
+RHFormalization/CurrentFrontierEndpoint.lean-534-    (buildEnvelopeFromZeroDensity defaultZeroMultiplicityData hsum)
+RHFormalization/CurrentFrontierEndpoint.lean-535-    h_holo
+--
+RHFormalization/CurrentFrontierSelectedD.lean:63:    RiemannHypothesis := by
+RHFormalization/CurrentFrontierSelectedD.lean-64-  exact
+RHFormalization/CurrentFrontierSelectedD.lean-65-    RH_from_raw_inputs
+RHFormalization/CurrentFrontierSelectedD.lean-66-      h_real_zero_free
+--
+
+===== 2. EVERY PROVIDER OF DDetailedConstructionWithOperatorLegality (the Y) =====
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:37:def buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:66:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:117:    (buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:167:    (buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:181:    (buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:36:def buildDDetailedConstructionWithOperatorLegalityFromPrimePowerLimit
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:68:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:65:def buildDDetailedConstructionWithOperatorLegalityFromRCutoffEstimate
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:93:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:94:  buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:141:    (buildDDetailedConstructionWithOperatorLegalityFromRCutoffEstimate
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:155:      (buildDDetailedConstructionWithOperatorLegalityFromRCutoffEstimate
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:168:      (buildDDetailedConstructionWithOperatorLegalityFromRCutoffEstimate
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:28:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthAligned
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:45:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:46:  buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthMassEnvelope
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:61:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthMassEnvelope
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:83:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:84:  buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:93:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:94:  buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthLimits
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:109:def buildDDetailedConstructionWithOperatorLegalityFromChosenLengthDLimitPayload
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:111:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:83:def buildDDetailedConstructionWithOperatorLegalityFromChosenLengthDisplacementKernelPayload
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:123:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:124:  buildDDetailedConstructionWithOperatorLegalityFromChosenLengthDLimitPayload
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:83:def buildDDetailedConstructionWithOperatorLegalityFromExactWeightedEnvelopePayload
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:123:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:124:  buildDDetailedConstructionWithOperatorLegalityFromChosenLengthDLimitPayload
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:79:def buildDDetailedConstructionWithOperatorLegalityFromHeatKernelWeightedPayload
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:119:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:120:  buildDDetailedConstructionWithOperatorLegalityFromChosenLengthDLimitPayload
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:82:def buildDDetailedConstructionWithOperatorLegalityFromChosenLengthSharedMajorantPayload
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:122:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:123:  buildDDetailedConstructionWithOperatorLegalityFromChosenLengthDLimitPayload
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:29:`buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthMassEnvelope`.
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:28:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthFR
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:44:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:45:  buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthAligned
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:34:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthLimits
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:69:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:86:  buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean:24:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFR
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean:45:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean:46:  buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthFR
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:25:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:39:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:40:  buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFR
+RHFormalization/CurrentFrontierEndpoint.lean:90:    (buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+RHFormalization/CurrentFrontierEndpoint.lean:226:        buildDDetailedConstructionWithOperatorLegalityFromRCutoffEstimate,
+RHFormalization/CurrentFrontierEndpoint.lean:227:        buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit,
+RHFormalization/DesignedDetailedConstruction.lean:116:noncomputable def designedY : DDetailedConstructionWithOperatorLegality :=
+RHFormalization/DesignedDetailedConstruction.lean:117:  buildDDetailedConstructionWithOperatorLegalityFromRCutoffEstimate
+RHFormalization/DirichletRealOperatorStageData.lean:66:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:59:def buildDDetailedConstructionWithOperatorLegalityFromDWindowExactMassExactSpeed
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:87:    DDetailedConstructionWithOperatorLegality :=
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:88:  buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:135:    (buildDDetailedConstructionWithOperatorLegalityFromDWindowExactMassExactSpeed
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:149:      (buildDDetailedConstructionWithOperatorLegalityFromDWindowExactMassExactSpeed
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:162:      (buildDDetailedConstructionWithOperatorLegalityFromDWindowExactMassExactSpeed
+
+===== 3. DOES ANY Y-PROVIDER TAKE NO HYPOTHESES? (the only thing that matters) =====
+--- RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean ---
+14:  → finite canonical prime-power formula
+15:  → reduced finite-canonical convergence
+16:  → DBcanLimitData
+17:  → DDetailedConstructionWithOperatorLegality.
+37:def buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit
+87:theorem detailedConstructionFromFiniteCanonicalLimit_Bcan_eq_shared
+136:theorem detailedConstructionFromFiniteCanonicalLimit_h_Bcan_matches_shared
+166:    (hs : s ∈ RightHalfPlane finiteOperatorLayer.toStagePackage.sigma0) :
+--- RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean ---
+31:  → `toFiniteCanonicalPrimePowerFormula`
+32:  → `DOperatorPrimePowerLimitAtOverlapData`
+33:  → `DBcanLimitData`
+34:  → `DDetailedConstructionWithOperatorLegality`.
+36:def buildDDetailedConstructionWithOperatorLegalityFromPrimePowerLimit
+38:    (Bcan : ℂ → ℂ)
+90:theorem detailedConstructionFromPrimePowerLimit_h_Bcan_matches_shared
+92:    (Bcan : ℂ → ℂ)
+--- RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean ---
+60:    → canonical prime-power exhaustion data
+61:    → finite canonical limit data
+62:    → DBcanLimitData
+63:    → DDetailedConstructionWithOperatorLegality.
+65:def buildDDetailedConstructionWithOperatorLegalityFromRCutoffEstimate
+111:theorem detailedConstructionFromRCutoffEstimate_Bcan_matches_tsum
+140:    (hs : s ∈ RightHalfPlane finiteOperatorLayer.toStagePackage.sigma0) :
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean ---
+28:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthAligned
+41:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+42:    (hF_alpha : F.alpha = S.alpha)
+43:    (hR_alpha :
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean ---
+12:  chosen length → massEnvelope/windowSpeed → 0
+13:  chosen length → exhaustion data
+14:  chosen length → DBcan limit data
+58:    → finite-canonical-limit data
+59:    → DDetailedConstructionWithOperatorLegality.
+61:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthMassEnvelope
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean ---
+43:  FH : ℂ → ℂ
+44:  RH : ℂ → ℂ
+54:      IsCompact K →
+55:      K ⊆ Ω →
+57:          0 < ε →
+66:      IsCompact K →
+67:      K ⊆ Ω →
+69:          0 < ε →
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean ---
+26:def buildChosenLengthDLimitPayloadFromDisplacementKernel
+31:    (FH RH : ℂ → ℂ)
+32:    (h_FH_holo : HolomorphicOnC FH Ω)
+33:    (h_RH_holo : HolomorphicOnC RH Ω)
+34:    (h_F_stage_to_FH :
+36:        IsCompact K →
+37:        K ⊆ Ω →
+39:            0 < ε →
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean ---
+26:def buildChosenLengthDLimitPayloadFromExactWeightedEnvelope
+31:    (FH RH : ℂ → ℂ)
+32:    (h_FH_holo : HolomorphicOnC FH Ω)
+33:    (h_RH_holo : HolomorphicOnC RH Ω)
+34:    (h_F_stage_to_FH :
+36:        IsCompact K →
+37:        K ⊆ Ω →
+39:            0 < ε →
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean ---
+22:def buildChosenLengthDLimitPayloadFromHeatKernelWeighted
+27:    (FH RH : ℂ → ℂ)
+28:    (h_FH_holo : HolomorphicOnC FH Ω)
+29:    (h_RH_holo : HolomorphicOnC RH Ω)
+30:    (h_F_stage_to_FH :
+32:        IsCompact K →
+33:        K ⊆ Ω →
+35:            0 < ε →
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean ---
+26:def buildChosenLengthDLimitPayloadFromSharedMajorant
+31:    (FH RH : ℂ → ℂ)
+32:    (h_FH_holo : HolomorphicOnC FH Ω)
+33:    (h_RH_holo : HolomorphicOnC RH Ω)
+34:    (h_F_stage_to_FH :
+36:        IsCompact K →
+37:        K ⊆ Ω →
+39:            0 < ε →
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean ---
+31:theorem chosenLengthOverlapBuilder_of_alpha_aligned
+42:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+43:    (hF_alpha : F.alpha = S.alpha)
+44:    (hR_alpha :
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean ---
+28:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthFR
+35:    (h_R_stage_bound :
+37:        IsCompact K →
+38:        K ⊆ Ω →
+41:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+42:    (hF_alpha : F.alpha = S.alpha)
+43:    (hR_alpha : R.alpha = S.alpha) :
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean ---
+34:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthLimits
+37:    (FH RH : ℂ → ℂ)
+38:    (h_FH_holo : HolomorphicOnC FH Ω)
+39:    (h_RH_holo : HolomorphicOnC RH Ω)
+40:    (h_F_stage_to_FH :
+42:        IsCompact K →
+43:        K ⊆ Ω →
+45:            0 < ε →
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean ---
+24:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFR
+29:    (h_R_stage_bound :
+31:        IsCompact K →
+32:        K ⊆ Ω →
+35:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+36:    (hF_alpha : F.alpha = S.alpha)
+37:    (hR_alpha : R.alpha = S.alpha)
+38:    (h_inv_speed_tendsto_zero :
+--- RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean ---
+25:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+30:    (h_R_stage_bound :
+32:        IsCompact K →
+33:        K ⊆ Ω →
+36:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+37:    (hF_alpha : F.alpha = S.alpha)
+38:    (hR_alpha : R.alpha = S.alpha) :
+--- RHFormalization/CurrentFrontierEndpoint.lean ---
+21:theorem RH_current_frontier
+22:    (h_real_zero_free :
+23:      ∀ s : ℂ, s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+26:    (h_common : Y.B.Cshared = X.layer.overlap.Cshared) :
+51:theorem RH_from_raw_inputs
+52:    (h_real_zero_free :
+53:      ∀ s : ℂ, s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+59:    (h_R_stage_bound :
+--- RHFormalization/DesignedDetailedConstruction.lean ---
+26:theorem two_mem_designed_halfplane : (2 : ℂ) ∈ RightHalfPlane dP.sigma0 := by
+32:theorem holomorphicOnC_const (c : ℂ) (U : Set ℂ) :
+40:theorem designed_Bshared_const :
+44:theorem designed_B_stage_tendsto :
+67:      show dist (heatKernelG 1 a) ((1 : ℂ) * heatKernelG 1 a) < ε
+143:theorem designedY_Bcan_eq_tsum
+144:    (s : ℂ) (hs : s ∈ RightHalfPlane dP.sigma0) :
+147:        q.weightC * (displacementCanonicalKernel (heatKernelG 1)) q.center s := by
+--- RHFormalization/DirichletRealOperatorStageData.lean ---
+42:def DirichletStageRealization.toRealOperatorStageData
+60:def buildHonestYZeroResidualFromDirichletStageRealization
+--- RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean ---
+59:def buildDDetailedConstructionWithOperatorLegalityFromDWindowExactMassExactSpeed
+105:theorem detailedConstructionFromDWindowExactMassExactSpeed_Bcan_matches_tsum
+134:    (hs : s ∈ RightHalfPlane finiteOperatorLayer.toStagePackage.sigma0) :
+185:theorem finalRHSpine_from_DWindowExactMassExactSpeedData
+--- RHFormalization/FinalRHFromRCutoffEstimate.lean ---
+82:theorem finalRHSpine_from_RCutoffEstimateData
+--- RHFormalization/HonestYFromFHcan.lean ---
+14:`finiteOperatorLayer.toStagePackage.F_stage (S.alpha n) → Eop.FHcan`
+26:def buildHonestYFromFHcan
+32:    (RH : ℂ → ℂ)
+33:    (h_RH_holo : HolomorphicOnC RH Ω)
+34:    (h_F_stage_to_FHcan :
+36:        IsCompact K →
+37:        K ⊆ Ω →
+39:            0 < ε →
+--- RHFormalization/HonestYProbe.lean ---
+12:def honestY_probe : DDetailedConstructionWithOperatorLegality :=
+--- RHFormalization/HonestYResolventProbe.lean ---
+13:def honestY_resolvent_probe : DDetailedConstructionWithOperatorLegality :=
+--- RHFormalization/HonestYZeroResidualFromFHcan.lean ---
+24:def buildHonestYZeroResidualFromFHcan
+29:    (h_F_stage_to_FHcan :
+31:        IsCompact K →
+32:        K ⊆ Ω →
+34:            0 < ε →
+47:    (holomorphicOnC_const 0 Ω)
+--- RHFormalization/RealOperatorStageData.lean ---
+41:def RealOperatorStageData.toResolventStageLadderMatchesFHcan
+54:theorem RealOperatorStageData.h_F_stage_to_FHcan
+62:      IsCompact K →
+63:      K ⊆ Ω →
+65:          0 < ε →
+102:def buildHonestYZeroResidualFromRealOperatorStageData
+--- RHFormalization/RealPrimeY.lean ---
+17:def realPrimeY
+18:    (μ : Fin N → ℝ)
+21:    (FH RH : ℂ → ℂ)
+22:    (h_FH_holo : HolomorphicOnC FH Ω)
+23:    (h_RH_holo : HolomorphicOnC RH Ω)
+24:    (h_F_stage_to_FH :
+25:      ∀ (K : Set ℂ), IsCompact K → K ⊆ Ω →
+26:        ∀ (ε : ℝ), 0 < ε →
+--- RHFormalization/SelectedRCutoffDetailedConstructionInstance.lean ---
+8:def selectedRCutoffDetailedConstructionSource :
+13:      (heatKernelG (1 : ℝ))
+29:def selectedDDetailedConstructionWithOperatorLegality :
+--- RHFormalization/SelectedRCutoffDetailedConstructionSource.lean ---
+10:→ `DDetailedConstructionWithOperatorLegality`
+60:def buildSelectedDDetailedConstructionFromRCutoffSource
+
+===== 4. IMPORT CLOSURE: what is the TOP file, and does it reach a sorry-free Y? =====
+Files defining a RiemannHypothesis theorem: 82
+   RHFormalization.MainTheoremFromRealZeroFreeDefaultAC
+   RHFormalization.HChosenDSharedCFromHoloProbe
+   RHFormalization.ShiftedLaplaceRepCorrectedCapstone
+   RHFormalization.ExplicitFormulaLocalReduction
+   RHFormalization.SelectedDirectFinalAssemblyFromWrapperLayer
+   RHFormalization.PrincipalPartCoboundedModel
+   RHFormalization.ExplicitFormulaBRegular
+   RHFormalization.TwoInputEndpointFromEta
+   RHFormalization.OmegaPuncturedIdentityEndpoint
+   RHFormalization.MainTheoremFromRealZeroFreeOmegaPunctured
+   RHFormalization.FinalHoloProbe
+   RHFormalization.ShiftedLaplaceRepCapstone
+   RHFormalization.OmegaNormalFormPropagationEndpoint
+   RHFormalization.PrimeSideOverlapAlignment
+   RHFormalization.PrimeSideAlignmentDesignedBridge
+   RHFormalization.FinalRHAssembly
+   RHFormalization.AppendixHHoloClosure
+   RHFormalization.FinalConditionalSpine
+   RHFormalization.FinalPuncturedProbe
+   RHFormalization.ShiftedLaplaceCapstoneTLU
+   RHFormalization.RHFromTsumPrincipalPart
+   RHFormalization.RealPrimeRepDirectCapstone
+   RHFormalization.ShiftedLaplaceRepInputs
+   RHFormalization.ShiftedLaplaceBridgeEndpoint
+   RHFormalization.DefaultDenominatorSimpleZeroOrder
+   RHFormalization.ShiftedLaplaceUnconditional
+   RHFormalization.ConnectedOmegaMeromorphicAlgebraEndpoint
+   RHFormalization.MainTheoremFromRealZeroFreeOmegaCodiscrete
+   RHFormalization.FinalSpineFromRealZeroFree
+   RHFormalization.HExplicitFormulaSplit
+   RHFormalization.ShiftedLaplaceRepBridgeEndpoint
+   RHFormalization.FinalOmegaPropagationProbe
+   RHFormalization.OmegaMeromorphicZeroPropagationEndpoint
+   RHFormalization.SimplePoleOrderFromDenominator
+   RHFormalization.FinalTwoInputsTargets
+   RHFormalization.FinalRHFromRCutoffEstimate
+   RHFormalization.PrimeSideAlignmentContractLocalEF
+   RHFormalization.DefaultCoboundedAddFiniteLimit
+   RHFormalization.ShiftedLaplaceRepDirectFrontier
+   RHFormalization.PrincipalPartMeromorphic
+   RHFormalization.PrimeSideOperatorBridgeBLocalEF
+   RHFormalization.OperatorEigenvalueRHProbe
+   RHFormalization.OmegaPuncturedIdentityFromCodiscrete
+   RHFormalization.AppendixESharedPackageCompatibility
+   RHFormalization.AppendixESharedPackageFunctionalCompatibility
+   RHFormalization.LocalOrderObstruction
+   RHFormalization.RealPrimeRHClose
+   RHFormalization.RealPrimeRepCorrectedCapstone
+   RHFormalization.PrimeSideOverlapAlignmentLocalEF
+   RHFormalization.OmegaMeromorphicZeroPropagationClopen
+   RHFormalization.DefaultSimplePoleCoboundedFromOrder
+   RHFormalization.OmegaMeromorphicLocalPropagationEndpoint
+   RHFormalization.FinalDirectProbe
+   RHFormalization.PrincipalPartOrderFromCobounded
+   RHFormalization.SelectedDirectFinalAssembly
+   RHFormalization.ConnectedOmegaEndpoint
+   RHFormalization.ShiftedLaplaceCapstone
+   RHFormalization.SelectedDirectDEndgame
+   RHFormalization.AppendixHZeroDensityInterfaceEndpoint
+   RHFormalization.MainTheoremFromRealZeroFreeDefaultA
+   RHFormalization.RealPrimeRHSharp
+   RHFormalization.CurrentFrontierSelectedD
+   RHFormalization.FinalRHFromDWindowExactMassExactSpeed
+   RHFormalization.RHfromHoloOnly
+   RHFormalization.InterfaceBridgeNonnegativeFromPlain
+   RHFormalization.OmegaCodiscreteIdentityFromNormalForms
+   RHFormalization.PrincipalPartCoboundedSplit
+   RHFormalization.FinalOmegaRHProbe
+   RHFormalization.FinalZeroPropagationSpine
+   RHFormalization.OmegaNormalFormLocalPropagationEndpoint
+   RHFormalization.AppendixHInterfaceEndpoint
+   RHFormalization.ShiftedLaplaceLocalExtensionEndpoint
+   RHFormalization.CurrentFrontierEndpoint
+   RHFormalization.ShiftedLaplaceRepDirectEndpoint
+   RHFormalization.MainTheorem
+   RHFormalization.PuncturedMeromorphicIdentityEndpoint
+   RHFormalization.RealPrimeModelCorrectedClose
+   RHFormalization.AppendixHOverlapFromLocalExtensions
+   RHFormalization.ModelRepCorrectedCapstone
+   RHFormalization.HMeromorphicWithNormalFormChosenCshared
+   RHFormalization.RHCompositionProbe
+   RHFormalization.HChosenDSharedCProbe

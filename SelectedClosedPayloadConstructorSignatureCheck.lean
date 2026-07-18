@@ -1,0 +1,30 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload
+import RHFormalization.CanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability
+import RHFormalization.CanonicalPrimePowerCutoffMassEnumeration
+import RHFormalization.CanonicalPrimePowerMassUpperEnvelope
+import RHFormalization.CanonicalPrimePowerExactMassEnvelope
+import RHFormalization.DCanonicalWindowSharpCutoffConcreteChosenSpeed
+import RHFormalization.CanonicalPrimePowerDWindowKernelIdentification
+
+namespace RHFormalization
+
+#check CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload.mk
+#check buildCanonicalPrimePowerSharpCutoffHeatKernelWeightedDataFromClosedPayload
+
+#check DFiniteStagePackageFromOperatorLayer.mk
+#check DCanonicalWindowSharpCutoffConcreteChosenSpeedData.mk
+#check PrimePowerDWindowKernelIdentificationData.mk
+#check PrimePowerWeightCutoffEnumerationData.mk
+#check PrimePowerMassEnvelopeData.mk
+#check exactPrimePowerMassEnvelopeData
+
+#check heatKernelG
+#check displacementCanonicalKernel
+#check sharpCutoffDCanonicalWindowData
+
+-- Expected missing selected objects:
+#check selectedClosedPayload
+#check selectedFiniteOperatorLayer
+#check selectedH0
+
+end RHFormalization

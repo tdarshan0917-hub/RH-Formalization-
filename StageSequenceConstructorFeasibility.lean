@@ -1,0 +1,33 @@
+import RHFormalization.DOperatorExport
+import RHFormalization.AppendixDFiniteSpikeExtractionWitnessInstance
+import RHFormalization.CanonicalPrimePowerCutoffMassEnumeration
+
+namespace RHFormalization
+
+noncomputable section
+
+#check DFiniteStage
+#check DFiniteStage.mk
+#print DFiniteStage
+
+#check NativeUnboundedDStage
+#print NativeUnboundedDStage
+#check NativeUnboundedDStage.mk
+
+#check PrimePowerPair
+#check PrimePowerPair.center
+#check PrimePowerPair.weightC
+
+#check selectedAppendixDFiniteSpikeExtractionWitness
+#check selectedAppendixDFiniteSpikeExtractionWitness.activeIndices
+#check selectedAppendixDFiniteSpikeExtractionWitness.toPP
+
+#check finitePrimePowerPairSet
+#check primePowerPairsBelow
+#check PrimePowerPair.belowCutoff
+#check enumeratedPrimePowerMass
+#check exactPrimePowerMassEnvelopeData
+
+end
+
+end RHFormalization

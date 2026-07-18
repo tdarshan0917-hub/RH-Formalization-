@@ -1,0 +1,134 @@
+import RHFormalization.PrimeSideOverlapAlignment
+import RHFormalization.ExplicitFormulaLocalReduction
+import RHFormalization.MeromorphyAssembly
+
+/-!
+# RHFormalization.PrimeSideOverlapAlignmentZeroDensity
+
+Zero-density compression for the overlap-alignment route.
+
+The previous attempt failed because `meromorphicOn_from_convergence` returns
+a raw `MeromorphicOnC` proof, while the consumer expects the wrapper structure
+
+  ZpoleMeromorphicFromSeriesAPI ...
+
+This version wraps that proof using the structure constructor.
+-/
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex Set Topology Filter
+open scoped BigOperators
+
+/--
+The direct overlap alignment obtained by choosing the corrected prime-side
+transform to be the Appendix-D exported B-function itself.
+-/
+def primeSideOverlapAlignment_of_D_B
+    (D : OperatorResolventBridge) :
+    PrimeSideOverlapAlignment D :=
+  { Btr := D.B
+    h_Btr_matches_D_on_overlap := by
+      intro s hs
+      rfl }
+
+/--
+Zero-density version of the corrected overlap-alignment theorem.
+
+This routes through the already-green theorem
+
+  RH_from_primeSideOverlapAlignment_designed_convergence
+
+and supplies the Z-side convergence and meromorphy API from `hsum`.
+-/
+theorem RH_from_primeSideOverlapAlignment_zero_density
+    (h_real_zero_free :
+      ∀ s : ℂ,
+        s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+    (hsum :
+      Summable
+        (fun ρ : {ρ : ℂ // IsNontrivialZetaZero ρ} =>
+          (defaultZeroMultiplicityData.mult ρ.1 : ℝ) /
+            (1 + ρ.1.im ^ 2)))
+    (A :
+      PrimeSideOverlapAlignment
+        designedY.toOperatorResolventBridge)
+    (h_holo :
+      HolomorphicOnC
+        (fun s : ℂ =>
+          A.Btr s + ZpoleSeries defaultZeroMultiplicityData s)
+        Ω)
+    (hσ :
+      0 ≤ designedY.toOperatorResolventBridge.sigma0) :
+    RiemannHypothesis := by
+  let conv :
+      ZeroPoleLocalUniformConvergenceAPI
+        defaultZeroMultiplicityData
+        defaultZeroExhaustion
+        (ZpoleSeries defaultZeroMultiplicityData) :=
+    defaultZpoleConvFromZeroDensity hsum
+
+  let zmer :
+      ZpoleMeromorphicFromSeriesAPI
+        defaultZeroMultiplicityData
+        defaultZeroExhaustion
+        (ZpoleSeries defaultZeroMultiplicityData) :=
+    ⟨meromorphicOn_from_convergence
+      defaultZeroMultiplicityData
+      (ZpoleSeries defaultZeroMultiplicityData)
+      conv⟩
+
+  exact
+    RH_from_primeSideOverlapAlignment_designed_convergence
+      h_real_zero_free
+      conv
+      zmer
+      A
+      h_holo
+      hσ
+
+/--
+Sharp D.B-form frontier.
+
+Remaining explicit-formula content:
+
+  HolomorphicOnC
+    (fun s =>
+      designedY.toOperatorResolventBridge.B s
+        + ZpoleSeries defaultZeroMultiplicityData s) Ω
+-/
+theorem RH_from_D_B_zero_density_holo
+    (h_real_zero_free :
+      ∀ s : ℂ,
+        s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+    (hsum :
+      Summable
+        (fun ρ : {ρ : ℂ // IsNontrivialZetaZero ρ} =>
+          (defaultZeroMultiplicityData.mult ρ.1 : ℝ) /
+            (1 + ρ.1.im ^ 2)))
+    (h_holo :
+      HolomorphicOnC
+        (fun s : ℂ =>
+          designedY.toOperatorResolventBridge.B s
+            + ZpoleSeries defaultZeroMultiplicityData s)
+        Ω)
+    (hσ :
+      0 ≤ designedY.toOperatorResolventBridge.sigma0) :
+    RiemannHypothesis :=
+  RH_from_primeSideOverlapAlignment_zero_density
+    h_real_zero_free
+    hsum
+    (primeSideOverlapAlignment_of_D_B designedY.toOperatorResolventBridge)
+    h_holo
+    hσ
+
+#check primeSideOverlapAlignment_of_D_B
+#check RH_from_primeSideOverlapAlignment_zero_density
+#check RH_from_D_B_zero_density_holo
+#print axioms RH_from_D_B_zero_density_holo
+
+end
+
+end RHFormalization

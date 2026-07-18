@@ -1,0 +1,188 @@
+===== A. OperatorResolventBridge =====
+RHFormalization/AnnexSpine.lean-30-
+RHFormalization/AnnexSpine.lean-31-/-- Operator-side bridge exported by Appendix D. -/
+RHFormalization/AnnexSpine.lean:32:structure OperatorResolventBridge where
+RHFormalization/AnnexSpine.lean-33-  FH : ℂ → ℂ
+RHFormalization/AnnexSpine.lean-34-  B  : ℂ → ℂ
+RHFormalization/AnnexSpine.lean-35-  RH : ℂ → ℂ
+RHFormalization/AnnexSpine.lean-36-  sigma0 : ℝ
+RHFormalization/AnnexSpine.lean-37-
+RHFormalization/AnnexSpine.lean-38-  hFH_holo : HolomorphicOnC FH Ω
+RHFormalization/AnnexSpine.lean-39-  hRH_holo : HolomorphicOnC RH Ω
+RHFormalization/AnnexSpine.lean-40-
+RHFormalization/AnnexSpine.lean-41-  h_split :
+RHFormalization/AnnexSpine.lean-42-    ∀ s : ℂ, s ∈ RightHalfPlane sigma0 →
+RHFormalization/AnnexSpine.lean-43-      FH s = B s + RH s
+RHFormalization/AnnexSpine.lean-44-
+RHFormalization/AnnexSpine.lean-45-/-!
+RHFormalization/AnnexSpine.lean-46-## H. Zero-side package API, Appendix H
+RHFormalization/AnnexSpine.lean-47--/
+RHFormalization/AnnexSpine.lean-48-
+RHFormalization/AnnexSpine.lean-49-/-- Independent zero-side meromorphic package. -/
+RHFormalization/AnnexSpine.lean-50-structure ZeroPolePackageAPI where
+RHFormalization/AnnexSpine.lean-51-  Zpole : ℂ → ℂ
+RHFormalization/AnnexSpine.lean-52-  Harch : ℂ → ℂ
+RHFormalization/AnnexSpine.lean-53-  Bzero : ℂ → ℂ
+RHFormalization/AnnexSpine.lean-54-  sigma0 : ℝ
+RHFormalization/AnnexSpine.lean-55-
+RHFormalization/AnnexSpine.lean-56-  hZ_meromorphic : MeromorphicOnC Zpole Ω
+RHFormalization/AnnexSpine.lean-57-  hHarch_holo : HolomorphicOnC Harch Ω
+RHFormalization/AnnexSpine.lean-58-
+RHFormalization/AnnexSpine.lean-59-  h_split :
+RHFormalization/AnnexSpine.lean-60-    ∀ s : ℂ, s ∈ RightHalfPlane sigma0 →
+RHFormalization/AnnexSpine.lean-61-      Bzero s = Harch s - Zpole s
+RHFormalization/AnnexSpine.lean-62-
+RHFormalization/AnnexSpine.lean-63-/-!
+RHFormalization/AnnexSpine.lean-64-## E. Local interface API, Appendix E
+RHFormalization/AnnexSpine.lean-65--/
+RHFormalization/AnnexSpine.lean-66-
+RHFormalization/AnnexSpine.lean-67-/-- Appendix E identifies the D-side and H-side canonical packages on an overlap half-plane. -/
+RHFormalization/AnnexSpine.lean-68-structure InterfaceBridgeAPI
+RHFormalization/AnnexSpine.lean-69-    (D : OperatorResolventBridge)
+RHFormalization/AnnexSpine.lean-70-    (H : ZeroPolePackageAPI) where
+RHFormalization/AnnexSpine.lean-71-  sigma : ℝ
+RHFormalization/AnnexSpine.lean-72-  hsigma_ge_D : D.sigma0 ≤ sigma
+===== B. ZeroPolePackageAPI =====
+RHFormalization/AnnexSpine.lean-48-
+RHFormalization/AnnexSpine.lean-49-/-- Independent zero-side meromorphic package. -/
+RHFormalization/AnnexSpine.lean:50:structure ZeroPolePackageAPI where
+RHFormalization/AnnexSpine.lean-51-  Zpole : ℂ → ℂ
+RHFormalization/AnnexSpine.lean-52-  Harch : ℂ → ℂ
+RHFormalization/AnnexSpine.lean-53-  Bzero : ℂ → ℂ
+RHFormalization/AnnexSpine.lean-54-  sigma0 : ℝ
+RHFormalization/AnnexSpine.lean-55-
+RHFormalization/AnnexSpine.lean-56-  hZ_meromorphic : MeromorphicOnC Zpole Ω
+RHFormalization/AnnexSpine.lean-57-  hHarch_holo : HolomorphicOnC Harch Ω
+RHFormalization/AnnexSpine.lean-58-
+RHFormalization/AnnexSpine.lean-59-  h_split :
+RHFormalization/AnnexSpine.lean-60-    ∀ s : ℂ, s ∈ RightHalfPlane sigma0 →
+RHFormalization/AnnexSpine.lean-61-      Bzero s = Harch s - Zpole s
+RHFormalization/AnnexSpine.lean-62-
+RHFormalization/AnnexSpine.lean-63-/-!
+RHFormalization/AnnexSpine.lean-64-## E. Local interface API, Appendix E
+RHFormalization/AnnexSpine.lean-65--/
+RHFormalization/AnnexSpine.lean-66-
+RHFormalization/AnnexSpine.lean-67-/-- Appendix E identifies the D-side and H-side canonical packages on an overlap half-plane. -/
+RHFormalization/AnnexSpine.lean-68-structure InterfaceBridgeAPI
+RHFormalization/AnnexSpine.lean-69-    (D : OperatorResolventBridge)
+RHFormalization/AnnexSpine.lean-70-    (H : ZeroPolePackageAPI) where
+RHFormalization/AnnexSpine.lean-71-  sigma : ℝ
+RHFormalization/AnnexSpine.lean-72-  hsigma_ge_D : D.sigma0 ≤ sigma
+RHFormalization/AnnexSpine.lean-73-  hsigma_ge_H : H.sigma0 ≤ sigma
+RHFormalization/AnnexSpine.lean-74-
+RHFormalization/AnnexSpine.lean-75-  h_interface :
+RHFormalization/AnnexSpine.lean-76-    ∀ s : ℂ, s ∈ RightHalfPlane sigma →
+RHFormalization/AnnexSpine.lean-77-      D.B s = H.Bzero s
+RHFormalization/AnnexSpine.lean-78-
+RHFormalization/AnnexSpine.lean-79-/-- The overlap half-plane used by the interface. -/
+RHFormalization/AnnexSpine.lean-80-def InterfaceOverlap
+RHFormalization/AnnexSpine.lean-81-    {D : OperatorResolventBridge}
+RHFormalization/AnnexSpine.lean-82-    {H : ZeroPolePackageAPI}
+RHFormalization/AnnexSpine.lean-83-    (E : InterfaceBridgeAPI D H) : Set ℂ :=
+RHFormalization/AnnexSpine.lean-84-  RightHalfPlane E.sigma
+RHFormalization/AnnexSpine.lean-85-
+RHFormalization/AnnexSpine.lean-86-end
+RHFormalization/AnnexSpine.lean-87-
+RHFormalization/AnnexSpine.lean-88-end RHFormalization
+===== C. InterfaceBridgeAPI =====
+RHFormalization/AnnexSpine.lean-66-
+RHFormalization/AnnexSpine.lean-67-/-- Appendix E identifies the D-side and H-side canonical packages on an overlap half-plane. -/
+RHFormalization/AnnexSpine.lean:68:structure InterfaceBridgeAPI
+RHFormalization/AnnexSpine.lean-69-    (D : OperatorResolventBridge)
+RHFormalization/AnnexSpine.lean-70-    (H : ZeroPolePackageAPI) where
+RHFormalization/AnnexSpine.lean-71-  sigma : ℝ
+RHFormalization/AnnexSpine.lean-72-  hsigma_ge_D : D.sigma0 ≤ sigma
+RHFormalization/AnnexSpine.lean-73-  hsigma_ge_H : H.sigma0 ≤ sigma
+RHFormalization/AnnexSpine.lean-74-
+RHFormalization/AnnexSpine.lean-75-  h_interface :
+RHFormalization/AnnexSpine.lean-76-    ∀ s : ℂ, s ∈ RightHalfPlane sigma →
+RHFormalization/AnnexSpine.lean-77-      D.B s = H.Bzero s
+RHFormalization/AnnexSpine.lean-78-
+RHFormalization/AnnexSpine.lean-79-/-- The overlap half-plane used by the interface. -/
+RHFormalization/AnnexSpine.lean-80-def InterfaceOverlap
+RHFormalization/AnnexSpine.lean-81-    {D : OperatorResolventBridge}
+RHFormalization/AnnexSpine.lean-82-    {H : ZeroPolePackageAPI}
+RHFormalization/AnnexSpine.lean-83-    (E : InterfaceBridgeAPI D H) : Set ℂ :=
+RHFormalization/AnnexSpine.lean-84-  RightHalfPlane E.sigma
+RHFormalization/AnnexSpine.lean-85-
+RHFormalization/AnnexSpine.lean-86-end
+RHFormalization/AnnexSpine.lean-87-
+RHFormalization/AnnexSpine.lean-88-end RHFormalization
+===== D. PoleWitnessAPI =====
+RHFormalization/RigidityBridge.lean-41-
+RHFormalization/RigidityBridge.lean-42-/-- H-side pole witness API: every off-critical nontrivial zero contributes a genuine pole. -/
+RHFormalization/RigidityBridge.lean:43:structure PoleWitnessAPI (H : ZeroPolePackageAPI) where
+RHFormalization/RigidityBridge.lean-44-  h_genuine_pole :
+RHFormalization/RigidityBridge.lean-45-    ∀ W : ZeroWitness, HasGenuinePole H.Zpole W.s0
+RHFormalization/RigidityBridge.lean-46-
+RHFormalization/RigidityBridge.lean-47-/-- Conditional F-contradiction: a pole witness contradicts the no-pole shield. -/
+RHFormalization/RigidityBridge.lean-48-theorem no_ZeroWitness_of_rigidity
+RHFormalization/RigidityBridge.lean-49-    (D : OperatorResolventBridge)
+RHFormalization/RigidityBridge.lean-50-    (H : ZeroPolePackageAPI)
+RHFormalization/RigidityBridge.lean-51-    (E : InterfaceBridgeAPI D H)
+RHFormalization/RigidityBridge.lean-52-    (P : PoleWitnessAPI H)
+RHFormalization/RigidityBridge.lean-53-    (R : RigidityNoPoleAPI D H E) :
+RHFormalization/RigidityBridge.lean-54-    ∀ W : ZeroWitness, False := by
+RHFormalization/RigidityBridge.lean-55-  intro W
+RHFormalization/RigidityBridge.lean-56-  exact (R.h_no_genuine_pole W) (P.h_genuine_pole W)
+RHFormalization/RigidityBridge.lean-57-
+RHFormalization/RigidityBridge.lean-58-/-- The local identity that feeds the global identity theorem. -/
+RHFormalization/RigidityBridge.lean-59-theorem local_identity_for_globalization
+RHFormalization/RigidityBridge.lean-60-    (D : OperatorResolventBridge)
+RHFormalization/RigidityBridge.lean-61-    (H : ZeroPolePackageAPI)
+RHFormalization/RigidityBridge.lean-62-    (E : InterfaceBridgeAPI D H) :
+RHFormalization/RigidityBridge.lean-63-    Set.EqOn D.FH (fun s => Htot D H s - H.Zpole s) (InterfaceOverlap E) := by
+RHFormalization/RigidityBridge.lean-64-  exact local_split_eqOn D H E
+RHFormalization/RigidityBridge.lean-65-
+RHFormalization/RigidityBridge.lean-66-end
+RHFormalization/RigidityBridge.lean-67-
+RHFormalization/RigidityBridge.lean-68-end RHFormalization
+===== E. RigidityNoPoleAPI =====
+RHFormalization/GlobalRigidity.lean-155-derived from smaller pieces rather than being a single opaque API.
+RHFormalization/GlobalRigidity.lean-156--/
+RHFormalization/GlobalRigidity.lean:157:structure RigidityNoPoleAPI
+RHFormalization/GlobalRigidity.lean-158-    (D : OperatorResolventBridge)
+RHFormalization/GlobalRigidity.lean-159-    (H : ZeroPolePackageAPI)
+RHFormalization/GlobalRigidity.lean-160-    (E : InterfaceBridgeAPI D H) where
+RHFormalization/GlobalRigidity.lean-161-  globalIdentity :
+RHFormalization/GlobalRigidity.lean-162-    GlobalIdentityAPI D H E
+RHFormalization/GlobalRigidity.lean-163-  holomorphicShield :
+RHFormalization/GlobalRigidity.lean-164-    HolomorphicShieldAPI D H
+RHFormalization/GlobalRigidity.lean-165-  h_no_genuine_pole :
+RHFormalization/GlobalRigidity.lean-166-    ∀ W : ZeroWitness, ¬ HasGenuinePole H.Zpole W.s0
+RHFormalization/GlobalRigidity.lean-167-
+RHFormalization/GlobalRigidity.lean-168-/-- Assemble the no-pole rigidity API from the three Appendix-F components. -/
+RHFormalization/GlobalRigidity.lean-169-def buildRigidityNoPole
+RHFormalization/GlobalRigidity.lean-170-    (D : OperatorResolventBridge)
+RHFormalization/GlobalRigidity.lean-171-    (H : ZeroPolePackageAPI)
+RHFormalization/GlobalRigidity.lean-172-    (E : InterfaceBridgeAPI D H)
+RHFormalization/GlobalRigidity.lean-173-    (G : GlobalIdentityAPI D H E)
+RHFormalization/GlobalRigidity.lean-174-    (S : HolomorphicShieldAPI D H)
+RHFormalization/GlobalRigidity.lean-175-    (N : NoPoleFromGlobalIdentityAPI D H E) :
+RHFormalization/GlobalRigidity.lean-176-    RigidityNoPoleAPI D H E :=
+RHFormalization/GlobalRigidity.lean-177-  { globalIdentity := G
+RHFormalization/GlobalRigidity.lean-178-    holomorphicShield := S
+RHFormalization/GlobalRigidity.lean-179-    h_no_genuine_pole := N.h_no_genuine_pole G S }
+RHFormalization/GlobalRigidity.lean-180-
+RHFormalization/GlobalRigidity.lean-181-/--
+RHFormalization/GlobalRigidity.lean-182-Convenience assembly from the meromorphic identity theorem API,
+RHFormalization/GlobalRigidity.lean-183-the holomorphic `Htot` API, and the no-pole obstruction API.
+RHFormalization/GlobalRigidity.lean-184--/
+RHFormalization/GlobalRigidity.lean-185-def buildRigidityNoPoleFromGlobalLayer
+RHFormalization/GlobalRigidity.lean-186-    (D : OperatorResolventBridge)
+RHFormalization/GlobalRigidity.lean-187-    (H : ZeroPolePackageAPI)
+RHFormalization/GlobalRigidity.lean-188-    (E : InterfaceBridgeAPI D H)
+RHFormalization/GlobalRigidity.lean-189-    (M : MeromorphicIdentityTheoremAPI D H E)
+RHFormalization/GlobalRigidity.lean-190-    (A : HtotHolomorphicAPI D H)
+RHFormalization/GlobalRigidity.lean-191-    (N : NoPoleFromGlobalIdentityAPI D H E) :
+RHFormalization/GlobalRigidity.lean-192-    RigidityNoPoleAPI D H E :=
+RHFormalization/GlobalRigidity.lean-193-  buildRigidityNoPole D H E
+RHFormalization/GlobalRigidity.lean-194-    (buildGlobalIdentity D H E M)
+RHFormalization/GlobalRigidity.lean-195-    (buildHolomorphicShieldFromAPI D H A)
+RHFormalization/GlobalRigidity.lean-196-    N
+RHFormalization/GlobalRigidity.lean-197-
+===== F. existing builders/defaults for any of the five =====
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:68:  let D : OperatorResolventBridge :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:71:  let H : ZeroPolePackageAPI :=
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:68:  let D : OperatorResolventBridge :=
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:71:  let H : ZeroPolePackageAPI :=

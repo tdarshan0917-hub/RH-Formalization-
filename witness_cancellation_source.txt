@@ -1,0 +1,150 @@
+RHFormalization/AnalyticWrappers.lean-46-/-- Project wrapper for holomorphy at a point. -/
+RHFormalization/AnalyticWrappers.lean-47-abbrev HolomorphicAtC (f : ℂ → ℂ) (z : ℂ) : Prop :=
+RHFormalization/AnalyticWrappers.lean-48-  AnalyticAt ℂ f z
+RHFormalization/AnalyticWrappers.lean-49-
+RHFormalization/AnalyticWrappers.lean-50-/-- Project wrapper for local equality near a point. -/
+RHFormalization/AnalyticWrappers.lean:51:abbrev LocalEqAtC (f g : ℂ → ℂ) (z : ℂ) : Prop :=
+RHFormalization/AnalyticWrappers.lean-52-  f =ᶠ[𝓝 z] g
+RHFormalization/AnalyticWrappers.lean-53-
+RHFormalization/AnalyticWrappers.lean-54-/-- Definition check for the holomorphy-on wrapper. -/
+RHFormalization/AnalyticWrappers.lean-55-theorem holomorphicOnC_iff_analyticOn
+RHFormalization/AnalyticWrappers.lean-56-    (f : ℂ → ℂ)
+RHFormalization/AnalyticWrappers.lean-57-    (U : Set ℂ) :
+RHFormalization/AnalyticWrappers.lean-58-    HolomorphicOnC f U ↔ AnalyticOn ℂ f U := by
+RHFormalization/AnalyticWrappers.lean-59-  rfl
+RHFormalization/AnalyticWrappers.lean-60-
+RHFormalization/AnalyticWrappers.lean-61-/--
+RHFormalization/AnalyticWrappers.lean-62-Holomorphic-on to holomorphic-at transfer.
+RHFormalization/AnalyticWrappers.lean-63-
+RHFormalization/AnalyticWrappers.lean-64-This uses only openness of `Ω`; equality with `Complex.slitPlane` is not needed.
+RHFormalization/AnalyticWrappers.lean-65--/
+RHFormalization/AnalyticWrappers.lean-66-theorem HolomorphicOnC.holomorphicAt
+RHFormalization/AnalyticWrappers.lean-67-    {f : ℂ → ℂ}
+RHFormalization/AnalyticWrappers.lean-68-    {z : ℂ}
+RHFormalization/AnalyticWrappers.lean-69-    (O : OpenOmegaAPI)
+RHFormalization/AnalyticWrappers.lean-70-    (hf : HolomorphicOnC f Ω)
+RHFormalization/AnalyticWrappers.lean-71-    (hz : z ∈ Ω) :
+RHFormalization/AnalyticWrappers.lean-72-    HolomorphicAtC f z := by
+RHFormalization/AnalyticWrappers.lean-73-  exact hf.analyticAt (O.h_isOpen_Omega.mem_nhds hz)
+RHFormalization/AnalyticWrappers.lean-74-
+RHFormalization/AnalyticWrappers.lean-75-/--
+RHFormalization/AnalyticWrappers.lean-76-Local equality extraction from `Set.EqOn` on `Ω`.
+RHFormalization/AnalyticWrappers.lean-77-
+RHFormalization/AnalyticWrappers.lean-78-This uses only openness of `Ω`.
+RHFormalization/AnalyticWrappers.lean-79--/
+RHFormalization/AnalyticWrappers.lean-80-theorem localEqAtC_of_eqOn_Omega
+RHFormalization/AnalyticWrappers.lean-81-    {f g : ℂ → ℂ}
+RHFormalization/AnalyticWrappers.lean-82-    {z : ℂ}
+RHFormalization/AnalyticWrappers.lean-83-    (O : OpenOmegaAPI)
+RHFormalization/AnalyticWrappers.lean-84-    (hz : z ∈ Ω)
+RHFormalization/AnalyticWrappers.lean-85-    (hEq : Set.EqOn f g Ω) :
+RHFormalization/AnalyticWrappers.lean-86-    LocalEqAtC f g z := by
+RHFormalization/AnalyticWrappers.lean-87-  filter_upwards [O.h_isOpen_Omega.mem_nhds hz] with y hy
+RHFormalization/AnalyticWrappers.lean-88-  exact hEq hy
+RHFormalization/AnalyticWrappers.lean-89-
+RHFormalization/AnalyticWrappers.lean-90-/--
+RHFormalization/AnalyticWrappers.lean-91-Congruence for holomorphy at a point under local equality.
+RHFormalization/AnalyticWrappers.lean-92-
+RHFormalization/AnalyticWrappers.lean-93-This wraps Mathlib's `AnalyticAt.congr` in project language.
+RHFormalization/AnalyticWrappers.lean-94--/
+RHFormalization/AnalyticWrappers.lean-95-theorem holomorphicAtC_congr
+RHFormalization/AnalyticWrappers.lean-96-    {f g : ℂ → ℂ}
+RHFormalization/AnalyticWrappers.lean-97-    {z : ℂ}
+RHFormalization/AnalyticWrappers.lean-98-    (hf : HolomorphicAtC f z)
+RHFormalization/AnalyticWrappers.lean-99-    (hfg : LocalEqAtC f g z) :
+RHFormalization/AnalyticWrappers.lean-100-    HolomorphicAtC g z := by
+RHFormalization/AnalyticWrappers.lean-101-  exact hf.congr hfg
+RHFormalization/AnalyticWrappers.lean-102-
+RHFormalization/AnalyticWrappers.lean-103-/-!
+RHFormalization/AnalyticWrappers.lean-104-## 2. Hard analytic wrappers still left as explicit APIs
+RHFormalization/AnalyticWrappers.lean-105--/
+RHFormalization/AnalyticWrappers.lean-106-
+--
+RHFormalization/AnalyticWrappers.lean-126-/--
+RHFormalization/AnalyticWrappers.lean-127-Project wrapper for a principal part at a pole.
+RHFormalization/AnalyticWrappers.lean-128-
+RHFormalization/AnalyticWrappers.lean-129-TODO: replace by a Laurent-series or meromorphic-normal-form definition.
+RHFormalization/AnalyticWrappers.lean-130--/
+RHFormalization/AnalyticWrappers.lean:131:abbrev HasPrincipalPartAtC
+RHFormalization/AnalyticWrappers.lean-132-    (f : ℂ → ℂ)
+RHFormalization/AnalyticWrappers.lean-133-    (z coeff : ℂ) : Prop :=
+RHFormalization/AnalyticWrappers.lean-134-  ∃ h : ℂ → ℂ,
+RHFormalization/AnalyticWrappers.lean-135-    HolomorphicAtC h z ∧
+RHFormalization/AnalyticWrappers.lean-136-      (∀ᶠ w in 𝓝 z, w ≠ z → f w = coeff / (w - z) + h w)
+RHFormalization/AnalyticWrappers.lean-137-
+RHFormalization/AnalyticWrappers.lean-138-/--
+RHFormalization/AnalyticWrappers.lean-139-Project wrapper for a genuine uncancelled pole.
+RHFormalization/AnalyticWrappers.lean-140-
+RHFormalization/AnalyticWrappers.lean-141-TODO: replace by a Mathlib/project-local definition in terms of meromorphic normal
+RHFormalization/AnalyticWrappers.lean-142-forms or Laurent coefficients.
+RHFormalization/AnalyticWrappers.lean-143--/
+RHFormalization/AnalyticWrappers.lean-144-abbrev HasGenuinePole
+RHFormalization/AnalyticWrappers.lean-145-    (f : ℂ → ℂ)
+RHFormalization/AnalyticWrappers.lean-146-    (z : ℂ) : Prop :=
+RHFormalization/AnalyticWrappers.lean-147-  ∃ coeff : ℂ, coeff ≠ 0 ∧ HasPrincipalPartAtC f z coeff
+RHFormalization/AnalyticWrappers.lean-148-
+RHFormalization/AnalyticWrappers.lean-149-end
+RHFormalization/AnalyticWrappers.lean-150-
+RHFormalization/AnalyticWrappers.lean-151-end RHFormalization
+--
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-29-simple principal parts, then their sum has a local holomorphic extension.
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-30-
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-31-The point-value hypothesis is necessary because the project definition of
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-32-`HasPrincipalPartAtC` is punctured-neighborhood data.
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-33--/
+RHFormalization/HExplicitFormulaWitnessCancellation.lean:34:theorem Harch_local_extension_at_witness_from_cancelled_principal_parts
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-35-    (Y : DDetailedConstructionWithOperatorLegality)
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-36-    (Zpole : ℂ → ℂ)
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-37-    (W : ZeroWitness)
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-38-    (c : ℂ)
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-39-    (hB :
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-40-      HasPrincipalPartAtC
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-41-        Y.B.Cshared.Bshared
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-42-        W.s0
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-43-        c)
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-44-    (hZ :
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-45-      HasPrincipalPartAtC
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-46-        Zpole
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-47-        W.s0
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-48-        (-c))
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-49-    (hpoint :
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-50-      let hBreg := Classical.choose hB
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-51-      let hZreg := Classical.choose hZ
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-52-      hBreg W.s0 + hZreg W.s0 =
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-53-        Y.B.Cshared.Bshared W.s0 + Zpole W.s0) :
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-54-    ∃ h : ℂ → ℂ,
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-55-      HolomorphicAtC h W.s0 ∧
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-56-        LocalEqAtC h
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-57-          (fun s : ℂ => Y.B.Cshared.Bshared s + Zpole s)
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-58-          W.s0 := by
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-59-  classical
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-60-
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-61-  let hBreg : ℂ → ℂ := Classical.choose hB
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-62-  let hZreg : ℂ → ℂ := Classical.choose hZ
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-63-
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-64-  have hBreg_holo :
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-65-      HolomorphicAtC hBreg W.s0 := by
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-66-    dsimp [hBreg]
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-67-    exact (Classical.choose_spec hB).1
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-68-
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-69-  have hBpp :
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-70-      ∀ᶠ w in 𝓝 W.s0,
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-71-        w ≠ W.s0 →
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-72-          Y.B.Cshared.Bshared w =
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-73-            c / (w - W.s0) + hBreg w := by
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-74-    dsimp [hBreg]
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-75-    exact (Classical.choose_spec hB).2
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-76-
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-77-  have hZreg_holo :
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-78-      HolomorphicAtC hZreg W.s0 := by
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-79-    dsimp [hZreg]
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-80-    exact (Classical.choose_spec hZ).1
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-81-
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-82-  have hZpp :
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-83-      ∀ᶠ w in 𝓝 W.s0,
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-84-        w ≠ W.s0 →
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-85-          Zpole w =
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-86-            (-c) / (w - W.s0) + hZreg w := by
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-87-    dsimp [hZreg]
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-88-    exact (Classical.choose_spec hZ).2
+RHFormalization/HExplicitFormulaWitnessCancellation.lean-89-

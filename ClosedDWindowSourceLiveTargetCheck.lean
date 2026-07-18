@@ -1,0 +1,20 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffClosedDWindowSource
+import RHFormalization.CanonicalPrimePowerSharpCutoffSelectedClosedPayload
+import RHFormalization.SelectedFiniteOperatorLayer
+import RHFormalization.FinalConditionalSpine
+
+namespace RHFormalization
+
+#check finalConditionalRHSpine
+#check DDetailedConstructionWithOperatorLegality
+#check selectedFiniteOperatorLayer
+
+#check SelectedSharpCutoffClosedDWindowSource
+#print SelectedSharpCutoffClosedDWindowSource
+
+#check CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload
+#print CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload
+
+#check buildCanonicalPrimePowerSharpCutoffHeatKernelWeightedDataFromClosedPayload
+
+end RHFormalization

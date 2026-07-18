@@ -1,0 +1,27 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted
+import RHFormalization.CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload
+import RHFormalization.DFHLimitConcrete
+import RHFormalization.DMasterResidualConcrete
+import RHFormalization.HalfPlaneGeometry
+
+namespace RHFormalization
+
+#check ChosenLengthDLimitPayload
+#check buildDDetailedConstructionWithOperatorLegalityFromChosenLengthDLimitPayload
+#check buildChosenLengthDLimitPayloadFromHeatKernelWeighted
+#check buildDDetailedConstructionWithOperatorLegalityFromHeatKernelWeightedPayload
+
+-- These names may or may not exist. This probe is deliberately narrow.
+#check selectedChosenLengthDLimitPayload
+#check selectedH0
+#check selectedFH
+#check selectedRH
+#check selectedFH_holo
+#check selectedRH_holo
+#check selected_F_stage_to_FH
+#check selected_R_stage_to_RH
+#check selected_R_stage_bound
+#check selected_sigma0_nonneg
+
+end RHFormalization

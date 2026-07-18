@@ -1,0 +1,32 @@
+import RHFormalization.CurrentFrontierEndpoint
+import RHFormalization.SelectedFiniteOperatorLayer
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex
+
+#check RH_current_frontier
+#check RH_from_raw_inputs
+
+#check selectedFiniteOperatorLayer
+#check DFiniteStagePackageFromOperatorLayer
+#print DFiniteStagePackageFromOperatorLayer
+
+#check selectedFiniteOperatorLayer.toStagePackage
+#check selectedFiniteOperatorLayer.toFiniteCanonicalPrimePowerFormula
+
+#check buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+
+#check CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData
+#check DFHLimitData
+#check DMasterResidualData
+
+-- Sanity: selectedFiniteOperatorLayer really has the expected raw operator-layer type.
+example : DFiniteStagePackageFromOperatorLayer := selectedFiniteOperatorLayer
+
+end
+
+end RHFormalization

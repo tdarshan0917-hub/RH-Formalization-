@@ -1,0 +1,12 @@
+import RHFormalization.AppendixDOrderedCutoffStageSequence
+
+namespace RHFormalization
+
+#check appendixD_exists_DFiniteStage_with_R_ge_nat
+#check selectedDWindowStageAlpha
+#check selectedDWindowStageAlpha_h_R_ge_nat
+
+#print axioms appendixD_exists_DFiniteStage_with_R_ge_nat
+#print axioms selectedDWindowStageAlpha_h_R_ge_nat
+
+end RHFormalization

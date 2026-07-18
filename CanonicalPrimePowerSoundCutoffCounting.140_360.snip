@@ -1,0 +1,221 @@
+
+/--
+Mass-counting data using a sound cutoff enumeration and center-based counting
+set, while keeping the real-weight envelope.
+-/
+structure PrimePowerSoundMassCountingSetWeightEnvelopeData where
+
+  /-- Sound finite cutoff enumeration. -/
+  soundEnum : PrimePowerSoundCutoffEnumerationData
+
+  /-- Center-based finite counting set. -/
+  centerCountingSet :
+    PrimePowerCenterCountingSetData soundEnum
+
+  /-- Real-weight envelope data. -/
+  weightData :
+    PrimePowerWeightEnvelopeData soundEnum.massEnum
+
+/--
+Convert sound center-counting data into the previous counting-set/real-weight
+envelope data.
+-/
+def PrimePowerSoundMassCountingSetWeightEnvelopeData.toMassCountingSetWeightEnvelopeData
+    (M : PrimePowerSoundMassCountingSetWeightEnvelopeData) :
+    PrimePowerMassCountingSetWeightEnvelopeData M.soundEnum.massEnum :=
+  { countingSetData :=
+      M.centerCountingSet.toCutoffCountingSetData
+
+    weightData :=
+      M.weightData }
+
+/--
+D-window package using a sound cutoff enumeration and center-based counting set.
+
+Compared with `CanonicalPrimePowerDWindowMassCountingSetWeightEnvelopeData`,
+this replaces the raw `massEnum` plus counting-set data by a sound cutoff
+enumeration and center-based count-set condition.
+-/
+structure CanonicalPrimePowerDWindowSoundCountingData
+    (X : DFiniteStagePackageFromOperatorLayer) where
+
+  /-- D-window data used to represent finite and shared kernels. -/
+  W : DCanonicalWindowData
+
+  alpha : ℕ → DFiniteStage
+
+  /-- The common limiting kernel for the shared canonical prime-power series. -/
+  Kshared : CanonicalKernelC
+
+  /-- Concrete cutoff growth: the prime-power cutoff dominates the stage index. -/
+  h_R_ge_nat :
+    ∀ n : ℕ, (n : ℝ) ≤ (alpha n).R
+
+  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+  h_indices_contains_of_center_le_R :
+    ∀ n : ℕ,
+    ∀ q : PrimePowerPair,
+      q.center ≤ (alpha n).R →
+        q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+
+  /-- The finite stage index set contains only indices below cutoff. -/
+  h_indices_subset_center_le_R :
+    ∀ n : ℕ,
+    ∀ q : PrimePowerPair,
+      q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n) →
+        q.center ≤ (alpha n).R
+
+  /-- Unweighted majorant for the D-window limit kernel. -/
+  kernelMajorant : PrimePowerPair → ℝ
+
+  /-- Nonnegativity of the unweighted kernel majorant. -/
+  h_kernelMajorant_nonneg :
+    ∀ q : PrimePowerPair, 0 ≤ kernelMajorant q
+
+  /--
+  Structural identification of prime-power kernels with D-window kernels.
+  -/
+  kernelID :
+    PrimePowerDWindowKernelIdentificationData X W alpha Kshared
+
+  /--
+  Compact real coordinate set for each `s`.
+  -/
+  coordSet : ℂ → Set ℝ
+
+  /--
+  Compactness of the coordinate set on the D overlap half-plane.
+  -/
+  h_coordSet_compact :
+    ∀ s : ℂ,
+    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+      IsCompact (coordSet s)
+
+  /--
+  Active finite-stage prime-power coordinates lie in the coordinate set.
+  -/
+  h_coord_mem :
+    ∀ s : ℂ,
+    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+    ∀ n : ℕ,
+    ∀ q : PrimePowerPair,
+      q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n) →
+        kernelID.coord s q ∈ coordSet s
+
+  /--
+  Pure D.CANONICAL-WINDOW compact inverse-speed theorem.
+  -/
+  windowSpeed :
+    DCanonicalWindowCompactSpeedAPI W alpha
+
+  /--
+  Majorant for the D-window limit kernel.
+  -/
+  h_windowLimit_norm_le_majorant :
+    ∀ s : ℂ,
+    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+    ∀ q : PrimePowerPair,
+      ‖W.G_limit (kernelID.coord s q)‖ ≤ kernelMajorant q
+
+  /--
+  Summable comparison envelope for the weighted majorant.
+  -/
+  summabilityEnvelope : PrimePowerPair → ℝ
+
+  /--
+  Weighted majorant is bounded by the summability envelope.
+  -/
+  h_weightedKernelMajorant_le_envelope :
+    ∀ q : PrimePowerPair,
+      ‖q.weightC‖ * kernelMajorant q ≤ summabilityEnvelope q
+
+  /--
+  The comparison envelope is summable.
+  -/
+  h_summabilityEnvelope_summable :
+    Summable summabilityEnvelope
+
+  /--
+  Sound cutoff/counting/real-weight mass data.
+  -/
+  soundMassCounting :
+    PrimePowerSoundMassCountingSetWeightEnvelopeData
+
+  /--
+  Explicit denominator lower bound for the compact D-window speed.
+  -/
+  denominatorBound : ℂ → ℕ → ℝ
+
+  /-- Positivity of the denominator bound. -/
+  h_denominatorBound_pos :
+    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+      ∀ n : ℕ,
+        0 < denominatorBound s n
+
+  /--
+  Denominator bound is below the actual compact-window speed.
+  -/
+  h_denominatorBound_le_windowSpeed :
+    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+      ∀ n : ℕ,
+        denominatorBound s n ≤ windowSpeed.speed (coordSet s) n
+
+  /--
+  The concrete count/weight quotient tends to zero.
+  -/
+  h_countWeight_div_denominator_tendsto_zero :
+    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+      Tendsto
+        (fun n : ℕ =>
+          (soundMassCounting.centerCountingSet.countEnvelope ((alpha n).R) *
+            soundMassCounting.weightData.weightEnvelope ((alpha n).R)) /
+            denominatorBound s n)
+        Filter.atTop
+        (𝓝 0)
+
+/--
+Convert sound cutoff/counting data into the previous counting-set/real-weight
+D-window package.
+-/
+def CanonicalPrimePowerDWindowSoundCountingData.toMassCountingSetWeightEnvelopeData
+    {X : DFiniteStagePackageFromOperatorLayer}
+    (S : CanonicalPrimePowerDWindowSoundCountingData X) :
+    CanonicalPrimePowerDWindowMassCountingSetWeightEnvelopeData X :=
+  { W := S.W
+    alpha := S.alpha
+    Kshared := S.Kshared
+
+    h_R_ge_nat := S.h_R_ge_nat
+    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+
+    kernelMajorant := S.kernelMajorant
+    h_kernelMajorant_nonneg := S.h_kernelMajorant_nonneg
+
+    kernelID := S.kernelID
+    coordSet := S.coordSet
+    h_coordSet_compact := S.h_coordSet_compact
+    h_coord_mem := S.h_coord_mem
+
+    windowSpeed := S.windowSpeed
+
+    h_windowLimit_norm_le_majorant :=
+      S.h_windowLimit_norm_le_majorant
+
+    summabilityEnvelope := S.summabilityEnvelope
+    h_weightedKernelMajorant_le_envelope :=
+      S.h_weightedKernelMajorant_le_envelope
+    h_summabilityEnvelope_summable :=
+      S.h_summabilityEnvelope_summable
+
+    massEnum := S.soundMassCounting.soundEnum.massEnum
+
+    massCountingSetWeightEnvelope :=
+      S.soundMassCounting.toMassCountingSetWeightEnvelopeData
+
+    denominatorBound := S.denominatorBound
+    h_denominatorBound_pos := S.h_denominatorBound_pos
+    h_denominatorBound_le_windowSpeed :=
+      S.h_denominatorBound_le_windowSpeed
+
+    h_countWeight_div_denominator_tendsto_zero :=

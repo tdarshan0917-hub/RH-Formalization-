@@ -1,0 +1,61 @@
+DECISIVE FINDING
+
+The current canonical prime-power kernel used in the tsum target is
+
+  displacementCanonicalKernel (G : ℝ → ℂ) : CanonicalKernelC :=
+    fun a _s => G a
+
+Therefore the resulting tsum
+
+  fun s =>
+    ∑' q : PrimePowerPair,
+      q.weightC * displacementCanonicalKernel (heatKernelG 1) q.center s
+
+is independent of the spectral variable s.
+
+But the remaining principal-part target requires
+
+  HasPrincipalPartAtC
+    (fun s =>
+      ∑' q : PrimePowerPair,
+        q.weightC * displacementCanonicalKernel (heatKernelG 1) q.center s)
+    W.s0
+    (-(groupedResidueCoeff ...))
+
+and HasPrincipalPartAtC means locally
+
+  f w = coeff / (w - z) + h w.
+
+A displacement-only kernel cannot produce a nonzero 1/(s - W.s0) principal part.
+
+CONCLUSION
+
+The missing theorem h_tsum_principalPart is not merely unproved.
+With the current displacementCanonicalKernel, it is the wrong theorem.
+
+The correct next mathematical move is to introduce/identify the actual
+s-dependent Stieltjes/Laplace/resolvent prime-side kernel, replacing the
+displacement-only kernel in the principal-part route.
+
+LIVE GREEN ENDPOINTS TO KEEP
+
+1. RH_from_operatorBridgeB_localEF
+2. RH_from_primeSideAlignmentContract_localEF
+3. RH_from_designed_D_zero_density_localEF_noBregular
+
+STOP ATTEMPTING
+
+1. PrimeSideOverlapAlignmentZeroDensity
+2. PrimeSideAlignmentContractLocalEFSummable
+3. PrimeSideOperatorBridgeBWitnessEF
+4. direct principal parts for displacementCanonicalKernel
+
+NEXT REAL TARGET
+
+Define a new s-dependent kernel, for example structurally of the form
+
+  K(q, s) ~ coeff(q) / (s - center(q))
+
+or the manuscript-correct Stieltjes/Laplace denominator,
+
+and then prove the single-kernel principal part before lifting to the tsum.

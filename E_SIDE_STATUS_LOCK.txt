@@ -1,0 +1,27 @@
+LIVE GREEN THEOREM:
+  RH_from_primeSideAlignmentContract_localEF
+
+STATUS:
+  The Btr / alignment / local-EF route is green on standard foundations.
+
+REMAINING E-SIDE PAYLOAD:
+  1. PrimeSideAlignmentContract defaultZeroMultiplicityData designedY.toOperatorResolventBridge
+  2. witness-local extensions:
+       ∀ W, ∃ h,
+         HolomorphicAtC h W.s0 ∧
+         LocalEqAtC h
+           (fun s => A.Btr s + ZpoleSeries defaultZeroMultiplicityData s)
+           W.s0
+  3. hσ, currently still present but not the main wall.
+
+STOPPED / PARKED LOOP FILES:
+  PrimeSideOverlapAlignmentZeroDensity
+  PrimeSideAlignmentContractWitnessEF
+  PrimeSideDBLocalEFPayload
+  PrimeSideDBSummableHolo
+  PrimeSideAlignmentContractLocalEFSummable
+  PrimeSideAlignmentContractLocalEFNoSigma
+
+NEXT REAL MATHEMATICAL MOVE:
+  Define/provide the actual s-dependent Stieltjes/Laplace prime-side Btr,
+  or prove witness-local cancellation for A.Btr + ZpoleSeries.

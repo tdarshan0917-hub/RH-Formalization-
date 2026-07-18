@@ -1,0 +1,14 @@
+import RHFormalization.DOperatorExport
+import RHFormalization.CanonicalPrimePowerConcreteTsumPackage
+import RHFormalization.CanonicalPrimePowerCutoffMassEnumeration
+
+namespace RHFormalization
+
+#print PrimePowerPair
+#print PrimePowerPair.center
+#check IsPrimePowerPair
+#print IsPrimePowerPair
+
+#check DFiniteStage.h_diagonalSpikeToPP_complete_center_le_R
+
+end RHFormalization

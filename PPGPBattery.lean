@@ -1,0 +1,6 @@
+import RHFormalization.HSidePoleWitness
+open Filter Topology
+#check @tendsto_cobounded_of_meromorphicOrderAt_neg
+#check @meromorphicOrderAt_eq_int_iff
+#check @AnalyticAt.meromorphicOrderAt_eq
+#check @MeromorphicAt.tendsto_cobounded_iff_meromorphicOrderAt_neg

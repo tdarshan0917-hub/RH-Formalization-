@@ -1,0 +1,18 @@
+import RHFormalization.MainTheoremFromRealZeroFreeOmegaPunctured
+import RHFormalization.OmegaPuncturedIdentityFromCodiscrete
+
+namespace RHFormalization
+
+#check mainTheorem_from_realZeroFree_omegaPuncturedIdentity
+#print axioms mainTheorem_from_realZeroFree_omegaPuncturedIdentity
+
+#check buildOmegaPuncturedIdentityFromCodiscrete
+#print axioms buildOmegaPuncturedIdentityFromCodiscrete
+
+#check OmegaCodiscreteMeromorphicIdentityAPI
+#print OmegaCodiscreteMeromorphicIdentityAPI
+
+#check OmegaPreperfectAPI
+#print OmegaPreperfectAPI
+
+end RHFormalization

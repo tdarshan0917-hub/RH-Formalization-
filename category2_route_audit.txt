@@ -1,0 +1,451 @@
+===== CATEGORY 2 ROUTE AUDIT: IS NAT INDEX SEMANTIC OR JUST A CODE? =====
+===== 1. All downstream uses of diagonal spike Nat indices =====
+RHFormalization/DOperatorExport.lean:150:  diagonalSpikeActive :
+RHFormalization/DOperatorExport.lean:154:  diagonalSpikeContribution :
+RHFormalization/DOperatorExport.lean:158:  canonicalSpikeContribution :
+RHFormalization/DOperatorExport.lean:170:      diagonalSpikeActive q →
+RHFormalization/DOperatorExport.lean:171:        diagonalSpikeContribution q = canonicalSpikeContribution q
+RHFormalization/DOperatorExport.lean:184:  diagonalSpikeActiveIndices :
+RHFormalization/DOperatorExport.lean:190:  h_diagonalSpikeActiveIndices_active :
+RHFormalization/DOperatorExport.lean:192:      q ∈ diagonalSpikeActiveIndices →
+RHFormalization/DOperatorExport.lean:193:        diagonalSpikeActive q
+RHFormalization/DOperatorExport.lean:200:  h_diagonalSpikeActiveIndices_complete :
+RHFormalization/DOperatorExport.lean:202:      diagonalSpikeActive q →
+RHFormalization/DOperatorExport.lean:203:        q ∈ diagonalSpikeActiveIndices
+RHFormalization/DOperatorExport.lean:208:  diagonalSpikeToPP :
+RHFormalization/DOperatorExport.lean:214:  h_diagonalSpikeToPP_inj :
+RHFormalization/DOperatorExport.lean:216:      m ∈ diagonalSpikeActiveIndices →
+RHFormalization/DOperatorExport.lean:218:        n ∈ diagonalSpikeActiveIndices →
+RHFormalization/DOperatorExport.lean:219:          diagonalSpikeToPP m = diagonalSpikeToPP n →
+RHFormalization/DOperatorExport.lean:225:  h_canonicalSpikeContribution_eq_weightC :
+RHFormalization/DOperatorExport.lean:227:      n ∈ diagonalSpikeActiveIndices →
+RHFormalization/DOperatorExport.lean:228:        canonicalSpikeContribution n =
+RHFormalization/DOperatorExport.lean:229:          PrimePowerPair.weightC (diagonalSpikeToPP n)
+RHFormalization/DOperatorExport.lean:236:  h_diagonalSpikeToPP_center_le_R :
+RHFormalization/DOperatorExport.lean:238:      n ∈ diagonalSpikeActiveIndices →
+RHFormalization/DOperatorExport.lean:239:        (diagonalSpikeToPP n).center ≤ R
+RHFormalization/DOperatorExport.lean:247:  h_diagonalSpikeToPP_complete_center_le_R :
+RHFormalization/DOperatorExport.lean:252:          n ∈ diagonalSpikeActiveIndices ∧
+RHFormalization/DOperatorExport.lean:253:            diagonalSpikeToPP n = q
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:46:      α.diagonalSpikeActive q
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:55:      α.diagonalSpikeActive q →
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:72:        α.canonicalSpikeContribution n =
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:98:      α.diagonalSpikeContribution
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:129:          α.diagonalSpikeContribution
+RHFormalization/SelectedFiniteTraceSpikePayloadCertified.lean:34:      α.diagonalSpikeActive q
+RHFormalization/SelectedFiniteTraceSpikePayloadCertified.lean:43:      α.diagonalSpikeActive q → q ∈ Pld.activeIndices α
+RHFormalization/SelectedFiniteTraceSpikePayloadCertified.lean:62:      α.canonicalSpikeContribution n = (toPP α n).weightC
+RHFormalization/SelectedFiniteTraceSpikePayload.lean:37:      α.diagonalSpikeActive q
+RHFormalization/SelectedFiniteTraceSpikePayload.lean:44:          α.diagonalSpikeContribution
+RHFormalization/SelectedFiniteTraceSpikePayload.lean:55:        α.canonicalSpikeContribution
+RHFormalization/SelectedFiniteTraceSpikePayloadFromImageBridge.lean:37:        α.diagonalSpikeActive q)
+RHFormalization/SelectedFiniteTraceSpikePayloadFromImageBridge.lean:43:            α.diagonalSpikeContribution
+RHFormalization/SelectedFiniteTraceSpikePayloadFromImageBridge.lean:53:        α.canonicalSpikeContribution n = (toPP α n).weightC)
+RHFormalization/SelectedFiniteTraceSpikePayloadFromImageBridge.lean:76:        α.canonicalSpikeContribution
+RHFormalization/AppendixDSpikeSumExtraction.lean:13:  `diagonalSpikeContribution q = canonicalSpikeContribution q`
+RHFormalization/AppendixDSpikeSumExtraction.lean:87:        α.diagonalSpikeActive q
+RHFormalization/AppendixDSpikeSumExtraction.lean:99:          α.diagonalSpikeContribution
+RHFormalization/AppendixDSpikeSumExtraction.lean:120:          α.canonicalSpikeContribution
+RHFormalization/AppendixDSpikeSumExtraction.lean:144:              α.diagonalSpikeContribution
+RHFormalization/AppendixDSpikeSumExtraction.lean:151:              α.canonicalSpikeContribution
+RHFormalization/AppendixDSpikeSumExtraction.lean:157:              α.diagonalSpikeContribution
+RHFormalization/AppendixDSpikeSumExtraction.lean:158:              α.canonicalSpikeContribution
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:19:  activeIndices := fun α => α.diagonalSpikeActiveIndices
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:23:    exact α.h_diagonalSpikeActiveIndices_active q hq
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:27:    exact α.h_diagonalSpikeActiveIndices_complete q hq
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:29:  toPP := fun α => α.diagonalSpikeToPP
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:33:    exact α.h_diagonalSpikeToPP_inj m hm n hn hmn
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:37:    exact α.h_canonicalSpikeContribution_eq_weightC n hn
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:60:    using α.h_diagonalSpikeToPP_center_le_R n hn
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:73:  rcases α.h_diagonalSpikeToPP_complete_center_le_R q hvalid hq with ⟨n, hn, hmap_stage⟩
+RHFormalization/DFiniteStageOperator.lean:124:    α.diagonalSpikeActive q →
+RHFormalization/DFiniteStageOperator.lean:125:      α.diagonalSpikeContribution q = α.canonicalSpikeContribution q
+RHFormalization/SelectedFiniteTraceSpikePayloadInstance.lean:77:      α.diagonalSpikeContribution
+RHFormalization/SelectedFiniteTraceSpikePayloadInstance.lean:103:          α.diagonalSpikeContribution
+===== 2. Existing Appendix-D spike/cutoff helper files =====
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:101:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:109:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:253:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:254:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:82:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:90:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:203:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:204:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/DOperatorExport.lean:236:  h_diagonalSpikeToPP_center_le_R :
+RHFormalization/DOperatorExport.lean:247:  h_diagonalSpikeToPP_complete_center_le_R :
+RHFormalization/AppendixDSelectedAlphaIndexData.lean:1:import RHFormalization.SelectedDWindowAlphaIndexData
+RHFormalization/AppendixDSelectedAlphaIndexData.lean:14:    SelectedDWindowAlphaIndexData :=
+RHFormalization/AppendixDSelectedAlphaIndexData.lean:20:    h_indices_contains_of_center_le_R := ?h_indices_contains_of_center_le_R
+RHFormalization/AppendixDSelectedAlphaIndexData.lean:21:    h_indices_subset_center_le_R := ?h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:55:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:65:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:157:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:158:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/SelectedDWindowAlphaIndexDataFromSoundCounting.lean:1:import RHFormalization.SelectedDWindowAlphaIndexData
+RHFormalization/SelectedDWindowAlphaIndexDataFromSoundCounting.lean:11:contains the four alpha/index fields needed for `SelectedDWindowAlphaIndexData`.
+RHFormalization/SelectedDWindowAlphaIndexDataFromSoundCounting.lean:15:    SelectedDWindowAlphaIndexData :=
+RHFormalization/SelectedDWindowAlphaIndexDataFromSoundCounting.lean:19:  h_indices_contains_of_center_le_R :=
+RHFormalization/SelectedDWindowAlphaIndexDataFromSoundCounting.lean:20:    S.h_indices_contains_of_center_le_R
+RHFormalization/SelectedDWindowAlphaIndexDataFromSoundCounting.lean:21:  h_indices_subset_center_le_R :=
+RHFormalization/SelectedDWindowAlphaIndexDataFromSoundCounting.lean:22:    S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:57:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:65:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:126:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:127:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:90:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:98:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:207:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:208:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:104:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:114:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:197:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:198:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/SelectedDWindowAlphaIndexData.lean:18:structure SelectedDWindowAlphaIndexData where
+RHFormalization/SelectedDWindowAlphaIndexData.lean:24:  h_indices_contains_of_center_le_R :
+RHFormalization/SelectedDWindowAlphaIndexData.lean:31:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:62:theorem heatKernelNatValueMajorant_eq_valid_primePower_formula
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:349:  · rw [heatKernelNatValueMajorant_eq_valid_primePower_formula q hq]
+RHFormalization/SelectedDWindowSoundCountingFactorBoundsInstance.lean:20:    h_indices_contains_of_center_le_R := ?h_indices_contains_of_center_le_R
+RHFormalization/SelectedDWindowSoundCountingFactorBoundsInstance.lean:21:    h_indices_subset_center_le_R := ?h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:86:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:94:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:209:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:210:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:76:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:173:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:174:      S.h_indices_contains_of_center_le_R
+RHFormalization/SelectedDWindowStageSequence.target.hold.lean:1:import RHFormalization.SelectedDWindowAlphaIndexData
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:57:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:65:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:206:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:207:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSource.lean:122:  h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSource.lean:123:    Src.S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSource.lean:124:  h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSource.lean:125:    Src.S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:85:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:93:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:185:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:186:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:100:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:107:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:186:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:187:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:188:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:189:      S.h_indices_subset_center_le_R
+RHFormalization/SelectedDWindowAlphaIndexDataInstance.lean:1:import RHFormalization.SelectedDWindowAlphaIndexData
+RHFormalization/SelectedDWindowAlphaIndexDataInstance.lean:2:import RHFormalization.AppendixDSpikeCutoffCompatibility
+RHFormalization/SelectedDWindowAlphaIndexDataInstance.lean:10:    SelectedDWindowAlphaIndexData :=
+RHFormalization/SelectedDWindowAlphaIndexDataInstance.lean:14:  h_indices_contains_of_center_le_R := by
+RHFormalization/SelectedDWindowAlphaIndexDataInstance.lean:17:      appendixD_selected_indices_contains_of_center_le_R
+RHFormalization/SelectedDWindowAlphaIndexDataInstance.lean:19:  h_indices_subset_center_le_R := by
+RHFormalization/SelectedDWindowAlphaIndexDataInstance.lean:22:      appendixD_selected_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:146:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:154:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:284:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:285:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:157:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:165:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:239:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:240:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:69:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:76:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:291:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:292:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:293:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:294:      S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:184:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:192:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:322:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:323:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:111:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:119:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:243:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:244:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:58:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:66:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:186:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:187:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:146:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:154:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:232:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:233:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:108:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:115:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:182:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:183:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:184:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:185:      S.h_indices_subset_center_le_R
+RHFormalization/AppendixDOrderedCutoffStageSequence.lean:2:import RHFormalization.SelectedDWindowAlphaIndexData
+RHFormalization/AppendixDOrderedCutoffStageSequence.lean:8:`SelectedDWindowAlphaIndexDataInstance`.
+RHFormalization/CanonicalPrimePowerHeatKernelPrimePowerSupport.lean:40:theorem heatKernelGaussianCoreEnvelope_eq_valid_primePower_formula
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:43:theorem appendixD_selected_indices_subset_center_le_R
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:60:    using α.h_diagonalSpikeToPP_center_le_R n hn
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:65:theorem appendixD_selected_indices_contains_of_center_le_R
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:73:  rcases α.h_diagonalSpikeToPP_complete_center_le_R q hvalid hq with ⟨n, hn, hmap_stage⟩
+RHFormalization/CanonicalPrimePowerHeatKernelGaussianCoreSummability.lean:38:lemma valid_primePower_natValue_lt_finite (N : ℕ) :
+RHFormalization/CanonicalPrimePowerHeatKernelGaussianCoreSummability.lean:72:  refine (valid_primePower_natValue_lt_finite N).subset ?_
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability.lean:37:    (h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability.lean:42:    (h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability.lean:74:    h_indices_contains_of_center_le_R := h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability.lean:75:    h_indices_subset_center_le_R := h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload.lean:42:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload.lean:48:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload.lean:98:    P.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload.lean:99:    P.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:94:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:102:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:212:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:213:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:92:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:104:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:189:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:211:          (fun q hq => S.h_indices_subset_center_le_R n q hq)
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:164:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:172:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:301:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:302:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:194:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:202:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:329:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:330:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:85:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:93:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:190:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:191:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:69:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:77:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:174:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:175:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:176:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:177:      S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:150:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:158:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:279:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:280:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:83:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:90:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:150:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:151:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:152:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:153:      S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:96:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:104:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:202:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:203:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:130:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:138:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:230:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:231:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:113:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:121:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:205:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:206:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:107:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:114:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:173:    h_indices_contains_of_center_le_R :=
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:174:      S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:175:    h_indices_subset_center_le_R :=
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:176:      S.h_indices_subset_center_le_R
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:44:    (h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:58:  have h_eventually_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:62:  rcases eventually_atTop.1 h_eventually_center_le_R with ⟨N, hN⟩
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:67:      exact h_indices_contains_of_center_le_R n q hq (hN n hn)⟩
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:76:* `h_indices_contains_of_center_le_R`.
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:98:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:197:        S.h_indices_contains_of_center_le_R
+RHFormalization/SelectedDWindowStageSequence.lean:2:import RHFormalization.AppendixDSpikeCutoffCompatibility
+RHFormalization/SelectedDWindowStageSequence.lean:7:The index fields are already closed by `AppendixDSpikeCutoffCompatibility`.
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:52:  h_indices_contains_of_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:60:  h_indices_subset_center_le_R :
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:167:    h_indices_contains_of_center_le_R := S.h_indices_contains_of_center_le_R
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:168:    h_indices_subset_center_le_R := S.h_indices_subset_center_le_R
+===== 3. PrimePowerPair declaration and available instances =====
+import Mathlib
+
+/-!
+# RHFormalization.CanonicalPrimePowerPackage
+
+First concrete shared-package layer for Appendix E.
+
+This file does not create a new RH endpoint.
+
+It defines a project-local finite prime-power package shape with the manuscript's
+frozen normalization:
+
+* index: `(p,m)` with `p` prime and `m ≥ 1`;
+* center: `log (p^m)`;
+* weight: `(log p) / sqrt(p^m)`;
+* package: finite sum of the weighted kernel values.
+
+The analytic work still remains: proving that the D-side limiting package and the
+H-side zero package agree with the limiting version of this shared package on a
+common right half-plane.
+-/
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex
+open scoped BigOperators
+
+/--
+A prime-power pair is represented by `(p,m)`.
+
+The validity predicate below enforces `p` prime and `m ≥ 1`.
+-/
+abbrev PrimePowerPair : Type :=
+  ℕ × ℕ
+
+/-- Base prime candidate. -/
+def PrimePowerPair.p (q : PrimePowerPair) : ℕ :=
+  q.1
+
+/-- Exponent candidate. -/
+def PrimePowerPair.m (q : PrimePowerPair) : ℕ :=
+  q.2
+
+/-- Predicate selecting valid prime-power indices. -/
+def IsPrimePowerPair (q : PrimePowerPair) : Prop :=
+  Nat.Prime q.p ∧ 0 < q.m
+
+/-- The natural number represented by a prime-power pair. -/
+def PrimePowerPair.natValue (q : PrimePowerPair) : ℕ :=
+  q.p ^ q.m
+
+/-- The center `log(q) = log(p^m)` of the prime-power spike. -/
+noncomputable def PrimePowerPair.center (q : PrimePowerPair) : ℝ :=
+  Real.log ((q.natValue : ℕ) : ℝ)
+
+/--
+The frozen RH-spine prime-power weight:
+
+`Λ(q)/sqrt(q) = (log p)/sqrt(p^m)`.
+-/
+noncomputable def PrimePowerPair.weightReal (q : PrimePowerPair) : ℝ := by
+  classical
+  exact
+    if IsPrimePowerPair q then
+      Real.log ((q.p : ℕ) : ℝ) / Real.sqrt ((q.natValue : ℕ) : ℝ)
+    else
+      0
+
+/-- Complex version of the frozen prime-power weight. -/
+noncomputable def PrimePowerPair.weightC (q : PrimePowerPair) : ℂ :=
+  (q.weightReal : ℂ)
+
+/--
+A kernel used to evaluate the canonical package.
+
+The first argument is the prime-power center `log(q)`.
+The second argument is the complex transform variable.
+-/
+abbrev CanonicalKernelC : Type :=
+  ℝ → ℂ → ℂ
+
+/--
+Finite shifted canonical prime-power package for a finite index set.
+
+This is the finite formula skeleton:
+`sum_q weight(q) * K(log q, s)`.
+-/
+noncomputable def finiteCanonicalPrimePowerPackage
+===== 4. Nat pair/unpair/code API candidates in Mathlib =====
+.lake/packages/mathlib/Mathlib/Data/Nat/Digits/Lemmas.lean:487:theorem pairwiseDisjoint_consFixedLengthDigits {b : ℕ} (hb : 1 < b) (l : ℕ) :
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:38:def pair (a b : ℕ) : ℕ :=
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:43:def unpair (n : ℕ) : ℕ × ℕ :=
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:48:theorem pair_unpair (n : ℕ) : pair (unpair n).1 (unpair n).2 = n := by
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:57:theorem pair_eq_of_unpair_eq {n a b} (H : unpair n = (a, b)) : pair a b = n := by
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:61:theorem unpair_pair (a b : ℕ) : unpair (pair a b) = (a, b) := by
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:74:def pairEquiv : ℕ × ℕ ≃ ℕ :=
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:81:theorem pair_eq_pair {a b c d : ℕ} : pair a b = pair c d ↔ a = c ∧ b = d :=
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:84:theorem unpair_lt {n : ℕ} (n1 : 1 ≤ n) : (unpair n).1 < n := by
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:94:theorem unpair_zero : unpair 0 = 0 := by
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:98:theorem unpair_left_le : ∀ n : ℕ, (unpair n).1 ≤ n
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:109:theorem unpair_right_le (n : ℕ) : (unpair n).2 ≤ n := by
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:112:theorem pair_lt_pair_left {a₁ a₂} (b) (h : a₁ < a₂) : pair a₁ b < pair a₂ b := by
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:126:theorem pair_lt_pair_right (a) {b₁ b₂} (h : b₁ < b₂) : pair a b₁ < pair a b₂ := by
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:136:theorem pair_lt_max_add_one_sq (m n : ℕ) : pair m n < (max m n + 1) ^ 2 := by
+.lake/packages/mathlib/Mathlib/Data/Nat/Pairing.lean:155:theorem unpair_add_le (n : ℕ) : (unpair n).1 + (unpair n).2 ≤ n :=
+===== 5. Existing custom Nat encoding helpers in repo =====
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:74:explicit comparison pair.
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:100:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:185:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:81:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:124:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/AnnexSpine.lean:11:Important V2 repair:
+RHFormalization/DOperatorExport.lean:242:  Every prime-power pair below the stage `R` cutoff is represented by one
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:52:  The finite stage index set contains every prime-power pair whose center lies
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:106:  Concrete finite enumeration of prime-power pairs below cutoff.
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:56:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:90:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:89:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:132:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerPackage.lean:31:A prime-power pair is represented by `(p,m)`.
+RHFormalization/CanonicalPrimePowerPackage.lean:50:/-- The natural number represented by a prime-power pair. -/
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:18:which contains every prime-power pair with `q.center ≤ R`.
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:33:Finite enumeration of all prime-power pairs below a real cutoff.
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:39:  Finite set enumerating all prime-power pairs below cutoff `R`.
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:101:  The finite stage index set contains every prime-power pair whose center lies
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:155:  Concrete finite enumeration of prime-power pairs below cutoff.
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:50:Invalid prime-power pairs contribute zero to the natValue majorant.
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:60:On valid prime-power pairs, the natValue majorant has the explicit real formula.
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:341:theorem heatKernelNatValueMajorant_le_scaled_pairGeomModel :
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean:468:  rcases heatKernelNatValueMajorant_le_scaled_pairGeomModel with
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:85:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:170:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:73:  The finite stage index set contains every prime-power pair whose center lies
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:56:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:84:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:127:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:21:and bounding an explicit finite counting set for prime-power pairs below cutoff.
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:38:  A finite set that contains all enumerated prime-power pairs below cutoff `R`.
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:145:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:230:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:156:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:190:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:98:  /-- Real displacement coordinate for each prime-power pair at point `s`. -/
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:99:  /-- Upper envelope for the number of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:183:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:268:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:119:  /-- Real displacement coordinate for each prime-power pair at point `s`. -/
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:110:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:153:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:57:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:100:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:128:  For each complex point `s` and prime-power pair `q`, this gives the real
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:145:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:188:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/DCanonicalWindowSharpCutoffCompactSpeed.lean:115:This is the repaired field-killer for
+RHFormalization/CanonicalPrimePowerHeatKernelPrimePowerSupport.lean:14:* invalid prime-power pairs contribute zero;
+RHFormalization/CanonicalPrimePowerHeatKernelPrimePowerSupport.lean:15:* valid prime-power pairs have the exact expected summand.
+RHFormalization/CanonicalPrimePowerHeatKernelPrimePowerSupport.lean:37:On valid prime-power pairs, the Gaussian-core envelope is exactly the real
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:67:  every prime-power pair appears in all sufficiently large finite stages.
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:93:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:178:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:89:  The finite stage index set contains every prime-power pair whose center lies
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:106:  /-- Upper envelope for the number of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:163:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:248:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:59:If a counting set contains every prime-power pair with `q.center ≤ R`, then it
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:103:  Every prime-power pair with center below cutoff lies in the counting set.
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:193:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:84:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:128:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:68:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:139:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:149:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:222:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:95:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:138:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:129:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:163:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:112:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:155:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:21:* every prime-power pair with `q.center ≤ α n .R` belongs to the finite index set.
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:33:contains every prime-power pair with center at most `α n .R`, then every fixed
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:34:prime-power pair eventually belongs to the finite index sets.
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:95:  The finite stage index set contains every prime-power pair whose center lies
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:51:  /-- The finite stage index set contains every prime-power pair below cutoff. -/
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:124:  /-- Concrete finite enumeration of prime-power pairs below cutoff. -/

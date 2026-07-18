@@ -1,0 +1,29 @@
+import RHFormalization.DFiniteStageOperator
+import RHFormalization.AppendixDSpikeSumExtraction
+
+namespace RHFormalization
+
+#check DFiniteStage
+#print DFiniteStage
+
+#check DFiniteStageOperatorLegality.mk
+#check DStageSelfAdjointC
+#check DStageLowerSemiboundedC
+#check DStageShiftedNonnegativeC
+#check DStageHeatTraceClassC_of_pos
+#check DStageResolventTraceLegalC_of_mem_Omega
+#check DStageDuhamelTraceNormLegalC_from_majorant
+#check DStageDiagonalSpikeExtractionC_from_stage_certificate
+#check DStageMixedWordControlC_from_stage_certificate
+
+#check DFiniteTraceConstructionAPI.mk
+#check DFiniteTraceFunctionData.mk
+#check DFiniteStageSplitFromDuhamelAPI.mk
+#check DFiniteStageSplitAPI
+#print DFiniteStageSplitAPI
+
+#check DFiniteStageSpikeSumData.mk
+#check finiteNatSpikePackage
+#check finiteCanonicalPrimePowerPackage
+
+end RHFormalization

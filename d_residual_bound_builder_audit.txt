@@ -1,0 +1,262 @@
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:103:noncomputable def AppendixDFiniteSpikeExtractionWitness.R_stage
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:118:      W.F_stage α s = W.B_stage α s + W.R_stage α s := by
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:120:  simp [AppendixDFiniteSpikeExtractionWitness.R_stage]
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:155:    W.R_stage
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:51:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:53:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:60:      let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:101:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:103:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:110:      let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:150:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:152:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:159:      let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:52:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:54:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:62:      let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:75:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:77:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:87:      let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:121:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:123:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:133:      let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:38:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:40:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:44:      (master.h_master sectorSplit sectorBounds).alpha = S.alpha) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:69:    (sectorBounds : DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:70:    (master : DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:81:      have Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:19:* compact-uniform convergence of `F_stage` and `R_stage`;
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:64:  h_R_stage_to_RH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:73:                  (finiteOperatorLayer.toStagePackage.R_stage (S.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:76:  h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:82:            ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:102:    Pld.h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:103:    Pld.h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:46:    (h_R_stage_to_RH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:55:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:58:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:64:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:75:    h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:76:    h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:103:    (h_R_stage_to_RH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:112:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:115:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:121:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:133:      h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:134:      h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:46:    (h_R_stage_to_RH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:55:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:58:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:64:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:75:    h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:76:    h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:103:    (h_R_stage_to_RH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:112:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:115:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:121:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:133:      h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:134:      h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:42:    (h_R_stage_to_RH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:51:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:54:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:60:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:71:    h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:72:    h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:99:    (h_R_stage_to_RH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:108:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:111:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:117:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:129:      h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:130:      h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:46:    (h_R_stage_to_RH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:55:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:58:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:64:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:74:    h_R_stage_to_RH := h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:75:    h_R_stage_bound := h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:102:    (h_R_stage_to_RH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:111:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:114:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:120:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:132:      h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:133:      h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:39:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:41:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:45:      (master.h_master sectorSplit sectorBounds).alpha = S.alpha) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:55:    let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:75:  let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:116:            finiteOperatorLayer.toStagePackage.R_stage (Rdata.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:119:      DMasterResidualData.pointwise_R_stage_tendsto_of_RHP_subset_Omega
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedPayloadTarget.lean:23:      h_R_stage_to_RH := ?h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedPayloadTarget.lean:24:      h_R_stage_bound := ?h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:35:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:40:          ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:53:    (residualBulkSectorBoundsAPI_of_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:55:      h_R_stage_bound)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:18:* compact-uniform convergence of `F_stage` and `R_stage` along `S.alpha`;
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:51:    (h_R_stage_to_RH :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:60:                    (finiteOperatorLayer.toStagePackage.R_stage (S.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:62:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:67:            ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:84:      h_R_stage_to_RH
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:86:  buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:91:    h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean:29:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean:34:          ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean:56:    h_R_stage_bound
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:25:def buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:30:    (h_R_stage_bound :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:35:            ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:45:    h_R_stage_bound
+RHFormalization/CorrectedResidualBoundReduction.lean:12:theorem correctedResolventPayload_R_stage_bound_of_F_B_bounds
+RHFormalization/CorrectedResidualBoundReduction.lean:44:              ‖correctedResolventPayload.R_stage α s‖ ≤ C := by
+RHFormalization/CorrectedResolventPayload.lean:23:    B_stage = prime package, R_stage = residual. -/
+RHFormalization/CorrectedResolventPayload.lean:28:  R_stage := fun α s =>
+RHFormalization/CorrectedResolventResidualBoundProbe.lean:14:theorem correctedResolventPayload_R_stage_bound :
+RHFormalization/CorrectedResolventResidualBoundProbe.lean:23:              ‖correctedResolventPayload.R_stage α s‖ ≤ C := by
+RHFormalization/CurrentFrontierEndpoint.lean:59:    (h_R_stage_bound :
+RHFormalization/CurrentFrontierEndpoint.lean:62:          ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CurrentFrontierEndpoint.lean:90:    (buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+RHFormalization/CurrentFrontierEndpoint.lean:91:      finiteOperatorLayer S F R h_R_stage_bound hσ hF_alpha hR_alpha)
+RHFormalization/CurrentFrontierEndpoint.lean:119:    (h_R_stage_bound :
+RHFormalization/CurrentFrontierEndpoint.lean:122:          ‖selectedFiniteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CurrentFrontierEndpoint.lean:145:    selectedFiniteOperatorLayer S F R h_R_stage_bound hσ hF_alpha hR_alpha
+RHFormalization/CurrentFrontierSelectedD.lean:18:`S`, `F`, `R`, `h_R_stage_bound`, `hσ`, `hF_alpha`, `hR_alpha`.
+RHFormalization/CurrentFrontierSelectedD.lean:36:    (h_R_stage_bound :
+RHFormalization/CurrentFrontierSelectedD.lean:42:                ‖selectedFiniteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CurrentFrontierSelectedD.lean:71:      h_R_stage_bound
+RHFormalization/DesignedDetailedConstruction.lean:91:      rw [show dP.R_stage α s = 0 from designedFiniteOperatorLayer_R_stage_eq_zero α s]
+RHFormalization/DesignedDetailedConstruction.lean:95:noncomputable def designedBounds : DResidualSectorBoundsAPI dP designedSectors :=
+RHFormalization/DesignedDetailedConstruction.lean:103:noncomputable def designedMaster : DMasterResidualAPI dP designedSectors :=
+RHFormalization/DesignedDetailedConstruction.lean:104:  { h_master := fun _ _ =>
+RHFormalization/DesignedDetailedConstruction.lean:108:        h_R_stage_to_RH := by
+RHFormalization/DesignedDetailedConstruction.lean:111:          rw [show dP.R_stage (primePowerStage n) s = 0 from
+RHFormalization/DesignedDetailedConstruction.lean:112:            designedFiniteOperatorLayer_R_stage_eq_zero (primePowerStage n) s]
+RHFormalization/DesignedOperatorLayer.lean:9:remainder `R_stage = F − B` vanishes identically for EVERY stage. This closes
+RHFormalization/DesignedOperatorLayer.lean:32:theorem designedSpikeWitness_R_stage_eq_zero (α : DFiniteStage) (s : ℂ) :
+RHFormalization/DesignedOperatorLayer.lean:33:    designedSpikeWitness.R_stage α s = 0 := by
+RHFormalization/DesignedOperatorLayer.lean:48:theorem designedFiniteOperatorLayer_R_stage_eq :
+RHFormalization/DesignedOperatorLayer.lean:49:    designedFiniteOperatorLayer.toStagePackage.R_stage =
+RHFormalization/DesignedOperatorLayer.lean:50:      designedSpikeWitness.R_stage := by
+RHFormalization/DesignedOperatorLayer.lean:59:theorem designedFiniteOperatorLayer_R_stage_eq_zero
+RHFormalization/DesignedOperatorLayer.lean:61:    designedFiniteOperatorLayer.toStagePackage.R_stage α s = 0 := by
+RHFormalization/DesignedOperatorLayer.lean:62:  rw [designedFiniteOperatorLayer_R_stage_eq]
+RHFormalization/DesignedOperatorLayer.lean:63:  exact designedSpikeWitness_R_stage_eq_zero α s
+RHFormalization/DesignedOperatorLayer.lean:86:theorem designedFiniteOperatorLayer_R_stage_bound :
+RHFormalization/DesignedOperatorLayer.lean:89:        ‖designedFiniteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C := by
+RHFormalization/DesignedOperatorLayer.lean:93:  rw [designedFiniteOperatorLayer_R_stage_eq_zero α s]
+RHFormalization/DesignedOperatorLayer.lean:97:#print axioms designedFiniteOperatorLayer_R_stage_bound
+RHFormalization/DExportTruthAudit.lean:17:#check DResidualSectorBoundsAPI
+RHFormalization/DExportTruthAudit.lean:18:#print DResidualSectorBoundsAPI
+RHFormalization/DFiniteStageOperator.lean:19:* construction of the finite-stage functions `F_stage`, `B_stage`, `R_stage`;
+RHFormalization/DFiniteStageOperator.lean:20:* finite-stage split `F_stage = B_stage + R_stage` on the overlap half-plane.
+RHFormalization/DFiniteStageOperator.lean:202:  R_stage : DFiniteStage → ℂ → ℂ
+RHFormalization/DFiniteStageOperator.lean:222:    R_stage := T.R_stage
+RHFormalization/DFiniteStageOperator.lean:229:`F_stage = B_stage + R_stage`.
+RHFormalization/DFiniteStageOperator.lean:307:    DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors
+RHFormalization/DFiniteStageOperator.lean:310:    DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors
+RHFormalization/DFiniteStageOperator.lean:313:    let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/DMasterResidualConcrete.lean:29:    (h_R_stage_to_RH :
+RHFormalization/DMasterResidualConcrete.lean:38:                    dist (P.R_stage (alpha n) s) (RH s) < ε) :
+RHFormalization/DMasterResidualConcrete.lean:43:    h_R_stage_to_RH := h_R_stage_to_RH }
+RHFormalization/DMasterResidualConcrete.lean:46:Build `DCanRemAPI` from the residual convergence already stored in
+RHFormalization/DMasterResidualConcrete.lean:49:def buildDCanRemAPIFromMasterResidual
+RHFormalization/DMasterResidualConcrete.lean:54:    DCanRemAPI P B F R :=
+RHFormalization/DMasterResidualConcrete.lean:56:    h_can_rem_convergence := R.h_R_stage_to_RH }
+RHFormalization/DMasterResidualConcrete.lean:72:          dist (P.R_stage (R.alpha n) s) (R.RH s) < ε :=
+RHFormalization/DMasterResidualConcrete.lean:73:  R.h_R_stage_to_RH K hK hKOmega ε hε
+RHFormalization/DMasterResidualConcrete.lean:78:theorem DCanRemAPI.compact_uniform_can_rem_convergence
+RHFormalization/DMasterResidualConcrete.lean:83:    (C : DCanRemAPI P B F R)
+RHFormalization/DMasterResidualConcrete.lean:92:          dist (P.R_stage (R.alpha n) s) (R.RH s) < ε :=
+RHFormalization/DOperatorExport.lean:260:`R_stage` is the finite remainder.
+RHFormalization/DOperatorExport.lean:265:  R_stage : DFiniteStage → ℂ → ℂ
+RHFormalization/DOperatorExport.lean:279:      P.F_stage α s = P.B_stage α s + P.R_stage α s
+RHFormalization/DOperatorExport.lean:465:structure DResidualSectorBoundsAPI
+RHFormalization/DOperatorExport.lean:499:      P.R_stage α s =
+RHFormalization/DOperatorExport.lean:529:  On every compact `K ⊆ Ω`, the finite-stage residuals `R_stage (alpha n)`
+RHFormalization/DOperatorExport.lean:532:  h_R_stage_to_RH :
+RHFormalization/DOperatorExport.lean:541:                  dist (P.R_stage (alpha n) s) (RH s) < ε
+RHFormalization/DOperatorExport.lean:551:structure DMasterResidualAPI
+RHFormalization/DOperatorExport.lean:554:  h_master :
+RHFormalization/DOperatorExport.lean:556:    DResidualSectorBoundsAPI P S →
+RHFormalization/DOperatorExport.lean:566:structure DCanRemAPI
+RHFormalization/DOperatorExport.lean:589:                  dist (P.R_stage (R.alpha n) s) (R.RH s) < ε
+RHFormalization/DOperatorExport.lean:624:  canRem : DCanRemAPI P B F R
+RHFormalization/DOperatorExport.lean:657:  sectorBounds : DResidualSectorBoundsAPI P sectors
+RHFormalization/DOperatorExport.lean:658:  master : DMasterResidualAPI P sectors
+RHFormalization/DOperatorExport.lean:660:    let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/DOperatorExport.lean:667:  let Rdata := X.master.h_master X.sectorSplit X.sectorBounds
+RHFormalization/DOperatorExport.lean:674:        h_can_rem_convergence := Rdata.h_R_stage_to_RH }
+RHFormalization/DOverlapFromStageSplitLimits.lean:28:`F_stage = B_stage + R_stage`.
+RHFormalization/DOverlapFromStageSplitLimits.lean:54:          (fun n : ℕ => P.R_stage (F.alpha n) s)
+RHFormalization/DOverlapFromStageSplitLimits.lean:70:        (fun n : ℕ => P.B_stage (F.alpha n) s + P.R_stage (F.alpha n) s)
+RHFormalization/DOverlapFromStageSplitLimits.lean:77:      (fun n : ℕ => P.B_stage (F.alpha n) s + P.R_stage (F.alpha n) s) := by
+RHFormalization/DOverlapFromStageSplitLimits.lean:83:        (fun n : ℕ => P.B_stage (F.alpha n) s + P.R_stage (F.alpha n) s)
+RHFormalization/DOverlapPointwiseFromCompactUniform.lean:59:theorem DMasterResidualData.pointwise_R_stage_tendsto_of_RHP_subset_Omega
+RHFormalization/DOverlapPointwiseFromCompactUniform.lean:65:        (fun n : ℕ => P.R_stage (R.alpha n) s)
+RHFormalization/DResidualBulkSectorHelpers.lean:8:Generic helpers that package the finite-stage residual `P.R_stage` as one
+RHFormalization/DResidualBulkSectorHelpers.lean:12:The only genuine extra input is a compact-uniform bound for `P.R_stage` on
+RHFormalization/DResidualBulkSectorHelpers.lean:34:      | DResidualSector.bulk => P.R_stage α s }
+RHFormalization/DResidualBulkSectorHelpers.lean:47:If `P.R_stage` is uniformly bounded on Ω-compacts, then the bulk-sector package
+RHFormalization/DResidualBulkSectorHelpers.lean:50:theorem residualBulkSectorBoundsAPI_of_R_stage_bound
+RHFormalization/DResidualBulkSectorHelpers.lean:52:    (h_R_stage_bound :
+RHFormalization/DResidualBulkSectorHelpers.lean:57:          ‖P.R_stage α s‖ ≤ C) :
+RHFormalization/DResidualBulkSectorHelpers.lean:58:    DResidualSectorBoundsAPI P (residualBulkSectorData P) := by
+RHFormalization/DResidualBulkSectorHelpers.lean:71:  · exact h_R_stage_bound K hK hKOmega
+RHFormalization/DResidualBulkSectorHelpers.lean:80:    DMasterResidualAPI P (residualBulkSectorData P) :=
+RHFormalization/DResidualBulkSectorHelpers.lean:81:  { h_master := fun _ _ => R }
+RHFormalization/DResidualSectorBoundsConcrete.lean:11:`DResidualSectorBoundsAPI`.
+RHFormalization/DResidualSectorBoundsConcrete.lean:23:def buildDResidualSectorBoundsAPIFromCompactUniform
+RHFormalization/DResidualSectorBoundsConcrete.lean:37:    DResidualSectorBoundsAPI P S :=
+RHFormalization/DResidualSectorBoundsConcrete.lean:44:theorem DResidualSectorBoundsAPI.exists_compact_uniform_bound
+RHFormalization/DResidualSectorBoundsConcrete.lean:47:    (B : DResidualSectorBoundsAPI P S)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:69:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:71:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:81:      let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:115:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:117:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:127:      let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:196:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:198:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:208:      let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/FinalRHFromRCutoffEstimate.lean:42:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:44:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:54:      let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/FinalRHFromRCutoffEstimate.lean:93:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:95:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:105:      let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/HonestYFromFHcan.lean:46:    (h_R_stage_to_RH :
+RHFormalization/HonestYFromFHcan.lean:55:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/HonestYFromFHcan.lean:58:    (h_R_stage_bound :
+RHFormalization/HonestYFromFHcan.lean:63:            ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/HonestYFromFHcan.lean:74:    h_R_stage_to_RH
+RHFormalization/HonestYFromFHcan.lean:75:    h_R_stage_bound
+RHFormalization/HonestYResolventProbe.lean:21:    ?h_R_stage_to_RH
+RHFormalization/HonestYResolventProbe.lean:22:    ?h_R_stage_bound
+RHFormalization/HonestYZeroResidualFromFHcan.lean:52:      rw [designedFiniteOperatorLayer_R_stage_eq_zero]
+RHFormalization/HonestYZeroResidualFromFHcan.lean:54:    designedFiniteOperatorLayer_R_stage_bound
+RHFormalization/OperatorEigenvalueRHProbe.lean:12:#check @DResidualSectorBoundsAPI
+RHFormalization/ResolventPayload.lean:23:  R_stage := fun _ _ => 0
+RHFormalization/SelectedFiniteCanonicalPayload.lean:13:* finite-stage trace functions `F_stage`, `B_stage`, `R_stage`;
+RHFormalization/SelectedFiniteCanonicalPayload.lean:14:* the finite Duhamel split `F_stage = B_stage + R_stage`;
+RHFormalization/SelectedFiniteCanonicalPayload.lean:29:  R_stage : DFiniteStage → ℂ → ℂ
+RHFormalization/SelectedFiniteCanonicalPayload.lean:34:      F_stage α s = B_stage α s + R_stage α s
+RHFormalization/SelectedFiniteCanonicalPayload.lean:53:    Pld.R_stage
+RHFormalization/SelectedFiniteCanonicalPayloadInstance.lean:14:* `R_stage` is defined as `F_stage - B_stage`.
+RHFormalization/SelectedFiniteCanonicalPayloadInstance.lean:101:Because `R_stage` is defined as `F_stage - B_stage`, the split is now
+RHFormalization/SelectedFiniteCanonicalPayloadInstance.lean:150:  R_stage := selectedFiniteRStage
+RHFormalization/SelectedFiniteTraceSpikePayload.lean:25:  R_stage : DFiniteStage → ℂ → ℂ
+RHFormalization/SelectedFiniteTraceSpikePayload.lean:30:      F_stage α s = B_stage α s + R_stage α s
+RHFormalization/SelectedFiniteTraceSpikePayload.lean:70:  Pld.R_stage
+RHFormalization/SelectedFiniteTraceSpikePayloadFromImageBridge.lean:12:* finite-stage trace functions `F_stage`, `B_stage`, `R_stage`;
+RHFormalization/SelectedFiniteTraceSpikePayloadFromImageBridge.lean:28:    (F_stage B_stage R_stage : DFiniteStage → ℂ → ℂ)
+RHFormalization/SelectedFiniteTraceSpikePayloadFromImageBridge.lean:32:        F_stage α s = B_stage α s + R_stage α s)
+RHFormalization/SelectedFiniteTraceSpikePayloadFromImageBridge.lean:61:  R_stage := R_stage
+RHFormalization/SelectedRCutoffDetailedConstructionSource.lean:39:    DResidualSectorBoundsAPI selectedFiniteOperatorLayer.toStagePackage sectors
+RHFormalization/SelectedRCutoffDetailedConstructionSource.lean:42:    DMasterResidualAPI selectedFiniteOperatorLayer.toStagePackage sectors
+RHFormalization/SelectedRCutoffDetailedConstructionSource.lean:53:    let Rdata := master.h_master sectorSplit sectorBounds
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:40:noncomputable def shiftedLaplaceR_stage : DFiniteStage → ℂ → ℂ :=
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:46:      designedSpikeWitness.F_stage α s = shiftedLaplaceB_stage α s + shiftedLaplaceR_stage α s := by
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:48:  simp [shiftedLaplaceR_stage]
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:71:    shiftedLaplaceR_stage

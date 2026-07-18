@@ -1,0 +1,8 @@
+import RHFormalization.DOverlapFromStageSplitLimits
+
+namespace RHFormalization
+
+#check DOverlapIdentityAPI_from_pointwise_stage_limits
+#print axioms DOverlapIdentityAPI_from_pointwise_stage_limits
+
+end RHFormalization

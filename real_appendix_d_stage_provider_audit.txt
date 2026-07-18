@@ -1,0 +1,1060 @@
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:86:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:138:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:146:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:163:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:200:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:208:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:219:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:227:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:235:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:245:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:302:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:307:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:315:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:317:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:327:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:330:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/DesignedDetailedConstruction.lean:21:private abbrev dP : DFiniteStagePackage := designedFiniteOperatorLayer.toStagePackage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:29:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:33:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:34:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:36:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:38:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:40:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction.lean:41:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:67:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:105:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:120:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:149:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:155:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:164:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:170:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:178:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:195:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:256:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:261:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:269:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:271:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:281:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:284:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/ShiftedLaplaceDSharedBridge.lean:47:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/ShiftedLaplaceDSharedBridge.lean:51:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/ShiftedLaplaceDSharedBridge.lean:53:      (shiftedLaplacePrimePackageAt X.toStagePackage.sigma0).Bshared s := by
+RHFormalization/ShiftedLaplaceDSharedBridge.lean:63:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/ShiftedLaplaceDSharedBridge.lean:67:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/ShiftedLaplaceDSharedBridge.lean:69:      (shiftedLaplacePrimePackageAt X.toStagePackage.sigma0).Bshared s := by
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthInvSpeed.lean:30:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/DOperatorExport.lean:178:  appendixDFiniteFStage :
+RHFormalization/DOperatorExport.lean:184:  diagonalSpikeActiveIndices :
+RHFormalization/DOperatorExport.lean:190:  h_diagonalSpikeActiveIndices_active :
+RHFormalization/DOperatorExport.lean:192:      q ∈ diagonalSpikeActiveIndices →
+RHFormalization/DOperatorExport.lean:200:  h_diagonalSpikeActiveIndices_complete :
+RHFormalization/DOperatorExport.lean:203:        q ∈ diagonalSpikeActiveIndices
+RHFormalization/DOperatorExport.lean:208:  diagonalSpikeToPP :
+RHFormalization/DOperatorExport.lean:214:  h_diagonalSpikeToPP_inj :
+RHFormalization/DOperatorExport.lean:216:      m ∈ diagonalSpikeActiveIndices →
+RHFormalization/DOperatorExport.lean:218:        n ∈ diagonalSpikeActiveIndices →
+RHFormalization/DOperatorExport.lean:219:          diagonalSpikeToPP m = diagonalSpikeToPP n →
+RHFormalization/DOperatorExport.lean:227:      n ∈ diagonalSpikeActiveIndices →
+RHFormalization/DOperatorExport.lean:229:          PrimePowerPair.weightC (diagonalSpikeToPP n)
+RHFormalization/DOperatorExport.lean:236:  h_diagonalSpikeToPP_center_le_R :
+RHFormalization/DOperatorExport.lean:238:      n ∈ diagonalSpikeActiveIndices →
+RHFormalization/DOperatorExport.lean:239:        (diagonalSpikeToPP n).center ≤ R
+RHFormalization/DOperatorExport.lean:247:  h_diagonalSpikeToPP_complete_center_le_R :
+RHFormalization/DOperatorExport.lean:252:          n ∈ diagonalSpikeActiveIndices ∧
+RHFormalization/DOperatorExport.lean:253:            diagonalSpikeToPP n = q
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:149:noncomputable def AppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:173:    DFiniteStagePackageFromOperatorLayer :=
+RHFormalization/AppendixDFiniteSpikeExtractionWitness.lean:175:    W.toSelectedFiniteTraceSpikePayload
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:76:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:109:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:139:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:171:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:177:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:187:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:202:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:243:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:248:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:256:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:258:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:268:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerUniformWindowError.lean:271:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:37:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:47:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:48:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:50:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:52:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:54:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:64:        finiteOperatorLayer.toStagePackage
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:91:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDOperatorPrimePowerDetailedConstruction.lean:100:    (hs : s ∈ RightHalfPlane finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelopeExplicitRate.lean:38:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelopeExplicitRate.lean:56:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelopeExplicitRate.lean:60:        s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelopeExplicitRate.lean:70:      s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:35:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:82:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:101:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:116:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:130:      s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:139:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:150:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:191:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:196:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:204:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:206:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:216:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean:219:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/HonestYFromFHcan.lean:14:`finiteOperatorLayer.toStagePackage.F_stage (S.alpha n) → Eop.FHcan`
+RHFormalization/HonestYFromFHcan.lean:27:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/HonestYFromFHcan.lean:43:                    (finiteOperatorLayer.toStagePackage.F_stage
+RHFormalization/HonestYFromFHcan.lean:55:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/HonestYFromFHcan.lean:63:            ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/HonestYFromFHcan.lean:64:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/AppendixDStructuralStageWitness.lean:117:      appendixDFiniteFStage := fun _s => 0
+RHFormalization/AppendixDStructuralStageWitness.lean:119:      diagonalSpikeActiveIndices := activePrimePowerCodesCenterBelow Rstage
+RHFormalization/AppendixDStructuralStageWitness.lean:120:      h_diagonalSpikeActiveIndices_active := by
+RHFormalization/AppendixDStructuralStageWitness.lean:123:      h_diagonalSpikeActiveIndices_complete := by
+RHFormalization/AppendixDStructuralStageWitness.lean:127:      diagonalSpikeToPP := ppDecode
+RHFormalization/AppendixDStructuralStageWitness.lean:128:      h_diagonalSpikeToPP_inj := by
+RHFormalization/AppendixDStructuralStageWitness.lean:134:      h_diagonalSpikeToPP_center_le_R := by
+RHFormalization/AppendixDStructuralStageWitness.lean:137:      h_diagonalSpikeToPP_complete_center_le_R := by
+RHFormalization/DesignedRCutoffS.lean:29:  show ((primePowerStage n).diagonalSpikeActiveIndices).image
+RHFormalization/DesignedRCutoffS.lean:30:        ((primePowerStage n).diagonalSpikeToPP) =
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:26:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:28:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:29:    (R : DMasterResidualData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:35:            ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed.lean:36:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/SelectedFiniteOperatorLayer.lean:15:    DFiniteStagePackageFromOperatorLayer :=
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:42:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:80:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:103:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:118:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:157:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:162:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:170:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:172:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:182:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean:185:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:75:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:113:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:128:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:169:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:175:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:183:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:199:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:257:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:262:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:270:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:272:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:282:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean:285:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:46:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:87:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:103:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:110:              X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:119:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:147:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:152:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:160:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:162:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:172:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean:175:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:42:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:72:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:87:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:98:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:113:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:128:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:167:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:172:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:180:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:182:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:192:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSummedKernelError.lean:195:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLength.lean:75:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLength.lean:83:      s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLength.lean:159:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLength.lean:167:      s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:72:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:98:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:128:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:145:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:152:              X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:163:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:169:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:180:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:192:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:218:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:223:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:231:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:233:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:243:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerKernelErrorBound.lean:246:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:110:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:153:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:172:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:187:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:200:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:212:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:242:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:247:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:255:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:257:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:267:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean:270:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:23:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:39:                    (finiteOperatorLayer.toStagePackage.F_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:51:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:60:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:61:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:80:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:96:                    (finiteOperatorLayer.toStagePackage.F_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:108:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:117:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted.lean:118:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/SelectedFiniteCanonicalPayloadInstance.lean:123:      selectedFiniteTraceFunctionData.toStagePackage :=
+RHFormalization/SelectedFiniteCanonicalPayloadInstance.lean:143:`buildSelectedFiniteOperatorLayerFromCanonicalPayload`.
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:80:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:235:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:265:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:308:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:314:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:324:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:344:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:376:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:381:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:389:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:391:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:401:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerWindowMassError.lean:404:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/DFiniteStageProviderFields.lean:12:* `appendixDFiniteFStage`
+RHFormalization/DFiniteStageProviderFields.lean:13:* `diagonalSpikeActiveIndices`
+RHFormalization/DFiniteStageProviderFields.lean:14:* `diagonalSpikeToPP`
+RHFormalization/DFiniteStageProviderFields.lean:37:  fun α => α.appendixDFiniteFStage
+RHFormalization/DFiniteStageProviderFields.lean:42:  fun α => α.diagonalSpikeActiveIndices
+RHFormalization/DFiniteStageProviderFields.lean:47:  fun α => α.diagonalSpikeToPP
+RHFormalization/DFiniteStageProviderFields.lean:57:      α.appendixDFiniteFStage s := rfl
+RHFormalization/DFiniteStageProviderFields.lean:62:      α.diagonalSpikeActiveIndices := rfl
+RHFormalization/DFiniteStageProviderFields.lean:67:      α.diagonalSpikeToPP n := rfl
+RHFormalization/SelectedFiniteTraceSpikePayloadCertified.lean:85:    DFiniteStagePackageFromOperatorLayer :=
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:67:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:98:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:134:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:140:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:150:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:166:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:211:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:216:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:224:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:226:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:236:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean:239:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/SelectedRCutoffDetailedConstructionSource.lean:30:    DFHLimitData selectedFiniteOperatorLayer.toStagePackage
+RHFormalization/SelectedRCutoffDetailedConstructionSource.lean:33:    DResidualSectorData selectedFiniteOperatorLayer.toStagePackage
+RHFormalization/SelectedRCutoffDetailedConstructionSource.lean:36:    DResidualSectorSplitAPI selectedFiniteOperatorLayer.toStagePackage sectors
+RHFormalization/SelectedRCutoffDetailedConstructionSource.lean:39:    DResidualSectorBoundsAPI selectedFiniteOperatorLayer.toStagePackage sectors
+RHFormalization/SelectedRCutoffDetailedConstructionSource.lean:42:    DMasterResidualAPI selectedFiniteOperatorLayer.toStagePackage sectors
+RHFormalization/SelectedRCutoffDetailedConstructionSource.lean:55:      selectedFiniteOperatorLayer.toStagePackage
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:39:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:154:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:183:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:203:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:211:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:224:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:238:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:286:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:291:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:299:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:301:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:311:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerProductWindowError.lean:314:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:38:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:46:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:47:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:49:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:51:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:53:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:62:        finiteOperatorLayer.toStagePackage
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:88:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:96:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:97:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:99:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:101:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:103:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:112:        finiteOperatorLayer.toStagePackage
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:137:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:145:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:146:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:148:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:150:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:152:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:161:        finiteOperatorLayer.toStagePackage
+RHFormalization/AppendixDOperatorFiniteCanonicalDetailedConstruction.lean:166:    (hs : s ∈ RightHalfPlane finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:71:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:123:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:131:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:148:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:190:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:201:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:244:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:249:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:257:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:259:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:269:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:272:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/ResolventOperatorLayer.lean:8:noncomputable def resolventOperatorLayer : DFiniteStagePackageFromOperatorLayer :=
+RHFormalization/ResolventOperatorLayer.lean:9:  buildSelectedFiniteOperatorLayerFromCanonicalPayload correctedResolventPayload
+RHFormalization/SelectedFiniteTraceSpikePayload.lean:97:       DFiniteTraceFunctionData.toStagePackage]
+RHFormalization/SelectedFiniteTraceSpikePayload.lean:103:  DFiniteStageSpikeSumData Pld.toTraceData.toStagePackage :=
+RHFormalization/SelectedFiniteTraceSpikePayload.lean:112:       DFiniteTraceFunctionData.toStagePackage]
+RHFormalization/SelectedFiniteTraceSpikePayload.lean:123:  DFiniteStagePackageFromOperatorLayer :=
+RHFormalization/SelectedFiniteTraceSpikePayload.lean:132:      Pld.toTraceData.toStagePackage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthWindowAPI.lean:19:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthWindowAPI.lean:29:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthWindowAPI.lean:45:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:60:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:94:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:113:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:139:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:149:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:162:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:196:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:201:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:209:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:211:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:221:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:224:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/SelectedTracePayloadFromStageFields.lean:18:* `appendixDFiniteFStage`
+RHFormalization/SelectedTracePayloadFromStageFields.lean:19:* `diagonalSpikeActiveIndices`
+RHFormalization/SelectedTracePayloadFromStageFields.lean:20:* `diagonalSpikeToPP`
+RHFormalization/SelectedTracePayloadFromStageFields.lean:26:2. injectivity of `diagonalSpikeToPP` on active indices;
+RHFormalization/SelectedTracePayloadFromStageFields.lean:49:/-- Nat-indexed spike kernel from the real `diagonalSpikeToPP` field. -/
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:42:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:88:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:94:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:107:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:132:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:138:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:183:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:198:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:262:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:267:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:275:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:277:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:287:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:290:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:35:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:39:    finiteOperatorLayer.toStagePackage.sigma0
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:46:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:66:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:70:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:71:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:73:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:75:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:77:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:89:        finiteOperatorLayer.toStagePackage
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:112:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:116:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:117:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:119:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:121:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:123:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:135:        finiteOperatorLayer.toStagePackage
+RHFormalization/AppendixDRCutoffEstimateDetailedConstruction.lean:140:    (hs : s ∈ RightHalfPlane finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/FinalRHFromRCutoffEstimate.lean:33:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:37:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:38:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:40:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:42:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:44:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:56:        finiteOperatorLayer.toStagePackage
+RHFormalization/FinalRHFromRCutoffEstimate.lean:84:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:88:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:89:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:91:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:93:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:95:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromRCutoffEstimate.lean:107:        finiteOperatorLayer.toStagePackage
+RHFormalization/CanonicalPrimePowerSharpCutoffClosedDWindowSource.lean:94:    ∀ hs : s ∈ RightHalfPlane selectedFiniteOperatorLayer.toStagePackage.sigma0,
+RHFormalization/SelectedOperatorLayerFromStageFields.lean:34:    DFiniteStagePackageFromOperatorLayer :=
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:32:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:55:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:85:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:100:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:115:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:145:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:150:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:158:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:160:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:170:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerActualKernelError.lean:173:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:32:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:48:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:60:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:70:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:108:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:123:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:146:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:163:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:177:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:212:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:217:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:226:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:228:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:238:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:241:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:41:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:55:      ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:59:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:86:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:129:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:134:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:148:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:176:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:219:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:224:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:232:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:234:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:244:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:247:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/PrimePowerDFiniteStage.lean:64:    appendixDFiniteFStage := fun _ => 0
+RHFormalization/PrimePowerDFiniteStage.lean:65:    diagonalSpikeActiveIndices := ppStageCodes n
+RHFormalization/PrimePowerDFiniteStage.lean:66:    h_diagonalSpikeActiveIndices_active := by intro k hk; exact hk
+RHFormalization/PrimePowerDFiniteStage.lean:67:    h_diagonalSpikeActiveIndices_complete := by intro k hk; exact hk
+RHFormalization/PrimePowerDFiniteStage.lean:68:    diagonalSpikeToPP := ppDecode
+RHFormalization/PrimePowerDFiniteStage.lean:69:    h_diagonalSpikeToPP_inj := by
+RHFormalization/PrimePowerDFiniteStage.lean:74:    h_diagonalSpikeToPP_center_le_R := by
+RHFormalization/PrimePowerDFiniteStage.lean:80:    h_diagonalSpikeToPP_complete_center_le_R := by
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:33:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:37:    finiteOperatorLayer.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:44:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:62:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:66:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:67:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:68:    (sectorSplit : DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:69:    (sectorBounds : DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:70:    (master : DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction.lean:82:      DOverlapIdentityAPI finiteOperatorLayer.toStagePackage Bdata F Rdata) :
+RHFormalization/ShiftedLaplaceDFHExport.lean:20:              dist (shiftedLaplaceFiniteOperatorLayer.toStagePackage.F_stage (alpha n) s)
+RHFormalization/ShiftedLaplaceDFHExport.lean:22:    DFHLimitData shiftedLaplaceFiniteOperatorLayer.toStagePackage :=
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:131:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:183:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:191:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:208:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:246:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:254:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:262:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:276:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:323:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:328:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:336:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:338:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:348:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:351:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelopeLinearRate.lean:39:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelopeLinearRate.lean:43:        s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelopeLinearRate.lean:51:      s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelopeLinearRate.lean:117:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelopeLinearRate.lean:121:        s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelopeLinearRate.lean:129:      s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:8:A `DFiniteStagePackageFromOperatorLayer` whose finite-stage `B_stage` computes the
+RHFormalization/ShiftedLaplaceFiniteOperatorLayer.lean:86:noncomputable def shiftedLaplaceFiniteOperatorLayer : DFiniteStagePackageFromOperatorLayer :=
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:37:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:43:    C.sigma0 ≤ X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:55:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:80:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:92:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:120:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:131:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:134:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:145:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerKernelSeries.lean:149:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/AppendixDOperatorPrimePowerToDBcan.lean:13:  `DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula`
+RHFormalization/AppendixDOperatorPrimePowerToDBcan.lean:35:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDOperatorPrimePowerToDBcan.lean:39:    X.toStagePackage
+RHFormalization/AppendixDOperatorPrimePowerToDBcan.lean:56:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDOperatorPrimePowerToDBcan.lean:60:    DBcanLimitData X.toStagePackage :=
+RHFormalization/AppendixDOperatorPrimePowerToDBcan.lean:62:    X.toStagePackage
+RHFormalization/AppendixDOperatorPrimePowerToDBcan.lean:72:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDOperatorPrimePowerToDBcan.lean:76:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:39:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:61:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:70:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:84:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:93:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:108:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:142:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:180:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:220:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:231:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:294:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:299:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:307:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:309:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:319:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:322:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:37:    DFiniteStagePackageFromOperatorLayer
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:61:                  (finiteOperatorLayer.toStagePackage.F_stage (S.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:73:                  (finiteOperatorLayer.toStagePackage.R_stage (S.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:82:            ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload.lean:85:    0 ≤ finiteOperatorLayer.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:39:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:92:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowRateEstimate.lean:142:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:32:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:34:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:35:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:37:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:39:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:41:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:42:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:57:      finiteOperatorLayer.toStagePackage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:79:      finiteOperatorLayer.toStagePackage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:96:          finiteOperatorLayer.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:105:            finiteOperatorLayer.toStagePackage.B_stage (S.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:116:            finiteOperatorLayer.toStagePackage.R_stage (Rdata.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder.lean:122:          finiteOperatorLayer.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:55:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:98:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:103:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:111:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:147:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:150:      s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:282:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:317:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:322:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:330:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:332:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:342:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:345:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/HonestYZeroResidualFromFHcan.lean:38:                    (designedFiniteOperatorLayer.toStagePackage.F_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:27:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:43:                    (finiteOperatorLayer.toStagePackage.F_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:55:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:64:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:65:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:84:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:100:                    (finiteOperatorLayer.toStagePackage.F_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:112:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:121:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromExactWeightedEnvelope.lean:122:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:169:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:221:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:229:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:246:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:284:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:292:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:300:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:314:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:374:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:379:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:387:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:389:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:399:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:402:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:40:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:108:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:161:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:96:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:134:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:149:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:186:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:192:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:203:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:211:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:219:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:235:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:286:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:291:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:299:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:301:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:311:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean:314:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/EmptyDFiniteStage.lean:56:    appendixDFiniteFStage := fun _ => 0
+RHFormalization/EmptyDFiniteStage.lean:57:    diagonalSpikeActiveIndices := ∅
+RHFormalization/EmptyDFiniteStage.lean:58:    h_diagonalSpikeActiveIndices_active := by intro q hq; simp at hq
+RHFormalization/EmptyDFiniteStage.lean:59:    h_diagonalSpikeActiveIndices_complete := by intro q hq; exact hq.elim
+RHFormalization/EmptyDFiniteStage.lean:60:    diagonalSpikeToPP := fun _ => ppTwo
+RHFormalization/EmptyDFiniteStage.lean:61:    h_diagonalSpikeToPP_inj := by intro m hm n hn _; simp at hm
+RHFormalization/EmptyDFiniteStage.lean:63:    h_diagonalSpikeToPP_center_le_R := by intro n hn; simp at hn
+RHFormalization/EmptyDFiniteStage.lean:64:    h_diagonalSpikeToPP_complete_center_le_R := by
+RHFormalization/SelectedTracePayloadFromStageFieldsClosed.lean:13:* `h_diagonalSpikeActiveIndices_active`
+RHFormalization/SelectedTracePayloadFromStageFieldsClosed.lean:14:* `h_diagonalSpikeToPP_inj`
+RHFormalization/SelectedTracePayloadFromStageFieldsClosed.lean:37:      α.h_diagonalSpikeActiveIndices_active q hq)
+RHFormalization/SelectedTracePayloadFromStageFieldsClosed.lean:39:      α.h_diagonalSpikeToPP_inj m hm n hn hmn)
+RHFormalization/ResolventStageFHcanBridge.lean:31:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:43:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:81:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:96:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:119:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:140:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:152:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:162:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:178:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:227:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:232:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:240:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:242:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:252:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:255:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSeries.lean:55:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSeries.lean:63:    C.sigma0 ≤ X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSeries.lean:77:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSeries.lean:104:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSeries.lean:114:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSeries.lean:151:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSeries.lean:154:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSeries.lean:165:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSeries.lean:169:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/SelectedFiniteCanonicalPayload.lean:77:         DFiniteTraceFunctionData.toStagePackage]
+RHFormalization/SelectedFiniteCanonicalPayload.lean:83:      Pld.toTraceData.toStagePackage :=
+RHFormalization/SelectedFiniteCanonicalPayload.lean:91:         DFiniteTraceFunctionData.toStagePackage]
+RHFormalization/SelectedFiniteCanonicalPayload.lean:94:def buildSelectedFiniteOperatorLayerFromCanonicalPayload
+RHFormalization/SelectedFiniteCanonicalPayload.lean:96:    DFiniteStagePackageFromOperatorLayer :=
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:38:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:106:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:135:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:154:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:180:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:190:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:202:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:236:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:241:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:249:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:251:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:261:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean:264:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:40:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:63:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:72:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:83:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:96:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:103:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:131:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:169:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:184:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:207:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:224:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:260:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:265:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:274:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:276:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:286:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:289:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:96:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:132:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:137:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:170:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:199:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:215:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:220:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:228:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:230:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:239:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:242:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:34:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:42:    C.sigma0 ≤ X.toStagePackage.sigma0
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:49:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:67:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:80:          (fun n : ℕ => X.toStagePackage.B_stage (L.alpha n) s)
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:102:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:105:    DBcanLimitData X.toStagePackage :=
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:117:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/AppendixDPrimePowerLimitReduction.lean:121:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:17:  F_stage := fun α => α.appendixDFiniteFStage
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:19:  activeIndices := fun α => α.diagonalSpikeActiveIndices
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:23:    exact α.h_diagonalSpikeActiveIndices_active q hq
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:27:    exact α.h_diagonalSpikeActiveIndices_complete q hq
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:29:  toPP := fun α => α.diagonalSpikeToPP
+RHFormalization/AppendixDFiniteSpikeExtractionWitnessInstance.lean:33:    exact α.h_diagonalSpikeToPP_inj m hm n hn hmn
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:27:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:43:                    (finiteOperatorLayer.toStagePackage.F_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:55:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:64:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:65:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:83:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:99:                    (finiteOperatorLayer.toStagePackage.F_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:111:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:120:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromSharedMajorant.lean:121:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:35:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:49:                    (finiteOperatorLayer.toStagePackage.F_stage (S.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:60:                    (finiteOperatorLayer.toStagePackage.R_stage (S.alpha n) s)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:67:            ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:68:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:70:  let F : DFHLimitData finiteOperatorLayer.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:72:      finiteOperatorLayer.toStagePackage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:78:  let R : DMasterResidualData finiteOperatorLayer.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromLimits.lean:80:      finiteOperatorLayer.toStagePackage
+RHFormalization/DirichletRealOperatorStageData.lean:26:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/DirichletRealOperatorStageData.lean:38:      finiteOperatorLayer.toStagePackage.F_stage (S.alpha n) s =
+RHFormalization/DirichletRealOperatorStageData.lean:44:    {finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerExhaustion.lean:32:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerExhaustion.lean:40:    C.sigma0 ≤ X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerExhaustion.lean:46:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerExhaustion.lean:61:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerExhaustion.lean:73:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerExhaustion.lean:76:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerExhaustion.lean:87:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerExhaustion.lean:91:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:10:    selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload.toSpikeSumData.ppIndices α =
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:18:    q ∈ selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload.toSpikeSumData.ppIndices α ↔
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:31:      selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload.toSpikeSumData.ppIndices α := by
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:36:    , DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:52:      q ∈ selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload.toSpikeSumData.ppIndices α := by
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:60:    using α.h_diagonalSpikeToPP_center_le_R n hn
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:73:  rcases α.h_diagonalSpikeToPP_complete_center_le_R q hvalid hq with ⟨n, hn, hmap_stage⟩
+RHFormalization/AppendixDSpikeCutoffCompatibility.lean:80:      q ∈ selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload.toSpikeSumData.ppIndices α :=
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:29:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:33:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:34:    (R : DMasterResidualData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:40:          ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:41:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:51:    (residualBulkSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:52:    (residualBulkSectorSplitAPI finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR.lean:54:      finiteOperatorLayer.toStagePackage
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability.lean:25:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability.lean:54:      ∀ s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability.lean:57:      ∀ s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload.lean:25:  X : DFiniteStagePackageFromOperatorLayer
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload.lean:63:    ∀ s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload.lean:67:    ∀ s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:70:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:76:    C.sigma0 ≤ X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:111:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:124:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:136:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:152:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:163:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:166:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:177:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:181:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:79:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:131:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:139:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:156:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:191:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:204:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:254:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:259:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:267:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:269:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:279:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:282:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:47:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:53:    C.sigma0 ≤ X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:86:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:95:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:109:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:124:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:149:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:160:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:163:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:174:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerTsumSeries.lean:178:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:76:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:121:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:140:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:155:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:166:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:182:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:223:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:228:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:236:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:238:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:248:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerCutoffMassBound.lean:251:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:149:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:201:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:209:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:226:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:264:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:272:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:280:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:293:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:339:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:344:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:352:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:354:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:364:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:367:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/RealOperatorStageData.lean:24:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/RealOperatorStageData.lean:37:      finiteOperatorLayer.toStagePackage.F_stage (S.alpha n) s =
+RHFormalization/RealOperatorStageData.lean:43:    {finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/RealOperatorStageData.lean:56:    {finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/RealOperatorStageData.lean:69:                  (finiteOperatorLayer.toStagePackage.F_stage
+RHFormalization/RealOperatorStageData.lean:77:      finiteOperatorLayer.toStagePackage.F_stage (S.alpha n) s =
+RHFormalization/RealOperatorStageData.lean:89:      finiteOperatorLayer.toStagePackage.F_stage (S.alpha n) s =
+RHFormalization/RealOperatorStageData.lean:92:      finiteOperatorLayer.toStagePackage.F_stage (S.alpha n) s
+RHFormalization/CurrentFrontierSelectedD.lean:11:  finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer
+RHFormalization/CurrentFrontierSelectedD.lean:15:  selectedFiniteOperatorLayer : DFiniteStagePackageFromOperatorLayer.
+RHFormalization/CurrentFrontierSelectedD.lean:34:    (F : DFHLimitData selectedFiniteOperatorLayer.toStagePackage)
+RHFormalization/CurrentFrontierSelectedD.lean:35:    (R : DMasterResidualData selectedFiniteOperatorLayer.toStagePackage)
+RHFormalization/CurrentFrontierSelectedD.lean:42:                ‖selectedFiniteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CurrentFrontierSelectedD.lean:43:    (hσ : 0 ≤ selectedFiniteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:116:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:146:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:162:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:168:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:184:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:197:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:210:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:275:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:280:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:288:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:290:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:300:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:303:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:37:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:41:    finiteOperatorLayer.toStagePackage.sigma0
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:48:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:60:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:64:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:65:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:67:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:69:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:71:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:83:        finiteOperatorLayer.toStagePackage
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:106:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:110:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:111:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:113:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:115:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:117:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:129:        finiteOperatorLayer.toStagePackage
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:134:    (hs : s ∈ RightHalfPlane finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:187:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:191:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:192:    (sectors : DResidualSectorData finiteOperatorLayer.toStagePackage)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:194:      DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:196:      DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:198:      DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors)
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:210:        finiteOperatorLayer.toStagePackage
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:179:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:231:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:239:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:256:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:291:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:299:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:307:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:321:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:368:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:373:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:381:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:383:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:393:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:396:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:37:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:46:      ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:50:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:70:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:118:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:155:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:163:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:171:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:182:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:224:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:229:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:237:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:239:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:249:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:252:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:41:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:107:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:113:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:122:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:150:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:165:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:208:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:213:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:221:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:223:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:233:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:236:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:27:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:43:                    (finiteOperatorLayer.toStagePackage.F_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:55:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:64:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:65:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:84:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:100:                    (finiteOperatorLayer.toStagePackage.F_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:112:                    (finiteOperatorLayer.toStagePackage.R_stage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:121:              ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromDisplacementKernel.lean:122:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:75:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:84:      ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:88:      ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:135:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:187:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:195:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:212:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:245:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:253:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:261:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:271:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:317:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:322:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:330:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:332:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:342:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:345:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/ConvProbe.lean:9:    resolventOperatorLayer.toStagePackage.F_stage α s = spectralResolventPartial α s := by
+RHFormalization/DFiniteStageOperator.lean:217:def DFiniteTraceFunctionData.toStagePackage
+RHFormalization/DFiniteStageOperator.lean:234:    DFiniteStageSplitAPI T.toStagePackage
+RHFormalization/DFiniteStageOperator.lean:242:structure DFiniteStagePackageFromOperatorLayer where
+RHFormalization/DFiniteStageOperator.lean:262:    DFiniteStageCanonicalPrimePowerFormula traceData.toStagePackage
+RHFormalization/DFiniteStageOperator.lean:265:def DFiniteStagePackageFromOperatorLayer.toStagePackage
+RHFormalization/DFiniteStageOperator.lean:266:    (X : DFiniteStagePackageFromOperatorLayer) :
+RHFormalization/DFiniteStageOperator.lean:268:  X.traceData.toStagePackage
+RHFormalization/DFiniteStageOperator.lean:271:def DFiniteStagePackageFromOperatorLayer.toStageSplit
+RHFormalization/DFiniteStageOperator.lean:272:    (X : DFiniteStagePackageFromOperatorLayer) :
+RHFormalization/DFiniteStageOperator.lean:273:    DFiniteStageSplitAPI X.toStagePackage :=
+RHFormalization/DFiniteStageOperator.lean:276:def DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+RHFormalization/DFiniteStageOperator.lean:277:    (X : DFiniteStagePackageFromOperatorLayer) :
+RHFormalization/DFiniteStageOperator.lean:278:    DFiniteStageCanonicalPrimePowerFormula X.toStagePackage :=
+RHFormalization/DFiniteStageOperator.lean:295:    DFiniteStagePackageFromOperatorLayer
+RHFormalization/DFiniteStageOperator.lean:300:  B : DBcanLimitData finiteOperatorLayer.toStagePackage
+RHFormalization/DFiniteStageOperator.lean:301:  F : DFHLimitData finiteOperatorLayer.toStagePackage
+RHFormalization/DFiniteStageOperator.lean:303:  sectors : DResidualSectorData finiteOperatorLayer.toStagePackage
+RHFormalization/DFiniteStageOperator.lean:305:    DResidualSectorSplitAPI finiteOperatorLayer.toStagePackage sectors
+RHFormalization/DFiniteStageOperator.lean:307:    DResidualSectorBoundsAPI finiteOperatorLayer.toStagePackage sectors
+RHFormalization/DFiniteStageOperator.lean:310:    DMasterResidualAPI finiteOperatorLayer.toStagePackage sectors
+RHFormalization/DFiniteStageOperator.lean:314:    DOverlapIdentityAPI finiteOperatorLayer.toStagePackage B F Rdata
+RHFormalization/DFiniteStageOperator.lean:322:    P := X.finiteOperatorLayer.toStagePackage
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean:25:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean:27:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean:28:    (R : DMasterResidualData finiteOperatorLayer.toStagePackage)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean:34:          ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR.lean:35:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CurrentFrontierEndpoint.lean:55:    (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CurrentFrontierEndpoint.lean:57:    (F : DFHLimitData finiteOperatorLayer.toStagePackage)
+RHFormalization/CurrentFrontierEndpoint.lean:58:    (R : DMasterResidualData finiteOperatorLayer.toStagePackage)
+RHFormalization/CurrentFrontierEndpoint.lean:62:          ‖finiteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CurrentFrontierEndpoint.lean:63:    (hσ : 0 ≤ finiteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CurrentFrontierEndpoint.lean:117:    (F : DFHLimitData selectedFiniteOperatorLayer.toStagePackage)
+RHFormalization/CurrentFrontierEndpoint.lean:118:    (R : DMasterResidualData selectedFiniteOperatorLayer.toStagePackage)
+RHFormalization/CurrentFrontierEndpoint.lean:122:          ‖selectedFiniteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C)
+RHFormalization/CurrentFrontierEndpoint.lean:123:    (hσ : 0 ≤ selectedFiniteOperatorLayer.toStagePackage.sigma0)
+RHFormalization/CurrentFrontierEndpoint.lean:550:    (hs : s ∈ RightHalfPlane designedY.finiteOperatorLayer.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:71:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:107:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:112:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:140:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:177:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:182:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:190:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:192:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:201:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:204:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:81:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:119:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:134:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:163:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:169:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:179:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:194:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:237:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:242:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:250:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:252:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:262:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean:265:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/DesignedOperatorLayer.lean:44:    DFiniteStagePackageFromOperatorLayer :=
+RHFormalization/DesignedOperatorLayer.lean:49:    designedFiniteOperatorLayer.toStagePackage.R_stage =
+RHFormalization/DesignedOperatorLayer.lean:55:        AppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload]
+RHFormalization/DesignedOperatorLayer.lean:61:    designedFiniteOperatorLayer.toStagePackage.R_stage α s = 0 := by
+RHFormalization/DesignedOperatorLayer.lean:67:    designedFiniteOperatorLayer.toStagePackage.F_stage =
+RHFormalization/DesignedOperatorLayer.lean:68:      designedFiniteOperatorLayer.toStagePackage.B_stage := by
+RHFormalization/DesignedOperatorLayer.lean:73:        AppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload]
+RHFormalization/DesignedOperatorLayer.lean:77:    designedFiniteOperatorLayer.toStagePackage.sigma0 = 0 := by
+RHFormalization/DesignedOperatorLayer.lean:82:        AppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload,
+RHFormalization/DesignedOperatorLayer.lean:89:        ‖designedFiniteOperatorLayer.toStagePackage.R_stage α s‖ ≤ C := by
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:115:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:153:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:196:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:204:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:212:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:222:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:265:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:270:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:278:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:280:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:290:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:293:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:97:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:127:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:142:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:149:              X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:158:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:179:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:184:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:207:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:209:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:213:      X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:222:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean:225:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:98:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:136:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:151:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:174:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:183:      s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:189:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:197:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:238:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:243:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:251:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:253:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:263:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean:266:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:87:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:131:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:136:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:162:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:196:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:201:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:209:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:211:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:220:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:223:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:37:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:79:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:116:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:135:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:161:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:171:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:186:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:218:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:223:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:231:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:233:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:243:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean:246:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:53:  `canonicalPrimePowerPackageFromKernelTsum X.toStagePackage.sigma0 Kshared`.
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:56:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:90:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:101:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:108:              X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:118:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:123:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:140:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:145:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:153:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:155:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:159:      X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:167:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean:170:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :
+RHFormalization/AppendixDPrimePowerPairCode.lean:11:  diagonalSpikeToPP : ℕ → PrimePowerPair
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:37:    (X : DFiniteStagePackageFromOperatorLayer) where
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:89:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:97:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:114:    ∀ hs : s ∈ RightHalfPlane X.toStagePackage.sigma0,
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:144:    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:159:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:211:    {X : DFiniteStagePackageFromOperatorLayer}
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:216:        X.toStagePackage.sigma0
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:224:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:226:    DBcanLimitData X.toStagePackage :=
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:236:    (X : DFiniteStagePackageFromOperatorLayer)
+RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:239:    (hs : s ∈ RightHalfPlane X.toStagePackage.sigma0) :

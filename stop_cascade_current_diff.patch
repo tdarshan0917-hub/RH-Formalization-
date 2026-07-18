@@ -1,0 +1,1101 @@
+diff --git a/RHFormalization/CanonicalPrimePowerActualKernelError.lean b/RHFormalization/CanonicalPrimePowerActualKernelError.lean
+index 8a62203..5d68bc6 100644
+--- a/RHFormalization/CanonicalPrimePowerActualKernelError.lean
++++ b/RHFormalization/CanonicalPrimePowerActualKernelError.lean
+@@ -64,6 +64,7 @@ structure CanonicalPrimePowerActualKernelErrorData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+diff --git a/RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean b/RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean
+index b587479..f911b16 100644
+--- a/RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean
++++ b/RHFormalization/CanonicalPrimePowerAsymptoticKernel.lean
+@@ -106,6 +106,7 @@ structure CanonicalPrimePowerAsymptoticKernelMajorantData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+@@ -131,6 +132,23 @@ structure CanonicalPrimePowerAsymptoticKernelMajorantData
+   h_majorant_summable :
+     Summable majorant
+ 
++  /--
++  The finite weighted shared-kernel partial sums converge to the shared package.
++
++  This is the support-aware replacement for full raw `PrimePowerPair`
++  exhaustion.
++  -/
++  h_weighted_partial_tendsto :
++    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
++      Tendsto
++        (fun n : ℕ =>
++          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
++            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
++        Filter.atTop
++        (𝓝 ((canonicalPrimePowerPackageFromKernelTsum
++              X.toStagePackage.sigma0
++              Kshared).Bshared s))
++
+   /--
+   D.CANONICAL-WINDOW-shaped finite weighted kernel error.
+ 
+@@ -170,45 +188,17 @@ def CanonicalPrimePowerAsymptoticKernelMajorantData.toExhaustionData
+     h_tendsto := by
+       intro s hs
+ 
+-      have hI :
+-          Tendsto
+-            (fun n : ℕ =>
+-              X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n))
+-            Filter.atTop
+-            (Filter.atTop : Filter (Finset PrimePowerPair)) := by
+-        apply finset_tendsto_atTop_of_eventually_mem
+-        intro q
+-        rcases S.h_indices_eventually_contains q with ⟨N, hN⟩
+-        exact eventually_atTop.2 ⟨N, hN⟩
+-
+-      have hsummable :
+-          Summable
+-            (fun q : PrimePowerPair =>
+-              q.weightC * S.Kshared q.center s) := by
+-        have hnorm :
+-            Summable
+-              (fun q : PrimePowerPair =>
+-                ‖q.weightC * S.Kshared q.center s‖) :=
+-          Summable.of_nonneg_of_le
+-            (fun q : PrimePowerPair =>
+-              norm_nonneg (q.weightC * S.Kshared q.center s))
+-            (fun q : PrimePowerPair =>
+-              S.h_term_norm_le_majorant s hs q)
+-            S.h_majorant_summable
+-
+-        exact hnorm.of_norm
+-
+-      simpa [canonicalPrimePowerPackageFromKernelTsum] using
+-        finiteCanonical_tendsto_tsum_of_kernel_error_tendsto_zero
+-          (I := fun n : ℕ =>
+-            X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n))
+-          (Kstage := fun n : ℕ =>
+-            X.toFiniteCanonicalPrimePowerFormula.kernel (S.alpha n))
+-          (Kshared := S.Kshared)
+-          (s := s)
+-          hI
+-          hsummable
+-          (S.h_stage_kernel_error_tendsto_zero s hs) }
++      have hpartial :=
++        S.h_weighted_partial_tendsto s hs
++
++      have herror :=
++        S.h_stage_kernel_error_tendsto_zero s hs
++
++      have hsum := hpartial.add herror
++
++      simpa [canonicalPrimePowerPackageFromKernelTsum,
++        finiteCanonicalPrimePowerPackage, sub_eq_add_neg,
++        add_assoc, add_left_comm, add_comm] using hsum }
+ 
+ /--
+ Build `DBcanLimitData` directly from asymptotic-kernel majorant data.
+diff --git a/RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean b/RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean
+index 569e223..9a3e91c 100644
+--- a/RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean
++++ b/RHFormalization/CanonicalPrimePowerConcreteTsumPackage.lean
+@@ -65,6 +65,7 @@ structure CanonicalPrimePowerConcreteTsumKernelSeriesData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+@@ -90,6 +91,23 @@ structure CanonicalPrimePowerConcreteTsumKernelSeriesData
+       Summable
+         (fun q : PrimePowerPair => q.weightC * Kshared q.center s)
+ 
++  /--
++  The finite weighted canonical partial sums converge to the shared package.
++
++  This is the support-aware replacement for full raw `PrimePowerPair`
++  exhaustion.
++  -/
++  h_weighted_partial_tendsto :
++    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
++      Tendsto
++        (fun n : ℕ =>
++          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
++            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
++        Filter.atTop
++        (𝓝 ((canonicalPrimePowerPackageFromKernelTsum
++              X.toStagePackage.sigma0
++              Kshared).Bshared s))
++
+ /--
+ Convert concrete tsum-kernel data into the previous tsum-level data.
+ 
+@@ -110,6 +128,7 @@ def CanonicalPrimePowerConcreteTsumKernelSeriesData.toTsumKernelSeriesData
+     h_indices_eventually_contains := S.h_indices_eventually_contains
+     h_kernel_agrees_on_indices := S.h_kernel_agrees_on_indices
+     h_summable := S.h_summable
++    h_weighted_partial_tendsto := S.h_weighted_partial_tendsto
+     h_Bshared_eq_tsum := by
+       intro s hs
+       rfl }
+diff --git a/RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean b/RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean
+index 64de0ff..f9d417f 100644
+--- a/RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean
++++ b/RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean
+@@ -146,6 +146,7 @@ structure CanonicalPrimePowerDWindowMassCountingSetWeightEnvelopeData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerCutoffMassBound.lean b/RHFormalization/CanonicalPrimePowerCutoffMassBound.lean
+index c5f7991..468d2b6 100644
+--- a/RHFormalization/CanonicalPrimePowerCutoffMassBound.lean
++++ b/RHFormalization/CanonicalPrimePowerCutoffMassBound.lean
+@@ -92,6 +92,7 @@ structure CanonicalPrimePowerRCutoffMassBoundWindowData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean b/RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean
+index 4adaed9..47714de 100644
+--- a/RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean
++++ b/RHFormalization/CanonicalPrimePowerCutoffMassEnumeration.lean
+@@ -104,6 +104,7 @@ structure CanonicalPrimePowerRCutoffEnumeratedMassWindowData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean b/RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean
+index 5ab2b07..f4defa3 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean
+@@ -146,6 +146,7 @@ structure CanonicalPrimePowerDWindowCompactRateMassGrowthData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean b/RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean
+index eaed7a7..de1f530 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowCompactRateBudget.lean
+@@ -96,6 +96,7 @@ structure CanonicalPrimePowerDWindowCompactRateBudgetData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean b/RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean
+index 9a96dde..68b1dab 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowExactMassExactSpeed.lean
+@@ -57,6 +57,7 @@ structure CanonicalPrimePowerDWindowExactMassExactSpeedData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean b/RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean
+index c32e738..fcb88de 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean
+@@ -82,6 +82,7 @@ structure CanonicalPrimePowerDWindowExactMassSpeedBudgetData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean b/RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean
+index ab2db5a..cd8c98e 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean
+@@ -130,6 +130,7 @@ structure CanonicalPrimePowerDWindowExactMassSpeedEstimateData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean b/RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean
+index 19abe85..c82dab8 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean
+@@ -157,6 +157,7 @@ structure CanonicalPrimePowerDWindowExactSpeedMassBudgetData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean b/RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean
+index 5c6edb9..b06db50 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean
+@@ -52,6 +52,7 @@ structure CanonicalPrimePowerDWindowExactWindowSpeedData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean b/RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean
+index 26af132..76bfd74 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean
+@@ -85,6 +85,7 @@ structure CanonicalPrimePowerDWindowIdentifiedRateMassGrowthData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean b/RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean
+index b2bf1a8..ec075d6 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean
+@@ -85,6 +85,7 @@ structure CanonicalPrimePowerDWindowLimitMajorantMassSpeedEstimateData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean b/RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean
+index 134c4a9..95867ff 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean
+@@ -58,6 +58,7 @@ structure CanonicalPrimePowerDWindowRateMassGrowthData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean b/RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean
+index 89f700d..a5ef4e1 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowSeparatedRateBudget.lean
+@@ -90,6 +90,7 @@ structure CanonicalPrimePowerDWindowSeparatedRateBudgetData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean b/RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean
+index 2427624..ff87699 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean
+@@ -150,6 +150,7 @@ structure CanonicalPrimePowerDWindowSpeedAPILimitMajorantMassSpeedData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean b/RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean
+index ccc579a..ec6bb51 100644
+--- a/RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean
++++ b/RHFormalization/CanonicalPrimePowerDWindowSpeedBudget.lean
+@@ -111,6 +111,7 @@ structure CanonicalPrimePowerDWindowSpeedBudgetData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean b/RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean
+index 37ab2df..4148c49 100644
+--- a/RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean
++++ b/RHFormalization/CanonicalPrimePowerEnumeratedMassGrowthRate.lean
+@@ -113,6 +113,7 @@ structure CanonicalPrimePowerRCutoffRateMassGrowthData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean b/RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean
+index 0f05369..ee99a1c 100644
+--- a/RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean
++++ b/RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean
+@@ -124,6 +124,7 @@ structure CanonicalPrimePowerFiniteKernelErrorData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+diff --git a/RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean b/RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean
+index d7ad893..c5fd3ec 100644
+--- a/RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean
++++ b/RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean
+@@ -107,6 +107,7 @@ structure CanonicalPrimePowerSharpCutoffHeatKernelWeightedData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerIndexExhaustion.lean b/RHFormalization/CanonicalPrimePowerIndexExhaustion.lean
+index 84cc347..d9c5809 100644
+--- a/RHFormalization/CanonicalPrimePowerIndexExhaustion.lean
++++ b/RHFormalization/CanonicalPrimePowerIndexExhaustion.lean
+@@ -84,6 +84,7 @@ structure CanonicalPrimePowerIndexKernelSeriesData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+@@ -100,6 +101,21 @@ structure CanonicalPrimePowerIndexKernelSeriesData
+           X.toFiniteCanonicalPrimePowerFormula.kernel (alpha n) q.center s =
+             Kshared q.center s
+ 
++  /--
++  The finite weighted canonical partial sums converge to the shared package.
++
++  This is the support-aware replacement for full raw `PrimePowerPair`
++  exhaustion.
++  -/
++  h_weighted_partial_tendsto :
++    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
++      Tendsto
++        (fun n : ℕ =>
++          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
++            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
++        Filter.atTop
++        (𝓝 (C.Bshared s))
++
+   /--
+   The infinite shared prime-power series has sum `C.Bshared` on the D overlap
+   half-plane.
+@@ -124,11 +140,7 @@ def CanonicalPrimePowerIndexKernelSeriesData.toKernelSeriesData
+   { alpha := S.alpha
+     h_Cshared_sigma_le := S.h_Cshared_sigma_le
+     Kshared := S.Kshared
+-    h_indices_tendsto_top := by
+-      apply finset_tendsto_atTop_of_eventually_mem
+-      intro q
+-      rcases S.h_indices_eventually_contains q with ⟨N, hN⟩
+-      exact eventually_atTop.2 ⟨N, hN⟩
++    h_weighted_partial_tendsto := S.h_weighted_partial_tendsto
+     h_kernel_agrees_on_indices := S.h_kernel_agrees_on_indices
+     h_hasSum := S.h_hasSum }
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerKernelErrorBound.lean b/RHFormalization/CanonicalPrimePowerKernelErrorBound.lean
+index 1e805ec..d2555cd 100644
+--- a/RHFormalization/CanonicalPrimePowerKernelErrorBound.lean
++++ b/RHFormalization/CanonicalPrimePowerKernelErrorBound.lean
+@@ -107,6 +107,7 @@ structure CanonicalPrimePowerKernelErrorBoundData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+@@ -132,6 +133,25 @@ structure CanonicalPrimePowerKernelErrorBoundData
+   h_majorant_summable :
+     Summable majorant
+ 
++  /--
++  The finite weighted shared-kernel partial sums converge to the shared package.
++
++  This is the support-aware replacement for full raw `PrimePowerPair`
++  exhaustion. The scalar error bound below only controls the difference between
++  the stage kernel sum and this shared-kernel partial sum; it does not by itself
++  prove convergence of the shared-kernel partial sums.
++  -/
++  h_weighted_partial_tendsto :
++    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
++      Tendsto
++        (fun n : ℕ =>
++          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
++            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
++        Filter.atTop
++        (𝓝 ((canonicalPrimePowerPackageFromKernelTsum
++              X.toStagePackage.sigma0
++              Kshared).Bshared s))
++
+   /--
+   Scalar error bound for the finite weighted kernel error.
+   The bound may depend on `s`.
+@@ -179,6 +199,7 @@ def CanonicalPrimePowerKernelErrorBoundData.toAsymptoticKernelMajorantData
+     h_majorant_nonneg := S.h_majorant_nonneg
+     h_term_norm_le_majorant := S.h_term_norm_le_majorant
+     h_majorant_summable := S.h_majorant_summable
++    h_weighted_partial_tendsto := S.h_weighted_partial_tendsto
+     h_stage_kernel_error_tendsto_zero := by
+       intro s hs
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerKernelSeries.lean b/RHFormalization/CanonicalPrimePowerKernelSeries.lean
+index 2ff57a4..48e679a 100644
+--- a/RHFormalization/CanonicalPrimePowerKernelSeries.lean
++++ b/RHFormalization/CanonicalPrimePowerKernelSeries.lean
+@@ -46,15 +46,19 @@ structure CanonicalPrimePowerKernelSeriesData
+   Kshared : CanonicalKernelC
+ 
+   /--
+-  The finite prime-power index sets from the operator formula exhaust the full
+-  prime-power index type.
++  The finite weighted canonical partial sums converge to the shared package.
++
++  This is the support-aware replacement for full raw `PrimePowerPair`
++  exhaustion.
+   -/
+-  h_indices_tendsto_top :
+-    Tendsto
+-      (fun n : ℕ =>
+-        X.toFiniteCanonicalPrimePowerFormula.indices (alpha n))
+-      Filter.atTop
+-      (Filter.atTop : Filter (Finset PrimePowerPair))
++  h_weighted_partial_tendsto :
++    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
++      Tendsto
++        (fun n : ℕ =>
++          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
++            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
++        Filter.atTop
++        (𝓝 (C.Bshared s))
+ 
+   /--
+   On each finite stage index set, the stage kernel agrees with the shared kernel.
+@@ -92,7 +96,7 @@ def CanonicalPrimePowerKernelSeriesData.toSeriesData
+   { alpha := S.alpha
+     h_Cshared_sigma_le := S.h_Cshared_sigma_le
+     term := fun q s => q.weightC * S.Kshared q.center s
+-    h_indices_tendsto_top := S.h_indices_tendsto_top
++    h_partial_tendsto := S.h_weighted_partial_tendsto
+     h_finite_eq_partial := by
+       intro n s
+       change
+diff --git a/RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean b/RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean
+index 91757ec..6e70500 100644
+--- a/RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean
++++ b/RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean
+@@ -184,6 +184,7 @@ structure CanonicalPrimePowerDWindowMassCountingSpeedComparisonData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean b/RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean
+index 6977cf3..9b294d2 100644
+--- a/RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean
++++ b/RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean
+@@ -101,6 +101,7 @@ structure CanonicalPrimePowerDWindowMassEnvelopeSpeedComparisonData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean b/RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean
+index 1d2a980..1704cef 100644
+--- a/RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean
++++ b/RHFormalization/CanonicalPrimePowerMassGrowthWindow.lean
+@@ -115,6 +115,7 @@ structure CanonicalPrimePowerMassGrowthWindowData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+diff --git a/RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean b/RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean
+index 6531614..ed11610 100644
+--- a/RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean
++++ b/RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean
+@@ -94,6 +94,7 @@ structure CanonicalPrimePowerDWindowMassEnvelopeData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerProductWindowError.lean b/RHFormalization/CanonicalPrimePowerProductWindowError.lean
+index decde92..0099fd8 100644
+--- a/RHFormalization/CanonicalPrimePowerProductWindowError.lean
++++ b/RHFormalization/CanonicalPrimePowerProductWindowError.lean
+@@ -163,6 +163,7 @@ structure CanonicalPrimePowerProductWindowErrorData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+diff --git a/RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean b/RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean
+index f60aa2e..7d2acad 100644
+--- a/RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean
++++ b/RHFormalization/CanonicalPrimePowerRCutoffExhaustion.lean
+@@ -44,14 +44,16 @@ theorem primePower_indices_eventually_contains_of_R_cutoff
+     (h_indices_contains_of_center_le_R :
+       ∀ n : ℕ,
+       ∀ q : PrimePowerPair,
++        IsPrimePowerPair q →
+         q.center ≤ (alpha n).R →
+           q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)) :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+             q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n) := by
+-  intro q
++  intro q hq
+ 
+   have h_eventually_center_le_R :
+       ∀ᶠ n in Filter.atTop, q.center ≤ (alpha n).R := by
+@@ -62,7 +64,7 @@ theorem primePower_indices_eventually_contains_of_R_cutoff
+   exact
+     ⟨N, by
+       intro n hn
+-      exact h_indices_contains_of_center_le_R n q (hN n hn)⟩
++      exact h_indices_contains_of_center_le_R n q hq (hN n hn)⟩
+ 
+ /--
+ R-cutoff version of the mass-growth/window data.
+@@ -96,6 +98,7 @@ structure CanonicalPrimePowerRCutoffMassGrowthWindowData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean b/RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean
+index 329285b..e9d21b2 100644
+--- a/RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean
++++ b/RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean
+@@ -76,6 +76,7 @@ structure CanonicalPrimePowerRCutoffGrowthMassWindowData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean b/RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean
+index ee01ee5..e896108 100644
+--- a/RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean
++++ b/RHFormalization/CanonicalPrimePowerRCutoffRatePackaged.lean
+@@ -55,6 +55,7 @@ structure CanonicalPrimePowerRCutoffRatePackagedData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerSeries.lean b/RHFormalization/CanonicalPrimePowerSeries.lean
+index 5db9026..047c480 100644
+--- a/RHFormalization/CanonicalPrimePowerSeries.lean
++++ b/RHFormalization/CanonicalPrimePowerSeries.lean
+@@ -68,15 +68,19 @@ structure CanonicalPrimePowerSeriesData
+   term : PrimePowerPair → ℂ → ℂ
+ 
+   /--
+-  The finite prime-power index sets from the operator formula exhaust the full
+-  prime-power index type.
++  The finite canonical partial sums converge to the shared package.
++
++  This is support-aware: it does not require the raw finite index sets to
++  exhaust all `PrimePowerPair`.
+   -/
+-  h_indices_tendsto_top :
+-    Tendsto
+-      (fun n : ℕ =>
+-        X.toFiniteCanonicalPrimePowerFormula.indices (alpha n))
+-      Filter.atTop
+-      (Filter.atTop : Filter (Finset PrimePowerPair))
++  h_partial_tendsto :
++    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
++      Tendsto
++        (fun n : ℕ =>
++          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
++            (fun q : PrimePowerPair => term q s))
++        Filter.atTop
++        (𝓝 (C.Bshared s))
+ 
+   /--
+   The finite canonical package is the corresponding finite partial sum of
+@@ -123,11 +127,7 @@ def CanonicalPrimePowerSeriesData.toExhaustionData
+                 (fun q : PrimePowerPair => S.term q s))
+             Filter.atTop
+             (𝓝 (C.Bshared s)) :=
+-        finite_sum_tendsto_of_hasSum_finset_exhaustion
+-          (fun n : ℕ =>
+-            X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n))
+-          S.h_indices_tendsto_top
+-          (S.h_hasSum s hs)
++        S.h_partial_tendsto s hs
+ 
+       have hseq :
+           (fun n : ℕ =>
+diff --git a/RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean b/RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean
+index 5c5106a..598a574 100644
+--- a/RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean
++++ b/RHFormalization/CanonicalPrimePowerSharedKernelMajorant.lean
+@@ -76,6 +76,7 @@ structure CanonicalPrimePowerSharedKernelMajorantData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+diff --git a/RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean b/RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean
+index 8aba2bd..c03edf4 100644
+--- a/RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean
++++ b/RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean
+@@ -69,6 +69,7 @@ structure CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean b/RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean
+index a971092..816cadf 100644
+--- a/RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean
++++ b/RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean
+@@ -108,6 +108,7 @@ structure CanonicalPrimePowerSharpCutoffChosenLengthDisplacementKernelData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean b/RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean
+index cb91322..0a06424 100644
+--- a/RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean
++++ b/RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean
+@@ -83,6 +83,7 @@ structure CanonicalPrimePowerSharpCutoffExactWeightedEnvelopeData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean b/RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean
+index 9b15ced..159dfea 100644
+--- a/RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean
++++ b/RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean
+@@ -69,6 +69,7 @@ structure CanonicalPrimePowerSharpCutoffMassEnvelopeData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean b/RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean
+index 5ed939f..d40416f 100644
+--- a/RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean
++++ b/RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean
+@@ -100,6 +100,7 @@ structure CanonicalPrimePowerSharpCutoffChosenLengthSharedMajorantData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean b/RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean
+index b817fe3..0806b90 100644
+--- a/RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean
++++ b/RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean
+@@ -57,6 +57,7 @@ structure CanonicalPrimePowerDWindowSoundCountingFactorBoundsData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean b/RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean
+index 5433ef3..2781138 100644
+--- a/RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean
++++ b/RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean
+@@ -194,6 +194,7 @@ structure CanonicalPrimePowerDWindowSoundCountingData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean b/RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean
+index 2f68659..2d437ab 100644
+--- a/RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean
++++ b/RHFormalization/CanonicalPrimePowerSummabilityMajorant.lean
+@@ -28,6 +28,7 @@ noncomputable section
+ open Complex Topology Filter
+ open scoped BigOperators
+ 
++
+ /--
+ Majorant-level data for the concrete canonical prime-power package.
+ 
+@@ -54,6 +55,7 @@ structure CanonicalPrimePowerMajorantKernelSeriesData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+@@ -90,6 +92,24 @@ structure CanonicalPrimePowerMajorantKernelSeriesData
+   h_majorant_summable :
+     Summable majorant
+ 
++  /--
++  The finite weighted canonical partial sums converge to the shared package.
++
++  This is the support-aware replacement for full raw `PrimePowerPair`
++  exhaustion. It is carried as data here because summability plus valid-index
++  eventual containment alone does not imply raw finite-set exhaustion.
++  -/
++  h_weighted_partial_tendsto :
++    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
++      Tendsto
++        (fun n : ℕ =>
++          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
++            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
++        Filter.atTop
++        (𝓝 ((canonicalPrimePowerPackageFromKernelTsum
++              X.toStagePackage.sigma0
++              Kshared).Bshared s))
++
+ /--
+ Convert majorant-level data into the previous concrete tsum-kernel data.
+ 
+@@ -103,6 +123,7 @@ def CanonicalPrimePowerMajorantKernelSeriesData.toConcreteTsumKernelSeriesData
+     Kshared := S.Kshared
+     h_indices_eventually_contains := S.h_indices_eventually_contains
+     h_kernel_agrees_on_indices := S.h_kernel_agrees_on_indices
++    h_weighted_partial_tendsto := S.h_weighted_partial_tendsto
+     h_summable := by
+       intro s hs
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerSummedKernelError.lean b/RHFormalization/CanonicalPrimePowerSummedKernelError.lean
+index 6baaf59..d518805 100644
+--- a/RHFormalization/CanonicalPrimePowerSummedKernelError.lean
++++ b/RHFormalization/CanonicalPrimePowerSummedKernelError.lean
+@@ -51,6 +51,7 @@ structure CanonicalPrimePowerSummedKernelErrorData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+diff --git a/RHFormalization/CanonicalPrimePowerTsumSeries.lean b/RHFormalization/CanonicalPrimePowerTsumSeries.lean
+index cc89b5c..c6e6ec4 100644
+--- a/RHFormalization/CanonicalPrimePowerTsumSeries.lean
++++ b/RHFormalization/CanonicalPrimePowerTsumSeries.lean
+@@ -61,6 +61,7 @@ structure CanonicalPrimePowerTsumKernelSeriesData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+@@ -96,6 +97,23 @@ structure CanonicalPrimePowerTsumKernelSeriesData
+         ∑' q : PrimePowerPair,
+           q.weightC * Kshared q.center s
+ 
++  /--
++  The finite weighted canonical partial sums converge to the shared package.
++
++  This is the support-aware replacement for full raw `PrimePowerPair`
++  exhaustion. It is intentionally carried as data here: summability plus
++  valid-prime-power eventual containment alone does not imply full raw
++  `Finset PrimePowerPair` exhaustion.
++  -/
++  h_weighted_partial_tendsto :
++    ∀ s : ℂ, s ∈ RightHalfPlane X.toStagePackage.sigma0 →
++      Tendsto
++        (fun n : ℕ =>
++          (X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)).sum
++            (fun q : PrimePowerPair => q.weightC * Kshared q.center s))
++        Filter.atTop
++        (𝓝 (C.Bshared s))
++
+ /--
+ Convert tsum-level data into the previous index/kernel series data.
+ 
+@@ -112,6 +130,7 @@ def CanonicalPrimePowerTsumKernelSeriesData.toIndexKernelSeriesData
+     Kshared := S.Kshared
+     h_indices_eventually_contains := S.h_indices_eventually_contains
+     h_kernel_agrees_on_indices := S.h_kernel_agrees_on_indices
++    h_weighted_partial_tendsto := S.h_weighted_partial_tendsto
+     h_hasSum := by
+       intro s hs
+       have hsum :
+diff --git a/RHFormalization/CanonicalPrimePowerUniformWindowError.lean b/RHFormalization/CanonicalPrimePowerUniformWindowError.lean
+index d3edd48..366a80b 100644
+--- a/RHFormalization/CanonicalPrimePowerUniformWindowError.lean
++++ b/RHFormalization/CanonicalPrimePowerUniformWindowError.lean
+@@ -118,6 +118,7 @@ structure CanonicalPrimePowerUniformWindowErrorData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+diff --git a/RHFormalization/CanonicalPrimePowerWeightEnvelope.lean b/RHFormalization/CanonicalPrimePowerWeightEnvelope.lean
+index f4b2820..8627c65 100644
+--- a/RHFormalization/CanonicalPrimePowerWeightEnvelope.lean
++++ b/RHFormalization/CanonicalPrimePowerWeightEnvelope.lean
+@@ -164,6 +164,7 @@ structure CanonicalPrimePowerDWindowMassCountingWeightEnvelopeData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean b/RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean
+index e7f9180..73ef0ad 100644
+--- a/RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean
++++ b/RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean
+@@ -86,6 +86,7 @@ structure CanonicalPrimePowerDWindowExactWindowSpeedEnvelopeData
+   h_indices_contains_of_center_le_R :
+     ∀ n : ℕ,
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       q.center ≤ (alpha n).R →
+         q ∈ X.toFiniteCanonicalPrimePowerFormula.indices (alpha n)
+ 
+diff --git a/RHFormalization/CanonicalPrimePowerWindowMassError.lean b/RHFormalization/CanonicalPrimePowerWindowMassError.lean
+index 2c95622..856e7d2 100644
+--- a/RHFormalization/CanonicalPrimePowerWindowMassError.lean
++++ b/RHFormalization/CanonicalPrimePowerWindowMassError.lean
+@@ -244,6 +244,7 @@ structure CanonicalPrimePowerWindowMassErrorData
+   -/
+   h_indices_eventually_contains :
+     ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
+       ∃ N : ℕ,
+         ∀ n : ℕ,
+           N ≤ n →
+diff --git a/RHFormalization/DOperatorExport.lean b/RHFormalization/DOperatorExport.lean
+index cbb2818..77f1905 100644
+--- a/RHFormalization/DOperatorExport.lean
++++ b/RHFormalization/DOperatorExport.lean
+@@ -170,6 +170,88 @@ structure DFiniteStage where
+       diagonalSpikeActive q →
+         diagonalSpikeContribution q = canonicalSpikeContribution q
+ 
++  /--
++  Finite-stage transform exported by the fixed-cutoff Appendix-D extraction.
++
++  This is the selected finite operator-side transform at this stage.
++  -/
++  appendixDFiniteFStage :
++    ℂ → ℂ
++
++  /--
++  The finite active Nat-index set for the diagonal spike extraction.
++  -/
++  diagonalSpikeActiveIndices :
++    Finset ℕ
++
++  /--
++  Soundness of the finite active-index set.
++  -/
++  h_diagonalSpikeActiveIndices_active :
++    ∀ q : ℕ,
++      q ∈ diagonalSpikeActiveIndices →
++        diagonalSpikeActive q
++
++  /--
++  Completeness of the finite active-index set.
++
++  This is the field that prevents the empty-index fake payload.
++  -/
++  h_diagonalSpikeActiveIndices_complete :
++    ∀ q : ℕ,
++      diagonalSpikeActive q →
++        q ∈ diagonalSpikeActiveIndices
++
++  /--
++  Nat-to-prime-power identification for active diagonal spikes.
++  -/
++  diagonalSpikeToPP :
++    ℕ → PrimePowerPair
++
++  /--
++  Injectivity of the Nat-to-prime-power identification on active indices.
++  -/
++  h_diagonalSpikeToPP_inj :
++    ∀ m : ℕ,
++      m ∈ diagonalSpikeActiveIndices →
++      ∀ n : ℕ,
++        n ∈ diagonalSpikeActiveIndices →
++          diagonalSpikeToPP m = diagonalSpikeToPP n →
++            m = n
++
++  /--
++  Canonical coefficient compatibility on active indices.
++  -/
++  h_canonicalSpikeContribution_eq_weightC :
++    ∀ n : ℕ,
++      n ∈ diagonalSpikeActiveIndices →
++        canonicalSpikeContribution n =
++          PrimePowerPair.weightC (diagonalSpikeToPP n)
++
++  /--
++  Every selected diagonal-spike prime-power lies below the stage `R` cutoff.
++  This is the stage-level cutoff soundness certificate needed by the
++  selected D-window alpha/index package.
++  -/
++  h_diagonalSpikeToPP_center_le_R :
++    ∀ n : ℕ,
++      n ∈ diagonalSpikeActiveIndices →
++        (diagonalSpikeToPP n).center ≤ R
++
++  /--
++  Every prime-power pair below the stage `R` cutoff is represented by one
++  selected diagonal-spike index.
++  This is the stage-level cutoff completeness certificate needed by the
++  selected D-window alpha/index package.
++  -/
++  h_diagonalSpikeToPP_complete_center_le_R :
++    ∀ q : PrimePowerPair,
++      IsPrimePowerPair q →
++      q.center ≤ R →
++        ∃ n : ℕ,
++          n ∈ diagonalSpikeActiveIndices ∧
++            diagonalSpikeToPP n = q
++
+ /--
+ Finite-stage functions produced by Appendix D.
+ 
+diff --git a/RHFormalization/SelectedFiniteOperatorLayer.lean b/RHFormalization/SelectedFiniteOperatorLayer.lean
+index 0ebbfe0..c4b0a0b 100644
+--- a/RHFormalization/SelectedFiniteOperatorLayer.lean
++++ b/RHFormalization/SelectedFiniteOperatorLayer.lean
+@@ -1,29 +1,19 @@
+-import RHFormalization.SelectedFiniteCanonicalPayload
++import RHFormalization.AppendixDFiniteSpikeExtractionWitnessInstance
+ 
+ /-!
+ # Selected finite operator layer
+ 
+-Corrected conditional wiring.
+-
+-The previous `SelectedFiniteTraceSpikePayload` route was too weak and allowed
+-empty/zero fake payloads.  The selected finite operator layer should instead be
+-built from the direct canonical finite prime-power payload:
+-
+-`SelectedFiniteCanonicalPayload`.
+-
+-The real remaining D-side proof target is now:
+-
+-`selectedFiniteCanonicalPayload : SelectedFiniteCanonicalPayload`.
++The selected finite operator layer is built from the selected Appendix-D finite
++spike extraction witness.
+ -/
+ 
+ namespace RHFormalization
+ 
+ noncomputable section
+ 
+-def selectedFiniteOperatorLayer_from_canonicalPayload
+-    (Pld : SelectedFiniteCanonicalPayload) :
++def selectedFiniteOperatorLayer :
+     DFiniteStagePackageFromOperatorLayer :=
+-  buildSelectedFiniteOperatorLayerFromCanonicalPayload Pld
++  selectedAppendixDFiniteSpikeExtractionWitness.toSelectedFiniteOperatorLayer
+ 
+ end
+ 
+diff --git a/RHFormalization/SelectedFiniteTraceSpikePayload.lean b/RHFormalization/SelectedFiniteTraceSpikePayload.lean
+index f6cf952..6988086 100644
+--- a/RHFormalization/SelectedFiniteTraceSpikePayload.lean
++++ b/RHFormalization/SelectedFiniteTraceSpikePayload.lean
+@@ -127,7 +127,10 @@ def buildSelectedFiniteOperatorLayerFromTraceSpikePayload
+   traceData := Pld.toTraceData
+   h_traceData_from_legality := Pld.h_traceData_from_legality
+   splitFromDuhamel := Pld.toSplitFromDuhamel
+-  spikeSumData := Pld.toSpikeSumData
++  finiteCanonicalPrimePowerFormula :=
++    buildDFiniteStageCanonicalPrimePowerFormulaFromSpikeSums
++      Pld.toTraceData.toStagePackage
++      Pld.toSpikeSumData
+ }
+ 
+ end
+diff --git a/SoundCountingSelectedConstructor.search.log b/SoundCountingSelectedConstructor.search.log
+index 09c2c0f..ca51b46 100644
+--- a/SoundCountingSelectedConstructor.search.log
++++ b/SoundCountingSelectedConstructor.search.log
+@@ -1,10 +1,10 @@
+-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:196:def CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.toSoundCountingData
+ RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:198:    (S : CanonicalPrimePowerDWindowSoundCountingFactorBoundsData X) :
++RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:230:    h_denominatorBound_le_windowSpeed :=
+ RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:262:    (S : CanonicalPrimePowerDWindowSoundCountingFactorBoundsData X) :
+-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:268:  S.toSoundCountingData.toExhaustionData
+-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:273:def buildDBcanLimitDataFromCanonicalPrimePowerDWindowSoundCountingFactorBounds
+ RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:275:    (S : CanonicalPrimePowerDWindowSoundCountingFactorBoundsData X) :
+-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:279:    S.toSoundCountingData
+ RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:287:    (S : CanonicalPrimePowerDWindowSoundCountingFactorBoundsData X)
+-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:290:    (buildDBcanLimitDataFromCanonicalPrimePowerDWindowSoundCountingFactorBounds X S).Bcan s =
+-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:296:      S.toSoundCountingData
++RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:312:    h_denominatorBound_le_windowSpeed :=
++RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:45:      ((massEnum.belowCutoff R).card : ℝ) * weightBound := by
++RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:363:    h_denominatorBound_le_windowSpeed :=
++RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:328:    h_denominatorBound_le_windowSpeed :=
++RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:357:    h_denominatorBound_le_windowSpeed :=

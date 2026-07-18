@@ -1,3 +1,3 @@
-import RHFormalization.MainTheorem
-
-#print axioms RHFormalization.mainTheorem_from_nonnegative_interface_layer
+import RHFormalization
+open RHFormalization
+#print axioms RHFormalization.RH_follows_from_packaged_spine

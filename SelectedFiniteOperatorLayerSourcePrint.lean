@@ -1,0 +1,25 @@
+import RHFormalization.SelectedFiniteOperatorLayer
+import RHFormalization.SelectedDWindowAlphaIndexData
+
+namespace RHFormalization
+
+noncomputable section
+
+#check selectedFiniteOperatorLayer
+#print selectedFiniteOperatorLayer
+
+#check DFiniteStagePackageFromOperatorLayer
+#print DFiniteStagePackageFromOperatorLayer
+
+#check DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+#print DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+
+#check FiniteCanonicalPrimePowerFormula
+#print FiniteCanonicalPrimePowerFormula
+
+#check selectedFiniteOperatorLayer.toFiniteCanonicalPrimePowerFormula.indices
+#check selectedFiniteOperatorLayer.toFiniteCanonicalPrimePowerFormula.kernel
+
+end
+
+end RHFormalization

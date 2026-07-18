@@ -1,10 +1,10 @@
-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:196:def CanonicalPrimePowerDWindowSoundCountingFactorBoundsData.toSoundCountingData
 RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:198:    (S : CanonicalPrimePowerDWindowSoundCountingFactorBoundsData X) :
+RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:230:    h_denominatorBound_le_windowSpeed :=
 RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:262:    (S : CanonicalPrimePowerDWindowSoundCountingFactorBoundsData X) :
-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:268:  S.toSoundCountingData.toExhaustionData
-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:273:def buildDBcanLimitDataFromCanonicalPrimePowerDWindowSoundCountingFactorBounds
 RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:275:    (S : CanonicalPrimePowerDWindowSoundCountingFactorBoundsData X) :
-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:279:    S.toSoundCountingData
 RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:287:    (S : CanonicalPrimePowerDWindowSoundCountingFactorBoundsData X)
-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:290:    (buildDBcanLimitDataFromCanonicalPrimePowerDWindowSoundCountingFactorBounds X S).Bcan s =
-RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:296:      S.toSoundCountingData
+RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:312:    h_denominatorBound_le_windowSpeed :=
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:45:      ((massEnum.belowCutoff R).card : ℝ) * weightBound := by
+RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:363:    h_denominatorBound_le_windowSpeed :=
+RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:328:    h_denominatorBound_le_windowSpeed :=
+RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:357:    h_denominatorBound_le_windowSpeed :=

@@ -1,0 +1,39 @@
+import RHFormalization.SelectedTracePayloadFromStageFieldsClosed
+import RHFormalization.SelectedFiniteTraceSpikePayload
+import RHFormalization.SelectedFiniteTraceSpikePayloadFromImageBridge
+import RHFormalization.AppendixDFiniteSpikeExtractionWitnessInstance
+import RHFormalization.DesignedOperatorLayer
+
+set_option autoImplicit false
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex Set Topology Filter Metric
+open scoped BigOperators
+
+-- Closed payload from EF19.
+#check selectedFiniteTraceSpikePayload_fromStageFields_closed
+
+-- Existing structures / constructors we need to route through.
+#check SelectedFiniteTraceSpikePayload
+#check AppendixDFiniteSpikeExtractionWitness
+#print AppendixDFiniteSpikeExtractionWitness
+
+#check AppendixDFiniteSpikeExtractionWitness.toSelectedFiniteTraceSpikePayload
+#check AppendixDFiniteSpikeExtractionWitness.toSelectedFiniteOperatorLayer
+#check selectedAppendixDFiniteSpikeExtractionWitness
+
+-- Current designed layer path.
+#check designedFiniteOperatorLayer
+#print designedFiniteOperatorLayer
+
+-- Search for selected finite operator layer type and builder names.
+#check SelectedFiniteOperatorLayer
+#check buildSelectedFiniteOperatorLayerFromTraceSpikePayload
+#check buildSelectedFiniteOperatorLayerFromCanonicalPayload
+
+end
+
+end RHFormalization

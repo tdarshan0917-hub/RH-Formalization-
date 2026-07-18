@@ -1,0 +1,35 @@
+import RHFormalization.SelectedFiniteCanonicalPayload
+import RHFormalization.CanonicalPrimePowerCutoffMassEnumeration
+import RHFormalization.CanonicalPrimePowerMassUpperEnvelope
+import RHFormalization.CanonicalPrimePowerExactMassEnvelope
+
+namespace RHFormalization
+
+#print DFiniteStage
+#check DFiniteStage.R
+
+#check PrimePowerWeightCutoffEnumerationData
+#print PrimePowerWeightCutoffEnumerationData
+
+#check PrimePowerMassEnvelopeData
+#print PrimePowerMassEnvelopeData
+
+#check exactPrimePowerMassEnvelopeData
+#print exactPrimePowerMassEnvelopeData
+
+-- Try the likely projections. Some may fail; that is okay.
+#check PrimePowerWeightCutoffEnumerationData.indices
+#check PrimePowerWeightCutoffEnumerationData.indexSet
+#check PrimePowerWeightCutoffEnumerationData.cutoffSet
+#check PrimePowerWeightCutoffEnumerationData.ppIndices
+
+#check PrimePowerMassEnvelopeData.massEnum
+#check PrimePowerMassEnvelopeData.weightCutoffEnumeration
+#check PrimePowerMassEnvelopeData.enumeration
+
+#check exactPrimePowerMassEnvelopeData.massEnum
+#check exactPrimePowerMassEnvelopeData.weightCutoffEnumeration
+#check exactPrimePowerMassEnvelopeData.enumeration
+#check exactPrimePowerMassEnvelopeData.indices
+
+end RHFormalization

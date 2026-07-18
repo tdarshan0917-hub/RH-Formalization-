@@ -1,0 +1,14 @@
+import RHFormalization.DFiniteStageOperator
+import RHFormalization.AppendixDSpikeSumExtraction
+
+namespace RHFormalization
+
+#print DFiniteStagePackageFromOperatorLayer
+#check DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+#print DFiniteStagePackageFromOperatorLayer.toFiniteCanonicalPrimePowerFormula
+#check DFiniteStageCanonicalPrimePowerFormula
+#print DFiniteStageCanonicalPrimePowerFormula
+#check DFiniteStageSpikeSumData
+#print DFiniteStageSpikeSumData
+
+end RHFormalization

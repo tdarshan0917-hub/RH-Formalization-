@@ -1,0 +1,8 @@
+import RHFormalization.DefaultMeromorphicAlgebra
+
+namespace RHFormalization
+
+#check defaultMeromorphicAlgebraAPI
+#print axioms defaultMeromorphicAlgebraAPI
+
+end RHFormalization

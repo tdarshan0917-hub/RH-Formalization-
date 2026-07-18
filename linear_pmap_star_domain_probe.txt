@@ -1,0 +1,120 @@
+RHFormalization/DNativeOperator.lean:14:* self-adjointness via `IsSelfAdjoint`;
+RHFormalization/DNativeOperator.lean:70:  h_selfAdjoint : IsSelfAdjoint H
+RHFormalization/DNativeOperator.lean:75:The self-adjointness certificate is now a Mathlib-native `IsSelfAdjoint` proof.
+RHFormalization/DNativeOperator.lean:83:    IsSelfAdjoint S.H :=
+RHFormalization/DNativeUnboundedOperator.lean:30:def LinearPMapLowerSemibounded
+RHFormalization/DNativeUnboundedOperator.lean:43:def LinearPMapNonnegative
+RHFormalization/DNativeUnboundedOperator.lean:65:    IsSelfAdjoint H
+RHFormalization/DNativeUnboundedOperator.lean:67:    LinearPMapLowerSemibounded H
+RHFormalization/DNativeUnboundedOperator.lean:69:    LinearPMapNonnegative H
+RHFormalization/DNativeUnboundedOperator.lean:104:    IsSelfAdjoint S.H :=
+RHFormalization/DNativeUnboundedOperator.lean:116:    LinearPMapLowerSemibounded S.H :=
+RHFormalization/DNativeUnboundedOperator.lean:128:    LinearPMapNonnegative S.H :=
+RHFormalization/DFiniteStageOperator.lean:43:/-- Fixed finite-stage self-adjointness, now backed by Mathlib's native `IsSelfAdjoint`. -/
+RHFormalization/DFiniteStageOperator.lean:48:  IsSelfAdjoint α.native.H
+RHFormalization/DFiniteStageOperator.lean:55:  LinearPMapLowerSemibounded α.native.H
+RHFormalization/DFiniteStageOperator.lean:62:  LinearPMapNonnegative α.native.H
+.lake/packages/mathlib/Mathlib/Tactic/Explode.lean:39:partial def explodeCore (e : Expr) (depth : Nat) (entries : Entries) (start : Bool := false) :
+.lake/packages/mathlib/Mathlib/Tactic/Linter/Whitespace.lean:309:public def mkWindow (orig : String) (start ctx : Nat) : String :=
+.lake/packages/mathlib/Mathlib/Tactic/Sat/FromLRAT.lean:259:partial def buildConj (arr : Array (Array Int)) (start stop : Nat) : Expr :=
+.lake/packages/mathlib/Mathlib/Tactic/Sat/FromLRAT.lean:269:partial def buildClauses (arr : Array (Array Int)) (ctx : Expr) (start stop : Nat)
+.lake/packages/mathlib/Mathlib/Tactic/ModCases.lean:39:@[inline] def onModCases_start (p : Sort*) (a : ℤ) (n : ℕ) (hn : Nat.ble 1 n = true)
+.lake/packages/mathlib/Mathlib/Tactic/ModCases.lean:116:@[inline] def onModCases_start (p : Sort _) (a : ℕ) (n : ℕ) (hn : Nat.ble 1 n = true)
+.lake/packages/mathlib/Mathlib/Topology/ContinuousMap/Star.lean:44:instance : Star C(α, β) where star f := starContinuousMap.comp f
+.lake/packages/mathlib/Mathlib/Topology/ContinuousMap/Star.lean:62:instance starAddMonoid [AddMonoid β] [ContinuousAdd β] [StarAddMonoid β] [ContinuousStar β] :
+.lake/packages/mathlib/Mathlib/Topology/ContinuousMap/Star.lean:66:instance starMul [Mul β] [ContinuousMul β] [StarMul β] [ContinuousStar β] :
+.lake/packages/mathlib/Mathlib/Topology/ContinuousMap/Bounded/Star.lean:62:instance `Pi.instStarForAll`. Upon inspecting the goal, one sees `⊢ ↑(star f) = star ↑f`. -/
+.lake/packages/mathlib/Mathlib/Topology/ContinuousMap/StarOrdered.lean:67:    simpa [IsSelfAdjoint.star_eq <| .of_nonneg (ContinuousSqrt.sqrt_nonneg (f x, g x) (h x))]
+.lake/packages/mathlib/Mathlib/Topology/Algebra/Star.lean:70:def starContinuousMap : C(R, R) :=
+.lake/packages/mathlib/Mathlib/Topology/Algebra/Module/Star.lean:29:def starL (R : Type*) {A : Type*} [CommSemiring R] [StarRing R] [AddCommMonoid A]
+.lake/packages/mathlib/Mathlib/Topology/Algebra/Module/Star.lean:42:def starL' (R : Type*) {A : Type*} [CommSemiring R] [StarRing R] [TrivialStar R] [AddCommMonoid A]
+.lake/packages/mathlib/Mathlib/Topology/Algebra/Module/LinearPMap.lean:27:* `LinearPMap.HasCore`: a submodule contained in the domain is a core if restricting to the core
+.lake/packages/mathlib/Mathlib/Topology/Algebra/Module/LinearPMap.lean:35:* `LinearPMap.closureHasCore`: the domain of `f` is a core of its closure
+.lake/packages/mathlib/Mathlib/Topology/Algebra/Module/LinearPMap.lean:56:namespace LinearPMap
+.lake/packages/mathlib/Mathlib/Topology/Algebra/Star/LinearMap.lean:38:instance intrinsicStar : Star (WithConv (E →L[R] F)) where star f := toConv <|
+.lake/packages/mathlib/Mathlib/Topology/Algebra/Star/LinearMap.lean:48:    IsSelfAdjoint f ↔ ∀ x, f (star x) = star (f x) := by
+.lake/packages/mathlib/Mathlib/Topology/Algebra/Star/LinearMap.lean:49:  simp [IsSelfAdjoint, WithConv.ext_iff, ContinuousLinearMap.ext_iff, star_eq_iff_star_eq,
+.lake/packages/mathlib/Mathlib/Topology/Algebra/Star/LinearMap.lean:53:    IsSelfAdjoint (toConv f.ofConv.toLinearMap) ↔ IsSelfAdjoint f := by
+.lake/packages/mathlib/Mathlib/Lean/Meta/RefinedDiscrTree/Lookup.lean:62:private def processPending (pending : Array (LazyEntry × α)) (start stop : Nat) :
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Reproducing.lean:159:  · rw [IsSelfAdjoint, sub_zero, star_finsuppSum, Finsupp.sum_comm]
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Reproducing.lean:172:    IsSelfAdjoint (f.sum fun i xi ↦ f.sum fun j xj ↦ star xi * K i j * xj) := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:20:The main results of this file are `IsSelfAdjoint.hasEigenvector_of_isMaxOn` and
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:21:`IsSelfAdjoint.hasEigenvector_of_isMinOn`, which state that if `E` is complete, and if the
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:180:-- TODO: Prove this from `IsSelfAdjoint.toReal_spectralRadius_eq_norm` using complexification.
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:182:theorem spectralRadius_eq_nnnorm [CompleteSpace E] (hT : IsSelfAdjoint T) :
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:195:namespace IsSelfAdjoint
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:212:theorem linearly_dependent_of_isLocalExtrOn (hT : IsSelfAdjoint T) {x₀ : F}
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:234:theorem eq_smul_self_of_isLocalExtrOn_real (hT : IsSelfAdjoint T) {x₀ : F}
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:257:theorem eq_smul_self_of_isLocalExtrOn (hT : IsSelfAdjoint T) {x₀ : E}
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:266:theorem hasEigenvector_of_isLocalExtrOn (hT : IsSelfAdjoint T) {x₀ : E} (hx₀ : x₀ ≠ 0)
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:276:theorem hasEigenvector_of_isMaxOn (hT : IsSelfAdjoint T) {x₀ : E} (hx₀ : x₀ ≠ 0)
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:295:theorem hasEigenvector_of_isMinOn (hT : IsSelfAdjoint T) {x₀ : E} (hx₀ : x₀ ≠ 0)
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Rayleigh.lean:313:end IsSelfAdjoint
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/StarOrder.lean:56:/-- Because this takes `ContinuousFunctionalCalculus ℝ (H →L[𝕜] H) IsSelfAdjoint` as an argument,
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/StarOrder.lean:59:    [ContinuousFunctionalCalculus ℝ (H →L[𝕜] H) IsSelfAdjoint] :
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean:85:    IsSelfAdjoint T := (isSymmetric_iff_isSelfAdjoint _).mp hT.isSymmetric
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean:275:    T.IsPositive ↔ IsSelfAdjoint T ∧ ∀ x, 0 ≤ T.reApplyInnerSelf x := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean:282:    IsSelfAdjoint T := hT.isSymmetric.isSelfAdjoint
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean:304:For the version with `IsSelfAdjoint` instead of `IsSymmetric`, see
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean:311:For the version with `IsSymmetric` instead of `IsSelfAdjoint`, see
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean:314:    IsPositive T ↔ IsSelfAdjoint T ∧ ∀ x, 0 ≤ ⟪T x, x⟫ := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean:478:    {p : E →L[𝕜] E} (hp : IsIdempotentElem p) : p.IsPositive ↔ IsSelfAdjoint p := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean:499:      IsSelfAdjoint p,
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean:554:    M.PosSemidef ↔ ∃ (m : ℕ) (v : Fin m → (n → 𝕜)), M = ∑ i, vecMulVec (v i) (star (v i)) := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:256:theorem isSelfAdjoint_iff' {A : E →L[𝕜] E} : IsSelfAdjoint A ↔ A† = A :=
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:326:namespace IsSelfAdjoint
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:332:theorem adjoint_eq {A : E →L[𝕜] E} (hA : IsSelfAdjoint A) : A.adjoint = A :=
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:336:theorem isSymmetric {A : E →L[𝕜] E} (hA : IsSelfAdjoint A) : (A : E →ₗ[𝕜] E).IsSymmetric := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:341:theorem conj_adjoint {T : E →L[𝕜] E} (hT : IsSelfAdjoint T) (S : E →L[𝕜] F) :
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:342:    IsSelfAdjoint (S ∘L T ∘L S.adjoint) := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:348:theorem adjoint_conj {T : E →L[𝕜] E} (hT : IsSelfAdjoint T) (S : F →L[𝕜] E) :
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:349:    IsSelfAdjoint (S.adjoint ∘L T ∘L S) := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:355:    IsSelfAdjoint A ↔ (A : E →ₗ[𝕜] E).IsSymmetric :=
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:360:    (hA : (A : E →ₗ[𝕜] E).IsSymmetric) : IsSelfAdjoint A := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:367:    IsSelfAdjoint U.starProjection :=
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:370:theorem conj_starProjection {T : E →L[𝕜] E} (hT : IsSelfAdjoint T)
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:372:    IsSelfAdjoint (U.starProjection ∘L T ∘L U.starProjection) := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:376:end IsSelfAdjoint
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:388:    ((IsSelfAdjoint.star_mul_self T).sub (IsSelfAdjoint.mul_star_self T)).isSymmetric
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:417:    IsSelfAdjoint T ↔ IsStarNormal T := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:419:  suffices T = star T * T from this ▸ IsSelfAdjoint.star_mul_self _
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:690:theorem isSelfAdjoint_iff' {A : E →ₗ[𝕜] E} : IsSelfAdjoint A ↔ A.adjoint = A :=
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:693:theorem isSymmetric_iff_isSelfAdjoint (A : E →ₗ[𝕜] E) : IsSymmetric A ↔ IsSelfAdjoint A := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:746:    IsSelfAdjoint T.toContinuousLinearMap ↔ IsSelfAdjoint T := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:747:  simp [IsSelfAdjoint, star, adjoint,
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:752:    IsSelfAdjoint T.toLinearMap ↔ IsSelfAdjoint T := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Adjoint.lean:753:  simp only [IsSelfAdjoint, star, adjoint, LinearEquiv.trans_apply,
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:33:* `IsSelfAdjoint.isClosed`: Every self-adjoint operator is closed.
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:70:namespace LinearPMap
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:215:      LinearPMap.mem_adjoint_domain_iff]
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:224:namespace LinearPMap
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:228:instance instStar : Star (E →ₗ.[𝕜] E) where
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:233:theorem isSelfAdjoint_def : IsSelfAdjoint A ↔ A† = A := Iff.rfl
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:235:/-- Every self-adjoint `LinearPMap` has dense domain.
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:238:domain is dense, but the choice of the junk value implies that a `LinearPMap` cannot be self-adjoint
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:240:theorem _root_.IsSelfAdjoint.dense_domain (hA : IsSelfAdjoint A) : Dense (A.domain : Set E) := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:291:theorem _root_.LinearPMap.adjoint_graph_eq_graph_adjoint (hT : Dense (T.domain : Set E)) :
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:312:theorem _root_.LinearPMap.graph_adjoint_toLinearPMap_eq_adjoint (hT : Dense (T.domain : Set E)) :
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:327:namespace LinearPMap
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/LinearPMap.lean:339:theorem _root_.IsSelfAdjoint.isClosed {A : E →ₗ.[𝕜] E} (hA : IsSelfAdjoint A) : A.IsClosed := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Symmetric.lean:20:In comparison to `IsSelfAdjoint`, this definition works for non-continuous linear maps, and
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Symmetric.lean:65:`LinearMap.IsSelfAdjoint` with respect to the sesquilinear form given by the inner product. -/
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Symmetric.lean:67:    T.IsSymmetric ↔ LinearMap.IsSelfAdjoint (R := 𝕜) (M := E) (LinearMap.flip (innerₛₗ 𝕜)) T :=
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Symmetric.lean:368:    {α : 𝕜} : (α • f).IsSymmetric ↔ IsSelfAdjoint α := by
+.lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Projection/Basic.lean:181:def starProjection (U : Submodule 𝕜 E) [U.HasOrthogonalProjection] :
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/Unitary/Span.lean:36:lemma IsSelfAdjoint.self_add_I_smul_cfcSqrt_sub_sq_mem_unitary (a : A) (ha : IsSelfAdjoint a)
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/Unitary/Span.lean:62:  simp [IsSelfAdjoint.star_eq, ← sub_eq_add_neg, (CFC.sqrt_nonneg (1 - a ^ 2 : A)).isSelfAdjoint]
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/Unitary/Span.lean:66:  simp [IsSelfAdjoint.imaginaryPart (x := CFC.sqrt (1 - a ^ 2 : A)) (by cfc_tac)]
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/Unitary/Connected.lean:114:lemma IsSelfAdjoint.cfc_arg (u : A) : IsSelfAdjoint (cfc (ofReal ∘ arg : ℂ → ℂ) u) := by
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/Fuglede.lean:65:noncomputable def expMulMulExp (a b x : A) (z : ℂ) : A := exp (z • star b) * x * exp (z • star (-a))
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/PositiveLinearMap.lean:37:  [StarRing A₁] [TopologicalSpace A₁] [NonUnitalContinuousFunctionalCalculus ℝ A₁ IsSelfAdjoint]
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/PositiveLinearMap.lean:43:lemma map_isSelfAdjoint (f : A₁ →ₚ[ℂ] A₂) (a : A₁) (ha : IsSelfAdjoint a) :
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/PositiveLinearMap.lean:44:    IsSelfAdjoint (f a) := by
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/PositiveLinearMap.lean:60:lemma apply_le_of_isSelfAdjoint (f : B₁ →ₚ[ℂ] B₂) (x : B₁) (hx : IsSelfAdjoint x) :
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/PositiveLinearMap.lean:63:  exact IsSelfAdjoint.le_algebraMap_norm_self hx
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/PositiveLinearMap.lean:74:  exact IsSelfAdjoint.le_algebraMap_norm_self <| .of_nonneg hx
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/PositiveLinearMap.lean:143:      rw [IsSelfAdjoint.star_eq (hy_nonneg x).isSelfAdjoint]
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/PositiveLinearMap.lean:145:      rw [IsSelfAdjoint.star_eq (map_nonneg f (hy_nonneg x)).isSelfAdjoint]
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/Module/Constructions.lean:91:lemma inner_def (x y : A) : ⟪x, y⟫_A = y * star x := rfl
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/Module/Defs.lean:157:lemma isSelfAdjoint_inner_self {x : E} : IsSelfAdjoint ⟪x, x⟫ := star_inner _ _
+.lake/packages/mathlib/Mathlib/Analysis/CStarAlgebra/Basic.lean:64:def starNormedAddGroupHom : NormedAddGroupHom E E :=

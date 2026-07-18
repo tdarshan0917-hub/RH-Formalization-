@@ -1,0 +1,30 @@
+===== RH FORMALIZATION SNAPSHOT =====
+Date: Mon Jun 29 14:51:11 EDT 2026
+Project: /Users/travisdarshan/Downloads/RHFormalization_LeanCompanion_V2_Iteration20 3
+
+===== SIZE =====
+Lean files:        743
+Lines of Lean:     70725
+
+===== DECLARATION COUNTS APPROX =====
+theorem:           1356
+lemma:             11
+def:               772
+instance:          1
+structure/class:   214
+inductive:         3
+
+===== RISK COUNTS =====
+sorry/admit:       26
+axiom/constant:    3
+True placeholders: 1
+
+===== IMPORT / MODULE COUNT =====
+import lines:      1988
+
+===== RECENT GREEN FILES =====
+Lean files modified last 3 days: 51
+
+===== TOP-LEVEL CAP =====
+Total declarations approx: 2107
+Snapshot file: RH_WORK_SNAPSHOT_20260629_1451.txt

@@ -1,0 +1,171 @@
+import RHFormalization.PrimeSideAlignmentContractLocalEF
+import RHFormalization.ExplicitFormulaHolomorphyFromTsum
+
+/-!
+# RHFormalization.PrimeSideAlignmentContractWitnessEF
+
+Witness-cancellation bridge for the corrected `Btr` alignment route.
+
+This version avoids the previous `Classical.choose` mismatch by using the
+original B-side and Z-side principal-part proofs directly.  That makes the
+regular parts in `hpoint` definitionally the same regular parts used in the
+local extension proof.
+-/
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex Set Topology Filter
+open scoped BigOperators
+
+/--
+Witness-local extensions for the corrected `Btr` object.
+
+At a witness point `W.s0`, the Btr principal part and the Zpole principal part
+cancel.  The remaining `hpoint` condition supplies equality at the center,
+because `LocalEqAtC` is full-neighborhood equality, not merely punctured
+equality.
+-/
+theorem witness_extensions_from_primeSideAlignmentContract
+    (M : ZeroMultiplicityData)
+    (Zpole : ℂ → ℂ)
+    (conv :
+      ZeroPoleLocalUniformConvergenceAPI
+        M
+        defaultZeroExhaustion
+        Zpole)
+    (D : OperatorResolventBridge)
+    (A : PrimeSideAlignmentContract M D)
+    (hpoint :
+      ∀ W : ZeroWitness,
+        let c : ℂ :=
+          -(groupedResidueCoeff M (pairGroupedPoleClass M W))
+        let hBreg :=
+          Classical.choose
+            (A.h_Btr_opposite_principalPart W)
+        let hZreg :=
+          Classical.choose
+            (zside_pair_principalPart_from_convergence M Zpole conv W)
+        hBreg W.s0 + hZreg W.s0 =
+          A.Btr W.s0 + Zpole W.s0) :
+    ∀ W : ZeroWitness,
+      ∃ h : ℂ → ℂ,
+        HolomorphicAtC h W.s0 ∧
+          LocalEqAtC h
+            (fun s : ℂ => A.Btr s + Zpole s)
+            W.s0 := by
+  intro W
+
+  let c : ℂ :=
+    -(groupedResidueCoeff M (pairGroupedPoleClass M W))
+
+  -- Use the original proofs directly.  Do not create rewritten copies,
+  -- otherwise `Classical.choose` will not match the choices in `hpoint`.
+  let hBpp :=
+    A.h_Btr_opposite_principalPart W
+
+  let hZpp :=
+    zside_pair_principalPart_from_convergence M Zpole conv W
+
+  let hBreg : ℂ → ℂ := Classical.choose hBpp
+  let hZreg : ℂ → ℂ := Classical.choose hZpp
+
+  have hBspec := Classical.choose_spec hBpp
+  have hZspec := Classical.choose_spec hZpp
+
+  refine
+    ⟨fun s : ℂ => hBreg s + hZreg s, ?_, ?_⟩
+
+  · exact AnalyticAt.add hBspec.1 hZspec.1
+
+  · change
+      (fun s : ℂ => hBreg s + hZreg s)
+        =ᶠ[𝓝 W.s0]
+      (fun s : ℂ => A.Btr s + Zpole s)
+
+    filter_upwards [hBspec.2, hZspec.2] with s hBs hZs
+
+    by_cases hs : s = W.s0
+    · subst s
+      simpa [c, hBpp, hZpp, hBreg, hZreg] using hpoint W
+
+    · have hBval :
+          A.Btr s = c / (s - W.s0) + hBreg s := by
+        simpa [c, hBpp, hBreg] using hBs hs
+
+      have hZval :
+          Zpole s = (-c) / (s - W.s0) + hZreg s := by
+        simpa [c, hZpp, hZreg] using hZs hs
+
+      rw [hBval, hZval]
+      ring
+
+/--
+RH through the corrected prime-side alignment contract, with witness-local
+extensions derived from principal-part cancellation.
+
+Remaining E-side local input is now only the point-value compatibility `hpoint`.
+-/
+theorem RH_from_primeSideAlignmentContract_principalParts
+    (h_real_zero_free :
+      ∀ s : ℂ,
+        s.im = 0 → 0 < s.re → s.re < 1 → riemannZeta s ≠ 0)
+    (convergence :
+      ZeroPoleLocalUniformConvergenceAPI
+        defaultZeroMultiplicityData
+        defaultZeroExhaustion
+        (ZpoleSeries defaultZeroMultiplicityData))
+    (poleSeriesMeromorphic :
+      ZpoleMeromorphicFromSeriesAPI
+        defaultZeroMultiplicityData
+        defaultZeroExhaustion
+        (ZpoleSeries defaultZeroMultiplicityData))
+    (A :
+      PrimeSideAlignmentContract
+        defaultZeroMultiplicityData
+        designedY.toOperatorResolventBridge)
+    (ZF : ZetaZeroFacts)
+    (hpoint :
+      ∀ W : ZeroWitness,
+        let c : ℂ :=
+          -(groupedResidueCoeff
+              defaultZeroMultiplicityData
+              (pairGroupedPoleClass defaultZeroMultiplicityData W))
+        let hBreg :=
+          Classical.choose
+            (A.h_Btr_opposite_principalPart W)
+        let hZreg :=
+          Classical.choose
+            (zside_pair_principalPart_from_convergence
+              defaultZeroMultiplicityData
+              (ZpoleSeries defaultZeroMultiplicityData)
+              convergence
+              W)
+        hBreg W.s0 + hZreg W.s0 =
+          A.Btr W.s0 + ZpoleSeries defaultZeroMultiplicityData W.s0)
+    (hσ :
+      0 ≤ designedY.toOperatorResolventBridge.sigma0) :
+    RiemannHypothesis :=
+  RH_from_primeSideAlignmentContract_localEF
+    h_real_zero_free
+    convergence
+    poleSeriesMeromorphic
+    A
+    ZF
+    (witness_extensions_from_primeSideAlignmentContract
+      defaultZeroMultiplicityData
+      (ZpoleSeries defaultZeroMultiplicityData)
+      convergence
+      designedY.toOperatorResolventBridge
+      A
+      hpoint)
+    hσ
+
+#check witness_extensions_from_primeSideAlignmentContract
+#check RH_from_primeSideAlignmentContract_principalParts
+#print axioms RH_from_primeSideAlignmentContract_principalParts
+
+end
+
+end RHFormalization

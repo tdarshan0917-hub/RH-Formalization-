@@ -1,0 +1,14 @@
+import RHFormalization.MainTheoremFromRealZeroFreeDefaultAC
+
+namespace RHFormalization
+
+#check defaultMeromorphicAlgebraAPI
+#print axioms defaultMeromorphicAlgebraAPI
+
+#check defaultConnectedOmegaAPI
+#print axioms defaultConnectedOmegaAPI
+
+#check mainTheorem_from_realZeroFree_nonnegative_interface_defaultAC
+#print axioms mainTheorem_from_realZeroFree_nonnegative_interface_defaultAC
+
+end RHFormalization

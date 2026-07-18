@@ -1,0 +1,29 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR
+import RHFormalization.DCanonicalWindowSharpCutoffConcreteChosenSpeed
+import RHFormalization.DCanonicalWindowSharpCutoffConcreteCompactSpeed
+import RHFormalization.DCanonicalWindowSharpCutoffCompactSpeed
+import RHFormalization.DCanonicalWindowConcrete
+
+namespace RHFormalization
+
+variable (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+variable (S : CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData finiteOperatorLayer)
+
+#check sharpCutoffDCanonicalWindowData S.G S.Lstage
+#check S.sharpSpeed
+#check S.sharpSpeed.toCompactSpeedAPI
+
+#check DCanonicalWindowCompactSpeedAPI
+#print DCanonicalWindowCompactSpeedAPI
+
+#check DCanonicalWindowAPI
+#print DCanonicalWindowAPI
+
+-- likely bridge names, some may fail; we are testing names
+#check DCanonicalWindowCompactSpeedAPI.toWindowAPI
+#check DCanonicalWindowCompactSpeedAPI.toDCanonicalWindowAPI
+#check DCanonicalWindowCompactSpeedAPI.toCanonicalWindowAPI
+#check buildDCanonicalWindowAPIFromCompactSpeed
+#check buildDCanonicalWindowAPIFromCompactSpeedAPI
+
+end RHFormalization

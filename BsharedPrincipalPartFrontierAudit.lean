@@ -1,18 +1,39 @@
-import RHFormalization.HExplicitFormulaLocalExtensionAssembly
-import RHFormalization.HExplicitFormulaWitnessCancellation
-import RHFormalization.CanonicalPrimePowerTsumSeries
-import RHFormalization.HSideResidueArithmetic
-import RHFormalization.HSidePoleWitness
+import RHFormalization.PrimeSideOperatorBridgeBLocalEF
+import RHFormalization.ExplicitFormulaLocalReduction
+import RHFormalization.ExplicitFormulaHolomorphyFromTsum
+import RHFormalization.ExplicitPrimePackageIdentity
+import RHFormalization.ExplicitFormulaBRegular
+import RHFormalization.BsharedPrincipalPartAtWitness
 
-#check RHFormalization.Harch_holomorphic_from_witness_and_regular
-#check RHFormalization.Harch_local_extension_at_witness_from_cancelled_principal_parts
+namespace RHFormalization
 
-#check RHFormalization.HasPrincipalPartAtC
-#check RHFormalization.groupedResidueCoeff
-#check RHFormalization.HSideGroupedPoleArithmeticData
-#check RHFormalization.HSideGroupedPoleNormalFormData
+noncomputable section
 
-#print RHFormalization.CanonicalPrimePowerPackage
-#print RHFormalization.DBcanLimitData
-#print RHFormalization.HSideGroupedPoleArithmeticData
-#print RHFormalization.HSideGroupedPoleNormalFormData
+open Complex Set Topology Filter
+open scoped BigOperators
+
+-- Current strongest Bshared/local-EF endpoint.
+#check RH_from_designed_D_zero_density_localEF_noBregular
+
+-- The exact remaining hard input.
+#check designedY_BsharedOppositePrincipalPartData_of_tsum_principalParts
+#check designedY_BPP_pair_from_tsum
+
+-- Z-side principal part is already available from convergence.
+#check zside_pair_principalPart_from_convergence
+
+-- Bshared regularity is already available.
+#check designedY_Bshared_regular
+#check designedY_Bshared_holomorphicAt
+
+-- Global holomorphy assembly from tsum principal parts.
+#check Harch_holomorphic_from_tsumPrincipalParts_and_Bregular
+#check designed_h_holo_from_localEF
+
+-- Concrete tsum identity connecting designedY.B.Cshared.Bshared to the prime package.
+#check designedY_Cshared_eq_concreteTsumPackage
+#check designedY_Cshared_Bshared_eq_tsum_global
+
+end
+
+end RHFormalization

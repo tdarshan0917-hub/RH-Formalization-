@@ -1,0 +1,15 @@
+import RHFormalization.DFiniteStageOperator
+import RHFormalization.AppendixDSpikeSumExtraction
+
+namespace RHFormalization
+
+#print DStageSelfAdjointC
+#print DStageLowerSemiboundedC
+#print DStageShiftedNonnegativeC
+#print DStageHeatTraceClassC
+#print DStageResolventTraceLegalC
+#print DStageDuhamelTraceNormLegalC
+#print DStageDiagonalSpikeExtractionC
+#print DStageMixedWordControlC
+
+end RHFormalization
