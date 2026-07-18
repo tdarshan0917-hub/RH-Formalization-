@@ -228,3 +228,18 @@ ANTI-CIRCLE RULES (violations burned money tonight — enforce):
   - NO new reductions among O3 guises (GalerkinRStageEquivO3 audit, frozen).
   - NO re-derivation of banked bricks; grep RH_INVENTORY.md + this file first.
   - Raw-era objects (adaptiveCombinedFreeR etc.) FROZEN — decoded only.
+
+## CORRECTION 2026-07-18 (supersedes "sector engines PROVED")
+hShort CLOSED unconditionally (decoded_hShort, DecodedShortAssembly.lean,
+axiom-clean). SOLE REMAINING FRONTIER: hComb.
+AUDIT FINDING: dDisp_sector_bound, dLoc_sector_bound, and
+R_stage_bound_of_sector_bounds are CONDITIONAL SHELLS — h_transform,
+hg_intbound, h_recombine, h_sector_bound are HYPOTHESES/API fields, not
+proved. Do NOT record them as engines. hComb = instantiate the sector
+data for the decoded stage per manuscript D.MR.4–7: (i) concrete defs of
+short/window/tail/bulk parts of decodedAdaptiveCombinedFreeR, (ii) prove
+recombination identity, (iii) prove transform forms, (iv) prove density
+integral bounds. NO direct estimate of CompensatedB (circularity trap).
+INVENTORY RULE (new, frozen): every banked theorem is tagged
+UNCONDITIONAL or CONDITIONAL-ON-{named hypotheses}. "Proved" alone is
+banned from handoffs.
