@@ -158,3 +158,28 @@ phantom names burned twice (galerkinVC_opNorm_le, omega_compact_gap,
 toEuclideanLin_opNorm_le_of_column_bound in wrong file) — ALWAYS grep before
 citing. Manuscript at /tmp/ms.txt (Claude container): D.MR.2 proof 9690-9790,
 D.BULK-FINITE-FORM 9152.
+
+## 2026-07-17B: hShort CAMPAIGN — SESSION HANDOFF (context near limit)
+BANKED this session (all axiom-clean, inline-verified): decoded route wired
+(2026-07-17A entries) + hShort bricks: DecodedVEntryBound
+(abs_decodedVmatrixElement_le — decoded entry ≤ Σ|w|, bumpMass-free),
+DecodedColumnNormBound (decodedGalerkinVC_column_norm_sq_le ≤ N·((2/L)S1)²;
+abs_decodedGalerkinV_entry_le_S1), DecodedFirstOrderVanish
+(decodedFirstOrderWindow_uniform_bound ≤ C/(n+2) — brick 1 DONE),
+DecodedResidualUniform v3/v4 (decodedSecondResolventResidual_norm_le via
+TEXTUAL CLONE of raw wrapper — method of record for decoded clones:
+extract raw theorem text, substitute identifiers, build).
+IN FLIGHT: decoded_residual_schedule_collapse (adaptive N/L/S1 arithmetic,
+bound C₀³·146) — v4 build pending. THEN: brick 2b assembly
+(uniform bound = norm_le + collapse + δ:=1/C₀ reciprocal trick from
+inv_norm_le_on_compact; NO new gap provider needed), THEN hShort assembly
+(FOW bound + O2 bound → decodedAdaptiveShortResidual bound), plugging into
+RH_from_decoded_combined_and_short. Remaining frontier after hShort: hComb
+(sector engines dDisp_sector_bound/dLoc_sector_bound/gaussian_penalty/
+DTail all PROVED on disk — assembly against decodedAdaptiveCombinedFreeR).
+METHOD NOTES: raw proofs' first-guards survive substitution; admR=log(n+2)/2
+so e^{admR}=√(n+2), S1≤4(n+2); adaptiveN=max(admN,⌈Lad(n+2)⌉)≤3Lad(n+2);
+phantom names burned twice (galerkinVC_opNorm_le, omega_compact_gap,
+toEuclideanLin_opNorm_le_of_column_bound in wrong file) — ALWAYS grep before
+citing. Manuscript at /tmp/ms.txt (Claude container): D.MR.2 proof 9690-9790,
+D.BULK-FINITE-FORM 9152.
