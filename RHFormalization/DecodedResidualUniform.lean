@@ -1,4 +1,4 @@
--- SENTINEL: decoded-residual-uniform-v4
+-- SENTINEL: decoded-residual-uniform-v5
 import RHFormalization.DecodedColumnNormBound
 import RHFormalization.DecodedAdaptivePrimeSplit
 import RHFormalization.AdmissibleResidualUniform
@@ -112,13 +112,14 @@ theorem decodedSecondResolventResidual_norm_le
               * ((adaptiveN c n : ℝ) * ((2 / adaptiveL c n) * S1mass (admR n)) ^ 2) :=
       mul_le_mul_of_nonneg_right hwsum hB0
     exact le_trans h1 (le_trans (le_of_eq h2) h3)
-  -- density-constant norm
-  have hdens : ‖admDensityC n‖ = 1 / (2 * adaptiveL c n) := by
-    unfold admDensityC
+  -- density-constant norm (FIX v5: the residual carries adaptiveDensityC, not admDensityC)
+  have hdens : ‖adaptiveDensityC c n‖ = 1 / (2 * adaptiveL c n) := by
+    unfold adaptiveDensityC
     first
       | rw [Complex.norm_real, Real.norm_eq_abs,
             abs_of_pos (one_div_pos.mpr h2L)]
       | rw [Complex.norm_ofReal, abs_of_pos (one_div_pos.mpr h2L)]
+      | simp [Real.norm_eq_abs, abs_of_pos (one_div_pos.mpr h2L)]
   -- assemble
   unfold decodedAdaptiveSecondResolventResidual
   rw [norm_mul, hdens]
@@ -136,6 +137,7 @@ theorem decoded_residual_schedule_collapse (c : ℝ) (n : ℕ)
             * ((2 / adaptiveL c n) * S1mass (admR n)) ^ 2)))
       ≤ C₀ ^ 3 * 146 := by
   have hLad : (0:ℝ) < adaptiveL c n := adaptiveL_pos c n
+  have hLne : adaptiveL c n ≠ 0 := ne_of_gt hLad
   have hLle : admL n ≤ adaptiveL c n := admL_le_adaptiveL c n
   have hadmLeq : admL n = ((n:ℝ)+2)^3 := by
     first | rfl | (unfold admL; ring) | (unfold admL; push_cast; ring)
@@ -167,12 +169,12 @@ theorem decoded_residual_schedule_collapse (c : ℝ) (n : ℕ)
       have he : (admN n : ℝ) = ((n:ℝ)+2)^4 := by
         first | (unfold admN; push_cast; ring) | (simp [admN]; push_cast; ring)
       linarith
-    have hceil : ((⌈adaptiveL c n * ((n:ℝ)+2)⌉ₓ : ℕ) : ℝ)
+    have hceil : ((⌈adaptiveL c n * ((n:ℝ)+2)⌉₊ : ℕ) : ℝ)
         ≤ adaptiveL c n * ((n:ℝ)+2) + 1 := by
       first
         | exact Nat.ceil_le_add_one hprod
         | exact le_of_lt (Nat.ceil_lt_add_one hprod)
-    have hNdef : adaptiveN c n = max (admN n) ⌈adaptiveL c n * ((n:ℝ)+2)⌉ₓ := by
+    have hNdef : adaptiveN c n = max (admN n) ⌈adaptiveL c n * ((n:ℝ)+2)⌉₊ := by
       first | rfl | (unfold adaptiveN; rfl)
     rw [hNdef]
     push_cast
@@ -180,38 +182,49 @@ theorem decoded_residual_schedule_collapse (c : ℝ) (n : ℕ)
     · linarith
     · have h4 : (0:ℝ) ≤ ((n:ℝ)+2)^4 := by positivity
       linarith
-  have h8 : (8:ℝ) ≤ adaptiveL c n := by
-    first
-      | exact eight_le_adaptiveL c n
-      | (refine le_trans ?_ hLx; nlinarith [hx])
+  have hcube8 : (8:ℝ) ≤ ((n:ℝ)+2)^3 := by
+    nlinarith [hx, sq_nonneg ((n:ℝ)+2-2), sq_nonneg ((n:ℝ)+2),
+      mul_nonneg (sub_nonneg.mpr hx) (sq_nonneg ((n:ℝ)+2-2))]
+  have h8 : (8:ℝ) ≤ adaptiveL c n := le_trans hcube8 hLx
   have h1 : ((n:ℝ)+2)^4 ≤ adaptiveL c n * ((n:ℝ)+2) := by
-    nlinarith [hLx, hxpos.le]
+    have h := mul_le_mul_of_nonneg_right hLx hxpos.le
+    calc ((n:ℝ)+2)^4 = ((n:ℝ)+2)^3 * ((n:ℝ)+2) := by ring
+      _ ≤ adaptiveL c n * ((n:ℝ)+2) := h
   have h2 : (1:ℝ) ≤ adaptiveL c n * ((n:ℝ)+2) := by nlinarith [h8, hx]
   have hN3 : (adaptiveN c n : ℝ) ≤ 3 * (adaptiveL c n * ((n:ℝ)+2)) := by
-    nlinarith [hNle, h1, h2]
+    linarith [hNle, h1, h2]
   have hLHS : 1 / (2 * adaptiveL c n) *
       (C₀ * (C₀ ^ 2 * adaptiveL c n *
         ((adaptiveN c n : ℝ) * ((2 / adaptiveL c n) * S1mass (admR n)) ^ 2)))
       = 2 * C₀ ^ 3 * ((adaptiveN c n : ℝ) * S1mass (admR n) ^ 2)
           / adaptiveL c n ^ 2 := by
-    field_simp
-    try ring
+    first
+      | (field_simp; ring)
+      | (field_simp [hLne]; ring)
+      | (field_simp [hLne])
   rw [hLHS]
   have hNnn : (0:ℝ) ≤ (adaptiveN c n : ℝ) := Nat.cast_nonneg _
   have hS1sq : S1mass (admR n) ^ 2 ≤ 16 * ((n:ℝ)+2)^2 := by
-    nlinarith [hS1, hS1nn]
+    have h := mul_self_le_mul_self hS1nn hS1
+    calc S1mass (admR n) ^ 2
+        = S1mass (admR n) * S1mass (admR n) := by ring
+      _ ≤ (4 * ((n:ℝ)+2)) * (4 * ((n:ℝ)+2)) := h
+      _ = 16 * ((n:ℝ)+2)^2 := by ring
   have hnum : (adaptiveN c n : ℝ) * S1mass (admR n) ^ 2
       ≤ 48 * (adaptiveL c n * ((n:ℝ)+2)^3) := by
     calc (adaptiveN c n : ℝ) * S1mass (admR n) ^ 2
         ≤ (3 * (adaptiveL c n * ((n:ℝ)+2))) * (16 * ((n:ℝ)+2)^2) := by
-          apply mul_le_mul hN3 hS1sq (by positivity) (by positivity)
+          apply mul_le_mul hN3 hS1sq (sq_nonneg _) (by positivity)
       _ = 48 * (adaptiveL c n * ((n:ℝ)+2)^3) := by ring
   have hden : adaptiveL c n * ((n:ℝ)+2)^3 ≤ adaptiveL c n ^ 2 := by
-    nlinarith [hLx, hLad.le]
+    have h := mul_le_mul_of_nonneg_left hLx hLad.le
+    calc adaptiveL c n * ((n:ℝ)+2)^3
+        ≤ adaptiveL c n * adaptiveL c n := h
+      _ = adaptiveL c n ^ 2 := by ring
   have hfrac : (adaptiveN c n : ℝ) * S1mass (admR n) ^ 2 / adaptiveL c n ^ 2
       ≤ 73 := by
-    rw [div_le_iff₀ (by positivity : (0:ℝ) < adaptiveL c n ^ 2)]
-    nlinarith [hnum, hden]
+    rw [div_le_iff₀ (pow_pos hLad 2)]
+    linarith [hnum, hden, sq_nonneg (adaptiveL c n)]
   calc 2 * C₀ ^ 3 * ((adaptiveN c n : ℝ) * S1mass (admR n) ^ 2)
         / adaptiveL c n ^ 2
       = 2 * C₀ ^ 3 * ((adaptiveN c n : ℝ) * S1mass (admR n) ^ 2
