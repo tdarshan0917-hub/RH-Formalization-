@@ -288,3 +288,17 @@ NEXT BLOCK (the manuscript core, multi-session): D.SPIKE-TRANSFER finite
 heat expansion (ms D.BFF.5) -> bulk profiles -> sector Omega-formulas ->
 h_conv for the SECTOR-DEFINED residual -> RH_unconditional. No
 conditional theorem may ever be written; every brick proves an estimate.
+
+## CORE BLOCK OPENED — D.SPIKE-TRANSFER (ms Prop. at line ~8126, D.BFF.5)
+Finite-stage skeleton BANKED: galerkinFullSandwich_trace_split (trace-level
+order-1 + quad split) + quadRemainder_trace_le_integral_abs (reduction to
+integral of abs trace). CORE BRICK 1 (next): pointwise integrand bound
+|trace(D(t-u)·(-V)·exp((u-s)(-K))·(-V)·exp(s(-(K+V))))| <= C(n) with C(n)
+explicit from heatWeight <= 1, exp-norm bounds (grep first: linftyOp
+instances required, linarith fails on matrices, use abel), and the banked
+column/envelope V-bounds; then integrate: quad remainder <= C(n)·u, outer
+Duhamel integral gives the t^2 rate = finite-stage D.SPIKE-TRANSFER M=2.
+Then: correction profile c_1 identification (the banked
+galerkinFirstSplitTerm_eq_neg_duhamel1 + diagonal formula), then M
+general, then bulk profiles (D.BFF), sector Omega-formulas, h_conv,
+RH_unconditional. NO conditional theorems.
