@@ -269,3 +269,22 @@ SpectralBound, DTailSumBound, DTailUniformBound, sum_heatWeight_le_sqrt,
 galF_tail_uniform_bound, galFTailClosed_holo, galHead_normal_family.
 GREP RULE REINFORCED: sqrt_shift_re_ge pre-existed (ShiftedLaplaceSqrtRe-
 LowerBound, strict <, implicit args) — collision cost one build tonight.
+
+## SESSION 2026-07-18 FINAL STATE — NEAR QUEUE COMPLETE
+BANKED THIS SESSION (all hypothesis-free, axiom-clean, error-free):
+2b-i, 2b-ii, decoded_hShort (hShort CLOSED), DMRSectorTimeSplit (x2),
+DMROverlapBStageBound, sector decomposition (x2), window flank,
+DMRBTailHalfplaneBound (x3), DMRRStageHalfplaneBound (x3, D.MR.2 overlap
+leg), DMRFTailOmegaBound (x3, F-tail on ALL Omega-compacts + Omega-core
+normal family), DMROmegaCoreMontel (proven-input AscoliExtraction),
+DMROverlapLedger (x2). ~20 theorems.
+DISCOVERY: admissible_hB (banked) = B_stage -> Bcan on RightHalfPlane 1.
+Near queue B0-B3 DONE.
+CONSUMPTION POINT: RH_from_admissible_galerkin_F_R needs DFHLimitData +
+DMasterResidualData at the admissible stage; the open content of
+DMasterResidualData.h_conv is the Omega-story of the arithmetic tail —
+same seam as always, now fenced by ~20 theorems on every side.
+NEXT BLOCK (the manuscript core, multi-session): D.SPIKE-TRANSFER finite
+heat expansion (ms D.BFF.5) -> bulk profiles -> sector Omega-formulas ->
+h_conv for the SECTOR-DEFINED residual -> RH_unconditional. No
+conditional theorem may ever be written; every brick proves an estimate.
