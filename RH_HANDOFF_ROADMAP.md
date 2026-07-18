@@ -183,3 +183,48 @@ phantom names burned twice (galerkinVC_opNorm_le, omega_compact_gap,
 toEuclideanLin_opNorm_le_of_column_bound in wrong file) — ALWAYS grep before
 citing. Manuscript at /tmp/ms.txt (Claude container): D.MR.2 proof 9690-9790,
 D.BULK-FINITE-FORM 9152.
+
+## 2026-07-17C: FINAL HANDOFF ADDENDUM (session ended mid-brick-2b; DO NOT RE-AUDIT)
+FIRST ACTION NEXT SESSION (before anything else):
+  cat /tmp/b2_v4_build.log | grep -E "error" | head -15
+  (v4 of DecodedResidualUniform.lean FAILED; the log holds the exact errors.
+  The norm_le theorem inside it was GREEN in v3 — if v4 broke it, restore by
+  rerunning the v3 generation script from transcript, then re-add ONLY the
+  collapse lemma. The failure is in decoded_residual_schedule_collapse or a
+  substitution artifact — read the log, fix the NAMED line, nothing else.)
+
+STATE — BANKED AND UNTOUCHABLE (verify by #print axioms, never reprove):
+  RH_from_compensatedB_locbdd | RH_from_tailSector_locbdd |
+  RH_from_parabola_depth_hstar | RH_from_pairedTransform_locbdd/only |
+  RH_from_decoded_combined_and_short  ← THE LIVE ENDPOINT (RH ⇐ hComb+hShort)
+  decodedAdaptiveCombinedFreeR_eq | decodedFadmPrimeStage_eq_first_plus_second
+  hShort brick 1 DONE: abs_decodedVmatrixElement_le,
+    decodedGalerkinVC_column_norm_sq_le, decodedFirstOrderWindow_uniform_bound
+  hShort brick 2 half-done: decodedSecondResolventResidual_norm_le (v3 GREEN,
+    9048 jobs — if v4 regressed it, restore v3)
+
+REMAINING PATH (exact, no alternatives, no new routes permitted):
+  2b-i  fix/land decoded_residual_schedule_collapse (arith only: S1≤4(n+2),
+        adaptiveN≤3·Lad·(n+2), Lad≥(n+2)³ ⟹ ratio ≤ 146)
+  2b-ii decodedSecondResolventResidual_uniform_bound :=
+        norm_le + collapse + δ:=1/C₀ trick (from inv_norm_le_on_compact via
+        ‖z⁻¹‖≤C₀ ⟹ 1/C₀≤‖z‖; NO new gap provider — omega_compact_gap is a
+        PHANTOM, does not exist)
+  3     hShort assembly: decodedAdaptiveShortResidual = FOW + O2res (defn),
+        triangle both banked bounds → hShort
+  4     hComb: assemble against PROVED sector engines (dDisp_sector_bound,
+        dLoc_sector_bound, gaussian_penalty_le_pow, DTail machinery, decoded
+        Duhamel tower incl. decodedPairedOrder1Package_eq_same_add_mixed) —
+        read DDispSectorBound/DLocSectorBound consumers FIRST to find the
+        intended assembler; manuscript D.MR.4–7 at /tmp/ms.txt lines 9690-9790
+  5     RH_from_decoded_combined_and_short hComb hShort → RiemannHypothesis
+
+ANTI-CIRCLE RULES (violations burned money tonight — enforce):
+  - PHANTOM NAMES burned 3 builds: galerkinVC_opNorm_le, omega_compact_gap,
+    AdmissibleOpNormBound.lean. NEVER cite an identifier without grep proof.
+  - METHOD OF RECORD for decoded clones: textual substitution of the raw
+    theorem's printed text (worked first-try for norm_le). Do NOT hand-write
+    clones of unseen proofs.
+  - NO new reductions among O3 guises (GalerkinRStageEquivO3 audit, frozen).
+  - NO re-derivation of banked bricks; grep RH_INVENTORY.md + this file first.
+  - Raw-era objects (adaptiveCombinedFreeR etc.) FROZEN — decoded only.
