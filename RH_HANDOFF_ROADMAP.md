@@ -302,3 +302,11 @@ Then: correction profile c_1 identification (the banked
 galerkinFirstSplitTerm_eq_neg_duhamel1 + diagonal formula), then M
 general, then bulk profiles (D.BFF), sector Omega-formulas, h_conv,
 RH_unconditional. NO conditional theorems.
+CORE INVENTORY UPDATE: integral_abs_duhamel2Integrand_le_const is BANKED
+(N- and t-independent integrated order-2 bound, Duhamel2IntegralAbsBound).
+SPIKE-TRANSFER skeleton on disk: trace split + quad reduction + order-2
+integrated bound. CORE BRICK 1 (revised) = the small-t RATE: refine the
+banked majorant to |E_2(t)| <= C(L,R)*t^2 on 0 < t <= t0 (D.BFF.5, M=2),
+by bounding heat factors by 1 and keeping explicit t-powers instead of
+the Beta-integral route. Read first: duhamel2Integrand def +
+abs_duhamel2Integrand_le_sqrt statement.
