@@ -330,3 +330,18 @@ new sub-brick (clone PairedTraceExpBridge's LinearMap.trace_eq_sum_inner
 pattern over R, or complexify via matC banked cast + the C-typed bridge
 at T = 1); then 6c: |sandwich trace| <= frob products <= via banked FK ->
 |E2| <= C t^2. K+V symmetric: K diagonal + galerkinV_symm (banked).
+
+## PILLAR 1 CLOSED (D.SPIKE-TRANSFER finite-stage M=2)
+Chain, all banked, all gated: split (banked era) -> rate constant ->
+|E1| <= B^2 N^2 t -> c1 identity (t*Tr(V e^{-tK})) -> t^2 gap ->
+manuscript-form M=2 + remainder bridge -> trace Frobenius-CS ->
+frobSq semigroup identity -> real spectral trace bridge (matC cast) ->
+Frobenius submult -> diag bounds -> frobSq(exp(-s(K+V))) <= N (FK) ->
+entry-CLM + inner-sandwich bound -> pointwise quad bound ->
+E2 = int quadTraceFn -> |E2(t)| <= C t^2. Consumer: D.BULK-FINITE-FORM
+(ms ~14329) which cites exactly this fixed-(L,R) expansion.
+NEXT (pillar 2 opening): (a) one-line stage instantiation brick at
+qs := activePrimePowerCodesCenterBelow (admR n), L := admL n (pins GPT's
+producer->consumer test at the decoded stage); (b) then the bulk-profile
+block: D.BFF Phi_j classes (ms p188-192), profile defs + Omega-holo +
+coefficient bounds off the banked window/envelope machinery.
