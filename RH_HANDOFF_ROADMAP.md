@@ -359,3 +359,18 @@ bulk seam object at stage n (D.BFF.1) - THE structural brick, from the
 banked Duhamel/split tower + pillar 1; P2-4 epsilon control (D.BFF.3);
 P2-5 assemble D.BFF.4 and feed the banked sector decomposition. Then
 pillar 3 = sector Omega-formulas + asymptotic overlap identity + h_conv.
+
+## ROUTING VERDICT (session 2026-07-19, Claude+GPT concurring)
+DecodedCombinedEndpoint RETIRED as target: hComb+hShort jointly equal the
+CompensatedB Omega-compact bound = the rule-4 seam, confirmed by partial
+summation (B_stage−M = fixed pole profile + invSqrt·∫x^{−(1/2+w)}dE(x),
+E=ψ−x; bounded at depth iff E is RH-strength; PNT-strength provably fails).
+No brick may target hComb, CompensatedB bounds, or Combined-sector bounds.
+LIVE TERMINUS unchanged (= frozen memory frontier): the BYPASS chain via
+buildDMasterResidualDataAlong; open input h_conv along the adaptive net for
+the SELECTED layer R_stage. Banked and surviving from this session: P2-1,
+P2-1b, P2-2a, P2-2b (profiles, holomorphy, compact bounds, exp growth),
+P2-3a as diagnostic identity, pillar 1 + at-stage in full. Next decision
+point: whether selected R_stage is density-normalized (seam defused by
+1/2L vs (n+2)^{(1/2−δ)/2} growth → h_conv satisfiable, build sector route)
+or raw (corrected object must be constructed first per canonical/raw rule).
