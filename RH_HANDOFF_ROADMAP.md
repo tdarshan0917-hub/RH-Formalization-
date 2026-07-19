@@ -310,3 +310,13 @@ banked majorant to |E_2(t)| <= C(L,R)*t^2 on 0 < t <= t0 (D.BFF.5, M=2),
 by bounding heat factors by 1 and keeping explicit t-powers instead of
 the Beta-integral route. Read first: duhamel2Integrand def +
 abs_duhamel2Integrand_le_sqrt statement.
+CORE BRICKS 1-4 BANKED (all first-build, gated, axiom-clean, error-free):
+integrand rate constant, |E1| <= B^2 N^2 t, c1 identity (order-1 integral
+= t*Tr(V e^{-tK})), c1 gap O(t^2). Finite-stage D.SPIKE-TRANSFER M=2
+expansion SHAPE complete. BRICK 5 = assembly into manuscript form:
+Tr(full) = Tr(free) - t*Tr(V) + E2, |E2| explicit, via
+galerkinDuhamel_trace_eq + trace_integral_comm_real +
+galerkinFreeHeat_eq_diagonal + FullSandwich split + bricks 3-4 + DBFFO2
+Born-split for the full-exp quad remainder. PROTOCOL (frozen, agreed with
+GPT): gate-based CLOSES/FAILS only, no probabilities; Claude sole
+builder; GPT verifier of pasted output; manuscript unaltered.
