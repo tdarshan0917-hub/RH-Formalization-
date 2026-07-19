@@ -345,3 +345,17 @@ qs := activePrimePowerCodesCenterBelow (admR n), L := admL n (pins GPT's
 producer->consumer test at the decoded stage); (b) then the bulk-profile
 block: D.BFF Phi_j classes (ms p188-192), profile defs + Omega-holo +
 coefficient bounds off the banked window/envelope machinery.
+
+## PILLAR 2 BLOCK PLAN (D.BULK-FINITE-FORM, ms 14155-14560, read in full)
+Target: D.BFF.4 = bulk sector bounded on Omega-compacts = the FOURTH
+sector of the banked decodedAdaptiveCombinedFreeR_eq_sector_sum. Bricks:
+P2-1 profile transform defs: Phi_j for the four classes from existing
+repo objects (compensatorM/free-window heat = J_free; envelope heat
+coefficients = J_env; left-wall = J_left; pillar-1 c1/correction profiles
+= J_loc), each with Omega-holo (mostly banked holos to cite);
+P2-2 stage coefficients c_{n,j} defs + sup-bound (D.BFF.2) via banked
+envelope/mass machinery; P2-3 the decomposition identity for the decoded
+bulk seam object at stage n (D.BFF.1) - THE structural brick, from the
+banked Duhamel/split tower + pillar 1; P2-4 epsilon control (D.BFF.3);
+P2-5 assemble D.BFF.4 and feed the banked sector decomposition. Then
+pillar 3 = sector Omega-formulas + asymptotic overlap identity + h_conv.
