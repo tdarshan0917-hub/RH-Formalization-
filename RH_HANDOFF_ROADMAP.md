@@ -320,3 +320,13 @@ galerkinFreeHeat_eq_diagonal + FullSandwich split + bricks 3-4 + DBFFO2
 Born-split for the full-exp quad remainder. PROTOCOL (frozen, agreed with
 GPT): gate-based CLOSES/FAILS only, no probabilities; Claude sole
 builder; GPT verifier of pasted output; manuscript unaltered.
+BRICK 6a BANKED (trace Frobenius-CS, self-contained). 6b LADDER (pinned):
+6b-i frobSq A = Tr(A^T * A) (entry algebra); 6b-ii (exp S)^T = exp S for
+symmetric S (probe: Matrix.exp_transpose vs transpose_exp under
+NormedSpace.exp); 6b-iii exp S * exp S = exp(2S) (probe:
+NormedSpace.exp_add_of_commute self-commute); 6b-iv REAL spectral trace
+bridge Tr(exp(-tM)) = sum exp(-t*eig(M)) for real symmetric M — genuinely
+new sub-brick (clone PairedTraceExpBridge's LinearMap.trace_eq_sum_inner
+pattern over R, or complexify via matC banked cast + the C-typed bridge
+at T = 1); then 6c: |sandwich trace| <= frob products <= via banked FK ->
+|E2| <= C t^2. K+V symmetric: K diagonal + galerkinV_symm (banked).
