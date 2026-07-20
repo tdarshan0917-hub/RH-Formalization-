@@ -119,3 +119,89 @@ theorem gaussian_le_tilted_exp (a t0 σ : ℝ) (ht0 : 0 < t0) :
 end
 
 end RHFormalization
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex Set Topology Filter MeasureTheory
+open scoped BigOperators Classical
+
+/-- **Weighted short-part summability on RHP(1)**: the Gaussian factor,
+tilted to `exp(−a·σ)` at `σ = Re √(s+1/4)`, turns the short family into a
+constant multiple of the banked absolutely-summable kernel family. -/
+theorem shortPart_family_summable
+    {s : ℂ} (hs : s ∈ RightHalfPlane (1 : ℝ)) (t0 : ℝ) (ht0 : 0 < t0) :
+    Summable (fun q : PrimePowerPair =>
+      q.weightC * kernelShortPart q.center t0 s) := by
+  have hsre : (0:ℝ) < s.re := by
+    have h1 : (1:ℝ) < s.re := hs
+    linarith
+  set σ : ℝ := (Complex.sqrt (s + (1/4:ℂ))).re with hσ
+  have hσhalf : (1:ℝ)/2 < σ :=
+    rightHalfPlane_one_subset_shiftedLaplaceAbsConvRegion hs
+  set Cenv : ℝ := ∫ t in Ioc (0:ℝ) t0, bEnvelope (s.re + 1/4) t with hCenv
+  have hCenv_nn : (0:ℝ) ≤ Cenv := by
+    apply integral_nonneg_of_ae
+    filter_upwards [ae_restrict_mem measurableSet_Ioc] with t ht
+    unfold bEnvelope
+    positivity
+  set Cnorm : ℝ := ‖(2:ℂ) * Complex.sqrt (s + (1/4:ℂ))‖ with hCnorm
+  have hfull : Summable (fun q : PrimePowerPair =>
+      ‖q.weightC * shiftedLaplaceHeatKernelC q.center s‖) := by
+    apply laplace_norm_summable_full
+    rw [← hσ]
+    exact hσhalf
+  have hdom : Summable (fun q : PrimePowerPair =>
+      (Real.exp (t0 * σ ^ 2) * Cenv * Cnorm) *
+        ‖q.weightC * shiftedLaplaceHeatKernelC q.center s‖) :=
+    hfull.mul_left _
+  apply Summable.of_norm
+  refine hdom.of_nonneg_of_le (fun q => norm_nonneg _) ?_
+  intro q
+  rw [norm_mul]
+  have hcen : 0 ≤ q.center := center_nonneg q
+  have h1 : ‖kernelShortPart q.center t0 s‖
+      ≤ Real.exp (-(q.center ^ 2) / (4 * t0)) * Cenv :=
+    kernelShortPart_norm_le_gaussian q.center t0 ht0 s hsre
+  have h2 : Real.exp (-(q.center ^ 2) / (4 * t0))
+      ≤ Real.exp (t0 * σ ^ 2) * Real.exp (-(q.center * σ)) :=
+    gaussian_le_tilted_exp q.center t0 σ ht0
+  have hknorm : ‖shiftedLaplaceHeatKernelC q.center s‖
+      = (1 / Cnorm) * Real.exp (-q.center * σ) := by
+    rw [hCnorm, hσ]
+    exact norm_shiftedLaplaceHeatKernelC q.center s
+  have hCnorm_pos : (0:ℝ) < Cnorm := by
+    rw [hCnorm]
+    have hne : (2:ℂ) * Complex.sqrt (s + (1/4:ℂ)) ≠ 0 := by
+      apply mul_ne_zero two_ne_zero
+      intro h0
+      have : (Complex.sqrt (s + (1/4:ℂ))).re = 0 := by rw [h0]; simp
+      rw [← hσ] at this
+      linarith [hσhalf, this]
+    exact norm_pos_iff.mpr hne
+  calc ‖q.weightC‖ * ‖kernelShortPart q.center t0 s‖
+      ≤ ‖q.weightC‖ * (Real.exp (-(q.center ^ 2) / (4 * t0)) * Cenv) := by
+        exact mul_le_mul_of_nonneg_left h1 (norm_nonneg _)
+    _ ≤ ‖q.weightC‖ * ((Real.exp (t0 * σ ^ 2) * Real.exp (-(q.center * σ))) * Cenv) := by
+        apply mul_le_mul_of_nonneg_left _ (norm_nonneg _)
+        exact mul_le_mul_of_nonneg_right h2 hCenv_nn
+    _ = (Real.exp (t0 * σ ^ 2) * Cenv * Cnorm) *
+          (‖q.weightC‖ * ((1 / Cnorm) * Real.exp (-q.center * σ))) := by
+        have hne : Cnorm ≠ 0 := ne_of_gt hCnorm_pos
+        field_simp
+        first
+          | ring
+          | skip
+    _ = (Real.exp (t0 * σ ^ 2) * Cenv * Cnorm) *
+          (‖q.weightC‖ * ‖shiftedLaplaceHeatKernelC q.center s‖) := by
+        rw [hknorm]
+    _ = (Real.exp (t0 * σ ^ 2) * Cenv * Cnorm) *
+          ‖q.weightC * shiftedLaplaceHeatKernelC q.center s‖ := by
+        rw [norm_mul]
+
+#print axioms shortPart_family_summable
+
+end
+
+end RHFormalization
