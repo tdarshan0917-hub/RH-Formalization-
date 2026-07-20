@@ -374,3 +374,13 @@ P2-3a as diagnostic identity, pillar 1 + at-stage in full. Next decision
 point: whether selected R_stage is density-normalized (seam defused by
 1/2L vs (n+2)^{(1/2−δ)/2} growth → h_conv satisfiable, build sector route)
 or raw (corrected object must be constructed first per canonical/raw rule).
+
+## FRONTIER FREEZE (2026-07-19, kernel-enforced)
+LIVE TERMINUS: DecodedFlatTerminus.RH_from_holomorphic_remainder (NOT h_conv,
+NOT DMasterResidualData - retired 07-16, never reopen).
+SOLE REMAINING PROP: HtailExists (HtailFrontier.lean) = Omega-holomorphic
+extension of Bcan - shortPackageLimit spikeT0.
+RH_from_Htail : HtailExists -> RiemannHypothesis [BANKED, clean triple].
+Reduction chain banked: galOmegaCore_compact_uniform (unconditional) +
+galOmegaCore_overlap_limit + canonicalPackageTail_tendsto +
+shortPart_family_summable. ALL future work targets HtailExists ONLY.
