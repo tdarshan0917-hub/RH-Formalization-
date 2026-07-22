@@ -384,3 +384,128 @@ RH_from_Htail : HtailExists -> RiemannHypothesis [BANKED, clean triple].
 Reduction chain banked: galOmegaCore_compact_uniform (unconditional) +
 galOmegaCore_overlap_limit + canonicalPackageTail_tendsto +
 shortPart_family_summable. ALL future work targets HtailExists ONLY.
+
+## CIRCLING LEDGER — FROZEN 2026-07-20
+ENDPOINT (unchanged): HtailExists → RH_from_Htail.
+SOLE OPEN FRONTIER BENEATH IT: control of (B_stage − compensatorM) on
+Ω-compacts, permitted ONLY via the D.BFF profile expansion (frozen rule 4):
+P2-4 (ε control) + P2-5 (D.BFF.4 assembly). These are UNIMPLEMENTED —
+route-card references only, no files.
+PROVEN-EQUIVALENT ALIASES (all closed, never reopen as targets):
+h_conv = R_stage_loc_bdd = HtailStage_loc_bdd = gate2_loc_bdd
+= tailSector_loc_bdd = compensatedB_locbdd = "bound decodedBulkSeam"
+= naive Montel on canonicalPackageTail (raw B).
+ALIAS CHECK (mandatory before ANY proposed campaign): if target differs
+from a banked-bounded object by R_stage, B_stage, or B_stage−M, it is an
+alias. Reject without discussion.
+RETIRED-CORPSE RULE: any chain terminating in RH_from_compensatedB_locbdd,
+SealReductionEndpoint, DecodedCombinedEndpoint, RHFromParabolaDepth is
+retired regardless of clean sentinels/axiom prints.
+LIVE CONSTRUCTION CHAIN (only one): P2-4 + P2-5 ⟹ seam/B−M controlled via
+profiles ⟹ corrected-remainder limit RcanCandidate ∈ O(Ω) with overlap
+FHadmFree − Bcan ⟹ HtailCandidate := g − RcanCandidate ⟹ HtailExists.
+Banked inputs ready: P2-1 factorization, P2-2a profile compact bounds,
+P2-2b expFactor growth, P2-3a seam profile identity, eps0 defect gate,
+BcorrWin/FirstOrderWindow/Second bounds, Bcorr_overlap0, equivalence audit.
+
+## FUNNEL BOTTOM — FROZEN 2026-07-20 (session 2)
+THE ONE OPEN STATEMENT: DBFFO3ParabolaDepthHstar (starObject bounded on
+parabola-depth compacts). Kernel-banked wiring FROM it: (a) direct:
+RH_from_parabola_depth; (b) sector route: seamCore_bounded_of_starObject
+→ correctedResidual_locbdd_of_seamCore → provider → HtailExists.
+EQUIVALENCE NOTE (GalerkinRStageEquivO3): Hpar is EQUIVALENT to the alias
+family (R/B/starObject/B-tail bounded). The alias ban is on APPROACH, not
+truth: arithmetic-side loc-bdd campaigns stay banned;
+DBFFO3ParabolaDepthHstar_from_free_and_R is VACUOUS-BY-AUDIT — never use.
+SOLE SANCTIONED DISCHARGE: operator-side D.TAIL-DENSITY / D.UNIFORM-CAN —
+FK domination (h_fk_perturbed_galerkin, banked) + spike-transfer M2 ladder
+(pillar-close E2 ≤ C·t², banked; NOTE C ~ N²·√(N·fV)·√fV, N-dependent) +
+adaptive schedule absorption. That constant-vs-schedule fight IS the
+remaining mathematics.
+
+## TAIL CAMPAIGN STATE — 2026-07-20 (session 2, cont.)
+BANKED THIS CAMPAIGN: T1 primeHeatDiff_eq_M2; T2 primeTail_eq_diag_add_e2.
+T3' (F-tail depth bound) PRE-EXISTED: galFTailClosed_omega_uniform_bound
+(DMRFTailOmegaBound, via h_fk_perturbed_galerkin — uniform in qs,L).
+DEPTH ARITHMETIC RECORDED: E2 ≤ C·t² is SHORT-TIME only; C ~ N^{5/2}·frobSq
+diverges polynomially at the schedule. Tail estimates must use FK direct
+domination, never the M2 expansion. T3a/T3b as separate tail bounds:
+RETIRED before opening (each inherits N-growth; only their FK-dominated
+sum is depth-free).
+FINAL OBJECT (all routes, kernel-converged): B-tail − main-term
+cancellation at parabola depth (seamCore tail sector, D.UNIFORM-CAN).
+Sanctioned mechanism: profile expansion only. Available banked inputs:
+E1-E3c rates (mass·rate ≤ 40/√(n+2)), summed-defect Laplace rep, eps0
+gate, mainTermIntegral_eval, P2-1/2a/2b/3a profile ladder.
+
+## C-LADDER CLOSED — 2026-07-20 (session 2, cont.)
+BANKED C1-C5: galTail = fTail − bTail; per-spike AM-GM e^{−a/2} decay
+(Λ(q)/√q → Λ(q)/q); summed integrand bound; ‖bTail‖ ≤ bTailMass/(2√Re s)
+with envelope integral EXACT (=1/(2√c)); bTailMass ≤ (log4+4)e^{admR}/2
+(Chebyshev). Half-plane tail sector fully explicit. C-ladder is DIAGNOSTIC
+(localizes O3 at the axis); it is NOT and never was an O3 mechanism.
+OPERATOR CAMPAIGN (sole remaining front): seamCore at depth via
+2·adaptiveFreePairedTransform − compensatorM = free-spectrum RIEMANN-SUM
+ERROR vs continuum integral (P2-1 factorization banked), plus banked
+defect/window sectors. Species: Riemann-error bricks (G-era precedent),
+schedule mesh admL=(n+2)³. Prime weights enter linearly (E-ladder
+mass·rate ≤ 40/√(n+2) banked). No loc-bdd Props, no wrappers.
+
+## MANUSCRIPT MECHANISM DECODED — 2026-07-21 (D.UNIFORM-CAN-BOUND read in full)
+AMENDMENT TO ALIAS BAN: R^can = F − B^can loc-bdd is the manuscript's own
+theorem (D.UNIFORM-CAN-BOUND) and IS the legitimate target — provable ONLY
+via the EXACT one-letter cancellation (Duhamel word extraction) followed by
+four-sector bounds: short (WORD MAJORANT, factorial decay — replaces E2≤Ct²,
+which is never used and whose N^{5/2} constant is why all tail-side E2
+routes died), window (Gaussian domination, banked species), tail (FK + δ_K
+floor, ALREADY BANKED), bulk (fixed profiles, P2 ladder). B−M/starObject/
+compensator are NEVER bounded arithmetically; M is bulk profile j∈J_free.
+All prior bans remain on approaches lacking the exact cancellation.
+CAMPAIGN: B2 identity (extends banked T1/M2 to full word resummation),
+B3 word majorant (THE verdict brick — D.UNIFORM-SHORT-RESIDUAL), B4 window,
+B5 tail (banked), B6 bulk, B7 combine → banked Montel → HtailExists → RH.
+
+################################################################################
+## HANDOFF — 2026-07-21 (SESSION 2) — SECTOR CAMPAIGN: PERIPHERY CLOSED
+################################################################################
+### BANKED THIS SESSION (all with inline four-part verdicts, committed):
+- AdaptiveSectorObjects.lean (SECT-v2): exact h_decomp on Ω —
+  adaptiveCombinedFreeR = Short + Disp + CompTail + Window, all sectors
+  concrete. v1 Tail coordinate RETIRED (canonicalPackageTail diverges for
+  Re s ≤ −1/4; junk-0 trap).
+- AdaptiveShortSectorBound.lean (SHORT-v3): Short row closed n-uniformly on
+  ALL Ω-compacts (reference-spike domination + banked Gaussian envelope tsum).
+- CanonicalRcanStage.lean (GPT probe, green): R_stage+Bcorr family, Ω-holo
+  per stage, exact overlap tendsto to FHadmFree − Bcan.
+- AdaptiveFirstOrderVanish.lean (AFOW-v1): Window row for LIVE galerkinVC,
+  C/(n+2) decay on Ω-compacts. NOTE: decoded↔galerkin bridge is IMPOSSIBLE
+  (centers log(code) ≠ log(natValue) = (ppDecode code).center; rfl probe
+  times out; matrices genuinely differ). Bounds were CLONED, not bridged —
+  the V-generic engines (trace_RD_V_RD, trace_RD_V_RH_V_RD) + banked
+  abs_galerkinV_entry_le_S1 / galerkinVC_column_norm_sq_le carry them.
+- AdaptiveResidualUniform.lean (ARES-v1): Disp row for LIVE galerkinVC,
+  C₀³·146 via reciprocal trick + adaptivePerturbedLam floor.
+- AdaptiveSectorGateAssembly.lean (GATE-v1): three rows + HshortA wired.
+### KERNEL-CERTIFIED STATE:
+RiemannHypothesis ⇐ RH_from_parabola_depth_hstar ⇐
+DBFFO3ParabolaDepthHstar_from_compensatedB_bound ⇐ DBFFO3CompensatedBBound
+⇐ adaptive_compensatedB_bounded_of_ctail ⇐ h_ctail_le [THE ONLY OPEN PROP]:
+  ∀K cpt ⊆ Ω, ∃Ct, ∀n, ∀s∈K, ‖(B_stage(adaptive) − M) − packageShort(t0)‖ ≤ Ct
+### PRE-ANSWERED TRAP QUESTION (frozen — do not relitigate):
+h_ctail_le ⟺ compensatedB loc-bdd (given banked rows). It IS the hard core,
+UNCHANGED in mathematical content. NO reduction/rename of it counts as
+progress. ONLY accepted route: B2 (full Duhamel word resummation identity
+extending banked T1/M2) + D.LOC (word majorant; dLoc_sector_bound scaffold +
+anchor files + D.ADM certificate adaptiveGalerkinStage_DADM are its staged
+fuel) + D.DISP (factorial bound). "One theorem away" claims about it are
+BANNED unless the claim names compiled B2/D.LOC/D.DISP content.
+### SESSION RULES (apply from first message of every chat):
+1. Banked list here is final — never re-verify, never re-litigate route from
+   prose; compiled facts outrank any model's paragraphs (Claude's AND GPT's).
+2. Reads allowed ONLY as brick-prep; each read names the brick it serves.
+3. Every brick: whole-file LEANEOF heredoc, sentinel, four-part verdict
+   (EXIT 0/error 0/sorryAx 0/clean axioms) before the word "banked".
+4. Route-change proposals get ONE adjudicating grep, not a discussion.
+5. Trap check on every reduction: state whether the remaining hypothesis is
+   equivalent to the prior obstruction. If yes, say so in the same message.
+################################################################################
