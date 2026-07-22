@@ -509,3 +509,11 @@ BANNED unless the claim names compiled B2/D.LOC/D.DISP content.
 5. Trap check on every reduction: state whether the remaining hypothesis is
    equivalent to the prior obstruction. If yes, say so in the same message.
 ################################################################################
+
+### PRE-ANSWERED QUESTION #2 (frozen 2026-07-21 s2): E2 ROUTE TO h_ctail_le IS DEAD.
+Compiled constant (spikeTransferE2_abs_le_t_sq_at_stage): N^{5/2}·frobSq(V)
+~ n^13 at the admissible schedule; t0 fixed ∀n ⟹ transform contribution
+diverges. NO order-2/E2-based brick toward CompTail is ever accepted again.
+ONLY route: D.LOC exponential-moment word bound (whole-series, no N-counting)
+consuming banked anchor_admissible + adaptiveGalerkinStage_DADM, feeding
+dLoc_sector_bound's h_transform + hg_intbound. B3c is THE theorem.
