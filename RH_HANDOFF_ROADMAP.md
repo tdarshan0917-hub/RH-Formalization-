@@ -528,3 +528,15 @@ FLAGGED GAP: stones 3–5 are OPERATOR-side; h_ctail_le is ARITHMETIC-side
 (B_stage − M). The connector is B2 (exact one-letter Duhamel cancellation,
 manuscript D.UNIFORM-CAN). B2 IS NOT BUILT and is NOT substituted by the
 ladder. Remaining = B2 identity + stones 3–5. Two hard pieces.
+
+### PRE-ANSWERED QUESTION #3 (frozen 2026-07-21 s2): SEAM TERMS DIVERGE SEPARATELY.
+compensatorM n s = bulkProfileExpFactor n s · bulkProfileFreeM s (P2-1, banked).
+bulkProfileExpFactor_norm_le gives exp(admR n/2) = (n+2)^{1/4} → ∞, and the
+growth is real (Re√(s+1/4) < 1/2 on Ω-compacts ⟹ positive exponent).
+THEREFORE: no n-uniform bound on compensatorM exists; NO brick may bound the
+seam's two terms separately. The seam is bounded ONLY via cancellation.
+TARGET (bulk sector): 2·adaptiveFreePairedTransform = expFactor·Φ_free
++ n-uniform remainder — the profile expansion with bounded coefficients.
+This is the same content as the DBFF provider's coeff/h_coeff_bdd/h_epsCore0
+fields; the provider was vacuous only because it demanded the UNcorrected
+core. Corrected version is the live target.
