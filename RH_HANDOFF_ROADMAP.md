@@ -517,3 +517,14 @@ diverges. NO order-2/E2-based brick toward CompTail is ever accepted again.
 ONLY route: D.LOC exponential-moment word bound (whole-series, no N-counting)
 consuming banked anchor_admissible + adaptiveGalerkinStage_DADM, feeding
 dLoc_sector_bound's h_transform + hg_intbound. B3c is THE theorem.
+
+### B3c LADDER STATUS (2026-07-21 s2, end):
+STONE 1 EXPNORM (norm_exp_le, matrix_norm_exp_smul_le)  — BANKED
+STONE 2 CONTRACT (heat_diagonal_contraction, ≤ 1)       — BANKED
+STONE 3 word bound via hasDerivAt_dysonInterp           — OPEN
+STONE 4 anchor form (1/2L)∫(e^{ctV#}−1−ctV#), D.ADM fuel— OPEN
+STONE 5 assembly → dLoc_sector_bound → h_ctail_le       — OPEN
+FLAGGED GAP: stones 3–5 are OPERATOR-side; h_ctail_le is ARITHMETIC-side
+(B_stage − M). The connector is B2 (exact one-letter Duhamel cancellation,
+manuscript D.UNIFORM-CAN). B2 IS NOT BUILT and is NOT substituted by the
+ladder. Remaining = B2 identity + stones 3–5. Two hard pieces.
