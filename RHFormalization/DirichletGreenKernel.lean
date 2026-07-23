@@ -1,4 +1,4 @@
--- SENTINEL: GREEN-v5
+-- SENTINEL: GREEN-v11
 import Mathlib
 
 /-!
@@ -130,9 +130,85 @@ theorem dirichletGreen_numerator_le (L κ x y : ℝ) (hκ : 0 < κ) (hL : 0 < L)
     _ = (Real.exp (κ * min x y) * Real.exp (κ * (L - max x y))) / 4 := by ring
     _ = Real.exp (κ * L) * Real.exp (-(κ * |x - y|)) / 4 := by rw [hexp]
 
+/-- Lower bound on the denominator: `sinh(κL) ≥ (e^{κL} − 1)/2`. -/
+theorem half_exp_sub_one_le_sinh {a : ℝ} (ha : 0 ≤ a) :
+    (Real.exp a - 1) / 2 ≤ Real.sinh a := by
+  rw [Real.sinh_eq]
+  have h : Real.exp (-a) ≤ 1 := by
+    rw [Real.exp_le_one_iff]
+    linarith
+  linarith
+
+/-- **THE DECAY BOUND.** For `κL ≥ 1`, the Green kernel decays like
+`e^{−κ|x−y|}` with a constant free of `L` — the property the spectral
+route could not see. -/
+theorem dirichletGreen_decay (L κ x y : ℝ) (hκ : 0 < κ) (hL : 0 < L)
+    (hκL : 1 ≤ κ * L)
+    (hx : 0 ≤ x) (hy : 0 ≤ y) (hxL : x ≤ L) (hyL : y ≤ L) :
+    dirichletGreen L κ x y
+      ≤ Real.exp (-(κ * |x - y|)) / (2 * κ * (1 - Real.exp (-1))) := by
+  have hL0 : (0:ℝ) ≤ κ * L := by positivity
+  -- constant 1 - e^{-1} > 0
+  have hE : Real.exp (-1) < 1 := by
+    have h0 : Real.exp (-(1:ℝ)) * Real.exp (1:ℝ) = 1 := by
+      rw [← Real.exp_add]
+      simp
+    have h1 : (2:ℝ) ≤ Real.exp 1 := by
+      have h := Real.add_one_le_exp (1:ℝ)
+      linarith
+    have hp : (0:ℝ) < Real.exp (-(1:ℝ)) := Real.exp_pos _
+    nlinarith [h0, h1, hp]
+  have hEnn : (0:ℝ) < 1 - Real.exp (-1) := by linarith
+  -- denominator lower bound: sinh(κL) ≥ e^{κL}(1 - e^{-1})/2
+  have hden : Real.exp (κ * L) * (1 - Real.exp (-1)) / 2 ≤ Real.sinh (κ * L) := by
+    have hs : (Real.exp (κ * L) - 1) / 2 ≤ Real.sinh (κ * L) :=
+      half_exp_sub_one_le_sinh hL0
+    have hkey : Real.exp (κ * L) * (1 - Real.exp (-1)) ≤ Real.exp (κ * L) - 1 := by
+      have h1 : Real.exp (κ * L) * Real.exp (-1) = Real.exp (κ * L - 1) := by
+        rw [← Real.exp_add]
+        try congr 1
+        try ring
+      have h2 : (1:ℝ) ≤ Real.exp (κ * L - 1) := by
+        have := Real.add_one_le_exp (κ * L - 1); linarith
+      rw [mul_sub, mul_one, h1]
+      linarith
+    linarith
+  have hdenpos : 0 < Real.sinh (κ * L) := by
+    have hpos : (0:ℝ) < Real.exp (κ * L) * (1 - Real.exp (-1)) / 2 := by
+      have := Real.exp_pos (κ * L); positivity
+    linarith
+  have hnum := dirichletGreen_numerator_le L κ x y hκ hL hx hy hxL hyL
+  have hnumnn : 0 ≤ Real.sinh (κ * min x y) * Real.sinh (κ * (L - max x y)) := by
+    have hu0 : 0 ≤ κ * min x y := by
+      have : 0 ≤ min x y := le_min hx hy
+      positivity
+    have hv0 : 0 ≤ κ * (L - max x y) := by
+      have : 0 ≤ L - max x y := by
+        have := max_le hxL hyL; linarith
+      positivity
+    exact mul_nonneg (sinh_nonneg_of_nonneg hu0) (sinh_nonneg_of_nonneg hv0)
+  unfold dirichletGreen
+  rw [div_le_div_iff₀ (by positivity) (by positivity)]
+  -- goal: sinh·sinh * (2κ(1-e^{-1})) ≤ e^{-κ|x-y|} * (κ sinh(κL))
+  have hEpos : (0:ℝ) < Real.exp (-(κ * |x - y|)) := Real.exp_pos _
+  have hcnn : (0:ℝ) ≤ 2 * κ * (1 - Real.exp (-1)) := by positivity
+  have hknn : (0:ℝ) ≤ Real.exp (-(κ * |x - y|)) * κ := by positivity
+  calc Real.sinh (κ * min x y) * Real.sinh (κ * (L - max x y))
+        * (2 * κ * (1 - Real.exp (-1)))
+      ≤ (Real.exp (κ * L) * Real.exp (-(κ * |x - y|)) / 4)
+          * (2 * κ * (1 - Real.exp (-1))) :=
+        mul_le_mul_of_nonneg_right hnum hcnn
+    _ = (Real.exp (-(κ * |x - y|)) * κ)
+          * (Real.exp (κ * L) * (1 - Real.exp (-1)) / 2) := by ring
+    _ ≤ (Real.exp (-(κ * |x - y|)) * κ) * Real.sinh (κ * L) :=
+        mul_le_mul_of_nonneg_left hden hknn
+    _ = Real.exp (-(κ * |x - y|)) * (κ * Real.sinh (κ * L)) := by ring
+
 #print axioms sinh_le_half_exp
 #print axioms sinh_nonneg_of_nonneg
 #print axioms dirichletGreen_numerator_le
+#print axioms half_exp_sub_one_le_sinh
+#print axioms dirichletGreen_decay
 #print axioms dirichletGreen_symm
 #print axioms dirichletGreen_nonneg
 
