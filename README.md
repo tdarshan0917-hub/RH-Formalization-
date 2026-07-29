@@ -5,7 +5,8 @@ Lean `v4.30.0-rc2` with pinned Mathlib.
 
 ## Audit
 
-- **2,533** theorems across **1,185** library files
+- **~115,000** non-blank lines of Lean 4 (**~135,000** with blanks and comments) across **1,801** files
+- **2,538** declared theorems and lemmas
 - **0** axiom declarations
 - `sorry` confined to named probe/attempt files
 - Live chain: `#print axioms` gives `[propext, Classical.choice, Quot.sound]`
@@ -17,7 +18,10 @@ Lean `v4.30.0-rc2` with pinned Mathlib.
 
 ## What is proved
 
-The live chain reduces Mathlib's `RiemannHypothesis` to a single named analytic
+A machine-checked **conditional proof** of the Riemann Hypothesis:
+`RH_from_Htail : HtailExists → RiemannHypothesis`, verified by Lean's kernel
+with no axioms beyond the standard three. The live chain reduces Mathlib's
+`RiemannHypothesis` to a single named analytic
 estimate on the compensated prime-power package (`h_ctail_le` / `HtailExists`),
 via `RH_from_Htail`. That estimate is open and is the subject of ongoing work.
 
@@ -39,13 +43,3 @@ A machine-checked **conditional proof**: RH follows from a single named
 analytic estimate (`HtailExists`), with every other step verified and
 axiom-clean. Work on the unconditional route — closing that estimate — is
 ongoing, and this repository is the working record of it.
-
-## Scale
-
-The repository comprises roughly **115,000 non-blank lines of Lean 4**
-(~135,000 including blanks and comments) across **1,801 files**, containing
-**2,538 declared theorems and lemmas**. The conditional proof
-`RH_from_Htail : HtailExists → RiemannHypothesis` is machine-checked and
-depends only on Lean's standard axioms
-(`propext`, `Classical.choice`, `Quot.sound`). Work toward the
-unconditional proof — closing `HtailExists` — is ongoing.
