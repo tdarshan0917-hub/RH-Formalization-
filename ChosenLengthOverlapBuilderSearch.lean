@@ -1,0 +1,13 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction
+
+namespace RHFormalization
+
+#check buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthMassEnvelope
+#check DOverlapIdentityAPI
+#check DMasterResidualAPI
+
+-- Search likely existing overlap constructors
+#check buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit
+#check buildDBcanLimitDataFromOperatorFiniteCanonicalLimit
+
+end RHFormalization

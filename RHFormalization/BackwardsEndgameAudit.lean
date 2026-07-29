@@ -1,0 +1,28 @@
+import RHFormalization.CurrentFrontierEndpoint
+import RHFormalization.ShiftedLaplaceDFHExport
+import RHFormalization.DesignedDetailedConstruction
+import RHFormalization.PerturbedResidual
+import RHFormalization.PerturbedEigenvalueWeyl
+
+namespace RHFormalization
+noncomputable section
+
+#print shiftedLaplaceDFHExport
+#print axioms shiftedLaplaceDFHExport
+
+#print DDetailedConstructionWithOperatorLegality
+#print DResidualSectorBoundsAPI
+#print DMasterResidualAPI
+
+#check designedY
+#print axioms designedY
+
+#check perturbedResidual
+#check PerturbedDExport
+#print axioms perturbedResidual
+
+#check perturbedEigenvalues_dist_le
+#print axioms perturbedEigenvalues_dist_le
+
+end
+end RHFormalization

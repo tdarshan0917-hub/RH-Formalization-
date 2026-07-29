@@ -1,0 +1,12 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayload
+
+namespace RHFormalization
+
+#check ChosenLengthDLimitPayload
+#check ChosenLengthDLimitPayload.toDDetailedConstructionWithOperatorLegality
+#check buildDDetailedConstructionWithOperatorLegalityFromChosenLengthDLimitPayload
+
+#print axioms ChosenLengthDLimitPayload.toDDetailedConstructionWithOperatorLegality
+#print axioms buildDDetailedConstructionWithOperatorLegalityFromChosenLengthDLimitPayload
+
+end RHFormalization

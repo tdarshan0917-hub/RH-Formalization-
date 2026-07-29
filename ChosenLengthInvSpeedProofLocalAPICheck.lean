@@ -1,0 +1,27 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope
+import RHFormalization.CanonicalPrimePowerSharpCutoffMassEnvelopeLinearRate
+import RHFormalization.CanonicalPrimePowerSharpCutoffMassEnvelopeExplicitRate
+
+namespace RHFormalization
+
+variable (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+variable (S : CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData finiteOperatorLayer)
+
+#check S.sharpSpeed.toCompactSpeedAPI.speed
+#check sharpCutoffConcreteChosenSpeed_speed_eq
+#check S.hL_chosen
+#check S.massEnvelopeData.h_massEnvelope_nonneg
+#check S.sharpSpeed.h_Gbound_nonneg
+#check S.sharpSpeed.h_compactRadius_nonneg
+#check S.sharpSpeed.hL_pos
+
+#check Filter.eventually_ge_atTop
+#check Filter.eventually_atTop
+#check tendsto_const_nhds
+#check Filter.Tendsto.const_mul
+
+-- Existing coordinate-set theorem; useful proof pattern, not directly final target.
+#check CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData.massEnvelope_div_windowSpeed_tendsto_zero
+
+end RHFormalization

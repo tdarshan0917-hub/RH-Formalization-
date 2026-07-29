@@ -1,0 +1,12 @@
+import RHFormalization.CanonicalPrimePowerConcreteWeightBound
+
+namespace RHFormalization
+
+#check concreteWeightBound
+#check concreteWeightBound_nonneg
+#check weightEnvelope_le_concreteWeightBound
+
+#print axioms concreteWeightBound_nonneg
+#print axioms weightEnvelope_le_concreteWeightBound
+
+end RHFormalization

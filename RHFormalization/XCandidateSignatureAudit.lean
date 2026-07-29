@@ -1,0 +1,18 @@
+import RHFormalization.CurrentFrontierEndpoint
+import RHFormalization.ExplicitFormulaLocalReduction
+import RHFormalization.ExplicitFormulaHolomorphyFromTsum
+import RHFormalization.HExplicitFormulaSplitChosenCshared
+import RHFormalization.DesignedDetailedConstruction
+
+namespace RHFormalization
+
+#check RH_from_designed_D_designed_Harch
+#check RH_from_designed_D_zero_density
+#check RH_from_designed_D_zero_density_localEF
+#check designed_h_holo_from_localEF
+#check Harch_holomorphic_from_tsumPrincipalParts_and_Bregular
+#check HarchPackageFromChosenCsharedAddZpole
+#check HarchPackageFromChosenCsharedAddZpole_split
+#check buildHMeromorphicWithNormalFormPolesWithChosenCshared
+
+end RHFormalization

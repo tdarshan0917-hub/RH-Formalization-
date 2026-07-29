@@ -1,0 +1,12 @@
+import RHFormalization.CanonicalPrimePowerHeatKernelNatValueMajorantSummability
+import Mathlib.Topology.Algebra.InfiniteSum.Real
+import Mathlib.Analysis.PSeries
+
+#check summable_geometric_of_norm_lt_one
+#check summable_geometric_of_abs_lt_1
+#check summable_geometric
+#check summable_geometric_two
+#check Summable.of_nonneg_of_le
+#check summable_prod_of_nonneg
+#check tsum_mul_left
+#check Real.summable_one_div_nat_add_rpow

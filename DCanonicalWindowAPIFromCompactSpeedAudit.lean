@@ -1,0 +1,8 @@
+import RHFormalization.DCanonicalWindowAPIFromCompactSpeed
+
+namespace RHFormalization
+
+#check buildDCanonicalWindowAPIFromCompactSpeed
+#print axioms buildDCanonicalWindowAPIFromCompactSpeed
+
+end RHFormalization

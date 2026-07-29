@@ -1,0 +1,8 @@
+import RHFormalization.SelectedFiniteTraceSpikePayloadFromImageBridge
+
+namespace RHFormalization
+
+#check buildSelectedFiniteTraceSpikePayloadFromImageBridge
+#print axioms buildSelectedFiniteTraceSpikePayloadFromImageBridge
+
+end RHFormalization

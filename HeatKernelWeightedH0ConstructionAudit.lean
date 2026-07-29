@@ -1,0 +1,29 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthDLimitPayloadFromHeatKernelWeighted
+import RHFormalization.CanonicalPrimePowerHeatKernelWeightedSummabilityTarget
+import RHFormalization.CanonicalPrimePowerHeatKernelWeightedSummabilityClosure
+import RHFormalization.DCanonicalWindowSharpCutoffConcreteChosenSpeed
+import RHFormalization.CanonicalPrimePowerDWindowKernelIdentification
+import RHFormalization.CanonicalPrimePowerMassEnvelope
+
+namespace RHFormalization
+
+#check buildDDetailedConstructionWithOperatorLegalityFromHeatKernelWeightedPayload
+
+#check CanonicalPrimePowerSharpCutoffHeatKernelWeightedData
+#print CanonicalPrimePowerSharpCutoffHeatKernelWeightedData
+
+-- Core closed heat-kernel summability theorem.
+#check heatKernelWeightedEnvelope_summable
+
+-- Likely ingredients for H0.
+#check heatKernelG
+#check DCanonicalWindowSharpCutoffConcreteChosenSpeedData
+#check PrimePowerDWindowKernelIdentificationData
+#check PrimePowerWeightCutoffEnumerationData
+#check PrimePowerMassEnvelopeData
+
+-- Downstream conversions already known.
+#check CanonicalPrimePowerSharpCutoffHeatKernelWeightedData.toExactWeightedEnvelopeData
+#check CanonicalPrimePowerSharpCutoffHeatKernelWeightedData.toExhaustionData
+
+end RHFormalization

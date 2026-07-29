@@ -1,0 +1,11 @@
+import RHFormalization.DOverlapPointwiseFromCompactUniform
+
+namespace RHFormalization
+
+#check DFHLimitData.pointwise_F_stage_tendsto_of_RHP_subset_Omega
+#check DMasterResidualData.pointwise_R_stage_tendsto_of_RHP_subset_Omega
+
+#print axioms DFHLimitData.pointwise_F_stage_tendsto_of_RHP_subset_Omega
+#print axioms DMasterResidualData.pointwise_R_stage_tendsto_of_RHP_subset_Omega
+
+end RHFormalization

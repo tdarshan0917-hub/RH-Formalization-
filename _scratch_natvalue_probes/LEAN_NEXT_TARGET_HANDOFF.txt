@@ -1,0 +1,68 @@
+Goal: close the last sorry in
+
+RHFormalization/CanonicalPrimePowerHeatKernelNatValueMajorantSummability.lean
+
+Current theorem:
+
+theorem heatKernelNatValueMajorant_summable :
+    Summable heatKernelNatValueMajorant := by
+  unfold heatKernelNatValueMajorant
+  sorry
+
+Definitions:
+
+PrimePowerPair = ℕ × ℕ
+PrimePowerPair.p q = q.1
+PrimePowerPair.m q = q.2
+IsPrimePowerPair q = Nat.Prime q.p ∧ 0 < q.m
+PrimePowerPair.natValue q = q.p ^ q.m
+PrimePowerPair.weightReal q =
+  if IsPrimePowerPair q then Real.log (q.p : ℝ) / Real.sqrt (q.natValue : ℝ) else 0
+PrimePowerPair.weightC q = (q.weightReal : ℂ)
+
+heatKernelNatValueMajorant q =
+  ‖q.weightC‖ * ((q.natValue : ℝ) ^ 3)⁻¹
+
+Existing theorem:
+
+theorem heatKernelNatValueMajorant_summable_of_model
+    (model : PrimePowerPair → ℝ)
+    (h_model_summable : Summable model)
+    (h_le_model :
+      ∀ q : PrimePowerPair,
+        heatKernelNatValueMajorant q ≤ model q) :
+    Summable heatKernelNatValueMajorant
+
+Existing summable model:
+
+heatKernelPairPSeriesModel q =
+  (1 / |(q.p : ℝ) + 1| ^ (2 : ℝ)) *
+    (1 / |(q.m : ℝ) + 1| ^ (2 : ℝ))
+
+theorem heatKernelPairPSeriesModel_summable :
+    Summable heatKernelPairPSeriesModel
+
+Needed patch:
+
+Either prove
+
+theorem heatKernelNatValueMajorant_le_scaled_pairPSeriesModel :
+    ∃ C : ℝ,
+      0 ≤ C ∧
+      ∀ q : PrimePowerPair,
+        heatKernelNatValueMajorant q ≤ C * heatKernelPairPSeriesModel q
+
+and then close:
+
+theorem heatKernelNatValueMajorant_summable :
+    Summable heatKernelNatValueMajorant := by
+  rcases heatKernelNatValueMajorant_le_scaled_pairPSeriesModel with ⟨C, hC, hle⟩
+  exact
+    heatKernelNatValueMajorant_summable_of_model
+      (fun q : PrimePowerPair => C * heatKernelPairPSeriesModel q)
+      (heatKernelPairPSeriesModel_summable.mul_left C)
+      hle
+
+or replace heatKernelPairPSeriesModel with a stronger summable model and prove the comparison.
+
+Important: no new structure, no new endpoint, no additional sorry.

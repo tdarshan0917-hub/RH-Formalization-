@@ -1,0 +1,11 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction
+
+namespace RHFormalization
+
+#check SharpCutoffChosenLengthSharedPackage
+#check SharpCutoffChosenLengthFiniteCanonicalLimit
+#check buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthMassEnvelope
+
+#print axioms buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthMassEnvelope
+
+end RHFormalization

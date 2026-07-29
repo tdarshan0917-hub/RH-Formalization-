@@ -1,0 +1,7 @@
+import RHFormalization.SelectedDWindowAlphaIndexDataInstance
+
+namespace RHFormalization
+
+#print axioms selectedDWindowAlphaIndexData
+
+end RHFormalization

@@ -1,0 +1,45 @@
+import RHFormalization.EtaPositivity
+import RHFormalization.TwoInputEndpointFromEta
+import RHFormalization.HsumCertificate
+import RHFormalization.HsumFromRate
+import RHFormalization.ZetaZeroCounting
+import RHFormalization.ZetaCountingBound
+import RHFormalization.DensityBandBound
+import RHFormalization.DensityPartialSum
+import RHFormalization.ExplicitFormulaLocalReduction
+import RHFormalization.ExplicitFormulaBRegular
+import RHFormalization.RHFromTsumPrincipalPart
+import RHFormalization.AppendixHOverlapFromLocalExtensions
+import RHFormalization.AppendixHHoloClosure
+import RHFormalization.CurrentFrontierEndpoint
+
+namespace RHFormalization
+
+-- h_real_zero_free candidate
+#check h_real_zero_free
+#print axioms h_real_zero_free
+
+-- hsum candidate routes
+#check hsum_from_count_rate_certificate
+#check hsum_of_count_rate
+#check hsum_of_band_bound
+#check summable_density_of_partialSum_bdd
+#check hsum_of_zeroDensityData
+#check summable_density_of_enum_dominated
+#print axioms hsum_from_count_rate_certificate
+#print axioms hsum_of_zeroDensityData
+#print axioms summable_density_of_enum_dominated
+
+-- h_holo candidate routes
+#check designed_h_holo_from_localEF
+#check designed_h_holo_from_localExtensions
+#check Harch_holomorphic_from_tsumPrincipalParts_and_Bregular
+#check RH_from_tsum_principalPart
+#check RH_from_eta_zeroDensity_holo
+#check RH_from_designed_D_zero_density
+#print axioms designed_h_holo_from_localEF
+#print axioms designed_h_holo_from_localExtensions
+#print axioms RH_from_eta_zeroDensity_holo
+#print axioms RH_from_designed_D_zero_density
+
+end RHFormalization

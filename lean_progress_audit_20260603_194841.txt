@@ -1,0 +1,569 @@
+===== LEAN 4 PROGRESS AUDIT =====
+Date: Wed Jun  3 19:48:41 EDT 2026
+Directory: /Users/travisdarshan/Downloads/RHFormalization_LeanCompanion_V2_Iteration20 3
+
+===== 1. GIT SNAPSHOT =====
+da2bb03
+ M RHFormalization.lean
+ M SoundCountingSelectedConstructor.search.log
+?? DBStageFiniteCanonicalBridgeCheck.lean
+?? DCanonicalWindowCompactSpeedBridgeCheck.lean
+?? DConcreteConstructorsSignatureCheck.lean
+?? DConcreteInstantiationsSearch.lean
+?? DOverlapDataFieldsCheck.lean
+?? DOverlapFromStageSplitLimitsRootCheck.lean
+?? DPrimePowerLimitComparisonAPICheck.lean
+?? DStageSplitLimitOverlapAPICheck.lean
+?? DWindowConcreteSpeedAPICheck.lean
+?? DWindowQuotientHardAPICheck.lean
+?? DWindowSharpMassUpperRouteCheck.lean
+?? RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedClosedPayload.lean
+?? RHFormalization/CanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability.lean
+
+===== 2. FULL LAKE BUILD =====
+⚠ [8462/8649] Replayed RHFormalization.PoleGeometry
+warning: RHFormalization/PoleGeometry.lean:15:8: This simp argument is unused:
+  Complex.mul_im
+
+Hint: Omit it from the simp argument list.
+  simp [Complex.mul_re, Complex.sub_re, Complex.one_re, C̵o̵m̵p̵l̵e̵x̵.̵m̵u̵l̵_̵i̵m̵,̵ ̵Complex.sub_im, Complex.one_im]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RHFormalization/PoleGeometry.lean:20:8: This simp argument is unused:
+  Complex.mul_re
+
+Hint: Omit it from the simp argument list.
+  simp [̵C̵o̵m̵p̵l̵e̵x̵.̵m̵u̵l̵_̵r̵e̵,̵ ̵C̵o̵m̵p̵l̵e̵x̵.̵s̵u̵b̵_̵r̵e̵,̵[̲C̲o̲m̲p̲l̲e̲x̲.̲s̲u̲b̲_̲r̲e̲,̲ Complex.one_re, Complex.mul_im, Complex.sub_im, Complex.one_im]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8463/8649] Replayed RHFormalization.OmegaTopology
+warning: RHFormalization/OmegaTopology.lean:65:4: Try this: intro h hcut
+⚠ [8468/8649] Replayed RHFormalization.RigidityBridge
+warning: RHFormalization/RigidityBridge.lean:54:6: unused variable `W`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8472/8649] Replayed RHFormalization.HMeromorphicPackage
+warning: RHFormalization/HMeromorphicPackage.lean:133:6: unused variable `K`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8475/8649] Replayed RHFormalization.DResolventTraceSummability
+warning: RHFormalization/DResolventTraceSummability.lean:39:5: unused variable `hC`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8484/8649] Replayed RHFormalization.FSideWrapperBuilders
+warning: RHFormalization/FSideWrapperBuilders.lean:80:19: unused variable `f`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/FSideWrapperBuilders.lean:80:21: unused variable `z`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8502/8649] Replayed RHFormalization.DefaultDenominatorSimpleZeroOrder
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:20: 'norm_num' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:36:20: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [8518/8649] Replayed RHFormalization.OmegaMeromorphicZeroPropagationLocal
+warning: RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:81:17: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RHFormalization/OmegaMeromorphicZeroPropagationLocal.lean:139:17: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8519/8649] Replayed RHFormalization.OmegaMeromorphicZeroPropagationClopen
+warning: RHFormalization/OmegaMeromorphicZeroPropagationClopen.lean:79:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8520/8649] Replayed RHFormalization.AppendixELocalBridgeCore
+warning: RHFormalization/AppendixELocalBridgeCore.lean:85:61: This simp argument is unused:
+  add_left_comm
+
+Hint: Omit it from the simp argument list.
+  simp [Htot, sub_eq_add_neg, add_assoc, add_comm,̵ ̵a̵d̵d̵_̵l̵e̵f̵t̵_̵c̵o̵m̵m̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8524/8649] Replayed RHFormalization.AppendixESharedPackageFunctionalCompatibility
+warning: RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:183:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8529/8649] Replayed RHFormalization.AppendixDPrimePowerLimitReduction
+warning: RHFormalization/AppendixDPrimePowerLimitReduction.lean:121:5: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8533/8649] Replayed RHFormalization.CanonicalPrimePowerKernelSeries
+warning: RHFormalization/CanonicalPrimePowerKernelSeries.lean:98:6: 'change
+  finiteCanonicalPrimePowerPackage (X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n))
+      (X.toFiniteCanonicalPrimePowerFormula.kernel (S.alpha n)) s =
+    (X.toFiniteCanonicalPrimePowerFormula.indices (S.alpha n)).sum
+      (fun q : PrimePowerPair => q.weightC * S.Kshared q.center s)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8534/8649] Replayed RHFormalization.CanonicalPrimePowerIndexExhaustion
+warning: RHFormalization/CanonicalPrimePowerIndexExhaustion.lean:49:8: Try `simp at hq` instead of `simpa using hq`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8540/8649] Replayed RHFormalization.CanonicalPrimePowerFiniteKernelErrorSum
+warning: RHFormalization/CanonicalPrimePowerFiniteKernelErrorSum.lean:67:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8543/8649] Replayed RHFormalization.CanonicalPrimePowerWindowMassError
+warning: RHFormalization/CanonicalPrimePowerWindowMassError.lean:87:5: unused variable `h_weightMass_nonneg`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8560/8649] Replayed RHFormalization.CanonicalPrimePowerDWindowKernelEstimate
+warning: RHFormalization/CanonicalPrimePowerDWindowKernelEstimate.lean:44:5: unused variable `h_alpha`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8564/8649] Replayed RHFormalization.CanonicalPrimePowerDWindowRateMassGrowth
+warning: RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:139:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:151:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowRateMassGrowth.lean:161:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8565/8649] Replayed RHFormalization.CanonicalPrimePowerDWindowKernelIdentification
+warning: RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:48:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:60:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowKernelIdentification.lean:162:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8566/8649] Replayed RHFormalization.CanonicalPrimePowerDWindowCompactRate
+warning: RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:63:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:72:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:83:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowCompactRate.lean:103:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8570/8649] Replayed RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedBudget
+warning: RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedBudget.lean:224:6: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8571/8649] Replayed RHFormalization.CanonicalPrimePowerDWindowExactSpeed
+warning: RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:61:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:70:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:84:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowExactSpeed.lean:93:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8575/8649] Replayed RHFormalization.CanonicalPrimePowerDWindowLimitMajorant
+warning: RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:46:8: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:50:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowLimitMajorant.lean:117:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8576/8649] Replayed RHFormalization.CanonicalPrimePowerDWindowSpeedAPI
+warning: RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:84:8: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:88:8: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:186:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:194:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowSpeedAPI.lean:211:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8577/8649] Replayed RHFormalization.CanonicalPrimePowerDWindowExactWindowSpeed
+warning: RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:88:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:96:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerDWindowExactWindowSpeed.lean:113:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8578/8649] Replayed RHFormalization.CanonicalPrimePowerWeightedSummabilityEnvelope
+warning: RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:122:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:130:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerWeightedSummabilityEnvelope.lean:147:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8579/8649] Replayed RHFormalization.CanonicalPrimePowerMassUpperEnvelope
+warning: RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:130:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:138:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerMassUpperEnvelope.lean:155:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8580/8649] Replayed RHFormalization.CanonicalPrimePowerMassEnvelopeSpeedComparison
+warning: RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:137:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:145:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerMassEnvelopeSpeedComparison.lean:162:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8581/8649] Replayed RHFormalization.CanonicalPrimePowerMassCountingEnvelope
+warning: RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:220:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:228:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerMassCountingEnvelope.lean:245:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8582/8649] Replayed RHFormalization.CanonicalPrimePowerWeightEnvelope
+warning: RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:200:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:208:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerWeightEnvelope.lean:225:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8583/8649] Replayed RHFormalization.CanonicalPrimePowerCountingSetEnvelope
+warning: RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:182:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:190:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerCountingSetEnvelope.lean:207:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8584/8649] Replayed RHFormalization.CanonicalPrimePowerSoundCutoffCounting
+warning: RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:230:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:238:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSoundCutoffCounting.lean:255:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8587/8649] Replayed RHFormalization.CanonicalPrimePowerSoundCountingFactorBounds
+warning: RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:87:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:93:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSoundCountingFactorBounds.lean:106:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8595/8649] Replayed RHFormalization.CanonicalPrimePowerSharpCutoffMassEnvelope
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:106:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:112:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffMassEnvelope.lean:121:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8599/8649] Replayed RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:97:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:102:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope.lean:110:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8602/8649] Replayed RHFormalization.CanonicalPrimePowerSharpCutoffSharedLimitMajorant
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:55:8: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:59:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:128:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:133:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffSharedLimitMajorant.lean:147:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8603/8649] Replayed RHFormalization.CanonicalPrimePowerSharpCutoffDisplacementKernel
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:70:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:131:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffDisplacementKernel.lean:136:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8604/8649] Replayed RHFormalization.CanonicalPrimePowerSharpCutoffExactWeightedEnvelope
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:106:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerSharpCutoffExactWeightedEnvelope.lean:111:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8605/8649] Replayed RHFormalization.CanonicalPrimePowerHeatKernelWeightedSummabilityTarget
+warning: RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:130:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/CanonicalPrimePowerHeatKernelWeightedSummabilityTarget.lean:135:6: unused variable `hs`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8606/8649] Replayed RHFormalization.CanonicalPrimePowerHeatKernelNormBounds
+warning: RHFormalization/CanonicalPrimePowerHeatKernelNormBounds.lean:66:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8615/8649] Replayed RHFormalization.HExplicitFormulaWitnessBranchFromPrincipalParts
+warning: RHFormalization/HExplicitFormulaWitnessBranchFromPrincipalParts.lean:50:12: unused variable `c`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RHFormalization/HExplicitFormulaWitnessBranchFromPrincipalParts.lean:98:12: unused variable `c`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8616/8649] Replayed RHFormalization.BsharedPrincipalPartAtWitness
+warning: RHFormalization/BsharedPrincipalPartAtWitness.lean:64:12: unused variable `c`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8625/8649] Replayed RHFormalization.DResidualBulkSectorHelpers
+warning: RHFormalization/DResidualBulkSectorHelpers.lean:44:32: This simp argument is unused:
+  add_assoc
+
+Hint: Omit it from the simp argument list.
+  simp [residualBulkSectorData,̵ ̵a̵d̵d̵_̵a̵s̵s̵o̵c̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8627/8649] Replayed RHFormalization.DCanonicalWindowAPIFromCompactSpeed
+warning: RHFormalization/DCanonicalWindowAPIFromCompactSpeed.lean:50:8: Try this: intro n hn a ha
+⚠ [8630/8649] Replayed RHFormalization.CanonicalPrimePowerHeatKernelGaussianCoreBounds
+warning: RHFormalization/CanonicalPrimePowerHeatKernelGaussianCoreBounds.lean:26:2: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8632/8649] Replayed RHFormalization.CanonicalPrimePowerHeatKernelLogGaussianTail
+warning: RHFormalization/CanonicalPrimePowerHeatKernelLogGaussianTail.lean:82:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8635/8649] Replayed RHFormalization.CanonicalPrimePowerHeatKernelGaussianCoreSummability
+warning: RHFormalization/CanonicalPrimePowerHeatKernelGaussianCoreSummability.lean:97:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+Build completed successfully (8649 jobs).
+LAKE_BUILD_EXIT_CODE=0
+
+===== 3. FINAL SPINE SIGNATURE / AXIOMS / REMAINING GOALS =====
+RHFormalization.finalConditionalRHSpine : ∀ (ZF : RHFormalization.ZetaZeroFacts)
+  (Y : RHFormalization.DDetailedConstructionWithOperatorLegality) (X : RHFormalization.HMeromorphicWithNormalFormPoles)
+  (E :
+    RHFormalization.InterfaceBridgeAPI
+      (RHFormalization.DDetailedConstructionWithOperatorLegality.toOperatorResolventBridge Y)
+      (RHFormalization.HMeromorphicWithNormalFormPoles.toLegacyZeroPolePackageAPI X))
+  (ONFP : RHFormalization.OmegaNormalFormCodiscretePropagationAPI), RHFormalization.RiemannHypothesis
+'RHFormalization.finalConditionalRHSpine' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+LeanProgressReport.lean:17:39: error: don't know how to synthesize placeholder for argument `ONFP`
+context:
+case ONFP
+⊢ RHFormalization.OmegaNormalFormCodiscretePropagationAPI
+LeanProgressReport.lean:17:36: error: don't know how to synthesize placeholder for argument `E`
+context:
+case E
+⊢ RHFormalization.InterfaceBridgeAPI
+    (RHFormalization.DDetailedConstructionWithOperatorLegality.toOperatorResolventBridge ?Y)
+    (RHFormalization.HMeromorphicWithNormalFormPoles.toLegacyZeroPolePackageAPI ?X)
+LeanProgressReport.lean:17:33: error: don't know how to synthesize placeholder for argument `X`
+context:
+case X
+⊢ RHFormalization.HMeromorphicWithNormalFormPoles
+LeanProgressReport.lean:17:30: error: don't know how to synthesize placeholder for argument `Y`
+context:
+case Y
+⊢ RHFormalization.DDetailedConstructionWithOperatorLegality
+LeanProgressReport.lean:17:26: error: don't know how to synthesize placeholder for argument `ZF`
+context:
+case ZF
+⊢ RHFormalization.ZetaZeroFacts
+LEAN_PROGRESS_REPORT_EXIT_CODE=1
+
+===== 4. FILE COUNT =====
+     192
+
+===== 5. SORRY / ADMIT / SORRYAX SCAN =====
+No sorry/admit/sorryAx found
+
+===== 6. EXPLICIT AXIOM / CONSTANT / OPAQUE SCAN =====
+No explicit axiom/constant/opaque declarations found
+
+===== 7. TRUE-PLACEHOLDER SCAN =====
+No obvious True placeholders found
+
+===== 8. DEFAULT CONSTRUCTOR SCAN =====
+RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:75:def defaultDenominatorSimpleZeroOrderAPI :
+RHFormalization/DefaultMeromorphicAlgebra.lean:48:def defaultMeromorphicAlgebraAPI : MeromorphicAlgebraAPI :=
+RHFormalization/OmegaTopology.lean:121:def defaultOpenOmegaAPI : OpenOmegaAPI :=
+RHFormalization/OmegaConnected.lean:195:def defaultConnectedOmegaAPI : ConnectedOmegaAPI :=
+RHFormalization/DefaultCoboundedAddFiniteLimit.lean:118:def defaultCoboundedAddFiniteLimitAPI :
+RHFormalization/PrincipalPartMeromorphic.lean:107:def defaultPrincipalPartMeromorphicAtAPI :
+RHFormalization/OmegaMeromorphicZeroPropagationClopen.lean:109:def defaultOmegaMeromorphicZeroPropagationAPI :
+RHFormalization/HalfPlaneGeometry.lean:77:def defaultRightHalfPlaneGeometryAPI :
+RHFormalization/HalfPlaneGeometry.lean:104:def defaultOverlapGeometryAPI
+RHFormalization/DefaultZetaZeroFacts.lean:27:def defaultZetaZeroFacts_of_realZeroFree
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:32:def defaultPrincipalPartNegativeOrderAPI :
+RHFormalization/DefaultOmegaPreperfect.lean:36:def defaultOmegaPreperfectAPI : OmegaPreperfectAPI :=
+
+===== 9. FINAL SPINE SOURCE SNIPPET =====
+29-
+30-This is not an unconditional Lean proof of RH. It is the current axiom-clean
+31-conditional spine whose remaining inputs are the serious D/H/E/F proof packages
+32-plus the zeta-zero fact.
+33--/
+34:theorem finalConditionalRHSpine
+35-    (ZF : ZetaZeroFacts)
+36-    (Y : DDetailedConstructionWithOperatorLegality)
+37-    (X : HMeromorphicWithNormalFormPoles)
+38-    (E : InterfaceBridgeAPI
+39-      Y.toOperatorResolventBridge
+40-      X.toLegacyZeroPolePackageAPI)
+41-    (ONFP : OmegaNormalFormCodiscretePropagationAPI) :
+42-    RiemannHypothesis :=
+43-  mainTheorem_from_default_connectedOmega_meromorphicAlgebra_normalFormPropagation_plainInterface
+44-    ZF Y X E ONFP
+45-
+46-end
+47-
+48-end RHFormalization
+
+===== 10. MAIN THEOREM / RH KEYWORD SCAN =====
+RHFormalization/PrincipalPartCoboundedModel.lean:87:    RiemannHypothesis :=
+RHFormalization/OmegaPuncturedIdentityEndpoint.lean:64:    RiemannHypothesis := by
+RHFormalization/OmegaNormalFormPropagationEndpoint.lean:115:    RiemannHypothesis :=
+RHFormalization/FinalBlueprint.lean:42:  "From ZetaZeroFacts, D finite-operator/export layer, H meromorphic normal-form package, nonnegative Appendix-E interface, connected Ω, meromorphic algebra, meromorphic identity principle, and local normal-form obstruction, infer RiemannHypothesis."
+RHFormalization/FinalConditionalSpine.lean:28:Final current conditional RH theorem.
+RHFormalization/FinalConditionalSpine.lean:34:theorem finalConditionalRHSpine
+RHFormalization/FinalConditionalSpine.lean:42:    RiemannHypothesis :=
+RHFormalization/DefaultDenominatorSimpleZeroOrder.lean:97:    RiemannHypothesis :=
+RHFormalization/ConnectedOmegaMeromorphicAlgebraEndpoint.lean:33:    RiemannHypothesis :=
+RHFormalization/HExplicitFormulaSplit.lean:65:Final RH spine with `Harch` constructed as `Bshared + Zpole`.
+RHFormalization/HExplicitFormulaSplit.lean:70:theorem finalRHSpine_from_explicitFormulaHarch
+RHFormalization/HExplicitFormulaSplit.lean:98:    RiemannHypothesis :=
+RHFormalization/HExplicitFormulaSplit.lean:99:  finalRHSpine_from_HChosenDSharedC
+RHFormalization/OmegaMeromorphicZeroPropagationEndpoint.lean:70:theorem finalConditionalRHSpine_meromorphicZeroPropagation
+RHFormalization/OmegaMeromorphicZeroPropagationEndpoint.lean:78:    RiemannHypothesis :=
+RHFormalization/OmegaMeromorphicZeroPropagationEndpoint.lean:79:  finalConditionalRHSpine_meromorphicLocalPropagation
+RHFormalization/SimplePoleOrderFromDenominator.lean:130:    RiemannHypothesis :=
+RHFormalization/CanonicalPrimePowerRCutoffGrowth.lean:1:import RHFormalization.FinalRHFromRCutoffEstimate
+RHFormalization/Basic.lean:69:def RiemannHypothesis : Prop :=
+RHFormalization/AppendixELocalBridgeCore.lean:9:The final RH spine currently consumes
+RHFormalization/FinalRHFromRCutoffEstimate.lean:5:# RHFormalization.FinalRHFromRCutoffEstimate
+RHFormalization/FinalRHFromRCutoffEstimate.lean:82:theorem finalRHSpine_from_RCutoffEstimateData
+RHFormalization/FinalRHFromRCutoffEstimate.lean:126:    RiemannHypothesis :=
+RHFormalization/FinalRHFromRCutoffEstimate.lean:127:  finalRHSpine_after_sharedPackageFunctionalCompatibility
+RHFormalization/DefaultCoboundedAddFiniteLimit.lean:141:    RiemannHypothesis :=
+RHFormalization/PrincipalPartMeromorphic.lean:134:    RiemannHypothesis :=
+RHFormalization/OmegaPuncturedIdentityFromCodiscrete.lean:82:    RiemannHypothesis :=
+RHFormalization/AppendixESharedPackageCompatibility.lean:95:theorem finalRHSpine_after_sharedPackageCompatibility
+RHFormalization/AppendixESharedPackageCompatibility.lean:100:    RiemannHypothesis :=
+RHFormalization/AppendixESharedPackageCompatibility.lean:101:  finalRHSpine_after_zeroPropagation
+RHFormalization/AppendixESharedPackageCompatibility.lean:130:Final RH spine from the direct Appendix-E Cshared equality.
+RHFormalization/AppendixESharedPackageCompatibility.lean:135:theorem finalRHSpine_after_directCsharedEq
+RHFormalization/AppendixESharedPackageCompatibility.lean:140:    RiemannHypothesis :=
+RHFormalization/AppendixESharedPackageCompatibility.lean:141:  finalRHSpine_after_sharedPackageCompatibility
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:85:theorem finalRHSpine_after_sharedPackageFunctionalCompatibility
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:90:    RiemannHypothesis :=
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:91:  finalRHSpine_after_zeroPropagation
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:142:Final RH spine reduced to `ZF`, `Y`, `X`, and the shared-B identity.
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:144:theorem finalRHSpine_from_sharedBIdentity
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:153:    RiemannHypothesis :=
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:154:  finalRHSpine_after_sharedPackageFunctionalCompatibility
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:186:Final RH spine reduced to equality of the D-side and H-side shared canonical
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:192:theorem finalRHSpine_from_Cshared_eq
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:197:    RiemannHypothesis :=
+RHFormalization/AppendixESharedPackageFunctionalCompatibility.lean:198:  finalRHSpine_from_sharedBIdentity
+RHFormalization/LocalOrderObstruction.lean:110:    RiemannHypothesis :=
+RHFormalization/OmegaMeromorphicZeroPropagationClopen.lean:130:theorem finalRHSpine_after_zeroPropagation
+RHFormalization/OmegaMeromorphicZeroPropagationClopen.lean:137:    RiemannHypothesis :=
+RHFormalization/OmegaMeromorphicZeroPropagationClopen.lean:138:  finalZeroPropagationRHSpine
+RHFormalization/DefaultSimplePoleCoboundedFromOrder.lean:74:    RiemannHypothesis :=
+RHFormalization/AppendixESharedCanonicalPackage.lean:58:Exact current Appendix-E target for the final RH spine.
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:71:theorem finalConditionalRHSpine_meromorphicLocalPropagation
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:79:    RiemannHypothesis :=
+RHFormalization/OmegaMeromorphicLocalPropagationEndpoint.lean:80:  finalConditionalRHSpine_localNormalFormPropagation
+RHFormalization/PrincipalPartOrderFromCobounded.lean:77:    RiemannHypothesis :=
+RHFormalization/ConnectedOmegaEndpoint.lean:42:    RiemannHypothesis :=
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:6:# RHFormalization.FinalRHFromDWindowExactMassExactSpeed
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:16:into the detailed Appendix-D construction and then into the final E/F RH spine.
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:185:theorem finalRHSpine_from_DWindowExactMassExactSpeedData
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:229:    RiemannHypothesis :=
+RHFormalization/FinalRHFromDWindowExactMassExactSpeed.lean:230:  finalRHSpine_after_sharedPackageFunctionalCompatibility
+RHFormalization/InterfaceBridgeNonnegativeFromPlain.lean:80:    RiemannHypothesis :=
+RHFormalization/OmegaCodiscreteIdentityFromNormalForms.lean:88:    RiemannHypothesis :=
+RHFormalization/PrincipalPartCoboundedSplit.lean:98:    RiemannHypothesis :=
+RHFormalization/FinalZeroPropagationSpine.lean:27:theorem finalZeroPropagationRHSpine
+RHFormalization/FinalZeroPropagationSpine.lean:35:    RiemannHypothesis :=
+RHFormalization/FinalZeroPropagationSpine.lean:36:  finalConditionalRHSpine_meromorphicZeroPropagation
+RHFormalization/OmegaNormalFormLocalPropagationEndpoint.lean:73:theorem finalConditionalRHSpine_localNormalFormPropagation
+RHFormalization/OmegaNormalFormLocalPropagationEndpoint.lean:81:    RiemannHypothesis :=
+RHFormalization/OmegaNormalFormLocalPropagationEndpoint.lean:82:  finalConditionalRHSpine
+RHFormalization/CanonicalPrimePowerDWindowExactMassSpeedEstimate.lean:1:import RHFormalization.FinalRHFromDWindowExactMassExactSpeed
+RHFormalization/MainTheorem.lean:51:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:64:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:79:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:98:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:117:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:135:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:153:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:174:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:193:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:222:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:254:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:288:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:311:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:342:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:375:    RiemannHypothesis := by
+RHFormalization/MainTheorem.lean:411:    RiemannHypothesis := by
+RHFormalization/PuncturedMeromorphicIdentityEndpoint.lean:64:    RiemannHypothesis := by
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:12:used by the final RH spine.
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:90:Final RH spine when the H package is built with the D-side shared canonical
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:94:Cshared equality required by `finalRHSpine_from_Cshared_eq` is automatic.
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:96:theorem finalRHSpine_from_HChosenDSharedC
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:119:    RiemannHypothesis := by
+RHFormalization/HMeromorphicWithNormalFormChosenCshared.lean:126:    finalRHSpine_from_Cshared_eq
+RHFormalization/DefaultOmegaPreperfect.lean:58:    RiemannHypothesis :=
+
+===== END LEAN 4 PROGRESS AUDIT =====

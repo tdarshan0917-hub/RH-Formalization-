@@ -1,0 +1,4 @@
+import RHFormalization.FinalRHFromDWindowExactMassExactSpeed
+namespace RHFormalization
+#print axioms finalRHSpine_from_DWindowExactMassExactSpeedData
+end RHFormalization

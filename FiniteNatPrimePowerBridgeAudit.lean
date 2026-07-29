@@ -1,0 +1,8 @@
+import RHFormalization.FiniteNatPrimePowerBridge
+
+namespace RHFormalization
+
+#check finiteNatSpikePackage_eq_finiteCanonicalPrimePowerPackage_image
+#print axioms finiteNatSpikePackage_eq_finiteCanonicalPrimePowerPackage_image
+
+end RHFormalization

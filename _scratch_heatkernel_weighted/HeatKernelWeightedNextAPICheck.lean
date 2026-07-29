@@ -1,0 +1,13 @@
+import RHFormalization.CanonicalPrimePowerHeatKernelGaussianCoreSummability
+import RHFormalization.CanonicalPrimePowerHeatKernelGaussianCore
+import RHFormalization.CanonicalPrimePowerHeatKernelWeightedSummabilityTarget
+
+namespace RHFormalization
+
+#check heatKernelGaussianCoreEnvelope_summable
+#check heatKernelExplicitWeightedEnvelope_summable_of_core
+#check heatKernelWeightedEnvelope_summable_of_core
+#check heatKernelExplicitWeightedEnvelope_summable
+#check heatKernelWeightedEnvelope_summable
+
+end RHFormalization

@@ -1,0 +1,6 @@
+import RHFormalization.CurrentFrontierEndpoint
+namespace RHFormalization
+#check @selectedFiniteOperatorLayer.toStagePackage.F_stage
+#check @selectedFiniteOperatorLayer.toStagePackage.B_stage
+#check @selectedFiniteOperatorLayer.toStagePackage.R_stage
+end RHFormalization

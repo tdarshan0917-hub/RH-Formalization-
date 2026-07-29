@@ -1,0 +1,8 @@
+import RHFormalization.AppendixDStageSequenceReduction
+
+namespace RHFormalization
+
+#print axioms appendixD_ordered_cutoff_stage_sequence_from_R_existence
+#print axioms appendixD_exists_DFiniteStage_with_R_ge_nat_from_R_existence
+
+end RHFormalization

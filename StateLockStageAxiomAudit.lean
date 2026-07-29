@@ -1,0 +1,8 @@
+import RHFormalization.AppendixDStageExistenceAssumption
+
+namespace RHFormalization
+
+#check appendixD_exists_DFiniteStage_with_R_ge
+#print axioms appendixD_exists_DFiniteStage_with_R_ge
+
+end RHFormalization

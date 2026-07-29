@@ -1,0 +1,8 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthInvSpeed
+
+namespace RHFormalization
+
+#check chosenLength_inv_speed_tendsto_zero
+#print axioms chosenLength_inv_speed_tendsto_zero
+
+end RHFormalization

@@ -1,0 +1,4 @@
+import RHFormalization.ShiftedLaplaceRepWitnessExtensionViaOrder
+namespace RHFormalization
+#print axioms repWitness_extension_via_order
+end RHFormalization

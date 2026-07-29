@@ -1,0 +1,8 @@
+import RHFormalization.DefaultZetaZeroFacts
+
+namespace RHFormalization
+
+#check defaultZetaZeroFacts_of_realZeroFree
+#print axioms defaultZetaZeroFacts_of_realZeroFree
+
+end RHFormalization

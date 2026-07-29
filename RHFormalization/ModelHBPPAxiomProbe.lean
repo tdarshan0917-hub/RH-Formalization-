@@ -1,0 +1,9 @@
+import RHFormalization.ModelRepCorrectedHolo
+import RHFormalization.ShiftedLaplaceModelPP
+
+namespace RHFormalization
+
+#print axioms model_hBpp
+#print axioms shiftedLaplaceLogDerivModel_principalPart_at_witness
+
+end RHFormalization

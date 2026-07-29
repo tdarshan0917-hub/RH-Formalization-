@@ -1,0 +1,8 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromFR
+
+namespace RHFormalization
+
+#check buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthFR
+#print axioms buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthFR
+
+end RHFormalization

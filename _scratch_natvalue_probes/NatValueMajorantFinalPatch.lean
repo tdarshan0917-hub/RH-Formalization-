@@ -1,0 +1,10 @@
+import RHFormalization.CanonicalPrimePowerHeatKernelNatValueMajorantSummability
+
+namespace RHFormalization
+
+#check heatKernelPairPSeriesModel
+#check heatKernelPairPSeriesModel_summable
+#check heatKernelNatValueMajorant_summable_of_model
+#check heatKernelNatValueMajorant_le_pairPSeriesModel
+
+end RHFormalization

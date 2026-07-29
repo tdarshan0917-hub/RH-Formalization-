@@ -1,0 +1,53 @@
+import RHFormalization.PrimeSideTransformKernelPrototype
+import RHFormalization.CanonicalPrimePowerActualKernelError
+import RHFormalization.CanonicalPrimePowerAsymptoticKernel
+import RHFormalization.CanonicalPrimePowerConcreteTsumPackage
+import RHFormalization.AppendixDOperatorPrimePowerToDBcan
+import RHFormalization.AppendixDRCutoffEstimateDetailedConstruction
+import RHFormalization.DesignedDetailedConstruction
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex Set Topology Filter Metric
+open scoped BigOperators
+
+/-
+We now have an s-dependent candidate:
+  shiftedLaplaceHeatKernelC : CanonicalKernelC
+  shiftedLaplacePrimePackage : CanonicalPrimePowerPackage
+
+This audit prints the exact constructor path needed to wire it into the D-side.
+-/
+
+#check shiftedLaplaceHeatKernelC
+#check shiftedLaplacePrimePackage
+#check shiftedLaplacePrimePackage_Bshared_eq_tsum
+
+#print CanonicalPrimePowerPackage
+#print CanonicalKernelC
+
+#check canonicalPrimePowerPackageFromKernelTsum
+
+-- Generic D-side builder candidates.
+#check buildDBcanLimitDataFromCanonicalPrimePowerActualKernelError
+#check canonicalPrimePowerActualKernelError_h_Bcan_matches_tsum
+
+#check buildDBcanLimitDataFromCanonicalPrimePowerAsymptoticKernel
+#check canonicalPrimePowerAsymptoticKernel_h_Bcan_matches_tsum
+
+#check buildDBcanLimitDataFromOperatorPrimePowerLimit
+#check operatorPrimePowerLimit_h_Bcan_matches_shared
+
+#check buildDBcanLimitDataFromOperatorFiniteCanonicalLimit
+#check finiteCanonicalLimit_h_Bcan_matches_shared
+
+-- Existing designedY is still the old displacement-kernel design.
+#check designedY
+#check designedY.B.Cshared
+#check designedY_Cshared_Bshared_eq_tsum_global
+
+end
+
+end RHFormalization

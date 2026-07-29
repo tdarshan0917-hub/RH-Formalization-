@@ -1,38 +1,13 @@
-
-# Chosen-length detailed-construction scratch
-# D-window factor-bound scratch
-# Gaussian-core scratch/probe artifacts
-# Heat-kernel weighted closure scratch
-# Scratch/probe/log artifacts
-*.c
-*.log
-*.o
-*.olean
-*Audit.lean
-*Probe.lean
-.DS_Store
 .lake/
-ChosenLength*.lean
-ChosenLength*.log
-ChosenLength*.search.log
-ConcreteWeightBoundCheck.lean
-ConcreteWeightBoundCheck.log
-ConcreteWeightBound_build.log
-DWindowFactorBound*.lean
-DWindowFactorBound*.log
-GaussianCore*.lean
-GaussianCore*.log
-HeatKernelWeighted*.lean
-HeatKernelWeighted*.log
-LEAN_NEXT_TARGET_HANDOFF.txt
-NEXT_LEAN_TARGET_DEFS.txt
-SharpCutoffChosenLength*.search.log
-SharpCutoffChosenLength*Audit.lean
-SharpCutoffChosenLength*Audit.log
-_proof_targets/_backups/
-_scratch_chosenlength_detail/
-_scratch_dwindow_factor_bounds/
-_scratch_gaussiancore_probes/
-_scratch_heatkernel_weighted/
-_scratch_natvalue_probes/
-lean_progress_audit_*.txt
+lake-packages/
+build/
+*.olean
+*.ilean
+*.trace
+*.hash
+.DS_Store
+*.log
+,
+_handoff_heatkernel 2/
+_handoff_heatkernel 3/
+_handoff_heatkernel 4/

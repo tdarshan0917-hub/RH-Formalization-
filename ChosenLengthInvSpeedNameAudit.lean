@@ -1,0 +1,34 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope
+import RHFormalization.CanonicalPrimePowerDWindowSpeedAPI
+import RHFormalization.CanonicalPrimePowerDWindowExactWindowSpeed
+import RHFormalization.CanonicalPrimePowerMassEnvelopeSpeedComparison
+import RHFormalization.CanonicalPrimePowerSharpCutoffMassEnvelopeExplicitRate
+
+namespace RHFormalization
+
+variable (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+variable (S : CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData finiteOperatorLayer)
+
+#check buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFR
+
+#check chosenLengthWindowAPI_of_invSpeed
+#check S.sharpSpeed.toCompactSpeedAPI.speed
+#check S.hL_chosen
+#check S.h_R_ge_nat
+#check sharpCutoffConcreteChosenSpeed_speed_eq
+
+-- Print the speed formula.
+#print sharpCutoffConcreteChosenSpeed_speed_eq
+
+-- Inspect likely compact inverse-speed APIs.
+#check CanonicalPrimePowerDWindowSpeedAPI
+#print CanonicalPrimePowerDWindowSpeedAPI
+
+#check CanonicalPrimePowerDWindowExactWindowSpeedData
+#print CanonicalPrimePowerDWindowExactWindowSpeedData
+
+#check CanonicalPrimePowerMassEnvelopeSpeedComparisonData
+#print CanonicalPrimePowerMassEnvelopeSpeedComparisonData
+
+end RHFormalization

@@ -1,0 +1,8 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability
+
+namespace RHFormalization
+
+#check buildCanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability
+#print axioms buildCanonicalPrimePowerSharpCutoffHeatKernelWeightedDataClosedSummability
+
+end RHFormalization

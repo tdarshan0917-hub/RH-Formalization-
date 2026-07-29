@@ -1,0 +1,8 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthOverlapBuilder
+
+namespace RHFormalization
+
+#check chosenLengthOverlapBuilder_of_alpha_aligned
+#print axioms chosenLengthOverlapBuilder_of_alpha_aligned
+
+end RHFormalization

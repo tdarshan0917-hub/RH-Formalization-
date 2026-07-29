@@ -1,0 +1,21 @@
+import RHFormalization.ShiftedLaplaceCapstoneTLU
+import RHFormalization.ShiftedLaplaceUnconditional
+import RHFormalization.ShiftedLaplaceTLUFromLocalMTest
+import RHFormalization.ShiftedLaplaceRegularFromZeroDensity
+
+namespace RHFormalization
+noncomputable section
+
+#check RH_from_shiftedLaplace_cancellation
+#print RH_from_shiftedLaplace_cancellation
+#print axioms RH_from_shiftedLaplace_cancellation
+
+#check shiftedLaplace_holo_from_cancellation_zeroDensity_localMTest
+#print shiftedLaplace_holo_from_cancellation_zeroDensity_localMTest
+#print axioms shiftedLaplace_holo_from_cancellation_zeroDensity_localMTest
+
+#check ShiftedLaplaceLocalMTestData
+#print ShiftedLaplaceLocalMTestData
+
+end
+end RHFormalization

@@ -1,0 +1,24 @@
+import RHFormalization
+
+set_option autoImplicit false
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex Set Topology Filter Metric
+open scoped BigOperators
+
+#check RH_from_eta_zeroDensity_holo
+#check RH_from_designed_D_zero_density
+#check RH_from_designed_D_zero_density_localEF_noBregular
+#check RH_from_designed_D_zero_density_localEF
+#check RH_from_designed_D_designed_Harch
+#check RH_from_designed_D_summable
+
+#print axioms RH_from_eta_zeroDensity_holo
+#print axioms RH_from_designed_D_zero_density_localEF_noBregular
+
+end
+
+end RHFormalization

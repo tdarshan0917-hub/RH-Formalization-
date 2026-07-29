@@ -1,0 +1,28 @@
+import RHFormalization.CanonicalPrimePowerHeatKernelPrimePowerSupport
+import RHFormalization.CanonicalPrimePowerHeatKernelGaussianMajorant
+import RHFormalization.CanonicalPrimePowerHeatKernelNatValueMajorantSummability
+
+namespace RHFormalization
+
+#check Summable.of_norm_bounded
+#check Summable.of_norm_bounded_eventually
+#check Summable.of_nonneg_of_le
+#check Summable.congr
+#check Summable.add
+#check Summable.mul_left
+#check summable_of_finite_support
+#check Set.Finite.summable
+#check Finset.mem_product
+#check Finset.mem_range
+#check Finset.univ
+#check heatKernelGaussianCoreEnvelope_eq_zero_of_not_isPrimePowerPair
+#check heatKernelGaussianCoreEnvelope_nonneg
+#check heatKernelGaussianCoreEnvelope_le_weight_mul_natValue_inv_cube_of_ge
+#check heatKernelNatValueMajorant
+#check heatKernelNatValueMajorant_summable
+
+#print PrimePowerPair
+#print IsPrimePowerPair
+#print PrimePowerPair.natValue
+
+end RHFormalization

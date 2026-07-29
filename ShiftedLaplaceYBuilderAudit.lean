@@ -1,0 +1,55 @@
+import RHFormalization.ShiftedLaplaceDSharedBridge
+import RHFormalization.DFiniteStageOperator
+import RHFormalization.DOperatorExport
+import RHFormalization.AppendixDOperatorPrimePowerDetailedConstruction
+import RHFormalization.AppendixDOperatorFiniteCanonicalDetailedConstruction
+import RHFormalization.AppendixDRCutoffEstimateDetailedConstruction
+import RHFormalization.FinalSpineFromRealZeroFree
+import RHFormalization.CurrentFrontierEndpoint
+
+namespace RHFormalization
+
+noncomputable section
+
+open Complex Set Topology Filter Metric
+open scoped BigOperators
+
+/-
+Question:
+Can a shifted-Laplace DBcanLimitData be promoted to a full Y /
+OperatorResolventBridge using existing constructors, without editing old D files?
+-/
+
+-- The bridge we just banked.
+#check shiftedLaplacePrimePackageAt
+#check shiftedLaplace_DBcan_from_actualKernelError_matches_shared
+#check shiftedLaplace_DBcan_from_asymptoticKernel_matches_shared
+
+-- Core D/Y structures.
+#print DBcanLimitData
+#print DDetailedConstructionLayer
+#print DDetailedConstructionWithOperatorLegality
+#print OperatorResolventBridge
+
+-- Ways to build detailed/Y objects from DBcan or package-limit data.
+#check buildDetailedConstructionLayerFromDExport
+#check buildOperatorResolventBridgeFromDExport
+#check DDetailedConstructionLayer.toOperatorResolventBridge
+#check DDetailedConstructionWithOperatorLegality.toOperatorResolventBridge
+
+#check buildDDetailedConstructionWithOperatorLegalityFromRCutoffEstimate
+#check buildDDetailedConstructionWithOperatorLegalityFromFiniteCanonicalLimit
+#check buildDDetailedConstructionWithOperatorLegalityFromOperatorPrimePowerLimit
+#check buildDDetailedConstructionFromOperatorPrimePowerLimit
+#check buildDDetailedConstructionFromOperatorFiniteCanonicalLimit
+
+-- Generic final spines that may accept a Y directly.
+#check RH_current_frontier
+#check finalRHSpine_from_Cshared_eq
+#check finalRHSpine_from_HChosenDSharedC
+#check RH_from_designed_D_zero_density
+#check RH_from_eta_zeroDensity_holo
+
+end
+
+end RHFormalization

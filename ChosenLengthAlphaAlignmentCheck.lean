@@ -1,0 +1,24 @@
+import RHFormalization.DOverlapPointwiseFromCompactUniform
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction
+import RHFormalization.AppendixDPrimePowerLimitReduction
+
+namespace RHFormalization
+
+variable (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+variable (S : CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData finiteOperatorLayer)
+
+#check SharpCutoffChosenLengthFiniteCanonicalLimit finiteOperatorLayer S
+#check (SharpCutoffChosenLengthFiniteCanonicalLimit finiteOperatorLayer S).alpha
+
+#check SharpCutoffChosenLengthSharedPackage finiteOperatorLayer S
+
+#check buildDOperatorPrimePowerLimitAtOverlapData_fromFiniteCanonicalLimit
+#check buildDBcanLimitDataFromOperatorFiniteCanonicalLimit
+
+#check
+  (buildDOperatorPrimePowerLimitAtOverlapData_fromFiniteCanonicalLimit
+    finiteOperatorLayer
+    (SharpCutoffChosenLengthSharedPackage finiteOperatorLayer S)
+    (SharpCutoffChosenLengthFiniteCanonicalLimit finiteOperatorLayer S)).h_B_stage_tendsto_Bcan
+
+end RHFormalization

@@ -1,0 +1,8 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthAlignedDetailedConstruction
+
+namespace RHFormalization
+
+#check buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthAligned
+#print axioms buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthAligned
+
+end RHFormalization

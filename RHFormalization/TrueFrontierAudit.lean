@@ -1,0 +1,22 @@
+import RHFormalization.ShiftedLaplaceDFHExport
+import RHFormalization.ShiftedLaplaceRepInputs
+import RHFormalization.ShiftedLaplaceUnconditional
+import RHFormalization.CurrentFrontierEndpoint
+
+namespace RHFormalization
+noncomputable section
+
+#print shiftedLaplaceDFHExport
+#print axioms shiftedLaplaceDFHExport
+
+#check RH_from_shiftedLaplace_rep_inputs
+#print axioms RH_from_shiftedLaplace_rep_inputs
+
+#check RH_from_shiftedLaplace_meromorphy
+#print axioms RH_from_shiftedLaplace_meromorphy
+
+#check RH_from_designed_D_convergence_only
+#print axioms RH_from_designed_D_convergence_only
+
+end
+end RHFormalization

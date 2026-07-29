@@ -1,0 +1,12 @@
+import RHFormalization.SelectedFiniteStageOperatorLegality
+
+namespace RHFormalization
+
+#check DStageSelfAdjointC_from_native
+#check DStageLowerSemiboundedC_from_native
+#check DStageShiftedNonnegativeC_from_native
+#check selectedFiniteStageOperatorLegality
+
+#print axioms selectedFiniteStageOperatorLegality
+
+end RHFormalization

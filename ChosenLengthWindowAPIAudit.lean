@@ -1,0 +1,12 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthWindowAPI
+
+namespace RHFormalization
+
+#check chosenLengthWindowData
+#check chosenLengthWindowAPI_of_invSpeed
+#check chosenLengthWindowAPI_alpha
+
+#print axioms chosenLengthWindowAPI_of_invSpeed
+#print axioms chosenLengthWindowAPI_alpha
+
+end RHFormalization

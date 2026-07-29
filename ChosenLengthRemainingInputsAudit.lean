@@ -1,0 +1,19 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthDetailedConstruction
+
+namespace RHFormalization
+
+#check buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthMassEnvelope
+
+#check DCanonicalWindowData
+#check DCanonicalWindowAPI
+#check DFHLimitData
+#check DResidualSectorData
+#check DResidualSectorSplitAPI
+#check DResidualSectorBoundsAPI
+#check DMasterResidualAPI
+#check DOverlapIdentityAPI
+
+#print DMasterResidualAPI
+#print DOverlapIdentityAPI
+
+end RHFormalization

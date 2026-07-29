@@ -1,0 +1,29 @@
+import RHFormalization.OmegaMeromorphicZeroPropagationClopen
+import RHFormalization.MainTheoremFromRealZeroFreeOmegaPunctured
+import RHFormalization.DesignedDetailedConstruction
+import RHFormalization.HMeromorphicWithNormalFormChosenCshared
+import RHFormalization.AppendixESharedPackageCompatibility
+import RHFormalization.AppendixESharedPackageFunctionalCompatibility
+import RHFormalization.DefaultZetaZeroFacts
+
+namespace RHFormalization
+
+#check finalRHSpine_after_zeroPropagation
+#check designedY
+#check designedY.toOperatorResolventBridge
+#check HMeromorphicWithNormalFormPoles
+#check HMeromorphicWithNormalFormPoles.toLegacyZeroPolePackageAPI
+
+#check defaultZetaZeroFacts_of_realZeroFree
+
+#check buildHMeromorphicWithNormalFormPolesWithChosenCshared
+#check buildAppendixESharedPackageCompatibilityFromCsharedEq
+#check buildAppendixESharedPackageCompatibilityFromBIdentity
+#check buildInterfaceBridgeFromSharedPackageCompatibility
+#check buildInterfaceBridgeFromLocalComparison
+
+#print axioms finalRHSpine_after_zeroPropagation
+#print axioms designedY
+#print axioms defaultOmegaMeromorphicZeroPropagationAPI
+
+end RHFormalization

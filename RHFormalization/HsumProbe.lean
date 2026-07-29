@@ -1,0 +1,4 @@
+import RHFormalization.XiSummability
+namespace RHFormalization
+#print axioms hsum_unconditional
+end RHFormalization

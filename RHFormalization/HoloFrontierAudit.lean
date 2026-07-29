@@ -1,0 +1,25 @@
+import RHFormalization.HExplicitFormulaSplitChosenCshared
+import RHFormalization.CurrentFrontierEndpoint
+import RHFormalization.MeromorphyAssembly
+import RHFormalization.ZpoleFromSeries
+import RHFormalization.HPPEndgame
+import RHFormalization.ExplicitFormulaLocalReduction
+import RHFormalization.ExplicitFormulaHolomorphyFromTsum
+import RHFormalization.AppendixHOverlapFromLocalExtensions
+import RHFormalization.ShiftedLaplaceRegularFromZeroDensity
+
+namespace RHFormalization
+
+#check meromorphicOn_from_convergence
+#check RH_from_eta_zeroDensity_holo
+#check RH_from_designed_D_zero_density
+#check finalRHSpine_from_HChosenDSharedC
+
+-- Search-by-check targets:
+#check designed_h_holo_from_localExtensions
+#check designed_h_holo_from_localEF
+#check Harch_holomorphic_from_tsumPrincipalParts_and_Bregular
+#check shiftedLaplaceHarchPackageFromCancellationBregularZeroDensity
+#check shiftedLaplaceHarchPackageFromCancellationBregularZeroDensity_split
+
+end RHFormalization

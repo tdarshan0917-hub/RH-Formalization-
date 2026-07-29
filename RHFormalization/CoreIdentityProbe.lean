@@ -1,0 +1,4 @@
+import RHFormalization.ShiftedLaplaceBridge
+namespace RHFormalization
+#print axioms shiftedLaplace_Bshared_eqOn_model
+end RHFormalization

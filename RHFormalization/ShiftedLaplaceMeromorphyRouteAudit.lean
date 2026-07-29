@@ -1,0 +1,22 @@
+import RHFormalization.ShiftedLaplaceUnconditional
+import RHFormalization.ShiftedLaplaceBsharedMeromorphic
+import RHFormalization.ShiftedLaplaceBridge
+import RHFormalization.ShiftedLaplaceWitnessCancellationFromPrincipalParts
+
+namespace RHFormalization
+noncomputable section
+
+#check RH_from_shiftedLaplace_meromorphy
+#print RH_from_shiftedLaplace_meromorphy
+#print axioms RH_from_shiftedLaplace_meromorphy
+
+#check shiftedLaplace_bridge_from_meromorphy
+#print shiftedLaplace_bridge_from_meromorphy
+#print axioms shiftedLaplace_bridge_from_meromorphy
+
+#check shiftedLaplace_hcancel_from_grouped_principalParts
+#print shiftedLaplace_hcancel_from_grouped_principalParts
+#print axioms shiftedLaplace_hcancel_from_grouped_principalParts
+
+end
+end RHFormalization

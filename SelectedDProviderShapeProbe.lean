@@ -1,0 +1,24 @@
+import RHFormalization.CurrentFrontierSelectedD
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFRNoSpeed
+
+namespace RHFormalization
+
+noncomputable section
+
+#check selectedFiniteOperatorLayer
+#check RH_from_selectedFiniteOperatorLayer_raw_inputs
+
+#check CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData selectedFiniteOperatorLayer
+#print CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData
+
+#check DFHLimitData selectedFiniteOperatorLayer.toStagePackage
+#print DFHLimitData
+
+#check DMasterResidualData selectedFiniteOperatorLayer.toStagePackage
+#print DMasterResidualData
+
+#check buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFRNoSpeed
+
+end
+
+end RHFormalization

@@ -1,0 +1,15 @@
+import RHFormalization.CanonicalPrimePowerHeatKernelWeightedSummabilityClosure
+
+namespace RHFormalization
+
+#check heatKernelNatValueMajorant_summable
+#check heatKernelGaussianCoreEnvelope_summable
+#check heatKernelExplicitWeightedEnvelope_summable
+#check heatKernelWeightedEnvelope_summable
+
+#print axioms heatKernelNatValueMajorant_summable
+#print axioms heatKernelGaussianCoreEnvelope_summable
+#print axioms heatKernelExplicitWeightedEnvelope_summable
+#print axioms heatKernelWeightedEnvelope_summable
+
+end RHFormalization

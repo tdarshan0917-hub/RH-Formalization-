@@ -1,0 +1,14 @@
+import RHFormalization.DResidualBulkSectorHelpers
+
+namespace RHFormalization
+
+#check residualBulkSectorData
+#check residualBulkSectorSplitAPI
+#check residualBulkSectorBoundsAPI_of_R_stage_bound
+#check masterResidualAPI_from_data
+
+#print axioms residualBulkSectorSplitAPI
+#print axioms residualBulkSectorBoundsAPI_of_R_stage_bound
+#print axioms masterResidualAPI_from_data
+
+end RHFormalization

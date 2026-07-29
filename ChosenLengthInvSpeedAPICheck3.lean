@@ -1,0 +1,37 @@
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthSelectedYFromWindowFR
+import RHFormalization.CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelope
+import RHFormalization.CanonicalPrimePowerSharpCutoffMassEnvelopeLinearRate
+import RHFormalization.CanonicalPrimePowerSharpCutoffMassEnvelopeExplicitRate
+import RHFormalization.CanonicalPrimePowerDWindowExactMassSpeedEstimate
+
+namespace RHFormalization
+
+variable (finiteOperatorLayer : DFiniteStagePackageFromOperatorLayer)
+variable (S : CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData finiteOperatorLayer)
+
+#check buildDDetailedConstructionWithOperatorLegalityFromSharpCutoffChosenLengthWindowFR
+
+#check chosenLengthWindowAPI_of_invSpeed
+#check S.sharpSpeed.toCompactSpeedAPI.speed
+#check S.hL_chosen
+#check S.h_R_ge_nat
+#check S.massEnvelopeData
+#check S.massEnvelopeData.massEnvelope
+#check sharpCutoffConcreteChosenSpeed_speed_eq
+
+-- Check whether chosen-length already proves the needed quotient theorem.
+#check CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData.massEnvelope_div_windowSpeed_tendsto_zero
+
+-- Check nearby exact-rate theorem.
+#check exactMass_div_speed_tendsto_zero_of_upper_lower
+
+-- Print real structures/fields, no guessed module names.
+#print PrimePowerMassEnvelopeData
+#print CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData
+
+-- Useful Lean API names already available from imports.
+#check Filter.eventually_ge_atTop
+#check Filter.Tendsto.const_mul
+#check tendsto_const_nhds
+
+end RHFormalization

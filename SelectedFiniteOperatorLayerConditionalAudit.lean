@@ -1,0 +1,8 @@
+import RHFormalization.SelectedFiniteOperatorLayer
+
+namespace RHFormalization
+
+#check selectedFiniteOperatorLayer_from_traceSpikePayload
+#print axioms selectedFiniteOperatorLayer_from_traceSpikePayload
+
+end RHFormalization

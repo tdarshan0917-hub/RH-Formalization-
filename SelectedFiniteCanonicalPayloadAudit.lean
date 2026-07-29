@@ -1,0 +1,9 @@
+import RHFormalization.SelectedFiniteCanonicalPayload
+
+namespace RHFormalization
+
+#check SelectedFiniteCanonicalPayload
+#check buildSelectedFiniteOperatorLayerFromCanonicalPayload
+#print axioms buildSelectedFiniteOperatorLayerFromCanonicalPayload
+
+end RHFormalization
