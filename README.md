@@ -35,5 +35,7 @@ the compensator and seam identities, and the zero-side meromorphic package.
 
 ## Status
 
-This is not a proof of RH. It is a formally verified reduction plus the
-supporting operator-theoretic infrastructure, published as a working record.
+A machine-checked **conditional proof**: RH follows from a single named
+analytic estimate (`HtailExists`), with every other step verified and
+axiom-clean. Work on the unconditional route — closing that estimate — is
+ongoing, and this repository is the working record of it.
