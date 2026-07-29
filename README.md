@@ -1,73 +1,39 @@
-# RHFormalization — Lean 4 Companion V2, Iteration 20
+# RH-Formalization
 
-This directory is a separate non-load-bearing Lean 4 companion scaffold for the manuscript.
+Lean 4 formalization of an operator-theoretic approach to the Riemann Hypothesis.
+Lean `v4.30.0-rc2` with pinned Mathlib.
 
-It is intended to map the D/H/E/F proof spine into Lean-facing structures and theorem statements:
+## Audit
 
-- **D**: Appendix D operator-side Ω-holomorphic export;
-- **H**: Appendix H independent zero-side Ω-meromorphic pole package;
-- **E**: Appendix E local overlap/interface identity;
-- **F**: Appendix F rigidity and pole non-cancellation.
+- **2,533** theorems across **1,185** library files
+- **0** axiom declarations
+- `sorry` confined to named probe/attempt files
+- Live chain: `#print axioms` gives `[propext, Classical.choice, Quot.sound]`
+
+## Build
+
+    lake exe cache get
+    lake build
+
+## What is proved
+
+The live chain reduces Mathlib's `RiemannHypothesis` to a single named analytic
+estimate on the compensated prime-power package (`h_ctail_le` / `HtailExists`),
+via `RH_from_Htail`. That estimate is open and is the subject of ongoing work.
+
+Everything upstream of it is machine-checked and axiom-clean: the Galerkin
+operator tower, Duhamel expansions, heat-trace machinery, the defect gate,
+the compensator and seam identities, and the zero-side meromorphic package.
+
+## Repository layout
+
+- `RHFormalization/` — the compiled library
+- `_scratch*/`, `_failed_experiments/`, `_proof_targets/` — exploratory work,
+  retained deliberately as a record of routes tried
+- top-level `*Audit.lean`, `*Probe.lean`, `*Check.lean` — one-off API
+  investigations, not part of the build
 
 ## Status
 
-This is **not** an end-to-end Lean verification of RH.
-
-Iteration 20 is the final structural/status pass. It adds:
-
-```lean
-RHFormalization/FinalBlueprint.lean
-```
-
-plus:
-
-```text
-VerificationRoadmap.md
-FinalAxiomChecklist.md
-LocalBuildChecklist.md
-```
-
-## Honest calibration
-
-Earlier percentage labels should be read as **architecture mapping**, not as successful Lean verification.
-
-Current status:
-
-```text
-Architecture mapped:              ~99%
-Build-certified in this env:       0%
-Estimated build readiness:         25–40%
-Estimated axiom-free verification: 12–22%
-```
-
-The companion is therefore a detailed formal blueprint and partial Lean scaffold, not a completed formal proof.
-
-## Preferred endpoint theorem
-
-```lean
-mainTheorem_from_nonnegative_interface_layer
-```
-
-## First audit command after local build repair
-
-```lean
-#print axioms RHFormalization.mainTheorem_from_nonnegative_interface_layer
-```
-
-## Remaining hard gates
-
-The remaining hard gates are listed in:
-
-```text
-FinalAxiomChecklist.md
-VerificationRoadmap.md
-RHFormalization/FinalBlueprint.lean
-```
-
-The largest unresolved areas are:
-
-- D-side operator export and residual estimates;
-- H-side zero-pole meromorphic construction;
-- meromorphic identity theorem on Ω;
-- local Laurent/principal-part pole obstruction;
-- actual Lake build and axiom audit.
+This is not a proof of RH. It is a formally verified reduction plus the
+supporting operator-theoretic infrastructure, published as a working record.
