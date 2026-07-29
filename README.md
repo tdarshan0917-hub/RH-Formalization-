@@ -39,3 +39,13 @@ A machine-checked **conditional proof**: RH follows from a single named
 analytic estimate (`HtailExists`), with every other step verified and
 axiom-clean. Work on the unconditional route — closing that estimate — is
 ongoing, and this repository is the working record of it.
+
+## Scale
+
+The repository comprises roughly **115,000 non-blank lines of Lean 4**
+(~135,000 including blanks and comments) across **1,801 files**, containing
+**2,538 declared theorems and lemmas**. The conditional proof
+`RH_from_Htail : HtailExists → RiemannHypothesis` is machine-checked and
+depends only on Lean's standard axioms
+(`propext`, `Classical.choice`, `Quot.sound`). Work toward the
+unconditional proof — closing `HtailExists` — is ongoing.
