@@ -122,7 +122,7 @@ private theorem lapT_tendsto_zero {a : ℂ} (ha : 0 < a.re) :
   filter_upwards [Filter.eventually_ge_atTop (0:ℝ)] with t ht
   exact hnorm t ht
 
-private theorem integrableOn_t_cexp {a : ℂ} (ha : 0 < a.re) :
+theorem integrableOn_t_cexp {a : ℂ} (ha : 0 < a.re) :
     IntegrableOn (fun t : ℝ => (t : ℂ) * Complex.exp (-a * (t : ℂ)))
       (Ioi (0:ℝ)) := by
   have hreal : IntegrableOn (fun t : ℝ => t * Real.exp (-(a.re * t)))
