@@ -1,5 +1,8 @@
 # RH-Formalization
 
+**Author and project lead: Travis Darshan**
+
+
 Lean 4 formalization of an operator-theoretic approach to the Riemann Hypothesis.
 Lean `v4.30.0-rc2` with pinned Mathlib.
 
