@@ -1,7 +1,9 @@
 # RH-Formalization
 
 **Author and project lead: Travis Darshan**
+
 **Lean 4 formalization and formal audit of an operator-theoretic / prime-power approach to the Riemann Hypothesis**
+
 Lean `v4.30.0-rc2` with pinned Mathlib.
 
 > **Status — August 9, 2026:** This repository contains a large machine-checked conditional reduction of the Riemann Hypothesis to a single explicit analytic frontier, a formal audit locating the outstanding large-time prime-package obstruction, and a new kernel-certified positive-energy framework being developed to attack that frontier.
@@ -47,7 +49,7 @@ The distinction is deliberate: `RHFormalization/` is the main compiled mathemati
 
 ### Current machine audit
 
-At snapshot HEAD:
+Audit baseline commit:
 
 ```text
 c30fd23
