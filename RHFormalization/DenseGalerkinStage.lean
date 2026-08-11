@@ -13,6 +13,8 @@ import RHFormalization.DenseGalerkinSchedule
 set_option autoImplicit false
 set_option linter.unusedTactic false
 set_option linter.unreachableTactic false
+set_option linter.unusedTactic false
+set_option linter.unreachableTactic false
 
 namespace RHFormalization
 
