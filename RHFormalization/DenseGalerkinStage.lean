@@ -9,6 +9,10 @@ stage.L value) that downstream bricks read.
 -/
 
 import RHFormalization.DenseGalerkinSchedule
+import RHFormalization.AdmissibleGalerkinStage
+import RHFormalization.DecodedAnchorDischarge
+import RHFormalization.GalerkinStagePackage
+import Mathlib
 
 set_option autoImplicit false
 set_option linter.unusedTactic false
@@ -59,12 +63,14 @@ def denseGalerkinStageSeq (n : ℕ) : DFiniteStage :=
       simpa [ppCode_ppDecode] using h2
     h_canonicalSpikeContribution_eq_weightC := by intro k _; rfl
     h_diagonalSpikeToPP_center_le_R := by
+      classical
       intro k hk
       rcases mem_admStageCodes.mp hk with ⟨q, hq, rfl⟩
       have hfil := Finset.mem_filter.mp hq
       have hcenter := hfil.2.2
       simpa [ppDecode_ppCode] using hcenter
     h_diagonalSpikeToPP_complete_center_le_R := by
+      classical
       intro q hq hle
       have hbelow : q ∈ concretePrimePowerBelowCutoff (admR n) :=
         concretePrimePowerEnum.h_mem_belowCutoff (admR n) q hq hle
