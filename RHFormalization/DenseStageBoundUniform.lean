@@ -174,7 +174,7 @@ theorem denseStageBound_uniform (n : ℕ) (c₀ : ℝ) (hc₀ : 0 < c₀) :
     have hEq : 48 * (Real.log 4 + 4) / c₀ * (4 * denseL n * c₀)
         = 192 * (Real.log 4 + 4) * denseL n := by
       field_simp
-      ring
+      try ring
     rw [hEq]
     exact hnum
   have hB2 : adaptiveStageMass n / (2 * denseL n * c₀^2)
@@ -185,7 +185,7 @@ theorem denseStageBound_uniform (n : ℕ) (c₀ : ℝ) (hc₀ : 0 < c₀) :
     have hEq : 6 * (Real.log 4 + 4) / c₀ ^ 2 * (2 * denseL n * c₀^2)
         = 12 * (Real.log 4 + 4) * denseL n := by
       field_simp
-      ring
+      try ring
     rw [hEq]
     exact hmassle
   have hC : adaptiveStageMass n * denseL n
@@ -198,7 +198,7 @@ theorem denseStageBound_uniform (n : ℕ) (c₀ : ℝ) (hc₀ : 0 < c₀) :
     have hEq : (Real.log 4 + 4) / c₀ * (2 * c₀ * Real.pi^2 * ((denseN n : ℕ) : ℝ))
         = 2 * (Real.log 4 + 4) * Real.pi^2 * ((denseN n : ℕ) : ℝ) := by
       field_simp
-      ring
+      try ring
     rw [hEq]
     have hkey : 12 * (Real.log 4 + 4) * ((denseN n : ℕ) : ℝ)
         ≤ 2 * (Real.log 4 + 4) * Real.pi^2 * ((denseN n : ℕ) : ℝ) := by
@@ -214,7 +214,7 @@ theorem denseStageBound_uniform (n : ℕ) (c₀ : ℝ) (hc₀ : 0 < c₀) :
     have hEq : 66 * (Real.log 4 + 4) / c₀ * (2 * denseL n * c₀ * Real.pi)
         = 132 * (Real.log 4 + 4) * denseL n * Real.pi := by
       field_simp
-      ring
+      try ring
     rw [hEq]
     have hkey : 396 * (Real.log 4 + 4) * denseL n
         ≤ 132 * (Real.log 4 + 4) * denseL n * Real.pi := by
