@@ -63,15 +63,15 @@ The headline endpoint and D4a theorem dependency cones audit under `#print axiom
 
 The current compact endpoint is:
 
-`lean
+```lean
 RH_from_pairedTransform_only
-`
+```
 
 schematically:
 
-`text
+```text
 hP  →  RiemannHypothesis
-`
+```
 
 where `hP` is the compact-local boundedness statement
 
@@ -95,23 +95,23 @@ $$
 
 The theorem is checked by Lean's kernel and, in the current audit, depends only on:
 
-`text
+```text
 [propext, Classical.choice, Quot.sound]
-`
+```
 
 This is presently the cleanest machine-certified description of the unconditional frontier.
 
 The repository also retains the earlier certified route
 
-`text
+```text
 hSC → HtailExists → RiemannHypothesis
-`
+```
 
 and the older endpoint
 
-`lean
+```lean
 RH_from_Htail : HtailExists → RiemannHypothesis
-`
+```
 
 as part of the development history.
 
@@ -137,9 +137,9 @@ $$
 
 implemented as:
 
-`lean
+```lean
 raw_R_stage_tail_accounting
-`
+```
 
 on the appropriate half-plane.
 
@@ -147,15 +147,15 @@ This matters because a detailed August 2026 audit of the previous four-sector re
 
 The formal audit established identities including:
 
-`text
+```text
 Rcan = manuscript sectors + pairedTailGap
-`
+```
 
 and, in the corresponding sector comparison,
 
-`text
+```text
 D.MR.3 RHS − Rcan = galBTail
-`
+```
 
 The point is not merely that an estimate remained unproved. The machine accounting isolated **which term was absent from the claimed exhaustive decomposition**.
 
@@ -163,7 +163,7 @@ The corrected live route therefore keeps the operator tail and prime-package tai
 
 Selected audit milestones from August 8:
 
-`text
+```text
 cd992e2  RAW ACCOUNTING CERTIFIED:
          R_stage = head + (Ftail - Btail)
 
@@ -178,7 +178,7 @@ cd992e2  RAW ACCOUNTING CERTIFIED:
 
 b13def9  ROUTE CERTIFICATE:
          hSC => HtailExists => RiemannHypothesis
-`
+```
 
 This audit is one of the central results of the formalization effort. It shows the formal system acting as an audit instrument rather than a transcription layer: the discrepancy is represented by an exact certified identity, and the corrected route keeps the omitted prime-package tail visible instead of silently promoting an incomplete decomposition into an unconditional RH theorem.
 
@@ -214,10 +214,10 @@ $$
 
 Key definitions:
 
-`lean
+```lean
 tiltedCenteredEntry
 tiltedCenteredMatrix
-`
+```
 
 ---
 
@@ -237,9 +237,9 @@ $$
 
 Lean theorem:
 
-`lean
+```lean
 tiltedEnergy_nonneg
-`
+```
 
 proves
 
@@ -259,9 +259,9 @@ This positivity is finite-dimensional and arithmetic: positive spectral denomina
 
 A reusable generic matrix theorem was proved:
 
-`lean
+```lean
 trace_transpose_diag_sandwich
-`
+```
 
 which identifies, for a real matrix $C$ and diagonal weights $d_k$,
 
@@ -293,9 +293,9 @@ $$
 
 Machine-certified theorem:
 
-`lean
+```lean
 tiltedEnergy_eq_trace_resolvent
-`
+```
 
 This establishes the operator meaning of the computational basis-sum energy without introducing a matrix inverse.
 
@@ -319,10 +319,10 @@ $$
 
 The current machine-certified results include:
 
-`lean
+```lean
 tiltedEnergyKernel_symm
 tiltedEnergyKernel_diag_nonneg
-`
+```
 
 giving
 
@@ -340,7 +340,7 @@ for the positive spectral regime.
 
 The current energy-route commits are:
 
-`text
+```text
 6d145db  E1+E2:
          tilted centered observable + tilted energy + positivity
 
@@ -349,7 +349,7 @@ a129fa5  E3:
 
 c30fd23  E4a:
          finite energy kernel, symmetry, diagonal nonnegativity
-`
+```
 
 Together these files add a machine-checked positive quadratic structure on top of the existing Galerkin displacement machinery.
 
@@ -562,26 +562,26 @@ That distinction is important: the project treats a failed proof step as informa
 
 The project uses Lean `v4.30.0-rc2` with pinned Mathlib.
 
-`bash
+```bash
 lake exe cache get
 lake build
-`
+```
 
 For critical endpoint theorems, the repository additionally uses:
 
-`lean
+```lean
 #print axioms theoremName
-`
+```
 
 to audit theorem dependencies.
 
 The August 9, 2026 targeted snapshot returned:
 
-`text
+```text
 Build completed successfully (9107 jobs).
 BUILD_EXIT=0
 AXCHECK_EXIT=0
-`
+```
 
 for the audited raw-tail, RH-endpoint, and tilted-energy targets.
 
@@ -589,27 +589,27 @@ for the audited raw-tail, RH-endpoint, and tilted-energy targets.
 
 # Repository layout
 
-`text
+```text
 RHFormalization/
-`
+```
 
 Main compiled Lean library.
 
-`text
+```text
 _scratch*/
 _failed_experiments/
 _proof_targets/
-`
+```
 
 Exploratory and historical material retained to document attempted routes and failed constructions.
 
 Top-level files such as:
 
-`text
+```text
 *Audit.lean
 *Probe.lean
 *Check.lean
-`
+```
 
 are generally API investigations, audits, or research probes rather than part of the primary certified endpoint.
 
@@ -651,21 +651,21 @@ The current state should be read as follows:
 
 The project has therefore moved beyond the statement
 
-`text
+```text
 "RH follows if HtailExists."
-`
+```
 
 to a more precise certified picture:
 
-`text
+```text
 explicit compensated paired-transform bound
                     ↓
           RiemannHypothesis
-`
+```
 
 together with a new positive-energy research interface:
 
-`text
+```text
 tilted centered prime observable
             ↓
 positive Galerkin energy Q
@@ -679,7 +679,7 @@ open energy bound
 paired-transform bound
             ↓
 RiemannHypothesis
-`
+```
 
 The first several arrows are machine-certified or paper-closed as indicated above.
 
