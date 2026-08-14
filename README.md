@@ -6,17 +6,17 @@
 
 Lean `v4.30.0-rc2` with pinned Mathlib.
 
-> **Status — August 9, 2026:** This repository contains a large machine-checked conditional reduction of the Riemann Hypothesis to a single explicit analytic frontier, a formal audit locating the outstanding large-time prime-package obstruction, and a new kernel-certified positive-energy framework being developed to attack that frontier.
->
-> **The repository does not currently contain an unconditional proof of the Riemann Hypothesis.**
+> **Public development began May 30, 2026. Current status — August 14, 2026:** RH-Formalization contains a machine-checked conditional theorem whose conclusion is the full Riemann Hypothesis: `RH_from_pairedTransform_only : hP → RiemannHypothesis`. The active research program is to prove the explicit analytic frontier `hP` unconditionally.
+
+> The current dense reconstruction has machine-checked D1–D4a: the dense `L = X^(3/4)` schedule, dense Galerkin stage, sharp `O(sqrt X)` prime-power mass theorem, and dense stage-bound arithmetic without the giant-window hypotheses used by the earlier construction.
 
 ## Why this repository is significant
 
-This is a large, author-led Lean 4 research development built around an original mathematical program rather than a textbook transcription. At the current snapshot, the full retained research repository contains **1,873 Lean files and 143,269 lines of Lean**, while the compiled `RHFormalization/` library alone contains **1,257 files, 124,523 lines, 2,720 theorem/lemma declarations, 1,161 definitions, and 0 explicit axiom declarations**.
+This is a large, author-led Lean 4 research development built around an original mathematical program rather than a textbook transcription. The compiled `RHFormalization/` library currently contains **1,255 Lean files, 125,189 lines of Lean, 2,762 theorem/lemma declarations, 1,132 definitions, and 0 explicit axiom declarations**. The full tracked Lean research record contains **1,878 Lean files and 144,077 lines of Lean**.
 
-The formalization has functioned as a mathematical instrument as well as a verifier. In the August 2026 audit it did not merely stop at an unproved estimate: it certified exact accounting identities that locate the missing large-time prime-package term in the manuscript's claimed exhaustive residual decomposition.
+The formalization has functioned as a mathematical instrument as well as a verifier. It has produced a machine-checked conditional theorem to the full Riemann Hypothesis, exact accounting identities locating the large-time prime-package obstruction in the earlier manuscript closure, structural results eliminating several non-working routes, and the current dense-schedule reconstruction aimed at proving the remaining analytic frontier unconditionally.
 
-The same audit campaign also produced a new positive-energy research interface. Its paper-level arithmetic form is a weighted mean-square criterion for a centered prime-power discrepancy. The criterion is a formulation developed within this program; its role and logical strength are stated below without claiming that the decisive unconditional estimate has been proved.
+The current RH dependency cone is intentionally narrow, but that should not be confused with the scope of the project. The repository contains a substantially broader body of machine-checked operator theory, Galerkin analysis, heat-kernel and resolvent identities, explicit-formula interfaces, arithmetic estimates, positive-energy constructions, earlier conditional endpoints, Duhamel machinery, and formally established negative or obstruction results. Results no longer required by the shortest live route remain part of the mathematical contribution and reusable infrastructure of the project.
 
 ---
 
@@ -27,53 +27,33 @@ The same audit campaign also produced a new positive-energy research interface. 
 The compiled `RHFormalization/` library currently contains:
 
 | Metric | Current snapshot |
-|---|---:|
-| Lean 4 source files | **1,257** |
-| Total Lean source lines | **124,523** |
-| Nonblank Lean source lines | **107,339** |
-| Theorem + lemma declarations | **2,720** |
-| Definition declarations | **1,161** |
+| --- | ---: |
+| Lean 4 source files | **1,255** |
+| Total Lean source lines | **125,189** |
+| Nonblank Lean source lines | **107,955** |
+| Theorem + lemma declarations | **2,762** |
+| Definition declarations | **1,132** |
 | Explicit `axiom` declarations | **0** |
 
 ### Full research repository
 
-Including the compiled library together with retained proof probes, route audits, failed experiments, reconstruction scripts, and research-stage Lean files:
+Including the compiled mathematical library together with retained certified infrastructure, historical route work, audit files, reconstruction work, and incomplete probes preserved separately under `Experimental/`:
 
 | Metric | Current snapshot |
-|---|---:|
-| Lean files | **1,873** |
-| Total Lean source lines | **143,269** |
-| Nonblank Lean source lines | **122,449** |
+| --- | ---: |
+| Lean files | **1,878** |
+| Total Lean source lines | **144,077** |
+| Nonblank Lean source lines | **123,187** |
 
-The distinction is deliberate: `RHFormalization/` is the main compiled mathematical library, while the larger repository preserves unsuccessful routes and intermediate investigations as part of the research record.
+The distinction is deliberate: `RHFormalization/` is the principal mathematical library. Results that are no longer required by the shortest live RH path remain part of the mathematical record and reusable infrastructure; only incomplete or superseded probes are separated under `Experimental/`.
 
 ### Current machine audit
 
-Audit baseline commit:
+Current audited release source: `9ce2ef5`.
 
-```text
-c30fd23
-```
+The present public baseline is the certified D4a dense reconstruction state. The headline conditional RH endpoint is `RH_from_pairedTransform_only : hP → RiemannHypothesis`. The current dense frontier includes `denseGalerkinStageSeq`, `S1mass_admR_le_sqrt_exp`, and `denseStageBound_uniform`.
 
-a targeted audit of the live RH accounting and tilted-energy spine completed with:
-
-```text
-Build completed successfully (9107 jobs).
-BUILD_EXIT=0
-AXCHECK_EXIT=0
-```
-
-The audited live theorems report only:
-
-```text
-[propext, Classical.choice, Quot.sound]
-```
-
-under `#print axioms`.
-
-There are **0 explicit axiom declarations** in the compiled library.
-
-The repository deliberately retains research and superseded files containing raw `sorry` tokens. Those files are not represented as part of the audited live endpoint. For the named RH reduction and current tilted-energy spine described below, the relevant standard is successful compilation together with `#print axioms`, not a repository-wide raw-token count.
+The headline endpoint and D4a theorem dependency cones audit under `#print axioms` to `[propext, Classical.choice, Quot.sound]`, with no project-specific mathematical axioms. A full `lake build` and compiled-sorry check are run again immediately before publication.
 
 ---
 
@@ -83,15 +63,15 @@ The repository deliberately retains research and superseded files containing raw
 
 The current compact endpoint is:
 
-```lean
+`lean
 RH_from_pairedTransform_only
-```
+`
 
 schematically:
 
-```text
+`text
 hP  →  RiemannHypothesis
-```
+`
 
 where `hP` is the compact-local boundedness statement
 
@@ -115,23 +95,23 @@ $$
 
 The theorem is checked by Lean's kernel and, in the current audit, depends only on:
 
-```text
+`text
 [propext, Classical.choice, Quot.sound]
-```
+`
 
 This is presently the cleanest machine-certified description of the unconditional frontier.
 
 The repository also retains the earlier certified route
 
-```text
+`text
 hSC → HtailExists → RiemannHypothesis
-```
+`
 
 and the older endpoint
 
-```lean
+`lean
 RH_from_Htail : HtailExists → RiemannHypothesis
-```
+`
 
 as part of the development history.
 
@@ -157,9 +137,9 @@ $$
 
 implemented as:
 
-```lean
+`lean
 raw_R_stage_tail_accounting
-```
+`
 
 on the appropriate half-plane.
 
@@ -167,15 +147,15 @@ This matters because a detailed August 2026 audit of the previous four-sector re
 
 The formal audit established identities including:
 
-```text
+`text
 Rcan = manuscript sectors + pairedTailGap
-```
+`
 
 and, in the corresponding sector comparison,
 
-```text
+`text
 D.MR.3 RHS − Rcan = galBTail
-```
+`
 
 The point is not merely that an estimate remained unproved. The machine accounting isolated **which term was absent from the claimed exhaustive decomposition**.
 
@@ -183,7 +163,7 @@ The corrected live route therefore keeps the operator tail and prime-package tai
 
 Selected audit milestones from August 8:
 
-```text
+`text
 cd992e2  RAW ACCOUNTING CERTIFIED:
          R_stage = head + (Ftail - Btail)
 
@@ -198,7 +178,7 @@ cd992e2  RAW ACCOUNTING CERTIFIED:
 
 b13def9  ROUTE CERTIFICATE:
          hSC => HtailExists => RiemannHypothesis
-```
+`
 
 This audit is one of the central results of the formalization effort. It shows the formal system acting as an audit instrument rather than a transcription layer: the discrepancy is represented by an exact certified identity, and the corrected route keeps the omitted prime-package tail visible instead of silently promoting an incomplete decomposition into an unconditional RH theorem.
 
@@ -234,10 +214,10 @@ $$
 
 Key definitions:
 
-```lean
+`lean
 tiltedCenteredEntry
 tiltedCenteredMatrix
-```
+`
 
 ---
 
@@ -257,9 +237,9 @@ $$
 
 Lean theorem:
 
-```lean
+`lean
 tiltedEnergy_nonneg
-```
+`
 
 proves
 
@@ -279,9 +259,9 @@ This positivity is finite-dimensional and arithmetic: positive spectral denomina
 
 A reusable generic matrix theorem was proved:
 
-```lean
+`lean
 trace_transpose_diag_sandwich
-```
+`
 
 which identifies, for a real matrix $C$ and diagonal weights $d_k$,
 
@@ -313,9 +293,9 @@ $$
 
 Machine-certified theorem:
 
-```lean
+`lean
 tiltedEnergy_eq_trace_resolvent
-```
+`
 
 This establishes the operator meaning of the computational basis-sum energy without introducing a matrix inverse.
 
@@ -339,10 +319,10 @@ $$
 
 The current machine-certified results include:
 
-```lean
+`lean
 tiltedEnergyKernel_symm
 tiltedEnergyKernel_diag_nonneg
-```
+`
 
 giving
 
@@ -360,7 +340,7 @@ for the positive spectral regime.
 
 The current energy-route commits are:
 
-```text
+`text
 6d145db  E1+E2:
          tilted centered observable + tilted energy + positivity
 
@@ -369,7 +349,7 @@ a129fa5  E3:
 
 c30fd23  E4a:
          finite energy kernel, symmetry, diagonal nonnegativity
-```
+`
 
 Together these files add a machine-checked positive quadratic structure on top of the existing Galerkin displacement machinery.
 
@@ -582,26 +562,26 @@ That distinction is important: the project treats a failed proof step as informa
 
 The project uses Lean `v4.30.0-rc2` with pinned Mathlib.
 
-```bash
+`bash
 lake exe cache get
 lake build
-```
+`
 
 For critical endpoint theorems, the repository additionally uses:
 
-```lean
+`lean
 #print axioms theoremName
-```
+`
 
 to audit theorem dependencies.
 
 The August 9, 2026 targeted snapshot returned:
 
-```text
+`text
 Build completed successfully (9107 jobs).
 BUILD_EXIT=0
 AXCHECK_EXIT=0
-```
+`
 
 for the audited raw-tail, RH-endpoint, and tilted-energy targets.
 
@@ -609,27 +589,27 @@ for the audited raw-tail, RH-endpoint, and tilted-energy targets.
 
 # Repository layout
 
-```text
+`text
 RHFormalization/
-```
+`
 
 Main compiled Lean library.
 
-```text
+`text
 _scratch*/
 _failed_experiments/
 _proof_targets/
-```
+`
 
 Exploratory and historical material retained to document attempted routes and failed constructions.
 
 Top-level files such as:
 
-```text
+`text
 *Audit.lean
 *Probe.lean
 *Check.lean
-```
+`
 
 are generally API investigations, audits, or research probes rather than part of the primary certified endpoint.
 
@@ -671,21 +651,21 @@ The current state should be read as follows:
 
 The project has therefore moved beyond the statement
 
-```text
+`text
 "RH follows if HtailExists."
-```
+`
 
 to a more precise certified picture:
 
-```text
+`text
 explicit compensated paired-transform bound
                     ↓
           RiemannHypothesis
-```
+`
 
 together with a new positive-energy research interface:
 
-```text
+`text
 tilted centered prime observable
             ↓
 positive Galerkin energy Q
@@ -699,7 +679,7 @@ open energy bound
 paired-transform bound
             ↓
 RiemannHypothesis
-```
+`
 
 The first several arrows are machine-certified or paper-closed as indicated above.
 
