@@ -686,3 +686,11 @@ The first several arrows are machine-certified or paper-closed as indicated abov
 The remaining unconditional energy bound is open.
 
 That open theorem — not hidden corrections elsewhere in the formal chain — is the present research frontier.
+
+---
+
+## Copyright and citation
+
+Copyright © 2026 Travis Darshan. All rights reserved. No open-source license is currently granted for this repository.
+
+If you use or reference this Lean 4 formalization, please cite Travis Darshan. Formal citation metadata is available in `CITATION.cff`.

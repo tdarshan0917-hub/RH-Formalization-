@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use or reference this work, please cite it as below."
+type: software
+authors:
+  - family-names: "Darshan"
+    given-names: "Travis"
+title: "RH-Formalization: Lean 4 Formal Research Program for an Operator-Theoretic Approach to the Riemann Hypothesis"
+url: "https://github.com/tdarshan0917-hub/RH-Formalization-"
