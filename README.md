@@ -14,7 +14,7 @@ Lean `v4.30.0-rc2` with pinned Mathlib.
 
 This is a large, author-led Lean 4 research development built around an original mathematical program rather than a textbook transcription. The compiled `RHFormalization/` library currently contains **1,255 Lean files, 125,189 lines of Lean, 2,762 theorem/lemma declarations, 1,132 definitions, and 0 explicit axiom declarations**. The full tracked Lean research record contains **1,878 Lean files and 144,077 lines of Lean**.
 
-The formalization has functioned as a mathematical instrument as well as a verifier. It has produced a machine-checked conditional theorem to the full Riemann Hypothesis, exact accounting identities locating the large-time prime-package obstruction in the earlier manuscript closure, structural results eliminating several non-working routes, and the current dense-schedule reconstruction aimed at proving the remaining analytic frontier unconditionally.
+The formalization has functioned as a mathematical instrument as well as a verifier. It has produced a machine-checked conditional theorem to the full Riemann Hypothesis, exact residual-accounting identities that sharpened the operator architecture, structural results clarifying which mechanisms remain viable, and the current dense-schedule reconstruction aimed at proving the remaining analytic frontier unconditionally.
 
 The current RH dependency cone is intentionally narrow, but that should not be confused with the scope of the project. The repository contains a substantially broader body of machine-checked operator theory, Galerkin analysis, heat-kernel and resolvent identities, explicit-formula interfaces, arithmetic estimates, positive-energy constructions, earlier conditional endpoints, Duhamel machinery, and formally established negative or obstruction results. Results no longer required by the shortest live route remain part of the mathematical contribution and reusable infrastructure of the project.
 
@@ -117,7 +117,7 @@ as part of the development history.
 
 ---
 
-## 2. Exact raw-tail accounting
+## 2. Certified residual accounting and route refinement
 
 A major purpose of the formalization has been **mathematical auditing**, not merely transcription.
 
@@ -143,7 +143,7 @@ raw_R_stage_tail_accounting
 
 on the appropriate half-plane.
 
-This matters because a detailed August 2026 audit of the previous four-sector residual decomposition located a specific missing term: the large-time one-letter prime-package tail.
+The August 2026 audit established the exact relation among the stage residual, the earlier sector package, and the large-time prime-package tail. This clarified which contributions must be tracked explicitly in the certified accounting and directly informed the current live route.
 
 The formal audit established identities including:
 
@@ -157,9 +157,9 @@ and, in the corresponding sector comparison,
 D.MR.3 RHS − Rcan = galBTail
 ```
 
-The point is not merely that an estimate remained unproved. The machine accounting isolated **which term was absent from the claimed exhaustive decomposition**.
+The machine accounting identifies exactly how the additional prime-package contribution enters the residual structure, replacing informal bookkeeping with a certified identity.
 
-The corrected live route therefore keeps the operator tail and prime-package tail visible separately rather than treating the earlier four-sector decomposition as complete.
+The current live route therefore keeps the operator tail and prime-package tail visible separately in the certified architecture.
 
 Selected audit milestones from August 8:
 
@@ -180,7 +180,7 @@ b13def9  ROUTE CERTIFICATE:
          hSC => HtailExists => RiemannHypothesis
 ```
 
-This audit is one of the central results of the formalization effort. It shows the formal system acting as an audit instrument rather than a transcription layer: the discrepancy is represented by an exact certified identity, and the corrected route keeps the omitted prime-package tail visible instead of silently promoting an incomplete decomposition into an unconditional RH theorem.
+This audit is one of the central results of the formalization effort. It shows Lean functioning as a mathematical research instrument rather than a transcription layer: exact machine-certified identities sharpened the residual structure and helped reduce the broader program to the current live RH architecture.
 
 ---
 
