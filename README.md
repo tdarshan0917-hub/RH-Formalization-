@@ -51,11 +51,11 @@ The distinction is deliberate: `RHFormalization/` is the principal mathematical 
 
 ### Current machine audit
 
-Current audited release source: `9ce2ef5`.
+Current archived Stage A release: `v2026.08.15-stage-a` — Zenodo DOI: `10.5281/zenodo.21960407`.
 
-The present public baseline is the certified D4a dense reconstruction state. The headline conditional RH endpoint is `RH_from_pairedTransform_only : hP → RiemannHypothesis`. The current dense frontier includes `denseGalerkinStageSeq`, `S1mass_admR_le_sqrt_exp`, and `denseStageBound_uniform`.
+The present public Stage A baseline is the machine-certified dense reconstruction through D1–D6. Its dense conditional endpoint is `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis`. The earlier endpoint `RH_from_pairedTransform_only : hP → RiemannHypothesis` remains part of the certified development.
 
-The headline endpoint and D4a theorem dependency cones audit under `#print axioms` to `[propext, Classical.choice, Quot.sound]`, with no project-specific mathematical axioms. A full `lake build` and compiled-sorry check are run again immediately before publication.
+The Stage A dense endpoint dependency cone audits under `#print axioms` to `[propext, Classical.choice, Quot.sound]`, with no project-specific mathematical axioms. The published Stage A build emitted no `declaration uses 'sorry'` warnings.
 
 ---
 
