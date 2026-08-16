@@ -2,13 +2,15 @@
 
 **Author and project lead: Travis Darshan**
 
+[![DOI](https://zenodo.org/badge/1316438323.svg)](https://doi.org/10.5281/zenodo.21960406)
+
 **Lean 4 formalization and formal audit of an operator-theoretic / prime-power approach to the Riemann Hypothesis**
 
 Lean `v4.30.0-rc2` with pinned Mathlib.
 
 > **Public development began May 30, 2026. Current status — August 14, 2026:** RH-Formalization contains a machine-checked conditional theorem whose conclusion is the full Riemann Hypothesis: `RH_from_pairedTransform_only : hP → RiemannHypothesis`. The active research program is to prove the explicit analytic frontier `hP` unconditionally.
 
-> The current dense reconstruction has machine-checked D1–D4a: the dense `L = X^(3/4)` schedule, dense Galerkin stage, sharp `O(sqrt X)` prime-power mass theorem, and dense stage-bound arithmetic without the giant-window hypotheses used by the earlier construction.
+> **Stage A is now machine-certified through D1–D6.** The dense reconstruction culminates in `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis` on the dense `L = X^(3/4) = o(X)` schedule. The active research frontier is to establish the explicit analytic hypothesis `hP_dense` unconditionally.
 
 ## Why this repository is significant
 
@@ -694,3 +696,11 @@ That open theorem — not hidden corrections elsewhere in the formal chain — i
 Copyright © 2026 Travis Darshan. All rights reserved. No open-source license is currently granted for this repository.
 
 If you use or reference this Lean 4 formalization, please cite Travis Darshan. Formal citation metadata is available in `CITATION.cff`.
+
+### Zenodo archive
+
+**Stage A release DOI:** https://doi.org/10.5281/zenodo.21960407
+
+**All versions / persistent project DOI:** https://doi.org/10.5281/zenodo.21960406
+
+Archived release: `v2026.08.15-stage-a`
