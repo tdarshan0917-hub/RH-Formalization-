@@ -8,7 +8,7 @@
 
 Lean `v4.30.0-rc2` with pinned Mathlib.
 
-> **Public development began May 30, 2026. Current status — August 14, 2026:** RH-Formalization contains a machine-checked conditional theorem whose conclusion is the full Riemann Hypothesis: `RH_from_pairedTransform_only : hP → RiemannHypothesis`. The active research program is to prove the explicit analytic frontier `hP` unconditionally.
+> **Public development began May 30, 2026. Current status — August 17, 2026:** Stage A is complete through D1–D6, culminating in the machine-checked conditional endpoint `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis`. The active research program is directed at establishing the explicit analytic hypothesis `hP_dense` unconditionally.
 
 > **Stage A is now machine-certified through D1–D6.** The dense reconstruction culminates in `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis` on the dense `L = X^(3/4) = o(X)` schedule. The active research frontier is to establish the explicit analytic hypothesis `hP_dense` unconditionally.
 

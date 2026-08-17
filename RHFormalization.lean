@@ -253,3 +253,5 @@ import RHFormalization.SelectedTracePayloadFromStageFields
 import RHFormalization.SelectedTracePayloadFromStageFieldsClosed
 
 import RHFormalization.SelectedOperatorLayerFromStageFields
+
+import RHFormalization.DenseSealEndpoint
