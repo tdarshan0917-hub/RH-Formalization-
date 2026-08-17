@@ -704,6 +704,7 @@ If you use or reference this Lean 4 formalization, please cite Travis Darshan. F
 **All versions / persistent project DOI:** https://doi.org/10.5281/zenodo.21960406
 
 Archived release: `v2026.08.15-stage-a`
+
 ---
 
 ## Independent verification
