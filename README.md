@@ -704,3 +704,45 @@ If you use or reference this Lean 4 formalization, please cite Travis Darshan. F
 **All versions / persistent project DOI:** https://doi.org/10.5281/zenodo.21960406
 
 Archived release: `v2026.08.15-stage-a`
+---
+
+## Independent verification
+
+RH-Formalization is intended to be independently inspectable. To reproduce the archived Stage A endpoint from a fresh clone:
+
+```bash
+git clone https://github.com/tdarshan0917-hub/RH-Formalization-.git
+cd RH-Formalization-
+git checkout v2026.08.15-stage-a
+lake exe cache get
+lake build RHFormalization.DenseSealEndpoint
+```
+
+The Stage A endpoint is:
+
+```lean
+RH_from_pairedTransform_only_dense :
+    hP_dense → RiemannHypothesis
+```
+
+The build prints the theorem's axiom dependency audit:
+
+```text
+'RHFormalization.RH_from_pairedTransform_only_dense'
+depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+with no project-specific mathematical axioms in that dependency cone.
+
+This command verifies that the published conditional Stage A theorem is accepted by Lean and exposes its axiom dependencies. It does not assert that RH has already been proved unconditionally: the active research objective is to establish the remaining analytic hypothesis `hP_dense` unconditionally.
+
+The project's RH predicate is defined from Mathlib's actual `riemannZeta`. In `RHFormalization/Basic.lean`, nontrivial zeros are represented by
+
+```lean
+riemannZeta ρ = 0 ∧ 0 < ρ.re ∧ ρ.re < 1
+```
+
+and the project endpoint asserts that every such zero has real part `1/2`.
+
+Independent reviewers are encouraged to inspect the theorem statement, semantic definitions, dependency cone, and source directly rather than relying on screenshots or AI assessments.
+
