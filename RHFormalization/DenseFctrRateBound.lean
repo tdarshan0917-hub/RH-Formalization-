@@ -359,6 +359,59 @@ theorem denseFctr_norm_le_rate (K : Set ℂ) (hK : IsCompact K) (hKΩ : K ⊆ Ω
               + ((n:ℝ)+2) ^ (-(3:ℝ)/4)) := by
         nlinarith [mul_nonneg hA.le hr2, mul_nonneg hB.le hr1]
 
+
+/-! ## Installment 2c: rate → 0 and the rate-free compact-uniform corollary -/
+
+/-- `x^{-1/8}·log x → 0` at `+∞`, from `log = o(x^{1/8})`. -/
+theorem rpow_neg_eighth_mul_log_tendsto_zero :
+    Filter.Tendsto (fun x : ℝ => x ^ (-(1:ℝ)/8) * Real.log x)
+      Filter.atTop (nhds 0) := by
+  have h := (isLittleO_log_rpow_atTop (by norm_num : (0:ℝ) < 1/8)).tendsto_div_nhds_zero
+  refine h.congr' ?_
+  filter_upwards [Filter.eventually_ge_atTop (0:ℝ)] with x hx
+  rw [neg_div, Real.rpow_neg hx, div_eq_mul_inv, mul_comm]
+
+/-- The continuous-variable rate tends to zero. -/
+theorem rateFun_tendsto_zero :
+    Filter.Tendsto
+      (fun x : ℝ => x ^ (-(1:ℝ)/8) * (1 + Real.log x) + x ^ (-(3:ℝ)/4))
+      Filter.atTop (nhds 0) := by
+  have h0 : Filter.Tendsto (fun x : ℝ => x ^ (-(1:ℝ)/8)) Filter.atTop (nhds 0) := by
+    have := tendsto_rpow_neg_atTop (y := (1:ℝ)/8) (by norm_num)
+    simpa [neg_div] using this
+  have h2 : Filter.Tendsto (fun x : ℝ => x ^ (-(3:ℝ)/4)) Filter.atTop (nhds 0) := by
+    have := tendsto_rpow_neg_atTop (y := (3:ℝ)/4) (by norm_num)
+    simpa [neg_div] using this
+  have h3 := rpow_neg_eighth_mul_log_tendsto_zero
+  have h1 : Filter.Tendsto (fun x : ℝ => x ^ (-(1:ℝ)/8) * (1 + Real.log x))
+      Filter.atTop (nhds (0 + 0)) :=
+    (h0.add h3).congr (fun x => by ring)
+  have := h1.add h2
+  simpa using this
+
+/-- **B6 rate decay.** `denseFctrRate n → 0`. -/
+theorem denseFctrRate_tendsto_zero :
+    Filter.Tendsto denseFctrRate Filter.atTop (nhds 0) := by
+  have hg : Filter.Tendsto (fun n : ℕ => (n : ℝ) + 2) Filter.atTop Filter.atTop :=
+    Filter.tendsto_atTop_add_const_right _ 2 tendsto_natCast_atTop_atTop
+  have heq : denseFctrRate
+      = (fun x : ℝ => x ^ (-(1:ℝ)/8) * (1 + Real.log x) + x ^ (-(3:ℝ)/4))
+          ∘ (fun n : ℕ => (n : ℝ) + 2) := by
+    funext n; rfl
+  rw [heq]
+  exact rateFun_tendsto_zero.comp hg
+
+/-- **B6 rate-free corollary.** `denseFctr` is uniformly bounded on every
+compact `K ⊆ Ω`, uniformly in `n`. -/
+theorem denseFctr_bounded_on_compact (K : Set ℂ) (hK : IsCompact K) (hKΩ : K ⊆ Ω) :
+    ∃ M : ℝ, ∀ n : ℕ, ∀ s ∈ K, ‖denseFctr n s‖ ≤ M := by
+  obtain ⟨C, hC, hrate⟩ := denseFctr_norm_le_rate K hK hKΩ
+  obtain ⟨R, hR⟩ := denseFctrRate_tendsto_zero.bddAbove_range
+  refine ⟨C * R, fun n s hs => ?_⟩
+  have hn : denseFctrRate n ≤ R := hR ⟨n, rfl⟩
+  calc ‖denseFctr n s‖ ≤ C * denseFctrRate n := hrate n s hs
+    _ ≤ C * R := mul_le_mul_of_nonneg_left hn hC.le
+
 #print axioms perSpike_term1_le
 #print axioms perSpike_term2_le
 #print axioms perSpike_term3_le
@@ -372,6 +425,11 @@ theorem denseFctr_norm_le_rate (K : Set ℂ) (hK : IsCompact K) (hKΩ : K ⊆ Ω
 #print axioms admR_div_denseL_le
 #print axioms denseFctr_norm_le_majorant
 #print axioms denseFctr_norm_le_rate
+
+#print axioms rpow_neg_eighth_mul_log_tendsto_zero
+#print axioms rateFun_tendsto_zero
+#print axioms denseFctrRate_tendsto_zero
+#print axioms denseFctr_bounded_on_compact
 
 end
 
