@@ -69,10 +69,92 @@ theorem intervalIntegrable_weight_galerkinT_diag (n : ℕ) (m : Fin (denseN n)) 
   exact ((by fun_prop : Continuous fun u : ℝ => Real.exp (u/2)).continuousOn).mul
     (continuousOn_galerkinT_diag n m)
 
+
+/-! ## 7a: sum/integral swap and the trace identity
+`2·denseFreePairedTransform − denseIgal = denseCenteredTrace`. -/
+
+/-- Complex-coerced weighted diagonal entry times a constant is integrable. -/
+theorem intervalIntegrable_weight_galerkinT_diag_C (n : ℕ) (m : Fin (denseN n)) (c : ℂ) :
+    IntervalIntegrable
+      (fun u : ℝ =>
+        ((Real.exp (u/2) * galerkinT (N := denseN n) (denseL n) u m m : ℝ) : ℂ) * c)
+      MeasureTheory.volume 0 (admR n) := by
+  have hR0 : (0:ℝ) ≤ admR n := (admR_pos n).le
+  apply ContinuousOn.intervalIntegrable
+  rw [Set.uIcc_of_le hR0]
+  apply ContinuousOn.mul _ continuousOn_const
+  apply Complex.continuous_ofReal.comp_continuousOn
+  exact ((by fun_prop : Continuous fun u : ℝ => Real.exp (u/2)).continuousOn).mul
+    (continuousOn_galerkinT_diag n m)
+
+/-- **7a-I**: `I^gal` in trace form — the integral passes inside the finite sum. -/
+theorem denseIgal_eq_trace_form (n : ℕ) (s : ℂ) :
+    denseIgal n s
+      = ((1 / denseL n : ℝ) : ℂ) *
+          ∑ m : Fin (denseN n),
+            (((∫ u in (0:ℝ)..(admR n),
+                Real.exp (u/2) * galerkinT (N := denseN n) (denseL n) u m m) : ℝ) : ℂ) *
+              (1 / (s + (1/4 : ℂ) + ((galerkinLam (denseL n) (m : ℕ) : ℝ) : ℂ))) := by
+  unfold denseIgal
+  have hint : (fun u : ℝ => ((Real.exp (u/2) : ℝ) : ℂ) * denseKernelN n u s)
+      = fun u : ℝ => ((1 / denseL n : ℝ) : ℂ) *
+          ∑ m : Fin (denseN n),
+            ((Real.exp (u/2) * galerkinT (N := denseN n) (denseL n) u m m : ℝ) : ℂ) *
+              (1 / (s + (1/4 : ℂ) + ((galerkinLam (denseL n) (m : ℕ) : ℝ) : ℂ))) := by
+    funext u
+    unfold denseKernelN
+    rw [galerkinSpikeTransform_eq_diag_pairing]
+    simp only [Finset.mul_sum]
+    refine Finset.sum_congr rfl (fun m _ => ?_)
+    push_cast
+    ring
+  rw [hint, intervalIntegral.integral_const_mul (𝕜 := ℂ),
+    intervalIntegral.integral_finset_sum
+      (fun m _ => intervalIntegrable_weight_galerkinT_diag_C n m _)]
+  congr 1
+  refine Finset.sum_congr rfl (fun m _ => ?_)
+  rw [intervalIntegral.integral_mul_const (𝕜 := ℂ), intervalIntegral.integral_ofReal]
+
+/-- **7a-S**: `P^gal = 2·denseFreePairedTransform` in trace form. -/
+theorem two_densePaired_eq_trace_form (n : ℕ) (s : ℂ) :
+    (2 : ℂ) * denseFreePairedTransform n s
+      = ((1 / denseL n : ℝ) : ℂ) *
+          ∑ m : Fin (denseN n),
+            (((∑ q ∈ activePrimePowerPairsCenterBelow (admR n),
+                q.weightReal * galerkinT (N := denseN n) (denseL n) q.center m m) : ℝ) : ℂ) *
+              (1 / (s + (1/4 : ℂ) + ((galerkinLam (denseL n) (m : ℕ) : ℝ) : ℂ))) := by
+  rw [two_densePaired_eq_Pgal]
+  unfold denseKernelN
+  simp only [galerkinSpikeTransform_eq_diag_pairing,
+    PrimePowerPair.weightC_eq_coe_weightReal]
+  push_cast
+  simp only [Finset.mul_sum, Finset.sum_mul]
+  rw [Finset.sum_comm]
+  refine Finset.sum_congr rfl (fun q _ => Finset.sum_congr rfl (fun m _ => ?_))
+  ring
+
+/-- **B(i)-7a**: `P^gal − I^gal = 2τ_n(D_s C_n)`. -/
+theorem two_densePaired_sub_Igal_eq_trace (n : ℕ) (s : ℂ) :
+    (2 : ℂ) * denseFreePairedTransform n s - denseIgal n s
+      = denseCenteredTrace n s := by
+  rw [two_densePaired_eq_trace_form, denseIgal_eq_trace_form]
+  unfold denseCenteredTrace
+  simp only [denseCenteredMatrix_apply, denseCenteredEntry]
+  rw [← mul_sub, ← Finset.sum_sub_distrib]
+  congr 1
+  refine Finset.sum_congr rfl (fun m _ => ?_)
+  push_cast
+  ring
+
 #print axioms denseIgal
 #print axioms denseCenteredTrace
 #print axioms continuousOn_galerkinT_diag
 #print axioms intervalIntegrable_weight_galerkinT_diag
+
+#print axioms intervalIntegrable_weight_galerkinT_diag_C
+#print axioms denseIgal_eq_trace_form
+#print axioms two_densePaired_eq_trace_form
+#print axioms two_densePaired_sub_Igal_eq_trace
 
 end
 
