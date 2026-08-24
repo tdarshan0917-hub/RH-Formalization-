@@ -47,7 +47,8 @@ theorem sum_inv_one_add_galerkinLam_le (N : ℕ) (L : ℝ) (hL : 0 < L) :
     congr 2
     push_cast
     ring
-  rw [Finset.sum_congr rfl (fun m _ => hlam m), Fin.sum_univ_eq_sum_range]
+  rw [Finset.sum_congr rfl (fun m _ => hlam m),
+    Fin.sum_univ_eq_sum_range (fun i : ℕ => swInt L ((i : ℝ) + 1)) N]
   -- per-block: g(i+1) ≤ ∫_{i}^{i+1} g  (g antitone on [0,∞))
   have hstep : ∀ i ∈ Finset.range N,
       swInt L ((i : ℝ) + 1) ≤ ∫ x in (i : ℝ)..((i : ℝ) + 1), swInt L x := by
@@ -65,15 +66,12 @@ theorem sum_inv_one_add_galerkinLam_le (N : ℕ) (L : ℝ) (hL : 0 < L) :
     have hx1 : x ≤ (i : ℝ) + 1 := hx.2
     have hx0 : (0:ℝ) ≤ x := le_trans hi0 hx.1
     have hfrac : Real.pi * x / L ≤ Real.pi * ((i : ℝ) + 1) / L := by
-      apply div_le_div_of_nonneg_right ?_ hL
+      apply div_le_div_of_nonneg_right ?_ hL.le
       exact mul_le_mul_of_nonneg_left hx1 hπ.le
     have h0 : (0:ℝ) ≤ Real.pi * x / L := by positivity
     have hsq : (Real.pi * x / L) ^ 2 ≤ (Real.pi * ((i : ℝ) + 1) / L) ^ 2 := by
       nlinarith
-    first
-      | (apply inv_le_inv_of_le (by positivity); linarith)
-      | (gcongr; linarith)
-      | (apply one_div_le_one_div_of_le (by positivity) |>.mp; linarith)
+    exact inv_anti₀ (by positivity) (by linarith)
   calc (∑ i ∈ Finset.range N, swInt L ((i : ℝ) + 1))
       ≤ ∑ i ∈ Finset.range N, ∫ x in (i : ℝ)..((i : ℝ) + 1), swInt L x :=
         Finset.sum_le_sum hstep
