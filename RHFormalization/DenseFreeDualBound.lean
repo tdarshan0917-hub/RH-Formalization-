@@ -112,9 +112,56 @@ theorem denseS0_dnorm_bounded_on_compact
         field_simp
         ring
 
+
+/-! ## 8b: compact-uniform bound on the perturbed dual factor S^V -/
+
+/-- The potential rate is uniformly bounded: `ε_n ≤ 24(log4+4)`. -/
+theorem denseVrate_le_const (n : ℕ) :
+    denseVrate n ≤ 24 * (Real.log 4 + 4) := by
+  unfold denseVrate
+  have hB : (0:ℝ) ≤ 24 * (Real.log 4 + 4) := by
+    have := Real.log_nonneg (show (1:ℝ) ≤ 4 by norm_num)
+    nlinarith
+  have hx : (1:ℝ) ≤ (n:ℝ) + 2 := by
+    have := Nat.cast_nonneg (α := ℝ) n; linarith
+  have hr : ((n:ℝ)+2) ^ (-(1:ℝ)/8) ≤ 1 := by
+    calc ((n:ℝ)+2) ^ (-(1:ℝ)/8)
+        ≤ ((1:ℝ)) ^ (-(1:ℝ)/8) := by
+          apply Real.rpow_le_rpow_of_nonpos (by norm_num) hx
+          norm_num
+      _ = 1 := Real.one_rpow _
+  calc 24 * (Real.log 4 + 4) * ((n:ℝ)+2) ^ (-(1:ℝ)/8)
+      ≤ 24 * (Real.log 4 + 4) * 1 := mul_le_mul_of_nonneg_left hr hB
+    _ = 24 * (Real.log 4 + 4) := mul_one _
+
+/-- **B(i)-8b**: compact-uniform bound on `S^V` at the live dual vector. -/
+theorem denseSVReal_dnorm_bounded_on_compact
+    (K : Set ℂ) (hK : IsCompact K) (hKΩ : K ⊆ Ω) {a : ℝ} (ha : 0 < a) :
+    ∃ C : ℝ, 0 < C ∧ ∀ n : ℕ, ∀ s ∈ K,
+      denseSVReal n a (denseDnorm n s) ≤ C := by
+  obtain ⟨C₀, hC₀, hS0⟩ := denseS0_dnorm_bounded_on_compact K hK hKΩ a
+  refine ⟨(1 + 24 * (Real.log 4 + 4) / a) * C₀, by positivity, ?_⟩
+  intro n s hs
+  have h1 := denseSVReal_le n ha (denseDnorm n s)
+  have hS0n : 0 ≤ denseS0 n a (denseDnorm n s) :=
+    denseS0_nonneg n ha.le _
+  have hrate : denseVrate n / a ≤ 24 * (Real.log 4 + 4) / a :=
+    div_le_div_of_nonneg_right (denseVrate_le_const n) ha.le
+  calc denseSVReal n a (denseDnorm n s)
+      ≤ (1 + denseVrate n / a) * denseS0 n a (denseDnorm n s) := h1
+    _ ≤ (1 + 24 * (Real.log 4 + 4) / a) * denseS0 n a (denseDnorm n s) := by
+        apply mul_le_mul_of_nonneg_right _ hS0n
+        linarith
+    _ ≤ (1 + 24 * (Real.log 4 + 4) / a) * C₀ := by
+        apply mul_le_mul_of_nonneg_left (hS0 n s hs)
+        have := Real.log_nonneg (show (1:ℝ) ≤ 4 by norm_num)
+        positivity
+
 #print axioms denseDnorm
 #print axioms denseDnorm_le
 #print axioms denseS0_dnorm_bounded_on_compact
+#print axioms denseVrate_le_const
+#print axioms denseSVReal_dnorm_bounded_on_compact
 
 end
 
