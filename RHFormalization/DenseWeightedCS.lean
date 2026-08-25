@@ -69,9 +69,27 @@ theorem quadForm_cauchy_schwarz {A : Matrix (Fin N) (Fin N) ℝ}
   rw [hb] at hdisc
   nlinarith [hdisc]
 
+
+/-! ## inst.2: CS against the inverse — `(u ⬝ᵥ y)² ≤ (uᵀAu)·(yᵀA⁻¹y)` for PosDef A -/
+
+/-- **8c inverse form**: instantiate the core at `v := A⁻¹ *ᵥ y`. -/
+theorem quadForm_cauchy_schwarz_inv {A : Matrix (Fin N) (Fin N) ℝ}
+    (hA : A.PosDef) (hsym : ∀ i j, A i j = A j i) (u y : Fin N → ℝ) :
+    (u ⬝ᵥ y) ^ 2 ≤ (u ⬝ᵥ A *ᵥ u) * (y ⬝ᵥ A⁻¹ *ᵥ y) := by
+  have hdet : IsUnit A.det := (Matrix.isUnit_iff_isUnit_det A).mp hA.isUnit
+  have hAAinv : A * A⁻¹ = 1 := Matrix.mul_nonsing_inv A hdet
+  have hcore := quadForm_cauchy_schwarz hA.posSemidef hsym u (A⁻¹ *ᵥ y)
+  have hmid : A *ᵥ (A⁻¹ *ᵥ y) = y := by
+    rw [Matrix.mulVec_mulVec, hAAinv, Matrix.one_mulVec]
+  rw [hmid] at hcore
+  have hswap : (A⁻¹ *ᵥ y) ⬝ᵥ y = y ⬝ᵥ A⁻¹ *ᵥ y := dotProduct_comm _ _
+  calc (u ⬝ᵥ y) ^ 2 ≤ (u ⬝ᵥ A *ᵥ u) * ((A⁻¹ *ᵥ y) ⬝ᵥ y) := hcore
+    _ = (u ⬝ᵥ A *ᵥ u) * (y ⬝ᵥ A⁻¹ *ᵥ y) := by rw [hswap]
+
 #print axioms dotProduct_mulVec_symm
 #print axioms quadForm_nonneg
 #print axioms quadForm_cauchy_schwarz
+#print axioms quadForm_cauchy_schwarz_inv
 
 end
 
