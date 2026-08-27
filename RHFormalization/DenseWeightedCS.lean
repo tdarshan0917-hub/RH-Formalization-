@@ -86,10 +86,94 @@ theorem quadForm_cauchy_schwarz_inv {A : Matrix (Fin N) (Fin N) ℝ}
   calc (u ⬝ᵥ y) ^ 2 ≤ (u ⬝ᵥ A *ᵥ u) * ((A⁻¹ *ᵥ y) ⬝ᵥ y) := hcore
     _ = (u ⬝ᵥ A *ᵥ u) * (y ⬝ᵥ A⁻¹ *ᵥ y) := by rw [hswap]
 
+
+/-! ## inst.3a: diagonal trace simplifications (GPT-signed separate bank) -/
+
+/-- `Tr(M·diag(d)) = Σ M_ii·d_i`. -/
+theorem trace_mul_diagonal (M : Matrix (Fin N) (Fin N) ℝ) (d : Fin N → ℝ) :
+    (M * Matrix.diagonal d).trace = ∑ i, M i i * d i := by
+  rw [Matrix.trace]
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  rw [Matrix.diag_apply, Matrix.mul_diagonal]
+
+/-- **The signed diagonal-only fact**: `Tr(diag(d)·A·diag(d)) = Σ A_ii·d_i²` —
+off-diagonal entries of `A` never enter the dual factor. -/
+theorem trace_diag_mul_A_mul_diag (d : Fin N → ℝ) (A : Matrix (Fin N) (Fin N) ℝ) :
+    (Matrix.diagonal d * A * Matrix.diagonal d).trace = ∑ i, A i i * d i ^ 2 := by
+  rw [trace_mul_diagonal]
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  rw [Matrix.diagonal_mul]
+  ring
+
+/-- `Tr(Cᵀ·diag(d)) = Tr(diag(d)·C)` (both are `Σ d_i·C_ii`). -/
+theorem trace_transpose_mul_diagonal_eq (C : Matrix (Fin N) (Fin N) ℝ) (d : Fin N → ℝ) :
+    (Cᵀ * Matrix.diagonal d).trace = (Matrix.diagonal d * C).trace := by
+  rw [trace_mul_diagonal, trace_diagonal_mul]
+  refine Finset.sum_congr rfl (fun i _ => ?_)
+  rw [Matrix.transpose_apply]
+  ring
+
+/-! ## inst.3b: weighted matrix/Frobenius Cauchy–Schwarz (GPT-signed target) -/
+
+/-- **B(i)-8c inst.3b**: `Tr(DC)² ≤ Tr(DAD)·Tr(CᵀA⁻¹C)` for `D = diagonal d`,
+real `C`, PosDef symmetric real `A`. Square-root-free: positivity of
+`Tr((C − t·AD)ᵀ A⁻¹ (C − t·AD))` for all real `t` + `discrim_le_zero`. -/
+theorem trace_diag_cauchy_schwarz (d : Fin N → ℝ)
+    (C A : Matrix (Fin N) (Fin N) ℝ) (hA : A.PosDef) (hsym : Aᵀ = A) :
+    ((Matrix.diagonal d * C).trace) ^ 2
+      ≤ (Matrix.diagonal d * A * Matrix.diagonal d).trace
+          * (Cᵀ * A⁻¹ * C).trace := by
+  have hdet : IsUnit A.det := (Matrix.isUnit_iff_isUnit_det A).mp hA.isUnit
+  have hAAinv : A * A⁻¹ = 1 := Matrix.mul_nonsing_inv A hdet
+  have hAinvA : A⁻¹ * A = 1 := Matrix.nonsing_inv_mul A hdet
+  have hpsd : ∀ M : Matrix (Fin N) (Fin N) ℝ, 0 ≤ (Mᵀ * A⁻¹ * M).trace := by
+    intro M
+    have hinv : (A⁻¹).PosSemidef := (Matrix.PosDef.inv hA).posSemidef
+    have h1 : (Mᴴ * A⁻¹ * M).PosSemidef := hinv.conjTranspose_mul_mul_same M
+    rw [Matrix.conjTranspose_eq_transpose_of_trivial] at h1
+    exact h1.trace_nonneg
+  have hcol1 : Cᵀ * A⁻¹ * (A * Matrix.diagonal d) = Cᵀ * Matrix.diagonal d := by
+    rw [← mul_assoc, mul_assoc Cᵀ A⁻¹ A, hAinvA, mul_one]
+  have hM : ∀ t : ℝ,
+      (C - t • (A * Matrix.diagonal d))ᵀ * A⁻¹ * (C - t • (A * Matrix.diagonal d))
+        = Cᵀ * A⁻¹ * C - t • (Cᵀ * Matrix.diagonal d)
+            - t • (Matrix.diagonal d * C)
+            + (t * t) • (Matrix.diagonal d * A * Matrix.diagonal d) := by
+    intro t
+    have hT : (C - t • (A * Matrix.diagonal d))ᵀ * A⁻¹
+        = Cᵀ * A⁻¹ - t • Matrix.diagonal d := by
+      rw [Matrix.transpose_sub, Matrix.transpose_smul, Matrix.transpose_mul,
+          Matrix.diagonal_transpose, hsym, sub_mul, smul_mul_assoc, mul_assoc,
+          hAAinv, mul_one]
+    rw [hT]
+    simp only [sub_mul, mul_sub, smul_mul_assoc, mul_smul_comm, smul_smul,
+      smul_sub]
+    rw [hcol1, ← mul_assoc (Matrix.diagonal d) A (Matrix.diagonal d)]
+    abel
+  have hquad : ∀ t : ℝ,
+      0 ≤ (Matrix.diagonal d * A * Matrix.diagonal d).trace * (t * t)
+          + (-(2 * (Matrix.diagonal d * C).trace)) * t
+          + (Cᵀ * A⁻¹ * C).trace := by
+    intro t
+    have h0 := hpsd (C - t • (A * Matrix.diagonal d))
+    rw [hM t] at h0
+    simp only [Matrix.trace_add, Matrix.trace_sub, Matrix.trace_smul,
+      smul_eq_mul] at h0
+    rw [trace_transpose_mul_diagonal_eq] at h0
+    nlinarith [h0]
+  have hdisc := discrim_le_zero hquad
+  simp only [discrim] at hdisc
+  nlinarith [hdisc]
+
 #print axioms dotProduct_mulVec_symm
 #print axioms quadForm_nonneg
 #print axioms quadForm_cauchy_schwarz
 #print axioms quadForm_cauchy_schwarz_inv
+#print axioms trace_diagonal_mul
+#print axioms trace_mul_diagonal
+#print axioms trace_diag_mul_A_mul_diag
+#print axioms trace_transpose_mul_diagonal_eq
+#print axioms trace_diag_cauchy_schwarz
 
 end
 
