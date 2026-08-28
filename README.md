@@ -8,9 +8,13 @@
 
 Lean `v4.30.0-rc2` with pinned Mathlib.
 
-> **Public development began May 30, 2026. Current status — August 17, 2026:** Stage A is complete through D1–D6, culminating in the machine-checked conditional endpoint `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis`. The active research program is directed at establishing the explicit analytic hypothesis `hP_dense` unconditionally.
+> **Public development began May 30, 2026. Current status — August 28, 2026:** Stage A is complete and machine-certified: `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis`, with the conclusion additionally locked to Mathlib's root-level `RiemannHypothesis` predicate via the certified equivalence `RH_semantic_lock` and the root-level endpoint `RH_from_pairedTransform_only_dense_mathlib`. Stage B(i) is now reducing the hypothesis further: bricks B1–B7 are certified and closed; B8, the final brick, is in progress.
 
-> **Stage A is now machine-certified through D1–D6.** The dense reconstruction culminates in `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis` on the dense `L = X^(3/4) = o(X)` schedule. The active research frontier is to establish the explicit analytic hypothesis `hP_dense` unconditionally.
+> **Current live chain — the first implication is IN PROGRESS, not yet certified:**
+>
+> `[∃ a > 0, ∃ C_Q, ∀ n, denseQV n a ≤ C_Q]  ⟹  hP_dense  ⟹  RiemannHypothesis`
+>
+> The second implication is Stage A: certified, on the dense `L = X^(3/4) = o(X)` schedule, independently reproducible below. The first implication is Stage B(i): bricks B1–B7 certified, B8 in progress. The perturbed energy is `denseQV n a = (1/(2·Lₙ)) · Tr[Cₙᵀ (Λₙ + a·I + Vₙ)⁻¹ Cₙ]`, where `Cₙ` is the decoded centered prime observable and `Vₙ` the decoded Gaussian prime potential, kept inside the inverse. When B8 closes, the single remaining open problem (Stage B(ii)) is the uniform `denseQV` bound. No unconditional result is claimed.
 
 ## Why this repository is significant
 
@@ -186,7 +190,9 @@ This audit is one of the central results of the formalization effort. It shows L
 
 ---
 
-# New positive-energy framework
+# Earlier positive-energy framework (tilted route — certified, off-live)
+
+> **Note (August 28, 2026):** the E1–E4a bricks below remain valid kernel-certified Lean theorems, but this tilted (`η`), code-centered framework has been superseded as the live route. The live Stage B(i) route uses the untilted (`η = 0`) endpoint with decoded physical prime-power centers: `denseCenteredMatrix`, `denseV`, `denseAV`, `denseQV` (see the live chain at the top). This section is retained as certified research record.
 
 After the residual audit isolated the remaining analytic seam, the project began developing a quadratic positive-energy formulation rather than another absolute-value estimate on the original linear transform.
 
@@ -357,7 +363,9 @@ Together these files add a machine-checked positive quadratic structure on top o
 
 ---
 
-# Research-stage mathematics
+# Research-stage mathematics (earlier free-energy reduction — superseded as live route)
+
+> **Note (August 28, 2026):** the finite-to-continuum and weighted mean-square material below belongs to the earlier free/tilted energy program. The live route keeps the full potential `Vₙ` inside the resolvent (`denseQV`) precisely because the free-energy reduction collapses to a classical criterion. Retained as research record.
 
 The results in this section are **paper-derived and under active formalization/audit**. They should not yet be read as kernel-certified Lean theorems.
 
@@ -462,7 +470,15 @@ These implications are being kept distinct from the machine-certified results ab
 
 ---
 
-# Current unconditional frontier
+# Current unconditional frontier (August 28, 2026)
+
+The live open problem, once B8 closes, is the uniform perturbed-energy bound:
+
+    ∃ a > 0, ∃ C_Q, ∀ n, denseQV n a ≤ C_Q
+
+with `denseQV n a = (1/(2·Lₙ)) · Tr[Cₙᵀ (Λₙ + a·I + Vₙ)⁻¹ Cₙ]`. This theorem is **not proved**, and no claim is made here that it holds. Stage B(ii) — investigating it via the decoded Gaussian prime potential (coercivity/observability of `Vₙ` against `Cₙ`, with the free operator `Λₙ + aI` retained) — begins only after B8 is certified and audited. Failure of the mechanism would itself be recorded as a formal obstruction result.
+
+# Earlier unconditional frontier (tilted mean-square form — superseded)
 
 The decisive theorem is **not proved**:
 
@@ -708,6 +724,8 @@ Archived release: `v2026.08.15-stage-a`
 ---
 
 ## Independent verification
+
+**Semantic lock (added August 2026):** the project predicate is certified equivalent to Mathlib's root-level statement: `RH_semantic_lock : RHFormalization.RiemannHypothesis ↔ _root_.RiemannHypothesis`, and the endpoint is exported against Mathlib's own predicate as `RH_from_pairedTransform_only_dense_mathlib`, both auditing to `[propext, Classical.choice, Quot.sound]`. A reviewer therefore does not need to trust the project's definitions to know what the conclusion asserts.
 
 RH-Formalization is intended to be independently inspectable. To reproduce the archived Stage A endpoint from a fresh clone:
 
