@@ -110,9 +110,71 @@ theorem gaussBump_window_overlap_ge (L a b : ℝ)
         intervalIntegral.integral_mono_interval h0m hmm hmL
           (MeasureTheory.ae_of_all _ hnn) (hcont.intervalIntegrable _ _)
 
+
+/-! ## K4 — Raw Gaussian Frame Obstruction (assembly) -/
+
+/-- Window Gram matrix of live unit bumps at centers `ctr`. -/
+noncomputable def windowGram {ι : Type*} (L : ℝ) (ctr : ι → ℝ) (i j : ι) : ℝ :=
+  ∫ x in (0:ℝ)..L, gaussBump 1 (x - ctr i) * gaussBump 1 (x - ctr j)
+
+/-- On a unit shell `[R−1, R]` inside the interior margin, every Gram entry is
+bounded below by the K2 constant. -/
+theorem windowGram_ge_on_shell {ι : Type*} (L R : ℝ) (ctr : ι → ℝ)
+    (hR : 5 / 2 ≤ R) (hL : R + 3 / 2 ≤ L)
+    (S : Finset ι) (hS : ∀ i ∈ S, R - 1 ≤ ctr i ∧ ctr i ≤ R) :
+    ∀ i ∈ S, ∀ j ∈ S, Real.exp (-9 / 4) / Real.pi ≤ windowGram L ctr i j := by
+  intro i hi j hj
+  obtain ⟨hi1, hi2⟩ := hS i hi
+  obtain ⟨hj1, hj2⟩ := hS j hj
+  unfold windowGram
+  apply gaussBump_window_overlap_ge L (ctr i) (ctr j)
+  · linarith
+  · linarith
+  · linarith
+  · linarith
+  · rw [abs_le]
+    constructor <;> linarith
+
+/-- **K4 — Raw Gaussian Frame Obstruction.** Any Bessel constant for the
+window Gram form of unit bumps centered in a unit shell is at least
+`(e^{−9/4}/π)·|S|`. Generic in the index family; the live prime-power shell
+is one instance. -/
+theorem rawGaussianFrame_bessel_ge {ι : Type*} (L R : ℝ) (ctr : ι → ℝ)
+    (hR : 5 / 2 ≤ R) (hL : R + 3 / 2 ≤ L)
+    (S : Finset ι) (hS : ∀ i ∈ S, R - 1 ≤ ctr i ∧ ctr i ≤ R)
+    (hcard : 0 < S.card) (B : ℝ)
+    (hB : ∀ c : ι → ℝ,
+      ∑ i ∈ S, ∑ j ∈ S, c i * c j * windowGram L ctr i j ≤ B * ∑ i ∈ S, c i ^ 2) :
+    Real.exp (-9 / 4) / Real.pi * (S.card : ℝ) ≤ B :=
+  gram_bessel_const_ge S (windowGram L ctr) _ B hB
+    (windowGram_ge_on_shell L R ctr hR hL S hS) hcard
+
+/-- **K4 + K3.** With the classical shell-count lower bound `|S| ≥ c₀·e^R/R`
+carried as an EXPLICIT hypothesis (not in this Mathlib pin), the Bessel
+constant grows like `e^R/R`: the raw-channel generic-Bessel route cannot be
+stage-uniform. -/
+theorem rawGaussianFrame_bessel_ge_of_shell_count {ι : Type*} (L R : ℝ)
+    (ctr : ι → ℝ) (hR : 5 / 2 ≤ R) (hL : R + 3 / 2 ≤ L)
+    (S : Finset ι) (hS : ∀ i ∈ S, R - 1 ≤ ctr i ∧ ctr i ≤ R)
+    (hcard : 0 < S.card) (B : ℝ)
+    (hB : ∀ c : ι → ℝ,
+      ∑ i ∈ S, ∑ j ∈ S, c i * c j * windowGram L ctr i j ≤ B * ∑ i ∈ S, c i ^ 2)
+    (c₀ : ℝ) (hc₀ : 0 ≤ c₀)
+    (hK3 : c₀ * Real.exp R / R ≤ (S.card : ℝ)) :
+    Real.exp (-9 / 4) / Real.pi * (c₀ * Real.exp R / R) ≤ B := by
+  have h := rawGaussianFrame_bessel_ge L R ctr hR hL S hS hcard B hB
+  calc Real.exp (-9 / 4) / Real.pi * (c₀ * Real.exp R / R)
+      ≤ Real.exp (-9 / 4) / Real.pi * (S.card : ℝ) :=
+        mul_le_mul_of_nonneg_left hK3 (by positivity)
+    _ ≤ B := h
+
+
 #print axioms gram_sum_ge_of_entries_ge
 #print axioms gram_bessel_const_ge
 #print axioms gaussBump_one_ge_of_sq_le
 #print axioms gaussBump_window_overlap_ge
+#print axioms windowGram_ge_on_shell
+#print axioms rawGaussianFrame_bessel_ge
+#print axioms rawGaussianFrame_bessel_ge_of_shell_count
 
 end RHFormalization
