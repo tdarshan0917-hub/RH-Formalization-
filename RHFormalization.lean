@@ -255,3 +255,10 @@ import RHFormalization.SelectedTracePayloadFromStageFieldsClosed
 import RHFormalization.SelectedOperatorLayerFromStageFields
 
 import RHFormalization.DenseSealEndpoint
+
+import RHFormalization.DenseSealB8
+import RHFormalization.RHSemanticLock
+import RHFormalization.FrameConstantLowerBound
+import RHFormalization.RawGaussianFrameObstruction
+import RHFormalization.U4WitnessTransfer
+import RHFormalization.U4ZeroVisibilityAbel
