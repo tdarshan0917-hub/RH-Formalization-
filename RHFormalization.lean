@@ -265,3 +265,4 @@ import RHFormalization.U4ZeroVisibilityAbel
 
 import RHFormalization.DenseEnergyLowerBound
 import RHFormalization.DenseCenteredDiagClosed
+import RHFormalization.DenseDiagLowFreqSplit
