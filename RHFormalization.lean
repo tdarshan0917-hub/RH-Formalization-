@@ -267,3 +267,4 @@ import RHFormalization.DenseEnergyLowerBound
 import RHFormalization.DenseCenteredDiagClosed
 import RHFormalization.DenseDiagLowFreqSplit
 import RHFormalization.DenseTwoModeCos
+import RHFormalization.DensePairBlocks
