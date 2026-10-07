@@ -223,3 +223,5 @@ import RHFormalization.DenseTwoModeCos
 import RHFormalization.DensePairBlocks
 import RHFormalization.PolylogAbelTransfer
 import RHFormalization.PolylogWeightSummable
+import RHFormalization.PolylogStageClosedForm
+import RHFormalization.PolylogShiftIdentity
