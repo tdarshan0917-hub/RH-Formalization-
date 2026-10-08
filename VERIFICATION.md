@@ -55,6 +55,8 @@ lake env lean AxiomCheck.lean
 
 ## Notes
 
+- A full cold build takes roughly 1–2 hours on a laptop (measured: 1 h 42 min, October 7, 2026, fresh clone). `verify.sh` prints nothing until the end; that is expected.
+
 - `lake build` compiles the root module `RHFormalization.lean` and its
   transitive imports (676 files as of October 7, 2026). Files in
   `RHFormalization/` not imported by the root are retained research history and
