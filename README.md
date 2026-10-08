@@ -4,21 +4,23 @@
 
 [![DOI](https://zenodo.org/badge/1316438323.svg)](https://doi.org/10.5281/zenodo.21960406)
 
-**Lean 4 formalization and formal audit of an operator-theoretic / prime-power approach to the Riemann Hypothesis**
+**Lean 4 formalization of an operator-theoretic / prime-power criterion for the Riemann Hypothesis**
 
 Lean `v4.30.0-rc2` with pinned Mathlib.
 
-> **Public development began May 30, 2026. Current status — August 28, 2026:** Stage A is complete and machine-certified: `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis`, with the conclusion additionally locked to Mathlib's root-level `RiemannHypothesis` predicate via the certified equivalence `RH_semantic_lock` and the root-level endpoint `RH_from_pairedTransform_only_dense_mathlib`. Stage B(i) is now reducing the hypothesis further: bricks B1–B7 are certified and closed; B8, the final brick, is in progress.
-
-> **Current live chain — the first implication is IN PROGRESS, not yet certified:**
+> **Status — October 7, 2026.** The principal result is **Stage A**, complete and machine-certified:
 >
-> `[∃ a > 0, ∃ C_Q, ∀ n, denseQV n a ≤ C_Q]  ⟹  hP_dense  ⟹  RiemannHypothesis`
+> `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis`
 >
-> The second implication is Stage A: certified, on the dense `L = X^(3/4) = o(X)` schedule, independently reproducible below. The first implication is Stage B(i): bricks B1–B7 certified, B8 in progress. The perturbed energy is `denseQV n a = (1/(2·Lₙ)) · Tr[Cₙᵀ (Λₙ + a·I + Vₙ)⁻¹ Cₙ]`, where `Cₙ` is the decoded centered prime observable and `Vₙ` the decoded Gaussian prime potential, kept inside the inverse. When B8 closes, the single remaining open problem (Stage B(ii)) is the uniform `denseQV` bound. No unconditional result is claimed.
+> with the conclusion locked to Mathlib's root-level `RiemannHypothesis` by the certified equivalence `RH_semantic_lock` and exported as `RH_from_pairedTransform_only_dense_mathlib`. All endpoints audit to `[propext, Classical.choice, Quot.sound]`; reproduce from a fresh clone with one command (see *Independent verification*).
+>
+> **What the hypothesis is.** `hP_dense` asks that the compensated prime package of a finite Galerkin prime-weighted operator family stay locally bounded on every compact subset of Ω = ℂ ∖ (−∞, 0], uniformly along the dense schedule. An off-critical-line zero ρ produces a pole of the limiting object at −ρ(1−ρ) ∈ Ω; the certified chain turns local boundedness into holomorphy and the pole into a contradiction. Classically, `hP_dense` holds under RH, so the criterion is of exactly RH strength. **No unconditional result is claimed.**
+>
+> **Stage B(i) (the energy route, `RH_of_denseQV_uniform`) is certified but is no longer the live route** — see *Status of the energy route* below. The live frontier is the polylog widening of Stage A (PL series) and the shield question for `hP_dense`.
 
 ## Why this repository is significant
 
-This is a large, author-led Lean 4 research development built around an original mathematical program rather than a textbook transcription. The compiled `RHFormalization/` library currently contains **1,255 Lean files, 125,189 lines of Lean, 2,762 theorem/lemma declarations, 1,132 definitions, and 0 explicit axiom declarations**. The full tracked Lean research record contains **1,878 Lean files and 144,077 lines of Lean**.
+This is a large, author-led Lean 4 research development built around an original mathematical program rather than a textbook transcription. The `RHFormalization/` library currently contains **1,287 Lean files and 129,400 lines of Lean, with 0 explicit axiom declarations and no `sorry`**; the default `lake build` compiles the **676 files (81,054 lines)** reachable from the root module, and the Stage A dependency cone alone is **553 files (66,822 lines)**.
 
 The formalization has functioned as a mathematical instrument as well as a verifier. It has produced a machine-checked conditional theorem to the full Riemann Hypothesis, exact residual-accounting identities that sharpened the operator architecture, structural results clarifying which mechanisms remain viable, and the current dense-schedule reconstruction aimed at proving the remaining analytic frontier unconditionally.
 
@@ -28,98 +30,51 @@ The current RH dependency cone is intentionally narrow, but that should not be c
 
 ## Repository scale
 
-### Compiled Lean library
-
-The compiled `RHFormalization/` library currently contains:
-
-| Metric | Current snapshot |
+| Metric (October 7, 2026) | Count |
 | --- | ---: |
-| Lean 4 source files | **1,255** |
-| Total Lean source lines | **125,189** |
-| Nonblank Lean source lines | **107,955** |
-| Theorem + lemma declarations | **2,762** |
-| Definition declarations | **1,132** |
+| Lean files in `RHFormalization/` | **1,287** |
+| Lean lines in `RHFormalization/` | **129,400** |
+| Files compiled by default `lake build` (root-reachable) | **676** |
+| Lines compiled by default `lake build` | **81,054** |
+| Theorem + lemma declarations (compiled) | **1,798** |
+| Definitions (compiled) | **1,030** |
+| Stage A dependency cone | **553 files / 66,822 lines** |
 | Explicit `axiom` declarations | **0** |
+| Files containing `sorry` | **0** |
 
-### Full research repository
-
-Including the compiled mathematical library together with retained certified infrastructure, historical route work, audit files, reconstruction work, and incomplete probes preserved separately under `Experimental/`:
-
-| Metric | Current snapshot |
-| --- | ---: |
-| Lean files | **1,878** |
-| Total Lean source lines | **144,077** |
-| Nonblank Lean source lines | **123,187** |
-
-The distinction is deliberate: `RHFormalization/` is the principal mathematical library. Results that are no longer required by the shortest live RH path remain part of the mathematical record and reusable infrastructure; only incomplete or superseded probes are separated under `Experimental/`.
-
-### Current machine audit
+Files in `RHFormalization/` not reachable from the root module are earlier routes and probes retained as part of the research record; they are not compiled by default and nothing in the certified endpoints depends on them.
 
 Current archived Stage A release: `v2026.08.15-stage-a` — Zenodo DOI: `10.5281/zenodo.21960407`.
-
-The present public Stage A baseline is the machine-certified dense reconstruction through D1–D6. Its dense conditional endpoint is `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis`. The earlier endpoint `RH_from_pairedTransform_only : hP → RiemannHypothesis` remains part of the certified development.
-
-The Stage A dense endpoint dependency cone audits under `#print axioms` to `[propext, Classical.choice, Quot.sound]`, with no project-specific mathematical axioms. The published Stage A build emitted no `declaration uses 'sorry'` warnings.
 
 ---
 
 # What is machine-certified
 
-## 1. A clean conditional RH endpoint
-
-The current compact endpoint is:
+## 1. The certified criterion (Stage A)
 
 ```lean
-RH_from_pairedTransform_only
+RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis
+RH_semantic_lock : RHFormalization.RiemannHypothesis ↔ _root_.RiemannHypothesis
+RH_from_pairedTransform_only_dense_mathlib : hP_dense → _root_.RiemannHypothesis
 ```
 
-schematically:
-
-```text
-hP  →  RiemannHypothesis
-```
-
-where `hP` is the compact-local boundedness statement
+`hP_dense` is the compact-local boundedness statement
 
 $$
-\forall K\Subset\Omega,\;
-\exists C_K,\;
-\forall n,\;\forall s\in K,\qquad
-\left\|
-2\,\mathrm{adaptiveFreePairedTransform}(c,n,s)
--
-\mathrm{compensatorM}(n,s)
-\right\|
-\le C_K.
+\forall K\Subset\Omega,\;\exists C_K,\;\forall n,\;\forall s\in K,\qquad
+\left\|\,2\,\mathrm{denseFreePairedTransform}(n,s)-\mathrm{compensatorM}(n,s)\right\|\le C_K,
+\qquad \Omega=\mathbb C\setminus(-\infty,0],
 $$
 
-Here
-
-$$
-\Omega=\mathbb C\setminus(-\infty,0].
-$$
-
-The theorem is checked by Lean's kernel and, in the current audit, depends only on:
+on the dense schedule `L = X^(3/4)`. The chain is: finite Galerkin prime-weighted operator family → stage transforms and the compensator identity → the zero-side pole package (poles at −ρ(1−ρ), inside Ω exactly when ρ is off the critical line) → overlap identity on Re s > 1 → Montel/identity-theorem rigidity → RH. Every step is kernel-checked; the theorem audits to
 
 ```text
 [propext, Classical.choice, Quot.sound]
 ```
 
-This is presently the cleanest machine-certified description of the unconditional frontier.
+**Strength.** Classically (von Koch, partial summation) `hP_dense` holds under RH, so the criterion is equivalent to RH up to a Galerkin error that vanishes on the dense schedule. The converse direction is not yet formalized.
 
-The repository also retains the earlier certified route
-
-```text
-hSC → HtailExists → RiemannHypothesis
-```
-
-and the older endpoint
-
-```lean
-RH_from_Htail : HtailExists → RiemannHypothesis
-```
-
-as part of the development history.
+The repository also retains the earlier certified endpoints `RH_from_pairedTransform_only : hP → RiemannHypothesis`, `hSC → HtailExists → RiemannHypothesis` and `RH_from_Htail` as part of the development history.
 
 ---
 
@@ -470,13 +425,22 @@ These implications are being kept distinct from the machine-certified results ab
 
 ---
 
-# Current unconditional frontier (August 28, 2026)
+# Status of the energy route (Stage B(i), `RH_of_denseQV_uniform`)
 
-The live open problem, once B8 closes, is the uniform perturbed-energy bound:
+`RH_of_denseQV_uniform : (∃ a > 0, ∃ C, ∀ n, denseQV n a ≤ C) → RiemannHypothesis` is machine-certified (bricks B1–B8), with `denseQV n a = (1/(2Lₙ))·Tr[Cₙᵀ(Λₙ + aI + Vₙ)⁻¹Cₙ]`. **Its hypothesis cannot hold**, so it is not a route to RH:
 
-    ∃ a > 0, ∃ C_Q, ∀ n, denseQV n a ≤ C_Q
+- *Argument (paper-level, numerically checked).* The diagonal of `Cₙ` at low Galerkin frequency is, up to a vanishing error, the normalized Chebyshev discrepancy Dₙ = (ψ(Xₙ) − Xₙ)/√Xₙ + O(1). Hence `denseQV n a ≥ c(a)·Dₙ² − C`. By Littlewood (1914), ψ(x) − x = Ω±(√x·log log log x), so `denseQV` is unbounded **whether or not RH holds** (if RH fails, the certified theorem itself forbids the bound). A direct numerical computation of `denseQV` from the definitions matches the continuum form (1/2π)∫|F(Xₙ, ½ − iξ)|²/(ξ² + a)dξ to within 1–2%.
+- *Where the strength is lost.* One Cauchy–Schwarz step (B8c) bounds an off-line quantity by an on-line energy; the energy is positive in every world and so cannot encode RH.
+- *Formalization status.* Certified: KB1 `denseQV_ge_diag_sum`, KB2 `denseCenteredMatrix_diag_closed`, KB3a `abs_diag_sub_lowFreqWitness_le`, KB3b-i `cos_sq_add_cos_sq_quarter_ge`, KB3b-ii/iii `sum_range_two_blocks`, `pair_sq_ge_of_phase`. Remaining: the assembly (KB3b-iv) and the final statement with Littlewood as a named classical hypothesis (KB3c).
 
-with `denseQV n a = (1/(2·Lₙ)) · Tr[Cₙᵀ (Λₙ + a·I + Vₙ)⁻¹ Cₙ]`. This theorem is **not proved**, and no claim is made here that it holds. Stage B(ii) — investigating it via the decoded Gaussian prime potential (coercivity/observability of `Vₙ` against `Cₙ`, with the free operator `Λₙ + aI` retained) — begins only after B8 is certified and audited. Failure of the mechanism would itself be recorded as a formal obstruction result.
+This is recorded as an obstruction result, alongside the other certified obstructions (dilution theorems, the per-spike log N loss, and the raw Gaussian frame Bessel bound `rawGaussianFrame_bessel_ge`).
+
+# Current frontier (October 2026)
+
+1. **Polylog widening of Stage A (PL series).** Target: `hP_dense` weakened from *bounded* to *≤ C·(log n)^A* on compacts, by Abel summation against k^(−δ) at the square stages n = M² − 2. Certified so far: PL-1 `abel_transfer_norm_bound_growing`, PL-2 `polylog_abel_weights_bounded`, PL-3 `starObject_square_stage_closed`, PL-4a `partialSum_shift_eq`. In progress: PL-4b (centered Abel bound and main-term comparison), PL-5/6 assembly.
+2. **The shield question.** Any proof of `hP_dense` must supply a bound on the prime side that does not already presuppose the location of the zeros. Since the operator family is built from the prime measure, such a bound is an arithmetic statement; identifying which one is the current research question.
+
+None of this is claimed proved beyond the declarations listed as certified.
 
 # Earlier unconditional frontier (tilted mean-square form — superseded)
 
@@ -637,73 +601,38 @@ The repository intentionally preserves substantial research history rather than 
 
 # Claim discipline
 
-The current state should be read as follows:
-
 ### Machine-certified
 
-- conditional RH endpoints;
-- the clean `RH_from_pairedTransform_only` reduction;
-- raw-tail accounting;
-- the formal diagnosis of the large-time prime-package seam;
-- the established Galerkin/operator infrastructure;
-- the tilted centered observable;
-- positivity of the finite tilted energy;
-- the exact trace/resolvent representation;
-- the finite symmetric energy kernel and its diagonal nonnegativity.
+- Stage A: `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis`, with `RH_semantic_lock` and the Mathlib-predicate export;
+- the energy-route endpoint `RH_of_denseQV_uniform` (certified; hypothesis unsatisfiable — see above);
+- the certified obstruction results (dilution, log N loss, raw Gaussian frame Bessel bound) and the KB bricks listed above;
+- the PL bricks listed above;
+- the Galerkin/operator, heat-trace, resolvent, compensator, explicit-formula and meromorphy infrastructure in the Stage A cone;
+- earlier conditional endpoints and the tilted-energy infrastructure (off the live route).
 
-### Paper-derived / awaiting Lean formalization
+### Paper-level, not yet formalized
 
-- the complete finite-to-continuum tilted-energy estimate;
-- the positive $H^{-1}$ representation;
-- the weighted prime-discrepancy identity;
-- the deterministic tilted-energy-to-zero-free-half-plane bridge;
-- the family-level mean-square criterion.
+- `hP_dense` holds under RH (the converse of Stage A);
+- unboundedness of `denseQV` (KB3b-iv/KB3c remaining; Littlewood's theorem enters as a classical input);
+- the remaining PL steps.
 
 ### Open
 
-- the unconditional tilted-energy / weighted mean-square bound required to close the RH frontier.
+- an unconditional proof of `hP_dense` (equivalently, of RH).
 
 ---
 
 # Current status
 
-The project has therefore moved beyond the statement
-
 ```text
-"RH follows if HtailExists."
-```
-
-to a more precise certified picture:
-
-```text
-explicit compensated paired-transform bound
-                    ↓
-          RiemannHypothesis
-```
-
-together with a new positive-energy research interface:
-
-```text
-tilted centered prime observable
-            ↓
-positive Galerkin energy Q
-            ↓
-finite symmetric pair kernel G
-            ↓
-weighted mean-square prime discrepancy
-            ↓
-open energy bound
-            ↓
-paired-transform bound
-            ↓
+finite Galerkin prime-weighted operator family
+            ↓  (certified)
+compensated prime package hP_dense
+            ↓  (certified: Stage A)
 RiemannHypothesis
 ```
 
-The first several arrows are machine-certified or paper-closed as indicated above.
-
-The remaining unconditional energy bound is open.
-
-That open theorem — not hidden corrections elsewhere in the formal chain — is the present research frontier.
+The arrow into `hP_dense` is the open problem. It is of exactly RH strength; the project's certified contribution is the criterion, its semantic lock to Mathlib, and a certified map of routes that provably do not supply it.
 
 ---
 
@@ -727,7 +656,15 @@ Archived release: `v2026.08.15-stage-a`
 
 **Semantic lock (added August 2026):** the project predicate is certified equivalent to Mathlib's root-level statement: `RH_semantic_lock : RHFormalization.RiemannHypothesis ↔ _root_.RiemannHypothesis`, and the endpoint is exported against Mathlib's own predicate as `RH_from_pairedTransform_only_dense_mathlib`, both auditing to `[propext, Classical.choice, Quot.sound]`. A reviewer therefore does not need to trust the project's definitions to know what the conclusion asserts.
 
-RH-Formalization is intended to be independently inspectable. To reproduce the archived Stage A endpoint from a fresh clone:
+RH-Formalization is intended to be independently inspectable. **One command, current version** (builds the root library and prints the axiom audit of all four endpoints):
+
+```bash
+git clone https://github.com/tdarshan0917-hub/RH-Formalization- rh-verify && cd rh-verify && bash verify.sh
+```
+
+Expected: four lines, each ending `depends on axioms: [propext, Classical.choice, Quot.sound]`. See `VERIFICATION.md`.
+
+To reproduce the archived Stage A release instead:
 
 ```bash
 git clone https://github.com/tdarshan0917-hub/RH-Formalization-.git
@@ -753,7 +690,7 @@ depends on axioms: [propext, Classical.choice, Quot.sound]
 
 with no project-specific mathematical axioms in that dependency cone.
 
-This command verifies that the published conditional Stage A theorem is accepted by Lean and exposes its axiom dependencies. It does not assert that RH has already been proved unconditionally: the active research objective is to establish the remaining analytic hypothesis `hP_dense` unconditionally.
+These commands verify that the conditional Stage A theorem is accepted by Lean and expose its axiom dependencies. They do not assert that RH has been proved: `hP_dense` remains open.
 
 The project's RH predicate is defined from Mathlib's actual `riemannZeta`. In `RHFormalization/Basic.lean`, nontrivial zeros are represented by
 
