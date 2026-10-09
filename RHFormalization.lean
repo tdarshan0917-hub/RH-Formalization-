@@ -225,3 +225,4 @@ import RHFormalization.PolylogAbelTransfer
 import RHFormalization.PolylogWeightSummable
 import RHFormalization.PolylogStageClosedForm
 import RHFormalization.PolylogShiftIdentity
+import RHFormalization.PolylogCenteredAbel
