@@ -228,3 +228,4 @@ import RHFormalization.PolylogShiftIdentity
 import RHFormalization.PolylogCenteredAbel
 import RHFormalization.PolylogMainTermIncrement
 import RHFormalization.PolylogMainTermShift
+import RHFormalization.PolylogMainTermSum
