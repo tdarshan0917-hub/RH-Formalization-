@@ -236,3 +236,4 @@ import RHFormalization.PolylogEndpoint
 import RHFormalization.PowerShiftTheorem
 import RHFormalization.PowerEndpoint
 import RHFormalization.QuasiRHZeroWitness
+import RHFormalization.QuasiRHConnected
