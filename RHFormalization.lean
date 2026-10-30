@@ -235,3 +235,4 @@ import RHFormalization.PolylogSquareStageBridge
 import RHFormalization.PolylogEndpoint
 import RHFormalization.PowerShiftTheorem
 import RHFormalization.PowerEndpoint
+import RHFormalization.QuasiRHZeroWitness
