@@ -245,3 +245,4 @@ import RHFormalization.QuasiRHMontelEndpoint
 import RHFormalization.QuasiRHPrimeEndpoint
 import RHFormalization.ZetaDiscrepancyBound
 import RHFormalization.PrimeGraphTrace
+import RHFormalization.PrimeGraphResolvent
