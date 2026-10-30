@@ -241,3 +241,4 @@ import RHFormalization.QuasiRHIdentity
 import RHFormalization.QuasiRHDetector
 import RHFormalization.QuasiRHFlatTerminus
 import RHFormalization.MontelOnOpen
+import RHFormalization.QuasiRHMontelEndpoint
