@@ -238,3 +238,4 @@ import RHFormalization.PowerEndpoint
 import RHFormalization.QuasiRHZeroWitness
 import RHFormalization.QuasiRHConnected
 import RHFormalization.QuasiRHIdentity
+import RHFormalization.QuasiRHDetector
