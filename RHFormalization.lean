@@ -232,3 +232,4 @@ import RHFormalization.PolylogMainTermSum
 import RHFormalization.CompensatedBSubseqEndpoint
 import RHFormalization.PolylogShiftTheorem
 import RHFormalization.PolylogSquareStageBridge
+import RHFormalization.PolylogEndpoint
