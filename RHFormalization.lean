@@ -233,3 +233,4 @@ import RHFormalization.CompensatedBSubseqEndpoint
 import RHFormalization.PolylogShiftTheorem
 import RHFormalization.PolylogSquareStageBridge
 import RHFormalization.PolylogEndpoint
+import RHFormalization.PowerShiftTheorem
