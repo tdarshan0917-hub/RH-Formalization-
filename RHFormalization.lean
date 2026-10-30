@@ -243,4 +243,4 @@ import RHFormalization.QuasiRHFlatTerminus
 import RHFormalization.MontelOnOpen
 import RHFormalization.QuasiRHMontelEndpoint
 import RHFormalization.QuasiRHPrimeEndpoint
-import RHFormalization.QuasiRHPrimeEndpoint
+import RHFormalization.ZetaDiscrepancyBound
