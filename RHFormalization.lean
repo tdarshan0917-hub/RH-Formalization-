@@ -230,3 +230,4 @@ import RHFormalization.PolylogMainTermIncrement
 import RHFormalization.PolylogMainTermShift
 import RHFormalization.PolylogMainTermSum
 import RHFormalization.CompensatedBSubseqEndpoint
+import RHFormalization.PolylogShiftTheorem
