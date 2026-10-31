@@ -247,3 +247,4 @@ import RHFormalization.ZetaDiscrepancyBound
 import RHFormalization.PrimeGraphTrace
 import RHFormalization.PrimeGraphResolvent
 import RHFormalization.PrimeGraphResolventLimit
+import RHFormalization.PrimeGraphContraction
