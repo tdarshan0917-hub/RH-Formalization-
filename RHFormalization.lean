@@ -251,3 +251,4 @@ import RHFormalization.PrimeGraphContraction
 import RHFormalization.PrimeGraphRealLevels
 import RHFormalization.PrimeGraphJacobi
 import RHFormalization.PrimeGraphTraceFormula
+import RHFormalization.PrimeGraphEulerSplit
