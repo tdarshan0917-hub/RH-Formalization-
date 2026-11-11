@@ -254,3 +254,4 @@ import RHFormalization.PrimeGraphTraceFormula
 import RHFormalization.PrimeGraphEulerSplit
 import RHFormalization.PrimeGraphZetaLink
 import RHFormalization.PrimeGraphZetaLimit
+import RHFormalization.PrimeGraphZetaCapstone
