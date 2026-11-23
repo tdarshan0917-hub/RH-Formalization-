@@ -19,8 +19,9 @@ import RHFormalization
 #print axioms RHFormalization.primeGraph_composite_orbit_limit
 #print axioms RHFormalization.graphEuler_tendsto_logDeriv_zeta
 #print axioms RHFormalization.graph_logDeriv_tendsto_zeta
+#print axioms RHFormalization.ccm_zeros_real
 LEAN
-EXPECTED=15
+EXPECTED=16
 out=$(lake env lean AxiomCheck.lean 2>&1) || { echo "$out"; echo "FAIL: AxiomCheck did not compile"; exit 1; }
 echo "$out"
 n=$(echo "$out" | grep -cE "depends on axioms|does not depend on any axioms" || true)
