@@ -21,8 +21,9 @@ import RHFormalization
 #print axioms RHFormalization.graph_logDeriv_tendsto_zeta
 #print axioms RHFormalization.ccm_zeros_real
 #print axioms RHFormalization.hPdense_of_vonKoch
+#print axioms RHFormalization.HPdense_iff_RH
 LEAN
-EXPECTED=17
+EXPECTED=18
 out=$(lake env lean AxiomCheck.lean 2>&1) || { echo "$out"; echo "FAIL: AxiomCheck did not compile"; exit 1; }
 echo "$out"
 n=$(echo "$out" | grep -cE "depends on axioms|does not depend on any axioms" || true)
