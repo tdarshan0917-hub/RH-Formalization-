@@ -121,7 +121,7 @@ theorem canonicalPackageTail_uniform_bound_on_halfplane
           apply setIntegral_mono_set hIσfull.norm
           · filter_upwards with t
             exact norm_nonneg _
-          · exact HasSubset.Subset.eventuallyLE (Ioi_subset_Ioi ht0.le)
+          · exact LE.le.eventuallySubset (Ioi_subset_Ioi ht0.le)
       _ = ∫ t in Ioi (0:ℝ), (shiftedHeatIntegrand a ((σ:ℝ):ℂ) t).re := by
           apply setIntegral_congr_fun measurableSet_Ioi
           intro t _

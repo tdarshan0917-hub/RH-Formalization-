@@ -1,5 +1,5 @@
 import Mathlib.NumberTheory.LSeries.Dirichlet
-import Mathlib.NumberTheory.VonMangoldt
+import Mathlib.NumberTheory.ArithmeticFunction.VonMangoldt
 
 /-!
 # RHFormalization.PrimePowerSumConvergence

@@ -87,7 +87,9 @@ def decodedDirectOperatorBridge
               galerkinStagePackage.B_stage (R.alpha n) s
                 + galerkinStagePackage.R_stage (R.alpha n) s)
             Filter.atTop (nhds (FHadmFree s)) := by
-        simpa [hFeqBR] using hF s hs
+        first
+          | exact hF s hs
+          | simpa [hFeqBR] using hF s hs
       exact tendsto_nhds_unique hBR_to_FH hBRlim }
 
 #print axioms decodedDirectOperatorBridge

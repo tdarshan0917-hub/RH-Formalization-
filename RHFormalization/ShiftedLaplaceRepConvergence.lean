@@ -34,7 +34,12 @@ theorem repSubtypeStage_tendsto :
   rw [repSubtypeStage, Finset.mem_filterMap]
   refine ⟨repToFull ρ, hsub, ?_⟩
   simp only [repToFull]
-  rw [dif_pos ρ.2.2]
+  first
+    | rw [dif_pos ρ.2.2]
+    | (have h2 := ρ.2.2; simp only [one_div] at h2; simp [h2]; done)
+    | (simp; have h2 := ρ.2.2; simp only [one_div] at h2; exact h2)
+    | (split_ifs with h; rfl; exact absurd ρ.2.2 h)
+    | (simp; norm_num; exact ρ.2.2)
 
 #print axioms repSubtypeStage_tendsto
 

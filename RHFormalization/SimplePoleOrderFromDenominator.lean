@@ -79,7 +79,7 @@ theorem simplePole_negative_order_from_denominator
       meromorphicOrderAt (fun w : ℂ => coeff / (w - s0)) s0 =
         meromorphicOrderAt (fun _ : ℂ => coeff) s0 -
           meromorphicOrderAt (fun w : ℂ => w - s0) s0 := by
-    simpa [Pi.div_apply] using
+    exact
       (meromorphicOrderAt_div h_num_mer h_den_mer)
 
   have h_const :

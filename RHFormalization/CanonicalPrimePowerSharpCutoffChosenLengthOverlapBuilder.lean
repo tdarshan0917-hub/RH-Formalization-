@@ -106,7 +106,7 @@ theorem chosenLengthOverlapBuilder_of_alpha_aligned
           Filter.atTop
           (nhds (Bdata.Bcan s)) := by
       have hBlim := Blimit.h_B_stage_tendsto_Bcan s hs
-      simpa [Blimit, Bdata, Cshared, finiteCanonicalLimit] using hBlim
+      first | exact hBlim | simpa [Blimit, Bdata, Cshared, finiteCanonicalLimit] using hBlim
     simpa [hF_alpha] using hB_S
 
   · intro s hs

@@ -62,8 +62,7 @@ def buildHtotHolomorphicAPIFromSummands
     (H : ZeroPolePackageAPI) :
     HtotHolomorphicAPI D H :=
   { h_Htot_holo := by
-      simpa [Htot] using
-        (holomorphicOnC_add D.hRH_holo H.hHarch_holo) }
+      exact holomorphicOnC_add D.hRH_holo H.hHarch_holo }
 
 /-!
 ## 2. Holomorphic-on to holomorphic-at transfer

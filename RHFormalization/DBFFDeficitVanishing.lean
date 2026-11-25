@@ -51,7 +51,9 @@ theorem deficitWeightMass_le (n : ℕ) :
       ≤ ((activePrimePowerPairsCenterBelow (admR n)).card : ℝ) * 2 := by
     unfold deficitWeightMass
     have h := Finset.sum_le_sum hterm
-    simpa [Finset.sum_const, nsmul_eq_mul] using h
+    first
+      | exact h
+      | simpa [Finset.sum_const, nsmul_eq_mul] using h
   have hcard : ((activePrimePowerPairsCenterBelow (admR n)).card : ℝ)
       ≤ Real.exp (admR n) + 2 := by
     have h1 : (activePrimePowerPairsCenterBelow (admR n)).card
@@ -145,7 +147,11 @@ theorem BcorrWin_vanishes_on_compacts
         first
           | exact tendsto_natCast_atTop_atTop
           | exact tendsto_nat_cast_atTop_atTop
-      simpa using h1.inv_tendsto_atTop.const_mul (8 * C)
+      first
+        | exact h1.inv_tendsto_atTop.const_mul (8 * C)
+        | simpa using h1.inv_tendsto_atTop.const_mul (8 * C)
+        | simpa [Function.comp_def, div_eq_mul_inv] using h1.inv_tendsto_atTop.const_mul (8 * C)
+        | (simpa [div_eq_mul_inv] using h1.inv_tendsto_atTop.const_mul (8 * C))
     exact squeeze_zero' (Filter.Eventually.of_forall h0) hb hlim
   have := (Metric.tendsto_atTop.mp hten) ε hε
   obtain ⟨N, hN⟩ := this

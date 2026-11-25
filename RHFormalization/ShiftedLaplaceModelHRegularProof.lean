@@ -16,7 +16,9 @@ theorem logDeriv_zeta_analyticAt {ρ : ℂ} (hρ1 : ρ ≠ 1) (hρ0 : riemannZet
   have hderiv : AnalyticAt ℂ (deriv riemannZeta) ρ := hζ.deriv
   have hdiv : AnalyticAt ℂ (fun z => deriv riemannZeta z / riemannZeta z) ρ :=
     hderiv.div hζ hρ0
-  simpa only [logDeriv] using hdiv
+  first
+    | exact hdiv
+    | simpa only [logDeriv] using hdiv
 
 /-- **The model is analytic at any `z ∈ Ω` where `ζ(φ z) ≠ 0`.** -/
 theorem model_analyticAt_of_zeta_ne_zero {z : ℂ} (hzΩ : z ∈ Ω)

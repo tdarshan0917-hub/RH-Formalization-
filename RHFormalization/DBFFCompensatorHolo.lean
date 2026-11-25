@@ -42,7 +42,9 @@ theorem sqrtShiftFun_analyticAt {z : ℂ} (hz : z ∈ Ω) :
   have hzU : z ∈ U := hz_shift
   have hcont : Continuous (fun w : ℂ => w + (1/4:ℂ)) := by fun_prop
   have hUopen : IsOpen U := by
-    simpa [U] using Complex.isOpen_slitPlane.preimage hcont
+    first
+      | exact Complex.isOpen_slitPlane.preimage hcont
+      | simpa [U] using Complex.isOpen_slitPlane.preimage hcont
   have hdiffOn :
       DifferentiableOn ℂ (fun s : ℂ => Complex.sqrt (s + (1/4:ℂ))) U := by
     intro w hw

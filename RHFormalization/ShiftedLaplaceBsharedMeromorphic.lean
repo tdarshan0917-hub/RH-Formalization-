@@ -92,13 +92,17 @@ theorem logDeriv_zeta_comp_phi_meromorphicAt {s : ℂ} (hs : s ∈ Ω) :
       (Complex.sqrt (s + (1/4:ℂ)) + (1/2:ℂ)) := by
     have hd : MeromorphicAt (fun z => deriv riemannZeta z / riemannZeta z)
         (Complex.sqrt (s + (1/4:ℂ)) + (1/2:ℂ)) := hζmer.deriv.div hζmer
-    simpa only [logDeriv] using hd
+    first
+      | exact hd
+      | simpa only [logDeriv] using hd
   have hcomp :=
     MeromorphicAt.comp_analyticAt
       (f := logDeriv riemannZeta)
       (g := fun z => Complex.sqrt (z + (1/4:ℂ)) + (1/2:ℂ))
       hlog hφ
-  simpa [Function.comp_def] using hcomp
+  first
+    | exact hcomp
+    | simpa [Function.comp_def] using hcomp
 
 /-- **B-side continuation candidate is meromorphic on Ω**, sourced from ζ. -/
 theorem logDeriv_zeta_comp_phi_meromorphicOn_Omega :

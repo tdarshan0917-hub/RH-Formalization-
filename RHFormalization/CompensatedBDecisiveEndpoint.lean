@@ -74,7 +74,9 @@ theorem RH_from_compensatedB_locbdd
     have h2 : Tendsto (fun n => compensatedBFamily (ψ n) s)
         atTop (𝓝 (galerkinBcanLimitData.Bcan s)) := by
       have := hB.sub hM
-      simpa [compensatedBFamily] using this
+      first
+        | exact this
+        | simpa [compensatedBFamily] using this
     have h1' : Tendsto (fun n => compensatedBFamily (ψ n) s)
         atTop (𝓝 (g s)) := by
       first

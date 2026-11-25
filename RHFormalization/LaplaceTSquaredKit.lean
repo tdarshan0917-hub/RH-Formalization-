@@ -128,7 +128,7 @@ theorem integrableOn_t_cexp {a : ℂ} (ha : 0 < a.re) :
   have hreal : IntegrableOn (fun t : ℝ => t * Real.exp (-(a.re * t)))
       (Ioi (0:ℝ)) := by
     have h := integrableOn_rpow_mul_exp_neg_mul_rpow
-      (p := 1) (s := 1) (b := a.re) (by norm_num) le_rfl ha
+      (p := 1) (s := 1) (b := a.re) (by norm_num) one_pos ha
     refine h.congr_fun (fun t ht => ?_) measurableSet_Ioi
     simp only [Real.rpow_one, neg_mul]
   have hmeas : AEStronglyMeasurable

@@ -31,7 +31,7 @@ theorem rpow_neg_half_exp_integrableOn (δ : ℝ) (hδ : 0 < δ) :
       (Set.Ioi (0:ℝ)) := by
   have hq : (-1:ℝ) < -(1/2) := by norm_num
   have h := integrableOn_rpow_mul_exp_neg_mul_rpow
-    (p := 1) (s := -(1/2)) (b := δ) hq le_rfl hδ
+    (p := 1) (s := -(1/2)) (b := δ) hq one_pos hδ
   refine h.congr_fun (fun t _ => ?_) measurableSet_Ioi
   rw [Real.rpow_one]
 

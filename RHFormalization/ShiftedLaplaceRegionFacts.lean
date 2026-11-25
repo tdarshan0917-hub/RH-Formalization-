@@ -51,7 +51,9 @@ theorem shiftedLaplaceAbsConvRegion_subset_Omega :
       nlinarith [Real.sq_sqrt hpos, hreg, Real.sqrt_nonneg (s.re + 1/4)]
     · right; exact him0
   · right
-    simpa using him
+    first
+      | exact him
+      | simpa using him
 
 theorem shiftedLaplaceAbsConvRegion_nonempty :
     shiftedLaplaceAbsConvRegion.Nonempty := by

@@ -49,7 +49,12 @@ theorem prefactor_analyticAt_of_mem_Omega {s : ℂ} (hs : s ∈ Ω) :
     simp only; exact mul_ne_zero (by norm_num) hsqrt_ne
   have hinv : AnalyticAt ℂ (fun z => 1 / (2 * Complex.sqrt (z + (1/4:ℂ)))) s := by
     have := h2sqrt.inv h2sqrt_ne
-    simpa only [one_div] using this
+    first
+      | exact analyticAt_const.div h2sqrt h2sqrt_ne
+      | exact analyticAt_const.fun_div h2sqrt h2sqrt_ne
+      | (simp only [one_div]; exact this)
+      | exact this
+      | simpa only [one_div] using this
   exact hinv.neg
 
 /-- **The continued B-side model is meromorphic on Ω.** -/

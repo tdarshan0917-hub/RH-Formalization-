@@ -45,10 +45,10 @@ def buildDMatchesSharedCanonicalPackageFromDetailed
   { sigma := Y.toOperatorResolventBridge.sigma0
     hsigma_ge_D := le_rfl
     hsigma_ge_C := by
-      simpa using Y.B.h_Cshared_sigma_le
+      exact Y.B.h_Cshared_sigma_le
     h_D_matches := by
       intro s hs
-      simpa using Y.B.h_Bcan_matches_shared s hs }
+      exact Y.B.h_Bcan_matches_shared s hs }
 
 /--
 Extract H-side matching evidence from the strengthened H package, rewritten
@@ -64,11 +64,14 @@ def buildHMatchesSharedCanonicalPackageFromCompatibility
   { sigma := X.toLegacyZeroPolePackageAPI.sigma0
     hsigma_ge_H := le_rfl
     hsigma_ge_C := by
-      simpa [S.h_Cshared_eq] using X.layer.overlap.h_Cshared_sigma_le
+      have h := X.layer.overlap.h_Cshared_sigma_le
+      simp only [S.h_Cshared_eq] at h
+      exact h
     h_H_matches := by
       intro s hs
-      simpa [S.h_Cshared_eq] using
-        X.layer.overlap.h_Bzero_matches_shared s (by simpa using hs) }
+      have h := X.layer.overlap.h_Bzero_matches_shared s hs
+      simp only [S.h_Cshared_eq] at h
+      exact h }
 
 /--
 Build the formal Appendix-E bridge from strengthened D/H package data plus

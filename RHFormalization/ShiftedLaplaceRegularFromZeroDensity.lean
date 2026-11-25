@@ -101,7 +101,7 @@ theorem shiftedLaplace_regular_from_Bregular_zeroDensity
   have hZ :
       HolomorphicAtC (ZpoleSeries defaultZeroMultiplicityData) z :=
     shiftedLaplace_zpole_regular_from_zeroDensity hsum ZF z hzΩ hnotW
-  simpa [shiftedLaplaceAppendixHFunction] using hB.add hZ
+  first | exact hB.add hZ | simpa [shiftedLaplaceAppendixHFunction] using hB.add hZ
 
 /--
 Shifted/Laplace h_holo from witness cancellation plus shifted-prime regularity.

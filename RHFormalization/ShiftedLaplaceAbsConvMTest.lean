@@ -64,10 +64,9 @@ theorem shiftedLaplace_tendstoUniformlyOn_of_one_patch_mtest
           q.weightC * shiftedLaplaceHeatKernelC q.center s)
       Filter.atTop
       U := by
-  simpa [finiteCanonicalPrimePowerPackage] using
-    (tendstoUniformlyOn_tsum
-      D.h_summable
-      D.h_bound)
+  first
+    | exact (tendstoUniformlyOn_tsum D.h_summable D.h_bound)
+    | simpa [finiteCanonicalPrimePowerPackage] using (tendstoUniformlyOn_tsum D.h_summable D.h_bound)
 
 /--
 One-patch M-test data gives local-uniform convergence on that patch.
@@ -149,7 +148,9 @@ theorem shiftedLaplace_tlu_on_absConvRegion_from_local_mtest
         shiftedLaplaceAbsConvRegion :=
     h_union.mono D.hU_cover
 
-  simpa [shiftedLaplacePrimePackageAt, canonicalPrimePowerPackageFromKernelTsum] using h_region
+  first
+    | exact h_region
+    | simpa [shiftedLaplacePrimePackageAt, canonicalPrimePowerPackageFromKernelTsum] using h_region
 
 #print axioms shiftedLaplaceAbsConvRegion
 #print axioms ShiftedLaplaceOnePatchMTestData

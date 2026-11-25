@@ -60,11 +60,11 @@ theorem eventuallyEq_zero_codiscreteWithin_of_forall_nhdsNE
     intro z hz
     have hzlocal :
         {w : ℂ | H w = 0} ∈ 𝓝[≠] z := by
-      simpa [Filter.EventuallyEq] using hall z hz
+      first | exact hall z hz | simpa [Filter.EventuallyEq] using hall z hz
     exact Filter.mem_of_superset hzlocal (by
       intro w hw
       exact Or.inl hw)
-  simpa [Filter.EventuallyEq] using hzeroSet
+  first | exact hzeroSet | simpa [Filter.EventuallyEq] using hzeroSet
 
 /-
 The next real theorem to prove is:

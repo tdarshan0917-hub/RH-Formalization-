@@ -100,7 +100,12 @@ def shiftedLaplaceModelExhaustionSigma1 :
     rw [htsum_model] at hconv
     -- the obligation's summand is finiteCanonicalPrimePowerPackage indices kernel s
     -- which is definitionally ∑_{q ∈ indices} weightC q * kernel q.center s
-    convert hconv using 2 with n
+    first
+      | exact hconv
+      | (convert hconv using 2 with n <;> rfl)
+      | (convert hconv using 2 with n <;> simp [finiteCanonicalPrimePowerPackage])
+      | (convert hconv using 1 <;> simp [finiteCanonicalPrimePowerPackage])
+      | convert hconv using 2 with n
 
 end
 end RHFormalization

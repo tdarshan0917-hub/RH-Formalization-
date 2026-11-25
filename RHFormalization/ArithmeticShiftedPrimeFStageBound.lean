@@ -99,12 +99,9 @@ theorem ArithmeticShiftedPrimeDExport_of_generic_F_B_bounds
               (μShift μ M)
               (primePotential_isHermitian (primeStageWeights (N := N) n)) s‖
           + ‖B s‖ := by
-            simpa [sub_eq_add_neg, norm_neg] using
-              norm_add_le
-                (perturbedFStage
-                  (μShift μ M)
-                  (primePotential_isHermitian (primeStageWeights (N := N) n)) s)
-                (-(B s))
+            first
+              | exact norm_add_le (perturbedFStage (μShift μ M) (primePotential_isHermitian (primeStageWeights (N := N) n)) s) (-(B s))
+              | simpa [sub_eq_add_neg, norm_neg] using norm_add_le (perturbedFStage (μShift μ M) (primePotential_isHermitian (primeStageWeights (N := N) n)) s) (-(B s))
     _ ≤ CF + CB := by
           exact add_le_add
             (by

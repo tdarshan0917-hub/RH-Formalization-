@@ -58,14 +58,14 @@ theorem principalPart_model_meromorphicAt
 
   have h_pole_mer :
       MeromorphicAt (fun w : ℂ => coeff / (w - z)) z := by
-    simpa [Pi.div_apply] using
+    exact
       (h_const_mer.div h_den_mer)
 
   have h_h_mer :
       MeromorphicAt h z :=
     hh.meromorphicAt
 
-  simpa [Pi.add_apply] using
+  exact
     (h_pole_mer.add h_h_mer)
 
 /--

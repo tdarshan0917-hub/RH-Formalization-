@@ -289,8 +289,9 @@ theorem etaA_mellin_Ioi_zero_eq_Ioi_one {s : ℂ} (hs : 0 < s.re) :
   have hzero : (∫ t in Set.Ioc (0:ℝ) 1, (t : ℂ) ^ ((-s) - 1) • etaA t) = 0 := by
     apply MeasureTheory.setIntegral_eq_zero_of_ae_eq_zero
     have hne : ∀ᵐ x : ℝ, x ≠ 1 := by
-      simpa only [Set.mem_compl_iff, Set.mem_singleton_iff]
-        using MeasureTheory.compl_mem_ae_iff.mpr (Real.volume_singleton (a := 1))
+      first
+        | (rw [MeasureTheory.ae_iff]; simp; done)
+        | exact MeasureTheory.compl_mem_ae_iff.mpr (Real.volume_singleton (a := 1))
     filter_upwards [hne] with x hxne
     intro hxIoc
     have hlt : x < 1 := lt_of_le_of_ne hxIoc.2 hxne

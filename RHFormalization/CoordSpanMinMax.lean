@@ -118,7 +118,7 @@ theorem inner_single_eq_zero_of_mem_coordSpan {s : Finset (Fin N)}
   | mem y hy =>
       obtain ⟨i, rfl⟩ := hy
       rw [EuclideanSpace.inner_single_left, map_one, one_mul,
-        EuclideanSpace.single_apply]
+        PiLp.single_apply]
       have hne : j ≠ (i : Fin N) := by rintro rfl; exact hj i.2
       rw [if_neg hne]
   | zero => simp

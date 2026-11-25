@@ -37,7 +37,7 @@ theorem integral_zero_N_gaussian_le (b : ℝ) (hb : 0 < b) :
   rw [← hInt, intervalIntegral.integral_of_le (by positivity)]
   refine setIntegral_mono_set (integrable_exp_neg_mul_sq hb).integrableOn
     (Filter.Eventually.of_forall (fun x => le_of_lt (Real.exp_pos _))) ?_
-  exact HasSubset.Subset.eventuallyLE Set.Ioc_subset_Ioi_self
+  exact LE.le.eventuallySubset Set.Ioc_subset_Ioi_self
 
 /-- **Stone 7' (key)**: `∑_{m<N} e^{-b(m+1)²} ≤ √(π/b)/2` for `b > 0`. -/
 theorem sum_exp_neg_sq_le_gaussian (b : ℝ) (hb : 0 < b) :

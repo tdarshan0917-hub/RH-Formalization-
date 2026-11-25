@@ -51,7 +51,9 @@ theorem sqrtShift_continuousOn (K : Set ℂ) (hKO : K ⊆ Ω) :
     shiftedLaplaceShift_mem_slitPlane_of_mem_Omega s (hKO hs)
   have hd : DifferentiableAt ℂ (fun z : ℂ => Complex.sqrt (z + (1/4:ℂ))) s := by
     have hsh : DifferentiableAt ℂ (fun z : ℂ => z + (1/4:ℂ)) s := by fun_prop
-    simpa using (Complex.differentiableAt_sqrt hslit).comp s hsh
+    first
+      | exact (Complex.differentiableAt_sqrt hslit).comp s hsh
+      | simpa using (Complex.differentiableAt_sqrt hslit).comp s hsh
   exact hd.continuousAt.continuousWithinAt
 
 /-- Positive lower bound for `Re √(s+¼)` on an Ω-compact. -/

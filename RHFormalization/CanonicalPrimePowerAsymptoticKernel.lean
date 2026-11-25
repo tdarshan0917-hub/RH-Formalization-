@@ -226,7 +226,7 @@ theorem canonicalPrimePowerAsymptoticKernel_h_Bcan_matches_tsum
     (buildDBcanLimitDataFromCanonicalPrimePowerAsymptoticKernel X S).Bcan s =
       ∑' q : PrimePowerPair,
         q.weightC * S.Kshared q.center s := by
-  simpa [canonicalPrimePowerPackageFromKernelTsum] using
+  exact
     (buildDBcanLimitDataFromCanonicalPrimePowerAsymptoticKernel X S).h_Bcan_matches_shared
       s
       hs

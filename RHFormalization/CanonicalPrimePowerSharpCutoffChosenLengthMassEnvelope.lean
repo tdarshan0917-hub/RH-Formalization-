@@ -222,7 +222,7 @@ theorem CanonicalPrimePowerSharpCutoffChosenLengthMassEnvelopeData.massEnvelope_
         Tendsto (fun n : ℕ => (1 : ℝ) / ((n : ℝ) + 1))
           Filter.atTop
           (𝓝 0) := by
-      simpa [one_div] using
+      first | simpa [one_div, Function.comp_def] using (tendsto_inv_atTop_zero.comp h_to_atTop) | simpa [one_div] using
         (tendsto_inv_atTop_zero.comp h_to_atTop)
 
     exact squeeze_zero hnonneg hbound hinv_tendsto

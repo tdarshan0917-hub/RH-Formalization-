@@ -21,7 +21,7 @@ theorem fmodif_tail_le_gamma {σ : ℝ} (hσ : 0 < σ) :
   -- the scaled Gamma integrand g t = C * (t^(σ-1) * exp(-(p t))) is integrable on Ioi 0
   have hgInt0 : IntegrableOn (fun t => t ^ (σ - 1) * Real.exp (-(p * t))) (Ioi (0:ℝ)) := by
     have h := integrableOn_rpow_mul_exp_neg_mul_rpow (p := 1) (s := σ - 1) (b := p)
-      (by linarith) le_rfl hp
+      (by linarith) one_pos hp
     refine h.congr_fun (fun t ht => ?_) measurableSet_Ioi
     simp [Real.rpow_one]
   have hgIntT : IntegrableOn (fun t => t ^ (σ - 1) * Real.exp (-(p * t))) (Ioi T) :=
@@ -51,7 +51,7 @@ theorem fmodif_tail_le_gamma {σ : ℝ} (hσ : 0 < σ) :
     · filter_upwards [ae_restrict_mem measurableSet_Ioi] with t ht
       have ht0 : (0:ℝ) < t := ht
       positivity
-    · exact (HasSubset.Subset.eventuallyLE hTsub)
+    · exact (LE.le.eventuallySubset hTsub)
   -- Step 3: the Gamma integral value
   have hstep3 : ∫ t in Ioi (0:ℝ), t ^ (σ - 1) * Real.exp (-(p * t))
       = (1 / p) ^ σ * Real.Gamma σ := integral_rpow_mul_exp_neg_mul_Ioi hσ hp

@@ -31,7 +31,9 @@ theorem primePowerPair_center_nonneg_of_valid
     Nat.succ_le_of_lt hnatpos
   have hreal : (1 : ℝ) ≤ ((q.natValue : ℕ) : ℝ) := by
     exact_mod_cast hnat
-  simpa [PrimePowerPair.center] using Real.log_nonneg hreal
+  first
+    | exact Real.log_nonneg hreal
+    | simpa [PrimePowerPair.center] using Real.log_nonneg hreal
 
 /-- Active pp-stage codes decode to valid prime powers, hence have nonnegative centers. -/
 theorem ppStageCodes_center_nonneg
@@ -44,7 +46,9 @@ theorem ppStageCodes_center_nonneg
   have hdecode : ppDecode k = q := by
     rw [← hcode]
     exact ppDecode_ppCode q
-  simpa [hdecode] using primePowerPair_center_nonneg_of_valid q hvalid
+  first
+    | exact primePowerPair_center_nonneg_of_valid q hvalid
+    | simpa [hdecode] using primePowerPair_center_nonneg_of_valid q hvalid
 
 /--
 The arithmetic prime-operator DFiniteStage inherits its active spike codes from

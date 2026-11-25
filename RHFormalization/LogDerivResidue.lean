@@ -57,7 +57,7 @@ theorem logDeriv_hasPrincipalPart_at_zero
     rw [hlog]
     have hdpow : DifferentiableAt ℂ (fun u : ℂ => (u - z) ^ k) w :=
       ((differentiableAt_id).sub_const z).pow k
-    rw [logDeriv_mul w hpow_ne hgw hdpow hgdw]
+    rw [logDeriv_fun_mul w hpow_ne hgw hdpow hgdw]
     have hpowlog : logDeriv (fun u => (u - z) ^ k) w = (k : ℂ) / (w - z) := by
       have hid : DifferentiableAt ℂ (fun u : ℂ => u - z) w :=
         (differentiableAt_id).sub_const z

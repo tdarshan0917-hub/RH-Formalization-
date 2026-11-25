@@ -82,10 +82,9 @@ theorem shiftedLaplace_tlu_from_local_mtest
               q.weightC * shiftedLaplaceHeatKernelC q.center s)
           Filter.atTop
           (D.U z0) := by
-      simpa [finiteCanonicalPrimePowerPackage] using
-        (tendstoUniformlyOn_tsum
-          (D.h_summable z0)
-          (D.h_bound z0))
+      first
+        | exact (tendstoUniformlyOn_tsum (D.h_summable z0) (D.h_bound z0))
+        | simpa [finiteCanonicalPrimePowerPackage] using (tendstoUniformlyOn_tsum (D.h_summable z0) (D.h_bound z0))
     exact h_uniform.tendstoLocallyUniformlyOn
 
   have h_union :
@@ -110,7 +109,9 @@ theorem shiftedLaplace_tlu_from_local_mtest
         Ω :=
     h_union.mono D.hU_cover
 
-  simpa [shiftedLaplacePrimePackageAt, canonicalPrimePowerPackageFromKernelTsum] using h_omega
+  first
+    | exact h_omega
+    | simpa [shiftedLaplacePrimePackageAt, canonicalPrimePowerPackageFromKernelTsum] using h_omega
 
 /--
 The prime-side `hB_regular` input follows from local M-test data.

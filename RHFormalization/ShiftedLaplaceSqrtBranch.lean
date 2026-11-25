@@ -56,7 +56,9 @@ theorem shiftedLaplaceSqrt_holomorphicAt_of_shift_mem_slitPlane
     fun_prop
 
   have hUopen : IsOpen U := by
-    simpa [U] using Complex.isOpen_slitPlane.preimage hshift_cont
+    first
+      | exact Complex.isOpen_slitPlane.preimage hshift_cont
+      | simpa [U] using Complex.isOpen_slitPlane.preimage hshift_cont
 
   have hdiffOn :
       DifferentiableOn ℂ shiftedLaplaceSqrt U := by
@@ -72,8 +74,10 @@ theorem shiftedLaplaceSqrt_holomorphicAt_of_shift_mem_slitPlane
 
     have hsqrt_at :
         DifferentiableAt ℂ shiftedLaplaceSqrt w := by
-      simpa [shiftedLaplaceSqrt, shiftedLaplaceShift] using
-        (Complex.differentiableAt_sqrt hw_shift).comp w hshift_at
+      first
+        | exact (Complex.differentiableAt_sqrt hw_shift).comp w hshift_at
+        | simpa [shiftedLaplaceSqrt, shiftedLaplaceShift] using
+            (Complex.differentiableAt_sqrt hw_shift).comp w hshift_at
 
     exact hsqrt_at.differentiableWithinAt
 

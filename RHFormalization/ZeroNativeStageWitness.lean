@@ -24,11 +24,13 @@ theorem zeroFull_selfAdjoint : IsSelfAdjoint zeroFull := by
 theorem zeroFull_lowerSemibounded : LinearPMapLowerSemibounded zeroFull := by
   refine ⟨0, ?_⟩
   intro x
-  simp [zeroFull, LinearMap.toPMap_apply]
+  have h0 : zeroFull x = 0 := rfl
+  simp [h0]
 
 theorem zeroFull_nonneg : LinearPMapNonnegative zeroFull := by
   intro x
-  simp [zeroFull, LinearMap.toPMap_apply]
+  have h0 : zeroFull x = 0 := rfl
+  simp [h0]
 
 noncomputable def zeroNativeStage : NativeUnboundedDStage ℂ :=
   { H := zeroFull

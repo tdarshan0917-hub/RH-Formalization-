@@ -63,7 +63,9 @@ theorem halfDenom_min (K : Set ℂ) (hK : IsCompact K) (hKO : K ⊆ Ω) :
               (by fun_prop)
           | (have hd : DifferentiableAt ℂ (fun z : ℂ => Complex.sqrt (z + (1/4:ℂ))) s := by
                have hsh : DifferentiableAt ℂ (fun z : ℂ => z + (1/4:ℂ)) s := by fun_prop
-               simpa using (Complex.differentiableAt_sqrt hslit).comp s hsh
+               first
+                 | exact (Complex.differentiableAt_sqrt hslit).comp s hsh
+                 | simpa using (Complex.differentiableAt_sqrt hslit).comp s hsh
              exact hd.continuousAt)
       exact h1.continuousWithinAt
     obtain ⟨s₀, hs₀K, hs₀min⟩ := hK.exists_isMinOn hne hcont

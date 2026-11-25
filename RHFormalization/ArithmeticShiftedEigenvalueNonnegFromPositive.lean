@@ -60,21 +60,28 @@ theorem shiftedPerturbedOp_isPositive_of_hnn
             + (M : ℂ) • (1 : Matrix (Fin N) (Fin N) ℂ))).symm
 
     have hnn' : 0 ≤ (inner ℂ y ((primeOpCLM μ w M) y)).re := by
-      simpa using hnn y
+      first
+        | exact hnn y
+        | simpa using hnn y
 
     have hswap :
         (inner ℂ y ((primeOpCLM μ w M) y)).re
           =
         (inner ℂ ((primeOpCLM μ w M) y) y).re := by
-      simpa using
-        inner_re_symm (𝕜 := ℂ) y ((primeOpCLM μ w M) y)
+      first
+        | exact inner_re_symm (𝕜 := ℂ) y ((primeOpCLM μ w M) y)
+        | simpa using inner_re_symm (𝕜 := ℂ) y ((primeOpCLM μ w M) y)
 
     have hgoal :
         0 ≤ (inner ℂ ((primeOpCLM μ w M) y) y).re := by
-      simpa [hswap] using hnn'
+      first
+        | exact hnn'
+        | simpa [hswap] using hnn'
 
     rw [hop]
-    simpa using hgoal
+    first
+      | exact hgoal
+      | simpa using hgoal
 
 /--
 Direct nonnegativity of the shifted arithmetic perturbed eigenvalues from the
@@ -97,12 +104,9 @@ theorem arithmeticShiftedPerturbedEigenvalues_nonneg_of_hnn
     perturbedOp (μShift μ M) (primePotential (primeStageWeights (N := N) n))
 
   have hTpos : T.IsPositive := by
-    simpa [T] using
-      shiftedPerturbedOp_isPositive_of_hnn
-        μ
-        (primeStageWeights (N := N) n)
-        M
-        hnn
+    first
+      | exact shiftedPerturbedOp_isPositive_of_hnn μ (primeStageWeights (N := N) n) M hnn
+      | simpa [T] using shiftedPerturbedOp_isPositive_of_hnn μ (primeStageWeights (N := N) n) M hnn
 
   have hnon :=
     LinearMap.IsPositive.nonneg_eigenvalues
@@ -112,7 +116,9 @@ theorem arithmeticShiftedPerturbedEigenvalues_nonneg_of_hnn
       perturbedOp_finrank
       i
 
-  simpa [T, perturbedEigenvalues] using hnon
+  first
+    | exact hnon
+    | simpa [T, perturbedEigenvalues] using hnon
 
 #print axioms shiftedPerturbedOp_isPositive_of_hnn
 #print axioms arithmeticShiftedPerturbedEigenvalues_nonneg_of_hnn

@@ -33,16 +33,16 @@ theorem toEuclideanLin_diag_apply_stdBasis (d : Fin N → ℂ) (i : Fin N) :
     | ((simp [Matrix.toEuclideanLin, Matrix.mulVec_diagonal,
           EuclideanSpace.basisFun, Pi.single_apply, mul_comm, mul_ite]
         by_cases h : j = i <;>
-          simp_all [Pi.single_apply, EuclideanSpace.single_apply]); done)
+          simp_all [Pi.single_apply, PiLp.single_apply]); done)
     | ((simp [Matrix.toEuclideanLin, Matrix.mulVec_diagonal,
           Pi.single_apply, mul_comm]
-        by_cases h : j = i <;> simp_all [EuclideanSpace.single_apply]); done)
+        by_cases h : j = i <;> simp_all [PiLp.single_apply]); done)
     | ((simp [Matrix.toEuclideanLin_eq_toLin, Matrix.toLin'_apply,
           Matrix.mulVec_diagonal, Pi.single_apply, mul_comm]
-        by_cases h : j = i <;> simp_all [EuclideanSpace.single_apply]); done)
+        by_cases h : j = i <;> simp_all [PiLp.single_apply]); done)
     | (by_cases h : j = i <;>
         simp_all [Matrix.toEuclideanLin, Matrix.mulVec_diagonal,
-          EuclideanSpace.basisFun, EuclideanSpace.single_apply,
+          EuclideanSpace.basisFun, PiLp.single_apply,
           Pi.single_apply, mul_comm, mul_ite])
 
 /-- **The free resolvent IS a diagonal matrix operator.** -/
@@ -63,6 +63,8 @@ theorem toEuclideanLin_mul_eq (A B : Matrix (Fin N) (Fin N) ℂ) :
     Matrix.toEuclideanLin (A * B)
       = Matrix.toEuclideanLin A * Matrix.toEuclideanLin B := by
   first
+    | exact Matrix.toLpLin_mul_same (p := 2) A B
+    | simp [Module.End.mul_eq_comp]
     | (simp only [Matrix.toEuclideanLin_eq_toLin]
        rw [Matrix.toLin_mul (PiLp.basisFun 2 ℂ (Fin N))
          (PiLp.basisFun 2 ℂ (Fin N)) (PiLp.basisFun 2 ℂ (Fin N))]
@@ -76,8 +78,10 @@ idiom). -/
 theorem trace_toEuclideanLin (M : Matrix (Fin N) (Fin N) ℂ) :
     LinearMap.trace ℂ (EuclideanSpace ℂ (Fin N)) (Matrix.toEuclideanLin M)
       = M.trace := by
-  rw [Matrix.toEuclideanLin_eq_toLin]
-  exact Matrix.trace_toLin_eq M (PiLp.basisFun 2 ℂ (Fin N))
+  first
+    | (rw [Matrix.toEuclideanLin_eq_toLin_orthonormal]
+       exact Matrix.trace_toLin_eq M (EuclideanSpace.basisFun (Fin N) ℂ).toBasis)
+    | exact Matrix.trace_toLin_eq M (EuclideanSpace.basisFun (Fin N) ℂ).toBasis
 
 /-- Trace of a diagonal conjugation: `Tr(D V D) = Σₘ Vₘₘ dₘ²`. -/
 theorem diag_conj_trace (d : Fin N → ℂ) (V : Matrix (Fin N) (Fin N) ℂ) :

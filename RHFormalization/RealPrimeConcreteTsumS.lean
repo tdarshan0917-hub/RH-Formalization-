@@ -103,7 +103,7 @@ noncomputable def realPrimeConcreteTsumS (mu : Fin N -> Real) :
                 exact concretePrimePowerEnum.h_mem_belowCutoff ((n : Real) + 1) q hq
                   (by simpa [primePowerStage] using hle))) q hq)
           hsum.hasSum
-      simpa [canonicalPrimePowerPackageFromKernelTsum] using hpartial }
+      first | exact hpartial | simpa [canonicalPrimePowerPackageFromKernelTsum] using hpartial }
 
 #print axioms realPrimeConcreteTsumS
 

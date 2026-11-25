@@ -43,7 +43,9 @@ theorem primePerturbedAligned_R_stage_bound_from_target
   obtain ⟨C, hC0, hC⟩ := h K hK hKΩ
   refine ⟨C, hC0, ?_⟩
   intro α s hs
-  simpa [primePerturbedOperatorLayerAligned, primePerturbedPayloadAligned] using hC α s hs
+  first
+    | exact hC α s hs
+    | simpa [primePerturbedOperatorLayerAligned, primePerturbedPayloadAligned] using hC α s hs
 
 /-- Once D.CAN-REM is proved, the residual bulk-sector API follows immediately. -/
 theorem primePerturbedAligned_bulkSectorBounds_from_target

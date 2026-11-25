@@ -49,11 +49,9 @@ theorem arithmeticShiftedPerturbedEigenvalues_nonneg_of_free_growthDrop_le
           (primePotential_isHermitian (primeStageWeights (N := N) n)) i
         - freeEigenvalues (μShift μ M) i|
         ≤ growthDrop V := by
-    simpa [V] using
-      perturbedEigenvalues_dist_le
-        (μShift μ M)
-        (primePotential_isHermitian (primeStageWeights (N := N) n))
-        i
+    first
+      | exact perturbedEigenvalues_dist_le (μShift μ M) (primePotential_isHermitian (primeStageWeights (N := N) n)) i
+      | simpa [V] using perturbedEigenvalues_dist_le (μShift μ M) (primePotential_isHermitian (primeStageWeights (N := N) n)) i
 
   -- From |a| ≤ G, get -G ≤ a.
   have hleft :
@@ -74,7 +72,9 @@ theorem arithmeticShiftedPerturbedEigenvalues_nonneg_of_free_growthDrop_le
   have hnonneg :
       0 ≤ freeEigenvalues (μShift μ M) i - growthDrop V := by
     have hf := hfree i
-    simpa [V] using sub_nonneg.mpr hf
+    first
+      | exact sub_nonneg.mpr hf
+      | simpa [V] using sub_nonneg.mpr hf
 
   exact le_trans hnonneg hlower
 

@@ -76,7 +76,9 @@ def repBlinkExhaustion : ZeroExhaustion where
     · intro hmem
       obtain ⟨m, hm, hmem'⟩ := Finset.mem_biUnion.mp hmem
       have hρm : ρ ∈ defaultZeroExhaustion.zeroSet m := by
-        simpa [subtypeStage, Finset.mem_subtype] using hmem'
+        first
+          | exact hmem'
+          | simpa [subtypeStage, Finset.mem_subtype] using hmem'
       exact Nat.find_min hex (Finset.mem_range.mp hm) hρm
 
 @[simp] theorem repBlinkExhaustion_zeroSet (n : ℕ) :

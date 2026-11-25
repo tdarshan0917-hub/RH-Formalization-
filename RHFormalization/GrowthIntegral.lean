@@ -15,7 +15,7 @@ theorem fmodif_mellin_integrable (σ : ℝ) :
     IntegrableOn (fun t => t ^ (σ - 1) * ‖(hurwitzEvenFEPair 0).f_modif t‖) (Ioi 0) := by
   -- MellinConvergent f_modif (σ:ℂ) from the strong FE-pair
   have hconv : MellinConvergent (hurwitzEvenFEPair 0).f_modif (σ : ℂ) :=
-    ((hurwitzEvenFEPair 0).toStrongFEPair.hasMellin (σ : ℂ)).1
+    ((hurwitzEvenFEPair 0).isStrongFEPair_toStrongFEPair.hasMellin (σ : ℂ)).1
   -- unfold MellinConvergent = IntegrableOn (t^(s-1) • f_modif)
   rw [MellinConvergent] at hconv
   -- aestronglyMeasurable of f_modif on Ioi 0 (from local integrability)

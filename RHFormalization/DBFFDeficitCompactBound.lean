@@ -44,7 +44,9 @@ theorem kernelDenom_min (K : Set ℂ) (hK : IsCompact K) (hKO : K ⊆ Ω) :
               (by fun_prop)
           | (have hd : DifferentiableAt ℂ (fun z : ℂ => Complex.sqrt (z + (1/4:ℂ))) s := by
                have hsh : DifferentiableAt ℂ (fun z : ℂ => z + (1/4:ℂ)) s := by fun_prop
-               simpa using (Complex.differentiableAt_sqrt hslit).comp s hsh
+               first
+                 | exact (Complex.differentiableAt_sqrt hslit).comp s hsh
+                 | simpa using (Complex.differentiableAt_sqrt hslit).comp s hsh
              exact hd.continuousAt)
       exact h1.continuousWithinAt
     obtain ⟨s₀, hs₀K, hs₀min⟩ := hK.exists_isMinOn hne hcont
@@ -87,7 +89,9 @@ theorem kernel_norm_le_on_compact
   calc ‖(1:ℂ)/(2 * Complex.sqrt (s + (1/4:ℂ)))‖ * Real.exp ((-(a:ℂ) * Complex.sqrt (s + (1/4:ℂ))).re)
       ≤ c⁻¹ * 1 := by
         apply mul_le_mul h1 _ (Real.exp_nonneg _) (inv_nonneg.mpr hc.le)
-        simpa using Real.exp_le_one_iff.mpr hexp
+        first
+          | exact Real.exp_le_one_iff.mpr hexp
+          | simpa using Real.exp_le_one_iff.mpr hexp
     _ = c⁻¹ := by ring
 
 /-- Per-stage deficit weight mass (growth bound = part 2, after scout). -/

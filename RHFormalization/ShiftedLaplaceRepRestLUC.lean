@@ -26,7 +26,9 @@ theorem repRest_tendstoUniformlyOn
     have : (0:ℝ) ≤ (D.u K) (repToFull ρ) := by
       have := D.h_bound K (repToFull ρ) x hx
       exact le_trans (norm_nonneg _) this
-    simpa using this
+    first
+      | exact this
+      | simpa using this
   · simp only [if_neg hr]
     exact D.h_bound K (repToFull ρ) x hx
 

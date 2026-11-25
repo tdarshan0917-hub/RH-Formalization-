@@ -37,7 +37,9 @@ theorem FstageFinite_eq_laplace_heatTrace
       have := hlam i; linarith
     have := integrableOn_exp_mul_complex_Ioi (a := -(s + (lam i : ℂ))) hneg 0
     -- align -(s+λ)*t  with  (-(s+λ))*t
-    simpa [neg_mul] using this
+    first
+      | simpa [neg_mul, MeasureTheory.IntegrableOn] using this
+      | (rw [← MeasureTheory.IntegrableOn]; simpa [neg_mul] using this)
 
 #print axioms FstageFinite_eq_laplace_heatTrace
 

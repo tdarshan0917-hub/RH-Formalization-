@@ -86,7 +86,7 @@ theorem bTail_norm_le (n : ℕ) (s : ℂ) (hs : 0 < s.re) :
         · exact (bEnvelope_integrable s.re hs).const_mul (bTailMass n)
         · filter_upwards with t
           exact mul_nonneg (bTailMass_nonneg n) (by unfold bEnvelope; positivity)
-        · exact HasSubset.Subset.eventuallyLE (fun t ht => lt_trans spikeT0_pos ht)
+        · exact LE.le.eventuallySubset (fun t ht => lt_trans spikeT0_pos ht)
     _ = bTailMass n * ∫ t in Ioi (0:ℝ), bEnvelope s.re t :=
         MeasureTheory.integral_const_mul _ _
     _ = bTailMass n * (1 / (2 * Real.sqrt s.re)) := by

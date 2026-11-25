@@ -93,7 +93,9 @@ theorem shiftedLaplaceConcreteFiniteCanonical_tendsto_Bshared_sigma1
     exact shiftedLaplace_Bshared_eqOn_model 1 hsabs
 
   rw [← htsum_model]
-  simpa [finiteCanonicalPrimePowerPackage] using hconv
+  first
+    | exact hconv
+    | simpa [finiteCanonicalPrimePowerPackage] using hconv
 
 /--
 The clean arithmetic shifted-Laplace B-stage sequence is pointwise equal to the

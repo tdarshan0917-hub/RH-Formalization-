@@ -51,7 +51,7 @@ theorem canonicalPrimePowerPackageFromKernelTsum_principalPart_at_witness
       (canonicalPrimePowerPackageFromKernelTsum sigma0 Kshared).Bshared
       W.s0
       c := by
-  simpa [canonicalPrimePowerPackageFromKernelTsum] using hpp
+  first | exact hpp | simpa [canonicalPrimePowerPackageFromKernelTsum] using hpp
 
 /--
 The exact opposite-principal-part theorem needed for a concrete tsum-defined

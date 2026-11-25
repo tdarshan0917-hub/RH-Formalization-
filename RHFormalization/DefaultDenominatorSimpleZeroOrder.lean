@@ -60,7 +60,7 @@ theorem meromorphicOrderAt_sub_self_eq_one
 
   have hden_an :
       AnalyticAt ℂ (fun w : ℂ => w - s0) s0 := by
-    simpa using hid.sub hconst
+    exact hid.sub hconst
 
   have horder :
       analyticOrderAt (fun w : ℂ => w - s0) s0 = 1 :=

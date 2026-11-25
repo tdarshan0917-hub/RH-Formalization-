@@ -59,14 +59,14 @@ def buildInterfaceBridgeFromSharedPackageFunctionalCompatibility
       have hD :
           Y.toOperatorResolventBridge.B s =
             Y.B.Cshared.Bshared s := by
-        simpa using
+        exact
           Y.B.h_Bcan_matches_shared s
             (RightHalfPlane_subset_of_le S.hsigma_ge_D hs)
 
       have hH :
           X.toLegacyZeroPolePackageAPI.Bzero s =
             X.layer.overlap.Cshared.Bshared s := by
-        simpa using
+        exact
           X.layer.overlap.h_Bzero_matches_shared s
             (RightHalfPlane_subset_of_le S.hsigma_ge_H hs)
 

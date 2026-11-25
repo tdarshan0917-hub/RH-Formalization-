@@ -66,7 +66,7 @@ theorem continuous_psiCut : Continuous psiCut := by
     have h2 : |s.im| ^ 2 = s.im ^ 2 := sq_abs _
     nlinarith [h1, h2, norm_nonneg s, abs_nonneg s.im]
   have := Continuous.if_le hnorm haim hzero hre hagree
-  simpa [psiCut] using this
+  exact this
 
 theorem exists_uniform_lower_bound_on_ball
     (c : ℂ) (r : ℝ) (hr : 0 < r) (hball : Metric.closedBall c r ⊆ Ω) :

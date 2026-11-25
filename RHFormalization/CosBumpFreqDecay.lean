@@ -70,7 +70,9 @@ theorem abs_cosBumpIntegral_le_inv_freq
     intro x _
     have := (hasDerivAt_gaussBump δ hδ (x - Real.log q)).comp x
       ((hasDerivAt_id x).sub_const (Real.log q))
-    simpa [hW, hW'] using this
+    refine this.congr_deriv ?_
+    simp only [hW']
+    ring
   set V : ℝ → ℝ := fun x => Real.sin (ω * x) / ω with hV
   have hVd : ∀ x ∈ Set.uIcc (0:ℝ) L, HasDerivAt V (Real.cos (ω * x)) x := by
     intro x _

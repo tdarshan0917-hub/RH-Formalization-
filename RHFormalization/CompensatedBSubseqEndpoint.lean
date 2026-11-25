@@ -57,7 +57,9 @@ theorem RH_from_compensatedB_locbdd_subseq (σ : ℕ → ℕ) (hσ : StrictMono 
     have h2 : Tendsto (fun n => compensatedBFamily (σ (ψ n)) s)
         atTop (𝓝 (galerkinBcanLimitData.Bcan s)) := by
       have := hB.sub hM
-      simpa [compensatedBFamily] using this
+      first
+        | exact this
+        | simpa [compensatedBFamily] using this
     exact tendsto_nhds_unique h1 h2
   refine RH_from_holomorphic_remainder (fun s => FHadmFree s - g s) ?_ ?_
   · first

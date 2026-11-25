@@ -16,7 +16,9 @@ theorem shiftedLaplaceModelPackageAt_Bshared_eq_model
 
 theorem shiftedLaplaceModelPackageAt_Bmero (sigma0 : ℝ) :
     MeromorphicOn (fun s : ℂ => (shiftedLaplaceModelPackageAt sigma0).Bshared s) Ω := by
-  simpa using shiftedLaplaceLogDerivModel_meromorphicOn_Omega
+  first
+    | exact shiftedLaplaceLogDerivModel_meromorphicOn_Omega
+    | simpa using shiftedLaplaceLogDerivModel_meromorphicOn_Omega
 
 #print axioms shiftedLaplaceModelPackageAt_Bmero
 end

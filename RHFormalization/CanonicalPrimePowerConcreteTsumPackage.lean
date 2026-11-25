@@ -171,7 +171,7 @@ theorem canonicalPrimePowerConcreteTsumKernelSeries_h_Bcan_matches_tsum
     (buildDBcanLimitDataFromCanonicalPrimePowerConcreteTsumKernelSeries X S).Bcan s =
       ∑' q : PrimePowerPair,
         q.weightC * S.Kshared q.center s := by
-  simpa [canonicalPrimePowerPackageFromKernelTsum] using
+  exact
     (buildDBcanLimitDataFromCanonicalPrimePowerConcreteTsumKernelSeries X S).h_Bcan_matches_shared
       s
       hs

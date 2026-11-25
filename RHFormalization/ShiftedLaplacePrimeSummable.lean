@@ -57,7 +57,7 @@ theorem exp_neg_center_eq_rpow
     exact_mod_cast this
   have hpos : (0 : ℝ) < (q.natValue : ℝ) := lt_of_lt_of_le one_pos hnv
   unfold PrimePowerPair.center PrimePowerPair.natValue
-  rw [Real.rpow_def_of_pos (by positivity)]
+  rw [Real.rpow_def_of_pos (by first | positivity | exact hpos | (unfold PrimePowerPair.natValue at hpos; exact_mod_cast hpos))]
   congr 1
   ring
 

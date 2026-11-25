@@ -85,7 +85,7 @@ theorem fePair0_fmodif_integrableOn_Ioi0 :
     MeasureTheory.IntegrableOn fePair0.f_modif (Set.Ioi (0:ℝ)) := by
   -- MellinConvergent f_modif 1 : IntegrableOn (t^(1-1) • f_modif) (Ioi 0); weight t^0 = 1
   have hmc : MellinConvergent (HurwitzZeta.hurwitzEvenFEPair 0).f_modif 1 :=
-    ((HurwitzZeta.hurwitzEvenFEPair 0).toStrongFEPair.hasMellin 1).1
+    ((HurwitzZeta.hurwitzEvenFEPair 0).isStrongFEPair_toStrongFEPair.hasMellin 1).1
   rw [MellinConvergent] at hmc
   have hcongr : MeasureTheory.IntegrableOn
       (fun t : ℝ => (t : ℂ) ^ ((1:ℂ) - 1) • (HurwitzZeta.hurwitzEvenFEPair 0).f_modif t)
@@ -195,7 +195,7 @@ theorem fePair0_weighted_norm_integrableOn_Ioi0 (s : ℂ) :
   have hmc : MeasureTheory.IntegrableOn
       (fun t : ℝ => (t : ℂ) ^ (s - 1) • (HurwitzZeta.hurwitzEvenFEPair 0).f_modif t)
       (Set.Ioi 0) :=
-    ((HurwitzZeta.hurwitzEvenFEPair 0).toStrongFEPair.hasMellin s).1
+    ((HurwitzZeta.hurwitzEvenFEPair 0).isStrongFEPair_toStrongFEPair.hasMellin s).1
   have hnorm : MeasureTheory.IntegrableOn
       (fun t : ℝ => ‖(t : ℂ) ^ (s - 1) • (HurwitzZeta.hurwitzEvenFEPair 0).f_modif t‖)
       (Set.Ioi 0) := hmc.norm
@@ -249,7 +249,7 @@ theorem fePair0_mellin_tail_le :
   have hmaj_int : MeasureTheory.IntegrableOn
       (fun t => t ^ (σ / 2 - 1) * Real.exp (-p * t)) (Set.Ioi (0:ℝ)) := by
     have := integrableOn_rpow_mul_exp_neg_mul_rpow (p := 1) (s := σ / 2 - 1) (b := p)
-      hq le_rfl hp
+      hq one_pos hp
     simpa [Real.rpow_one] using this
   -- weighted integrand integrable on Ioi T (subset of where f_modif decays); via majorant
   have hweight_int_T : MeasureTheory.IntegrableOn
@@ -283,7 +283,7 @@ theorem fePair0_mellin_tail_le :
         · refine MeasureTheory.ae_restrict_of_forall_mem measurableSet_Ioi (fun t ht => ?_)
           have : 0 < t := ht
           positivity
-        · exact (Set.Ioi_subset_Ioi hTpos.le).eventuallyLE
+        · exact LE.le.eventuallySubset (Set.Ioi_subset_Ioi hTpos.le)
     _ = (max C 1) * (p ^ (-(σ / 2)) * Real.Gamma (σ / 2)) := by
         rw [integral_rpow_mul_exp_eq_gamma (by linarith : (0:ℝ) < σ/2) hp]
     _ = (max C 1) * p ^ (-(σ / 2)) * Real.Gamma (σ / 2) := by ring
@@ -338,7 +338,7 @@ theorem completedZeta0_le_gamma_bound :
     · refine MeasureTheory.ae_restrict_of_forall_mem measurableSet_Ioi (fun t ht => ?_)
       have : 0 < t := lt_trans hT0 (Set.mem_Ioi.mp ht)
       positivity
-    · exact (Set.Ioi_subset_Ioi hT0T).eventuallyLE
+    · exact LE.le.eventuallySubset (Set.Ioi_subset_Ioi hT0T)
   -- assemble
   calc ‖completedRiemannZeta₀ s‖
       ≤ (∫ t in Set.Ioi (0:ℝ), t ^ (σ / 2 - 1) * ‖(HurwitzZeta.hurwitzEvenFEPair 0).f_modif t‖) / 2 := hML

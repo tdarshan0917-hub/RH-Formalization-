@@ -25,8 +25,10 @@ theorem perturbedOp_trace_eq_matrix_trace (μ : Fin N → ℝ)
     LinearMap.trace ℂ (EuclideanSpace ℂ (Fin N)) (perturbedOp μ V)
       = (perturbedMatrix μ V).trace := by
   unfold perturbedOp
-  rw [Matrix.toEuclideanLin_eq_toLin]
-  exact Matrix.trace_toLin_eq (perturbedMatrix μ V) (PiLp.basisFun 2 ℂ (Fin N))
+  first
+    | (rw [Matrix.toEuclideanLin_eq_toLin_orthonormal]
+       exact Matrix.trace_toLin_eq (perturbedMatrix μ V) (EuclideanSpace.basisFun (Fin N) ℂ).toBasis)
+    | exact Matrix.trace_toLin_eq (perturbedMatrix μ V) (EuclideanSpace.basisFun (Fin N) ℂ).toBasis
 
 /-- **Spectral eigenvalue-sum identity.**
 `∑_i λ_i(H_N) = ∑_i μ_i + re(tr V)`. Exact control of the eigenvalue sum. -/

@@ -39,8 +39,7 @@ theorem holomorphicOnC_sub_meromorphicOnC
     (hg : MeromorphicOnC g U) :
     MeromorphicOnC (fun s => f s - g s) U := by
   intro z hz
-  simpa [Pi.sub_apply] using
-    ((hf.analyticAt (hU.mem_nhds hz)).meromorphicAt.sub (hg z hz))
+  exact (hf.analyticAt (hU.mem_nhds hz)).meromorphicAt.sub (hg z hz)
 
 /--
 Default theorem-backed meromorphic algebra package.

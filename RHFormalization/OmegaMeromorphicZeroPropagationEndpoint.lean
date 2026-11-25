@@ -44,7 +44,7 @@ def buildOmegaMeromorphicLocalPropagationFromZero
       by
         have hdiff_mer :
             MeromorphicOnC (fun s : ℂ => F s - G s) Ω := by
-          simpa [Pi.sub_apply] using hF.sub hG
+          first | exact hF.sub hG | simpa [Pi.sub_apply] using hF.sub hG
 
         have hdiff_local :
             (fun s : ℂ => F s - G s) =ᶠ[𝓝[≠] z₀] (fun _ : ℂ => 0) := by

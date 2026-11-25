@@ -58,7 +58,9 @@ theorem F_stage_uniform_bound_on_compacts
       have := norm_add_le
         (galerkinStagePackage.F_stage (admissibleGalerkinStageSeq n) s - FHadmFree s)
         (FHadmFree s)
-      simpa using this
+      first
+        | exact this
+        | simpa using this
     have h2 := hM s hs
     refine le_trans ?_ (le_max_right B (1 + M))
     linarith [hd.le]

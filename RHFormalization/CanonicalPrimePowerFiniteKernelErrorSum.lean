@@ -250,7 +250,7 @@ def CanonicalPrimePowerFiniteKernelErrorData.toKernelErrorBoundData
           hf_zero
           (fun q hq => S.h_indices_eventually_contains q hq)
           hsummable.hasSum
-      simpa [canonicalPrimePowerPackageFromKernelTsum] using hpartial
+      first | exact hpartial | simpa [canonicalPrimePowerPackageFromKernelTsum] using hpartial
     h_stage_kernel_error_norm_le := by
       intro s hs n
 

@@ -115,7 +115,9 @@ theorem S1mass_le (R : ℝ) : S1mass R ≤ 2 * (Real.exp R + 2) := by
     have h : S1mass R ≤ ∑ _k ∈ activePrimePowerCodesCenterBelow R, (2 : ℝ) :=
       Finset.sum_le_sum fun k _ =>
         le_trans (le_abs_self _) (abs_ppWeightReal_le_two k)
-    simpa [Finset.sum_const, nsmul_eq_mul] using h
+    first
+      | exact h
+      | simpa [Finset.sum_const, nsmul_eq_mul] using h
   have hcardR : ((activePrimePowerCodesCenterBelow R).card : ℝ)
       ≤ Real.exp R + 2 := by
     have h1 : ((activePrimePowerCodesCenterBelow R).card : ℝ)

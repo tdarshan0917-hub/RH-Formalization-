@@ -57,7 +57,9 @@ theorem finitePackage_eq_vonMangoldt_partial_sum (R : ℝ) (s : ℂ) :
     refine Finset.sum_congr rfl ?_
     intro q hq
     have hvalid : IsPrimePowerPair q := (hmem q hq).1
-    simpa [hc, hT] using laplace_term_eq_vonMangoldt_term q hvalid s
+    first
+      | exact laplace_term_eq_vonMangoldt_term q hvalid s
+      | simpa [hc, hT] using laplace_term_eq_vonMangoldt_term q hvalid s
   -- step 2: pull the constant out
   have hstep2 : (∑ q ∈ activePrimePowerPairsCenterBelow R, c * T q.natValue)
       = c * ∑ q ∈ activePrimePowerPairsCenterBelow R, T q.natValue := by

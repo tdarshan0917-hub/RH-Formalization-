@@ -181,12 +181,12 @@ theorem galerkinVC_column_norm_sq_le
         first
           | (rw [PiLp.single_apply]
              exact if_neg hbm)
-          | (rw [EuclideanSpace.single_apply]
+          | (rw [PiLp.single_apply]
              exact if_neg hbm)
           | exact Pi.single_eq_of_ne hbm (1 : ℂ)
           | exact Pi.single_eq_of_ne (Ne.symm hbm) (1 : ℂ)
           | simp [PiLp.single_apply, hbm]
-          | simp [EuclideanSpace.single_apply, hbm]
+          | simp [PiLp.single_apply, hbm]
           | simp [EuclideanSpace.single, hbm]
           | simp [hbm]
       rw [hb0, mul_zero]
@@ -196,11 +196,11 @@ theorem galerkinVC_column_norm_sq_le
         first
           | (rw [PiLp.single_apply]
              exact if_pos rfl)
-          | (rw [EuclideanSpace.single_apply]
+          | (rw [PiLp.single_apply]
              exact if_pos rfl)
           | exact Pi.single_eq_same m (1 : ℂ)
           | simp [PiLp.single_apply]
-          | simp [EuclideanSpace.single_apply]
+          | simp [PiLp.single_apply]
           | simp [EuclideanSpace.single]
           | simp
       rw [hb1, mul_one]

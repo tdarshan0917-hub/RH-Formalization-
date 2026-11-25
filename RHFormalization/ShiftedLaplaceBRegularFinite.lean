@@ -55,7 +55,9 @@ theorem shiftedLaplaceFinsetWeightedSum_holomorphicAt_of_shiftedSqrt
           z :=
       shiftedLaplaceWeightedTerm_holomorphicAt_of_shiftedSqrt
         q z h_sqrt h_sqrt_ne
-    simpa [Finset.sum_insert, hq] using hq_holo.add hI
+    first
+      | (simp only [Finset.sum_insert hq]; exact hq_holo.add hI)
+      | simpa [Finset.sum_insert, hq] using hq_holo.add hI
 
 /--
 The finite canonical prime-power package built from the shifted/Laplace kernel
@@ -71,9 +73,10 @@ theorem finiteCanonicalPrimePowerPackage_shiftedLaplace_holomorphicAt_of_shifted
     HolomorphicAtC
       (finiteCanonicalPrimePowerPackage I shiftedLaplaceHeatKernelC)
       z := by
-  simpa [finiteCanonicalPrimePowerPackage] using
-    shiftedLaplaceFinsetWeightedSum_holomorphicAt_of_shiftedSqrt
-      I z h_sqrt h_sqrt_ne
+  first
+    | exact shiftedLaplaceFinsetWeightedSum_holomorphicAt_of_shiftedSqrt I z h_sqrt h_sqrt_ne
+    | simpa [finiteCanonicalPrimePowerPackage] using
+        shiftedLaplaceFinsetWeightedSum_holomorphicAt_of_shiftedSqrt I z h_sqrt h_sqrt_ne
 
 #print axioms shiftedLaplaceFinsetWeightedSum_holomorphicAt_of_shiftedSqrt
 #print axioms finiteCanonicalPrimePowerPackage_shiftedLaplace_holomorphicAt_of_shiftedSqrt

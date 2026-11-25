@@ -149,7 +149,11 @@ theorem admRatio_tendsto_zero :
       | exact tendsto_nat_cast_atTop_atTop
   have h1 : Tendsto (fun n : ℕ => (n : ℝ) + 2) atTop atTop :=
     tendsto_atTop_add_const_right _ 2 hcast
-  simpa [one_div] using h1.inv_tendsto_atTop
+  first
+    | exact h1.inv_tendsto_atTop
+    | simpa [one_div] using h1.inv_tendsto_atTop
+    | simpa [one_div, Function.comp_def] using h1.inv_tendsto_atTop
+    | (simp only [one_div]; exact h1.inv_tendsto_atTop)
 
 /-- **Overlap vanishing (Brick A closed)**: the window deficit tends to 0
 pointwise on RHP(1) — the `h_Bcorr_overlap0`-shaped fact for the window
@@ -160,7 +164,9 @@ theorem BcorrWin_overlap0 {s : ℂ}
   rw [tendsto_zero_iff_norm_tendsto_zero]
   refine squeeze_zero (fun n => norm_nonneg _)
     (fun n => BcorrWin_norm_le n hs) ?_
-  simpa using admRatio_tendsto_zero.mul_const (BcorrMass s)
+  first
+    | exact admRatio_tendsto_zero.mul_const (BcorrMass s)
+    | simpa using admRatio_tendsto_zero.mul_const (BcorrMass s)
 
 #print axioms BcorrWin
 #print axioms BcorrWin_norm_le

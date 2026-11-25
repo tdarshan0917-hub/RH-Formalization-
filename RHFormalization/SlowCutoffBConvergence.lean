@@ -72,7 +72,9 @@ theorem shiftedLaplaceConcreteFiniteCanonical_tendsto_Bshared_sigma1_along
       shiftedLaplaceLogDerivModel s
     exact shiftedLaplace_Bshared_eqOn_model 1 hsabs
   rw [← htsum_model]
-  simpa [finiteCanonicalPrimePowerPackage] using hconv
+  first
+    | exact hconv
+    | simpa [finiteCanonicalPrimePowerPackage] using hconv
 
 #print axioms shiftedLaplaceConcreteFiniteCanonical_tendsto_Bshared_sigma1_along
 
