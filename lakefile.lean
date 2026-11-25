@@ -9,3 +9,4 @@ require PrimeNumberTheoremAnd from git
 
 @[default_target]
 lean_lib RHFormalization where
+  roots := #[`RHFormalization.StageAUnconditional]

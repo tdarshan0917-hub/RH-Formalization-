@@ -1,2 +1,8 @@
-import RHFormalization.DBFFCorrectedBulkProvider
-#check @RHFormalization.DBFFCorrectedBulkProvider.RH_from_DBFF_corrected_bulk
+import RHFormalization.StageAUnconditional
+#print axioms RHFormalization.RH_from_pairedTransform_only_dense
+#print axioms RHFormalization.RH_semantic_lock
+#print axioms RHFormalization.RH_from_pairedTransform_only_dense_mathlib
+#print axioms RHFormalization.hPdense_of_vonKoch
+#print axioms RHFormalization.HPdense_iff_RH
+#print axioms RHFormalization.HPdense_iff_RH_unconditional
+#print axioms RHFormalization.HPdense_iff_RH_mathlib
