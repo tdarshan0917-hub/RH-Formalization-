@@ -6,9 +6,9 @@
 
 **Lean 4 formalization of an operator-theoretic / prime-power criterion for the Riemann Hypothesis**
 
-Lean `v4.30.0-rc2` with pinned Mathlib (port to v4.35 in progress on branch `v435-von-koch`).
+Lean `v4.30.0-rc2` with pinned Mathlib ; the unconditional equivalence builds on Lean v4.35 on branch `v435-von-koch`.
 
-> **Status — November 23, 2026.** The principal result is **Stage A**, complete and machine-certified:
+> **Status — November 24, 2026.** The principal result is **Stage A**, complete and machine-certified:
 >
 > `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis`
 >
@@ -22,7 +22,9 @@ Lean `v4.30.0-rc2` with pinned Mathlib (port to v4.35 in progress on branch `v43
 >
 > where `VonKochBound` is the classical error term |ψ(t) − t| ≤ C·t^{1/2+δ/2}. The chain VonKochBound ⇒ bounded von Mangoldt discrepancy ⇒ bounded star object ⇒ `hP_dense` is certified in this repository (RHC-1 … RHC-4). So `hP_dense` is **equivalent** to RH, with von Koch's theorem (1901) as the one classical input.
 >
-> **von Koch's theorem — formalized (November 2026).** `RHVonKoch.vonKoch_of_RH : RiemannHypothesis → VonKochBound` is proved in Lean 4 on top of the PrimeNumberTheoremAnd project (contour shift of the smoothed Chebyshev function to Re s = 1/2 + δ under RH), audited to `[propext, Classical.choice, Quot.sound]` — source: [`RHVonKoch/`](https://github.com/tdarshan0917-hub/PrimeNumberTheoremAnd/tree/rh-von-koch/RHVonKoch). Merging it into this repository requires moving from Lean v4.30 to v4.35; that port is in progress on branch `v435-von-koch`, after which `HPdense_iff_RH_unconditional : HPdense ↔ RiemannHypothesis` holds with no premise.
+> **von Koch's theorem — formalized (November 2026).** `RHVonKoch.vonKoch_of_RH : RiemannHypothesis → VonKochBound` is proved in Lean 4 on top of the PrimeNumberTheoremAnd project (contour shift of the smoothed Chebyshev function to Re s = 1/2 + δ under RH), audited to `[propext, Classical.choice, Quot.sound]` — source: [`RHVonKoch/`](https://github.com/tdarshan0917-hub/PrimeNumberTheoremAnd/tree/rh-von-koch/RHVonKoch). 
+>
+> **Unconditional equivalence — certified (November 24, 2026).** On branch `v435-von-koch` (Lean v4.35, commit [`9826942`](https://github.com/tdarshan0917-hub/RH-Formalization-/commit/9826942)), [`StageAUnconditional.lean`](https://github.com/tdarshan0917-hub/RH-Formalization-/blob/v435-von-koch/RHFormalization/StageAUnconditional.lean) proves `HPdense_iff_RH_unconditional : HPdense ↔ RiemannHypothesis` and `HPdense_iff_RH_mathlib : HPdense ↔ _root_.RiemannHypothesis` with no premise, each depending only on `[propext, Classical.choice, Quot.sound]`.
 >
 > **Stage B(i) (the energy route, `RH_of_denseQV_uniform`) is certified but is no longer the live route** — see *Status of the energy route* below.
 
@@ -34,6 +36,7 @@ Lean `v4.30.0-rc2` with pinned Mathlib (port to v4.35 in progress on branch `v43
 | Lock to Mathlib's `RiemannHypothesis` | [`RHFormalization/RHSemanticLock.lean`](https://github.com/tdarshan0917-hub/RH-Formalization-/blob/main/RHFormalization/RHSemanticLock.lean) |
 | Converse chain and `HPdense ↔ RH` (given von Koch) | [`RHFormalization/StageAEquivalence.lean`](https://github.com/tdarshan0917-hub/RH-Formalization-/blob/main/RHFormalization/StageAEquivalence.lean), [`VonKochToStageA.lean`](https://github.com/tdarshan0917-hub/RH-Formalization-/blob/main/RHFormalization/VonKochToStageA.lean) |
 | von Koch's theorem `RH → VonKochBound` (on PNT+) | [`RHVonKoch/VonKoch.lean`](https://github.com/tdarshan0917-hub/PrimeNumberTheoremAnd/blob/rh-von-koch/RHVonKoch/VonKoch.lean), contour bounds in [`PsiBound.lean`](https://github.com/tdarshan0917-hub/PrimeNumberTheoremAnd/blob/rh-von-koch/RHVonKoch/PsiBound.lean) |
+| **`HPdense ↔ RH`, no premise** (branch `v435-von-koch`) | [`RHFormalization/StageAUnconditional.lean`](https://github.com/tdarshan0917-hub/RH-Formalization-/blob/v435-von-koch/RHFormalization/StageAUnconditional.lean) |
 | One-command audit of all endpoints | [`verify.sh`](https://github.com/tdarshan0917-hub/RH-Formalization-/blob/main/verify.sh), [`VERIFICATION.md`](https://github.com/tdarshan0917-hub/RH-Formalization-/blob/main/VERIFICATION.md) |
 
 The repository root also holds development notes and probe files from the project's history; the files above are the certified route.
@@ -92,7 +95,7 @@ on the dense schedule `L = X^(3/4)`. The chain is: finite Galerkin prime-weighte
 [propext, Classical.choice, Quot.sound]
 ```
 
-**Strength.** `hP_dense` is equivalent to RH. The converse direction is certified as `HPdense_iff_RH` in `StageAEquivalence.lean`, taking von Koch's theorem `RiemannHypothesis → VonKochBound` as its premise; von Koch's theorem itself is formalized separately (`RHVonKoch.vonKoch_of_RH`, see the status note above).
+**Strength.** `hP_dense` is equivalent to RH. The converse direction is certified as `HPdense_iff_RH` in `StageAEquivalence.lean`, taking von Koch's theorem `RiemannHypothesis → VonKochBound` as its premise; von Koch's theorem itself is formalized separately (`RHVonKoch.vonKoch_of_RH`). The two are combined, with no premise, in `HPdense_iff_RH_unconditional`.
 
 The repository also retains the earlier certified endpoints `RH_from_pairedTransform_only : hP → RiemannHypothesis`, `hSC → HtailExists → RiemannHypothesis` and `RH_from_Htail` as part of the development history.
 
@@ -625,7 +628,8 @@ The repository intentionally preserves substantial research history rather than 
 
 - Stage A: `RH_from_pairedTransform_only_dense : hP_dense → RiemannHypothesis`, with `RH_semantic_lock` and the Mathlib-predicate export;
 - the converse chain `VonKochBound → hP_dense` (RHC-1 … RHC-2c) and `HPdense_iff_RH : (RiemannHypothesis → VonKochBound) → (HPdense ↔ RiemannHypothesis)` (RHC-4);
-- von Koch's theorem `RHVonKoch.vonKoch_of_RH : RiemannHypothesis → VonKochBound`, in the PrimeNumberTheoremAnd-based `RHVonKoch` library (Lean v4.35; integration into this repository in progress);
+- von Koch's theorem `RHVonKoch.vonKoch_of_RH : RiemannHypothesis → VonKochBound`, in the PrimeNumberTheoremAnd-based `RHVonKoch` library (Lean v4.35);
+- `HPdense_iff_RH_unconditional : HPdense ↔ RiemannHypothesis`, no premise (branch `v435-von-koch`, Lean v4.35);
 - the energy-route endpoint `RH_of_denseQV_uniform` (certified; hypothesis unsatisfiable — see above);
 - the certified obstruction results (dilution, log N loss, raw Gaussian frame Bessel bound) and the KB bricks listed above;
 - the PL bricks listed above;
@@ -653,7 +657,7 @@ compensated prime package hP_dense
 RiemannHypothesis
 ```
 
-`hP_dense` and RH are equivalent (certified, with von Koch's theorem formalized separately and being merged in). An operator-side proof of `hP_dense` that does not presuppose the location of the zeros — the shield question — is the open research problem; the project's certified contribution is the criterion, its equivalence with RH, its semantic lock to Mathlib, and a certified map of routes that provably do not supply it.
+`hP_dense` and RH are equivalent (certified with no premise: `HPdense_iff_RH_unconditional`). An operator-side proof of `hP_dense` that does not presuppose the location of the zeros — the shield question — is the open research problem; the project's certified contribution is the criterion, its equivalence with RH, its semantic lock to Mathlib, and a certified map of routes that provably do not supply it.
 
 ---
 
